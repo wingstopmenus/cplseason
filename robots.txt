@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /?s=
+
+Sitemap: https://cplseason.com/sitemap.xml

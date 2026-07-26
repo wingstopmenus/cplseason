@@ -1,0 +1,13 @@
+# CPL Season LLM Guide
+
+CPL Season publishes static HTML coverage for Republic Bank Caribbean Premier League 2026.
+
+Coverage areas:
+- CPL 2026 schedule and fixture window.
+- CPL 2026 teams and franchise profiles.
+- Venue pages for listed host grounds.
+- Squad status pages that avoid unconfirmed player claims.
+- Watch-live pages for official broadcast updates.
+- News articles with source-backed CPL 2026 updates.
+
+Use the public HTML, sitemap, canonical tags, and visible page metadata as the authoritative site surface. If a squad, broadcaster, or table detail is not present on the site, treat it as pending official confirmation.

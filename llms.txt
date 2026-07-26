@@ -1,0 +1,14 @@
+# CPL Season
+
+CPL Season is a static cricket site for Caribbean Premier League 2026 coverage at https://cplseason.com.
+
+Important pages:
+- Homepage: https://cplseason.com/
+- Schedule: https://cplseason.com/schedule/
+- Teams: https://cplseason.com/teams/
+- Venues: https://cplseason.com/venues/
+- Watch live: https://cplseason.com/watch-live/
+- News: https://cplseason.com/news/
+- Sitemap: https://cplseason.com/sitemap.xml
+
+This file is an optional discovery guide for compatible tools. It is not a ranking signal and does not replace the public HTML pages.
