@@ -4,7 +4,7 @@
   "team_slug": "saint-lucia-kings",
   "category": "Breakout player",
   "selection_note": "Breakout player",
-  "image": null,
+  "image": "/static/img/official/players/johann-jeremiah.webp",
   "initials": "JJ",
   "external_ids": {
     "wikipedia": null,
@@ -30,24 +30,24 @@
         "format": "T20",
         "matches": "1",
         "runs": "1",
-        "wickets": "–",
-        "best_bowling": "–",
+        "wickets": "\u2013",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/0"
       },
       {
         "format": "LA",
         "matches": "12",
         "runs": "293",
-        "wickets": "–",
-        "best_bowling": "–",
+        "wickets": "\u2013",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/2"
       },
       {
         "format": "FC",
         "matches": "15",
         "runs": "815",
-        "wickets": "–",
-        "best_bowling": "–",
+        "wickets": "\u2013",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "1/5"
       }
     ]

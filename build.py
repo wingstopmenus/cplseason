@@ -1563,9 +1563,9 @@ def build_watch_live() -> None:
         opening_fixtures.append(
             {
                 "date": match_record["date"],
-                "label": start.strftime("%a %-d %b"),
+                "label": f"{start.strftime('%a')} {start.day} {start.strftime('%b')}",
                 "match": f"{home_team['name']} vs {away_team['name']}",
-                "time": start.strftime("%-I%p").lower(),
+                "time": start.strftime("%I%p").lstrip("0").lower(),
                 "teams": [home_team, away_team],
                 "venue": venues[match_record["venue_slug"]],
                 "match_number": match_record["match_number"],
@@ -1701,19 +1701,19 @@ def build_matches() -> None:
                 "away_label": away_label,
                 "matchup_label": matchup_label,
                 "fixture_label": fixture_label,
-                "date_label_short": start.strftime("%a %-d %b"),
-                "date_label_long": start.strftime("%A, %-d %B %Y"),
+                "date_label_short": f"{start.strftime('%a')} {start.day} {start.strftime('%b')}",
+                "date_label_long": f"{start.strftime('%A')}, {start.day} {start.strftime('%B %Y')}",
                 "local_time_label": local_time_label,
                 "utc_time_label": utc_time_label,
                 "india_time_label": india_time_label,
                 "utc_offset_label": utc_offset_label,
                 "utc_date_label": (
-                    utc_start.strftime("%-d %b")
+                    f"{utc_start.day} {utc_start.strftime('%b')}"
                     if utc_start.date() != start.date()
                     else None
                 ),
                 "india_date_label": (
-                    india_start.strftime("%-d %b")
+                    f"{india_start.day} {india_start.strftime('%b')}"
                     if india_start.date() != start.date()
                     else None
                 ),

@@ -4,7 +4,7 @@
   "team_slug": "saint-lucia-kings",
   "category": "West Indian player",
   "selection_note": "Right to Match selection",
-  "image": null,
+  "image": "/static/img/official/players/roston-chase.webp",
   "initials": "RC",
   "external_ids": {
     "wikipedia": null,
@@ -19,7 +19,7 @@
     "role": "All-rounder",
     "batting_style": "Right-handed",
     "bowling_style": "Right-arm off-break",
-    "international_span": "2016–present",
+    "international_span": "2016\u2013present",
     "career_teams": [
       "Barbados",
       "Barbados Tridents",

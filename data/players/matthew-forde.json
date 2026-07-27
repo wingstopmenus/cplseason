@@ -4,7 +4,7 @@
   "team_slug": "saint-lucia-kings",
   "category": "West Indian player",
   "selection_note": "Right to Match selection",
-  "image": null,
+  "image": "/static/img/official/players/matthew-forde.webp",
   "initials": "MF",
   "external_ids": {
     "wikipedia": null,
@@ -19,7 +19,7 @@
     "role": "Bowler",
     "batting_style": "Right-handed",
     "bowling_style": "Right-arm medium",
-    "international_span": "2023–present",
+    "international_span": "2023\u2013present",
     "career_teams": [
       "Dambulla Aura",
       "Comilla Victorians",

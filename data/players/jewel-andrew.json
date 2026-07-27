@@ -4,7 +4,7 @@
   "team_slug": "saint-lucia-kings",
   "category": "West Indian player",
   "selection_note": "Selected by Saint Lucia Kings for CPL 2026",
-  "image": null,
+  "image": "/static/img/official/players/jewel-andrew.webp",
   "initials": "JA",
   "external_ids": {
     "wikipedia": null,
@@ -19,7 +19,7 @@
     "role": "Wicket-keeper-batter",
     "batting_style": "Right-handed",
     "bowling_style": "",
-    "international_span": "2024–present",
+    "international_span": "2024\u2013present",
     "career_teams": [
       "Leeward Islands",
       "Antigua and Barbuda Falcons",
@@ -31,7 +31,7 @@
         "matches": "5",
         "runs": "78",
         "wickets": "0",
-        "best_bowling": "–",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/0"
       },
       {
@@ -39,7 +39,7 @@
         "matches": "3",
         "runs": "8",
         "wickets": "0",
-        "best_bowling": "–",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/0"
       },
       {
@@ -47,7 +47,7 @@
         "matches": "17",
         "runs": "406",
         "wickets": "0",
-        "best_bowling": "–",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "1/0"
       }
     ]
