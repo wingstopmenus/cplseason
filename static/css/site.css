@@ -198,9 +198,6 @@
   font-size: 14px;
 }
 .squad-tools {
-  position: sticky;
-  top: 78px;
-  z-index: 20;
   width: min(1180px, calc(100% - 40px));
   margin: 44px auto 0;
   padding: 16px;
@@ -208,7 +205,6 @@
   border-radius: 18px;
   background: rgba(5, 7, 28, .94);
   box-shadow: 0 18px 44px rgba(0, 0, 0, .28);
-  backdrop-filter: blur(14px);
 }
 .squad-search {
   display: grid;
@@ -258,10 +254,19 @@
   color: #171000;
 }
 .squad-team-jump {
+  position: sticky;
+  top: 78px;
+  z-index: 20;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 7px;
   margin-top: 13px;
+  padding: 10px;
+  border: 1px solid rgba(255, 210, 10, .28);
+  border-radius: 14px;
+  background: rgba(5, 7, 28, .96);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .4);
+  backdrop-filter: blur(14px);
 }
 .squad-team-jump a {
   display: grid;
@@ -633,9 +638,6 @@
 .players-summary-facts span:last-child { border-right: 0; }
 .players-summary-facts strong { color: var(--players-yellow); font-size: 28px; line-height: 1; }
 .player-directory-tools {
-  position: sticky;
-  top: 78px;
-  z-index: 20;
   width: min(1180px, calc(100% - 40px));
   margin: 42px auto 0;
   padding: 16px;
@@ -643,7 +645,6 @@
   border-radius: 18px;
   background: rgba(5, 7, 28, .95);
   box-shadow: 0 18px 44px rgba(0, 0, 0, .3);
-  backdrop-filter: blur(14px);
 }
 .player-directory-search {
   display: grid;
@@ -695,10 +696,19 @@
   color: #171000;
 }
 .player-team-filter {
+  position: sticky;
+  top: 78px;
+  z-index: 20;
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: 7px;
   margin-top: 12px;
+  padding: 10px;
+  border: 1px solid rgba(85, 217, 255, .28);
+  border-radius: 14px;
+  background: rgba(5, 7, 28, .96);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, .4);
+  backdrop-filter: blur(14px);
 }
 .player-team-filter button {
   display: grid;
