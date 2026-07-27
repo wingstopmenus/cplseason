@@ -2,45 +2,45 @@
   "static_assets": {
     "cplt20-logo": "https://www.cplt20.com/assets/images/CPLT20_logo.png",
     "news-banner-bg": "https://www.cplt20.com/assets/images/news-banner-bg-img.jpg",
-    "news-banner-pattern": "https://www.cplt20.com/assets/images/news-banner-pattern.png",
-    "matches-top-pattern": "https://www.cplt20.com/assets/images/matches-top-pattern.png",
+    "news-banner-pattern": "https://www.cplt20.com/assets/images/news-banner-pattern.webp",
+    "matches-top-pattern": "https://www.cplt20.com/assets/images/matches-top-pattern.webp",
     "teams-banner": "https://www.cplt20.com/assets/images/teams_banner_mobile_new.png",
-    "party": "https://www.cplt20.com/assets/images/party.png"
+    "party": "https://www.cplt20.com/assets/images/party.webp"
   },
   "teams": {
     "jamaica-kingsmen": {
       "official_title": "Jamaica Kingsmen",
-      "logo": "/static/img/official/teams/jamaica-kingsmen.png",
+      "logo": "/static/img/official/teams/jamaica-kingsmen.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2026/04/jamaica.png"
     },
     "antigua-barbuda-falcons": {
       "official_title": "Antigua &#038; Barbuda Falcons",
-      "logo": "/static/img/official/teams/antigua-barbuda-falcons.png",
+      "logo": "/static/img/official/teams/antigua-barbuda-falcons.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/Antigua_Barbuda_Falcons_Kit_Logo_Neg-2.png"
     },
     "trinbago-knight-riders": {
       "official_title": "Trinbago Knight Riders",
-      "logo": "/static/img/official/teams/trinbago-knight-riders.png",
+      "logo": "/static/img/official/teams/trinbago-knight-riders.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/TKR-1.png"
     },
     "saint-lucia-kings": {
       "official_title": "Saint Lucia Kings",
-      "logo": "/static/img/official/teams/saint-lucia-kings.png",
+      "logo": "/static/img/official/teams/saint-lucia-kings.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/SLK.png"
     },
     "st-kitts-nevis-patriots": {
       "official_title": "St Kitts &#038; Nevis Patriots",
-      "logo": "/static/img/official/teams/st-kitts-nevis-patriots.png",
+      "logo": "/static/img/official/teams/st-kitts-nevis-patriots.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/SKNP.png"
     },
     "guyana-amazon-warriors": {
       "official_title": "Guyana Amazon Warriors",
-      "logo": "/static/img/official/teams/guyana-amazon-warriors.png",
+      "logo": "/static/img/official/teams/guyana-amazon-warriors.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/GAW-12.png"
     },
     "barbados-royals": {
       "official_title": "Barbados Tridents",
-      "logo": "/static/img/official/teams/barbados-royals.png",
+      "logo": "/static/img/official/teams/barbados-royals.webp",
       "logo_source_url": "https://wp.cplt20.com/wp-content/uploads/2024/05/Barbados-Tridents.png"
     }
   },
@@ -48,73 +48,73 @@
     {
       "slug": "guyana-amazon-warriors-unveil-overseas-contingent-for-cpl-2026",
       "title": "GUYANA AMAZON WARRIORS UNVEIL OVERSEAS CONTINGENT FOR CPL 2026",
-      "local": "/static/img/official/news/guyana-amazon-warriors-unveil-overseas-contingent-for-cpl-2026.jpg",
+      "local": "/static/img/official/news/guyana-amazon-warriors-unveil-overseas-contingent-for-cpl-2026.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/2236172133-scaled.jpg"
     },
     {
       "slug": "barbados-tridents-unveil-overseas-contingent-for-cpl-2026",
       "title": "BARBADOS TRIDENTS UNVEIL OVERSEAS CONTINGENT FOR CPL 2026",
-      "local": "/static/img/official/news/barbados-tridents-unveil-overseas-contingent-for-cpl-2026.jpg",
+      "local": "/static/img/official/news/barbados-tridents-unveil-overseas-contingent-for-cpl-2026.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/2234465199-scaled.jpg"
     },
     {
       "slug": "saint-lucia-kings-unveil-overseas-contingent-for-cpl-2026",
       "title": "SAINT LUCIA KINGS UNVEIL OVERSEAS CONTINGENT FOR CPL 2026",
-      "local": "/static/img/official/news/saint-lucia-kings-unveil-overseas-contingent-for-cpl-2026.jpg",
+      "local": "/static/img/official/news/saint-lucia-kings-unveil-overseas-contingent-for-cpl-2026.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/2233604792-scaled.jpg"
     },
     {
       "slug": "limacol-in-as-wcpl-title-sponsor",
       "title": "LIMACOL IN AS WCPL TITLE SPONSOR",
-      "local": "/static/img/official/news/limacol-in-as-wcpl-title-sponsor.jpg",
+      "local": "/static/img/official/news/limacol-in-as-wcpl-title-sponsor.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/2235432866-scaled.jpg"
     },
     {
       "slug": "ticket-bundles-launched-for-finals-week-party-stand",
       "title": "TICKET BUNDLES LAUNCHED FOR FINALS WEEK PARTY STAND",
-      "local": "/static/img/official/news/ticket-bundles-launched-for-finals-week-party-stand.jpg",
+      "local": "/static/img/official/news/ticket-bundles-launched-for-finals-week-party-stand.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/1171384115-scaled.jpg"
     },
     {
       "slug": "wcpl-standalone-tickets-on-sale",
       "title": "WCPL STANDALONE TICKETS ON SALE",
-      "local": "/static/img/official/news/wcpl-standalone-tickets-on-sale.jpg",
+      "local": "/static/img/official/news/wcpl-standalone-tickets-on-sale.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/2235432723-scaled.jpg"
     },
     {
       "slug": "19256",
       "title": "MEGA CONCERT LINE UP BUILDS",
-      "local": "/static/img/official/news/19256.jpeg",
+      "local": "/static/img/official/news/19256.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-03-at-13.00.44.jpeg"
     },
     {
       "slug": "cpl-and-rush-sports-launch-rush-live-louder",
       "title": "CPL AND RUSH SPORTS LAUNCH RUSH LIVE AND LOUDER",
-      "local": "/static/img/official/news/cpl-and-rush-sports-launch-rush-live-louder.jpeg",
+      "local": "/static/img/official/news/cpl-and-rush-sports-launch-rush-live-louder.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/07/RushLiveAndLouder_Logo16x9.jpg.jpeg"
     },
     {
       "slug": "early-bird-tickets-on-sale-from-june-19-for-mega-concert",
       "title": "EARLY BIRD TICKETS ON SALE FROM JUNE 19 FOR MEGA CONCERT",
-      "local": "/static/img/official/news/early-bird-tickets-on-sale-from-june-19-for-mega-concert.jpg",
+      "local": "/static/img/official/news/early-bird-tickets-on-sale-from-june-19-for-mega-concert.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/06/Estelle-image-for-press-release--scaled.jpg"
     },
     {
       "slug": "local-players-confirmed-for-wcpl-following-draft",
       "title": "LOCAL PLAYERS CONFIRMED FOR WCPL",
-      "local": "/static/img/official/news/local-players-confirmed-for-wcpl-following-draft.jpeg",
+      "local": "/static/img/official/news/local-players-confirmed-for-wcpl-following-draft.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/06/2235438029.jpg-scaled.jpeg"
     },
     {
       "slug": "flow-announced-as-official-partner-of-the-cpl",
       "title": "FLOW ANNOUNCED AS OFFICIAL PARTNER OF THE CPL",
-      "local": "/static/img/official/news/flow-announced-as-official-partner-of-the-cpl.jpg",
+      "local": "/static/img/official/news/flow-announced-as-official-partner-of-the-cpl.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/06/2232781390-2-scaled.jpg"
     },
     {
       "slug": "wcpl-fixtures-confirmed-as-jamaica-empress-joins-reimagined-womens-cricket-festival",
       "title": "WCPL FIXTURES CONFIRMED AS JAMAICA EMPRESS JOINS REIMAGINED WOMEN’S CRICKET FESTIVAL",
-      "local": "/static/img/official/news/wcpl-fixtures-confirmed-as-jamaica-empress-joins-reimagined-womens-cricket-festival.jpeg",
+      "local": "/static/img/official/news/wcpl-fixtures-confirmed-as-jamaica-empress-joins-reimagined-womens-cricket-festival.webp",
       "source": "https://wp.cplt20.com/wp-content/uploads/2026/06/neww.jpg-scaled.jpeg"
     }
   ]
