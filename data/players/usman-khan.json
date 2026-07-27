@@ -1,0 +1,57 @@
+{
+  "slug": "usman-khan",
+  "name": "Usman Khan",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Second-phase overseas signing",
+  "image": null,
+  "initials": "UK",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Usman Khan",
+    "birth_date": "10 May 1995",
+    "birth_place": "Karachi, Sindh, Pakistan",
+    "country": "Pakistan",
+    "role": "Top-order batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "international_span": "2024–present",
+    "career_teams": [
+      "Quetta Gladiators",
+      "Multan Sultans",
+      "Chattogram Challengers",
+      "Agrani Bank Cricket Club",
+      "Chittagong Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "38",
+        "runs": "474",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "ODI",
+        "matches": "2",
+        "runs": "51",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "20",
+        "runs": "1,025",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "3/5"
+      }
+    ]
+  }
+}

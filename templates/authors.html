@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/brand/cplseason-logo.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727zo">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="authors-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a><a href="/players/">Players</a>
+      <a href="/squads/">Squads</a><a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
+    </nav>
+  </header>
+  <nav class="authors-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Authors</li></ol></nav>
+
+  <main id="main">
+    <section class="page-hero compact authors-page-hero">
+      <p class="eyebrow">CPL Season newsroom</p>
+      <h1>Meet the people behind CPL Season</h1>
+      <p>Five named editors and writers cover the 2026 schedule, squads, teams, venues, standings, broadcast information and tournament news.</p>
+    </section>
+
+    <section class="band authors-intro-band">
+      <div class="authors-intro-card">
+        <div>
+          <p class="authors-overline">Editorial accountability</p>
+          <h2>Every desk has a named owner</h2>
+          <p>Our author pages show who handles each part of the site, how they check information and where readers can report a correction.</p>
+        </div>
+        <dl aria-label="CPL Season editorial summary">
+          <div><dt>Named authors</dt><dd>{{ authors | length }}</dd></div>
+          <div><dt>Core desks</dt><dd>5</dd></div>
+          <div><dt>Contact</dt><dd>Open</dd></div>
+        </dl>
+      </div>
+      <div class="authors-principles" aria-label="Editorial principles">
+        <span>Named bylines</span><span>Topic ownership</span><span>Recent updates</span><span>Reader corrections</span>
+      </div>
+    </section>
+
+    <section class="band authors-directory-band">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Editorial team</p>
+          <h2>CPL Season authors</h2>
+          <p>Each profile explains the author's coverage area and working method.</p>
+        </div>
+      </div>
+      <div class="authors-directory-grid">
+        {% for author in authors %}
+        <article class="author-directory-card{% if loop.first %} is-lead{% endif %}">
+          <div class="author-directory-photo">
+            <img src="{{ author.image }}" alt="{{ author.name }} author photo" width="1200" height="1200" loading="{{ 'eager' if loop.first else 'lazy' }}" decoding="async">
+          </div>
+          <div class="author-directory-copy">
+            <p class="author-directory-role">{{ author.role }}</p>
+            <h2>{{ author.name }}</h2>
+            <p>{{ author.description }}</p>
+            <dl>
+              <div><dt>Primary desk</dt><dd>{{ author.primary_desk }}</dd></div>
+              <div><dt>Coverage focus</dt><dd>{{ author.coverage_focus }}</dd></div>
+            </dl>
+            <div class="author-topic-links">
+              {% for topic in author.topics %}<a href="{{ topic.href }}">{{ topic.label }}</a>{% endfor %}
+            </div>
+            <a class="author-profile-link" href="/authors/{{ author.slug }}/">Read {{ author.name }}'s profile <span>→</span></a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="band authors-trust-band">
+      <div class="authors-trust-panel">
+        <div>
+          <p class="authors-overline">Editorial standards</p>
+          <h2>How CPL Season handles author trust</h2>
+        </div>
+        <div>
+          <p>News articles carry a named byline linked to a public profile. Each profile records the writer's desk, coverage focus and review method.</p>
+          <p>For corrections or author questions, use the <a href="/contact-us/">contact page</a> or email <a href="mailto:contact@cplseason.com">contact@cplseason.com</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260726e" defer></script>
+</body>
+</html>

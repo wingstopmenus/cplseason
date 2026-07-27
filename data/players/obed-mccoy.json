@@ -1,0 +1,58 @@
+{
+  "slug": "obed-mccoy",
+  "name": "Obed McCoy",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Selected by St Kitts & Nevis Patriots for CPL 2026",
+  "image": null,
+  "initials": "OM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Obed Christopher McCoy",
+    "birth_date": "4 January 1997",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm fast-medium",
+    "international_span": "2018–present",
+    "career_teams": [
+      "Rajasthan Royals",
+      "Sussex",
+      "Barbados Royals",
+      "Fortune Barishal",
+      "Paarl Royals",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "43",
+        "runs": "68",
+        "wickets": "52",
+        "best_bowling": "6/17",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "2",
+        "runs": "0",
+        "wickets": "4",
+        "best_bowling": "2/38",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "20",
+        "runs": "70",
+        "wickets": "19",
+        "best_bowling": "2/28",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

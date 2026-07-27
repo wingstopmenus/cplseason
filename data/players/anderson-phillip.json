@@ -1,0 +1,56 @@
+{
+  "slug": "anderson-phillip",
+  "name": "Anderson Phillip",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "New face in the Falcons squad",
+  "image": "/static/img/official/players/anderson-phillip.webp",
+  "initials": "AP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Anderson Phillip",
+    "birth_date": "22 September 1996",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast-medium",
+    "international_span": "",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "Trinbago Knight Riders",
+      "Pokhara Avengers",
+      "Lancashire"
+    ],
+    "records": [
+      {
+        "format": "ODI",
+        "matches": "5",
+        "runs": "22",
+        "wickets": "4",
+        "best_bowling": "2/50",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "2",
+        "runs": "53",
+        "wickets": "3",
+        "best_bowling": "2/30",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "30",
+        "runs": "65",
+        "wickets": "40",
+        "best_bowling": "4/44",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

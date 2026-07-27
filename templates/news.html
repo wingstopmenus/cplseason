@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:site_name" content="CPL Season">
+  <meta property="og:image" content="https://cplseason.com{{ articles[0].image }}">
+  <meta property="og:image:alt" content="{{ articles[0].image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="https://cplseason.com{{ articles[0].image }}">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727z">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="news-desk-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a><a href="/players/">Players</a>
+      <a href="/squads/">Squads</a><a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a><a href="/news/" aria-current="page">News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="news-desk">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">News</li></ol></nav>
+
+    <section class="news-desk-hero" aria-labelledby="news-title">
+      <div>
+        <p class="news-desk-kicker">CPL 2026 news desk</p>
+        <h1 id="news-title">CPL 2026 News and Announcements</h1>
+        <p>Read the team, fixture, venue and broadcast developments shaping the Caribbean Premier League season from 7 August to 20 September.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#latest-news">Read the latest stories</a>
+          <a class="button secondary" href="/schedule/">Open the match schedule</a>
+        </div>
+      </div>
+      <article class="news-desk-lead">
+        <a href="/news/{{ articles[0].slug }}/"><img src="{{ articles[0].image }}" alt="{{ articles[0].image_alt }}" width="1200" height="675"></a>
+        <div>
+          <span>{{ articles[0].category }}</span>
+          <time datetime="{{ articles[0].date_published }}">{{ articles[0].date_label }}</time>
+          <h2><a href="/news/{{ articles[0].slug }}/">{{ articles[0].title }}</a></h2>
+          <p>{{ articles[0].dek }}</p>
+          <a href="/news/{{ articles[0].slug }}/">Read the full story <span>→</span></a>
+        </div>
+      </article>
+    </section>
+
+    <section id="latest-news" class="news-desk-latest" aria-labelledby="latest-news-title">
+      <header>
+        <div><p class="news-desk-kicker">Latest coverage</p><h2 id="latest-news-title">CPL stories and team updates</h2></div>
+        <p>Original summaries and analysis based on confirmed tournament announcements. Dates show when each development was published.</p>
+      </header>
+      <div class="news-desk-grid">
+        {% for article in articles[1:] %}
+        <article>
+          <a class="news-desk-card-image" href="/news/{{ article.slug }}/">
+            <img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1200" height="675" loading="lazy">
+          </a>
+          <div>
+            <p><span>{{ article.category }}</span><time datetime="{{ article.date_published }}">{{ article.date_label }}</time></p>
+            <h3><a href="/news/{{ article.slug }}/">{{ article.title }}</a></h3>
+            <p>{{ article.dek }}</p>
+            <a href="/news/{{ article.slug }}/">Read story <span>→</span></a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="news-desk-follow" aria-labelledby="follow-title">
+      <header><p class="news-desk-kicker">Tournament guide</p><h2 id="follow-title">Follow the season beyond the headlines</h2></header>
+      <div>
+        <a href="/schedule/"><strong>Schedule</strong><span>All 39 fixtures and local start times</span></a>
+        <a href="/squads/"><strong>Squads</strong><span>Seven current team lists</span></a>
+        <a href="/venues/"><strong>Venues</strong><span>Eight ground guides and match windows</span></a>
+        <a href="/watch-live/"><strong>Watch Live</strong><span>Confirmed coverage by country</span></a>
+      </div>
+    </section>
+  </main>
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260726e" defer></script>
+</body>
+</html>

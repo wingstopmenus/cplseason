@@ -1,0 +1,58 @@
+{
+  "slug": "jason-holder",
+  "name": "Jason Holder",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Drafted back into the Patriots squad",
+  "image": null,
+  "initials": "JH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jason Omar Holder",
+    "birth_date": "5 November 1991",
+    "birth_place": "Bridgetown, Barbados",
+    "country": "West Indies",
+    "role": "Bowling all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "2013–present",
+    "career_teams": [
+      "Rajasthan Royals",
+      "Khulna Tigers",
+      "Worcestershire",
+      "Islamabad United",
+      "Los Angeles Knight Riders",
+      "Gujarat Titans"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "96",
+        "runs": "888",
+        "wickets": "108",
+        "best_bowling": "5/27",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "138",
+        "runs": "2,237",
+        "wickets": "159",
+        "best_bowling": "5/27",
+        "hundreds_fifties": "0/12"
+      },
+      {
+        "format": "Test",
+        "matches": "69",
+        "runs": "3,073",
+        "wickets": "162",
+        "best_bowling": "6/42",
+        "hundreds_fifties": "3/14"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "cpl-2026-venues-guide",
+  "category": "Venues",
+  "title": "CPL 2026 Venue Route Covers Eight Caribbean Grounds",
+  "short_title": "CPL 2026 venue route",
+  "description": "CPL 2026 uses eight Caribbean grounds, beginning at Arnos Vale Stadium and ending with finals week at Kensington Oval in Barbados.",
+  "dek": "The schedule moves through eight host territories, with new milestones in St Vincent, Jamaica and Barbados.",
+  "date_published": "2026-07-17",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/venues/arnos-vale-stadium.webp",
+  "image_alt": "Arnos Vale Stadium cricket ground in St Vincent",
+  "summary_heading": "Eight grounds shape the six-week season",
+  "key_points": [
+    "Arnos Vale Stadium hosts the opening three matches.",
+    "Sabina Park welcomes CPL cricket back to Jamaica after a seven-year absence.",
+    "Kensington Oval hosts five league games and all four playoffs."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "The schedule moves in regional blocks",
+      "paragraphs": [
+        "CPL 2026 follows a travelling format, with clusters of matches at each ground. That structure reduces team movement inside a block and gives each host territory a concentrated run of tournament cricket.",
+        "Arnos Vale opens the season before the competition moves to Sabina Park and Daren Sammy Cricket Ground. Antigua, Trinidad and St Kitts follow, then Providence and Kensington Oval close the league phase."
+      ]
+    },
+    {
+      "heading": "Three venues carry added history",
+      "paragraphs": [
+        "St Vincent and the Grenadines hosts men’s CPL matches for the first time. Jamaica returns to the schedule for the first time since 2019, now with Jamaica Kingsmen as the home franchise.",
+        "Barbados stages finals week for the first time. Kensington Oval hosts the final five league fixtures before four playoff nights decide the champion."
+      ]
+    },
+    {
+      "heading": "Planning around local time",
+      "paragraphs": [
+        "The official fixture list uses host-venue time. Jamaica is UTC-5 while the other host territories use UTC-4 during the tournament, so the same 7pm listing converts differently for overseas viewers.",
+        "Each venue guide includes its match window, capacity, ground background and a link back to the fixtures staged there."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/venues/", "label": "All eight venue guides"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"},
+    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"}
+  ],
+  "source_name": "CPL 2026 fixture allocation",
+  "source_date": "2026-04-28",
+  "last_updated": "2026-07-27"
+}

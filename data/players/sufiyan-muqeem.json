@@ -1,0 +1,55 @@
+{
+  "slug": "sufiyan-muqeem",
+  "name": "Sufyan Moqim",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/sufiyan-muqeem.webp",
+  "initials": "SM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Sufyan Moqim",
+    "birth_date": "15 November 1999",
+    "birth_place": "Baithak Awan Abad, Azad Kashmir, Pakistan",
+    "country": "Pakistan",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm wrist spin",
+    "international_span": "2023–present",
+    "career_teams": [
+      "Peshawar Zalmi",
+      "Dolphins",
+      "Derbyshire"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "19",
+        "runs": "26",
+        "wickets": "27",
+        "best_bowling": "5/3",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "4",
+        "runs": "15",
+        "wickets": "8",
+        "best_bowling": "4/52",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "20",
+        "runs": "77",
+        "wickets": "39",
+        "best_bowling": "4/14",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

@@ -1,1 +1,584 @@
 const toggle = document.querySelector(".nav-toggle"); const nav = document.querySelector("#site-nav"); if (toggle && nav) { toggle.addEventListener("click", () => { const isOpen = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", String(isOpen)); }); } const backToTop = document.querySelector(".back-to-top"); if (backToTop) { const setBackToTopState = () => { const isVisible = window.scrollY > 420; backToTop.classList.toggle("is-visible", isVisible); backToTop.setAttribute("aria-hidden", String(!isVisible)); backToTop.tabIndex = isVisible ? 0 : -1; }; backToTop.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); }); setBackToTopState(); window.addEventListener("scroll", setBackToTopState, { passive: true }); } const matchSlider = document.querySelector("#home-match-slider"); const matchSliderButtons = document.querySelectorAll("[data-match-slider]"); if (matchSlider && matchSliderButtons.length) { matchSliderButtons.forEach((button) => { button.addEventListener("click", () => { const direction = button.dataset.matchSlider === "previous" ? -1 : 1; const card = matchSlider.querySelector(".match-rail-card"); const gap = 14; const distance = card ? card.getBoundingClientRect().width + gap : matchSlider.clientWidth; matchSlider.scrollLeft += direction * distance; }); }); } const scheduleVenueFilter = document.querySelector("#schedule-venue-filter"); const scheduleTeamFilter = document.querySelector("#schedule-team-filter"); const scheduleMatchCards = document.querySelectorAll("[data-schedule-match]"); const scheduleFilterCount = document.querySelector("#schedule-filter-count"); const scheduleEmptyState = document.querySelector("#schedule-empty-state"); const scheduleStageHeading = document.querySelector("[data-schedule-stage-heading]"); if (scheduleMatchCards.length && scheduleVenueFilter && scheduleTeamFilter) { const updateScheduleFilters = () => { const venue = scheduleVenueFilter.value; const team = scheduleTeamFilter.value; let visibleMatches = 0; scheduleMatchCards.forEach((card) => { const teamSlugs = card.dataset.teamSlugs.trim().split(/\s+/).filter(Boolean); const venueMatches = !venue || card.dataset.venueSlug === venue; const teamMatches = !team || teamSlugs.includes(team); const isVisible = venueMatches && teamMatches; card.hidden = !isVisible; if (isVisible) { visibleMatches += 1; } }); if (scheduleFilterCount) { scheduleFilterCount.textContent = `${visibleMatches} ${visibleMatches === 1 ? "match" : "matches"}`; } if (scheduleEmptyState) { scheduleEmptyState.hidden = visibleMatches !== 0; } if (scheduleStageHeading) { const hasVisiblePlayoff = [...scheduleMatchCards].some( (card) => !card.hidden && card.dataset.stage !== "League", ); scheduleStageHeading.hidden = !hasVisiblePlayoff; } }; scheduleVenueFilter.addEventListener("change", updateScheduleFilters); scheduleTeamFilter.addEventListener("change", updateScheduleFilters); }
+
+const squadSearch = document.querySelector("#squad-player-search");
+const squadFilterButtons = document.querySelectorAll("[data-squad-filter]");
+const squadPlayers = document.querySelectorAll("[data-squad-player]");
+const squadTeams = document.querySelectorAll("[data-squad-team]");
+const squadResultCount = document.querySelector("#squad-result-count");
+const squadEmptyState = document.querySelector("#squad-empty-state");
+
+if (squadSearch && squadPlayers.length) {
+  let activeSquadCategory = "all";
+
+  const updateSquadFilters = () => {
+    const query = squadSearch.value.trim().toLowerCase();
+    let visiblePlayers = 0;
+
+    squadPlayers.forEach((player) => {
+      const matchesName = !query || player.dataset.playerName.includes(query);
+      const matchesCategory =
+        activeSquadCategory === "all" ||
+        player.dataset.playerCategory === activeSquadCategory;
+      const isVisible = matchesName && matchesCategory;
+      player.hidden = !isVisible;
+      if (isVisible) visiblePlayers += 1;
+    });
+
+    squadTeams.forEach((team) => {
+      let teamHasPlayers = false;
+      team.querySelectorAll("[data-roster-group]").forEach((group) => {
+        const groupHasPlayers = [...group.querySelectorAll("[data-squad-player]")]
+          .some((player) => !player.hidden);
+        group.hidden = !groupHasPlayers;
+        if (groupHasPlayers) teamHasPlayers = true;
+      });
+      team.hidden = !teamHasPlayers;
+    });
+
+    if (squadResultCount) {
+      squadResultCount.textContent =
+        `${visiblePlayers} ${visiblePlayers === 1 ? "player" : "players"} shown`;
+    }
+    if (squadEmptyState) squadEmptyState.hidden = visiblePlayers !== 0;
+  };
+
+  squadSearch.addEventListener("input", updateSquadFilters);
+  squadFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activeSquadCategory = button.dataset.squadFilter;
+      squadFilterButtons.forEach((candidate) => {
+        const isActive = candidate === button;
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-pressed", String(isActive));
+      });
+      updateSquadFilters();
+    });
+  });
+}
+
+const playerDirectorySearch = document.querySelector("#player-directory-search");
+const playerDirectoryCards = document.querySelectorAll("[data-directory-player]");
+const playerCategoryButtons = document.querySelectorAll("button[data-player-filter]");
+const playerTeamButtons = document.querySelectorAll(".player-team-filter button[data-player-team]");
+const playerTeamSections = document.querySelectorAll("[data-player-team-section]");
+const playerDirectoryCount = document.querySelector("#player-directory-count");
+const playerDirectoryEmpty = document.querySelector("#player-directory-empty");
+
+if (playerDirectorySearch && playerDirectoryCards.length) {
+  let activePlayerCategory = "all";
+  let activePlayerTeam = "all";
+
+  const updatePlayerDirectory = () => {
+    const query = playerDirectorySearch.value.trim().toLowerCase();
+    let visiblePlayers = 0;
+
+    playerDirectoryCards.forEach((card) => {
+      const matchesQuery =
+        !query ||
+        card.dataset.playerName.includes(query) ||
+        card.dataset.teamName.includes(query);
+      const matchesCategory =
+        activePlayerCategory === "all" ||
+        card.dataset.playerCategory === activePlayerCategory;
+      const matchesTeam =
+        activePlayerTeam === "all" ||
+        card.dataset.playerTeam === activePlayerTeam;
+      const isVisible = matchesQuery && matchesCategory && matchesTeam;
+      card.hidden = !isVisible;
+      if (isVisible) visiblePlayers += 1;
+    });
+
+    playerTeamSections.forEach((section) => {
+      const hasVisiblePlayers = [...section.querySelectorAll("[data-directory-player]")]
+        .some((card) => !card.hidden);
+      section.hidden = !hasVisiblePlayers;
+    });
+
+    if (playerDirectoryCount) {
+      playerDirectoryCount.textContent =
+        `${visiblePlayers} ${visiblePlayers === 1 ? "player" : "players"} shown`;
+    }
+    if (playerDirectoryEmpty) playerDirectoryEmpty.hidden = visiblePlayers !== 0;
+  };
+
+  playerDirectorySearch.addEventListener("input", updatePlayerDirectory);
+  playerCategoryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activePlayerCategory = button.dataset.playerFilter;
+      playerCategoryButtons.forEach((candidate) => {
+        const isActive = candidate === button;
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-pressed", String(isActive));
+      });
+      updatePlayerDirectory();
+    });
+  });
+  playerTeamButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activePlayerTeam = button.dataset.playerTeam;
+      playerTeamButtons.forEach((candidate) => {
+        const isActive = candidate === button;
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-pressed", String(isActive));
+      });
+      updatePlayerDirectory();
+    });
+  });
+}
+
+const mainHeader = document.querySelector(".site-header");
+const mainNav = document.querySelector("#site-nav");
+const mainNavToggle = document.querySelector(".nav-toggle");
+
+if (mainHeader && mainNav && mainNavToggle) {
+  const closeMainNav = () => {
+    mainNav.classList.remove("is-open");
+    mainNavToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const currentPath = window.location.pathname;
+  const sectionPath = currentPath.startsWith("/player/")
+    ? "/players/"
+    : currentPath.startsWith("/team/")
+      ? "/teams/"
+      : currentPath.startsWith("/venue/")
+        ? "/venues/"
+        : currentPath.startsWith("/news/")
+          ? "/news/"
+          : currentPath;
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    const linkPath = new URL(link.href, window.location.origin).pathname;
+    const isCurrent =
+      sectionPath === linkPath ||
+      (sectionPath === "/" && linkPath === "/");
+    if (isCurrent) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+    link.addEventListener("click", closeMainNav);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!mainHeader.contains(event.target)) closeMainNav();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMainNav();
+      mainNavToggle.focus();
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 1180) closeMainNav();
+  });
+}
+
+const homeCountdown = document.querySelector("[data-countdown-target]");
+
+if (homeCountdown) {
+  const targetTime = Date.parse(homeCountdown.dataset.countdownTarget);
+  const countdownStatus = homeCountdown.querySelector("[data-countdown-status]");
+  const countdownFields = {
+    days: homeCountdown.querySelector("[data-countdown-days]"),
+    hours: homeCountdown.querySelector("[data-countdown-hours]"),
+    minutes: homeCountdown.querySelector("[data-countdown-minutes]"),
+    seconds: homeCountdown.querySelector("[data-countdown-seconds]"),
+  };
+
+  const renderCountdown = () => {
+    const remaining = Math.max(0, targetTime - Date.now());
+    const totalSeconds = Math.floor(remaining / 1000);
+    const values = {
+      days: Math.floor(totalSeconds / 86400),
+      hours: Math.floor((totalSeconds % 86400) / 3600),
+      minutes: Math.floor((totalSeconds % 3600) / 60),
+      seconds: totalSeconds % 60,
+    };
+
+    Object.entries(values).forEach(([unit, value]) => {
+      if (countdownFields[unit]) {
+        countdownFields[unit].textContent = String(value).padStart(2, "0");
+      }
+    });
+
+    if (remaining === 0) {
+      homeCountdown.classList.add("is-complete");
+      if (countdownStatus) countdownStatus.textContent = "CPL 2026 is underway";
+      return false;
+    }
+    return true;
+  };
+
+  if (Number.isFinite(targetTime) && renderCountdown()) {
+    const countdownInterval = window.setInterval(() => {
+      if (!renderCountdown()) window.clearInterval(countdownInterval);
+    }, 1000);
+  }
+}
+
+const homeMatchWindow = document.querySelector("[data-home-match-window]");
+
+if (homeMatchWindow) {
+  const endpoint = homeMatchWindow.dataset.matchStatusEndpoint;
+  const grid = homeMatchWindow.querySelector("[data-match-window-grid]");
+  const badge = homeMatchWindow.querySelector("[data-match-window-badge]");
+  const title = homeMatchWindow.querySelector("[data-match-window-title]");
+  const copy = homeMatchWindow.querySelector("[data-match-window-copy]");
+  const sourceCards = [
+    ...document.querySelectorAll("#home-match-slider .match-rail-card"),
+  ];
+  const settledStatuses = new Set([
+    "complete",
+    "completed",
+    "closed",
+    "finished",
+    "final",
+    "abandoned",
+    "cancelled",
+    "canceled",
+    "no result",
+  ]);
+  let renderedSignature = "";
+  let requestInProgress = false;
+
+  const normalizeStatus = (status = "") =>
+    String(status).trim().toLowerCase().replace(/[_-]+/g, " ");
+
+  const scheduledStatusFrom = (card) => {
+    const sourceTime = card.querySelector(".match-rail-time time");
+    const localTime =
+      card.querySelector(".match-rail-time > span")?.textContent.trim() || "";
+    const date = sourceTime?.dateTime;
+    const timeMatch = localTime.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i);
+    if (!date || !timeMatch) return "Upcoming";
+
+    let hour = Number(timeMatch[1]) % 12;
+    if (timeMatch[3].toLowerCase() === "pm") hour += 12;
+    const minute = Number(timeMatch[2] || 0);
+    const startTime = Date.parse(
+      `${date}T${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}:00-04:00`,
+    );
+    if (!Number.isFinite(startTime)) return "Upcoming";
+
+    const completionBuffer = 6 * 60 * 60 * 1000;
+    return Date.now() >= startTime + completionBuffer ? "Complete" : "Upcoming";
+  };
+
+  const matchNumberFrom = (card) => {
+    const label = card.querySelector(".match-rail-card-header span");
+    const match = label?.textContent.match(/\d+/);
+    return match ? Number(match[0]) : 0;
+  };
+
+  const matchUrlFrom = (sourceCard, matchNumber) => {
+    const existingLink = sourceCard.querySelector(".home-match-card-link");
+    if (existingLink) return existingLink.getAttribute("href");
+    const playoffUrls = {
+      36: "/match/cpl-2026-eliminator/",
+      37: "/match/cpl-2026-qualifier-1/",
+      38: "/match/cpl-2026-qualifier-2/",
+      39: "/match/cpl-2026-final/",
+    };
+    if (playoffUrls[matchNumber]) return playoffUrls[matchNumber];
+    const teamLinks = [
+      ...sourceCard.querySelectorAll('.match-rail-teams a[href^="/team/"]'),
+    ].slice(0, 2);
+    if (teamLinks.length !== 2) return "/schedule/";
+    const slugs = teamLinks.map((link) =>
+      link.pathname.split("/").filter(Boolean).pop(),
+    );
+    return `/match/${slugs[0]}-vs-${slugs[1]}/`;
+  };
+
+  const displayStatus = (status) => {
+    const normalized = normalizeStatus(status);
+    if (settledStatuses.has(normalized)) {
+      return { label: "Complete", value: "complete" };
+    }
+    if (
+      normalized === "live" ||
+      normalized === "in progress" ||
+      normalized === "inprogress"
+    ) {
+      return { label: "Live", value: "live" };
+    }
+    return { label: "Upcoming", value: "upcoming" };
+  };
+
+  const buildTeamLink = (sourceLink, name) => {
+    const link = document.createElement("a");
+    link.href = sourceLink?.getAttribute("href") || "/schedule/";
+    const sourceImage = sourceLink?.querySelector("img");
+    if (sourceImage) {
+      const image = sourceImage.cloneNode();
+      image.loading = "lazy";
+      image.decoding = "async";
+      link.append(image);
+    }
+    const label = document.createElement("span");
+    label.textContent = name;
+    link.append(label);
+    return link;
+  };
+
+  const buildWindowCard = (sourceCard, status) => {
+    const matchNumber = matchNumberFrom(sourceCard);
+    const card = document.createElement("article");
+    card.className = "match-centre-card";
+
+    const cardLink = document.createElement("a");
+    cardLink.className = "home-match-card-link";
+    cardLink.href = matchUrlFrom(sourceCard, matchNumber);
+    cardLink.setAttribute("aria-label", `Open Match ${matchNumber} centre`);
+    card.append(cardLink);
+
+    const top = document.createElement("div");
+    top.className = "match-card-top";
+    const numberLabel = document.createElement("span");
+    numberLabel.textContent = `Match ${matchNumber}`;
+    const statusLabel = document.createElement("strong");
+    const visibleStatus = displayStatus(status);
+    statusLabel.textContent = visibleStatus.label;
+    statusLabel.dataset.status = visibleStatus.value;
+    top.append(numberLabel, statusLabel);
+    card.append(top);
+
+    const sourceTeamLinks = [
+      ...sourceCard.querySelectorAll(".match-rail-teams > a"),
+    ].slice(0, 2);
+    const titleText =
+      sourceCard.querySelector(".match-rail-title")?.textContent.trim() || "";
+    const teamNames = titleText.includes(" vs ")
+      ? titleText.split(" vs ", 2)
+      : sourceTeamLinks.map(
+          (link) => link.getAttribute("aria-label")?.replace(/ team page$/, "") || "TBC",
+        );
+    const teams = document.createElement("div");
+    teams.className = "match-card-teams";
+    const versus = document.createElement("b");
+    versus.textContent = "VS";
+    teams.append(
+      buildTeamLink(sourceTeamLinks[0], teamNames[0] || "TBC"),
+      versus,
+      buildTeamLink(sourceTeamLinks[1], teamNames[1] || "TBC"),
+    );
+    card.append(teams);
+
+    const meta = document.createElement("div");
+    meta.className = "match-card-meta";
+    const sourceTime = sourceCard.querySelector(".match-rail-time time");
+    const localTime =
+      sourceCard.querySelector(".match-rail-time > span")?.textContent.trim() ||
+      "";
+    const time = document.createElement("time");
+    if (sourceTime?.dateTime) time.dateTime = sourceTime.dateTime;
+    time.textContent = [sourceTime?.textContent.trim(), localTime]
+      .filter(Boolean)
+      .join(" · ");
+    const sourceVenue = sourceCard.querySelector(".match-rail-venue");
+    const venue = document.createElement("a");
+    venue.href = sourceVenue?.getAttribute("href") || "/venues/";
+    venue.textContent =
+      sourceVenue?.textContent.split(" · ", 1)[0].trim() || "Venue guide";
+    meta.append(time, venue);
+    card.append(meta);
+    return card;
+  };
+
+  const renderMatchWindow = (statusFeed) => {
+    const statusByNumber = new Map(
+      statusFeed.map((match) => [
+        Number(match.matchNumber),
+        String(match.status || ""),
+      ]),
+    );
+    sourceCards.forEach((card) => {
+      const number = matchNumberFrom(card);
+      if (!statusByNumber.has(number)) {
+        statusByNumber.set(number, scheduledStatusFrom(card));
+      }
+    });
+    let completedInOrder = 0;
+    for (let number = 1; number <= sourceCards.length; number += 1) {
+      if (!settledStatuses.has(normalizeStatus(statusByNumber.get(number)))) break;
+      completedInOrder = number;
+    }
+
+    const windowSize = 4;
+    const lastStart = Math.floor((sourceCards.length - 1) / 3) * 3;
+    const start = Math.min(
+      Math.floor(completedInOrder / 3) * 3,
+      lastStart,
+    );
+    const visibleCards = sourceCards.slice(start, start + windowSize);
+    const signature = `${start}:${visibleCards
+      .map((card) => {
+        const number = matchNumberFrom(card);
+        return `${number}-${normalizeStatus(statusByNumber.get(number))}`;
+      })
+      .join("|")}`;
+    if (signature === renderedSignature) return;
+    renderedSignature = signature;
+
+    const fragment = document.createDocumentFragment();
+    visibleCards.forEach((sourceCard) => {
+      const number = matchNumberFrom(sourceCard);
+      fragment.append(buildWindowCard(sourceCard, statusByNumber.get(number)));
+    });
+    grid.replaceChildren(fragment);
+
+    const firstNumber = start + 1;
+    const lastNumber = Math.min(start + windowSize, sourceCards.length);
+    if (badge) {
+      badge.textContent =
+        completedInOrder === sourceCards.length
+          ? "Season complete"
+          : "Upcoming matches";
+    }
+    if (title) {
+      title.textContent =
+        completedInOrder === sourceCards.length
+          ? "CPL 2026 Final Matches"
+          : "CPL 2026 Upcoming Matches";
+    }
+    if (copy) {
+      copy.textContent =
+        completedInOrder === sourceCards.length
+          ? "The final matches remain here after the tournament is complete."
+          : "The next four CPL 2026 fixtures are shown below. Once three results are confirmed, the following matches move into view.";
+    }
+  };
+
+  const refreshMatchWindow = async () => {
+    if (!endpoint || !grid || sourceCards.length !== 39 || requestInProgress) return;
+    requestInProgress = true;
+    try {
+      const response = await fetch(endpoint, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Match status request failed: ${response.status}`);
+      const statusFeed = await response.json();
+      if (!Array.isArray(statusFeed)) throw new Error("Match status response is invalid");
+      renderMatchWindow(statusFeed);
+    } catch (error) {
+      console.warn("CPL homepage match window refresh unavailable", error);
+    } finally {
+      requestInProgress = false;
+    }
+  };
+
+  refreshMatchWindow();
+  window.setInterval(() => {
+    if (document.visibilityState === "visible") refreshMatchWindow();
+  }, 30000);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") refreshMatchWindow();
+  });
+}
+
+const contactForm = document.querySelector("[data-contact-form]");
+
+if (contactForm) {
+  const contactMessage = contactForm.querySelector("#contact-message");
+  const contactMessageCount = document.querySelector("#contact-message-count");
+  const contactSuccess = document.querySelector("#contact-success");
+  const contactUrl = contactForm.querySelector("#contact-url");
+  const contactParams = new URLSearchParams(window.location.search);
+
+  if (contactMessage && contactMessageCount) {
+    const updateContactCount = () => {
+      contactMessageCount.textContent = `${contactMessage.value.length.toLocaleString()} / 2,000`;
+    };
+    contactMessage.addEventListener("input", updateContactCount);
+    updateContactCount();
+  }
+
+  if (contactUrl && document.referrer) {
+    const referringUrl = new URL(document.referrer);
+    if (referringUrl.origin === window.location.origin && referringUrl.pathname !== window.location.pathname) {
+      contactUrl.value = referringUrl.href;
+    }
+  }
+
+  if (contactSuccess && contactParams.get("sent") === "1") {
+    contactSuccess.hidden = false;
+    contactSuccess.scrollIntoView({ block: "center" });
+    window.history.replaceState({}, "", window.location.pathname);
+  }
+}
+
+const liveMatchCountdown = document.querySelector("[data-match-countdown]");
+
+if (liveMatchCountdown) {
+  const targetTime = Date.parse(liveMatchCountdown.dataset.countdownTarget);
+  const label = liveMatchCountdown.querySelector("[data-match-countdown-label]");
+  const fields = {
+    days: liveMatchCountdown.querySelector("[data-countdown-days]"),
+    hours: liveMatchCountdown.querySelector("[data-countdown-hours]"),
+    minutes: liveMatchCountdown.querySelector("[data-countdown-minutes]"),
+    seconds: liveMatchCountdown.querySelector("[data-countdown-seconds]"),
+  };
+
+  const updateLiveMatchCountdown = () => {
+    const remaining = targetTime - Date.now();
+    if (remaining <= 0) {
+      liveMatchCountdown.classList.add("is-live");
+      if (label) label.textContent = "Match window open · live data appears above";
+      return false;
+    }
+    const totalSeconds = Math.floor(remaining / 1000);
+    const values = {
+      days: Math.floor(totalSeconds / 86400),
+      hours: Math.floor((totalSeconds % 86400) / 3600),
+      minutes: Math.floor((totalSeconds % 3600) / 60),
+      seconds: totalSeconds % 60,
+    };
+    Object.entries(values).forEach(([unit, value]) => {
+      if (fields[unit]) fields[unit].textContent = String(value).padStart(2, "0");
+    });
+    return true;
+  };
+
+  if (Number.isFinite(targetTime) && updateLiveMatchCountdown()) {
+    const timer = window.setInterval(() => {
+      if (!updateLiveMatchCountdown()) window.clearInterval(timer);
+    }, 1000);
+  }
+}
+
+const liveMatchFrame = document.querySelector("[data-match-frame]");
+const liveMatchRefresh = document.querySelector("[data-match-frame-refresh]");
+const liveMatchFrameStatus = document.querySelector("[data-match-frame-status]");
+const liveMatchFrameShell = document.querySelector("[data-match-frame-shell]");
+const liveMatchPrestart = document.querySelector("[data-match-prestart]");
+
+if (liveMatchFrame && liveMatchFrameShell) {
+  const matchStart = Date.parse(liveMatchFrameShell.dataset.matchStart);
+  const liveWindowStart = matchStart - (6 * 60 * 60 * 1000);
+  const activateMatchFrame = () => {
+    if (!liveMatchFrame.hasAttribute("src") && liveMatchFrame.dataset.src) {
+      liveMatchFrame.src = liveMatchFrame.dataset.src;
+    }
+    liveMatchFrame.hidden = false;
+    if (liveMatchPrestart) liveMatchPrestart.hidden = true;
+  };
+
+  if (Number.isFinite(matchStart) && Date.now() >= liveWindowStart) {
+    activateMatchFrame();
+  } else if (liveMatchRefresh) {
+    liveMatchRefresh.disabled = true;
+    liveMatchRefresh.title = "Available within six hours of the scheduled start";
+  }
+
+  liveMatchFrame.addEventListener("load", () => {
+    if (liveMatchFrameStatus) {
+      liveMatchFrameStatus.textContent = "Match centre loaded · live panels refresh automatically";
+    }
+  });
+  if (liveMatchRefresh) {
+    liveMatchRefresh.addEventListener("click", () => {
+      if (liveMatchRefresh.disabled) return;
+      if (liveMatchFrameStatus) liveMatchFrameStatus.textContent = "Refreshing match centre…";
+      liveMatchFrame.src = liveMatchFrame.src;
+    });
+  }
+}

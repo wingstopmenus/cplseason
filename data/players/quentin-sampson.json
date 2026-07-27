@@ -1,0 +1,54 @@
+{
+  "slug": "quentin-sampson",
+  "name": "Quentin Sampson",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "QS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Quentin Sampson",
+    "birth_date": "4 August 2000",
+    "birth_place": "Guyana",
+    "country": "West Indies",
+    "role": "Batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "2026-present",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "12",
+        "runs": "276",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "T20I",
+        "matches": "3",
+        "runs": "35",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "2",
+        "runs": "13",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

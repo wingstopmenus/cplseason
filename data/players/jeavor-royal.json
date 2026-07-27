@@ -1,0 +1,51 @@
+{
+  "slug": "jeavor-royal",
+  "name": "Jeavor Royal",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "JR",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jeavor Royal",
+    "birth_date": "2 December 1998",
+    "birth_place": "Jamaica",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow left-arm Orthodox",
+    "international_span": "",
+    "career_teams": [],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "23",
+        "runs": "427",
+        "wickets": "19",
+        "best_bowling": "3/19",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "22",
+        "runs": "748",
+        "wickets": "20",
+        "best_bowling": "3/33",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "1",
+        "runs": "77",
+        "wickets": "2",
+        "best_bowling": "2/60",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

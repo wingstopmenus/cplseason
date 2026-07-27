@@ -1,0 +1,28 @@
+{
+  "slug": "amari-goodridge",
+  "name": "Amari Goodridge",
+  "team_slug": "saint-lucia-kings",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": "/static/img/official/players/amari-goodridge.webp",
+  "initials": "AG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Amari Alexandre Goodridge",
+    "birth_date": "10 November 2001",
+    "birth_place": "Bridgetown, Barbados",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Combined Campuses and Colleges"
+    ],
+    "records": []
+  }
+}

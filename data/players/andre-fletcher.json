@@ -1,0 +1,58 @@
+{
+  "slug": "andre-fletcher",
+  "name": "Andre Fletcher",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "AF",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Andre David Stephon Fletcher",
+    "birth_date": "28 November 1987",
+    "birth_place": "Saint David Parish, Grenada",
+    "country": "West Indies",
+    "role": "",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2008–2024",
+    "career_teams": [
+      "Nangarhar Leopards",
+      "Melbourne Stars",
+      "St Kitts and Nevis Patriots",
+      "Kandy Falcons",
+      "Khulna Tigers",
+      "Los Angeles Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "60",
+        "runs": "984",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "–/6"
+      },
+      {
+        "format": "ODI",
+        "matches": "25",
+        "runs": "354",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "–/2"
+      },
+      {
+        "format": "LA",
+        "matches": "114",
+        "runs": "2431",
+        "wickets": "4",
+        "best_bowling": "2/3",
+        "hundreds_fifties": "1/13"
+      }
+    ]
+  }
+}

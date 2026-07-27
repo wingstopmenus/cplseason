@@ -1,0 +1,58 @@
+{
+  "slug": "kieron-pollard",
+  "name": "Kieron Pollard",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/kieron-pollard.webp",
+  "initials": "KP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kieron Adrian Pollard",
+    "birth_date": "12 May 1987",
+    "birth_place": "Tacarigua, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Batting all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2007–2022",
+    "career_teams": [
+      "Peshawar Zalmi",
+      "Multan Sultans",
+      "Trinbago Knight Riders",
+      "MI Emirates",
+      "MI New York",
+      "MI Cape Town"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "746",
+        "runs": "14,803",
+        "wickets": "336",
+        "best_bowling": "4/15",
+        "hundreds_fifties": "2/70"
+      },
+      {
+        "format": "T20I",
+        "matches": "101",
+        "runs": "1,569",
+        "wickets": "42",
+        "best_bowling": "4/25",
+        "hundreds_fifties": "0/6"
+      },
+      {
+        "format": "ODI",
+        "matches": "123",
+        "runs": "2,706",
+        "wickets": "55",
+        "best_bowling": "3/27",
+        "hundreds_fifties": "3/13"
+      }
+    ]
+  }
+}

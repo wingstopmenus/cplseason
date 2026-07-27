@@ -1,0 +1,72 @@
+{
+  "slug": "guyana-amazon-warriors",
+  "name": "Guyana Amazon Warriors",
+  "logo": "/static/img/official/teams/guyana-amazon-warriors.png",
+  "short_name": "Warriors",
+  "territory": "Guyana",
+  "city": "Providence",
+  "venue_slug": "providence-stadium",
+  "schedule_names": [
+    "Guyana Amazon Warriors"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 5,
+  "status_label": "Guyanese core",
+  "founded": 2013,
+  "identity": "Founding franchise · 2023 champions",
+  "title_count": 1,
+  "title_years": [
+    2023
+  ],
+  "honours": "CPL champions in 2023",
+  "profile_lede": "Perennial contenders with a title-winning pedigree, a deeply Guyanese local core and a decisive late-season home block at Providence.",
+  "history": [
+    "Guyana Amazon Warriors have competed in every CPL season since the inaugural 2013 tournament. Repeated trips to the final made the franchise one of the competition's most consistent contenders before the long-awaited breakthrough.",
+    "The Warriors won their first CPL championship in 2023, defeating Trinbago Knight Riders at Providence Stadium. That home triumph remains the defining moment in the franchise's tournament history.",
+    "For 2026, Shimron Hetmyer, Romario Shepherd, Shai Hope and Shamar Joseph headline a locally selected group with a strong Guyanese base. Providence hosts the final five-match venue block of the league phase."
+  ],
+  "profile_highlights": [
+    {
+      "label": "Breakthrough",
+      "title": "Champions at Providence",
+      "text": "The Warriors ended their long wait by winning the 2023 final on home soil."
+    },
+    {
+      "label": "Local core",
+      "title": "Built in Guyana",
+      "text": "Ten of the twelve locally selected players in the published 2026 core are Guyanese."
+    },
+    {
+      "label": "Run-in",
+      "title": "The league phase ends at home",
+      "text": "Providence stages five closing league fixtures, including four Warriors matches."
+    }
+  ],
+  "summary": "Guyana retain Shimron Hetmyer, Romario Shepherd, Shai Hope and Shamar Joseph, while 10 of their 12 locally selected players come from Guyana.",
+  "storyline": "The Warriors close their home programme with five matches at Providence Stadium from 4 to 11 September, including the final match of the league phase.",
+  "roster": [
+    "shimron-hetmyer",
+    "romario-shepherd",
+    "shai-hope",
+    "khary-pierre",
+    "shamar-joseph",
+    "ronaldo-alimohamed",
+    "veerasammy-permaul",
+    "matthew-nandu",
+    "jonathan-van-lange",
+    "mavendra-dindyal",
+    "isai-thorne",
+    "quentin-sampson",
+    "imran-tahir",
+    "glenn-phillips",
+    "mohammad-nabi",
+    "rahmanullah-gurbaz",
+    "dwaine-pretorius"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "9f05bd7c-1239-49a8-bc79-b71bf245fcd7"
+  },
+  "last_updated": "2026-07-27"
+}

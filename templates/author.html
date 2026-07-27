@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ author.name }} | {{ author.role }} at CPL Season</title>
+  <meta name="description" content="{{ author.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ author.canonical }}">
+  <meta property="og:title" content="{{ author.name }} | CPL Season">
+  <meta property="og:description" content="{{ author.description }}">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="{{ author.canonical }}">
+  <meta property="og:image" content="https://cplseason.com{{ author.image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727zo">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="author-profile-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a><a href="/players/">Players</a>
+      <a href="/squads/">Squads</a><a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
+    </nav>
+  </header>
+  <nav class="authors-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/authors/">Authors</a></li><li aria-current="page">{{ author.name }}</li></ol></nav>
+
+  <main id="main">
+    <section class="page-hero compact author-profile-hero">
+      <p class="eyebrow">{{ author.role }}</p>
+      <h1>{{ author.name }}</h1>
+      <p>{{ author.description }}</p>
+    </section>
+
+    <section class="band author-profile-main">
+      <article class="author-profile-card">
+        <div class="author-profile-photo">
+          <img src="{{ author.image }}" alt="{{ author.name }} author photo" width="1200" height="1200" loading="eager" decoding="async">
+        </div>
+        <div class="author-profile-copy">
+          <p class="authors-overline">Professional profile</p>
+          <h2>{{ author.full_role }}</h2>
+          {% for paragraph in author.bio %}<p>{{ paragraph }}</p>{% endfor %}
+          <div class="author-topic-links">
+            {% for topic in author.topics %}<a href="{{ topic.href }}">{{ topic.label }}</a>{% endfor %}
+          </div>
+          <div class="author-profile-actions">
+            <a class="author-profile-link" href="/contact-us/">Contact the editorial desk <span>→</span></a>
+            <a href="/authors/">View all authors</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="band muted author-profile-details">
+      <article>
+        <p class="authors-overline">Editorial identity</p>
+        <h2>{{ author.primary_desk }}</h2>
+        <dl>
+          <div><dt>Author</dt><dd>{{ author.name }}</dd></div>
+          <div><dt>Role</dt><dd>{{ author.full_role }}</dd></div>
+          <div><dt>Coverage</dt><dd>{{ author.coverage_focus }}</dd></div>
+        </dl>
+      </article>
+      <article>
+        <p class="authors-overline">Working method</p>
+        <h2>How {{ author.first_name }} checks a page</h2>
+        <ul>{% for item in author.method %}<li>{{ item }}</li>{% endfor %}</ul>
+      </article>
+    </section>
+
+    <section class="band author-articles-band">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Published work</p>
+          <h2>Latest articles by {{ author.name }}</h2>
+          <p>Recent CPL Season stories assigned to this author.</p>
+        </div>
+        <a href="/news/">All news</a>
+      </div>
+      {% if articles %}
+      <div class="author-article-list">
+        {% for article in articles %}
+        <a href="/news/{{ article.slug }}/">
+          <span>{{ article.category }}</span>
+          <strong>{{ article.title }}</strong>
+          <time datetime="{{ article.date_published }}">{{ article.date_label }}</time>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="notice">This author supports permanent guides and data pages. News bylines will appear here as new stories are published.</div>
+      {% endif %}
+    </section>
+  </main>
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260726e" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "slug": "alzarri-joseph",
+  "name": "Alzarri Joseph",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Signed by Antigua & Barbuda Falcons for CPL 2026",
+  "image": "/static/img/official/players/alzarri-joseph.webp",
+  "initials": "AJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Alzarri Shaheim Joseph",
+    "birth_date": "20 November 1996",
+    "birth_place": "Antigua, Antigua and Barbuda",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "2016–present",
+    "career_teams": [
+      "Gujarat Titans",
+      "Fortune Barishal",
+      "Joburg Super Kings",
+      "Royal Challengers Bengaluru",
+      "Peshawar Zalmi",
+      "Quetta Gladiators"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "45",
+        "runs": "129",
+        "wickets": "62",
+        "best_bowling": "5/40",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "86",
+        "runs": "497",
+        "wickets": "138",
+        "best_bowling": "5/56",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "42",
+        "runs": "804",
+        "wickets": "130",
+        "best_bowling": "5/27",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

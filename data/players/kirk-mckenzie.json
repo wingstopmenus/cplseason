@@ -1,0 +1,54 @@
+{
+  "slug": "kirk-mckenzie",
+  "name": "Kirk McKenzie",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "KM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kirk Sanjay Alexander McKenzie",
+    "birth_date": "9 November 2000",
+    "birth_place": "Jamaica",
+    "country": "West Indies",
+    "role": "Top-order batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2023–2024",
+    "career_teams": [
+      "Jamaica Tallawahs",
+      "Jamaica"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "14",
+        "runs": "154",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "7",
+        "runs": "203",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "17",
+        "runs": "396",
+        "wickets": "2",
+        "best_bowling": "2/20",
+        "hundreds_fifties": "0/3"
+      }
+    ]
+  }
+}

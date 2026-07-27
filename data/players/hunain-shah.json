@@ -1,0 +1,54 @@
+{
+  "slug": "hunain-shah",
+  "name": "Hunain Shah",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "HS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Hunain Shah",
+    "birth_date": "4 February 2004",
+    "birth_place": "Lower Dir District, Khyber Pakhtunkhwa, Pakistan",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast medium",
+    "international_span": "",
+    "career_teams": [
+      "Central Punjab",
+      "Hyderabad Kingsmen"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "25",
+        "runs": "28",
+        "wickets": "26",
+        "best_bowling": "3/20",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "9",
+        "runs": "50",
+        "wickets": "14",
+        "best_bowling": "6/26",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "10",
+        "runs": "38",
+        "wickets": "22",
+        "best_bowling": "4/61",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

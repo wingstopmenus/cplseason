@@ -1,0 +1,58 @@
+{
+  "slug": "george-linde",
+  "name": "George Linde",
+  "team_slug": "barbados-royals",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from South Africa",
+  "image": null,
+  "initials": "GL",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "George Fredrik Linde",
+    "birth_date": "4 December 1991",
+    "birth_place": "Cape Town, Cape Province, South Africa",
+    "country": "South Africa",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "",
+    "career_teams": [
+      "Lahore Qalanders",
+      "Peshawar Zalmi",
+      "MI New York",
+      "Trent Rockets",
+      "Lucknow Super Giants",
+      "Nottinghamshire"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "37",
+        "runs": "403",
+        "wickets": "35",
+        "best_bowling": "4/21",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "4",
+        "runs": "29",
+        "wickets": "4",
+        "best_bowling": "2/32",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "135",
+        "wickets": "9",
+        "best_bowling": "5/64",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "johann-jeremiah",
+  "name": "Johann Jeremiah",
+  "team_slug": "saint-lucia-kings",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "JJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Johann Francis Jeremiah",
+    "birth_date": "2 December 1999",
+    "birth_place": "Grenada",
+    "country": "",
+    "role": "Batsman",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "",
+    "career_teams": [
+      "Windward Islands",
+      "St Lucia Kings",
+      "Windward Islands Infernos"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "1",
+        "runs": "1",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "12",
+        "runs": "293",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "FC",
+        "matches": "15",
+        "runs": "815",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "jediah-blades",
+  "name": "Jediah Blades",
+  "team_slug": "jamaica-kingsmen",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": null,
+  "initials": "JB",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jediah Blades",
+    "birth_date": "15 April 2002",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm Fast medium",
+    "international_span": "2024–present",
+    "career_teams": [
+      "Combined Campuses and Colleges",
+      "West Indies Academy",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "6",
+        "runs": "5",
+        "wickets": "6",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "3",
+        "runs": "0",
+        "wickets": "1",
+        "best_bowling": "1/46",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "19",
+        "runs": "20",
+        "wickets": "39",
+        "best_bowling": "5/28",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

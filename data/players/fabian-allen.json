@@ -1,0 +1,58 @@
+{
+  "slug": "fabian-allen",
+  "name": "Fabian Allen",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/fabian-allen.webp",
+  "initials": "FA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Fabian Anthony Allen",
+    "birth_date": "7 May 1995",
+    "birth_place": "Kingston, Jamaica",
+    "country": "West Indies",
+    "role": "Bowling all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2018–present",
+    "career_teams": [
+      "Jaffna Kings",
+      "Abu Dhabi Knight Riders",
+      "Paarl Royals",
+      "Antigua and Barbuda Falcons",
+      "Adelaide Strikers",
+      "Hobart Hurricanes"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "39",
+        "runs": "272",
+        "wickets": "24",
+        "best_bowling": "2/18",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "20",
+        "runs": "200",
+        "wickets": "7",
+        "best_bowling": "2/40",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "41",
+        "runs": "512",
+        "wickets": "22",
+        "best_bowling": "2/18",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

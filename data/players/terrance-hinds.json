@@ -1,0 +1,56 @@
+{
+  "slug": "terrance-hinds",
+  "name": "Terrance Hinds",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/terrance-hinds.webp",
+  "initials": "TH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Terrance Hinds",
+    "birth_date": "",
+    "birth_place": "Trinidad",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "2024",
+    "career_teams": [
+      "Trinbago Knight Riders",
+      "Trinidad and Tobago",
+      "Surrey Jaguars",
+      "Abu Dhabi Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "18",
+        "runs": "38",
+        "wickets": "13",
+        "best_bowling": "3/17",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "2",
+        "runs": "5",
+        "wickets": "1",
+        "best_bowling": "1/30",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "19",
+        "runs": "150",
+        "wickets": "21",
+        "best_bowling": "4/15",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

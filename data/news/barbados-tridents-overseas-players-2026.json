@@ -1,0 +1,52 @@
+{
+  "slug": "barbados-tridents-overseas-players-2026",
+  "category": "Squads",
+  "title": "Barbados Tridents Confirm Five Overseas Players for CPL 2026",
+  "short_title": "Tridents overseas players",
+  "description": "Barbados Tridents name Quinton de Kock, Chris Green, Mujeeb Ur Rahman, George Linde and Daniel Sams for the CPL 2026 season.",
+  "dek": "The returning Tridents identity comes with a balanced overseas group built around Quinton de Kock’s opening batting and three distinct spin options.",
+  "date_published": "2026-07-09",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/news/barbados-tridents-unveil-overseas-contingent-for-cpl-2026.jpg",
+  "image_alt": "Barbados batter playing a shot during a CPL match",
+  "team_slug": "barbados-royals",
+  "summary_heading": "Barbados complete a balanced 17-player group",
+  "key_points": [
+    "Quinton de Kock gives Barbados a left-handed wicketkeeper-opener.",
+    "Chris Green, Mujeeb Ur Rahman and George Linde offer three different spin styles.",
+    "Kensington Oval hosts the team’s league block and the CPL 2026 playoffs."
+  ],
+  "players_heading": "The five overseas additions",
+  "player_slugs": ["quinton-de-kock", "chris-green", "mujeeb-ur-rahman", "george-linde", "daniel-sams"],
+  "sections": [
+    {
+      "heading": "A new season under the Tridents name",
+      "paragraphs": [
+        "Barbados return to the Tridents identity in 2026 after five seasons as the Royals. The overseas group gives the relaunched side an experienced opener, three spin options and a left-arm seam-bowling all-rounder.",
+        "De Kock can keep wicket and set the powerplay tempo. Green and Linde lengthen the batting, Mujeeb attacks with the new ball or through the middle, and Sams offers pace plus late-order hitting."
+      ]
+    },
+    {
+      "heading": "Depth around Powell, Holder and Athanaze",
+      "paragraphs": [
+        "Rovman Powell, Jason Holder and Alick Athanaze anchor the West Indian group. Their presence allows Barbados to choose overseas players according to the surface rather than use one fixed combination.",
+        "A spin-heavy side could field Green, Mujeeb and Linde together. A batting-led selection could pair de Kock with Sams and use Holder’s seam bowling to keep the attack balanced."
+      ]
+    },
+    {
+      "heading": "Kensington Oval shapes the campaign",
+      "paragraphs": [
+        "Barbados play their first league match in Jamaica on 11 August. Their home block at Kensington Oval arrives in September and leads into four playoff matches at the same ground.",
+        "Repeated cricket at Kensington may reward teams that read changing conditions quickly. Barbados have built enough variety to alter their spin and seam mix without weakening the batting."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/barbados-royals/", "label": "Tridents team guide"},
+    {"href": "/squads/", "label": "All CPL 2026 squads"},
+    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"}
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_date": "2026-07-09",
+  "last_updated": "2026-07-27"
+}

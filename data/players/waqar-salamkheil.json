@@ -1,0 +1,58 @@
+{
+  "slug": "waqar-salamkheil",
+  "name": "Waqar Salamkheil",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "WS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mohammad Waqar Salamkheil",
+    "birth_date": "2 October 2001",
+    "birth_place": "Kabul, Afghanistan",
+    "country": "Afghanistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm unorthodox spin",
+    "international_span": "2019",
+    "career_teams": [
+      "MI Cape Town",
+      "Trinbago Knight Riders",
+      "MI Emirates",
+      "Hobart Hurricanes",
+      "St Kitts & Nevis Patriots",
+      "Paarl Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "101",
+        "runs": "24",
+        "wickets": "133",
+        "best_bowling": "4/14",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "1",
+        "runs": "1",
+        "wickets": "4",
+        "best_bowling": "2/35",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "8",
+        "runs": "3",
+        "wickets": "4",
+        "best_bowling": "2/22",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

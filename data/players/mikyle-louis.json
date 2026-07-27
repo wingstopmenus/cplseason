@@ -1,0 +1,54 @@
+{
+  "slug": "mikyle-louis",
+  "name": "Mikyle Louis",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Breakout player",
+  "selection_note": "Right to Match breakout selection",
+  "image": null,
+  "initials": "ML",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mikyle Louis",
+    "birth_date": "19 August 2000",
+    "birth_place": "St. Kitts and Nevis",
+    "country": "West Indies",
+    "role": "Opening batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm leg break",
+    "international_span": "2024-present",
+    "career_teams": [
+      "Leeward Islands",
+      "St Kitts and Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "9",
+        "runs": "201",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "Test",
+        "matches": "10",
+        "runs": "369",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "LA",
+        "matches": "9",
+        "runs": "153",
+        "wickets": "3",
+        "best_bowling": "2/45",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

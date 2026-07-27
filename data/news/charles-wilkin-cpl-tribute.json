@@ -1,0 +1,50 @@
+{
+  "slug": "charles-wilkin-cpl-tribute",
+  "category": "CPL News",
+  "title": "CPL Remembers Charles Wilkin, Founding Committee Member",
+  "short_title": "CPL tribute to Charles Wilkin",
+  "description": "The Caribbean Premier League remembers Charles L. A. Wilkin CMG KC, a founding cricket committee member who helped bring CPL matches to St Kitts.",
+  "dek": "Charles L. A. Wilkin, a lawyer, former first-class cricketer and lifelong administrator in St Kitts and Nevis, died on 25 July 2026.",
+  "date_published": "2026-07-26",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/venues/warner-park.webp",
+  "image_alt": "Warner Park cricket ground in Basseterre, St Kitts",
+  "summary_heading": "A formative figure in the league’s St Kitts story",
+  "key_points": [
+    "Wilkin served as a founding member of the CPL cricket committee before the tournament launched in 2013.",
+    "He helped develop Warner Park and supported the work that brought CPL cricket to St Kitts and Nevis.",
+    "His cricket service also included the local organising committee for the 2007 ICC Cricket World Cup."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "CPL remembers an early adviser",
+      "paragraphs": [
+        "The Caribbean Premier League has paid tribute to Charles L. A. Wilkin CMG KC following his death on 25 July. Wilkin was a respected attorney in St Kitts and Nevis and a cricket administrator whose work reached from local development to major international events.",
+        "He joined the CPL’s cricket committee during the tournament’s formative period. The league credited his knowledge and standing in Caribbean cricket with helping to establish the structures used ahead of the first season in 2013."
+      ]
+    },
+    {
+      "heading": "His connection to Warner Park",
+      "paragraphs": [
+        "Wilkin played an important role in the development of Warner Park as an international venue. That work helped St Kitts and Nevis host major cricket and later strengthened the case for CPL matches in Basseterre.",
+        "Warner Park became the home of St Kitts & Nevis Patriots when the franchise entered the competition. It remains one of the eight grounds on the 2026 men’s CPL schedule."
+      ]
+    },
+    {
+      "heading": "A life across cricket and public service",
+      "paragraphs": [
+        "Before his administrative career, Wilkin played first-class cricket for Cambridge University and the Combined Leeward and Windward Islands. He later chaired the local organising committee that delivered 2007 World Cup matches in St Kitts.",
+        "The CPL extended condolences to his family, friends and the people of St Kitts and Nevis. His contribution sits inside the history of both Warner Park and the region’s franchise tournament."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/venue/warner-park/", "label": "Warner Park guide"},
+    {"href": "/team/st-kitts-nevis-patriots/", "label": "Patriots team guide"},
+    {"href": "/news/", "label": "Latest CPL news"}
+  ],
+  "source_name": "Caribbean Premier League statement",
+  "source_date": "2026-07-26",
+  "last_updated": "2026-07-27"
+}

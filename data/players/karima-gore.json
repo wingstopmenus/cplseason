@@ -1,0 +1,26 @@
+{
+  "slug": "karima-gore",
+  "name": "Karima Gore",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": "/static/img/official/players/karima-gore.webp",
+  "initials": "KG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Karima Gore",
+    "birth_date": "25 June 1998",
+    "birth_place": "The Bronx, New York, United States",
+    "country": "United States",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow Left arm Orthodox",
+    "international_span": "2019–2021",
+    "career_teams": [],
+    "records": []
+  }
+}

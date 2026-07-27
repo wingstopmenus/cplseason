@@ -1,0 +1,76 @@
+{
+  "slug": "trinbago-knight-riders",
+  "name": "Trinbago Knight Riders",
+  "logo": "/static/img/official/teams/trinbago-knight-riders.png",
+  "short_name": "Knight Riders",
+  "territory": "Trinidad and Tobago",
+  "city": "Tarouba",
+  "venue_slug": "brian-lara-cricket-academy",
+  "schedule_names": [
+    "Trinbago Knight Riders"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 5,
+  "status_label": "Defending champions",
+  "founded": 2013,
+  "identity": "Defending champions · Five-time winners",
+  "title_count": 5,
+  "title_years": [
+    2015,
+    2017,
+    2018,
+    2020,
+    2025
+  ],
+  "honours": "CPL champions in 2015, 2017, 2018, 2020 and 2025",
+  "profile_lede": "The competition's most successful franchise begins its title defence with a decorated Trinidad and Tobago core and five matches at Tarouba.",
+  "history": [
+    "The franchise entered the inaugural CPL season in 2013 as Trinidad & Tobago Red Steel, won its first title in 2015 and adopted the Trinbago Knight Riders name in 2016.",
+    "Further championships followed in 2017, 2018 and an unbeaten 2020 campaign. A fifth CPL crown in 2025 made TKR the tournament's most successful team and sends them into 2026 as defending champions.",
+    "Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein headline a highly experienced local group. Brian Lara Cricket Academy hosts five TKR fixtures from 26 August to 2 September."
+  ],
+  "profile_highlights": [
+    {
+      "label": "Honours",
+      "title": "Five CPL crowns",
+      "text": "TKR lead the competition with titles in 2015, 2017, 2018, 2020 and 2025."
+    },
+    {
+      "label": "Title defence",
+      "title": "The champions return",
+      "text": "The 2025 winners retain a core with extensive CPL and international T20 experience."
+    },
+    {
+      "label": "Home base",
+      "title": "Five matches at Tarouba",
+      "text": "Brian Lara Cricket Academy stages TKR's complete 2026 home block."
+    }
+  ],
+  "summary": "The 2025 champions retain a decorated core led by Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein as they pursue another title.",
+  "storyline": "Trinbago's five-match home block at Brian Lara Cricket Academy runs from 26 August to 2 September before the league-stage finish in Guyana.",
+  "roster": [
+    "sunil-narine",
+    "nicholas-pooran",
+    "kieron-pollard",
+    "akeal-hosein",
+    "justin-greaves",
+    "dominic-drakes",
+    "jyd-goolie",
+    "dexter-sween",
+    "terrance-hinds",
+    "nathan-edward",
+    "joshua-da-silva",
+    "abdul-raheem-toppin",
+    "alex-hales",
+    "usman-tariq",
+    "colin-munro",
+    "matthew-breetzke",
+    "amshi-de-silva"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "70949cf7-1fd0-429d-b45d-4ae8f05db1b2"
+  },
+  "last_updated": "2026-07-27"
+}

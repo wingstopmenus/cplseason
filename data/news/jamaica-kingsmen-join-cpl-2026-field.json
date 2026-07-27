@@ -1,0 +1,51 @@
+{
+  "slug": "jamaica-kingsmen-join-cpl-2026-field",
+  "category": "Teams",
+  "title": "Jamaica Kingsmen Join CPL as the Seventh Team for 2026",
+  "short_title": "Jamaica Kingsmen join CPL",
+  "description": "Jamaica Kingsmen become the seventh CPL team for 2026, restoring a Jamaica-based franchise with four home matches scheduled at Sabina Park.",
+  "dek": "The Kingston-based franchise brings Jamaica back into the league and expands the men’s competition to seven teams.",
+  "date_published": "2026-03-31",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/teams/jamaica-kingsmen.png",
+  "image_alt": "Jamaica Kingsmen team crest",
+  "team_slug": "jamaica-kingsmen",
+  "summary_heading": "A new franchise and a return to Sabina Park",
+  "key_points": [
+    "Jamaica Kingsmen are based in Kingston and play home matches at Sabina Park.",
+    "The franchise is owned by a United States-based group led by Fawad Sarwar.",
+    "Jamaica’s first home match is against Barbados Tridents on 11 August."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "Jamaica returns to the league",
+      "paragraphs": [
+        "The Caribbean Premier League confirmed the Jamaica Kingsmen identity on 31 March. The team restores a Jamaica-based franchise to the men’s tournament and increases the field from six to seven sides.",
+        "Kingston is the franchise base and Sabina Park its home ground. The venue will stage four matches during the opening portion of the season."
+      ]
+    },
+    {
+      "heading": "Ownership and identity",
+      "paragraphs": [
+        "A United States-based ownership group led by Fawad Sarwar controls the franchise. The group also uses the Kingsmen name in Pakistan’s franchise system, giving the ownership a cross-league model.",
+        "For Jamaican supporters, the immediate significance is local cricket at Sabina Park. CPL had not staged matches on the island since 2019."
+      ]
+    },
+    {
+      "heading": "The first home block",
+      "paragraphs": [
+        "Jamaica start the season against Antigua in St Vincent on 7 August. Four days later, the Kingsmen face Barbados in the first Sabina Park match.",
+        "The home block also includes Guyana, Trinbago and St Kitts. Rovman Powell leads a squad containing Brandon King, Alzarri Joseph and a phased overseas group."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/jamaica-kingsmen/", "label": "Jamaica Kingsmen guide"},
+    {"href": "/venue/sabina-park/", "label": "Sabina Park guide"},
+    {"href": "/squads/", "label": "CPL 2026 squads"}
+  ],
+  "source_name": "Caribbean Premier League franchise announcement",
+  "source_date": "2026-03-31",
+  "last_updated": "2026-07-27"
+}

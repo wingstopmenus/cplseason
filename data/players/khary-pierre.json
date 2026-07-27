@@ -1,0 +1,56 @@
+{
+  "slug": "khary-pierre",
+  "name": "Khary Pierre",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Selected by Guyana Amazon Warriors for CPL 2026",
+  "image": null,
+  "initials": "KP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Khary Pierre",
+    "birth_date": "22 September 1991",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Allrounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2018–present",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "Trinbago Knight Riders",
+      "St Lucia Kings",
+      "Abu Dhabi Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "13",
+        "runs": "17",
+        "wickets": "10",
+        "best_bowling": "2/23",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "7",
+        "runs": "70",
+        "wickets": "2",
+        "best_bowling": "1/19",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "2",
+        "runs": "47",
+        "wickets": "1",
+        "best_bowling": "1/91",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

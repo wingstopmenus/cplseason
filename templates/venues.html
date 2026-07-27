@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com{{ venues[0].image }}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cplseason">
+  <meta name="theme-color" content="#05061d">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260726r">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="venues-2026">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/" aria-current="page">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <nav class="breadcrumbs venues-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Venues</span></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section class="venues-stage">
+      <div class="venues-stage-copy">
+        <p class="venues-kicker">Republic Bank CPL / 2026 host grounds</p>
+        <h1>Eight Grounds Hosting<br><span>CPL 2026</span></h1>
+        <p class="venues-lede">The tournament moves through eight Caribbean grounds, opening at Arnos Vale and finishing with the playoffs and final at Kensington Oval.</p>
+        <div class="venues-stage-actions">
+          <a class="button primary" href="#venue-list">Explore the grounds</a>
+          <a class="button secondary" href="/schedule/">View all fixtures</a>
+        </div>
+        <div class="venues-stage-note">
+          <span><i aria-hidden="true"></i> Official 2026 allocation</span>
+          <small>7 Aug — 20 Sep</small>
+        </div>
+      </div>
+
+      <figure class="venues-feature">
+        <a href="/venue/{{ venues[0].slug }}/">
+          <img src="{{ venues[0].image }}" width="1280" height="720" alt="{{ venues[0].name }} cricket ground in {{ venues[0].territory }}">
+          <span class="venues-feature-shade" aria-hidden="true"></span>
+          <figcaption>
+            <small>Opening venue / 01</small>
+            <strong>{{ venues[0].name }}</strong>
+            <span>{{ venues[0].city }}, {{ venues[0].territory }}</span>
+          </figcaption>
+        </a>
+      </figure>
+    </section>
+
+    <section class="venues-stat-rail" aria-label="CPL 2026 venue summary">
+      <div><small>Host grounds</small><strong>8</strong><span>Eight territories</span></div>
+      <div><small>Tournament</small><strong>39</strong><span>Scheduled matches</span></div>
+      <div><small>Opening stop</small><strong>Arnos Vale</strong><span>7–9 August</span></div>
+      <div><small>Final stop</small><strong>Kensington Oval</strong><span>20 September final</span></div>
+    </section>
+
+    <section class="venues-route" aria-labelledby="venues-route-title">
+      <header>
+        <p class="venues-section-index">01 / Tournament route</p>
+        <h2 id="venues-route-title">Eight host grounds across the Caribbean</h2>
+        <p>The venue order follows the first match date at each host ground. Some country blocks overlap, so use the full schedule when planning travel.</p>
+      </header>
+      <ol>
+        {% for venue in venues %}
+        <li>
+          <a href="#{{ venue.slug }}">
+            <span>{{ "%02d" | format(loop.index) }}</span>
+            <strong>{{ venue.city }}</strong>
+            <small>{{ venue.date_window }}</small>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section id="venue-list" class="venues-directory" aria-labelledby="venue-list-title">
+      <header class="venues-directory-heading">
+        <div>
+          <p class="venues-section-index">02 / Ground directory</p>
+          <h2 id="venue-list-title">CPL 2026 stadium guide</h2>
+        </div>
+        <p>Explore each ground’s CPL 2026 fixtures, location, capacity and role in the tournament.</p>
+      </header>
+
+      <div class="venues-photo-grid">
+        {% for venue in venues %}
+        <article id="{{ venue.slug }}" class="venue-photo-card{% if venue.slug == 'kensington-oval' %} is-final{% endif %}" data-venue-card>
+          <figure>
+            <a href="/venue/{{ venue.slug }}/">
+              <img src="{{ venue.image }}" width="1280" height="720" alt="{{ venue.name }} cricket ground in {{ venue.city }}, {{ venue.territory }}" loading="{% if loop.index <= 2 %}eager{% else %}lazy{% endif %}">
+              <span class="venue-card-index">{{ "%02d" | format(loop.index) }}</span>
+              <span class="venue-card-label">{{ venue.stage_label }}</span>
+            </a>
+          </figure>
+          <div class="venue-photo-copy">
+            <p>{{ venue.city }} / {{ venue.territory }}</p>
+            <h3><a href="/venue/{{ venue.slug }}/">{{ venue.name }}</a></h3>
+            <p>{{ venue.summary }}</p>
+            <dl>
+              <div><dt>Matches</dt><dd>{{ venue.matches }}</dd></div>
+              <div><dt>Capacity</dt><dd>{{ "{:,}".format(venue.capacity) }}</dd></div>
+              <div><dt>Window</dt><dd>{{ venue.date_window }}</dd></div>
+            </dl>
+            <a class="venue-open-link" href="/venue/{{ venue.slug }}/">Open venue guide <span>↗</span></a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="venues-planning">
+      <header>
+        <p class="venues-section-index">03 / Matchday planning</p>
+        <h2>Matchday travel information</h2>
+      </header>
+      <div>
+        <article>
+          <span>01</span>
+          <h3>Use local venue time</h3>
+          <p>Fixture times on CPL Season follow the local time of the listed host territory.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Capacity is a reference</h3>
+          <p>Published ground capacity is not the same as available ticket inventory or event configuration.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Confirm the fixture</h3>
+          <p>Check the schedule and authorized ticket seller before arranging inter-island travel.</p>
+        </article>
+      </div>
+      <nav aria-label="CPL venue planning links">
+        <a href="/schedule/">Full schedule <span>→</span></a>
+        <a href="/teams/">Team directory <span>→</span></a>
+      </nav>
+    </section>
+
+    <section class="venues-faq" aria-labelledby="venues-faq-title">
+      <header>
+        <p class="venues-section-index">Quick answers</p>
+        <h2 id="venues-faq-title">CPL 2026 venue questions and answers</h2>
+      </header>
+      <div>
+        <article>
+          <h3>Where does CPL 2026 begin?</h3>
+          <p>Arnos Vale Stadium in St Vincent hosts the opening three matches from 7 to 9 August.</p>
+        </article>
+        <article>
+          <h3>Where is the CPL 2026 final?</h3>
+          <p>Kensington Oval in Bridgetown hosts the final on 20 September and all four knockout matches.</p>
+        </article>
+        <article>
+          <h3>Which ground has the most matches?</h3>
+          <p>Kensington Oval has nine scheduled matches: five league fixtures and four knockout games.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="/static/js/site.js?v=20260726g" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "slug": "milind-kumar",
+  "name": "Milind Kumar",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/milind-kumar.webp",
+  "initials": "MK",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Milind Kumar",
+    "birth_date": "15 February 1991",
+    "birth_place": "Delhi, New Delhi, India",
+    "country": "United States",
+    "role": "Batsman",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "international_span": "",
+    "career_teams": [
+      "Delhi",
+      "Brothers Union",
+      "Sikkim",
+      "Tripura",
+      "Texas Super Kings",
+      "Kathmandu Gorkhas"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "25",
+        "runs": "416",
+        "wickets": "12",
+        "best_bowling": "5/16",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "22",
+        "runs": "1,016",
+        "wickets": "28",
+        "best_bowling": "5/66",
+        "hundreds_fifties": "3/7"
+      },
+      {
+        "format": "LA",
+        "matches": "87",
+        "runs": "3,039",
+        "wickets": "40",
+        "best_bowling": "5/66",
+        "hundreds_fifties": "4/25"
+      }
+    ]
+  }
+}

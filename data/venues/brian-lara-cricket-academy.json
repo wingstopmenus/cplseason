@@ -1,0 +1,81 @@
+{
+  "slug": "brian-lara-cricket-academy",
+  "name": "Brian Lara Cricket Academy",
+  "city": "Tarouba",
+  "territory": "Trinidad and Tobago",
+  "capacity": 15000,
+  "matches": 5,
+  "date_window": "26 August–2 September",
+  "stage_label": "Trinidad block",
+  "summary": "Brian Lara Cricket Academy hosts five Trinbago Knight Riders fixtures as the league moves into its Trinidad block.",
+  "tagline": "A modern southern Trinidad venue built for elite cricket and shaped by CPL finals history.",
+  "established": "Completed and opened in 2017",
+  "former_name": "Brian Lara Stadium",
+  "ends": "North End and South End",
+  "home_team": "Trinidad and Tobago Red Force and Trinbago Knight Riders",
+  "story": [
+    "The Brian Lara Cricket Academy is a modern multi-purpose complex in Tarouba, outside San Fernando in southern Trinidad. Conceived as both a major stadium and a high-performance cricket facility, it was completed and opened in 2017.",
+    "CPL supplied the venue's first run of high-profile matches, including the 2017 final. Cricket West Indies has described its boundaries as relatively large by CPL standards, a characteristic that can reward running between the wickets as well as power hitting.",
+    "Five Trinbago Knight Riders matches are scheduled here in 2026, including the only 5pm start in the Trinidad block."
+  ],
+  "highlights": [
+    {
+      "label": "Modern venue",
+      "title": "Opened in 2017",
+      "text": "The academy combines a major match ground with facilities intended for player development."
+    },
+    {
+      "label": "CPL history",
+      "title": "A finals-stage ground",
+      "text": "The venue hosted the 2017 CPL final during its first season of high-profile cricket."
+    },
+    {
+      "label": "Ground character",
+      "title": "Space beyond the square",
+      "text": "Historical CPL analysis has identified larger boundary dimensions and a greater role for twos."
+    }
+  ],
+  "visitor_note": "Tarouba is in southern Trinidad, away from Port of Spain. Allow for event traffic and use the organizer's current park-and-ride, parking and gate information when it is published.",
+  "fixtures": [
+    {
+      "date": "2026-08-26",
+      "label": "Wed 26 Aug",
+      "match": "Trinbago Knight Riders vs Saint Lucia Kings",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-28",
+      "label": "Fri 28 Aug",
+      "match": "Trinbago Knight Riders vs Barbados Royals",
+      "time": "8pm"
+    },
+    {
+      "date": "2026-08-29",
+      "label": "Sat 29 Aug",
+      "match": "Trinbago Knight Riders vs Guyana Amazon Warriors",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-31",
+      "label": "Mon 31 Aug",
+      "match": "Trinbago Knight Riders vs Jamaica Kingsmen",
+      "time": "5pm"
+    },
+    {
+      "date": "2026-09-02",
+      "label": "Wed 2 Sep",
+      "match": "Trinbago Knight Riders vs Antigua & Barbuda Falcons",
+      "time": "7pm"
+    }
+  ],
+  "image": "/static/img/official/venues/brian-lara-cricket-academy.webp",
+  "image_source": "https://commons.wikimedia.org/wiki/File:Brian_Lara_Stadium.jpg",
+  "image_credit": "Badbez",
+  "image_license": "CC BY-SA 3.0",
+  "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "external_ids": {
+    "wikipedia": "Brian Lara Cricket Academy",
+    "cpl": null
+  },
+  "last_updated": "2026-07-26"
+}

@@ -1,0 +1,46 @@
+{
+  "slug": "isai-thorne",
+  "name": "Isai Thorne",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "IT",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Isai Thorne",
+    "birth_date": "",
+    "birth_place": "Guyana",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Combined Campuses and Colleges",
+      "West Indies Academy"
+    ],
+    "records": [
+      {
+        "format": "LA",
+        "matches": "6",
+        "runs": "1",
+        "wickets": "8",
+        "best_bowling": "3/65",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "9",
+        "runs": "41",
+        "wickets": "31",
+        "best_bowling": "4/8",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

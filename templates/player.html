@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="{{ page.og_image }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cplseason">
+  <meta name="theme-color" content="#05061d">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727cq">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="profile-2026">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/" aria-current="page">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <nav class="breadcrumbs profile-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/players/">Players</a></li>
+      <li><span aria-current="page">{{ player.name }}</span></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section class="profile-stage">
+      <div class="profile-stage-copy">
+        <div class="profile-status-line">
+          <span><i aria-hidden="true"></i> Confirmed squad</span>
+          <small>CPL 2026</small>
+        </div>
+
+        <a class="profile-team-lockup" href="/team/{{ team.slug }}/">
+          <img src="{{ team.logo }}" width="48" height="48" alt="{{ team.name }} logo">
+          <span>
+            <small>2026 franchise</small>
+            <strong>{{ team.name }}</strong>
+          </span>
+        </a>
+
+        <p class="profile-kicker">Player profile / {{ roster_number }}</p>
+        <h1>{{ player.name }}</h1>
+        <p class="profile-lede">{{ player.name }} is listed in the {{ team.name }} squad for the 2026 Caribbean Premier League as a {{ player.category | lower }}. {{ player.selection_note }}.</p>
+
+        <div class="profile-tags" aria-label="{{ player.name }} squad details">
+          <span>{{ player.category }}</span>
+          {% if player.captain %}<span>Captain</span>{% endif %}
+          <span>Roster confirmed</span>
+        </div>
+
+        <div class="profile-actions">
+          <a class="profile-action profile-action-primary" href="/team/{{ team.slug }}/">View {{ team.short_name }}</a>
+          <a class="profile-action" href="/squads/#{{ team.slug }}">Open squad</a>
+          <a class="profile-action" href="/players/">All players</a>
+        </div>
+      </div>
+
+      <figure class="profile-visual">
+        <div class="profile-visual-top">
+          <span>{{ team.short_name }}</span>
+          <strong>{{ roster_number }}</strong>
+        </div>
+        <div class="profile-portrait-frame">
+          {% if player.image %}
+          <img src="{{ player.image }}" width="560" height="560" alt="{{ player.name }} official CPL player photo">
+          {% else %}
+          <span class="profile-portrait-fallback" aria-label="{{ player.name }} photo unavailable">{{ player.initials }}</span>
+          {% endif %}
+        </div>
+        <figcaption>
+          <img src="{{ team.logo }}" width="54" height="54" alt="" aria-hidden="true">
+          <span><small>Squad category</small><strong>{{ player.category }}</strong></span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="profile-fact-rail" aria-label="{{ player.name }} quick facts">
+      <a href="/team/{{ team.slug }}/">
+        <small>Team</small>
+        <strong>{{ team.name }}</strong>
+        <span>Open profile →</span>
+      </a>
+      <div>
+        <small>Squad status</small>
+        <strong>Confirmed</strong>
+        <span>CPL 2026 roster</span>
+      </div>
+      <div>
+        <small>Player category</small>
+        <strong>{{ player.category }}</strong>
+        <span>Published squad group</span>
+      </div>
+      <div>
+        <small>Last checked</small>
+        <strong>{{ page.updated_label }}</strong>
+        <span>Roster record</span>
+      </div>
+    </section>
+
+    <section class="profile-dossier">
+      <article class="profile-dossier-main">
+        <header>
+          <p class="profile-section-index">01 / Squad file</p>
+          <h2>{{ player.name }} at CPL 2026</h2>
+        </header>
+        <p class="profile-dossier-intro">{{ player.selection_note }}. The player is included in the {{ player.category | lower }} group for {{ team.name }}.</p>
+        <dl class="profile-data-list">
+          <div>
+            <dt>Player</dt>
+            <dd>{{ player.name }}</dd>
+          </div>
+          <div>
+            <dt>Franchise</dt>
+            <dd><a href="/team/{{ team.slug }}/">{{ team.name }}</a></dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd>{{ player.category }}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd><span class="profile-confirmed-dot">Confirmed</span></dd>
+          </div>
+          <div>
+            <dt>Selection record</dt>
+            <dd>{{ player.selection_note }}</dd>
+          </div>
+          <div>
+          </div>
+        </dl>
+      </article>
+
+      <aside class="profile-franchise-card">
+        <p class="profile-section-index">Team file</p>
+        <img src="{{ team.logo }}" width="160" height="160" alt="{{ team.name }} logo">
+        <h2>{{ team.name }}</h2>
+        <p>{{ team.roster | length }} players are listed in the franchise’s current CPL 2026 roster.</p>
+        <dl>
+          <div><dt>Player listing</dt><dd>{{ roster_number }} / {{ team.roster | length }}</dd></div>
+          <div><dt>Squad group</dt><dd>{{ player.category }}</dd></div>
+        </dl>
+        <a href="/team/{{ team.slug }}/">Explore the team <span>→</span></a>
+      </aside>
+    </section>
+
+    <section class="profile-about" aria-labelledby="player-about-title">
+      <header class="profile-about-heading">
+        <p class="profile-section-index">02 / Player about</p>
+        <h2 id="player-about-title">About {{ player.name }}</h2>
+        <p>A closer look at {{ player.name }}’s background, career path and playing record.</p>
+      </header>
+
+      <div class="profile-about-layout">
+        <article class="profile-about-story">
+          <div>
+            <span>Biography</span>
+            <h3>{{ player.name }} biography</h3>
+            <p>{{ player.about.biography }}</p>
+          </div>
+          <div>
+            <span>Career</span>
+            <h3>{{ player.name }}’s cricket career</h3>
+            <p>{{ player.about.career }}</p>
+          </div>
+        </article>
+
+        <aside class="profile-net-worth">
+          <span>Financial profile</span>
+          <h3>{{ player.name }} net worth</h3>
+          <p>{{ player.about.net_worth }}</p>
+        </aside>
+      </div>
+
+      <div class="profile-records">
+        <header>
+          <span>Career record</span>
+          <h3>{{ player.name }} records</h3>
+          <p>A compact snapshot of the formats that define the player’s career to date.</p>
+        </header>
+        <div class="profile-record-grid">
+          {% for record in player.about.records %}
+          <article>
+            <strong>{{ record.format }}</strong>
+            <dl>
+              <div><dt>{% if record.matches == "Squad" %}Status{% else %}Matches{% endif %}</dt><dd>{{ record.matches or "—" }}</dd></div>
+              {% if record.runs %}<div><dt>Runs</dt><dd>{{ record.runs }}</dd></div>{% endif %}
+              {% if record.wickets %}<div><dt>Wickets</dt><dd>{{ record.wickets }}</dd></div>{% endif %}
+              {% if record.best_bowling %}<div><dt>Best bowling</dt><dd>{{ record.best_bowling }}</dd></div>{% endif %}
+              {% if record.hundreds_fifties %}<div><dt>100s / 50s</dt><dd>{{ record.hundreds_fifties }}</dd></div>{% endif %}
+            </dl>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-related" aria-labelledby="related-player-title">
+      <header class="profile-related-heading">
+        <div>
+          <p class="profile-section-index">03 / Teammates</p>
+          <h2 id="related-player-title">More {{ team.short_name }} players</h2>
+        </div>
+        <a href="/squads/#{{ team.slug }}">Full squad →</a>
+      </header>
+      <div class="profile-related-grid">
+        {% for related in related_players %}
+        <a class="profile-related-card" href="/player/{{ related.slug }}/">
+          <span class="profile-related-media">
+            {% if related.image %}
+            <img src="{{ related.image }}" width="110" height="110" alt="{{ related.name }} official CPL player photo" loading="lazy">
+            {% else %}
+            <span aria-hidden="true">{{ related.initials }}</span>
+            {% endif %}
+            <img class="profile-related-team" src="{{ team.logo }}" width="28" height="28" alt="" aria-hidden="true">
+          </span>
+          <span class="profile-related-copy">
+            <small>{{ related.category }}</small>
+            <strong>{{ related.name }}</strong>
+            <span>Open profile ↗</span>
+          </span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="profile-directory-cta">
+      <div>
+        <p class="profile-section-index">CPL 2026 directory</p>
+        <h2>More CPL 2026 guides</h2>
+      </div>
+      <nav aria-label="Related CPL 2026 directories">
+        <a href="/players/">All 122 players <span>→</span></a>
+        <a href="/squads/">All seven squads <span>→</span></a>
+        <a href="/schedule/">Match schedule <span>→</span></a>
+      </nav>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="/static/js/site.js?v=20260726g" defer></script>
+</body>
+</html>

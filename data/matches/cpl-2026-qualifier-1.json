@@ -1,0 +1,21 @@
+{
+  "slug": "cpl-2026-qualifier-1",
+  "match_number": 37,
+  "competition": "Republic Bank Caribbean Premier League 2026",
+  "stage": "Qualifier 1",
+  "home_team_slug": null,
+  "away_team_slug": null,
+  "home_team_label": "First-place team",
+  "away_team_label": "Second-place team",
+  "venue_slug": "kensington-oval",
+  "date": "2026-09-17",
+  "start_time_local": "20:00",
+  "timezone": "America/Barbados",
+  "start_iso": "2026-09-17T20:00:00-04:00",
+  "status": "Scheduled",
+  "official_match_center_url": null,
+  "preview_heading": "The top two play for the first place in the final",
+  "preview": "The top two teams from the CPL 2026 league stage meet in Qualifier 1 at Kensington Oval. The winner reaches the final, while the loser receives a second opportunity in Qualifier 2.",
+  "preview_detail": "Team names, confirmed squads and playing XIs will update after qualification is settled. No participant is listed before the relevant result is official.",
+  "last_updated": "2026-07-27"
+}

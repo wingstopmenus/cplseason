@@ -1,0 +1,58 @@
+{
+  "slug": "charith-asalanka",
+  "name": "Charith Asalanka",
+  "team_slug": "saint-lucia-kings",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Sri Lanka",
+  "image": "/static/img/official/players/charith-asalanka.webp",
+  "initials": "CA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kariyawasam Indipalage Charith Asalanka",
+    "birth_date": "29 June 1997",
+    "birth_place": "Elpitiya, Sri Lanka",
+    "country": "Sri Lanka",
+    "role": "Batting-All rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2021–present",
+    "career_teams": [
+      "Jaffna Kings",
+      "Kandy Warriors",
+      "Colombo Stars",
+      "Abu Dhabi Knight Riders",
+      "Galle Gallants",
+      "Saint Lucia Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "72",
+        "runs": "1,396",
+        "wickets": "7",
+        "best_bowling": "3/50",
+        "hundreds_fifties": "0/6"
+      },
+      {
+        "format": "ODI",
+        "matches": "82",
+        "runs": "2,721",
+        "wickets": "18",
+        "best_bowling": "4/18",
+        "hundreds_fifties": "5/17"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "88",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

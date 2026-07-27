@@ -1,0 +1,58 @@
+{
+  "slug": "noor-ahmad",
+  "name": "Noor Ahmad",
+  "team_slug": "saint-lucia-kings",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Afghanistan",
+  "image": "/static/img/official/players/noor-ahmad.webp",
+  "initials": "NA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Noor Ahmad Lakanwal",
+    "birth_date": "3 January 2005",
+    "birth_place": "Khost, Afghanistan",
+    "country": "Afghanistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm unorthodox spin",
+    "international_span": "2022–present",
+    "career_teams": [
+      "Welsh Fire",
+      "Gujarat Titans",
+      "Durban's Super Giants",
+      "Chennai Super Kings",
+      "Texas Super Kings",
+      "Manchester Originals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "14",
+        "runs": "41",
+        "wickets": "7",
+        "best_bowling": "4/10",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "13",
+        "runs": "46",
+        "wickets": "10",
+        "best_bowling": "3/49",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "21",
+        "runs": "48",
+        "wickets": "26",
+        "best_bowling": "4/54",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

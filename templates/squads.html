@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/official/teams-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cplseason">
+  <meta name="theme-color" content="#05061d">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260726n">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/" aria-current="page">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Squads</span></li>
+    </ol>
+  </nav>
+
+  <main id="main" class="squads-2026">
+    <section class="squads-hero">
+      <div class="squads-hero-copy">
+        <p class="eyebrow">Republic Bank Caribbean Premier League 2026</p>
+        <h1>CPL 2026<br><span>Team Squads</span></h1>
+        <p class="squads-lede">All 122 listed players across the seven franchises, grouped into West Indian, overseas and breakout categories.</p>
+        <div class="squads-hero-actions">
+          <a class="button primary" href="#team-rosters">Browse all squads</a>
+        </div>
+      </div>
+      <div class="squads-scoreboard" aria-label="CPL 2026 squad summary">
+        <p>Roster board</p>
+        <div><strong>{{ totals.teams }}</strong><span>Teams</span></div>
+        <div><strong>{{ totals.players }}</strong><span>Players listed</span></div>
+        <div><strong>{{ totals.overseas }}</strong><span>Overseas names</span></div>
+        <small>Roster checked {{ page.checked_label }}</small>
+      </div>
+    </section>
+
+    <section class="squads-rules" aria-labelledby="squad-rules-title">
+      <div>
+        <p class="eyebrow">Squad framework</p>
+        <h2 id="squad-rules-title">CPL squad categories explained</h2>
+      </div>
+      <ol>
+        <li><strong>09</strong><span>Senior West Indian players</span></li>
+        <li><strong>05</strong><span>Overseas players</span></li>
+        <li><strong>03</strong><span>Breakout players</span></li>
+      </ol>
+      <p>Antigua and Jamaica list additional names connected with different availability windows, which brings the published total to 122.</p>
+    </section>
+
+    <section class="squad-tools" aria-label="Squad filters">
+      <div class="squad-search">
+        <label for="squad-player-search">Find a player</label>
+        <input id="squad-player-search" type="search" placeholder="Search all 122 players…" autocomplete="off">
+      </div>
+      <div class="squad-filter-group" aria-label="Filter players by category">
+        <button class="is-active" type="button" data-squad-filter="all" aria-pressed="true">All players</button>
+        <button type="button" data-squad-filter="west-indian-player" aria-pressed="false">West Indian</button>
+        <button type="button" data-squad-filter="overseas-player" aria-pressed="false">Overseas</button>
+        <button type="button" data-squad-filter="breakout-player" aria-pressed="false">Breakout</button>
+      </div>
+      <nav class="squad-team-jump" aria-label="Jump to a team">
+        {% for team in teams %}
+        <a href="#{{ team.slug }}">
+          <img src="{{ team.logo }}" width="56" height="56" alt="" aria-hidden="true">
+          <span>{{ team.short_name }}</span>
+        </a>
+        {% endfor %}
+      </nav>
+      <p id="squad-result-count" class="squad-result-count" aria-live="polite">{{ totals.players }} players shown</p>
+    </section>
+
+    <section id="team-rosters" class="team-rosters" aria-labelledby="team-rosters-title">
+      <div class="team-rosters-heading">
+        <div>
+          <p class="eyebrow">Confirmed names</p>
+          <h2 id="team-rosters-title">CPL 2026 team rosters</h2>
+        </div>
+        <p>Open a player card for their profile, or use the team header for the full franchise page.</p>
+      </div>
+
+      {% for team in teams %}
+      <article id="{{ team.slug }}" class="roster-panel" data-squad-team>
+        <header class="roster-team-header">
+          <a class="roster-team-identity" href="/team/{{ team.slug }}/">
+            <span class="roster-logo">
+              <img src="{{ team.logo }}" width="104" height="104" alt="{{ team.name }} logo" loading="lazy">
+            </span>
+            <span>
+              <small>2026 squad</small>
+              <strong>{{ team.name }}</strong>
+              <em>View team profile →</em>
+            </span>
+          </a>
+          <div class="roster-team-count">
+            <strong>{{ team.players | length }}</strong>
+            <span>players listed</span>
+          </div>
+        </header>
+
+        {% for group in team.groups %}
+        <section class="roster-group" data-roster-group>
+          <div class="roster-group-heading">
+            <h3>{{ group.label }}</h3>
+            <span>{{ group.players | length }}</span>
+          </div>
+          <div class="roster-player-grid">
+            {% for player in group.players %}
+            <a class="roster-player"
+               href="/player/{{ player.slug }}/"
+               data-squad-player
+               data-player-name="{{ player.name | lower }}"
+               data-player-category="{{ player.category_slug }}">
+              <span class="roster-player-media">
+                {% if player.image %}
+                <img src="{{ player.image }}" width="72" height="72" alt="{{ player.name }} official CPL player photo" loading="lazy">
+                {% else %}
+                <span class="roster-player-initials" aria-hidden="true">{{ player.initials }}</span>
+                {% endif %}
+              </span>
+              <span class="roster-player-copy">
+                <strong>{{ player.name }}{% if player.captain %}<sup>C</sup>{% endif %}</strong>
+                <small>{{ player.selection_note }}</small>
+              </span>
+              <span class="roster-player-arrow" aria-hidden="true">↗</span>
+            </a>
+            {% endfor %}
+          </div>
+        </section>
+        {% endfor %}
+      </article>
+      {% endfor %}
+      <p id="squad-empty-state" class="squad-empty-state" hidden>No players match that search and category.</p>
+    </section>
+
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="/static/js/site.js?v=20260726f" defer></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "slug": "nicholas-pooran",
+  "name": "Nicholas Pooran",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/nicholas-pooran.webp",
+  "initials": "NP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Nicholas Pooran",
+    "birth_date": "2 October 1995",
+    "birth_place": "Couva, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Wicket-keeper-batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2016–2024",
+    "career_teams": [
+      "Lucknow Super Giants",
+      "MI Emirates",
+      "MI New York",
+      "Northern Superchargers",
+      "MI Cape Town",
+      "MI London"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "470",
+        "runs": "11,104",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "5/68"
+      },
+      {
+        "format": "T20I",
+        "matches": "106",
+        "runs": "2,275",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/13"
+      },
+      {
+        "format": "ODI",
+        "matches": "61",
+        "runs": "1,983",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "3/11"
+      }
+    ]
+  }
+}

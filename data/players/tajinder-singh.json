@@ -1,0 +1,30 @@
+{
+  "slug": "tajinder-singh",
+  "name": "Tajinder Singh",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/tajinder-singh.webp",
+  "initials": "TS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Tajinder Singh Dhillon",
+    "birth_date": "25 May 1992",
+    "birth_place": "Dholpur, Rajasthan, India",
+    "country": "India",
+    "role": "All-rounder",
+    "batting_style": "Right handed",
+    "bowling_style": "Right arm off-break",
+    "international_span": "",
+    "career_teams": [
+      "Rajasthan",
+      "San Francisco Unicorns",
+      "MI New York"
+    ],
+    "records": []
+  }
+}

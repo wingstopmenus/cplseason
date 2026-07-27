@@ -1,0 +1,58 @@
+{
+  "slug": "romario-shepherd",
+  "name": "Romario Shepherd",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "RS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Romario Shepherd",
+    "birth_date": "26 November 1994",
+    "birth_place": "Georgetown, Guyana",
+    "country": "West Indies",
+    "role": "Bowling All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast-medium",
+    "international_span": "2019-present",
+    "career_teams": [
+      "Sunrisers Hyderabad",
+      "Joburg Super Kings",
+      "Lucknow Super Giants",
+      "Chattogram Challengers",
+      "Mumbai Indians",
+      "Royal Challengers Bengaluru"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "231",
+        "runs": "2,545",
+        "wickets": "212",
+        "best_bowling": "5/20",
+        "hundreds_fifties": "0/7"
+      },
+      {
+        "format": "T20I",
+        "matches": "78",
+        "runs": "909",
+        "wickets": "81",
+        "best_bowling": "4/31",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "42",
+        "runs": "455",
+        "wickets": "34",
+        "best_bowling": "3/37",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

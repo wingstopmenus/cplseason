@@ -1,0 +1,58 @@
+{
+  "slug": "brandon-king",
+  "name": "Brandon King",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "BK",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Brandon Alexander King",
+    "birth_date": "16 December 1994",
+    "birth_place": "Kingston, Jamaica",
+    "country": "West Indies",
+    "role": "Top-order batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2019–present",
+    "career_teams": [
+      "Jamaica Tallawahs",
+      "Abu Dhabi Knight Riders",
+      "Rangpur Riders",
+      "Antigua & Barbuda Falcons",
+      "Durban's Super Giants",
+      "Barbados Royals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "87",
+        "runs": "2,028",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/14"
+      },
+      {
+        "format": "ODI",
+        "matches": "58",
+        "runs": "1,530",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "3/8"
+      },
+      {
+        "format": "Test",
+        "matches": "8",
+        "runs": "431",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/4"
+      }
+    ]
+  }
+}

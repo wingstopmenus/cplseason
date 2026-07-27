@@ -1,0 +1,58 @@
+{
+  "slug": "rahmanullah-gurbaz",
+  "name": "Rahmanullah Gurbaz",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Afghanistan",
+  "image": null,
+  "initials": "RG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Rahmanullah Gurbaz",
+    "birth_date": "28 November 2001",
+    "birth_place": "Khost, Afghanistan",
+    "country": "Afghanistan",
+    "role": "Wicket-keeper-batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2019–present",
+    "career_teams": [
+      "Jaffna Kings",
+      "Islamabad United",
+      "Guyana Amazon Warriors",
+      "Rangpur Riders",
+      "Kolkata Knight Riders",
+      "Dhaka Capitals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "87",
+        "runs": "2,280",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "1/13"
+      },
+      {
+        "format": "ODI",
+        "matches": "55",
+        "runs": "2,036",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "9/7"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "133",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

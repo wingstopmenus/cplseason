@@ -1,0 +1,54 @@
+{
+  "slug": "joshua-bishop",
+  "name": "Joshua Bishop",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Selected by Saint Lucia Kings for CPL 2026",
+  "image": null,
+  "initials": "JB",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Joshua Bishop",
+    "birth_date": "30 May 2000",
+    "birth_place": "Barbados",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "",
+    "career_teams": [
+      "West Indies Academy",
+      "Barbados Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "16",
+        "runs": "66",
+        "wickets": "12",
+        "best_bowling": "3/20",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "54",
+        "runs": "333",
+        "wickets": "79",
+        "best_bowling": "5/35",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "22",
+        "runs": "891",
+        "wickets": "100",
+        "best_bowling": "7/85",
+        "hundreds_fifties": "2/3"
+      }
+    ]
+  }
+}

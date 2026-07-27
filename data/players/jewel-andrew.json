@@ -1,0 +1,55 @@
+{
+  "slug": "jewel-andrew",
+  "name": "Jewel Andrew",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Selected by Saint Lucia Kings for CPL 2026",
+  "image": null,
+  "initials": "JA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jewel Andrew",
+    "birth_date": "7 December 2006",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Wicket-keeper-batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2024–present",
+    "career_teams": [
+      "Leeward Islands",
+      "Antigua and Barbuda Falcons",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "5",
+        "runs": "78",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "3",
+        "runs": "8",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "17",
+        "runs": "406",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "odean-smith",
+  "name": "Odean Smith",
+  "team_slug": "jamaica-kingsmen",
+  "category": "West Indian player",
+  "selection_note": "Selected as a Jamaican player",
+  "image": null,
+  "initials": "OS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Odean Fabian Smith",
+    "birth_date": "1 November 1996",
+    "birth_place": "St. Elizabeth, Jamaica",
+    "country": "West Indies",
+    "role": "Bowling all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right arm fast-medium",
+    "international_span": "2018-2023",
+    "career_teams": [
+      "Punjab Kings",
+      "Gujarat Titans",
+      "Quetta Gladiators",
+      "St Kitts & Nevis Patriots",
+      "Hobart Hurricanes",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "27",
+        "runs": "193",
+        "wickets": "27",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "9",
+        "runs": "199",
+        "wickets": "10",
+        "best_bowling": "2/26",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "57",
+        "runs": "948",
+        "wickets": "64",
+        "best_bowling": "5/65",
+        "hundreds_fifties": "0/3"
+      }
+    ]
+  }
+}

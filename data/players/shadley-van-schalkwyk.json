@@ -1,0 +1,57 @@
+{
+  "slug": "shadley-van-schalkwyk",
+  "name": "Shadley van Schalkwyk",
+  "team_slug": "saint-lucia-kings",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from USA",
+  "image": "/static/img/official/players/shadley-van-schalkwyk.webp",
+  "initials": "SV",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shadley Claude van Schalkwyk",
+    "birth_date": "5 August 1988",
+    "birth_place": "Cape Town, Cape Province, South Africa",
+    "country": "United States",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Western Province",
+      "Knights",
+      "Free State",
+      "Seattle Thunderbolts",
+      "Los Angeles Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "18",
+        "runs": "107",
+        "wickets": "28",
+        "best_bowling": "4/25",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "13",
+        "runs": "167",
+        "wickets": "17",
+        "best_bowling": "4/20",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "124",
+        "runs": "1,113",
+        "wickets": "161",
+        "best_bowling": "5/19",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "wanindu-hasaranga",
+  "name": "Wanindu Hasaranga",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "WH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Pinnaduwage Wanindu Hasaranga de Silva",
+    "birth_date": "29 July 1997",
+    "birth_place": "Galle, Sri Lanka",
+    "country": "Sri Lanka",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm Leg break",
+    "international_span": "2017–present",
+    "career_teams": [
+      "Royal Challengers Bangalore",
+      "Deccan Gladiators",
+      "Kandy Royals",
+      "Desert Vipers",
+      "St Kitts & Nevis Patriots",
+      "Rajasthan Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "238",
+        "runs": "2,463",
+        "wickets": "332",
+        "best_bowling": "6/9",
+        "hundreds_fifties": "0/9"
+      },
+      {
+        "format": "T20I",
+        "matches": "92",
+        "runs": "773",
+        "wickets": "151",
+        "best_bowling": "4/9",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "ODI",
+        "matches": "68",
+        "runs": "1,126",
+        "wickets": "111",
+        "best_bowling": "7/19",
+        "hundreds_fifties": "0/5"
+      }
+    ]
+  }
+}

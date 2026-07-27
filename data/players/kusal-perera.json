@@ -1,0 +1,58 @@
+{
+  "slug": "kusal-perera",
+  "name": "Kusal Perera",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/kusal-perera.webp",
+  "initials": "KP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mathurage Don Kusal Janith Perera",
+    "birth_date": "17 August 1990",
+    "birth_place": "Kalubowila, Sri Lanka",
+    "country": "Sri Lanka",
+    "role": "Wicket-keeper-batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2013–present",
+    "career_teams": [
+      "Galle Gladiators",
+      "Dambulla Sixers",
+      "MI Emirates",
+      "Lahore Qalandars",
+      "Hyderabad Kingsmen",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "88",
+        "runs": "2,276",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "1/16"
+      },
+      {
+        "format": "ODI",
+        "matches": "116",
+        "runs": "3,237",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "6/17"
+      },
+      {
+        "format": "Test",
+        "matches": "22",
+        "runs": "1,177",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "2/7"
+      }
+    ]
+  }
+}

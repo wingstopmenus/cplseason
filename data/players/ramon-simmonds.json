@@ -1,0 +1,56 @@
+{
+  "slug": "ramon-simmonds",
+  "name": "Ramon Simmonds",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Retained player",
+  "image": null,
+  "initials": "RS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Ramon Simmonds",
+    "birth_date": "16 October 2001",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "",
+    "bowling_style": "Left-arm fast medium",
+    "international_span": "2025–present",
+    "career_teams": [
+      "Barbados",
+      "Barbados Royals",
+      "Paarl Royals",
+      "West Indies Academy"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "24",
+        "runs": "30",
+        "wickets": "27",
+        "best_bowling": "4/15",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "2",
+        "runs": "0",
+        "wickets": "4",
+        "best_bowling": "4/15",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "4",
+        "runs": "0",
+        "wickets": "7",
+        "best_bowling": "4/39",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "shayan-jahangir",
+  "name": "Shayan Jahangir",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Opening-phase overseas signing",
+  "image": null,
+  "initials": "SJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shayan Jahangir",
+    "birth_date": "24 December 1994",
+    "birth_place": "Karachi, Pakistan",
+    "country": "United States",
+    "role": "Wicket-keeper, Batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast-medium",
+    "international_span": "2022present",
+    "career_teams": [
+      "Barbados Tridents",
+      "MI New York",
+      "Hyderabad Kingsmen"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "22",
+        "runs": "462",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "ODI",
+        "matches": "32",
+        "runs": "795",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "2/3"
+      },
+      {
+        "format": "LA",
+        "matches": "38",
+        "runs": "868",
+        "wickets": "1",
+        "best_bowling": "1/9",
+        "hundreds_fifties": "2/3"
+      }
+    ]
+  }
+}

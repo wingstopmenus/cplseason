@@ -1,0 +1,53 @@
+{
+  "slug": "nathan-edward",
+  "name": "Nathan Edward",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Breakout player",
+  "selection_note": "Breakout retention",
+  "image": "/static/img/official/players/nathan-edward.webp",
+  "initials": "NE",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Nathan Edward",
+    "birth_date": "29 May 2005",
+    "birth_place": "St Maarten",
+    "country": "",
+    "role": "All rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm fast-medium",
+    "international_span": "",
+    "career_teams": [
+      "Trinbago Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "6",
+        "runs": "27",
+        "wickets": "10",
+        "best_bowling": "3/19",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "8",
+        "runs": "98",
+        "wickets": "7",
+        "best_bowling": "2/28",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "6",
+        "runs": "103",
+        "wickets": "17",
+        "best_bowling": "6/23",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

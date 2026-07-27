@@ -1,0 +1,54 @@
+{
+  "slug": "gudakesh-motie",
+  "name": "Gudakesh Motie",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Selected by Barbados Tridents",
+  "image": null,
+  "initials": "GM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Gudakesh Motie",
+    "birth_date": "29 March 1995",
+    "birth_place": "Georgetown, Guyana",
+    "country": "West Indies",
+    "role": "Bowling all-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2021-present",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "40",
+        "runs": "166",
+        "wickets": "33",
+        "best_bowling": "3/22",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "34",
+        "runs": "357",
+        "wickets": "42",
+        "best_bowling": "4/23",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "Test",
+        "matches": "11",
+        "runs": "265",
+        "wickets": "35",
+        "best_bowling": "7/37",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "chris-green",
+  "name": "Chris Green",
+  "team_slug": "barbados-royals",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Australia",
+  "image": null,
+  "initials": "CG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Christopher James Green",
+    "birth_date": "1 October 1993",
+    "birth_place": "Durban, Natal Province, South Africa",
+    "country": "Australia",
+    "role": "Bowling all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2023",
+    "career_teams": [
+      "Kolkata Knight Riders",
+      "Middlesex",
+      "Jamaica Tallawahs",
+      "Lancashire",
+      "Trent Rockets",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "292",
+        "runs": "2,227",
+        "wickets": "262",
+        "best_bowling": "5/32",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "T20I",
+        "matches": "1",
+        "runs": "2",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "38",
+        "runs": "628",
+        "wickets": "40",
+        "best_bowling": "5/53",
+        "hundreds_fifties": "1/2"
+      }
+    ]
+  }
+}

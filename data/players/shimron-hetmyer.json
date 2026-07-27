@@ -1,0 +1,58 @@
+{
+  "slug": "shimron-hetmyer",
+  "name": "Shimron Hetmyer",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "SH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shimron Odilon Hetmyer",
+    "birth_date": "26 December 1996",
+    "birth_place": "Cumberland, East Canje, Berbice, Guyana",
+    "country": "West Indies",
+    "role": "Middle-order batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "",
+    "international_span": "2017–present",
+    "career_teams": [
+      "Royal Challengers Bangalore",
+      "Delhi Capitals",
+      "Multan Sultans",
+      "Rajasthan Royals",
+      "London Spirit",
+      "Khulna Tigers"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "76",
+        "runs": "1,409",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "0/8"
+      },
+      {
+        "format": "ODI",
+        "matches": "57",
+        "runs": "1,543",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "5/4"
+      },
+      {
+        "format": "Test",
+        "matches": "16",
+        "runs": "838",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "0/5"
+      }
+    ]
+  }
+}

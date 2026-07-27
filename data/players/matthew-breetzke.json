@@ -1,0 +1,58 @@
+{
+  "slug": "matthew-breetzke",
+  "name": "Matthew Breetzke",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/matthew-breetzke.webp",
+  "initials": "MB",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Matthew Paul Breetzke",
+    "birth_date": "3 November 1998",
+    "birth_place": "Port Elizabeth, Eastern Cape, South Africa",
+    "country": "South Africa",
+    "role": "Batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2023–present",
+    "career_teams": [
+      "Eastern Province",
+      "Warriors",
+      "Nelson Mandela Bay Giants",
+      "Durban's Super Giants",
+      "Northamptonshire",
+      "Lucknow Super Giants"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "13",
+        "runs": "158",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "12",
+        "runs": "706",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/6"
+      },
+      {
+        "format": "Test",
+        "matches": "2",
+        "runs": "14",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

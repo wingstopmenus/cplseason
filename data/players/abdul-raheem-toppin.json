@@ -1,0 +1,26 @@
+{
+  "slug": "abdul-raheem-toppin",
+  "name": "Abdul-Raheem Toppin",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": "/static/img/official/players/abdul-raheem-toppin.webp",
+  "initials": "AT",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Abdul-Raheem Toppin",
+    "birth_date": "",
+    "birth_place": "",
+    "country": "",
+    "role": "",
+    "batting_style": "",
+    "bowling_style": "",
+    "international_span": "",
+    "career_teams": [],
+    "records": []
+  }
+}

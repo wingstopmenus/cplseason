@@ -1,0 +1,55 @@
+{
+  "slug": "alick-athanaze",
+  "name": "Alick Athanaze",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "AA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Alick Athanaze",
+    "birth_date": "7 December 1998",
+    "birth_place": "Marigot, Saint Andrew Parish, Dominica",
+    "country": "West Indies",
+    "role": "Middle-order batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2023present",
+    "career_teams": [
+      "Windward Islands",
+      "Barbados Royals",
+      "Windward Islands Infernos"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "6",
+        "runs": "137",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "15",
+        "runs": "361",
+        "wickets": "2",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "Test",
+        "matches": "15",
+        "runs": "725",
+        "wickets": "1",
+        "best_bowling": "1/53",
+        "hundreds_fifties": "0/4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "shamar-springer",
+  "name": "Shamar Springer",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Brought back from the 2025 Falcons squad",
+  "image": "/static/img/official/players/shamar-springer.webp",
+  "initials": "SS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shamar Kamal Springer",
+    "birth_date": "26 November 1997",
+    "birth_place": "Saint Michael, Barbados",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium fast",
+    "international_span": "",
+    "career_teams": [
+      "Barbados",
+      "Barbados Tridents",
+      "Jamaica Tallawahs",
+      "Windward Islands",
+      "Antigua and Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "32",
+        "runs": "234",
+        "wickets": "30",
+        "best_bowling": "4/29",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "2",
+        "runs": "7",
+        "wickets": "2",
+        "best_bowling": "1/24",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "46",
+        "runs": "710",
+        "wickets": "43",
+        "best_bowling": "5/30",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

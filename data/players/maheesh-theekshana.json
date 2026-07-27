@@ -1,0 +1,58 @@
+{
+  "slug": "maheesh-theekshana",
+  "name": "Maheesh Theekshana",
+  "team_slug": "saint-lucia-kings",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Sri Lanka",
+  "image": "/static/img/official/players/maheesh-theekshana.webp",
+  "initials": "MT",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Morawakage Maheesh Theekshana",
+    "birth_date": "1 August 2000",
+    "birth_place": "Colombo, Sri Lanka",
+    "country": "Sri Lanka",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2021-present",
+    "career_teams": [
+      "Galle Marvels",
+      "Joburg Super Kings",
+      "Rajasthan Royals",
+      "Dambulla Sixers",
+      "Saint Lucia Kings",
+      "Hyderabad Kingsmen"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "83",
+        "runs": "107",
+        "wickets": "82",
+        "best_bowling": "3/17",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "61",
+        "runs": "344",
+        "wickets": "81",
+        "best_bowling": "4/25",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "2",
+        "runs": "59",
+        "wickets": "5",
+        "best_bowling": "2/28",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

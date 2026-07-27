@@ -1,0 +1,55 @@
+{
+  "slug": "shadrack-descarte",
+  "name": "Shadrack Descarte",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": null,
+  "initials": "SD",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shadrack Descarte",
+    "birth_date": "18 October 1997",
+    "birth_place": "Castries, St. Lucia",
+    "country": "",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "",
+    "career_teams": [
+      "Windward Islands",
+      "Saint Lucia Kings",
+      "Windward Islands Infernos"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "11",
+        "runs": "86",
+        "wickets": "4",
+        "best_bowling": "1/11",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "14",
+        "runs": "180",
+        "wickets": "13",
+        "best_bowling": "4/43",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "FC",
+        "matches": "8",
+        "runs": "347",
+        "wickets": "13",
+        "best_bowling": "3/58",
+        "hundreds_fifties": "1/1"
+      }
+    ]
+  }
+}

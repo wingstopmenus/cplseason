@@ -1,0 +1,58 @@
+{
+  "slug": "shadab-khan",
+  "name": "Shadab Khan",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/shadab-khan.webp",
+  "initials": "SK",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shadab Khan",
+    "birth_date": "4 October 1998",
+    "birth_place": "Kamar Mushani, Mianwali District, Punjab, Pakistan",
+    "country": "Pakistan",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm leg spin",
+    "international_span": "2017–present",
+    "career_teams": [
+      "Sussex",
+      "Birmingham Phoenix",
+      "San Francisco Unicorns",
+      "Colombo Strikers",
+      "Sydney Thunder",
+      "Lancashire"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "124",
+        "runs": "1,009",
+        "wickets": "123",
+        "best_bowling": "4/8",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "73",
+        "runs": "955",
+        "wickets": "87",
+        "best_bowling": "4/27",
+        "hundreds_fifties": "0/5"
+      },
+      {
+        "format": "Test",
+        "matches": "6",
+        "runs": "300",
+        "wickets": "14",
+        "best_bowling": "3/31",
+        "hundreds_fifties": "0/3"
+      }
+    ]
+  }
+}

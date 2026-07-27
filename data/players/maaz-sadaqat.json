@@ -1,0 +1,58 @@
+{
+  "slug": "maaz-sadaqat",
+  "name": "Maaz Sadaqat",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Second-phase overseas signing",
+  "image": null,
+  "initials": "MS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Maaz Sadaqat",
+    "birth_date": "15 May 2005",
+    "birth_place": "Peshawar, Khyber Pakhtunkhwa, Pakistan",
+    "country": "Pakistan",
+    "role": "Batting all-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2026-present",
+    "career_teams": [
+      "Khyber Pakhtunkhwa",
+      "City Club",
+      "Khan Research Laboratories cricket team",
+      "Peshawar Zalmi",
+      "Noakhali Express",
+      "Hyderabad Kingsmen"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "45",
+        "runs": "1,207",
+        "wickets": "17",
+        "best_bowling": "2/12",
+        "hundreds_fifties": "0/8"
+      },
+      {
+        "format": "ODI",
+        "matches": "5",
+        "runs": "107",
+        "wickets": "3",
+        "best_bowling": "3/23",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "33",
+        "runs": "1,079",
+        "wickets": "20",
+        "best_bowling": "3/23",
+        "hundreds_fifties": "3/7"
+      }
+    ]
+  }
+}

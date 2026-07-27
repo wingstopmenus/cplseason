@@ -1,0 +1,58 @@
+{
+  "slug": "johnson-charles",
+  "name": "Johnson Charles",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Drafted by St Kitts & Nevis Patriots",
+  "image": null,
+  "initials": "JC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Johnson Charles",
+    "birth_date": "14 January 1989",
+    "birth_place": "Castries, St. Lucia",
+    "country": "West Indies",
+    "role": "Wicket-keeper batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2011–present",
+    "career_teams": [
+      "Rangpur Riders",
+      "Jamaica Tallawahs",
+      "Multan Sultans",
+      "Barbados Royals",
+      "St Lucia Kings",
+      "Comilla Victorians"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "60",
+        "runs": "1,359",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/5"
+      },
+      {
+        "format": "ODI",
+        "matches": "58",
+        "runs": "1,537",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "2/7"
+      },
+      {
+        "format": "LA",
+        "matches": "120",
+        "runs": "2,921",
+        "wickets": "3",
+        "best_bowling": "1/22",
+        "hundreds_fifties": "3/13"
+      }
+    ]
+  }
+}

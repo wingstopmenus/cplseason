@@ -1,0 +1,50 @@
+{
+  "slug": "cpl-2026-schedule-window-confirmed",
+  "category": "Fixtures",
+  "title": "CPL 2026 Schedule Runs from 7 August to 20 September",
+  "short_title": "CPL 2026 schedule dates",
+  "description": "The CPL 2026 schedule contains 39 matches from 7 August to 20 September, with seven teams, eight host grounds and finals week in Barbados.",
+  "dek": "The men’s tournament opens in St Vincent, returns to Jamaica and finishes with four playoff matches at Kensington Oval.",
+  "date_published": "2026-04-28",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/news-banner-bg.jpg",
+  "image_alt": "Caribbean cricket stadium under lights",
+  "summary_heading": "Six weeks, seven teams and 39 matches",
+  "key_points": [
+    "Jamaica Kingsmen face Antigua & Barbuda Falcons in the opener on 7 August.",
+    "St Vincent and the Grenadines host men’s CPL matches for the first time.",
+    "Kensington Oval stages the Eliminator, two Qualifiers and the final."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "The tournament route",
+      "paragraphs": [
+        "The 2026 men’s Caribbean Premier League begins at Arnos Vale Stadium in Kingstown and moves through Jamaica, Saint Lucia, Antigua, Trinidad, St Kitts, Guyana and Barbados. All 39 fixtures use the local time of the host venue.",
+        "The expanded seven-team field creates a 35-match league phase. Each franchise plays ten games before the top four progress to the playoffs."
+      ]
+    },
+    {
+      "heading": "Three landmarks in the calendar",
+      "paragraphs": [
+        "St Vincent hosts the first three fixtures from 7 to 9 August. Jamaica then stages CPL matches for the first time since 2019, with four games at Sabina Park.",
+        "Barbados hosts finals week for the first time. The Eliminator is scheduled for 16 September, followed by Qualifier 1, Qualifier 2 and the final on 20 September."
+      ]
+    },
+    {
+      "heading": "What supporters should check",
+      "paragraphs": [
+        "Most league matches begin at 7pm local time, but the schedule also contains 10am, 5pm and 8pm starts. Jamaica operates one hour behind most other host territories, so international viewers should check the ground as well as the date.",
+        "The schedule page lists every fixture with team and venue links. The points table will remain at zero until the first completed match."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/schedule/", "label": "All 39 fixtures"},
+    {"href": "/venues/", "label": "CPL 2026 venue guides"},
+    {"href": "/points-table/", "label": "Points Table"}
+  ],
+  "source_name": "Caribbean Premier League fixture announcement",
+  "source_date": "2026-04-28",
+  "last_updated": "2026-07-27"
+}

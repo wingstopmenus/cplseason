@@ -1,0 +1,46 @@
+{
+  "slug": "ronaldo-alimohamed",
+  "name": "Ronaldo Alimohamed",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Selected by Guyana Amazon Warriors for CPL 2026",
+  "image": null,
+  "initials": "RA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Ronaldo Jonathan Alimohamed",
+    "birth_date": "3 October 1998",
+    "birth_place": "",
+    "country": "",
+    "role": "Bowling Allrounder",
+    "batting_style": "Right handed",
+    "bowling_style": "Right arm Fast medium",
+    "international_span": "",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "LA",
+        "matches": "7",
+        "runs": "79",
+        "wickets": "3",
+        "best_bowling": "1/33",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "13",
+        "runs": "391",
+        "wickets": "40",
+        "best_bowling": "6/17",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

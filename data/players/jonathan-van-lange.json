@@ -1,0 +1,38 @@
+{
+  "slug": "jonathan-van-lange",
+  "name": "Jonathan van Lange",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Selected by Guyana Amazon Warriors for CPL 2026",
+  "image": null,
+  "initials": "JV",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jonathan Brayden van Lange",
+    "birth_date": "30 December 2006",
+    "birth_place": "Georgetown, Guyana",
+    "country": "West Indies",
+    "role": "Allrounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "FC",
+        "matches": "1",
+        "runs": "60",
+        "wickets": "-",
+        "best_bowling": "-",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

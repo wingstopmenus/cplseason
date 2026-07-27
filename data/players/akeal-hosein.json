@@ -1,0 +1,58 @@
+{
+  "slug": "akeal-hosein",
+  "name": "Akeal Hosein",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/akeal-hosein.webp",
+  "initials": "AH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Akeal Jerome Hosein",
+    "birth_date": "25 April 1993",
+    "birth_place": "Port of Spain, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2021–present",
+    "career_teams": [
+      "Barbados Tridents",
+      "Trinbago Knight Riders",
+      "Melbourne Renegades",
+      "Sunrisers Hyderabad",
+      "Sydney Sixers",
+      "Chennai Super Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "70",
+        "runs": "245",
+        "wickets": "65",
+        "best_bowling": "5/11",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "38",
+        "runs": "266",
+        "wickets": "57",
+        "best_bowling": "4/39",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "89",
+        "runs": "602",
+        "wickets": "122",
+        "best_bowling": "5/26",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

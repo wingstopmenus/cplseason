@@ -1,0 +1,31 @@
+{
+  "slug": "amshi-de-silva",
+  "name": "Amshi de Silva",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/amshi-de-silva.webp",
+  "initials": "AD",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Amshi de Silva",
+    "birth_date": "11 November 2001",
+    "birth_place": "Galle, Sri Lanka",
+    "country": "",
+    "role": "",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium fast",
+    "international_span": "",
+    "career_teams": [
+      "Colombo Cricket Club",
+      "Nondescripts Cricket Club",
+      "Texas Super Kings",
+      "Trinbago Knight Riders"
+    ],
+    "records": []
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "sunil-narine",
+  "name": "Sunil Narine",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/sunil-narine.webp",
+  "initials": "SN",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Sunil Philip Narine",
+    "birth_date": "26 May 1988",
+    "birth_place": "Arima, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2011–2019",
+    "career_teams": [
+      "Lahore Qalandars",
+      "Dhaka Dynamites",
+      "Oval Invincibles",
+      "Surrey",
+      "Abu Dhabi Knight Riders",
+      "Los Angeles Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "ODI",
+        "matches": "65",
+        "runs": "363",
+        "wickets": "92",
+        "best_bowling": "6/27",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "6",
+        "runs": "40",
+        "wickets": "21",
+        "best_bowling": "6/91",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "116",
+        "runs": "714",
+        "wickets": "190",
+        "best_bowling": "6/9",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "slug": "zishan-motara",
+  "name": "Zishan Motara",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Returns to Barbados Tridents for CPL 2026",
+  "image": null,
+  "initials": "ZM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Zishan Yusuf Motara",
+    "birth_date": "14 July 2006",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm Legbreak",
+    "international_span": "2025",
+    "career_teams": [
+      "Combined Campuses and Colleges",
+      "West Indies Academy",
+      "Barbados Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "3",
+        "runs": "3",
+        "wickets": "1",
+        "best_bowling": "1/39",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "1",
+        "runs": "3",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "7",
+        "runs": "14",
+        "wickets": "9",
+        "best_bowling": "3/19",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

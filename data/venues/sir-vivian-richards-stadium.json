@@ -1,0 +1,75 @@
+{
+  "slug": "sir-vivian-richards-stadium",
+  "name": "Sir Vivian Richards Stadium",
+  "city": "North Sound",
+  "territory": "Antigua and Barbuda",
+  "capacity": 10000,
+  "matches": 4,
+  "date_window": "20–25 August",
+  "stage_label": "Antigua block",
+  "summary": "Sir Vivian Richards Stadium hosts four Antigua and Barbuda Falcons matches across the territory’s 2026 home block.",
+  "tagline": "Antigua's purpose-built international arena, carrying the name of one of cricket's defining batters.",
+  "established": "Opened for the 2007 Cricket World Cup",
+  "former_name": null,
+  "ends": "Andy Roberts End and Curtly Ambrose End",
+  "home_team": "Leeward Islands Hurricanes and Antigua & Barbuda Falcons",
+  "story": [
+    "Sir Vivian Richards Stadium was purpose-built in North Sound for the 2007 ICC Cricket World Cup. It replaced the Antigua Recreation Ground as the country's principal international cricket venue while carrying forward a name central to Antiguan and West Indies cricket.",
+    "The five-storey South Stand and North Stand anchor the ground, with grass banks offering a different style of viewing on either side of the wicket. Its ends honour two more Antiguan fast-bowling greats: Sir Andy Roberts and Sir Curtly Ambrose.",
+    "The venue hosts four Antigua and Barbuda Falcons fixtures in CPL 2026, all scheduled for 7pm local starts from 20 to 25 August."
+  ],
+  "highlights": [
+    {
+      "label": "Cricket lineage",
+      "title": "Three Antiguan greats",
+      "text": "The stadium honours Sir Vivian Richards, while its two ends carry the names of Sir Andy Roberts and Sir Curtly Ambrose."
+    },
+    {
+      "label": "World stage",
+      "title": "Built for 2007",
+      "text": "The purpose-built venue opened as part of the Caribbean's ICC Cricket World Cup infrastructure."
+    },
+    {
+      "label": "CPL 2026",
+      "title": "Four Falcons home nights",
+      "text": "North Sound hosts Antigua's complete league-stage home block from 20 to 25 August."
+    }
+  ],
+  "visitor_note": "The stadium is in North Sound outside central St John's. Use the official match-day guidance for parking, shuttles, gates and bag rules rather than relying on general stadium information.",
+  "fixtures": [
+    {
+      "date": "2026-08-20",
+      "label": "Thu 20 Aug",
+      "match": "Antigua & Barbuda Falcons vs St Kitts & Nevis Patriots",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-22",
+      "label": "Sat 22 Aug",
+      "match": "Antigua & Barbuda Falcons vs Trinbago Knight Riders",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-23",
+      "label": "Sun 23 Aug",
+      "match": "Antigua & Barbuda Falcons vs Guyana Amazon Warriors",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-25",
+      "label": "Tue 25 Aug",
+      "match": "Antigua & Barbuda Falcons vs Barbados Royals",
+      "time": "7pm"
+    }
+  ],
+  "image": "/static/img/official/venues/sir-vivian-richards-stadium.webp",
+  "image_source": "https://commons.wikimedia.org/wiki/File:SirVivianRichardsStadiumoutside.jpeg",
+  "image_credit": "Chuckdiesel83",
+  "image_license": "CC BY-SA 3.0",
+  "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "external_ids": {
+    "wikipedia": "Sir Vivian Richards Stadium",
+    "cpl": null
+  },
+  "last_updated": "2026-07-26"
+}

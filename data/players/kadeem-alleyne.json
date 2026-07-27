@@ -1,0 +1,58 @@
+{
+  "slug": "kadeem-alleyne",
+  "name": "Kadeem Alleyne",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "KA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kadeem Alleyne",
+    "birth_date": "1 January 2001",
+    "birth_place": "",
+    "country": "",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Trinbago Knight Riders",
+      "Combined Campuses and Colleges",
+      "Barbados Royals",
+      "Barbados",
+      "Sylhet Strikers",
+      "Dubai Capitals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "34",
+        "runs": "397",
+        "wickets": "3",
+        "best_bowling": "3/53",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "22",
+        "runs": "490",
+        "wickets": "18",
+        "best_bowling": "4/50",
+        "hundreds_fifties": "0/3"
+      },
+      {
+        "format": "FC",
+        "matches": "8",
+        "runs": "512",
+        "wickets": "8",
+        "best_bowling": "3/44",
+        "hundreds_fifties": "0/5"
+      }
+    ]
+  }
+}

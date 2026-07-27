@@ -1,0 +1,33 @@
+{
+  "slug": "hassan-khan",
+  "name": "Hassan Khan",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "HK",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mohammad Hassan Khan",
+    "birth_date": "16 October 1998",
+    "birth_place": "Karachi, Sindh, Pakistan",
+    "country": "Pakistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left arm orthodox",
+    "international_span": "",
+    "career_teams": [
+      "Mirpur Royals",
+      "Antigua & Barbuda Falcons",
+      "San Francisco Unicorns",
+      "Guyana Amazon Warriors",
+      "Melbourne Renegades",
+      "Hyderabad Kingsmen"
+    ],
+    "records": []
+  }
+}

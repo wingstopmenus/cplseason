@@ -1,0 +1,56 @@
+{
+  "slug": "ashmead-nedd",
+  "name": "Ashmead Nedd",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": null,
+  "initials": "AN",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Ashmead Romano Nedd",
+    "birth_date": "10 January 2001",
+    "birth_place": "Guyana",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "",
+    "career_teams": [
+      "Guyana Amazon Warriors",
+      "Leeward Islands",
+      "St Kitts and Nevis Patriots",
+      "Guyana"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "15",
+        "runs": "9",
+        "wickets": "13",
+        "best_bowling": "4/25",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "31",
+        "runs": "77",
+        "wickets": "39",
+        "best_bowling": "4/29",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "12",
+        "runs": "155",
+        "wickets": "41",
+        "best_bowling": "6/78",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

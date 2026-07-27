@@ -1,0 +1,58 @@
+{
+  "slug": "moeen-ali",
+  "name": "Moeen Ali",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/moeen-ali.webp",
+  "initials": "MA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Moeen Munir Ali",
+    "birth_date": "",
+    "birth_place": "Sparkhill, Birmingham, England",
+    "country": "England",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2014–2024",
+    "career_teams": [
+      "Worcestershire",
+      "Royal Challengers Bangalore",
+      "Chennai Super Kings",
+      "Birmingham Phoenix",
+      "Comilla Victorians",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "92",
+        "runs": "1,229",
+        "wickets": "51",
+        "best_bowling": "3/24",
+        "hundreds_fifties": "0/7"
+      },
+      {
+        "format": "ODI",
+        "matches": "138",
+        "runs": "2,355",
+        "wickets": "111",
+        "best_bowling": "4/46",
+        "hundreds_fifties": "3/6"
+      },
+      {
+        "format": "Test",
+        "matches": "68",
+        "runs": "3,094",
+        "wickets": "204",
+        "best_bowling": "6/53",
+        "hundreds_fifties": "5/15"
+      }
+    ]
+  }
+}

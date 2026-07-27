@@ -1,0 +1,58 @@
+{
+  "slug": "saim-ayub",
+  "name": "Saim Ayub",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Second-phase overseas signing",
+  "image": null,
+  "initials": "SA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Saim Ayub",
+    "birth_date": "24 May 2002",
+    "birth_place": "Karachi, Sindh, Pakistan",
+    "country": "Pakistan",
+    "role": "All-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "",
+    "career_teams": [
+      "Quetta Gladiators",
+      "Sindh",
+      "Rangpur Riders",
+      "Peshawar Zalmi",
+      "Guyana Amazon Warriors",
+      "Karachi Whites"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "67",
+        "runs": "1,298",
+        "wickets": "29",
+        "best_bowling": "3/25",
+        "hundreds_fifties": "0/6"
+      },
+      {
+        "format": "ODI",
+        "matches": "17",
+        "runs": "751",
+        "wickets": "9",
+        "best_bowling": "2/29",
+        "hundreds_fifties": "3/3"
+      },
+      {
+        "format": "Test",
+        "matches": "8",
+        "runs": "364",
+        "wickets": "4",
+        "best_bowling": "2/101",
+        "hundreds_fifties": "0/3"
+      }
+    ]
+  }
+}

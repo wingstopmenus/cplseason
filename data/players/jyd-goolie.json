@@ -1,0 +1,54 @@
+{
+  "slug": "jyd-goolie",
+  "name": "Jyd Goolie",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Selected by Trinbago Knight Riders for CPL 2026",
+  "image": "/static/img/official/players/jyd-goolie.webp",
+  "initials": "JG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jyd Uri Goolie",
+    "birth_date": "11 May 1997",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm offbreak",
+    "international_span": "",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "St Kitts & Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "4",
+        "runs": "49",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "12",
+        "runs": "217",
+        "wickets": "2",
+        "best_bowling": "1/2",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "FC",
+        "matches": "16",
+        "runs": "824",
+        "wickets": "4",
+        "best_bowling": "2/6",
+        "hundreds_fifties": "3/3"
+      }
+    ]
+  }
+}

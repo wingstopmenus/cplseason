@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com{{ venue.image }}">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cplseason">
+  <meta name="theme-color" content="#05061d">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260726s">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="venue-profile-2026">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/" aria-current="page">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <nav class="breadcrumbs venue-profile-breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/venues/">Venues</a></li>
+      <li><span aria-current="page">{{ venue.name }}</span></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section class="venue-profile-stage">
+      <div class="venue-profile-copy">
+        <p class="venue-profile-kicker">{{ venue.stage_label }} / CPL 2026 ground guide</p>
+        <h1>{{ venue.name }}</h1>
+        <p class="venue-profile-tagline">{{ venue.tagline }}</p>
+        <div class="venue-profile-location">
+          <span>{{ venue.city }}</span>
+          <i aria-hidden="true"></i>
+          <span>{{ venue.territory }}</span>
+        </div>
+        <div class="venue-profile-actions">
+          <a class="button primary" href="#fixtures">See {{ venue.matches }} fixtures</a>
+          <a class="button secondary" href="#ground-story">Read ground history</a>
+        </div>
+      </div>
+      <figure class="venue-profile-photo">
+        <img src="{{ venue.image }}" width="1280" height="720" alt="{{ venue.name }} cricket ground in {{ venue.city }}, {{ venue.territory }}">
+        <figcaption>
+          <span>{{ "%02d" | format(venue_number) }}</span>
+          <strong>{{ venue.date_window }}</strong>
+          <small>{{ venue.stage_label }}</small>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="venue-profile-stat-rail" aria-label="{{ venue.name }} summary">
+      <div><small>2026 allocation</small><strong>{{ venue.matches }}</strong><span>scheduled matches</span></div>
+      <div><small>Reference capacity</small><strong>{{ "{:,}".format(venue.capacity) }}</strong><span>event layouts vary</span></div>
+      <div><small>Ground era</small><strong>{{ venue.established }}</strong><span>{{ venue.former_name or "Established identity" }}</span></div>
+      <div><small>Wicket ends</small><strong>{{ venue.ends }}</strong><span>{{ venue.home_team }}</span></div>
+    </section>
+
+    <section id="ground-story" class="venue-profile-story" aria-labelledby="ground-story-title">
+      <header>
+        <p class="venue-profile-index">01 / The ground</p>
+        <h2 id="ground-story-title">{{ venue.name }} history and CPL role</h2>
+      </header>
+      <div class="venue-profile-prose">
+        {% for paragraph in venue.story %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      <aside>
+        <small>At a glance</small>
+        <dl>
+          <div><dt>Location</dt><dd>{{ venue.city }}, {{ venue.territory }}</dd></div>
+          {% if venue.former_name %}<div><dt>Earlier name</dt><dd>{{ venue.former_name }}</dd></div>{% endif %}
+          <div><dt>Wicket ends</dt><dd>{{ venue.ends }}</dd></div>
+          <div><dt>Home sides</dt><dd>{{ venue.home_team }}</dd></div>
+          <div><dt>CPL window</dt><dd>{{ venue.date_window }}</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="venue-profile-highlights" aria-labelledby="venue-highlights-title">
+      <header>
+        <p class="venue-profile-index">02 / Identity</p>
+        <h2 id="venue-highlights-title">Key facts about {{ venue.name }}</h2>
+      </header>
+      <div>
+        {% for highlight in venue.highlights %}
+        <article>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <small>{{ highlight.label }}</small>
+          <h3>{{ highlight.title }}</h3>
+          <p>{{ highlight.text }}</p>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="fixtures" class="venue-profile-fixtures" aria-labelledby="venue-fixtures-title">
+      <header>
+        <div>
+          <p class="venue-profile-index">03 / CPL 2026</p>
+          <h2 id="venue-fixtures-title">{{ venue.name }} fixtures</h2>
+        </div>
+        <p>All start times are local to {{ venue.territory }} and follow the published CPL schedule.</p>
+      </header>
+      <div class="venue-fixture-list">
+        {% for fixture in venue.fixtures %}
+        <article>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <time datetime="{{ fixture.date }}">{{ fixture.label }}</time>
+          <h3>{{ fixture.match }}</h3>
+          <p><strong>{{ fixture.time }}</strong> local</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="venue-profile-schedule-link">
+        <span>{{ venue.matches }} matches · {{ venue.date_window }}</span>
+        <a href="/schedule/">Open the complete CPL 2026 schedule <b>→</b></a>
+      </div>
+    </section>
+
+    <section class="venue-profile-plan" aria-labelledby="venue-plan-title">
+      <div>
+        <p class="venue-profile-index">04 / Match day</p>
+        <h2 id="venue-plan-title">Matchday information for {{ venue.name }}</h2>
+        <p>{{ venue.visitor_note }}</p>
+      </div>
+      <ul>
+        <li><span>01</span><p><strong>Tickets</strong> Use only CPL or its authorized seller.</p></li>
+        <li><span>02</span><p><strong>Timing</strong> Recheck the fixture before inter-island travel.</p></li>
+        <li><span>03</span><p><strong>Capacity</strong> Ground capacity is not available inventory.</p></li>
+      </ul>
+    </section>
+
+    <section class="venue-profile-more" aria-labelledby="more-venues-title">
+      <header>
+        <p class="venue-profile-index">Continue the route</p>
+        <h2 id="more-venues-title">More CPL 2026 grounds</h2>
+      </header>
+      <div>
+        {% for item in related_venues %}
+        <a href="/venue/{{ item.slug }}/">
+          <img src="{{ item.image }}" width="1280" height="720" alt="{{ item.name }} cricket ground in {{ item.city }}" loading="lazy">
+          <span>
+            <small>{{ item.stage_label }}</small>
+            <strong>{{ item.name }}</strong>
+            <b>{{ item.city }} · {{ item.matches }} matches</b>
+          </span>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="venue-profile-faq" aria-labelledby="venue-faq-title">
+      <header>
+        <p class="venue-profile-index">Quick answers</p>
+        <h2 id="venue-faq-title">{{ venue.name }} questions and answers</h2>
+      </header>
+      <div>
+        {% for item in faq %}
+        <article><h3>{{ item.question }}</h3><p>{{ item.answer }}</p></article>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="/static/js/site.js?v=20260726g" defer></script>
+</body>
+</html>

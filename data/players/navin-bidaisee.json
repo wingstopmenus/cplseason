@@ -1,0 +1,56 @@
+{
+  "slug": "navin-bidaisee",
+  "name": "Navin Bidaisee",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Breakout player",
+  "selection_note": "Breakout retention",
+  "image": null,
+  "initials": "NB",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Navin Bidaisee",
+    "birth_date": "24 March 2000",
+    "birth_place": "",
+    "country": "West Indies",
+    "role": "Batting Allrounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Legbreak",
+    "international_span": "2025–present",
+    "career_teams": [
+      "Combined Campuses and Colleges",
+      "Trinidad and Tobago",
+      "St Kitts and Nevis Patriots",
+      "Dubai Capitals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "11",
+        "runs": "148",
+        "wickets": "10",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "T20I",
+        "matches": "3",
+        "runs": "24",
+        "wickets": "3",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "8",
+        "runs": "94",
+        "wickets": "4",
+        "best_bowling": "3/40",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

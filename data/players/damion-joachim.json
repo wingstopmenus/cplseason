@@ -1,0 +1,26 @@
+{
+  "slug": "damion-joachim",
+  "name": "Damion Joachim",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Selected by Saint Lucia Kings for CPL 2026",
+  "image": "/static/img/official/players/damion-joachim.webp",
+  "initials": "DJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Damion Joachim",
+    "birth_date": "",
+    "birth_place": "",
+    "country": "",
+    "role": "",
+    "batting_style": "",
+    "bowling_style": "",
+    "international_span": "",
+    "career_teams": [],
+    "records": []
+  }
+}

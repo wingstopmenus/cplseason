@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/official/teams-banner.png">
+  <meta property="og:image:alt" content="CPL 2026 team crests">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727pt">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="standings-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/" aria-current="page">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <main
+    id="main"
+    class="standings-control"
+    data-live-standings
+    data-standings-endpoint="https://api.mcpro.cricket/v1/competition/sr:tournament:16628/ladders"
+    data-standings-client-key="c7b9bd69-0eee-4676-beee-fbbee46fccee"
+  >
+    <nav class="standings-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">Points Table</li>
+      </ol>
+    </nav>
+
+    <section class="standings-hero" aria-labelledby="standings-title">
+      <div class="standings-hero-copy">
+        <p class="standings-kicker"><span>Live race control</span> Republic Bank CPL 2026</p>
+        <h1 id="standings-title">CPL 2026 <em>Points Table</em></h1>
+        <p data-standings-hero-copy>CPL 2026 begins on 7 August, so every team starts with zero matches and zero points. Positions and net run rate will appear after the opening result.</p>
+        <div class="standings-actions">
+          <a class="button primary" href="#standings-table">Open standings</a>
+          <a class="button secondary" href="/schedule/">View first fixtures</a>
+        </div>
+      </div>
+      <div class="standings-hero-board" aria-label="CPL 2026 standings status">
+        <div class="standings-board-top">
+          <span data-standings-phase><i></i> Pre-season</span>
+          <small data-standings-checked>Checked {{ page.checked_label }}</small>
+        </div>
+        <div class="standings-board-number" data-standings-completed>00</div>
+        <strong>Completed matches</strong>
+        <p data-standings-board-copy>Standings activate after the Jamaica Kingsmen vs Antigua &amp; Barbuda Falcons opener.</p>
+        <a href="/schedule/">Fri 7 Aug · Arnos Vale <span>→</span></a>
+      </div>
+    </section>
+
+    <dl class="standings-stat-rail" aria-label="CPL 2026 tournament format">
+      <div><dt>Teams</dt><dd>7</dd></div>
+      <div><dt>League matches</dt><dd>35</dd></div>
+      <div><dt>Matches per team</dt><dd>10</dd></div>
+      <div><dt>Playoff places</dt><dd>4</dd></div>
+    </dl>
+
+    <section id="standings-table" class="standings-leaderboard" aria-labelledby="standings-table-title">
+      <header class="standings-section-header">
+        <div>
+          <p class="standings-index">01 / League table</p>
+          <h2 id="standings-table-title">CPL 2026 standings</h2>
+        </div>
+        <div class="standings-status" aria-live="polite">
+          <span data-standings-status><i></i> Awaiting opening result</span>
+          <small data-standings-status-detail>All seven teams start level</small>
+        </div>
+      </header>
+
+      <div class="standings-table-shell">
+        <div class="standings-table-scroll">
+          <table class="standings-table">
+            <thead>
+              <tr>
+                <th scope="col">Team</th>
+                <th scope="col"><abbr title="Played">P</abbr></th>
+                <th scope="col"><abbr title="Won">W</abbr></th>
+                <th scope="col"><abbr title="Lost">L</abbr></th>
+                <th scope="col"><abbr title="No result">NR</abbr></th>
+                <th scope="col"><abbr title="Net run rate">NRR</abbr></th>
+                <th scope="col"><abbr title="Points">Pts</abbr></th>
+              </tr>
+            </thead>
+            <tbody data-standings-body>
+              {% for team in teams %}
+              <tr
+                data-standings-team
+                data-team-slug="{{ team.slug }}"
+                data-team-name="{{ team.name }}"
+                data-official-team-id="{{ team.external_ids.mcpro_team_id }}"
+              >
+                <td data-label="Team">
+                  <span class="standings-position" data-standing-position aria-label="Not ranked">—</span>
+                  <a href="/team/{{ team.slug }}/">
+                    <img src="{{ team.logo }}" width="54" height="54" alt="{{ team.name }} logo" loading="lazy">
+                    <span><strong>{{ team.name }}</strong><small>{{ team.territory }}</small></span>
+                  </a>
+                </td>
+                <td data-label="Played" data-standing-field="matches">{{ team.standing.played }}</td>
+                <td data-label="Won" data-standing-field="wins">{{ team.standing.won }}</td>
+                <td data-label="Lost" data-standing-field="losses">{{ team.standing.lost }}</td>
+                <td data-label="No result" data-standing-field="noResults">{{ team.standing.no_result }}</td>
+                <td data-label="NRR" data-standing-field="netRunRate">{{ team.standing.nrr }}</td>
+                <td data-label="Points"><strong data-standing-field="points">{{ team.standing.points }}</strong></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="standings-table-note">
+          <span>Table status</span>
+          <p data-standings-table-note>All seven teams start on zero points. The table will show positions and net run rate after the opening result.</p>
+          <a href="#update-policy">Update policy <b>↓</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="standings-key" aria-labelledby="standings-key-title">
+      <header>
+        <p class="standings-index">02 / Table key</p>
+        <h2 id="standings-key-title">How the CPL points table works</h2>
+      </header>
+      <dl>
+        <div><dt>P</dt><dd><strong>Played</strong><span>Completed league matches</span></dd></div>
+        <div><dt>W</dt><dd><strong>Won</strong><span>Confirmed victories</span></dd></div>
+        <div><dt>L</dt><dd><strong>Lost</strong><span>Confirmed defeats</span></dd></div>
+        <div><dt>NR</dt><dd><strong>No result</strong><span>Matches without a result</span></dd></div>
+        <div><dt>NRR</dt><dd><strong>Net run rate</strong><span>Official tie-break measure</span></dd></div>
+        <div><dt>Pts</dt><dd><strong>Points</strong><span>Official league total</span></dd></div>
+      </dl>
+    </section>
+
+    <section class="standings-playoffs" aria-labelledby="standings-playoffs-title">
+      <header class="standings-section-header">
+        <div>
+          <p class="standings-index">03 / Qualification route</p>
+          <h2 id="standings-playoffs-title">CPL 2026 playoff qualification</h2>
+        </div>
+        <p>The top two earn a route with a second chance. Third and fourth enter the Eliminator. All four playoff matches take place at Kensington Oval.</p>
+      </header>
+      <ol>
+        {% for match in playoff_route %}
+        <li>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <time>{{ match.date }}</time>
+          <div><small>{{ match.name }}</small><strong>{{ match.teams }}</strong></div>
+          <p>{{ match.outcome }}</p>
+          <a href="{{ match.url }}" aria-label="Open {{ match.name }} match centre">Open match <span>→</span></a>
+        </li>
+        {% endfor %}
+      </ol>
+      <a href="/venue/kensington-oval/">Explore the finals venue <span>→</span></a>
+    </section>
+
+    <section id="update-policy" class="standings-update" aria-labelledby="standings-update-title">
+      <div class="standings-update-copy">
+        <p class="standings-index">04 / Standings updates</p>
+        <h2 id="standings-update-title">When the CPL 2026 points table updates</h2>
+        <p>The table changes after each completed league match. It records matches played, wins, losses, no results, points and net run rate from the final scorecard.</p>
+        <div class="standings-update-time">
+          <span>Before the opening match</span>
+          <strong data-standings-update-title>Seven teams, zero matches played</strong>
+          <small data-standings-update-detail>First update follows Jamaica Kingsmen vs Antigua &amp; Barbuda Falcons</small>
+        </div>
+      </div>
+      <ol class="standings-update-steps" aria-label="Points table update process">
+        <li>
+          <span>01</span>
+          <div>
+            <strong>Result recorded</strong>
+            <p>A final result adds one match to both teams’ records.</p>
+          </div>
+        </li>
+        <li>
+          <span>02</span>
+          <div>
+            <strong>Points added</strong>
+            <p>The result updates wins, losses, no results and points.</p>
+          </div>
+        </li>
+        <li>
+          <span>03</span>
+          <div>
+            <strong>Net run rate updated</strong>
+            <p>Each completed scorecard changes the teams’ net run rate.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="standings-faq" aria-labelledby="standings-faq-title">
+      <header>
+        <p class="standings-index">05 / Quick answers</p>
+        <h2 id="standings-faq-title">CPL 2026 points table FAQs</h2>
+        <p>Clear answers about points, playoff places, net run rate and update timing.</p>
+      </header>
+      <div class="standings-faq-list">
+        {% for item in faq %}
+        <details>
+          <summary>
+            <span class="standings-faq-number">{{ "%02d" | format(loop.index) }}</span>
+            <span>{{ item.question }}</span>
+            <i aria-hidden="true"></i>
+          </summary>
+          <div class="standings-faq-answer">
+            <span aria-hidden="true">Answer</span>
+            <p>{{ item.answer }}</p>
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/standings.js?v=20260727a" defer></script>
+  <script src="/static/js/site.js?v=20260727r" defer></script>
+</body>
+</html>

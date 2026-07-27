@@ -1,0 +1,58 @@
+{
+  "slug": "imran-tahir",
+  "name": "Imran Tahir",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from South Africa",
+  "image": null,
+  "initials": "IT",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mohammad Imran Tahir",
+    "birth_date": "27 March 1979",
+    "birth_place": "Lahore, Punjab, Pakistan",
+    "country": "South Africa",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm leg break",
+    "international_span": "2011–2019",
+    "career_teams": [
+      "Multan Sultans",
+      "Chennai Super Kings",
+      "Guyana Amazon Warriors",
+      "Nelson Mandela Bay Giants",
+      "Birmingham Phoenix",
+      "Joburg Super Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "38",
+        "runs": "19",
+        "wickets": "63",
+        "best_bowling": "5/23",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "107",
+        "runs": "157",
+        "wickets": "173",
+        "best_bowling": "7/45",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "20",
+        "runs": "130",
+        "wickets": "57",
+        "best_bowling": "5/32",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

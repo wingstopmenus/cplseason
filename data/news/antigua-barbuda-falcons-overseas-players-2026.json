@@ -1,0 +1,52 @@
+{
+  "slug": "antigua-barbuda-falcons-overseas-players-2026",
+  "category": "Squads",
+  "title": "Antigua & Barbuda Falcons Set Overseas Plan for CPL 2026",
+  "short_title": "Falcons overseas plan",
+  "description": "Antigua & Barbuda Falcons confirm Moeen Ali, Kusal Perera, Shadab Khan, Sufiyan Muqeem, Milind Kumar and Tajinder Singh for CPL 2026.",
+  "dek": "Six overseas names will move through the Falcons squad on different availability windows, with Moeen Ali and Kusal Perera available throughout.",
+  "date_published": "2026-07-21",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/teams/antigua-barbuda-falcons.png",
+  "image_alt": "Antigua and Barbuda Falcons team crest",
+  "team_slug": "antigua-barbuda-falcons",
+  "summary_heading": "Falcons plan around staggered availability",
+  "key_points": [
+    "Moeen Ali and Kusal Perera are listed for the full tournament.",
+    "Milind Kumar and Tajinder Singh cover the first three matches.",
+    "Shadab Khan and Sufiyan Muqeem are each scheduled for seven matches."
+  ],
+  "players_heading": "The six announced overseas players",
+  "player_slugs": ["moeen-ali", "kusal-perera", "milind-kumar", "tajinder-singh", "shadab-khan", "sufiyan-muqeem"],
+  "sections": [
+    {
+      "heading": "Why the Falcons have announced six names",
+      "paragraphs": [
+        "The Falcons’ list is larger than a standard five-player overseas group because availability changes during the tournament. Moeen and Perera provide continuity. Kumar and Singh cover the opening three matches, while Shadab and Muqeem join for longer seven-match windows.",
+        "That arrangement explains the 18 names in the published tournament group without suggesting that six overseas players will be active together."
+      ]
+    },
+    {
+      "heading": "Spin is the defining strength",
+      "paragraphs": [
+        "Moeen’s off-spin, Shadab’s leg-spin and Muqeem’s left-arm wrist-spin give Antigua three different ways to attack the middle overs. Fabian Allen adds another left-arm option from the West Indian group.",
+        "Perera supplies wicketkeeping and powerplay aggression. Kumar and Singh bring North American international experience for an opening stretch that includes three matches in St Vincent."
+      ]
+    },
+    {
+      "heading": "A demanding start before the Antigua block",
+      "paragraphs": [
+        "Antigua play the first match of the men’s tournament against Jamaica Kingsmen at Arnos Vale on 7 August. Their opening block also includes Saint Lucia Kings before the team returns home later in August.",
+        "The early availability plan matters because the Falcons must settle a batting order while moving between personnel. Moeen and Perera give them two fixed points around those changes."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/antigua-barbuda-falcons/", "label": "Falcons team guide"},
+    {"href": "/squads/", "label": "All CPL 2026 squads"},
+    {"href": "/venue/sir-vivian-richards-stadium/", "label": "Sir Vivian Richards Stadium"}
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_date": "2026-07-21",
+  "last_updated": "2026-07-27"
+}

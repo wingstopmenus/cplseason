@@ -1,0 +1,26 @@
+{
+  "slug": "waseem-sial",
+  "name": "Waseem Sial",
+  "role": "Players and Squads Writer",
+  "full_role": "Player Profile and Squad Research Writer",
+  "description": "Waseem Sial researches CPL player profiles, squad membership, player roles and franchise roster changes.",
+  "bio": [
+    "Waseem Sial works on CPL Season player profiles and squad coverage. He checks the current franchise, player role, roster category and published squad status before updating the directory.",
+    "Player photos appear when an up-to-date image is available. Other profiles use the player’s initials."
+  ],
+  "primary_desk": "Players and squads",
+  "coverage_focus": "Profiles, roster changes, roles and squad announcements",
+  "topics": [
+    {"label": "Player directory", "href": "/players/"},
+    {"label": "CPL squads", "href": "/squads/"},
+    {"label": "Team profiles", "href": "/teams/"},
+    {"label": "Squad news", "href": "/news/"}
+  ],
+  "method": [
+    "Checks every player against the current published team list.",
+    "Keeps roster category and franchise membership synchronized.",
+    "Adds a player photo only when it matches the current squad member."
+  ],
+  "image": "/static/img/authors/waseem-sial.webp",
+  "last_updated": "2026-07-27"
+}

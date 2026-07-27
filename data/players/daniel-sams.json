@@ -1,0 +1,58 @@
+{
+  "slug": "daniel-sams",
+  "name": "Daniel Sams",
+  "team_slug": "barbados-royals",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Australia",
+  "image": null,
+  "initials": "DS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Daniel Richard Sams",
+    "birth_date": "27 October 1992",
+    "birth_place": "Milperra, New South Wales, Australia",
+    "country": "Australia",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm fast-medium",
+    "international_span": "2020–2022",
+    "career_teams": [
+      "Karachi Kings",
+      "Sharjah Warriorz",
+      "Peshawar Zalmi",
+      "Nottinghamshire",
+      "Lahore Qalandars",
+      "Somerset"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "235",
+        "runs": "2,494",
+        "wickets": "284",
+        "best_bowling": "5/30",
+        "hundreds_fifties": "0/7"
+      },
+      {
+        "format": "T20I",
+        "matches": "10",
+        "runs": "106",
+        "wickets": "7",
+        "best_bowling": "2/33",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "22",
+        "runs": "463",
+        "wickets": "26",
+        "best_bowling": "5/46",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

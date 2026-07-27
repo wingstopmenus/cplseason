@@ -1,0 +1,25 @@
+{
+  "slug": "arshad-sial",
+  "name": "Arshad Sial",
+  "role": "Broadcast Editor",
+  "full_role": "Broadcast Editor and Viewing Information Researcher",
+  "description": "Arshad Sial covers CPL broadcast rights, legal streaming routes and territory-by-territory viewing information.",
+  "bio": [
+    "Arshad Sial manages the CPL Season broadcast desk. His work tracks confirmed television partners, streaming services and viewing availability across the Caribbean and overseas markets.",
+    "Broadcast rights can change by territory and platform. He separates confirmed coverage from pending markets and avoids presenting an unofficial stream as an authorized option."
+  ],
+  "primary_desk": "Broadcast and streaming coverage",
+  "coverage_focus": "TV partners, legal streams and regional availability",
+  "topics": [
+    {"label": "Watch CPL live", "href": "/watch-live/"},
+    {"label": "Match schedule", "href": "/schedule/"},
+    {"label": "Latest news", "href": "/news/"}
+  ],
+  "method": [
+    "Checks broadcaster-owned pages and current CPL announcements.",
+    "Labels unconfirmed territories instead of guessing a platform.",
+    "Reviews viewing information when rights or service availability changes."
+  ],
+  "image": "/static/img/authors/arshad-sial.webp",
+  "last_updated": "2026-07-27"
+}

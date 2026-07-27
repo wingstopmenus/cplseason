@@ -1,0 +1,21 @@
+{
+  "slug": "cpl-2026-final",
+  "match_number": 39,
+  "competition": "Republic Bank Caribbean Premier League 2026",
+  "stage": "Final",
+  "home_team_slug": null,
+  "away_team_slug": null,
+  "home_team_label": "Qualifier 1 winner",
+  "away_team_label": "Qualifier 2 winner",
+  "venue_slug": "kensington-oval",
+  "date": "2026-09-20",
+  "start_time_local": "19:00",
+  "timezone": "America/Barbados",
+  "start_iso": "2026-09-20T19:00:00-04:00",
+  "status": "Scheduled",
+  "official_match_center_url": null,
+  "preview_heading": "The CPL 2026 title will be decided in Bridgetown",
+  "preview": "The winners of Qualifier 1 and Qualifier 2 meet under the lights at Kensington Oval for the CPL 2026 championship. The confirmed finalists will appear here once the playoff results are known.",
+  "preview_detail": "Team names, confirmed squads and playing XIs will update after qualification is settled. No participant is listed before the relevant result is official.",
+  "last_updated": "2026-07-27"
+}

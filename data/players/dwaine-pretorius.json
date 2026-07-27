@@ -1,0 +1,58 @@
+{
+  "slug": "dwaine-pretorius",
+  "name": "Dwaine Pretorius",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from South Africa",
+  "image": null,
+  "initials": "DP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Dwaine Pretorius",
+    "birth_date": "29 March 1989",
+    "birth_place": "Randfontein, Transvaal Province, South Africa",
+    "country": "South Africa",
+    "role": "Bowling all-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "2016–2022",
+    "career_teams": [
+      "Welsh Fire",
+      "St Kitts and Nevis Patriots",
+      "Durban's Super Giants",
+      "Fortune Barishal",
+      "Quetta Gladiators",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "30",
+        "runs": "261",
+        "wickets": "35",
+        "best_bowling": "5/17",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "27",
+        "runs": "192",
+        "wickets": "35",
+        "best_bowling": "4/36",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "83",
+        "wickets": "7",
+        "best_bowling": "2/26",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

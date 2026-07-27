@@ -1,0 +1,25 @@
+{
+  "slug": "shakir-ali",
+  "name": "Shakir Ali",
+  "role": "Venue and Fan Guide Editor",
+  "full_role": "Venue Writer and Matchday Planning Editor",
+  "description": "Shakir Ali writes CPL venue guides, host-territory context and practical matchday planning information.",
+  "bio": [
+    "Shakir Ali covers the grounds and host territories on the CPL calendar. His venue work combines cricket history with practical details such as location, schedule windows and matchday planning.",
+    "He keeps travel advice tied to confirmed tournament information and directs readers to authorized ticket channels rather than unverified sellers."
+  ],
+  "primary_desk": "Venues and fan planning",
+  "coverage_focus": "Ground guides, host territories and matchday context",
+  "topics": [
+    {"label": "CPL venues", "href": "/venues/"},
+    {"label": "Match schedule", "href": "/schedule/"},
+    {"label": "Latest news", "href": "/news/"}
+  ],
+  "method": [
+    "Checks venue identity, location and fixture windows before publication.",
+    "Separates permanent ground facts from event-specific arrangements.",
+    "Avoids promising transport, entry or ticket details that organizers have not confirmed."
+  ],
+  "image": "/static/img/authors/shakir-ali.webp",
+  "last_updated": "2026-07-27"
+}

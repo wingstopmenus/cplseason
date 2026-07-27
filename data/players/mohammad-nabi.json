@@ -1,0 +1,57 @@
+{
+  "slug": "mohammad-nabi",
+  "name": "Mohammad Nabi",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Afghanistan",
+  "image": null,
+  "initials": "MN",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mohammad Nabi Eisakhil",
+    "birth_date": "1 January 1985",
+    "birth_place": "Logar, Afghanistan",
+    "country": "Afghanistan",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off spin",
+    "international_span": "2009–present",
+    "career_teams": [
+      "Pakistan Customs cricket team",
+      "Mohammedan Sporting Club",
+      "Sunrisers Hyderabad",
+      "Melbourne Renegades",
+      "Karachi Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "152",
+        "runs": "2,448",
+        "wickets": "109",
+        "best_bowling": "4/7",
+        "hundreds_fifties": "0/7"
+      },
+      {
+        "format": "ODI",
+        "matches": "178",
+        "runs": "3,792",
+        "wickets": "177",
+        "best_bowling": "5/17",
+        "hundreds_fifties": "2/18"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "33",
+        "wickets": "8",
+        "best_bowling": "3/36",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

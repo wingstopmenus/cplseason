@@ -1,0 +1,58 @@
+{
+  "slug": "rovman-powell",
+  "name": "Rovman Powell",
+  "team_slug": "jamaica-kingsmen",
+  "category": "West Indian player",
+  "selection_note": "Drafted by Jamaica Kingsmen",
+  "image": null,
+  "initials": "RP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Rovman Powell",
+    "birth_date": "23 July 1993",
+    "birth_place": "Kingston, Jamaica",
+    "country": "West Indies",
+    "role": "Middle-order batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium-fast",
+    "international_span": "2016–present",
+    "career_teams": [
+      "Barbados Royals",
+      "Rajasthan Royals",
+      "Trent Rockets",
+      "Kolkata Knight Riders",
+      "Los Angeles Knight Riders",
+      "Paarl Royals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "107",
+        "runs": "2,068",
+        "wickets": "5",
+        "best_bowling": "2/31",
+        "hundreds_fifties": "1/9"
+      },
+      {
+        "format": "ODI",
+        "matches": "51",
+        "runs": "979",
+        "wickets": "3",
+        "best_bowling": "1/7",
+        "hundreds_fifties": "1/2"
+      },
+      {
+        "format": "LA",
+        "matches": "119",
+        "runs": "3164",
+        "wickets": "35",
+        "best_bowling": "5/36",
+        "hundreds_fifties": "4/17"
+      }
+    ]
+  }
+}

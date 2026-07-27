@@ -1,0 +1,56 @@
+{
+  "slug": "johann-layne",
+  "name": "Johann Layne",
+  "team_slug": "barbados-royals",
+  "category": "Breakout player",
+  "selection_note": "Right to Match breakout selection",
+  "image": null,
+  "initials": "JL",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Johann Layne",
+    "birth_date": "",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowling Allrounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm Fast medium",
+    "international_span": "2025–present",
+    "career_teams": [
+      "West Indies Academy",
+      "St Kitts and Nevis Patriots",
+      "Trinidad & Tobago Legions",
+      "Barbados Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "5",
+        "runs": "1",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "2",
+        "runs": "15",
+        "wickets": "1",
+        "best_bowling": "1/47",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "12",
+        "runs": "124",
+        "wickets": "13",
+        "best_bowling": "3/55",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

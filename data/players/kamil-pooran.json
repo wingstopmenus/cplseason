@@ -1,0 +1,46 @@
+{
+  "slug": "kamil-pooran",
+  "name": "Kamil Pooran",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Selected by Saint Lucia Kings for CPL 2026",
+  "image": null,
+  "initials": "KP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kamil Pooran",
+    "birth_date": "",
+    "birth_place": "Trinidad",
+    "country": "",
+    "role": "Top order batsman",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right arm medium",
+    "international_span": "",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "Combined Campuses and Colleges"
+    ],
+    "records": [
+      {
+        "format": "LA",
+        "matches": "4",
+        "runs": "58",
+        "wickets": "–",
+        "best_bowling": "—",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "4",
+        "runs": "211",
+        "wickets": "–",
+        "best_bowling": "—",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

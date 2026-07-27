@@ -1,0 +1,58 @@
+{
+  "slug": "quinton-de-kock",
+  "name": "Quinton de Kock",
+  "team_slug": "barbados-royals",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from South Africa",
+  "image": null,
+  "initials": "QD",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Quinton de Kock",
+    "birth_date": "",
+    "birth_place": "Johannesburg, Transvaal, South Africa",
+    "country": "South Africa",
+    "role": "Wicket-keeper",
+    "batting_style": "Left-handed",
+    "bowling_style": "",
+    "international_span": "2012–present",
+    "career_teams": [
+      "Lucknow Super Giants",
+      "Barbados Royals",
+      "Durban's Super Giants",
+      "Melbourne Renegades",
+      "Kolkata Knight Riders",
+      "MI New York"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "110",
+        "runs": "3,095",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "2/19"
+      },
+      {
+        "format": "ODI",
+        "matches": "161",
+        "runs": "7,123",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "23/32"
+      },
+      {
+        "format": "Test",
+        "matches": "54",
+        "runs": "3,300",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "6/22"
+      }
+    ]
+  }
+}

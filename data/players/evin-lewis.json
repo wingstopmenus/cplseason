@@ -1,0 +1,58 @@
+{
+  "slug": "evin-lewis",
+  "name": "Evin Lewis",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Signed by Antigua & Barbuda Falcons for CPL 2026",
+  "image": "/static/img/official/players/evin-lewis.webp",
+  "initials": "EL",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Evin Earl Lewis",
+    "birth_date": "",
+    "birth_place": "Rio Claro, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Opening batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2016–present",
+    "career_teams": [
+      "Peshawar Zalmi",
+      "Mumbai Indians",
+      "Comilla Victorians",
+      "Rajasthan Royals",
+      "Lucknow Super Giants",
+      "Khulna Tigers"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "65",
+        "runs": "1,782",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "2/13"
+      },
+      {
+        "format": "ODI",
+        "matches": "67",
+        "runs": "2,175",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "5/11"
+      },
+      {
+        "format": "LA",
+        "matches": "111",
+        "runs": "3,587",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "8/20"
+      }
+    ]
+  }
+}

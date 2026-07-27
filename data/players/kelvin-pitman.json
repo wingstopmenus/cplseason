@@ -1,0 +1,30 @@
+{
+  "slug": "kelvin-pitman",
+  "name": "Kelvin Pitman",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": null,
+  "initials": "KP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kelvin Pitman",
+    "birth_date": "",
+    "birth_place": "",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "",
+    "career_teams": [
+      "West Indies Academy",
+      "Jamaica Tallawahs",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": []
+  }
+}

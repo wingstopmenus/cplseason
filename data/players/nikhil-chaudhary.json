@@ -1,0 +1,58 @@
+{
+  "slug": "nikhil-chaudhary",
+  "name": "Nikhil Chaudhary",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "NC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Nikhil Chaudhary",
+    "birth_date": "4 May 1996",
+    "birth_place": "Delhi, India",
+    "country": "Australia",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2026–present",
+    "career_teams": [
+      "Punjab",
+      "Hobart Hurricanes",
+      "Tasmania",
+      "JB Bruges",
+      "Washington Freedom",
+      "Southern Brave"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "63",
+        "runs": "1,068",
+        "wickets": "29",
+        "best_bowling": "3/36",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "T20I",
+        "matches": "3",
+        "runs": "26",
+        "wickets": "2",
+        "best_bowling": "1/14",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "9",
+        "runs": "167",
+        "wickets": "9",
+        "best_bowling": "3/66",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

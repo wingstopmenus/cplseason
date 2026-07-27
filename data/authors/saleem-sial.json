@@ -1,0 +1,26 @@
+{
+  "slug": "saleem-sial",
+  "name": "Saleem Sial",
+  "role": "Lead Editor",
+  "full_role": "Lead Editor and Caribbean Cricket Researcher",
+  "description": "Saleem Sial leads CPL Season coverage of tournament news, fixtures, team developments and host venues.",
+  "bio": [
+    "Saleem Sial leads the CPL Season editorial desk. He oversees tournament news, schedule updates, team developments and venue coverage for the 2026 Caribbean Premier League.",
+    "His review process checks names, dates, grounds, competition status and official announcements before an update reaches readers. He also coordinates corrections when a published detail changes."
+  ],
+  "primary_desk": "News and tournament updates",
+  "coverage_focus": "Fixtures, teams, venues and major CPL announcements",
+  "topics": [
+    {"label": "Latest news", "href": "/news/"},
+    {"label": "Match schedule", "href": "/schedule/"},
+    {"label": "CPL teams", "href": "/teams/"},
+    {"label": "Host venues", "href": "/venues/"}
+  ],
+  "method": [
+    "Reviews tournament announcements and franchise updates before publication.",
+    "Checks names, dates, venues and competition status across related pages.",
+    "Coordinates material corrections and page update dates."
+  ],
+  "image": "/static/img/authors/saleem-sial.webp",
+  "last_updated": "2026-07-27"
+}

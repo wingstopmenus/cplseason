@@ -1,0 +1,58 @@
+{
+  "slug": "tim-seifert",
+  "name": "Tim Seifert",
+  "team_slug": "saint-lucia-kings",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from New Zealand",
+  "image": "/static/img/official/players/tim-seifert.webp",
+  "initials": "TS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Tim Louis Seifert",
+    "birth_date": "14 December 1994",
+    "birth_place": "Whanganui, New Zealand",
+    "country": "New Zealand",
+    "role": "Wicket-keeper-batsman",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2018–present",
+    "career_teams": [
+      "Kolkata Knight Riders",
+      "Delhi Capitals",
+      "Sussex",
+      "Galle Marvels",
+      "Melbourne Renegades",
+      "Karachi Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "90",
+        "runs": "2,279",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/17"
+      },
+      {
+        "format": "ODI",
+        "matches": "4",
+        "runs": "59",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "71",
+        "runs": "1,860",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "5/8"
+      }
+    ]
+  }
+}

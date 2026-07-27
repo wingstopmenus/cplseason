@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ article.title }}</title>
+  <meta name="description" content="{{ article.description }}">
+  <meta name="author" content="{{ article.author.name }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ article.canonical }}">
+  <meta property="og:title" content="{{ article.title }}">
+  <meta property="og:description" content="{{ article.description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ article.canonical }}">
+  <meta property="og:site_name" content="CPL Season">
+  <meta property="article:published_time" content="{{ article.date_published }}">
+  <meta property="article:modified_time" content="{{ article.date_modified }}">
+  <meta property="og:image" content="https://cplseason.com{{ article.image }}">
+  <meta property="og:image:alt" content="{{ article.image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ article.title }}">
+  <meta name="twitter:description" content="{{ article.description }}">
+  <meta name="twitter:image" content="https://cplseason.com{{ article.image }}">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727z">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="news-story-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a><a href="/players/">Players</a>
+      <a href="/squads/">Squads</a><a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a><a href="/news/" aria-current="page">News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="news-story">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/news/">News</a></li><li aria-current="page">{{ article.short_title }}</li></ol></nav>
+    <article>
+      <header class="news-story-hero">
+        <div class="news-story-heading">
+          <p class="news-desk-kicker">{{ article.category }}</p>
+          <h1>{{ article.title }}</h1>
+          <p>{{ article.dek }}</p>
+          <div class="news-story-byline">
+            <span>By <a href="/authors/{{ article.author.slug }}/">{{ article.author.name }}</a></span>
+            <time datetime="{{ article.date_published }}">Published {{ article.date_label }}</time>
+            <time datetime="{{ article.date_modified }}">Updated {{ article.modified_label }}</time>
+          </div>
+        </div>
+        <figure><img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1200" height="675"></figure>
+      </header>
+
+      <div class="news-story-layout">
+        <div class="news-story-body">
+          <section class="news-story-summary" aria-labelledby="summary-title">
+            <p class="news-desk-kicker">In brief</p>
+            <h2 id="summary-title">{{ article.summary_heading }}</h2>
+            <ul>{% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}</ul>
+          </section>
+
+          {% for section in article.sections %}
+          <section>
+            <h2>{{ section.heading }}</h2>
+            {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          </section>
+          {% endfor %}
+
+          {% if article.players %}
+          <section class="news-story-players">
+            <h2>{{ article.players_heading }}</h2>
+            <div>
+              {% for player in article.players %}
+              <a href="/player/{{ player.slug }}/"><strong>{{ player.name }}</strong><span>{{ player.selection_note }}</span></a>
+              {% endfor %}
+            </div>
+          </section>
+          {% endif %}
+        </div>
+
+        <aside class="news-story-sidebar">
+          <div><span>Published</span><strong>{{ article.date_label }}</strong></div>
+          <div><span>Category</span><strong>{{ article.category }}</strong></div>
+          {% if article.team %}<a href="/team/{{ article.team.slug }}/"><span>Team guide</span><strong>{{ article.team.name }}</strong></a>{% endif %}
+          <a href="/schedule/"><span>Tournament</span><strong>View all 39 fixtures</strong></a>
+        </aside>
+      </div>
+
+      <footer class="news-story-footer">
+        <h2>Continue following CPL 2026</h2>
+        <div>
+          {% for link in article.related_links %}<a href="{{ link.href }}">{{ link.label }} <span>→</span></a>{% endfor %}
+        </div>
+      </footer>
+    </article>
+  </main>
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260726e" defer></script>
+</body>
+</html>

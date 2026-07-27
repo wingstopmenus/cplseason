@@ -1,0 +1,58 @@
+{
+  "slug": "sherfane-rutherford",
+  "name": "Sherfane Rutherford",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Re-drafted by Barbados Tridents",
+  "image": null,
+  "initials": "SR",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Sherfane Eviston Rutherford",
+    "birth_date": "15 August 1998",
+    "birth_place": "Enmore, Guyana",
+    "country": "West Indies",
+    "role": "Middle-order batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm Fast medium",
+    "international_span": "2018–present",
+    "career_teams": [
+      "Sydney Thunder",
+      "Gujarat Titans",
+      "Los Angeles Knight Riders",
+      "Pretoria Capitals",
+      "Mumbai Indians",
+      "MI London"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "262",
+        "runs": "4,591",
+        "wickets": "17",
+        "best_bowling": "4/24",
+        "hundreds_fifties": "0/20"
+      },
+      {
+        "format": "T20I",
+        "matches": "56",
+        "runs": "902",
+        "wickets": "2",
+        "best_bowling": "1/20",
+        "hundreds_fifties": "0/6"
+      },
+      {
+        "format": "ODI",
+        "matches": "29",
+        "runs": "849",
+        "wickets": "3",
+        "best_bowling": "1/24",
+        "hundreds_fifties": "1/8"
+      }
+    ]
+  }
+}

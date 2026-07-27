@@ -1,0 +1,58 @@
+{
+  "slug": "dasun-shanaka",
+  "name": "Dasun Shanaka",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "DS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Dasun Shanaka",
+    "birth_date": "9 September 1991",
+    "birth_place": "Negombo, Sri Lanka",
+    "country": "Sri Lanka",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2015–Present",
+    "career_teams": [
+      "Khulna Tigers",
+      "Seattle Orcas",
+      "Kandy Falcons",
+      "Dhaka Capitals",
+      "Rajasthan Royals",
+      "St Kitts & Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "131",
+        "runs": "1,912",
+        "wickets": "46",
+        "best_bowling": "3/16",
+        "hundreds_fifties": "0/8"
+      },
+      {
+        "format": "ODI",
+        "matches": "71",
+        "runs": "1,299",
+        "wickets": "27",
+        "best_bowling": "5/43",
+        "hundreds_fifties": "2/4"
+      },
+      {
+        "format": "Test",
+        "matches": "6",
+        "runs": "140",
+        "wickets": "13",
+        "best_bowling": "5/112",
+        "hundreds_fifties": "0/1"
+      }
+    ]
+  }
+}

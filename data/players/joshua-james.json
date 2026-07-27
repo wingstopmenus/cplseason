@@ -1,0 +1,26 @@
+{
+  "slug": "joshua-james",
+  "name": "Joshua James",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "Breakout player",
+  "selection_note": "Breakout retention",
+  "image": "/static/img/official/players/joshua-james.webp",
+  "initials": "JJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Joshua James",
+    "birth_date": "",
+    "birth_place": "",
+    "country": "",
+    "role": "",
+    "batting_style": "",
+    "bowling_style": "",
+    "international_span": "",
+    "career_teams": [],
+    "records": []
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "rush-live-louder-cpl-2026-caribbean",
+  "category": "Broadcast",
+  "title": "Rush Live & Louder Will Show CPL 2026 Across the Caribbean",
+  "short_title": "Rush Live & Louder coverage",
+  "description": "Rush Live & Louder will carry the men’s and women’s CPL in 2026 through major Caribbean cable and television networks from 7 August.",
+  "dek": "The dedicated cricket channel gives Caribbean viewers a confirmed television route for the 2026 men’s and women’s tournaments.",
+  "date_published": "2026-06-23",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/news/cpl-and-rush-sports-launch-rush-live-louder.jpeg",
+  "image_alt": "Rush Live and Louder CPL cricket broadcast announcement",
+  "summary_heading": "A confirmed Caribbean television home",
+  "key_points": [
+    "The channel launched on 1 July 2026.",
+    "Coverage includes the men’s CPL from 7 August and the women’s competition.",
+    "Channel numbers and subscription packages depend on the local provider."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "What Rush Live & Louder will carry",
+      "paragraphs": [
+        "CPL and Rush Sports launched Rush Live & Louder as a dedicated Caribbean cricket channel. The service is scheduled to show the 2026 men’s and women’s CPL, alongside highlights, archive matches and other cricket programming.",
+        "The men’s season begins on 7 August. Viewers should confirm the exact match and channel number with their television provider before the opening fixture."
+      ]
+    },
+    {
+      "heading": "How viewers can access it",
+      "paragraphs": [
+        "Rush describes the channel as available through major cable and television networks across the Caribbean. Access can still vary by island, provider and package.",
+        "A regional rights announcement does not guarantee that every household receives the same channel tier. Provider listings remain the practical check before paying or changing a plan."
+      ]
+    },
+    {
+      "heading": "Coverage outside the Caribbean",
+      "paragraphs": [
+        "Willow lists the 2026 tournament for viewers in the United States and Canada. Other territories remain pending until a current broadcaster or CPL announcement confirms a 2026 route.",
+        "Previous-season rights lists should not be treated as current. The Watch Live guide separates confirmed markets from those still awaiting an announcement."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/watch-live/", "label": "Coverage by country"},
+    {"href": "/schedule/", "label": "CPL 2026 fixtures"},
+    {"href": "/news/", "label": "Latest CPL news"}
+  ],
+  "source_name": "CPL and Rush Sports announcement",
+  "source_date": "2026-06-23",
+  "last_updated": "2026-07-27"
+}

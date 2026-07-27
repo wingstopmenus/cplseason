@@ -1,0 +1,57 @@
+{
+  "slug": "shamar-joseph",
+  "name": "Shamar Joseph",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "SJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shamar Joseph",
+    "birth_date": "",
+    "birth_place": "Baracara, Guyana",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "2024present",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors",
+      "Peshawar Zalmi",
+      "Lucknow Super Giants",
+      "Durban's Super Giants"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "12",
+        "runs": "28",
+        "wickets": "15",
+        "best_bowling": "3/30",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "6",
+        "runs": "11",
+        "wickets": "4",
+        "best_bowling": "2/65",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "11",
+        "runs": "299",
+        "wickets": "51",
+        "best_bowling": "7/68",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

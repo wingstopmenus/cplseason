@@ -1,0 +1,58 @@
+{
+  "slug": "kyle-mayers",
+  "name": "Kyle Mayers",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "KM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kyle Rico Mayers",
+    "birth_date": "8 September 1992",
+    "birth_place": "Bridgetown, Barbados",
+    "country": "West Indies",
+    "role": "Batting all-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2020–present",
+    "career_teams": [
+      "St Kitts & Nevis Patriots",
+      "Abu Dhabi Knight Riders",
+      "Islamabad United",
+      "Seattle Orcas",
+      "Gulf Giants",
+      "Rangpur Riders"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "41",
+        "runs": "773",
+        "wickets": "2",
+        "best_bowling": "2/26",
+        "hundreds_fifties": "0/3"
+      },
+      {
+        "format": "ODI",
+        "matches": "28",
+        "runs": "660",
+        "wickets": "14",
+        "best_bowling": "2/30",
+        "hundreds_fifties": "2/2"
+      },
+      {
+        "format": "Test",
+        "matches": "18",
+        "runs": "949",
+        "wickets": "34",
+        "best_bowling": "5/18",
+        "hundreds_fifties": "2/2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "slug": "asad-sial",
+  "name": "Asad Sial",
+  "role": "Tournament Data Editor",
+  "full_role": "Fixtures, Standings and Tournament Data Editor",
+  "description": "Asad Sial maintains CPL fixture, standings and tournament-structure coverage across the site.",
+  "bio": [
+    "Asad Sial supports the structured tournament desk at CPL Season. His coverage connects the match schedule, team directory, venue list and points table so readers can move through the competition without conflicting details.",
+    "Before the tournament starts, the standings remain at zero. Once results arrive, he checks the completed match and table state before publishing an update."
+  ],
+  "primary_desk": "Tournament data",
+  "coverage_focus": "Fixtures, standings, teams and competition structure",
+  "topics": [
+    {"label": "Match schedule", "href": "/schedule/"},
+    {"label": "Points table", "href": "/points-table/"},
+    {"label": "CPL teams", "href": "/teams/"},
+    {"label": "Host venues", "href": "/venues/"}
+  ],
+  "method": [
+    "Keeps schedule, team and venue references aligned.",
+    "Updates standings only after a confirmed result.",
+    "Checks that tournament pages link back to the correct team and ground records."
+  ],
+  "image": "/static/img/authors/asad-sial.webp",
+  "last_updated": "2026-07-27"
+}

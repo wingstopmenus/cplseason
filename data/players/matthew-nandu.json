@@ -1,0 +1,54 @@
+{
+  "slug": "matthew-nandu",
+  "name": "Matthew Nandu",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": null,
+  "initials": "MN",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Matthew Rohan Nandu",
+    "birth_date": "",
+    "birth_place": "Canada",
+    "country": "",
+    "role": "Batsman",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm offbreak",
+    "international_span": "",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "2",
+        "runs": "40",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "16",
+        "runs": "586",
+        "wickets": "1",
+        "best_bowling": "1/19",
+        "hundreds_fifties": "1/4"
+      },
+      {
+        "format": "FC",
+        "matches": "13",
+        "runs": "489",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/1"
+      }
+    ]
+  }
+}

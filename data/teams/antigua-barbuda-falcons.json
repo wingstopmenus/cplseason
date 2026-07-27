@@ -1,0 +1,71 @@
+{
+  "slug": "antigua-barbuda-falcons",
+  "name": "Antigua & Barbuda Falcons",
+  "logo": "/static/img/official/teams/antigua-barbuda-falcons.png",
+  "short_name": "Falcons",
+  "territory": "Antigua and Barbuda",
+  "city": "North Sound",
+  "venue_slug": "sir-vivian-richards-stadium",
+  "schedule_names": [
+    "Antigua & Barbuda Falcons"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 4,
+  "status_label": "Homegrown pace",
+  "founded": 2024,
+  "identity": "Antigua's modern CPL franchise",
+  "title_count": 0,
+  "title_years": [],
+  "honours": "Chasing a first CPL title",
+  "profile_lede": "A young franchise built around Antiguan pace, Caribbean experience and a carefully phased overseas group for its second CPL campaign.",
+  "history": [
+    "The Falcons entered the Caribbean Premier League in 2024, restoring an Antigua and Barbuda-based franchise to the competition. This is a distinct modern team and its record is presented separately from the former Antigua Hawksbills.",
+    "Sir Vivian Richards Stadium in North Sound gives the Falcons one of the tournament's most recognisable home settings. Four league matches are scheduled there in 2026, including the team's opening home fixture against the defending champions.",
+    "The 2026 group is anchored by Antiguan fast bowler Alzarri Joseph and an experienced Caribbean core including Evin Lewis and Rahkeem Cornwall. The published overseas list uses planned availability windows, so every announced name remains visible in the roster directory."
+  ],
+  "profile_highlights": [
+    {
+      "label": "Local anchor",
+      "title": "Alzarri comes home",
+      "text": "Alzarri Joseph leads the Antiguan connection in a squad designed around high pace and power."
+    },
+    {
+      "label": "2026 route",
+      "title": "Four nights in North Sound",
+      "text": "The Falcons host four league matches at Sir Vivian Richards Stadium from 20 to 25 August."
+    },
+    {
+      "label": "Squad plan",
+      "title": "Overseas windows mapped",
+      "text": "Moeen Ali and Kusal Perera are listed for the full tournament, with other overseas places phased by availability."
+    }
+  ],
+  "summary": "The Falcons bring Antiguan fast bowler Alzarri Joseph home for 2026 and add Evin Lewis to a returning core that includes Fabian Allen, Jayden Seales and Amir Jangoo.",
+  "storyline": "Their route begins on opening night in St Vincent before a four-match home block at Sir Vivian Richards Stadium from 20 to 25 August.",
+  "roster": [
+    "alzarri-joseph",
+    "evin-lewis",
+    "fabian-allen",
+    "jayden-seales",
+    "amir-jangoo",
+    "shamar-springer",
+    "jahmar-hamilton",
+    "rahkeem-cornwall",
+    "anderson-phillip",
+    "karima-gore",
+    "anderson-mahase",
+    "joshua-james",
+    "moeen-ali",
+    "kusal-perera",
+    "milind-kumar",
+    "tajinder-singh",
+    "shadab-khan",
+    "sufiyan-muqeem"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "a0bb030f-9bcb-48ed-b031-621a6138c454"
+  },
+  "last_updated": "2026-07-27"
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "rahkeem-cornwall",
+  "name": "Rahkeem Cornwall",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Brought back from the 2025 Falcons squad",
+  "image": "/static/img/official/players/rahkeem-cornwall.webp",
+  "initials": "RC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Rahkeem Rashawn Shane Cornwall",
+    "birth_date": "",
+    "birth_place": "Antigua, Antigua and Barbuda",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "",
+    "career_teams": [
+      "Leeward Islands",
+      "Antigua Hawksbills",
+      "Saint Lucia Zouks / Kings",
+      "Barbados Royals",
+      "Sylhet Strikers",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "95",
+        "runs": "1,473",
+        "wickets": "49",
+        "best_bowling": "5/16",
+        "hundreds_fifties": "1/5"
+      },
+      {
+        "format": "Test",
+        "matches": "10",
+        "runs": "261",
+        "wickets": "35",
+        "best_bowling": "7/75",
+        "hundreds_fifties": "0/2"
+      },
+      {
+        "format": "LA",
+        "matches": "72",
+        "runs": "1,702",
+        "wickets": "95",
+        "best_bowling": "6/20",
+        "hundreds_fifties": "4/6"
+      }
+    ]
+  }
+}

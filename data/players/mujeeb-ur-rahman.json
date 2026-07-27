@@ -1,0 +1,58 @@
+{
+  "slug": "mujeeb-ur-rahman",
+  "name": "Mujeeb ur Rahman",
+  "team_slug": "barbados-royals",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from Afghanistan",
+  "image": null,
+  "initials": "MU",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Mujeeb Ur Rahman Zadran",
+    "birth_date": "28 March 2001",
+    "birth_place": "Khost, Afghanistan",
+    "country": "Afghanistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2017–present",
+    "career_teams": [
+      "Sunrisers Hyderabad",
+      "Northern Superchargers",
+      "Fortune Barishal",
+      "Melbourne Renegades",
+      "Mumbai Indians",
+      "Paarl Royals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "65",
+        "runs": "85",
+        "wickets": "87",
+        "best_bowling": "5/20",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "75",
+        "runs": "236",
+        "wickets": "101",
+        "best_bowling": "5/50",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "Test",
+        "matches": "1",
+        "runs": "18",
+        "wickets": "1",
+        "best_bowling": "1/75",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

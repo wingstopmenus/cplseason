@@ -1,0 +1,52 @@
+{
+  "slug": "saint-lucia-kings-overseas-players-2026",
+  "category": "Squads",
+  "title": "Saint Lucia Kings Name Overseas Group for CPL 2026",
+  "short_title": "Kings overseas group",
+  "description": "Saint Lucia Kings add Noor Ahmad, Tim Seifert, Maheesh Theekshana, Charith Asalanka and Shadley van Schalkwyk for CPL 2026.",
+  "dek": "Saint Lucia have paired two international spinners with flexible batting and seam support ahead of their opening home match on 12 August.",
+  "date_published": "2026-07-08",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/news/saint-lucia-kings-unveil-overseas-contingent-for-cpl-2026.jpg",
+  "image_alt": "Saint Lucia Kings player during a CPL match",
+  "team_slug": "saint-lucia-kings",
+  "summary_heading": "Kings add spin variety and batting flexibility",
+  "key_points": [
+    "Noor Ahmad and Maheesh Theekshana give Saint Lucia left-arm wrist-spin and mystery off-spin.",
+    "Tim Seifert and Charith Asalanka strengthen the batting order.",
+    "The Kings begin at home against St Kitts & Nevis Patriots on 12 August."
+  ],
+  "players_heading": "Saint Lucia’s five overseas players",
+  "player_slugs": ["noor-ahmad", "tim-seifert", "maheesh-theekshana", "charith-asalanka", "shadley-van-schalkwyk"],
+  "sections": [
+    {
+      "heading": "Two spinners who ask different questions",
+      "paragraphs": [
+        "Noor and Theekshana give Saint Lucia two contrasting wicket-taking options. Noor turns the ball away from right-handers with left-arm wrist-spin; Theekshana can use the new ball or attack the stumps through the middle overs.",
+        "That pairing lets the Kings build their bowling plan around match-ups. Shadley van Schalkwyk supplies seam-bowling depth, while Asalanka can contribute part-time spin when needed."
+      ]
+    },
+    {
+      "heading": "Batting roles around the local core",
+      "paragraphs": [
+        "Seifert can open and keep wicket. Asalanka gives the middle order a left-handed player who can absorb pressure or accelerate. They join a West Indian group featuring Johnson Charles, Tim Seifert's possible opening partner, and Roston Chase.",
+        "The balance leaves Saint Lucia several valid combinations. They can select both overseas spinners without shortening the batting, or add van Schalkwyk when conditions favour seam."
+      ]
+    },
+    {
+      "heading": "A home start at Daren Sammy Cricket Ground",
+      "paragraphs": [
+        "Saint Lucia’s first match is against the Patriots on 12 August, the opening night of a five-game home block. They face Antigua the following evening and remain at Daren Sammy Cricket Ground through 21 August.",
+        "Starting at home should help the Kings settle their bowling combinations early. The overseas spinners will have immediate influence if the Gros Islet surface grips across consecutive matches."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/saint-lucia-kings/", "label": "Kings team guide"},
+    {"href": "/squads/", "label": "All CPL 2026 squads"},
+    {"href": "/venue/daren-sammy-cricket-ground/", "label": "Daren Sammy Cricket Ground"}
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_date": "2026-07-08",
+  "last_updated": "2026-07-27"
+}

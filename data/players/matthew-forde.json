@@ -1,0 +1,58 @@
+{
+  "slug": "matthew-forde",
+  "name": "Matthew Forde",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "MF",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Matthew Forde",
+    "birth_date": "",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2023–present",
+    "career_teams": [
+      "Dambulla Aura",
+      "Comilla Victorians",
+      "Islamabad United",
+      "Washington Freedom",
+      "Gulf Giants",
+      "Barbados"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "13",
+        "runs": "84",
+        "wickets": "12",
+        "best_bowling": "3/27",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "16",
+        "runs": "193",
+        "wickets": "22",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "LA",
+        "matches": "28",
+        "runs": "369",
+        "wickets": "34",
+        "best_bowling": "3/29",
+        "hundreds_fifties": "0/2"
+      }
+    ]
+  }
+}

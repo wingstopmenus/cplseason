@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:site_name" content="CPL Season">
+  <meta property="article:modified_time" content="{{ page.date_modified }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/official/news-banner-bg.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1108">
+  <meta property="og:image:alt" content="Caribbean cricket stadium under lights">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="https://cplseason.com/static/img/official/news-banner-bg.jpg">
+  <meta name="twitter:image:alt" content="Caribbean cricket stadium under lights">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="broadcast-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/" aria-current="page">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="broadcast-guide">
+    <nav class="broadcast-breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="/">Home</a></li><li aria-current="page">Watch Live</li></ol>
+    </nav>
+
+    <section class="broadcast-hero" aria-labelledby="broadcast-title">
+      <div class="broadcast-hero-copy">
+        <p class="broadcast-kicker"><span>{{ guide.hero_checked_label }}</span><strong>{{ guide.eyebrow }}</strong></p>
+        <h1 id="broadcast-title">{{ guide.headline }}</h1>
+        <p>{{ guide.lede }}</p>
+        <div class="broadcast-actions">
+          <a class="button primary" href="#country-guide">Check coverage by country</a>
+          <a class="button secondary" href="#opening-matches">See opening fixtures</a>
+        </div>
+        <div class="broadcast-check">
+          <span>CPL 2026 viewing guide</span>
+          <strong>{{ guide.checked_label }}</strong>
+        </div>
+      </div>
+      <div class="broadcast-signal-board" aria-label="Confirmed viewing routes">
+        <div class="broadcast-signal-top"><span><i></i> Confirmed coverage</span><small>2 viewing routes</small></div>
+        <article>
+          <span class="broadcast-route-number">01</span>
+          <small>Caribbean</small>
+          <h2>{{ guide.status[0].platform }}</h2>
+          <p>{{ guide.status[0].access }}</p>
+          <span class="broadcast-reference-note">Coverage begins 7 August</span>
+        </article>
+        <article>
+          <span class="broadcast-route-number">02</span>
+          <small>United States &amp; Canada</small>
+          <h2>{{ guide.status[1].platform }}</h2>
+          <p>TV, web, mobile apps and supported television providers.</p>
+          <span class="broadcast-reference-note">Listed from 7 August to 20 September</span>
+        </article>
+      </div>
+    </section>
+
+    <dl class="broadcast-fact-rail" aria-label="Tournament broadcast facts">
+      <div><dt>Season dates</dt><dd>7 Aug to 20 Sep</dd></div>
+      <div><dt>Matches</dt><dd>39</dd></div>
+      <div><dt>Teams</dt><dd>7</dd></div>
+      <div><dt>Official time basis</dt><dd>Host venue local time</dd></div>
+    </dl>
+
+    <section class="broadcast-answer" aria-labelledby="broadcast-answer-title">
+      <header>
+        <p class="broadcast-index">01 / Direct answer</p>
+        <h2 id="broadcast-answer-title">Where to watch CPL 2026</h2>
+      </header>
+      <div>
+        <p><strong>Caribbean viewers:</strong> Rush Live &amp; Louder is the confirmed television home. CPL says the channel carries the men's and women's tournaments and is distributed through major cable and TV networks across the region.</p>
+        <p><strong>United States and Canada:</strong> Willow by Cricbuzz lists the 2026 tournament from 7 August to 20 September. You can access Willow through its direct service or a supported television provider, subject to the match schedule and your subscription.</p>
+        <p><strong>Other regions:</strong> CPL 2026 viewing details are still pending in several markets. Check this guide again before match day for newly announced broadcasters.</p>
+      </div>
+      <aside>
+        <span>Before you pay</span>
+        <strong>Find the exact match in the provider schedule.</strong>
+        <p>A logo on a rights page does not guarantee that every fixture is available on every plan or device.</p>
+      </aside>
+    </section>
+
+    <section id="country-guide" class="broadcast-regions" aria-labelledby="broadcast-regions-title">
+      <header class="broadcast-section-header">
+        <div>
+          <p class="broadcast-index">02 / Country guide</p>
+          <h2 id="broadcast-regions-title">Broadcast status by region</h2>
+        </div>
+        <p>Rush covers the Caribbean, while Willow covers the United States and Canada. Broadcasters for other regions will be added as they are announced.</p>
+      </header>
+      <div class="broadcast-region-grid">
+        {% for item in guide.status %}
+        <article class="{{ 'is-confirmed' if item.status == 'Confirmed' else 'is-pending' }}" data-broadcast-region>
+          <header>
+            <span>{{ "%02d" | format(loop.index) }}</span>
+            <p>{{ item.region }}</p>
+            <small>{{ item.status }}</small>
+          </header>
+          <h3>{{ item.platform }}</h3>
+          <p>{{ item.access }}</p>
+          <div>{{ item.note }}</div>
+          <span class="broadcast-region-note">Updated {{ guide.checked_label }}</span>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="broadcast-steps" aria-labelledby="broadcast-steps-title">
+      <header>
+        <p class="broadcast-index">03 / Legal access</p>
+        <h2 id="broadcast-steps-title">What to check before you subscribe</h2>
+      </header>
+      <ol>
+        {% for step in guide.steps %}
+        <li><span>{{ "%02d" | format(loop.index) }}</span><div><h3>{{ step.title }}</h3><p>{{ step.text }}</p></div></li>
+        {% endfor %}
+      </ol>
+      <aside>
+        <strong>Travelling?</strong>
+        <p>Streaming rights depend on your current location. Willow states that its service is limited to the United States and Canada. Use the rights holder for the country you are in.</p>
+      </aside>
+    </section>
+
+    <section class="broadcast-devices" aria-labelledby="broadcast-devices-title">
+      <div>
+        <p class="broadcast-index">04 / Screens and access</p>
+        <h2 id="broadcast-devices-title">Supported devices and viewing options</h2>
+        <p>Willow lists browser, phone, tablet and connected-TV access in North America. Rush Live &amp; Louder is a linear channel, so Caribbean access depends on your local television provider and package.</p>
+        <span class="broadcast-reference-note">Device access varies by region, provider and subscription.</span>
+      </div>
+      <div class="broadcast-device-panel" aria-label="Common Willow viewing devices">
+        <span>Web browser</span><span>iPhone &amp; iPad</span><span>Android</span>
+        <span>Apple TV</span><span>Roku</span><span>Amazon Fire TV</span>
+        <span>Samsung TV</span><span>Android TV</span><span>Chromecast</span>
+      </div>
+    </section>
+
+    <section class="broadcast-times" aria-labelledby="broadcast-times-title">
+      <header class="broadcast-section-header">
+        <div>
+          <p class="broadcast-index">05 / World clock</p>
+          <h2 id="broadcast-times-title">CPL start times by region</h2>
+        </div>
+        <p>Official times use the host ground's local clock. Most venues are UTC-4; Jamaica is UTC-5, so Sabina Park matches begin one hour later for international viewers.</p>
+      </header>
+      <div class="broadcast-time-table">
+        <div class="broadcast-time-head"><span>Viewer location</span><span>Most host venues</span><span>Jamaica fixtures</span></div>
+        {% for item in guide.time_conversions %}
+        <div data-time-row>
+          <span><strong>{{ item.region }}</strong><small>{{ item.zone }}</small></span>
+          <time>{{ item.standard }}</time>
+          <time>{{ item.jamaica }}</time>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="broadcast-time-note">These conversions cover the standard 7pm fixture. The full schedule also contains 10am, 5pm and 8pm starts, so check the individual match before setting an alert.</p>
+    </section>
+
+    <section id="opening-matches" class="broadcast-openers" aria-labelledby="broadcast-openers-title">
+      <header class="broadcast-section-header">
+        <div>
+          <p class="broadcast-index">06 / Opening alerts</p>
+          <h2 id="broadcast-openers-title">Opening five CPL 2026 fixtures</h2>
+        </div>
+        <a href="/schedule/">Open all 39 fixtures <span>→</span></a>
+      </header>
+      <ol>
+        {% for fixture in opening_fixtures %}
+        <li data-broadcast-fixture>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <time>{{ fixture.label }}</time>
+          <div class="broadcast-match-teams">
+            <a href="/team/{{ fixture.teams[0].slug }}/"><img src="{{ fixture.teams[0].logo }}" width="62" height="62" alt="{{ fixture.teams[0].name }} logo" loading="lazy"><strong>{{ fixture.teams[0].name }}</strong></a>
+            <b>vs</b>
+            <a href="/team/{{ fixture.teams[1].slug }}/"><img src="{{ fixture.teams[1].logo }}" width="62" height="62" alt="{{ fixture.teams[1].name }} logo" loading="lazy"><strong>{{ fixture.teams[1].name }}</strong></a>
+          </div>
+          <a class="broadcast-match-venue" href="/venue/{{ fixture.venue.slug }}/"><strong>{{ fixture.time }} local</strong><span>{{ fixture.venue.name }}</span></a>
+          <a class="broadcast-match-centre-link" href="{{ fixture.match_url }}" aria-label="Open Match {{ fixture.match_number }} centre">
+            <span>Match centre</span><b aria-hidden="true">→</b>
+          </a>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="broadcast-replays" aria-labelledby="broadcast-replays-title">
+      <div>
+        <p class="broadcast-index">07 / If you miss it live</p>
+        <h2 id="broadcast-replays-title">Replays, highlights and live scores</h2>
+      </div>
+      <div>
+        <p>Rush says its channel will include highlights, original programmes and classic matches alongside live cricket. Willow advertises full-match replays and custom highlights, subject to the event rights attached to your account.</p>
+        <p>Outside the Caribbean, United States and Canada, check CPL announcements before match day. Use the <a href="/schedule/">schedule</a> for match times and the <a href="/points-table/">Points Table</a> for results.</p>
+      </div>
+    </section>
+
+    <section class="broadcast-faq" aria-labelledby="broadcast-faq-title">
+      <header>
+        <p class="broadcast-index">08 / Quick answers</p>
+        <h2 id="broadcast-faq-title">CPL 2026 viewing questions</h2>
+        <p class="broadcast-faq-intro">Clear answers about confirmed CPL 2026 viewing options, regional availability, devices, local start times and replays.</p>
+      </header>
+      <div class="broadcast-faq-list">
+        {% for item in guide.faq %}
+        <details{% if loop.first %} open{% endif %}>
+          <summary>
+            <span class="broadcast-faq-number">{{ "%02d" | format(loop.index) }}</span>
+            <span class="broadcast-faq-question">{{ item.question }}</span>
+            <span class="broadcast-faq-toggle" aria-hidden="true"></span>
+          </summary>
+          <div class="broadcast-faq-answer">
+            <span>Answer</span>
+            <p>{{ item.answer }}</p>
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260727w" defer></script>
+</body>
+</html>

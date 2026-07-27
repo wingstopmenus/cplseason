@@ -1,0 +1,72 @@
+{
+  "slug": "st-kitts-nevis-patriots",
+  "name": "St Kitts & Nevis Patriots",
+  "logo": "/static/img/official/teams/st-kitts-nevis-patriots.png",
+  "short_name": "Patriots",
+  "territory": "Saint Kitts and Nevis",
+  "city": "Basseterre",
+  "venue_slug": "warner-park",
+  "schedule_names": [
+    "St Kitts & Nevis Patriots"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 4,
+  "status_label": "Experience up front",
+  "founded": 2015,
+  "identity": "Expansion franchise · 2021 champions",
+  "title_count": 1,
+  "title_years": [
+    2021
+  ],
+  "honours": "CPL champions in 2021",
+  "profile_lede": "The CPL's first expansion franchise, pairing a title-winning history with veteran Caribbean run-makers and a compact Warner Park home stand.",
+  "history": [
+    "St Kitts & Nevis Patriots joined the CPL in 2015 as the competition's first expansion franchise. Warner Park in Basseterre has been the team's home ground from the beginning.",
+    "The Patriots won their first CPL championship in 2021, defeating Saint Lucia Kings in the final. The title established the franchise's place among the tournament winners.",
+    "The 2026 local group brings together Johnson Charles, Andre Fletcher and Jason Holder. Warner Park stages four Patriots home matches from 5 to 10 September before the squad completes its league programme in Guyana."
+  ],
+  "profile_highlights": [
+    {
+      "label": "Honours",
+      "title": "2021 champions",
+      "text": "The Patriots captured their first CPL crown in a dramatic final against Saint Lucia."
+    },
+    {
+      "label": "Experience",
+      "title": "Proven Caribbean run-makers",
+      "text": "Johnson Charles and Andre Fletcher bring two of the deepest batting records in CPL history."
+    },
+    {
+      "label": "Home block",
+      "title": "Four at Warner Park",
+      "text": "Basseterre hosts four Patriots fixtures across a six-day September window."
+    }
+  ],
+  "summary": "The Patriots unite CPL's leading career run-scorer Johnson Charles with Andre Fletcher, while Jason Holder returns to strengthen an experienced Caribbean group.",
+  "storyline": "Warner Park hosts four Patriots matches from 27 August to 3 September, midway through a league campaign that starts in St Vincent.",
+  "roster": [
+    "johnson-charles",
+    "jason-holder",
+    "kyle-mayers",
+    "andre-fletcher",
+    "kevin-wickham",
+    "obed-mccoy",
+    "ashmead-nedd",
+    "jeremiah-louis",
+    "alick-athanaze",
+    "micah-mckenzie",
+    "navin-bidaisee",
+    "mikyle-louis",
+    "naseem-shah",
+    "dasun-shanaka",
+    "waqar-salamkheil",
+    "wanindu-hasaranga",
+    "nikhil-chaudhary"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "537f5a82-e672-4ead-9499-bc7a03b4cd56"
+  },
+  "last_updated": "2026-07-27"
+}

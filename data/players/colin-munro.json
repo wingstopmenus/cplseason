@@ -1,0 +1,58 @@
+{
+  "slug": "colin-munro",
+  "name": "Colin Munro",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/colin-munro.webp",
+  "initials": "CM",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Colin Munro",
+    "birth_date": "11 March 1987",
+    "birth_place": "Durban, Natal Province, South Africa",
+    "country": "New Zealand",
+    "role": "Opening batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm medium fast",
+    "international_span": "2012–2020",
+    "career_teams": [
+      "Perth Scorchers",
+      "Manchester Originals",
+      "Trent Rockets",
+      "Brisbane Heat",
+      "Nottinghamshire",
+      "St Lucia Kings"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "65",
+        "runs": "1,724",
+        "wickets": "4",
+        "best_bowling": "1/12",
+        "hundreds_fifties": "3/11"
+      },
+      {
+        "format": "ODI",
+        "matches": "57",
+        "runs": "1,271",
+        "wickets": "7",
+        "best_bowling": "2/10",
+        "hundreds_fifties": "0/8"
+      },
+      {
+        "format": "Test",
+        "matches": "1",
+        "runs": "15",
+        "wickets": "2",
+        "best_bowling": "2/40",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "slug": "glenn-phillips",
+  "name": "Glenn Phillips",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing from New Zealand",
+  "image": null,
+  "initials": "GP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Glenn Dominic Phillips",
+    "birth_date": "6 December 1996",
+    "birth_place": "East London, South Africa",
+    "country": "New Zealand",
+    "role": "Occasionally Wicket-keeper-batter / All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right arm off-break",
+    "international_span": "2017–present",
+    "career_teams": [
+      "Barbados Royals",
+      "Rajasthan Royals",
+      "Otago",
+      "Sunrisers Hyderabad",
+      "Colombo Strikers",
+      "Gujarat Titans"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "97",
+        "runs": "2,286",
+        "wickets": "9",
+        "best_bowling": "3/6",
+        "hundreds_fifties": "2/11"
+      },
+      {
+        "format": "ODI",
+        "matches": "47",
+        "runs": "1,262",
+        "wickets": "16",
+        "best_bowling": "3/37",
+        "hundreds_fifties": "2/5"
+      },
+      {
+        "format": "Test",
+        "matches": "19",
+        "runs": "956",
+        "wickets": "33",
+        "best_bowling": "5/45",
+        "hundreds_fifties": "1/5"
+      }
+    ]
+  }
+}

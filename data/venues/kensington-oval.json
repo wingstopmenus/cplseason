@@ -1,0 +1,105 @@
+{
+  "slug": "kensington-oval",
+  "name": "Kensington Oval",
+  "city": "Bridgetown",
+  "territory": "Barbados",
+  "capacity": 28000,
+  "matches": 9,
+  "date_window": "5–20 September",
+  "stage_label": "Finals week",
+  "summary": "Kensington Oval has the largest allocation: five league fixtures followed by the Eliminator, both Qualifiers and the CPL 2026 final.",
+  "tagline": "The Mecca of Caribbean cricket becomes the stage for CPL 2026's decisive nine-match finale.",
+  "established": "Cricket played here since 1882",
+  "former_name": null,
+  "ends": "Malcolm Marshall End and Joel Garner End",
+  "home_team": "Barbados Pride and Barbados Royals",
+  "story": [
+    "Kensington Oval is the historic centre of cricket in Barbados. Pickwick Cricket Club developed former plantation land into a ground in 1882, and the Oval hosted the first Test played in the West Indies when the regional side met England in 1930.",
+    "Redeveloped for the 2007 ICC Cricket World Cup, Kensington hosted that tournament's final and later the 2010 ICC World Twenty20 final. Its stands and ends honour generations of Barbadian greats, including Sir Garfield Sobers, the Three Ws, Malcolm Marshall and Joel Garner.",
+    "CPL 2026 gives the Oval its largest venue allocation: five league matches, the Eliminator, both Qualifiers and the final on 20 September. It is the first time Barbados hosts CPL finals week."
+  ],
+  "highlights": [
+    {
+      "label": "Caribbean first",
+      "title": "West Indies' first Test venue",
+      "text": "The Oval staged the region's first Test match, West Indies against England, in 1930."
+    },
+    {
+      "label": "Global finals",
+      "title": "2007 and 2010",
+      "text": "Kensington hosted the 2007 Cricket World Cup final and the 2010 World Twenty20 final."
+    },
+    {
+      "label": "CPL 2026",
+      "title": "Nine-match closing run",
+      "text": "Five league games and all four playoff matches culminate in the 20 September final."
+    }
+  ],
+  "visitor_note": "Finals-week demand and operating plans may differ from league matches. Use official CPL ticketing, verify your specific gate and start time, and allow extra time for Bridgetown event traffic.",
+  "fixtures": [
+    {
+      "date": "2026-09-05",
+      "label": "Sat 5 Sep",
+      "match": "Barbados Royals vs Trinbago Knight Riders",
+      "time": "8pm"
+    },
+    {
+      "date": "2026-09-06",
+      "label": "Sun 6 Sep",
+      "match": "Barbados Royals vs Saint Lucia Kings",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-10",
+      "label": "Thu 10 Sep",
+      "match": "Barbados Royals vs St Kitts & Nevis Patriots",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-12",
+      "label": "Sat 12 Sep",
+      "match": "Barbados Royals vs Jamaica Kingsmen",
+      "time": "8pm"
+    },
+    {
+      "date": "2026-09-13",
+      "label": "Sun 13 Sep",
+      "match": "Barbados Royals vs Guyana Amazon Warriors",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-16",
+      "label": "Wed 16 Sep",
+      "match": "Eliminator (3rd vs 4th)",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-17",
+      "label": "Thu 17 Sep",
+      "match": "Qualifier 1 (1st vs 2nd)",
+      "time": "8pm"
+    },
+    {
+      "date": "2026-09-18",
+      "label": "Fri 18 Sep",
+      "match": "Qualifier 2 (Winner Eliminator vs Loser Q1)",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-20",
+      "label": "Sun 20 Sep",
+      "match": "CPL 2026 Final",
+      "time": "7pm"
+    }
+  ],
+  "image": "/static/img/official/venues/kensington-oval.webp",
+  "image_source": "https://commons.wikimedia.org/wiki/File:Kensington_Oval,_Barbados_During_2007_World_Cup_Cricket_Final.jpg",
+  "image_credit": "ROxBo",
+  "image_license": "Public domain",
+  "image_license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+  "external_ids": {
+    "wikipedia": "Kensington Oval",
+    "cpl": null
+  },
+  "last_updated": "2026-07-26"
+}

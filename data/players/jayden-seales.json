@@ -1,0 +1,57 @@
+{
+  "slug": "jayden-seales",
+  "name": "Jayden Seales",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/jayden-seales.webp",
+  "initials": "JS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jayden Nigel Tristen Seales",
+    "birth_date": "10 September 2001",
+    "birth_place": "Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Right-arm fast-medium",
+    "international_span": "2021–present",
+    "career_teams": [
+      "Trinbago Knight Riders",
+      "Trinidad and Tobago",
+      "Jaffna Kings",
+      "Sussex",
+      "Antigua and Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "6",
+        "runs": "4",
+        "wickets": "6",
+        "best_bowling": "3/32",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "29",
+        "runs": "56",
+        "wickets": "40",
+        "best_bowling": "6/18",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "26",
+        "runs": "235",
+        "wickets": "95",
+        "best_bowling": "6/61",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

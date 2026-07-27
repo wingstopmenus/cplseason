@@ -1,0 +1,58 @@
+{
+  "slug": "justin-greaves",
+  "name": "Justin Greaves",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Selected by Trinbago Knight Riders for CPL 2026",
+  "image": "/static/img/official/players/justin-greaves.webp",
+  "initials": "JG",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Justin Pierre Greaves",
+    "birth_date": "26 February 1994",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium fast",
+    "international_span": "2022–present",
+    "career_teams": [
+      "Combined Campuses",
+      "Barbados",
+      "Barbados Royals",
+      "Windward Islands",
+      "Leeward Islands",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "2",
+        "runs": "18",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "23",
+        "runs": "474",
+        "wickets": "8",
+        "best_bowling": "2/32",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "Test",
+        "matches": "16",
+        "runs": "895",
+        "wickets": "24",
+        "best_bowling": "3/39",
+        "hundreds_fifties": "3/1"
+      }
+    ]
+  }
+}

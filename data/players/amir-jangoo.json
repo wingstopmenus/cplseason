@@ -1,0 +1,58 @@
+{
+  "slug": "amir-jangoo",
+  "name": "Amir Jangoo",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": "/static/img/official/players/amir-jangoo.webp",
+  "initials": "AJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Amir Anthony Jangoo",
+    "birth_date": "14 July 1997",
+    "birth_place": "St. James, Trinidad",
+    "country": "West Indies",
+    "role": "Wicket-keeper-batter",
+    "batting_style": "Left-handed",
+    "bowling_style": "",
+    "international_span": "2024–present",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "Combined Campuses and Colleges",
+      "Leeward Islands",
+      "Trinbago Knight Riders",
+      "Jamaica Tallawahs",
+      "Antigua and Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "7",
+        "runs": "163",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "8",
+        "runs": "177",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/0"
+      },
+      {
+        "format": "Test",
+        "matches": "3",
+        "runs": "272",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/0"
+      }
+    ]
+  }
+}

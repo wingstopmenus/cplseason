@@ -1,0 +1,56 @@
+{
+  "slug": "veerasammy-permaul",
+  "name": "Veerasammy Permaul",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Selected by Guyana Amazon Warriors for CPL 2026",
+  "image": null,
+  "initials": "VP",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Veerasammy Permaul",
+    "birth_date": "11 August 1989",
+    "birth_place": "Albion, Guyana",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Slow left-arm orthodox",
+    "international_span": "2012–2022",
+    "career_teams": [
+      "Guyana",
+      "Guyana Amazon Warriors",
+      "Jamaica Tallawahs",
+      "St Kitts and Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "1",
+        "runs": "0",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "7",
+        "runs": "19",
+        "wickets": "8",
+        "best_bowling": "3/40",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "9",
+        "runs": "145",
+        "wickets": "31",
+        "best_bowling": "5/35",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

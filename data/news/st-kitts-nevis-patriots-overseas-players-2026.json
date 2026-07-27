@@ -1,0 +1,52 @@
+{
+  "slug": "st-kitts-nevis-patriots-overseas-players-2026",
+  "category": "Squads",
+  "title": "St Kitts & Nevis Patriots Name Overseas Group for CPL 2026",
+  "short_title": "Patriots overseas players",
+  "description": "St Kitts & Nevis Patriots confirm Naseem Shah, Dasun Shanaka, Waqar Salamkheil, Wanindu Hasaranga and Nikhil Chaudhary for CPL 2026.",
+  "dek": "The Patriots have added pace, wrist-spin and middle-order experience to a West Indian core led by Jason Holder, Kyle Mayers and Andre Fletcher.",
+  "date_published": "2026-07-24",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/teams/st-kitts-nevis-patriots.png",
+  "image_alt": "St Kitts and Nevis Patriots team crest",
+  "team_slug": "st-kitts-nevis-patriots",
+  "summary_heading": "Patriots complete their 17-player squad",
+  "key_points": [
+    "Naseem Shah supplies new-ball pace and a wicket-taking option at the death.",
+    "Wanindu Hasaranga and Waqar Salamkheil give the Patriots two different wrist-spin threats.",
+    "The Patriots open against Trinbago Knight Riders at Arnos Vale Stadium on 8 August."
+  ],
+  "players_heading": "The five overseas additions",
+  "player_slugs": ["naseem-shah", "dasun-shanaka", "waqar-salamkheil", "wanindu-hasaranga", "nikhil-chaudhary"],
+  "sections": [
+    {
+      "heading": "A bowling group built for different phases",
+      "paragraphs": [
+        "St Kitts & Nevis Patriots were the last of the seven men’s CPL teams to publish their overseas group. Their five signings complete a 17-player squad and give the coaching staff clear options from the first over through to the closing stages.",
+        "Naseem Shah can attack with the new ball, while Hasaranga and Salamkheil bring contrasting wrist-spin through the middle overs. Shanaka adds seam bowling and finishing experience. Chaudhary offers another batting option and can cover overs when the match-up suits him."
+      ]
+    },
+    {
+      "heading": "How the overseas players fit the local core",
+      "paragraphs": [
+        "The international group joins a West Indian roster that already contains Jason Holder, Kyle Mayers, Andre Fletcher and Johnson Charles. That balance allows the Patriots to change their overseas combination without rebuilding the top order or the pace attack for every match.",
+        "Hasaranga is the central tactical piece because he can influence both innings. Pairing him with Salamkheil would create a spin-heavy middle phase; selecting Naseem and Shanaka together would give the side more pace and lower-order hitting."
+      ]
+    },
+    {
+      "heading": "Opening match and home stretch",
+      "paragraphs": [
+        "The Patriots begin against defending champions Trinbago Knight Riders in St Vincent on 8 August. Their Warner Park home block starts later in the month, beginning with Jamaica Kingsmen on 27 August.",
+        "That schedule gives the squad time to settle before five fixtures at Warner Park. Early selection should reveal whether the Patriots prefer two specialist overseas spinners or a pace-led combination around Naseem and Holder."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/st-kitts-nevis-patriots/", "label": "Patriots team guide"},
+    {"href": "/squads/", "label": "All CPL 2026 squads"},
+    {"href": "/venue/warner-park/", "label": "Warner Park guide"}
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_date": "2026-07-24",
+  "last_updated": "2026-07-27"
+}

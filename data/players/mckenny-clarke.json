@@ -1,0 +1,54 @@
+{
+  "slug": "mckenny-clarke",
+  "name": "McKenny Clarke",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Welcomed back to Saint Lucia Kings for CPL 2026",
+  "image": "/static/img/official/players/mckenny-clarke.webp",
+  "initials": "MC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "McKenny Clarke",
+    "birth_date": "",
+    "birth_place": "Saint Lucia",
+    "country": "",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast medium",
+    "international_span": "",
+    "career_teams": [
+      "West Indies Academy",
+      "Saint Lucia Kings"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "3",
+        "runs": "0",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "13",
+        "runs": "12",
+        "wickets": "9",
+        "best_bowling": "2/20",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "8",
+        "runs": "118",
+        "wickets": "15",
+        "best_bowling": "3/26",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

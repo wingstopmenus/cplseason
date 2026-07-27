@@ -1,0 +1,52 @@
+{
+  "slug": "jamaica-kingsmen-overseas-players-2026",
+  "category": "Squads",
+  "title": "Jamaica Kingsmen Explain Phased Overseas Squad for CPL 2026",
+  "short_title": "Kingsmen overseas squad",
+  "description": "Jamaica Kingsmen name seven overseas players for CPL 2026, with Saim Ayub, Maaz Sadaqat and Usman Khan joining from 19 August.",
+  "dek": "Jamaica will use two overseas-player phases during its first CPL season, with a planned change after the team’s opening four fixtures.",
+  "date_published": "2026-07-20",
+  "date_modified": "2026-07-27",
+  "image": "/static/img/official/teams/jamaica-kingsmen.png",
+  "image_alt": "Jamaica Kingsmen team crest",
+  "team_slug": "jamaica-kingsmen",
+  "summary_heading": "Seven names, two stages and one active overseas group",
+  "key_points": [
+    "Hassan Khan and Hunain Shah are listed for the full tournament.",
+    "Shayan Jahangir and Tayyab Arif cover the opening phase.",
+    "Saim Ayub, Maaz Sadaqat and Usman Khan enter the group from 19 August."
+  ],
+  "players_heading": "Jamaica’s announced overseas group",
+  "player_slugs": ["hassan-khan", "hunain-shah", "shayan-jahangir", "tayyab-arif", "saim-ayub", "maaz-sadaqat", "usman-khan"],
+  "sections": [
+    {
+      "heading": "How the transition works",
+      "paragraphs": [
+        "Jamaica begin with Hassan Khan, Hunain Shah, Shayan Jahangir and Tayyab Arif available. From 19 August, Saim Ayub, Maaz Sadaqat and Usman Khan join, with Jahangir and Arif leaving the active overseas group.",
+        "The date falls after Jamaica’s first four matches and before the 21 August game against Saint Lucia Kings. It gives the Kingsmen a defined opening unit and a second group for the longer middle and closing stretch."
+      ]
+    },
+    {
+      "heading": "What the second phase adds",
+      "paragraphs": [
+        "Ayub can change a powerplay as an opener and offers part-time spin. Usman adds wicketkeeping and middle-order acceleration, while Sadaqat brings left-handed batting and another slow-bowling option.",
+        "Hassan and Hunain remain throughout, providing continuity across the change. Rovman Powell leads a West Indian group that also includes Brandon King, Alzarri Joseph and Shamar Joseph."
+      ]
+    },
+    {
+      "heading": "Four early matches before the switch",
+      "paragraphs": [
+        "Jamaica open the tournament in St Vincent on 7 August, then play three matches at Sabina Park against Barbados Tridents, Guyana Amazon Warriors and Trinbago Knight Riders. Their fourth game is also in Jamaica against the Patriots on 18 August.",
+        "The phased squad therefore separates the homecoming block from the rest of the season. Jamaica’s staff can plan the first four matches with a settled group before adding three players on the following day."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/team/jamaica-kingsmen/", "label": "Kingsmen team guide"},
+    {"href": "/squads/", "label": "All CPL 2026 squads"},
+    {"href": "/venue/sabina-park/", "label": "Sabina Park guide"}
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_date": "2026-07-20",
+  "last_updated": "2026-07-27"
+}

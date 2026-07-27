@@ -1,0 +1,29 @@
+{
+  "slug": "vitel-lawes",
+  "name": "Vitel Lawes",
+  "team_slug": "jamaica-kingsmen",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "VL",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Vitel Orlando Lawes",
+    "birth_date": "3 March 2007",
+    "birth_place": "Linstead, St. Catherine, Jamaica",
+    "country": "West Indies",
+    "role": "Bowler",
+    "batting_style": "Left-handed",
+    "bowling_style": "Left arm wrist spin",
+    "international_span": "2026",
+    "career_teams": [
+      "Jamaica Kingsmen",
+      "Desert Vipers"
+    ],
+    "records": []
+  }
+}

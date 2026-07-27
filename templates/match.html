@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/official/news-banner-bg.jpg">
+  <meta property="og:image:alt" content="{{ match.home_label }} versus {{ match.away_label }} at {{ match.venue.name }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260727cv">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="match-live-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/" aria-current="page">Schedule</a><a href="/teams/">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="match-live">
+    <nav class="standings-breadcrumbs match-live-breadcrumbs" aria-label="Breadcrumb">
+      <ol><li><a href="/">Home</a></li><li><a href="/schedule/">Schedule</a></li><li aria-current="page">Match {{ match.match_number }}</li></ol>
+    </nav>
+
+    <section class="match-live-hero" aria-labelledby="match-live-title">
+      <div class="match-live-topline">
+        <span><i aria-hidden="true"></i> {{ match.status }}</span>
+        <strong>Match {{ "%02d" | format(match.match_number) }}</strong>
+        <small>{{ match.stage }}</small>
+      </div>
+      <div class="match-live-title">
+        <p>{{ match.competition }}</p>
+        <h1 id="match-live-title">{{ match.home_label }} <em>vs</em> {{ match.away_label }}</h1>
+      </div>
+      <div class="match-live-versus">
+        {% if match.home_team %}
+        <a href="/team/{{ match.home_team.slug }}/">
+          <img src="{{ match.home_team.logo }}" width="180" height="180" alt="{{ match.home_team.name }} logo">
+          <span><small>{{ match.home_team.short_name }}</small><strong>{{ match.home_team.name }}</strong></span>
+        </a>
+        {% else %}
+        <div class="match-live-tbd-team">
+          <span class="match-live-tbd-mark" aria-hidden="true">TBC</span>
+          <span><small>{{ match.stage }}</small><strong>{{ match.home_label }}</strong></span>
+        </div>
+        {% endif %}
+        <div class="match-live-vs-node">
+          <span>VS</span>
+          <time datetime="{{ match.start_iso }}">{{ match.date_label_short }}<br>{{ match.local_time_label }} local</time>
+        </div>
+        {% if match.away_team %}
+        <a href="/team/{{ match.away_team.slug }}/">
+          <img src="{{ match.away_team.logo }}" width="180" height="180" alt="{{ match.away_team.name }} logo">
+          <span><small>{{ match.away_team.short_name }}</small><strong>{{ match.away_team.name }}</strong></span>
+        </a>
+        {% else %}
+        <div class="match-live-tbd-team">
+          <span class="match-live-tbd-mark" aria-hidden="true">TBC</span>
+          <span><small>{{ match.stage }}</small><strong>{{ match.away_label }}</strong></span>
+        </div>
+        {% endif %}
+      </div>
+      <div class="match-live-countdown" data-match-countdown data-countdown-target="{{ match.start_iso }}">
+        <p data-match-countdown-label>Match Starts in</p>
+        <div><strong data-countdown-days>00</strong><span>Days</span></div>
+        <div><strong data-countdown-hours>00</strong><span>Hours</span></div>
+        <div><strong data-countdown-minutes>00</strong><span>Minutes</span></div>
+        <div><strong data-countdown-seconds>00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <dl class="match-live-facts" aria-label="Match {{ match.match_number }} details">
+      <div><dt>Date</dt><dd>{{ match.date_label_long }}</dd></div>
+      <div><dt>Local start</dt><dd>{{ match.local_time_label }} · {{ match.utc_offset_label }}</dd></div>
+      <div><dt>International time</dt><dd>{{ match.utc_time_label }} GMT{% if match.utc_date_label %}, {{ match.utc_date_label }}{% endif %} · {{ match.india_time_label }} IST{% if match.india_date_label %}, {{ match.india_date_label }}{% endif %}</dd></div>
+      <div><dt>Venue</dt><dd><a href="/venue/{{ match.venue.slug }}/">{{ match.venue.name }}</a></dd></div>
+    </dl>
+
+    <section id="live-score" class="match-live-centre" aria-labelledby="match-live-centre-title">
+      <header class="match-live-section-head">
+        <div>
+          <p>01 / Live match centre</p>
+          <h2 id="match-live-centre-title">Score, scorecard and ball-by-ball updates</h2>
+          <span>Live score coverage begins on match day.</span>
+        </div>
+        <div class="match-live-refresh">
+          <span><i aria-hidden="true"></i> Automatic updates</span>
+          {% if match.official_match_center_url %}
+          <button type="button" data-match-frame-refresh>Refresh match centre</button>
+          {% else %}
+          <button type="button" disabled>Match centre opens soon</button>
+          {% endif %}
+        </div>
+      </header>
+      <div class="match-live-frame-shell" data-match-frame-shell data-match-start="{{ match.start_iso }}">
+        <div class="match-live-frame-status">
+          <strong>Live data window</strong>
+          <span data-match-frame-status>Match centre opens on match day</span>
+        </div>
+        <div class="match-live-prestart" data-match-prestart>
+          <span><i aria-hidden="true"></i> Match {{ match.match_number }} · {{ match.date_label_long }}</span>
+          <strong>Live score coverage begins before the toss</strong>
+          <p>{% if match.official_match_center_url %}Return on {{ match.date_label_long }} for the scorecard, ball-by-ball commentary and match insights.{% else %}Return on match day for live scores and the full scorecard.{% endif %}</p>
+          <dl>
+            <div><dt>Match Time</dt><dd>{{ match.local_time_label }} local · {{ match.utc_time_label }} GMT{% if match.utc_date_label %}, {{ match.utc_date_label }}{% endif %}</dd></div>
+            <div><dt>GMT</dt><dd>{{ match.utc_time_label }}{% if match.utc_date_label %}, {{ match.utc_date_label }}{% endif %}</dd></div>
+            <div><dt>India</dt><dd>{{ match.india_time_label }}{% if match.india_date_label %}, {{ match.india_date_label }}{% endif %}</dd></div>
+          </dl>
+        </div>
+        {% if match.official_match_center_url %}
+        <iframe
+          data-match-frame
+          data-src="{{ match.official_match_center_url }}"
+          title="Official live scorecard for {{ match.home_label }} versus {{ match.away_label }}"
+          loading="eager"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="fullscreen"
+          hidden
+        ></iframe>
+        {% endif %}
+      </div>
+      <p class="match-live-data-note">Follow the live score, full scorecard and ball-by-ball commentary here on match day.</p>
+    </section>
+
+    <section class="match-live-preview" aria-labelledby="match-preview-title">
+      <header>
+        <p>02 / Match preview</p>
+        <h2 id="match-preview-title">{{ match.preview_heading }}</h2>
+      </header>
+      <div>
+        <p>{{ match.preview }}</p>
+        <p>{{ match.preview_detail }}</p>
+      </div>
+      <aside>
+        <span>At a glance</span>
+        <dl>
+          <div><dt>Format</dt><dd>Twenty20</dd></div>
+          <div><dt>Maximum overs</dt><dd>20 per side</dd></div>
+          <div><dt>Competition phase</dt><dd>{{ match.stage }}</dd></div>
+          <div><dt>Toss</dt><dd>To be confirmed</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="match-live-squads{% if not match.home_team %} match-live-squads-pending{% endif %}" aria-labelledby="match-squads-title">
+      <header class="match-live-section-head">
+        <div><p>03 / Confirmed squads</p><h2 id="match-squads-title">{% if match.home_team %}Players available for Match {{ match.match_number }}{% else %}Playoff teams will be confirmed{% endif %}</h2><span>{% if match.home_team %}Playing XIs will replace squad lists after the toss.{% else %}This section will update as soon as the qualifying teams are known.{% endif %}</span></div>
+      </header>
+      {% if match.home_team %}
+      <div class="match-live-squad-grid">
+        {% for team in [match.home_team, match.away_team] %}
+        <article>
+          <header><img src="{{ team.logo }}" width="78" height="78" alt="{{ team.name }} logo"><div><small>{{ team.roster | length }}-player squad</small><h3>{{ team.name }}</h3></div></header>
+          <ol>
+            {% for player in team.players %}
+            <li><span>{{ "%02d" | format(loop.index) }}</span><a href="/player/{{ player.slug }}/">{{ player.name }}</a><small>{{ player.category | replace(" player", "") }}</small></li>
+            {% endfor %}
+          </ol>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="match-live-pending-teams">
+        <article><span>01</span><small>{{ match.stage }}</small><strong>{{ match.home_label }}</strong><p>Squad and playing XI will appear after qualification.</p></article>
+        <article><span>02</span><small>{{ match.stage }}</small><strong>{{ match.away_label }}</strong><p>Squad and playing XI will appear after qualification.</p></article>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="match-live-venue" aria-labelledby="match-venue-title">
+      <img src="{{ match.venue.image }}" width="960" height="640" alt="{{ match.venue.name }} in {{ match.venue.city }}">
+      <div>
+        <p>04 / Match venue</p>
+        <h2 id="match-venue-title">{{ match.venue.name }}</h2>
+        <p>{{ match.venue.story[0] }}</p>
+        <dl><div><dt>Location</dt><dd>{{ match.venue.city }}, {{ match.venue.territory }}</dd></div><div><dt>Capacity</dt><dd>{{ "{:,}".format(match.venue.capacity) }}</dd></div><div><dt>Ends</dt><dd>{{ match.venue.ends }}</dd></div></dl>
+        <a href="/venue/{{ match.venue.slug }}/">Explore the ground <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1"><span aria-hidden="true">↑</span></button>
+  <script src="/static/js/site.js?v=20260727h" defer></script>
+</body>
+</html>

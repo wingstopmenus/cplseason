@@ -1,0 +1,58 @@
+{
+  "slug": "shai-hope",
+  "name": "Shai Hope",
+  "team_slug": "guyana-amazon-warriors",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "SH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Shai Diego Hope",
+    "birth_date": "10 November 1993",
+    "birth_place": "Saint Michael, Barbados",
+    "country": "West Indies",
+    "role": "Wicket-keeper batsman",
+    "batting_style": "Right-handed",
+    "bowling_style": "Left-arm medium",
+    "international_span": "2015–present",
+    "career_teams": [
+      "Khulna Tigers",
+      "Lahore Qalandars",
+      "Delhi Capitals",
+      "Hobart Hurricanes",
+      "Multan Sultans",
+      "Pretoria Capitals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "70",
+        "runs": "1,743",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "1/12"
+      },
+      {
+        "format": "ODI",
+        "matches": "150",
+        "runs": "6,169",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "19/31"
+      },
+      {
+        "format": "Test",
+        "matches": "47",
+        "runs": "2,372",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "5/6"
+      }
+    ]
+  }
+}

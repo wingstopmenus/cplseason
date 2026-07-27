@@ -1,0 +1,58 @@
+{
+  "slug": "naseem-shah",
+  "name": "Naseem Shah",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": null,
+  "initials": "NS",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Naseem Shah",
+    "birth_date": "15 February 2003",
+    "birth_place": "Mayar, Lower Dir, Khyber Pakhtunkhwa, Pakistan",
+    "country": "Pakistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "2019–present",
+    "career_teams": [
+      "St Kitts & Nevis Patriots",
+      "Gloucestershire",
+      "Leicestershire",
+      "Islamabad United",
+      "Desert Vipers",
+      "Rawalpindiz"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "37",
+        "runs": "62",
+        "wickets": "32",
+        "best_bowling": "3/21",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "ODI",
+        "matches": "34",
+        "runs": "234",
+        "wickets": "60",
+        "best_bowling": "5/33",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "Test",
+        "matches": "20",
+        "runs": "144",
+        "wickets": "60",
+        "best_bowling": "5/31",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

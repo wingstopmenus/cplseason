@@ -1,0 +1,72 @@
+{
+  "slug": "saint-lucia-kings",
+  "name": "Saint Lucia Kings",
+  "logo": "/static/img/official/teams/saint-lucia-kings.png",
+  "short_name": "Kings",
+  "territory": "Saint Lucia",
+  "city": "Gros Islet",
+  "venue_slug": "daren-sammy-cricket-ground",
+  "schedule_names": [
+    "Saint Lucia Kings"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 5,
+  "status_label": "Five nights at home",
+  "founded": 2013,
+  "identity": "Founding franchise · 2024 champions",
+  "title_count": 1,
+  "title_years": [
+    2024
+  ],
+  "honours": "CPL champions in 2024",
+  "profile_lede": "Saint Lucia's founding CPL franchise, now carrying the Kings identity and the confidence of its first championship into a five-match home block.",
+  "history": [
+    "Saint Lucia's CPL franchise began in 2013 as the Zouks, competed as the Stars in 2017 and 2018, returned to the Zouks name, and adopted the Kings identity in 2021. Those names form one continuous franchise history.",
+    "The Kings won their first CPL championship in 2024, defeating Guyana Amazon Warriors in the final. The title followed runner-up finishes in 2020 and 2021.",
+    "Roston Chase, Matthew Forde and teenage wicketkeeper Jewel Andrew are central to the published 2026 local core. Daren Sammy Cricket Ground hosts five matches during Saint Lucia's home block from 13 to 19 August."
+  ],
+  "profile_highlights": [
+    {
+      "label": "Honours",
+      "title": "The 2024 breakthrough",
+      "text": "Saint Lucia defeated Guyana to lift the franchise's first CPL championship."
+    },
+    {
+      "label": "Continuity",
+      "title": "Zouks to Kings",
+      "text": "The current Kings identity continues the Saint Lucia franchise that began in the inaugural 2013 season."
+    },
+    {
+      "label": "Home stretch",
+      "title": "Five nights in Gros Islet",
+      "text": "The 2026 venue block at Daren Sammy Cricket Ground runs from 13 to 19 August."
+    }
+  ],
+  "summary": "Roston Chase and Matthew Forde anchor the returning group, joined by Jewel Andrew and a fresh Saint Lucian pathway that includes McKenny Clarke.",
+  "storyline": "Saint Lucia have the first five-match home block of the season at Daren Sammy Cricket Ground, running from 12 to 21 August.",
+  "roster": [
+    "roston-chase",
+    "jewel-andrew",
+    "matthew-forde",
+    "kamil-pooran",
+    "darron-nedd",
+    "mckenny-clarke",
+    "joshua-bishop",
+    "damion-joachim",
+    "keon-gaston",
+    "amari-goodridge",
+    "johann-jeremiah",
+    "akeem-auguste",
+    "noor-ahmad",
+    "tim-seifert",
+    "maheesh-theekshana",
+    "charith-asalanka",
+    "shadley-van-schalkwyk"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "37bc79a8-04d6-473e-89e7-2f71a187a929"
+  },
+  "last_updated": "2026-07-27"
+}

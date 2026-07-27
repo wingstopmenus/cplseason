@@ -1,0 +1,81 @@
+{
+  "slug": "daren-sammy-cricket-ground",
+  "name": "Daren Sammy Cricket Ground",
+  "city": "Gros Islet",
+  "territory": "Saint Lucia",
+  "capacity": 12400,
+  "matches": 5,
+  "date_window": "12–21 August",
+  "stage_label": "Saint Lucia block",
+  "summary": "Daren Sammy Cricket Ground carries five Saint Lucia league fixtures during a ten-day home block in August.",
+  "tagline": "Saint Lucia's modern cricket home, framed by hills and named for a two-time world champion captain.",
+  "established": "Completed in 2002",
+  "former_name": "Beausejour Cricket Ground",
+  "ends": "Pavilion End and Media Centre End",
+  "home_team": "Windward Islands Volcanoes and Saint Lucia Kings",
+  "story": [
+    "Built near Gros Islet on the outskirts of Rodney Bay, the ground opened a new era for international cricket in Saint Lucia. Completed in 2002, it hosted its first Test in 2003 and was the first Caribbean venue to stage a day-night cricket match.",
+    "The stadium was originally known as Beausejour Cricket Ground. It was formally renamed in July 2016 for Daren Sammy after the Saint Lucian captain led West Indies to ICC World Twenty20 titles in 2012 and 2016.",
+    "For CPL 2026 it is the home of a five-match Saint Lucia block, with the Kings playing from 12 to 21 August."
+  ],
+  "highlights": [
+    {
+      "label": "Named for",
+      "title": "Daren Sammy",
+      "text": "The ground honours the Saint Lucian captain who led West Indies to two men's T20 world titles."
+    },
+    {
+      "label": "Venue first",
+      "title": "Caribbean day-night pioneer",
+      "text": "The ground became the first cricket venue in the Caribbean to host a day-night match."
+    },
+    {
+      "label": "CPL home block",
+      "title": "Five Kings fixtures",
+      "text": "Saint Lucia Kings play five home matches here across ten days in August."
+    }
+  ],
+  "visitor_note": "The stadium is near Gros Islet rather than central Castries. Check the event-specific transport plan, gate opening time and authorized ticket channel before match day.",
+  "fixtures": [
+    {
+      "date": "2026-08-12",
+      "label": "Wed 12 Aug",
+      "match": "Saint Lucia Kings vs St Kitts & Nevis Patriots",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-14",
+      "label": "Fri 14 Aug",
+      "match": "Saint Lucia Kings vs Antigua & Barbuda Falcons",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-16",
+      "label": "Sun 16 Aug",
+      "match": "Saint Lucia Kings vs Barbados Royals",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-19",
+      "label": "Wed 19 Aug",
+      "match": "Saint Lucia Kings vs Guyana Amazon Warriors",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-08-21",
+      "label": "Fri 21 Aug",
+      "match": "Saint Lucia Kings vs Jamaica Kingsmen",
+      "time": "7pm"
+    }
+  ],
+  "image": "/static/img/official/venues/daren-sammy-cricket-ground.webp",
+  "image_source": "https://commons.wikimedia.org/wiki/File:Beausejour_Stadium_Cricket_St_Lucia.jpg",
+  "image_credit": "Timothy Barton",
+  "image_license": "CC BY-SA 3.0",
+  "image_license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+  "external_ids": {
+    "wikipedia": "Daren Sammy Cricket Ground",
+    "cpl": null
+  },
+  "last_updated": "2026-07-26"
+}

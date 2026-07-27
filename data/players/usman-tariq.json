@@ -1,0 +1,57 @@
+{
+  "slug": "usman-tariq",
+  "name": "Usman Tariq",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/usman-tariq.webp",
+  "initials": "UT",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Usman Tariq",
+    "birth_date": "7 June 1995",
+    "birth_place": "Nowshera, Khyber Pakhtunkhwa, Pakistan",
+    "country": "Pakistan",
+    "role": "Bowler",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm Throw Ball",
+    "international_span": "2025–present",
+    "career_teams": [
+      "Quetta Gladiators",
+      "Deccan Gladiators",
+      "Trinbago Knight Riders",
+      "Desert Vipers",
+      "Warwickshire"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "71",
+        "runs": "42",
+        "wickets": "105",
+        "best_bowling": "4/16",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "9",
+        "runs": "0",
+        "wickets": "18",
+        "best_bowling": "4/16",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "3",
+        "runs": "1",
+        "wickets": "8",
+        "best_bowling": "4/26",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

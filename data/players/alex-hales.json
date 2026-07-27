@@ -1,0 +1,58 @@
+{
+  "slug": "alex-hales",
+  "name": "Alex Hales",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing",
+  "image": "/static/img/official/players/alex-hales.webp",
+  "initials": "AH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Alexander Daniel Hales",
+    "birth_date": "3 January 1989",
+    "birth_place": "Hillingdon, London, England",
+    "country": "England",
+    "role": "Opening batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "2011–2022",
+    "career_teams": [
+      "Nottinghamshire",
+      "Islamabad United",
+      "Rangpur Riders",
+      "Sydney Thunder",
+      "Trent Rockets",
+      "Desert Vipers"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "75",
+        "runs": "2,074",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/12"
+      },
+      {
+        "format": "ODI",
+        "matches": "70",
+        "runs": "2,419",
+        "wickets": "–",
+        "best_bowling": "–",
+        "hundreds_fifties": "6/14"
+      },
+      {
+        "format": "Test",
+        "matches": "11",
+        "runs": "573",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/5"
+      }
+    ]
+  }
+}

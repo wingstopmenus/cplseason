@@ -1,0 +1,30 @@
+{
+  "slug": "rivaldo-clarke",
+  "name": "Rivaldo Clarke",
+  "team_slug": "barbados-royals",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "RC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Rivaldo Clarke",
+    "birth_date": "29 December 2002",
+    "birth_place": "Barbados",
+    "country": "",
+    "role": "Wicketkeeper batsman",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm medium",
+    "international_span": "",
+    "career_teams": [
+      "West Indies Academy",
+      "Saint Lucia Kings",
+      "Barbados Royals"
+    ],
+    "records": []
+  }
+}

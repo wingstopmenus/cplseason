@@ -1,0 +1,12 @@
+.env*
+.vercel
+data
+templates
+scripts
+build.py
+footballflocks-site-structure.md
+footballflocks-tech-architecture.md
+index.md
+output
+static/css/site 2.css
+static/css/site 3.css

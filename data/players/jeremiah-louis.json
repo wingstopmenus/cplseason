@@ -1,0 +1,54 @@
+{
+  "slug": "jeremiah-louis",
+  "name": "Jeremiah Louis",
+  "team_slug": "st-kitts-nevis-patriots",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": null,
+  "initials": "JL",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jeremiah Stevenson Louis",
+    "birth_date": "12 March 1996",
+    "birth_place": "Saint Kitts",
+    "country": "West Indies",
+    "role": "",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "",
+    "career_teams": [
+      "Leeward Islands",
+      "St Kitts & Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "6",
+        "runs": "11",
+        "wickets": "3",
+        "best_bowling": "2/42",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "29",
+        "runs": "248",
+        "wickets": "25",
+        "best_bowling": "5/33",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "FC",
+        "matches": "57",
+        "runs": "1,581",
+        "wickets": "151",
+        "best_bowling": "6/69",
+        "hundreds_fifties": "0/4"
+      }
+    ]
+  }
+}

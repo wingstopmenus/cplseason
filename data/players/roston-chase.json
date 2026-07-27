@@ -1,0 +1,58 @@
+{
+  "slug": "roston-chase",
+  "name": "Roston Chase",
+  "team_slug": "saint-lucia-kings",
+  "category": "West Indian player",
+  "selection_note": "Right to Match selection",
+  "image": null,
+  "initials": "RC",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Roston Lamar Chase",
+    "birth_date": "22 March 1992",
+    "birth_place": "Christ Church, Barbados",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "international_span": "2016–present",
+    "career_teams": [
+      "Barbados",
+      "Barbados Tridents",
+      "Saint Lucia Kings",
+      "Comilla Victorians",
+      "Guyana Amazon Warriors",
+      "Pretoria Capitals"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "60",
+        "runs": "846",
+        "wickets": "40",
+        "best_bowling": "3/12",
+        "hundreds_fifties": "0/4"
+      },
+      {
+        "format": "ODI",
+        "matches": "71",
+        "runs": "1,191",
+        "wickets": "47",
+        "best_bowling": "3/30",
+        "hundreds_fifties": "0/6"
+      },
+      {
+        "format": "Test",
+        "matches": "58",
+        "runs": "2,680",
+        "wickets": "94",
+        "best_bowling": "8/60",
+        "hundreds_fifties": "6/11"
+      }
+    ]
+  }
+}

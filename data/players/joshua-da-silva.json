@@ -1,0 +1,54 @@
+{
+  "slug": "joshua-da-silva",
+  "name": "Joshua Da Silva",
+  "team_slug": "trinbago-knight-riders",
+  "category": "Breakout player",
+  "selection_note": "Breakout player",
+  "image": "/static/img/official/players/joshua-da-silva.webp",
+  "initials": "JD",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Joshua Michael Da Silva",
+    "birth_date": "19 June 1998",
+    "birth_place": "Port of Spain, Trinidad and Tobago",
+    "country": "West Indies",
+    "role": "Wicket-keeper batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2020–present",
+    "career_teams": [
+      "Trinidad and Tobago",
+      "St Kitts & Nevis Patriots"
+    ],
+    "records": [
+      {
+        "format": "ODI",
+        "matches": "2",
+        "runs": "14",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "33",
+        "runs": "1,238",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "1/5"
+      },
+      {
+        "format": "LA",
+        "matches": "30",
+        "runs": "730",
+        "wickets": "0",
+        "best_bowling": "0",
+        "hundreds_fifties": "1/3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/official/teams-banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cplseason">
+  <meta name="theme-color" content="#05061d">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.png" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260726p">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/" aria-current="page">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><span aria-current="page">Players</span></li>
+    </ol>
+  </nav>
+
+  <main id="main" class="players-2026">
+    <section class="players-hero">
+      <div class="players-hero-copy">
+        <p class="eyebrow">Republic Bank Caribbean Premier League 2026</p>
+        <h1>CPL 2026 Players<br><span>by Team</span></h1>
+        <p>Find every player named across the seven team squads. Search by player, franchise or squad category, then open a profile for the roster details.</p>
+        <div class="players-hero-actions">
+          <a class="button primary" href="#player-directory">Find a player</a>
+          <a class="button secondary" href="/squads/">View squad lists</a>
+        </div>
+      </div>
+      <aside class="players-index-card" aria-label="CPL 2026 player directory summary">
+        <p>Player index</p>
+        <strong>{{ totals.players }}</strong>
+        <span>announced profiles</span>
+        <dl>
+          <div><dt>West Indian</dt><dd>{{ totals.west_indian }}</dd></div>
+          <div><dt>Overseas</dt><dd>{{ totals.overseas }}</dd></div>
+          <div><dt>Breakout</dt><dd>{{ totals.breakout }}</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="players-summary" aria-labelledby="players-summary-title">
+      <div>
+        <p class="eyebrow">Directory at a glance</p>
+        <h2 id="players-summary-title">All announced CPL 2026 players by team</h2>
+        <p>The directory lists 122 players named across the seven CPL 2026 squads. Antigua and Jamaica include players announced for different availability periods.</p>
+      </div>
+      <div class="players-summary-facts">
+        <span><strong>{{ totals.teams }}</strong> franchises</span>
+        <span><strong>{{ totals.portraits }}</strong> player photos</span>
+        <span><strong>{{ totals.fallbacks }}</strong> profiles using initials</span>
+      </div>
+    </section>
+
+    <section class="player-directory-tools" aria-label="Player directory filters">
+      <div class="player-directory-search">
+        <label for="player-directory-search">Find a player</label>
+        <input id="player-directory-search" type="search" placeholder="Search player or team…" autocomplete="off">
+      </div>
+      <div class="player-directory-filters" aria-label="Filter by squad category">
+        <button class="is-active" type="button" data-player-filter="all" aria-pressed="true">All players</button>
+        <button type="button" data-player-filter="west-indian-player" aria-pressed="false">West Indian</button>
+        <button type="button" data-player-filter="overseas-player" aria-pressed="false">Overseas</button>
+        <button type="button" data-player-filter="breakout-player" aria-pressed="false">Breakout</button>
+      </div>
+      <nav class="player-team-filter" aria-label="Filter by team">
+        <button class="is-active" type="button" data-player-team="all" aria-pressed="true">All teams</button>
+        {% for team in teams %}
+        <button type="button" data-player-team="{{ team.slug }}" aria-pressed="false">
+          <img src="{{ team.logo }}" width="40" height="40" alt="" aria-hidden="true">
+          <span>{{ team.short_name }}</span>
+        </button>
+        {% endfor %}
+      </nav>
+      <p id="player-directory-count" class="player-directory-count" aria-live="polite">{{ totals.players }} players shown</p>
+    </section>
+
+    <section id="player-directory" class="player-directory" aria-labelledby="player-directory-title">
+      <header class="player-directory-heading">
+        <div>
+          <p class="eyebrow">Player profiles</p>
+          <h2 id="player-directory-title">Players by team</h2>
+        </div>
+      </header>
+
+      {% for team in teams %}
+      <article id="{{ team.slug }}-players" class="player-team-section" data-player-team-section="{{ team.slug }}">
+        <header class="player-team-header">
+          <a href="/team/{{ team.slug }}/">
+            <img src="{{ team.logo }}" width="76" height="76" alt="{{ team.name }} logo" loading="lazy">
+            <span>
+              <small>2026 franchise</small>
+              <strong>{{ team.name }}</strong>
+              <em>Open team profile →</em>
+            </span>
+          </a>
+          <span class="player-team-total"><strong>{{ team.players | length }}</strong> players</span>
+        </header>
+        <div class="player-directory-grid">
+          {% for player in team.players %}
+          <a class="directory-player-card"
+             href="/player/{{ player.slug }}/"
+             data-directory-player
+             data-player-name="{{ player.name | lower }}"
+             data-team-name="{{ team.name | lower }}"
+             data-player-team="{{ team.slug }}"
+             data-player-category="{{ player.category_slug }}">
+            <span class="directory-player-media">
+              {% if player.image %}
+              <img src="{{ player.image }}" width="94" height="94" alt="{{ player.name }} official CPL player photo" loading="lazy">
+              {% else %}
+              <span class="directory-player-initials" aria-hidden="true">{{ player.initials }}</span>
+              {% endif %}
+              <img class="directory-player-team-mark" src="{{ team.logo }}" width="28" height="28" alt="" aria-hidden="true">
+            </span>
+            <span class="directory-player-copy">
+              <small>{{ player.category }}</small>
+              <strong>{{ player.name }}{% if player.captain %}<sup>C</sup>{% endif %}</strong>
+              <span>{{ team.short_name }}</span>
+            </span>
+            <span class="directory-player-open" aria-hidden="true">↗</span>
+          </a>
+          {% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+
+      <p id="player-directory-empty" class="player-directory-empty" hidden>No players match the selected filters.</p>
+    </section>
+
+  </main>
+
+  {% include "partials/footer.html" %}
+  <button class="back-to-top" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+    <span aria-hidden="true">↑</span>
+  </button>
+  <script src="/static/js/site.js?v=20260726g" defer></script>
+</body>
+</html>

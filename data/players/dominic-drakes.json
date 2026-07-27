@@ -1,0 +1,58 @@
+{
+  "slug": "dominic-drakes",
+  "name": "Dominic Drakes",
+  "team_slug": "trinbago-knight-riders",
+  "category": "West Indian player",
+  "selection_note": "Selected by Trinbago Knight Riders for CPL 2026",
+  "image": "/static/img/official/players/dominic-drakes.webp",
+  "initials": "DD",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Dominic Conneil Drakes",
+    "birth_date": "6 February 1998",
+    "birth_place": "Barbados",
+    "country": "West Indies",
+    "role": "Bowling all-rounder",
+    "batting_style": "Left-handed",
+    "bowling_style": "Left-arm medium-fast",
+    "international_span": "",
+    "career_teams": [
+      "Barbados",
+      "Barbados Tridents",
+      "St Kitts & Nevis Patriots",
+      "Yorkshire",
+      "Colombo Stars",
+      "Warwickshire"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "34",
+        "runs": "172",
+        "wickets": "36",
+        "best_bowling": "3/26",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "T20I",
+        "matches": "10",
+        "runs": "15",
+        "wickets": "6",
+        "best_bowling": "1/19",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "25",
+        "runs": "261",
+        "wickets": "26",
+        "best_bowling": "4/44",
+        "hundreds_fifties": "0/0"
+      }
+    ]
+  }
+}

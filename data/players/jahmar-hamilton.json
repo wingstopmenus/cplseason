@@ -1,0 +1,58 @@
+{
+  "slug": "jahmar-hamilton",
+  "name": "Jahmar Hamilton",
+  "team_slug": "antigua-barbuda-falcons",
+  "category": "West Indian player",
+  "selection_note": "Listed in the official CPL draft table",
+  "image": "/static/img/official/players/jahmar-hamilton.webp",
+  "initials": "JH",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Jahmar Neville Hamilton",
+    "birth_date": "22 September 1990",
+    "birth_place": "St. Thomas, Anguilla",
+    "country": "West Indies",
+    "role": "Wicket-keeper",
+    "batting_style": "Right-handed",
+    "bowling_style": "",
+    "international_span": "2019–2021",
+    "career_teams": [
+      "Anguilla",
+      "Leeward Islands",
+      "Antigua Hawksbills",
+      "St Lucia Zouks",
+      "St Kitts & Nevis Patriots",
+      "Antigua & Barbuda Falcons"
+    ],
+    "records": [
+      {
+        "format": "ODI",
+        "matches": "1",
+        "runs": "5",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "Test",
+        "matches": "1",
+        "runs": "5",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "78",
+        "runs": "1905",
+        "wickets": "",
+        "best_bowling": "",
+        "hundreds_fifties": "0/12"
+      }
+    ]
+  }
+}

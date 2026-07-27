@@ -1,0 +1,81 @@
+{
+  "slug": "providence-stadium",
+  "name": "Providence Stadium",
+  "city": "Providence",
+  "territory": "Guyana",
+  "capacity": 15000,
+  "matches": 5,
+  "date_window": "4–11 September",
+  "stage_label": "Guyana block",
+  "summary": "Providence Stadium hosts five Guyana Amazon Warriors fixtures before the tournament moves to Barbados for its closing run.",
+  "tagline": "Guyana's national cricket stage and a modern CPL stronghold on the East Bank Demerara.",
+  "established": "Built in 2006 for the 2007 World Cup",
+  "former_name": "Guyana National Stadium",
+  "ends": "Media Centre End and Pavilion End",
+  "home_team": "Guyana Harpy Eagles and Guyana Amazon Warriors",
+  "story": [
+    "Providence Stadium, also known as the Guyana National Stadium, stands on the East Bank Demerara outside Georgetown. Construction began in 2005 and the venue was created specifically for the 2007 ICC Cricket World Cup, replacing Bourda as Guyana's principal international ground.",
+    "Its World Cup debut included the match in which Lasith Malinga became the first bowler in international cricket to take four wickets with four consecutive deliveries. The ground later hosted the 2022 and 2023 CPL finals, with Guyana Amazon Warriors winning their first title here in 2023.",
+    "Providence hosts five Warriors fixtures in CPL 2026, including the schedule's only 10am start."
+  ],
+  "highlights": [
+    {
+      "label": "World Cup moment",
+      "title": "Malinga's four in four",
+      "text": "The Sri Lankan fast bowler made international history at Providence during the 2007 World Cup."
+    },
+    {
+      "label": "CPL landmark",
+      "title": "Warriors crowned at home",
+      "text": "Guyana Amazon Warriors secured their first CPL championship here in the 2023 final."
+    },
+    {
+      "label": "National role",
+      "title": "Successor to Bourda",
+      "text": "Providence became Guyana's principal international cricket venue after opening for the 2007 World Cup."
+    }
+  ],
+  "visitor_note": "Providence is on the East Bank Demerara outside central Georgetown. Build extra time into the journey and confirm event traffic, parking or shuttle arrangements through official CPL channels.",
+  "fixtures": [
+    {
+      "date": "2026-09-04",
+      "label": "Fri 4 Sep",
+      "match": "Guyana Amazon Warriors vs Jamaica Kingsmen",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-06",
+      "label": "Sun 6 Sep",
+      "match": "Guyana Amazon Warriors vs St Kitts & Nevis Patriots",
+      "time": "10am"
+    },
+    {
+      "date": "2026-09-08",
+      "label": "Tue 8 Sep",
+      "match": "Guyana Amazon Warriors vs Antigua & Barbuda Falcons",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-09",
+      "label": "Wed 9 Sep",
+      "match": "Guyana Amazon Warriors vs Saint Lucia Kings",
+      "time": "7pm"
+    },
+    {
+      "date": "2026-09-11",
+      "label": "Fri 11 Sep",
+      "match": "Guyana Amazon Warriors vs Trinbago Knight Riders",
+      "time": "7pm"
+    }
+  ],
+  "image": "/static/img/official/venues/providence-stadium.webp",
+  "image_source": "https://commons.wikimedia.org/wiki/File:Providence_Stadium_inside.jpg",
+  "image_credit": "FrWaters",
+  "image_license": "CC BY 2.5",
+  "image_license_url": "https://creativecommons.org/licenses/by/2.5/",
+  "external_ids": {
+    "wikipedia": "Providence Stadium",
+    "cpl": null
+  },
+  "last_updated": "2026-07-26"
+}

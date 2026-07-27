@@ -1,0 +1,72 @@
+{
+  "slug": "jamaica-kingsmen",
+  "name": "Jamaica Kingsmen",
+  "logo": "/static/img/official/teams/jamaica-kingsmen.png",
+  "short_name": "Kingsmen",
+  "territory": "Jamaica",
+  "city": "Kingston",
+  "venue_slug": "sabina-park",
+  "schedule_names": [
+    "Jamaica Kingsmen"
+  ],
+  "league_fixtures": 10,
+  "home_matches": 4,
+  "status_label": "New for 2026",
+  "founded": 2026,
+  "identity": "New franchise · Debut season",
+  "title_count": 0,
+  "title_years": [],
+  "honours": "Entering a first CPL season",
+  "profile_lede": "A new Kingston-based franchise bringing CPL men's cricket back to Jamaica with an explosive local core and four nights at Sabina Park.",
+  "history": [
+    "Jamaica Kingsmen were launched as a new Caribbean Premier League franchise for the 2026 season. The team has its own identity, ownership and record; honours won by the former Jamaica Tallawahs are not assigned to the Kingsmen.",
+    "Based in Kingston, the franchise plays its home matches at Sabina Park. The 2026 schedule brings four consecutive home fixtures to the historic ground from 11 to 18 August.",
+    "Rovman Powell, Andre Russell and Odean Smith provide an experienced Jamaican spine. The overseas group is organised around availability replacements, which is why the published directory contains 19 names rather than a single 17-player active list."
+  ],
+  "profile_highlights": [
+    {
+      "label": "New chapter",
+      "title": "Jamaica returns",
+      "text": "The Kingsmen begin a new franchise record in 2026, based in Kingston and playing at Sabina Park."
+    },
+    {
+      "label": "Opening night",
+      "title": "First match of CPL 2026",
+      "text": "The Kingsmen face Antigua & Barbuda Falcons in the tournament opener at Arnos Vale."
+    },
+    {
+      "label": "Local power",
+      "title": "Powell and Russell reunite",
+      "text": "Rovman Powell and Andre Russell headline a seasoned Jamaican core for the debut campaign."
+    }
+  ],
+  "summary": "The CPL's newest franchise restores a Jamaica-based men's team, led by a local group featuring Rovman Powell, Andre Russell and Odean Smith.",
+  "storyline": "The Kingsmen play the tournament opener and then bring CPL cricket back to Sabina Park for four home matches from 11 to 18 August.",
+  "roster": [
+    "rovman-powell",
+    "andre-russell",
+    "keemo-paul",
+    "keacy-carty",
+    "jediah-blades",
+    "shaqkere-parris",
+    "odean-smith",
+    "vitel-lawes",
+    "romaine-morris",
+    "kirk-mckenzie",
+    "kelvin-pitman",
+    "jeavor-royal",
+    "hassan-khan",
+    "hunain-shah",
+    "shayan-jahangir",
+    "tayyab-arif",
+    "saim-ayub",
+    "maaz-sadaqat",
+    "usman-khan"
+  ],
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null,
+    "mcpro_team_id": "sr:competitor:1346078"
+  },
+  "last_updated": "2026-07-27"
+}

@@ -1,0 +1,56 @@
+{
+  "slug": "akeem-auguste",
+  "name": "Ackeem Auguste",
+  "team_slug": "saint-lucia-kings",
+  "category": "Breakout player",
+  "selection_note": "Breakout retention",
+  "image": null,
+  "initials": "AA",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Ackeem Auguste",
+    "birth_date": "12 September 2003",
+    "birth_place": "Castries, St. Lucia",
+    "country": "West Indies",
+    "role": "Top order batsman",
+    "batting_style": "Left-handed",
+    "bowling_style": "Legbreak",
+    "international_span": "2025–present",
+    "career_teams": [
+      "Windward Islands",
+      "West Indies Academy",
+      "Saint Lucia Kings",
+      "Windward Islands Infernos"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "9",
+        "runs": "164",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/1"
+      },
+      {
+        "format": "ODI",
+        "matches": "4",
+        "runs": "56",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "28",
+        "runs": "593",
+        "wickets": "4",
+        "best_bowling": "4/47",
+        "hundreds_fifties": "0/3"
+      }
+    ]
+  }
+}

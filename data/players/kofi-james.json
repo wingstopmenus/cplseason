@@ -1,0 +1,56 @@
+{
+  "slug": "kofi-james",
+  "name": "Kofi James",
+  "team_slug": "barbados-royals",
+  "category": "Breakout player",
+  "selection_note": "Right to Match breakout selection",
+  "image": null,
+  "initials": "KJ",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Kofi Hardy Marli James",
+    "birth_date": "23 December 1997",
+    "birth_place": "Antigua",
+    "country": "Antigua and Barbuda",
+    "role": "Batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off-break",
+    "international_span": "",
+    "career_teams": [
+      "Leeward Islands",
+      "St Kitts & Nevis Patriots",
+      "Antigua and Barbuda Falcons",
+      "Barbados Royals"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "14",
+        "runs": "191",
+        "wickets": "2",
+        "best_bowling": "1/8",
+        "hundreds_fifties": "0/0"
+      },
+      {
+        "format": "LA",
+        "matches": "29",
+        "runs": "389",
+        "wickets": "29",
+        "best_bowling": "4/32",
+        "hundreds_fifties": "1/1"
+      },
+      {
+        "format": "FC",
+        "matches": "8",
+        "runs": "321",
+        "wickets": "6",
+        "best_bowling": "3/39",
+        "hundreds_fifties": "1/0"
+      }
+    ]
+  }
+}

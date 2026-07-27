@@ -1,0 +1,58 @@
+{
+  "slug": "andre-russell",
+  "name": "Andre Russell",
+  "team_slug": "jamaica-kingsmen",
+  "category": "West Indian player",
+  "selection_note": "Drafted by Jamaica Kingsmen",
+  "image": "/static/img/official/players/andre-russell.webp",
+  "initials": "AR",
+  "external_ids": {
+    "wikipedia": null,
+    "cpl": null
+  },
+  "last_updated": "2026-07-26",
+  "profile": {
+    "full_name": "Andre Dwayne Russell",
+    "birth_date": "29 April 1988",
+    "birth_place": "Kingston, Jamaica",
+    "country": "West Indies",
+    "role": "All-rounder",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm fast",
+    "international_span": "2010–2025",
+    "career_teams": [
+      "Islamabad United",
+      "Dhaka Dynamites",
+      "Comilla Victorians",
+      "Trinbago Knight Riders",
+      "Rangpur Riders",
+      "Los Angeles Knight Riders"
+    ],
+    "records": [
+      {
+        "format": "T20",
+        "matches": "563",
+        "runs": "9,360",
+        "wickets": "485",
+        "best_bowling": "5/15",
+        "hundreds_fifties": "2/33"
+      },
+      {
+        "format": "T20I",
+        "matches": "86",
+        "runs": "1,122",
+        "wickets": "61",
+        "best_bowling": "3/19",
+        "hundreds_fifties": "0/3"
+      },
+      {
+        "format": "ODI",
+        "matches": "56",
+        "runs": "1,034",
+        "wickets": "70",
+        "best_bowling": "4/35",
+        "hundreds_fifties": "0/4"
+      }
+    ]
+  }
+}
