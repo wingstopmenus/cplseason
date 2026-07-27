@@ -1135,8 +1135,8 @@
 .profile-portrait-frame > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
 }
 .profile-portrait-fallback {
   color: var(--profile-yellow);
