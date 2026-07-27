@@ -1,10 +1,10 @@
 {
-  "slug": "akeem-auguste",
+  "slug": "ackeem-auguste",
   "name": "Ackeem Auguste",
   "team_slug": "saint-lucia-kings",
   "category": "Breakout player",
   "selection_note": "Breakout retention",
-  "image": null,
+  "image": "/static/img/official/players/ackeem-auguste.webp",
   "initials": "AA",
   "external_ids": {
     "wikipedia": null,
@@ -19,7 +19,7 @@
     "role": "Top order batsman",
     "batting_style": "Left-handed",
     "bowling_style": "Legbreak",
-    "international_span": "2025–present",
+    "international_span": "2025\u2013present",
     "career_teams": [
       "Windward Islands",
       "West Indies Academy",
@@ -32,7 +32,7 @@
         "matches": "9",
         "runs": "164",
         "wickets": "0",
-        "best_bowling": "–",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/1"
       },
       {
@@ -40,7 +40,7 @@
         "matches": "4",
         "runs": "56",
         "wickets": "0",
-        "best_bowling": "–",
+        "best_bowling": "\u2013",
         "hundreds_fifties": "0/0"
       },
       {
