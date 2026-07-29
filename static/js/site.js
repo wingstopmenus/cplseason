@@ -56,6 +56,84 @@ if (squadSearch && squadPlayers.length) {
   });
 }
 
+const matchSpotlights = [...document.querySelectorAll("[data-match-spotlight]")];
+if (matchSpotlights.length) {
+  const settledSpotlightStatuses = new Set([
+    "complete", "completed", "closed", "finished", "final", "abandoned",
+    "cancelled", "canceled", "no result",
+  ]);
+  const normalizeSpotlightStatus = (value = "") =>
+    String(value).trim().toLowerCase().replace(/[_-]+/g, " ");
+  let spotlightRequestInProgress = false;
+  let spotlightSignature = "";
+
+  const renderMatchSpotlight = (match, seasonComplete = false) => {
+    const signature = `${match.matchNumber}:${seasonComplete}`;
+    if (signature === spotlightSignature) return;
+    spotlightSignature = signature;
+    matchSpotlights.forEach((spotlight) => {
+      const setText = (selector, value) => {
+        const element = spotlight.querySelector(selector);
+        if (element) element.textContent = value;
+      };
+      setText(
+        "[data-match-spotlight-kicker]",
+        seasonComplete ? "Season final" : match.matchNumber === 1 ? "Opening match" : `Next match · Match ${match.matchNumber}`,
+      );
+      setText("[data-match-spotlight-date]", match.label);
+      setText("[data-match-spotlight-home]", match.home);
+      setText("[data-match-spotlight-away]", match.away);
+      setText("[data-match-spotlight-time]", match.time);
+      setText("[data-match-spotlight-venue]", match.venueShort || match.venue);
+      const link = spotlight.matches("[data-match-spotlight-link]")
+        ? spotlight
+        : spotlight.querySelector("[data-match-spotlight-link]");
+      if (link) link.href = match.url;
+    });
+  };
+
+  const refreshMatchSpotlights = async () => {
+    if (spotlightRequestInProgress) return;
+    spotlightRequestInProgress = true;
+    try {
+      const [scheduleResponse, statusResponse] = await Promise.all([
+        fetch("/static/data/match-spotlight.json", { cache: "force-cache" }),
+        fetch("/api/cpl-matches", { cache: "no-store" }),
+      ]);
+      if (!scheduleResponse.ok || !statusResponse.ok) throw new Error("Match spotlight feed unavailable");
+      const [schedule, statuses] = await Promise.all([
+        scheduleResponse.json(),
+        statusResponse.json(),
+      ]);
+      if (!Array.isArray(schedule) || !schedule.length || !Array.isArray(statuses)) {
+        throw new Error("Invalid match spotlight response");
+      }
+      const statusByNumber = new Map(
+        statuses.map((match) => [Number(match.matchNumber), normalizeSpotlightStatus(match.status)]),
+      );
+      const completionBuffer = 6 * 60 * 60 * 1000;
+      const isSettled = (match) => {
+        const status = statusByNumber.get(Number(match.matchNumber));
+        if (settledSpotlightStatuses.has(status)) return true;
+        if (status) return false;
+        const start = Date.parse(match.startIso);
+        return Number.isFinite(start) && Date.now() >= start + completionBuffer;
+      };
+      const nextMatch = schedule.find((match) => !isSettled(match));
+      renderMatchSpotlight(nextMatch || schedule[schedule.length - 1], !nextMatch);
+    } catch (error) {
+      console.warn("CPL match spotlight refresh unavailable", error);
+    } finally {
+      spotlightRequestInProgress = false;
+    }
+  };
+
+  refreshMatchSpotlights();
+  window.setInterval(() => {
+    if (document.visibilityState === "visible") refreshMatchSpotlights();
+  }, 30000);
+}
+
 const playerDirectorySearch = document.querySelector("#player-directory-search");
 const playerDirectoryCards = document.querySelectorAll("[data-directory-player]");
 const playerCategoryButtons = document.querySelectorAll("button[data-player-filter]");

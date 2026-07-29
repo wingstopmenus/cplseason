@@ -339,7 +339,7 @@ def build_homepage_watch_live(
         .render(
             guide=guide,
             confirmed_routes=confirmed_routes,
-            opening_fixture=opening_fixtures[0],
+            spotlight_fixture=opening_fixtures[0],
         )
         .strip()
     )
@@ -478,7 +478,7 @@ def build_news() -> None:
     template = template_environment().get_template("news-article.html")
     for article in articles:
         article_body = " ".join(
-            paragraph
+            re.sub(r"<[^>]+>", "", paragraph)
             for section in article["sections"]
             for paragraph in section["paragraphs"]
         )
@@ -1733,6 +1733,43 @@ def build_watch_live() -> None:
     )
 
 
+def build_match_spotlight_schedule() -> list[dict]:
+    """Publish the compact schedule used by live homepage/footer spotlights."""
+    venues = {
+        path.stem: load_json(path)
+        for path in sorted((ROOT / "data" / "venues").glob("*.json"))
+    }
+    matches = sorted(
+        (load_json(path) for path in (ROOT / "data" / "matches").glob("*.json")),
+        key=lambda match: match["match_number"],
+    )
+    schedule = []
+    for match in matches:
+        start = datetime.fromisoformat(match["start_iso"])
+        venue = venues[match["venue_slug"]]
+        schedule.append(
+            {
+                "matchNumber": match["match_number"],
+                "label": f"{start.strftime('%a')} {start.day} {start.strftime('%b')}",
+                "startIso": match["start_iso"],
+                "time": start.strftime("%I%p").lstrip("0").lower(),
+                "home": match["home_team_label"],
+                "away": match["away_team_label"],
+                "venue": venue["name"],
+                "venueShort": venue.get("short_name", venue["name"]),
+                "url": f"/match/{match['slug']}/",
+            }
+        )
+    output = ROOT / "static" / "data" / "match-spotlight.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(
+        json.dumps(schedule, ensure_ascii=False, separators=(",", ":")) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Rendered {output.relative_to(ROOT)} with {len(schedule)} matches")
+    return schedule
+
+
 def build_matches() -> None:
     teams = {
         path.stem: load_json(path)
@@ -2234,6 +2271,7 @@ def build_venue_profiles() -> None:
 
 def sync_shared_footer() -> None:
     """Keep shared site chrome consistent and enforce one floating top button."""
+    build_match_spotlight_schedule()
     shared_footer = template_environment().get_template("partials/footer.html").render().strip()
     footer_pattern = re.compile(
         r'<footer class="site-footer(?: site-footer-pro)?".*?</footer>',
@@ -2249,6 +2287,7 @@ def sync_shared_footer() -> None:
         re.IGNORECASE | re.DOTALL,
     )
     css_pattern = re.compile(r'/static/css/site\.css\?v=[^"&<]+')
+    js_pattern = re.compile(r'/static/js/site\.js\?v=[^"&<]+')
     synchronized = 0
 
     for html_path in sorted(ROOT.rglob("*.html")):
@@ -2273,7 +2312,8 @@ def sync_shared_footer() -> None:
             return content.replace(" ↗", "")
 
         updated = external_anchor_pattern.sub(unlink_external, updated)
-        updated = css_pattern.sub("/static/css/site.css?v=20260727mw4", updated)
+        updated = css_pattern.sub("/static/css/site.css?v=20260729news3", updated)
+        updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
         if len(re.findall(r'class="back-to-top"', updated)) != 1:
             raise ValueError(
                 f"Expected one back-to-top button in {html_path.relative_to(ROOT)}"

@@ -8160,6 +8160,7 @@
 .footer-v2-next strong b{margin-inline:6px;color:var(--gold);font-size:10px;text-transform:uppercase}
 .footer-v2-next small{color:#9eabc2;font-size:11px;font-weight:800}
 .footer-v2-next small b{margin-left:12px;color:var(--gold);font-size:16px}
+.footer-v2-next i{color:inherit;font:inherit}
 .footer-v2-main{position:relative;z-index:1;display:grid;grid-template-columns:minmax(300px,.82fr) minmax(0,1.42fr);gap:clamp(48px,7vw,100px);width:min(1240px,calc(100% - 40px));margin:0 auto;padding:clamp(52px,7vw,88px) 0 62px}
 .footer-v2-brand{max-width:480px}
 .site-footer.site-footer-pro .footer-v2-logo{display:inline-flex;width:auto;margin:0 0 28px;padding:0;border:0;background:transparent}

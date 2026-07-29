@@ -52,21 +52,21 @@
       </article>
     </div>
 
-    <article class="home-watch__match">
+    <article class="home-watch__match" data-match-spotlight>
       <div class="home-watch__match-label">
-        <span>Opening night</span>
-        <strong>{{ opening_fixture.label }}</strong>
+        <span data-match-spotlight-kicker>Opening night</span>
+        <strong data-match-spotlight-date>{{ spotlight_fixture.label }}</strong>
       </div>
       <div class="home-watch__match-teams">
-        <span>{{ opening_fixture.teams[0].name }}</span>
+        <span data-match-spotlight-home>{{ spotlight_fixture.teams[0].name }}</span>
         <b>vs</b>
-        <span>{{ opening_fixture.teams[1].name }}</span>
+        <span data-match-spotlight-away>{{ spotlight_fixture.teams[1].name }}</span>
       </div>
       <div class="home-watch__match-meta">
-        <strong>{{ opening_fixture.time }}</strong>
-        <span>{{ opening_fixture.venue.name }}</span>
+        <strong data-match-spotlight-time>{{ spotlight_fixture.time }}</strong>
+        <span data-match-spotlight-venue>{{ spotlight_fixture.venue.name }}</span>
       </div>
-      <a href="{{ opening_fixture.match_url }}">Match centre <span aria-hidden="true">→</span></a>
+      <a href="{{ spotlight_fixture.match_url }}" data-match-spotlight-link>Match centre <span aria-hidden="true">→</span></a>
     </article>
 
     <footer class="home-watch__footer">
