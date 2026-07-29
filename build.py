@@ -2233,10 +2233,14 @@ def build_venue_profiles() -> None:
 
 
 def sync_shared_footer() -> None:
-    """Keep shared site chrome consistent and remove visitor-facing outbound links."""
+    """Keep shared site chrome consistent and enforce one floating top button."""
     shared_footer = template_environment().get_template("partials/footer.html").render().strip()
     footer_pattern = re.compile(
         r'<footer class="site-footer(?: site-footer-pro)?".*?</footer>',
+        re.DOTALL,
+    )
+    back_to_top_pattern = re.compile(
+        r'\s*<button class="back-to-top"[^>]*>.*?</button>',
         re.DOTALL,
     )
     external_anchor_pattern = re.compile(
@@ -2250,8 +2254,11 @@ def sync_shared_footer() -> None:
     for html_path in sorted(ROOT.rglob("*.html")):
         if any(part in {".git", ".vercel", "output", "templates"} for part in html_path.parts):
             continue
+        if html_path.name.startswith("google") and html_path.parent == ROOT:
+            continue
 
         source = html_path.read_text(encoding="utf-8")
+        source = back_to_top_pattern.sub("", source)
         updated, replacements = footer_pattern.subn(shared_footer, source, count=1)
         if replacements != 1:
             raise ValueError(f"Expected one site footer in {html_path.relative_to(ROOT)}")
@@ -2267,6 +2274,10 @@ def sync_shared_footer() -> None:
 
         updated = external_anchor_pattern.sub(unlink_external, updated)
         updated = css_pattern.sub("/static/css/site.css?v=20260727mw4", updated)
+        if len(re.findall(r'class="back-to-top"', updated)) != 1:
+            raise ValueError(
+                f"Expected one back-to-top button in {html_path.relative_to(ROOT)}"
+            )
         html_path.write_text(updated, encoding="utf-8")
         synchronized += 1
 
