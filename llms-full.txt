@@ -1,13 +1,348 @@
-# CPL Season LLM Guide
+# CPL Season: Full LLM Reference
 
-CPL Season publishes static HTML coverage for Republic Bank Caribbean Premier League 2026.
+> Structured context for CPL Season, an independent website covering the
+> 2026 Republic Bank Caribbean Premier League.
 
-Coverage areas:
-- CPL 2026 schedule and fixture window.
-- CPL 2026 teams and franchise profiles.
-- Venue pages for listed host grounds.
-- Squad status pages that avoid unconfirmed player claims.
-- Watch-live pages for official broadcast updates.
-- News articles with source-backed CPL 2026 updates.
+## Site identity
 
-Use the public HTML, sitemap, canonical tags, and visible page metadata as the authoritative site surface. If a squad, broadcaster, or table detail is not present on the site, treat it as pending official confirmation.
+- Canonical origin: https://cplseason.com/
+- Coverage: schedules, match pages, standings, teams, squads, player profiles, venues, broadcast information, and news.
+- Relationship to CPL: independent information site; not the official Caribbean Premier League website.
+- Latest source-data update represented here: 2026-07-27.
+
+## 2026 tournament snapshot
+
+- Competition: Republic Bank Caribbean Premier League 2026.
+- Scheduled matches: 39.
+- Tournament window: 7 August 2026 to 20 September 2026.
+- Teams represented: 7.
+- Host venues represented: 8.
+- Player profiles: 122.
+- Published news articles: 13.
+- Match times are local to the host venue unless a page explicitly states otherwise.
+- Fixtures, squads, broadcasters, playing XIs, results, and standings may change.
+
+## Authoritative site resources
+
+- [Complete URL directory](https://cplseason.com/llms.txt)
+- [Schedule](https://cplseason.com/schedule/)
+- [Points table](https://cplseason.com/points-table/)
+- [Teams](https://cplseason.com/teams/)
+- [Squads](https://cplseason.com/squads/)
+- [Players](https://cplseason.com/players/)
+- [Venues](https://cplseason.com/venues/)
+- [Watch live](https://cplseason.com/watch-live/)
+- [News](https://cplseason.com/news/)
+- [XML sitemap](https://cplseason.com/sitemap.xml)
+
+## Teams and published rosters
+
+### [Antigua & Barbuda Falcons](https://cplseason.com/team/antigua-barbuda-falcons/)
+
+- Territory: Antigua and Barbuda.
+- Home venue: [Sir Vivian Richards Stadium](https://cplseason.com/venue/sir-vivian-richards-stadium/).
+- League fixtures: 10; home matches: 4.
+- Profile: The Falcons bring Antiguan fast bowler Alzarri Joseph home for 2026 and add Evin Lewis to a returning core that includes Fabian Allen, Jayden Seales and Amir Jangoo.
+- 2026 storyline: Their route begins on opening night in St Vincent before a four-match home block at Sir Vivian Richards Stadium from 20 to 25 August.
+- Published roster:
+  - [Alzarri Joseph](https://cplseason.com/player/alzarri-joseph/)
+  - [Evin Lewis](https://cplseason.com/player/evin-lewis/)
+  - [Fabian Allen](https://cplseason.com/player/fabian-allen/)
+  - [Jayden Seales](https://cplseason.com/player/jayden-seales/)
+  - [Amir Jangoo](https://cplseason.com/player/amir-jangoo/)
+  - [Shamar Springer](https://cplseason.com/player/shamar-springer/)
+  - [Jahmar Hamilton](https://cplseason.com/player/jahmar-hamilton/)
+  - [Rahkeem Cornwall](https://cplseason.com/player/rahkeem-cornwall/)
+  - [Anderson Phillip](https://cplseason.com/player/anderson-phillip/)
+  - [Karima Gore](https://cplseason.com/player/karima-gore/)
+  - [Anderson Mahase](https://cplseason.com/player/anderson-mahase/)
+  - [Joshua James](https://cplseason.com/player/joshua-james/)
+  - [Moeen Ali](https://cplseason.com/player/moeen-ali/)
+  - [Kusal Perera](https://cplseason.com/player/kusal-perera/)
+  - [Milind Kumar](https://cplseason.com/player/milind-kumar/)
+  - [Tajinder Singh](https://cplseason.com/player/tajinder-singh/)
+  - [Shadab Khan](https://cplseason.com/player/shadab-khan/)
+  - [Sufyan Moqim](https://cplseason.com/player/sufiyan-muqeem/)
+
+### [Barbados Tridents](https://cplseason.com/team/barbados-royals/)
+
+- Territory: Barbados.
+- Home venue: [Kensington Oval](https://cplseason.com/venue/kensington-oval/).
+- League fixtures: 10; home matches: 5.
+- Profile: Barbados return to the Tridents identity and national colours in 2026, with Gudakesh Motie, Sherfane Rutherford and Brandon King among the senior Caribbean core.
+- 2026 storyline: Kensington Oval stages five Barbados league matches and then all four playoff games, giving the franchise a home finish to the regular season.
+- Published roster:
+  - [Gudakesh Motie](https://cplseason.com/player/gudakesh-motie/)
+  - [Sherfane Rutherford](https://cplseason.com/player/sherfane-rutherford/)
+  - [Brandon King](https://cplseason.com/player/brandon-king/)
+  - [Zachary Carter](https://cplseason.com/player/zachary-carter/)
+  - [Kadeem Alleyne](https://cplseason.com/player/kadeem-alleyne/)
+  - [Ramon Simmonds](https://cplseason.com/player/ramon-simmonds/)
+  - [Shadrack Descarte](https://cplseason.com/player/shadrack-descarte/)
+  - [Rivaldo Clarke](https://cplseason.com/player/rivaldo-clarke/)
+  - [Zishan Motara](https://cplseason.com/player/zishan-motara/)
+  - [Jakeem Pollard](https://cplseason.com/player/jakeem-pollard/)
+  - [Johann Layne](https://cplseason.com/player/johann-layne/)
+  - [Kofi James](https://cplseason.com/player/kofi-james/)
+  - [Quinton de Kock](https://cplseason.com/player/quinton-de-kock/)
+  - [Chris Green](https://cplseason.com/player/chris-green/)
+  - [Mujeeb ur Rahman](https://cplseason.com/player/mujeeb-ur-rahman/)
+  - [George Linde](https://cplseason.com/player/george-linde/)
+  - [Daniel Sams](https://cplseason.com/player/daniel-sams/)
+
+### [Guyana Amazon Warriors](https://cplseason.com/team/guyana-amazon-warriors/)
+
+- Territory: Guyana.
+- Home venue: [Providence Stadium](https://cplseason.com/venue/providence-stadium/).
+- League fixtures: 10; home matches: 5.
+- Profile: Guyana retain Shimron Hetmyer, Romario Shepherd, Shai Hope and Shamar Joseph, while 10 of their 12 locally selected players come from Guyana.
+- 2026 storyline: The Warriors close their home programme with five matches at Providence Stadium from 4 to 11 September, including the final match of the league phase.
+- Published roster:
+  - [Shimron Hetmyer](https://cplseason.com/player/shimron-hetmyer/)
+  - [Romario Shepherd](https://cplseason.com/player/romario-shepherd/)
+  - [Shai Hope](https://cplseason.com/player/shai-hope/)
+  - [Khary Pierre](https://cplseason.com/player/khary-pierre/)
+  - [Shamar Joseph](https://cplseason.com/player/shamar-joseph/)
+  - [Ronaldo Alimohamed](https://cplseason.com/player/ronaldo-alimohamed/)
+  - [Veerasammy Permaul](https://cplseason.com/player/veerasammy-permaul/)
+  - [Matthew Nandu](https://cplseason.com/player/matthew-nandu/)
+  - [Jonathan van Lange](https://cplseason.com/player/jonathan-van-lange/)
+  - [Mavendra Dindiyal](https://cplseason.com/player/mavendra-dindyal/)
+  - [Isai Thorne](https://cplseason.com/player/isai-thorne/)
+  - [Quentin Sampson](https://cplseason.com/player/quentin-sampson/)
+  - [Imran Tahir](https://cplseason.com/player/imran-tahir/)
+  - [Glenn Phillips](https://cplseason.com/player/glenn-phillips/)
+  - [Mohammad Nabi](https://cplseason.com/player/mohammad-nabi/)
+  - [Rahmanullah Gurbaz](https://cplseason.com/player/rahmanullah-gurbaz/)
+  - [Dwaine Pretorius](https://cplseason.com/player/dwaine-pretorius/)
+
+### [Jamaica Kingsmen](https://cplseason.com/team/jamaica-kingsmen/)
+
+- Territory: Jamaica.
+- Home venue: [Sabina Park](https://cplseason.com/venue/sabina-park/).
+- League fixtures: 10; home matches: 4.
+- Profile: The CPL's newest franchise restores a Jamaica-based men's team, led by a local group featuring Rovman Powell, Andre Russell and Odean Smith.
+- 2026 storyline: The Kingsmen play the tournament opener and then bring CPL cricket back to Sabina Park for four home matches from 11 to 18 August.
+- Published roster:
+  - [Rovman Powell](https://cplseason.com/player/rovman-powell/)
+  - [Andre Russell](https://cplseason.com/player/andre-russell/)
+  - [Keemo Paul](https://cplseason.com/player/keemo-paul/)
+  - [Keacy Carty](https://cplseason.com/player/keacy-carty/)
+  - [Jediah Blades](https://cplseason.com/player/jediah-blades/)
+  - [Shaqkere Parris](https://cplseason.com/player/shaqkere-parris/)
+  - [Odean Smith](https://cplseason.com/player/odean-smith/)
+  - [Vitel Lawes](https://cplseason.com/player/vitel-lawes/)
+  - [Romaine Morris](https://cplseason.com/player/romaine-morris/)
+  - [Kirk McKenzie](https://cplseason.com/player/kirk-mckenzie/)
+  - [Kelvin Pitman](https://cplseason.com/player/kelvin-pitman/)
+  - [Jeavor Royal](https://cplseason.com/player/jeavor-royal/)
+  - [Hassan Khan](https://cplseason.com/player/hassan-khan/)
+  - [Hunain Shah](https://cplseason.com/player/hunain-shah/)
+  - [Shayan Jahangir](https://cplseason.com/player/shayan-jahangir/)
+  - [Tayyab Arif](https://cplseason.com/player/tayyab-arif/)
+  - [Saim Ayub](https://cplseason.com/player/saim-ayub/)
+  - [Maaz Sadaqat](https://cplseason.com/player/maaz-sadaqat/)
+  - [Usman Khan](https://cplseason.com/player/usman-khan/)
+
+### [Saint Lucia Kings](https://cplseason.com/team/saint-lucia-kings/)
+
+- Territory: Saint Lucia.
+- Home venue: [Daren Sammy Cricket Ground](https://cplseason.com/venue/daren-sammy-cricket-ground/).
+- League fixtures: 10; home matches: 5.
+- Profile: Roston Chase and Matthew Forde anchor the returning group, joined by Jewel Andrew and a fresh Saint Lucian pathway that includes McKenny Clarke.
+- 2026 storyline: Saint Lucia have the first five-match home block of the season at Daren Sammy Cricket Ground, running from 12 to 21 August.
+- Published roster:
+  - [Roston Chase](https://cplseason.com/player/roston-chase/)
+  - [Jewel Andrew](https://cplseason.com/player/jewel-andrew/)
+  - [Matthew Forde](https://cplseason.com/player/matthew-forde/)
+  - [Kamil Pooran](https://cplseason.com/player/kamil-pooran/)
+  - [Darron Nedd](https://cplseason.com/player/darron-nedd/)
+  - [McKenny Clarke](https://cplseason.com/player/mckenny-clarke/)
+  - [Joshua Bishop](https://cplseason.com/player/joshua-bishop/)
+  - [Damion Joachim](https://cplseason.com/player/damion-joachim/)
+  - [Keon Gaston](https://cplseason.com/player/keon-gaston/)
+  - [Amari Goodridge](https://cplseason.com/player/amari-goodridge/)
+  - [Johann Jeremiah](https://cplseason.com/player/johann-jeremiah/)
+  - [Ackeem Auguste](https://cplseason.com/player/ackeem-auguste/)
+  - [Noor Ahmad](https://cplseason.com/player/noor-ahmad/)
+  - [Tim Seifert](https://cplseason.com/player/tim-seifert/)
+  - [Maheesh Theekshana](https://cplseason.com/player/maheesh-theekshana/)
+  - [Charith Asalanka](https://cplseason.com/player/charith-asalanka/)
+  - [Shadley van Schalkwyk](https://cplseason.com/player/shadley-van-schalkwyk/)
+
+### [St Kitts & Nevis Patriots](https://cplseason.com/team/st-kitts-nevis-patriots/)
+
+- Territory: Saint Kitts and Nevis.
+- Home venue: [Warner Park](https://cplseason.com/venue/warner-park/).
+- League fixtures: 10; home matches: 4.
+- Profile: The Patriots unite CPL's leading career run-scorer Johnson Charles with Andre Fletcher, while Jason Holder returns to strengthen an experienced Caribbean group.
+- 2026 storyline: Warner Park hosts four Patriots matches from 27 August to 3 September, midway through a league campaign that starts in St Vincent.
+- Published roster:
+  - [Johnson Charles](https://cplseason.com/player/johnson-charles/)
+  - [Jason Holder](https://cplseason.com/player/jason-holder/)
+  - [Kyle Mayers](https://cplseason.com/player/kyle-mayers/)
+  - [Andre Fletcher](https://cplseason.com/player/andre-fletcher/)
+  - [Kevin Wickham](https://cplseason.com/player/kevin-wickham/)
+  - [Obed McCoy](https://cplseason.com/player/obed-mccoy/)
+  - [Ashmead Nedd](https://cplseason.com/player/ashmead-nedd/)
+  - [Jeremiah Louis](https://cplseason.com/player/jeremiah-louis/)
+  - [Alick Athanaze](https://cplseason.com/player/alick-athanaze/)
+  - [Micah McKenzie](https://cplseason.com/player/micah-mckenzie/)
+  - [Navin Bidaisee](https://cplseason.com/player/navin-bidaisee/)
+  - [Mikyle Louis](https://cplseason.com/player/mikyle-louis/)
+  - [Naseem Shah](https://cplseason.com/player/naseem-shah/)
+  - [Dasun Shanaka](https://cplseason.com/player/dasun-shanaka/)
+  - [Waqar Salamkheil](https://cplseason.com/player/waqar-salamkheil/)
+  - [Wanindu Hasaranga](https://cplseason.com/player/wanindu-hasaranga/)
+  - [Nikhil Chaudhary](https://cplseason.com/player/nikhil-chaudhary/)
+
+### [Trinbago Knight Riders](https://cplseason.com/team/trinbago-knight-riders/)
+
+- Territory: Trinidad and Tobago.
+- Home venue: [Brian Lara Cricket Academy](https://cplseason.com/venue/brian-lara-cricket-academy/).
+- League fixtures: 10; home matches: 5.
+- Profile: The 2025 champions retain a decorated core led by Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein as they pursue another title.
+- 2026 storyline: Trinbago's five-match home block at Brian Lara Cricket Academy runs from 26 August to 2 September before the league-stage finish in Guyana.
+- Published roster:
+  - [Sunil Narine](https://cplseason.com/player/sunil-narine/)
+  - [Nicholas Pooran](https://cplseason.com/player/nicholas-pooran/)
+  - [Kieron Pollard](https://cplseason.com/player/kieron-pollard/)
+  - [Akeal Hosein](https://cplseason.com/player/akeal-hosein/)
+  - [Justin Greaves](https://cplseason.com/player/justin-greaves/)
+  - [Dominic Drakes](https://cplseason.com/player/dominic-drakes/)
+  - [Jyd Goolie](https://cplseason.com/player/jyd-goolie/)
+  - [Dexter Sween](https://cplseason.com/player/dexter-sween/)
+  - [Terrance Hinds](https://cplseason.com/player/terrance-hinds/)
+  - [Nathan Edward](https://cplseason.com/player/nathan-edward/)
+  - [Joshua Da Silva](https://cplseason.com/player/joshua-da-silva/)
+  - [Abdul-Raheem Toppin](https://cplseason.com/player/abdul-raheem-toppin/)
+  - [Alex Hales](https://cplseason.com/player/alex-hales/)
+  - [Usman Tariq](https://cplseason.com/player/usman-tariq/)
+  - [Colin Munro](https://cplseason.com/player/colin-munro/)
+  - [Matthew Breetzke](https://cplseason.com/player/matthew-breetzke/)
+  - [Amshi de Silva](https://cplseason.com/player/amshi-de-silva/)
+
+## Match schedule
+
+- [Match 1: Jamaica Kingsmen vs Antigua & Barbuda Falcons](https://cplseason.com/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/) — 7 August 2026, 19:00 (America/St_Vincent), Arnos Vale Stadium; status: Scheduled.
+- [Match 2: St Kitts & Nevis Patriots vs Trinbago Knight Riders](https://cplseason.com/match/st-kitts-nevis-patriots-vs-trinbago-knight-riders/) — 8 August 2026, 19:00 (America/St_Vincent), Arnos Vale Stadium; status: Scheduled.
+- [Match 3: Antigua & Barbuda Falcons vs Saint Lucia Kings](https://cplseason.com/match/antigua-barbuda-falcons-vs-saint-lucia-kings/) — 9 August 2026, 19:00 (America/St_Vincent), Arnos Vale Stadium; status: Scheduled.
+- [Match 4: Jamaica Kingsmen vs Barbados Tridents](https://cplseason.com/match/jamaica-kingsmen-vs-barbados-royals/) — 11 August 2026, 19:00 (America/Jamaica), Sabina Park; status: Scheduled.
+- [Match 5: Saint Lucia Kings vs St Kitts & Nevis Patriots](https://cplseason.com/match/saint-lucia-kings-vs-st-kitts-nevis-patriots/) — 12 August 2026, 19:00 (America/St_Lucia), Daren Sammy Cricket Ground; status: Scheduled.
+- [Match 6: Jamaica Kingsmen vs Guyana Amazon Warriors](https://cplseason.com/match/jamaica-kingsmen-vs-guyana-amazon-warriors/) — 13 August 2026, 19:00 (America/Jamaica), Sabina Park; status: Scheduled.
+- [Match 7: Saint Lucia Kings vs Antigua & Barbuda Falcons](https://cplseason.com/match/saint-lucia-kings-vs-antigua-barbuda-falcons/) — 14 August 2026, 19:00 (America/St_Lucia), Daren Sammy Cricket Ground; status: Scheduled.
+- [Match 8: Jamaica Kingsmen vs Trinbago Knight Riders](https://cplseason.com/match/jamaica-kingsmen-vs-trinbago-knight-riders/) — 15 August 2026, 19:00 (America/Jamaica), Sabina Park; status: Scheduled.
+- [Match 9: Saint Lucia Kings vs Barbados Tridents](https://cplseason.com/match/saint-lucia-kings-vs-barbados-royals/) — 16 August 2026, 19:00 (America/St_Lucia), Daren Sammy Cricket Ground; status: Scheduled.
+- [Match 10: Jamaica Kingsmen vs St Kitts & Nevis Patriots](https://cplseason.com/match/jamaica-kingsmen-vs-st-kitts-nevis-patriots/) — 18 August 2026, 19:00 (America/Jamaica), Sabina Park; status: Scheduled.
+- [Match 11: Saint Lucia Kings vs Guyana Amazon Warriors](https://cplseason.com/match/saint-lucia-kings-vs-guyana-amazon-warriors/) — 19 August 2026, 19:00 (America/St_Lucia), Daren Sammy Cricket Ground; status: Scheduled.
+- [Match 12: Antigua & Barbuda Falcons vs St Kitts & Nevis Patriots](https://cplseason.com/match/antigua-barbuda-falcons-vs-st-kitts-nevis-patriots/) — 20 August 2026, 19:00 (America/Antigua), Sir Vivian Richards Stadium; status: Scheduled.
+- [Match 13: Saint Lucia Kings vs Jamaica Kingsmen](https://cplseason.com/match/saint-lucia-kings-vs-jamaica-kingsmen/) — 21 August 2026, 19:00 (America/St_Lucia), Daren Sammy Cricket Ground; status: Scheduled.
+- [Match 14: Antigua & Barbuda Falcons vs Trinbago Knight Riders](https://cplseason.com/match/antigua-barbuda-falcons-vs-trinbago-knight-riders/) — 22 August 2026, 19:00 (America/Antigua), Sir Vivian Richards Stadium; status: Scheduled.
+- [Match 15: Antigua & Barbuda Falcons vs Guyana Amazon Warriors](https://cplseason.com/match/antigua-barbuda-falcons-vs-guyana-amazon-warriors/) — 23 August 2026, 19:00 (America/Antigua), Sir Vivian Richards Stadium; status: Scheduled.
+- [Match 16: Antigua & Barbuda Falcons vs Barbados Tridents](https://cplseason.com/match/antigua-barbuda-falcons-vs-barbados-royals/) — 25 August 2026, 19:00 (America/Antigua), Sir Vivian Richards Stadium; status: Scheduled.
+- [Match 17: Trinbago Knight Riders vs Saint Lucia Kings](https://cplseason.com/match/trinbago-knight-riders-vs-saint-lucia-kings/) — 26 August 2026, 19:00 (America/Port_of_Spain), Brian Lara Cricket Academy; status: Scheduled.
+- [Match 18: St Kitts & Nevis Patriots vs Jamaica Kingsmen](https://cplseason.com/match/st-kitts-nevis-patriots-vs-jamaica-kingsmen/) — 27 August 2026, 19:00 (America/St_Kitts), Warner Park; status: Scheduled.
+- [Match 19: Trinbago Knight Riders vs Barbados Tridents](https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/) — 28 August 2026, 20:00 (America/Port_of_Spain), Brian Lara Cricket Academy; status: Scheduled.
+- [Match 20: Trinbago Knight Riders vs Guyana Amazon Warriors](https://cplseason.com/match/trinbago-knight-riders-vs-guyana-amazon-warriors/) — 29 August 2026, 19:00 (America/Port_of_Spain), Brian Lara Cricket Academy; status: Scheduled.
+- [Match 21: St Kitts & Nevis Patriots vs Antigua & Barbuda Falcons](https://cplseason.com/match/st-kitts-nevis-patriots-vs-antigua-barbuda-falcons/) — 30 August 2026, 19:00 (America/St_Kitts), Warner Park; status: Scheduled.
+- [Match 22: Trinbago Knight Riders vs Jamaica Kingsmen](https://cplseason.com/match/trinbago-knight-riders-vs-jamaica-kingsmen/) — 31 August 2026, 17:00 (America/Port_of_Spain), Brian Lara Cricket Academy; status: Scheduled.
+- [Match 23: St Kitts & Nevis Patriots vs Barbados Tridents](https://cplseason.com/match/st-kitts-nevis-patriots-vs-barbados-royals/) — 1 September 2026, 19:00 (America/St_Kitts), Warner Park; status: Scheduled.
+- [Match 24: Trinbago Knight Riders vs Antigua & Barbuda Falcons](https://cplseason.com/match/trinbago-knight-riders-vs-antigua-barbuda-falcons/) — 2 September 2026, 19:00 (America/Port_of_Spain), Brian Lara Cricket Academy; status: Scheduled.
+- [Match 25: St Kitts & Nevis Patriots vs Saint Lucia Kings](https://cplseason.com/match/st-kitts-nevis-patriots-vs-saint-lucia-kings/) — 3 September 2026, 19:00 (America/St_Kitts), Warner Park; status: Scheduled.
+- [Match 26: Guyana Amazon Warriors vs Jamaica Kingsmen](https://cplseason.com/match/guyana-amazon-warriors-vs-jamaica-kingsmen/) — 4 September 2026, 19:00 (America/Guyana), Providence Stadium; status: Scheduled.
+- [Match 27: Barbados Tridents vs Trinbago Knight Riders](https://cplseason.com/match/barbados-royals-vs-trinbago-knight-riders/) — 5 September 2026, 20:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 28: Guyana Amazon Warriors vs St Kitts & Nevis Patriots](https://cplseason.com/match/guyana-amazon-warriors-vs-st-kitts-nevis-patriots/) — 6 September 2026, 10:00 (America/Guyana), Providence Stadium; status: Scheduled.
+- [Match 29: Barbados Tridents vs Saint Lucia Kings](https://cplseason.com/match/barbados-royals-vs-saint-lucia-kings/) — 6 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 30: Guyana Amazon Warriors vs Antigua & Barbuda Falcons](https://cplseason.com/match/guyana-amazon-warriors-vs-antigua-barbuda-falcons/) — 8 September 2026, 19:00 (America/Guyana), Providence Stadium; status: Scheduled.
+- [Match 31: Guyana Amazon Warriors vs Saint Lucia Kings](https://cplseason.com/match/guyana-amazon-warriors-vs-saint-lucia-kings/) — 9 September 2026, 19:00 (America/Guyana), Providence Stadium; status: Scheduled.
+- [Match 32: Barbados Tridents vs St Kitts & Nevis Patriots](https://cplseason.com/match/barbados-royals-vs-st-kitts-nevis-patriots/) — 10 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 33: Guyana Amazon Warriors vs Trinbago Knight Riders](https://cplseason.com/match/guyana-amazon-warriors-vs-trinbago-knight-riders/) — 11 September 2026, 19:00 (America/Guyana), Providence Stadium; status: Scheduled.
+- [Match 34: Barbados Tridents vs Jamaica Kingsmen](https://cplseason.com/match/barbados-royals-vs-jamaica-kingsmen/) — 12 September 2026, 20:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 35: Barbados Tridents vs Guyana Amazon Warriors](https://cplseason.com/match/barbados-royals-vs-guyana-amazon-warriors/) — 13 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 36: Third-place team vs Fourth-place team](https://cplseason.com/match/cpl-2026-eliminator/) — 16 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 37: First-place team vs Second-place team](https://cplseason.com/match/cpl-2026-qualifier-1/) — 17 September 2026, 20:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 38: Eliminator winner vs Qualifier 1 loser](https://cplseason.com/match/cpl-2026-qualifier-2/) — 18 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+- [Match 39: Qualifier 1 winner vs Qualifier 2 winner](https://cplseason.com/match/cpl-2026-final/) — 20 September 2026, 19:00 (America/Barbados), Kensington Oval; status: Scheduled.
+
+## Host venues
+
+### [Arnos Vale Stadium](https://cplseason.com/venue/arnos-vale-stadium/)
+
+- Location: Kingstown, Saint Vincent and the Grenadines.
+- Reference capacity: 18,000; scheduled matches: 3.
+- Summary: Arnos Vale stages the first three CPL 2026 matches and brings the tournament to St Vincent and the Grenadines for the first time.
+
+### [Brian Lara Cricket Academy](https://cplseason.com/venue/brian-lara-cricket-academy/)
+
+- Location: Tarouba, Trinidad and Tobago.
+- Reference capacity: 15,000; scheduled matches: 5.
+- Summary: Brian Lara Cricket Academy hosts five Trinbago Knight Riders fixtures as the league moves into its Trinidad block.
+
+### [Daren Sammy Cricket Ground](https://cplseason.com/venue/daren-sammy-cricket-ground/)
+
+- Location: Gros Islet, Saint Lucia.
+- Reference capacity: 12,400; scheduled matches: 5.
+- Summary: Daren Sammy Cricket Ground carries five Saint Lucia league fixtures during a ten-day home block in August.
+
+### [Kensington Oval](https://cplseason.com/venue/kensington-oval/)
+
+- Location: Bridgetown, Barbados.
+- Reference capacity: 28,000; scheduled matches: 9.
+- Summary: Kensington Oval has the largest allocation: five league fixtures followed by the Eliminator, both Qualifiers and the CPL 2026 final.
+
+### [Providence Stadium](https://cplseason.com/venue/providence-stadium/)
+
+- Location: Providence, Guyana.
+- Reference capacity: 15,000; scheduled matches: 5.
+- Summary: Providence Stadium hosts five Guyana Amazon Warriors fixtures before the tournament moves to Barbados for its closing run.
+
+### [Sabina Park](https://cplseason.com/venue/sabina-park/)
+
+- Location: Kingston, Jamaica.
+- Reference capacity: 20,000; scheduled matches: 4.
+- Summary: Sabina Park hosts four Jamaica Kingsmen fixtures as the Caribbean Premier League returns to Jamaica in 2026.
+
+### [Sir Vivian Richards Stadium](https://cplseason.com/venue/sir-vivian-richards-stadium/)
+
+- Location: North Sound, Antigua and Barbuda.
+- Reference capacity: 10,000; scheduled matches: 4.
+- Summary: Sir Vivian Richards Stadium hosts four Antigua and Barbuda Falcons matches across the territory’s 2026 home block.
+
+### [Warner Park](https://cplseason.com/venue/warner-park/)
+
+- Location: Basseterre, Saint Kitts and Nevis.
+- Reference capacity: 8,000; scheduled matches: 4.
+- Summary: Warner Park stages four St Kitts and Nevis Patriots fixtures during the late-August and early-September block.
+
+## Broadcast status
+
+Source page: [CPL 2026 Live Streaming and TV Channels by Country](https://cplseason.com/watch-live/). Data last updated 2026-07-27.
+
+- Caribbean: Confirmed — Rush Live & Louder. CPL says the channel will carry comprehensive coverage of the 2026 season from 7 August. Provider channel numbers and packages vary by territory.
+- United States: Confirmed — Willow by Cricbuzz. Willow lists Caribbean Premier League 2026 from 7 August to 20 September and identifies CPL among its covered T20 leagues.
+- Canada: Confirmed — Willow by Cricbuzz. Willow describes its service as a cricket broadcaster for the United States and Canada. Confirm the individual match listing before paying.
+- India: Pending — No 2026 partner confirmed. CPL 2026 broadcast details for India have not been announced.
+- United Kingdom & Ireland: Pending — No 2026 partner confirmed. Historical CPL broadcasters do not establish who will show the 2026 tournament.
+- Pakistan & Bangladesh: Pending — No 2026 partner confirmed. CPL 2026 broadcast details for Pakistan and Bangladesh have not been announced.
+- Australia & New Zealand: Pending — No 2026 partner confirmed. Previous-season arrangements can change, so this guide does not carry them forward.
+- South Africa & other territories: Pending — No worldwide stream confirmed. CPL has not announced a free worldwide stream for the 2026 season.
+
+Broadcast availability is territory-specific. A historical broadcaster
+does not establish 2026 rights; confirm the exact fixture before paying.
+
+## Interpretation and freshness rules
+
+- Use each page's visible update date, canonical URL, and status label.
+- Treat `Scheduled` as a fixture state, not evidence that a match has started or finished.
+- Treat unannounced playing XIs, results, standings, and territory-specific broadcasters as pending.
+- Do not convert local match time without using the page's named IANA timezone.
+- Prefer the current match page over summaries copied into older news articles.
+- Prefer the points-table page for standings and the schedule page for current fixture order.
+- Player inclusion on a published roster is not proof of availability for every match.
+- Venue capacity is reference information, not ticket availability.
+
+## Machine discovery
+
+- All canonical public pages: https://cplseason.com/llms.txt
+- XML sitemap: https://cplseason.com/sitemap.xml
+- Crawler policy: https://cplseason.com/robots.txt
