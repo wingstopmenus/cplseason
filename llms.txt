@@ -1,32 +1,254 @@
 # CPL Season
 
-> CPL Season provides independent coverage of the Caribbean Premier League,
-> with a focus on the 2026 season.
+> Complete canonical URL directory for CPL Season, an independent
+> Caribbean Premier League coverage site focused on the 2026 season.
 
-CPL Season publishes schedules, match pages, squads, player profiles, team
-guides, venue information, standings, broadcast details, and news. The
-canonical site is https://cplseason.com/.
+This file lists all 198 public URLs from https://cplseason.com/sitemap.xml.
+For changing information such as fixtures, match times, and standings, use the
+latest content on the linked page.
 
-## Core pages
+## Homepage
 
-- [Homepage](https://cplseason.com/): Latest CPL 2026 overview and updates.
-- [Schedule](https://cplseason.com/schedule/): Full match schedule, dates, and fixtures.
-- [Points table](https://cplseason.com/points-table/): Current team standings.
-- [Teams](https://cplseason.com/teams/): CPL 2026 team directory.
-- [Squads](https://cplseason.com/squads/): Team rosters for the 2026 season.
-- [Players](https://cplseason.com/players/): Player directory and profiles.
-- [Venues](https://cplseason.com/venues/): Stadium and venue guides.
-- [Watch live](https://cplseason.com/watch-live/): Broadcast and streaming information.
-- [News](https://cplseason.com/news/): CPL news and editorial coverage.
+- [CPL Season Homepage](https://cplseason.com/)
+
+## Schedule
+
+- [Schedule](https://cplseason.com/schedule/)
+
+## Points Table
+
+- [Points Table](https://cplseason.com/points-table/)
+
+## Teams Directory
+
+- [Teams](https://cplseason.com/teams/)
+
+## Team Pages
+
+- [Antigua Barbuda Falcons](https://cplseason.com/team/antigua-barbuda-falcons/)
+- [Barbados Royals](https://cplseason.com/team/barbados-royals/)
+- [Guyana Amazon Warriors](https://cplseason.com/team/guyana-amazon-warriors/)
+- [Jamaica Kingsmen](https://cplseason.com/team/jamaica-kingsmen/)
+- [Saint Lucia Kings](https://cplseason.com/team/saint-lucia-kings/)
+- [St Kitts Nevis Patriots](https://cplseason.com/team/st-kitts-nevis-patriots/)
+- [Trinbago Knight Riders](https://cplseason.com/team/trinbago-knight-riders/)
+
+## Squads
+
+- [Squads](https://cplseason.com/squads/)
+
+## Players Directory
+
+- [Players](https://cplseason.com/players/)
+
+## Player Profiles
+
+- [Abdul Raheem Toppin](https://cplseason.com/player/abdul-raheem-toppin/)
+- [Ackeem Auguste](https://cplseason.com/player/ackeem-auguste/)
+- [Akeal Hosein](https://cplseason.com/player/akeal-hosein/)
+- [Alex Hales](https://cplseason.com/player/alex-hales/)
+- [Alick Athanaze](https://cplseason.com/player/alick-athanaze/)
+- [Alzarri Joseph](https://cplseason.com/player/alzarri-joseph/)
+- [Amari Goodridge](https://cplseason.com/player/amari-goodridge/)
+- [Amir Jangoo](https://cplseason.com/player/amir-jangoo/)
+- [Amshi De Silva](https://cplseason.com/player/amshi-de-silva/)
+- [Anderson Mahase](https://cplseason.com/player/anderson-mahase/)
+- [Anderson Phillip](https://cplseason.com/player/anderson-phillip/)
+- [Andre Fletcher](https://cplseason.com/player/andre-fletcher/)
+- [Andre Russell](https://cplseason.com/player/andre-russell/)
+- [Ashmead Nedd](https://cplseason.com/player/ashmead-nedd/)
+- [Brandon King](https://cplseason.com/player/brandon-king/)
+- [Charith Asalanka](https://cplseason.com/player/charith-asalanka/)
+- [Chris Green](https://cplseason.com/player/chris-green/)
+- [Colin Munro](https://cplseason.com/player/colin-munro/)
+- [Damion Joachim](https://cplseason.com/player/damion-joachim/)
+- [Daniel Sams](https://cplseason.com/player/daniel-sams/)
+- [Darron Nedd](https://cplseason.com/player/darron-nedd/)
+- [Dasun Shanaka](https://cplseason.com/player/dasun-shanaka/)
+- [Dexter Sween](https://cplseason.com/player/dexter-sween/)
+- [Dominic Drakes](https://cplseason.com/player/dominic-drakes/)
+- [Dwaine Pretorius](https://cplseason.com/player/dwaine-pretorius/)
+- [Evin Lewis](https://cplseason.com/player/evin-lewis/)
+- [Fabian Allen](https://cplseason.com/player/fabian-allen/)
+- [George Linde](https://cplseason.com/player/george-linde/)
+- [Glenn Phillips](https://cplseason.com/player/glenn-phillips/)
+- [Gudakesh Motie](https://cplseason.com/player/gudakesh-motie/)
+- [Hassan Khan](https://cplseason.com/player/hassan-khan/)
+- [Hunain Shah](https://cplseason.com/player/hunain-shah/)
+- [Imran Tahir](https://cplseason.com/player/imran-tahir/)
+- [Isai Thorne](https://cplseason.com/player/isai-thorne/)
+- [Jahmar Hamilton](https://cplseason.com/player/jahmar-hamilton/)
+- [Jakeem Pollard](https://cplseason.com/player/jakeem-pollard/)
+- [Jason Holder](https://cplseason.com/player/jason-holder/)
+- [Jayden Seales](https://cplseason.com/player/jayden-seales/)
+- [Jeavor Royal](https://cplseason.com/player/jeavor-royal/)
+- [Jediah Blades](https://cplseason.com/player/jediah-blades/)
+- [Jeremiah Louis](https://cplseason.com/player/jeremiah-louis/)
+- [Jewel Andrew](https://cplseason.com/player/jewel-andrew/)
+- [Johann Jeremiah](https://cplseason.com/player/johann-jeremiah/)
+- [Johann Layne](https://cplseason.com/player/johann-layne/)
+- [Johnson Charles](https://cplseason.com/player/johnson-charles/)
+- [Jonathan Van Lange](https://cplseason.com/player/jonathan-van-lange/)
+- [Joshua Bishop](https://cplseason.com/player/joshua-bishop/)
+- [Joshua Da Silva](https://cplseason.com/player/joshua-da-silva/)
+- [Joshua James](https://cplseason.com/player/joshua-james/)
+- [Justin Greaves](https://cplseason.com/player/justin-greaves/)
+- [Jyd Goolie](https://cplseason.com/player/jyd-goolie/)
+- [Kadeem Alleyne](https://cplseason.com/player/kadeem-alleyne/)
+- [Kamil Pooran](https://cplseason.com/player/kamil-pooran/)
+- [Karima Gore](https://cplseason.com/player/karima-gore/)
+- [Keacy Carty](https://cplseason.com/player/keacy-carty/)
+- [Keemo Paul](https://cplseason.com/player/keemo-paul/)
+- [Kelvin Pitman](https://cplseason.com/player/kelvin-pitman/)
+- [Keon Gaston](https://cplseason.com/player/keon-gaston/)
+- [Kevin Wickham](https://cplseason.com/player/kevin-wickham/)
+- [Khary Pierre](https://cplseason.com/player/khary-pierre/)
+- [Kieron Pollard](https://cplseason.com/player/kieron-pollard/)
+- [Kirk Mckenzie](https://cplseason.com/player/kirk-mckenzie/)
+- [Kofi James](https://cplseason.com/player/kofi-james/)
+- [Kusal Perera](https://cplseason.com/player/kusal-perera/)
+- [Kyle Mayers](https://cplseason.com/player/kyle-mayers/)
+- [Maaz Sadaqat](https://cplseason.com/player/maaz-sadaqat/)
+- [Maheesh Theekshana](https://cplseason.com/player/maheesh-theekshana/)
+- [Matthew Breetzke](https://cplseason.com/player/matthew-breetzke/)
+- [Matthew Forde](https://cplseason.com/player/matthew-forde/)
+- [Matthew Nandu](https://cplseason.com/player/matthew-nandu/)
+- [Mavendra Dindyal](https://cplseason.com/player/mavendra-dindyal/)
+- [Mckenny Clarke](https://cplseason.com/player/mckenny-clarke/)
+- [Micah Mckenzie](https://cplseason.com/player/micah-mckenzie/)
+- [Mikyle Louis](https://cplseason.com/player/mikyle-louis/)
+- [Milind Kumar](https://cplseason.com/player/milind-kumar/)
+- [Moeen Ali](https://cplseason.com/player/moeen-ali/)
+- [Mohammad Nabi](https://cplseason.com/player/mohammad-nabi/)
+- [Mujeeb Ur Rahman](https://cplseason.com/player/mujeeb-ur-rahman/)
+- [Naseem Shah](https://cplseason.com/player/naseem-shah/)
+- [Nathan Edward](https://cplseason.com/player/nathan-edward/)
+- [Navin Bidaisee](https://cplseason.com/player/navin-bidaisee/)
+- [Nicholas Pooran](https://cplseason.com/player/nicholas-pooran/)
+- [Nikhil Chaudhary](https://cplseason.com/player/nikhil-chaudhary/)
+- [Noor Ahmad](https://cplseason.com/player/noor-ahmad/)
+- [Obed Mccoy](https://cplseason.com/player/obed-mccoy/)
+- [Odean Smith](https://cplseason.com/player/odean-smith/)
+- [Quentin Sampson](https://cplseason.com/player/quentin-sampson/)
+- [Quinton De Kock](https://cplseason.com/player/quinton-de-kock/)
+- [Rahkeem Cornwall](https://cplseason.com/player/rahkeem-cornwall/)
+- [Rahmanullah Gurbaz](https://cplseason.com/player/rahmanullah-gurbaz/)
+- [Ramon Simmonds](https://cplseason.com/player/ramon-simmonds/)
+- [Rivaldo Clarke](https://cplseason.com/player/rivaldo-clarke/)
+- [Romaine Morris](https://cplseason.com/player/romaine-morris/)
+- [Romario Shepherd](https://cplseason.com/player/romario-shepherd/)
+- [Ronaldo Alimohamed](https://cplseason.com/player/ronaldo-alimohamed/)
+- [Roston Chase](https://cplseason.com/player/roston-chase/)
+- [Rovman Powell](https://cplseason.com/player/rovman-powell/)
+- [Saim Ayub](https://cplseason.com/player/saim-ayub/)
+- [Shadab Khan](https://cplseason.com/player/shadab-khan/)
+- [Shadley Van Schalkwyk](https://cplseason.com/player/shadley-van-schalkwyk/)
+- [Shadrack Descarte](https://cplseason.com/player/shadrack-descarte/)
+- [Shai Hope](https://cplseason.com/player/shai-hope/)
+- [Shamar Joseph](https://cplseason.com/player/shamar-joseph/)
+- [Shamar Springer](https://cplseason.com/player/shamar-springer/)
+- [Shaqkere Parris](https://cplseason.com/player/shaqkere-parris/)
+- [Shayan Jahangir](https://cplseason.com/player/shayan-jahangir/)
+- [Sherfane Rutherford](https://cplseason.com/player/sherfane-rutherford/)
+- [Shimron Hetmyer](https://cplseason.com/player/shimron-hetmyer/)
+- [Sufiyan Muqeem](https://cplseason.com/player/sufiyan-muqeem/)
+- [Sunil Narine](https://cplseason.com/player/sunil-narine/)
+- [Tajinder Singh](https://cplseason.com/player/tajinder-singh/)
+- [Tayyab Arif](https://cplseason.com/player/tayyab-arif/)
+- [Terrance Hinds](https://cplseason.com/player/terrance-hinds/)
+- [Tim Seifert](https://cplseason.com/player/tim-seifert/)
+- [Usman Khan](https://cplseason.com/player/usman-khan/)
+- [Usman Tariq](https://cplseason.com/player/usman-tariq/)
+- [Veerasammy Permaul](https://cplseason.com/player/veerasammy-permaul/)
+- [Vitel Lawes](https://cplseason.com/player/vitel-lawes/)
+- [Wanindu Hasaranga](https://cplseason.com/player/wanindu-hasaranga/)
+- [Waqar Salamkheil](https://cplseason.com/player/waqar-salamkheil/)
+- [Zachary Carter](https://cplseason.com/player/zachary-carter/)
+- [Zishan Motara](https://cplseason.com/player/zishan-motara/)
+
+## Match Pages
+
+- [Antigua Barbuda Falcons vs Barbados Royals](https://cplseason.com/match/antigua-barbuda-falcons-vs-barbados-royals/)
+- [Antigua Barbuda Falcons vs Guyana Amazon Warriors](https://cplseason.com/match/antigua-barbuda-falcons-vs-guyana-amazon-warriors/)
+- [Antigua Barbuda Falcons vs Saint Lucia Kings](https://cplseason.com/match/antigua-barbuda-falcons-vs-saint-lucia-kings/)
+- [Antigua Barbuda Falcons vs St Kitts Nevis Patriots](https://cplseason.com/match/antigua-barbuda-falcons-vs-st-kitts-nevis-patriots/)
+- [Antigua Barbuda Falcons vs Trinbago Knight Riders](https://cplseason.com/match/antigua-barbuda-falcons-vs-trinbago-knight-riders/)
+- [Barbados Royals vs Guyana Amazon Warriors](https://cplseason.com/match/barbados-royals-vs-guyana-amazon-warriors/)
+- [Barbados Royals vs Jamaica Kingsmen](https://cplseason.com/match/barbados-royals-vs-jamaica-kingsmen/)
+- [Barbados Royals vs Saint Lucia Kings](https://cplseason.com/match/barbados-royals-vs-saint-lucia-kings/)
+- [Barbados Royals vs St Kitts Nevis Patriots](https://cplseason.com/match/barbados-royals-vs-st-kitts-nevis-patriots/)
+- [Barbados Royals vs Trinbago Knight Riders](https://cplseason.com/match/barbados-royals-vs-trinbago-knight-riders/)
+- [CPL 2026 Eliminator](https://cplseason.com/match/cpl-2026-eliminator/)
+- [CPL 2026 Final](https://cplseason.com/match/cpl-2026-final/)
+- [CPL 2026 Qualifier 1](https://cplseason.com/match/cpl-2026-qualifier-1/)
+- [CPL 2026 Qualifier 2](https://cplseason.com/match/cpl-2026-qualifier-2/)
+- [Guyana Amazon Warriors vs Antigua Barbuda Falcons](https://cplseason.com/match/guyana-amazon-warriors-vs-antigua-barbuda-falcons/)
+- [Guyana Amazon Warriors vs Jamaica Kingsmen](https://cplseason.com/match/guyana-amazon-warriors-vs-jamaica-kingsmen/)
+- [Guyana Amazon Warriors vs Saint Lucia Kings](https://cplseason.com/match/guyana-amazon-warriors-vs-saint-lucia-kings/)
+- [Guyana Amazon Warriors vs St Kitts Nevis Patriots](https://cplseason.com/match/guyana-amazon-warriors-vs-st-kitts-nevis-patriots/)
+- [Guyana Amazon Warriors vs Trinbago Knight Riders](https://cplseason.com/match/guyana-amazon-warriors-vs-trinbago-knight-riders/)
+- [Jamaica Kingsmen vs Antigua Barbuda Falcons](https://cplseason.com/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/)
+- [Jamaica Kingsmen vs Barbados Royals](https://cplseason.com/match/jamaica-kingsmen-vs-barbados-royals/)
+- [Jamaica Kingsmen vs Guyana Amazon Warriors](https://cplseason.com/match/jamaica-kingsmen-vs-guyana-amazon-warriors/)
+- [Jamaica Kingsmen vs St Kitts Nevis Patriots](https://cplseason.com/match/jamaica-kingsmen-vs-st-kitts-nevis-patriots/)
+- [Jamaica Kingsmen vs Trinbago Knight Riders](https://cplseason.com/match/jamaica-kingsmen-vs-trinbago-knight-riders/)
+- [Saint Lucia Kings vs Antigua Barbuda Falcons](https://cplseason.com/match/saint-lucia-kings-vs-antigua-barbuda-falcons/)
+- [Saint Lucia Kings vs Barbados Royals](https://cplseason.com/match/saint-lucia-kings-vs-barbados-royals/)
+- [Saint Lucia Kings vs Guyana Amazon Warriors](https://cplseason.com/match/saint-lucia-kings-vs-guyana-amazon-warriors/)
+- [Saint Lucia Kings vs Jamaica Kingsmen](https://cplseason.com/match/saint-lucia-kings-vs-jamaica-kingsmen/)
+- [Saint Lucia Kings vs St Kitts Nevis Patriots](https://cplseason.com/match/saint-lucia-kings-vs-st-kitts-nevis-patriots/)
+- [St Kitts Nevis Patriots vs Antigua Barbuda Falcons](https://cplseason.com/match/st-kitts-nevis-patriots-vs-antigua-barbuda-falcons/)
+- [St Kitts Nevis Patriots vs Barbados Royals](https://cplseason.com/match/st-kitts-nevis-patriots-vs-barbados-royals/)
+- [St Kitts Nevis Patriots vs Jamaica Kingsmen](https://cplseason.com/match/st-kitts-nevis-patriots-vs-jamaica-kingsmen/)
+- [St Kitts Nevis Patriots vs Saint Lucia Kings](https://cplseason.com/match/st-kitts-nevis-patriots-vs-saint-lucia-kings/)
+- [St Kitts Nevis Patriots vs Trinbago Knight Riders](https://cplseason.com/match/st-kitts-nevis-patriots-vs-trinbago-knight-riders/)
+- [Trinbago Knight Riders vs Antigua Barbuda Falcons](https://cplseason.com/match/trinbago-knight-riders-vs-antigua-barbuda-falcons/)
+- [Trinbago Knight Riders vs Barbados Royals](https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/)
+- [Trinbago Knight Riders vs Guyana Amazon Warriors](https://cplseason.com/match/trinbago-knight-riders-vs-guyana-amazon-warriors/)
+- [Trinbago Knight Riders vs Jamaica Kingsmen](https://cplseason.com/match/trinbago-knight-riders-vs-jamaica-kingsmen/)
+- [Trinbago Knight Riders vs Saint Lucia Kings](https://cplseason.com/match/trinbago-knight-riders-vs-saint-lucia-kings/)
+
+## Venues Directory
+
+- [Venues](https://cplseason.com/venues/)
+
+## Venue Pages
+
+- [Arnos Vale Stadium](https://cplseason.com/venue/arnos-vale-stadium/)
+- [Brian Lara Cricket Academy](https://cplseason.com/venue/brian-lara-cricket-academy/)
+- [Daren Sammy Cricket Ground](https://cplseason.com/venue/daren-sammy-cricket-ground/)
+- [Kensington Oval](https://cplseason.com/venue/kensington-oval/)
+- [Providence Stadium](https://cplseason.com/venue/providence-stadium/)
+- [Sabina Park](https://cplseason.com/venue/sabina-park/)
+- [Sir Vivian Richards Stadium](https://cplseason.com/venue/sir-vivian-richards-stadium/)
+- [Warner Park](https://cplseason.com/venue/warner-park/)
+
+## News
+
+- [Antigua Barbuda Falcons Overseas Players 2026](https://cplseason.com/news/antigua-barbuda-falcons-overseas-players-2026/)
+- [Barbados Tridents Overseas Players 2026](https://cplseason.com/news/barbados-tridents-overseas-players-2026/)
+- [Charles Wilkin CPL Tribute](https://cplseason.com/news/charles-wilkin-cpl-tribute/)
+- [CPL 2026 Schedule Window Confirmed](https://cplseason.com/news/cpl-2026-schedule-window-confirmed/)
+- [CPL 2026 Venues Guide](https://cplseason.com/news/cpl-2026-venues-guide/)
+- [Guyana Amazon Warriors Overseas Players 2026](https://cplseason.com/news/guyana-amazon-warriors-overseas-players-2026/)
+- [News](https://cplseason.com/news/)
+- [Jamaica Kingsmen Join CPL 2026 Field](https://cplseason.com/news/jamaica-kingsmen-join-cpl-2026-field/)
+- [Jamaica Kingsmen Overseas Players 2026](https://cplseason.com/news/jamaica-kingsmen-overseas-players-2026/)
+- [Rush Live Louder CPL 2026 Caribbean](https://cplseason.com/news/rush-live-louder-cpl-2026-caribbean/)
+- [Saint Lucia Kings Overseas Players 2026](https://cplseason.com/news/saint-lucia-kings-overseas-players-2026/)
+- [Sir Garfield Sobers CPL Tribute](https://cplseason.com/news/sir-garfield-sobers-cpl-tribute/)
+- [St Kitts Nevis Patriots Overseas Players 2026](https://cplseason.com/news/st-kitts-nevis-patriots-overseas-players-2026/)
+- [Trinbago Knight Riders Overseas Players 2026](https://cplseason.com/news/trinbago-knight-riders-overseas-players-2026/)
+
+## Watch Live
+
+- [Watch Live](https://cplseason.com/watch-live/)
 
 ## Discovery
 
-- [XML sitemap](https://cplseason.com/sitemap.xml): Canonical index of public URLs.
-- [Extended LLM guide](https://cplseason.com/llms-full.txt): Additional site context.
-- [Robots policy](https://cplseason.com/robots.txt): Crawler directives.
+- [XML Sitemap](https://cplseason.com/sitemap.xml)
+- [Extended LLM Guide](https://cplseason.com/llms-full.txt)
+- [Robots Policy](https://cplseason.com/robots.txt)
 
-## Notes
-
-- Prefer canonical HTTPS URLs from the sitemap.
-- Match times and standings can change; check the relevant page for the latest published information.
-- CPL Season is an independent information site and is not the official Caribbean Premier League website.
+CPL Season is an independent information site and is not the official
+Caribbean Premier League website.
