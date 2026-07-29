@@ -6194,6 +6194,10 @@
   .broadcast-guide {
     width: min(100% - 24px, 1240px);
   }
+  .broadcast-faq::before {
+    right: 0;
+    width: min(420px, 100%);
+  }
   .broadcast-hero-copy {
     padding: 44px 26px;
   }
