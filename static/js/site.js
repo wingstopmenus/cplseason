@@ -97,7 +97,7 @@ if (matchSpotlights.length) {
     spotlightRequestInProgress = true;
     try {
       const [scheduleResponse, statusResponse] = await Promise.all([
-        fetch("/static/data/match-spotlight.json", { cache: "force-cache" }),
+        fetch("/static/match-spotlight.json", { cache: "force-cache" }),
         fetch("/api/cpl-matches", { cache: "no-store" }),
       ]);
       if (!scheduleResponse.ok || !statusResponse.ok) throw new Error("Match spotlight feed unavailable");

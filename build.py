@@ -1760,7 +1760,7 @@ def build_match_spotlight_schedule() -> list[dict]:
                 "url": f"/match/{match['slug']}/",
             }
         )
-    output = ROOT / "static" / "data" / "match-spotlight.json"
+    output = ROOT / "static" / "match-spotlight.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(schedule, ensure_ascii=False, separators=(",", ":")) + "\n",
