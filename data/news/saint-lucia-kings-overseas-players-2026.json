@@ -7,7 +7,7 @@
   "dek": "Saint Lucia have paired two international spinners with flexible batting and seam support ahead of their opening home match on 12 August.",
   "date_published": "2026-07-08",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/news/saint-lucia-kings-unveil-overseas-contingent-for-cpl-2026.webp",
+  "image": "/static/img/official/news/saint-lucia-kings-overseas-players-2026-featured.webp",
   "image_alt": "Saint Lucia Kings player during a CPL match",
   "team_slug": "saint-lucia-kings",
   "summary_heading": "Kings add spin variety and batting flexibility",
@@ -17,7 +17,13 @@
     "The Kings begin at home against St Kitts & Nevis Patriots on 12 August."
   ],
   "players_heading": "Saint Lucia’s five overseas players",
-  "player_slugs": ["noor-ahmad", "tim-seifert", "maheesh-theekshana", "charith-asalanka", "shadley-van-schalkwyk"],
+  "player_slugs": [
+    "noor-ahmad",
+    "tim-seifert",
+    "maheesh-theekshana",
+    "charith-asalanka",
+    "shadley-van-schalkwyk"
+  ],
   "sections": [
     {
       "heading": "Two spinners who ask different questions",
@@ -42,9 +48,18 @@
     }
   ],
   "related_links": [
-    {"href": "/team/saint-lucia-kings/", "label": "Kings team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/daren-sammy-cricket-ground/", "label": "Daren Sammy Cricket Ground"}
+    {
+      "href": "/team/saint-lucia-kings/",
+      "label": "Kings team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/daren-sammy-cricket-ground/",
+      "label": "Daren Sammy Cricket Ground"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-08",

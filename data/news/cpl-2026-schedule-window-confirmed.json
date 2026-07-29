@@ -7,7 +7,7 @@
   "dek": "The men’s tournament opens in St Vincent, returns to Jamaica and finishes with four playoff matches at Kensington Oval.",
   "date_published": "2026-04-28",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/news-banner-bg.webp",
+  "image": "/static/img/official/news/cpl-2026-schedule-window-confirmed-featured.webp",
   "image_alt": "Caribbean cricket stadium under lights",
   "summary_heading": "Six weeks, seven teams and 39 matches",
   "key_points": [
@@ -40,9 +40,18 @@
     }
   ],
   "related_links": [
-    {"href": "/schedule/", "label": "All 39 fixtures"},
-    {"href": "/venues/", "label": "CPL 2026 venue guides"},
-    {"href": "/points-table/", "label": "Points Table"}
+    {
+      "href": "/schedule/",
+      "label": "All 39 fixtures"
+    },
+    {
+      "href": "/venues/",
+      "label": "CPL 2026 venue guides"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points Table"
+    }
   ],
   "source_name": "Caribbean Premier League fixture announcement",
   "source_date": "2026-04-28",

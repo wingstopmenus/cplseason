@@ -6,9 +6,9 @@
   "description": "Trinbago Knight Riders add Alex Hales, Colin Munro, Matthew Breetzke, Usman Tariq and Amshi de Silva to their CPL 2026 title defence.",
   "dek": "The defending champions have paired proven top-order power with two younger all-round options and the leading wicket-taker from their 2025 campaign.",
   "date_published": "2026-07-23",
-  "date_modified": "2026-07-27",
-  "image": "/static/img/official/teams/trinbago-knight-riders.webp",
-  "image_alt": "Trinbago Knight Riders team crest",
+  "date_modified": "2026-07-29",
+  "image": "/static/img/official/news/trinbago-knight-riders-overseas-players-2026-featured.webp",
+  "image_alt": "Trinbago Knight Riders batter playing a shot during a CPL match",
   "team_slug": "trinbago-knight-riders",
   "summary_heading": "TKR retain experience at the top of the order",
   "key_points": [
@@ -17,7 +17,13 @@
     "The champions start against St Kitts & Nevis Patriots on 8 August."
   ],
   "players_heading": "TKR’s five overseas players",
-  "player_slugs": ["alex-hales", "usman-tariq", "colin-munro", "matthew-breetzke", "amshi-de-silva"],
+  "player_slugs": [
+    "alex-hales",
+    "usman-tariq",
+    "colin-munro",
+    "matthew-breetzke",
+    "amshi-de-silva"
+  ],
   "sections": [
     {
       "heading": "Familiar power with room for a new role",
@@ -42,11 +48,20 @@
     }
   ],
   "related_links": [
-    {"href": "/team/trinbago-knight-riders/", "label": "Knight Riders team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/brian-lara-cricket-academy/", "label": "Brian Lara Cricket Academy"}
+    {
+      "href": "/team/trinbago-knight-riders/",
+      "label": "Knight Riders team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/brian-lara-cricket-academy/",
+      "label": "Brian Lara Cricket Academy"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-23",
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-07-29"
 }

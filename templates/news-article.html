@@ -54,7 +54,7 @@
             <time datetime="{{ article.date_modified }}">Updated {{ article.modified_label }}</time>
           </div>
         </div>
-        <figure><img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1200" height="675"></figure>
+        <figure><img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1280" height="720"></figure>
       </header>
 
       <div class="news-story-layout">
@@ -68,7 +68,7 @@
           {% for section in article.sections %}
           <section>
             <h2>{{ section.heading }}</h2>
-            {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+            {% for paragraph in section.paragraphs %}<p>{{ paragraph | safe }}</p>{% endfor %}
           </section>
           {% endfor %}
 

@@ -8,7 +8,7 @@
 - Canonical origin: https://cplseason.com/
 - Coverage: schedules, match pages, standings, teams, squads, player profiles, venues, broadcast information, and news.
 - Relationship to CPL: independent information site; not the official Caribbean Premier League website.
-- Latest source-data update represented here: 2026-07-27.
+- Latest source-data update represented here: 2026-07-29.
 
 ## 2026 tournament snapshot
 
@@ -18,7 +18,7 @@
 - Teams represented: 7.
 - Host venues represented: 8.
 - Player profiles: 122.
-- Published news articles: 13.
+- Published news articles: 15.
 - Match times are local to the host venue unless a page explicitly states otherwise.
 - Fixtures, squads, broadcasters, playing XIs, results, and standings may change.
 

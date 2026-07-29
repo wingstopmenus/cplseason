@@ -6,9 +6,9 @@
   "description": "Jamaica Kingsmen name seven overseas players for CPL 2026, with Saim Ayub, Maaz Sadaqat and Usman Khan joining from 19 August.",
   "dek": "Jamaica will use two overseas-player phases during its first CPL season, with a planned change after the team’s opening four fixtures.",
   "date_published": "2026-07-20",
-  "date_modified": "2026-07-27",
-  "image": "/static/img/official/teams/jamaica-kingsmen.webp",
-  "image_alt": "Jamaica Kingsmen team crest",
+  "date_modified": "2026-07-29",
+  "image": "/static/img/official/news/jamaica-kingsmen-overseas-players-2026-featured.webp",
+  "image_alt": "Jamaica Kingsmen cricketer in action during a T20 match",
   "team_slug": "jamaica-kingsmen",
   "summary_heading": "Seven names, two stages and one active overseas group",
   "key_points": [
@@ -17,7 +17,15 @@
     "Saim Ayub, Maaz Sadaqat and Usman Khan enter the group from 19 August."
   ],
   "players_heading": "Jamaica’s announced overseas group",
-  "player_slugs": ["hassan-khan", "hunain-shah", "shayan-jahangir", "tayyab-arif", "saim-ayub", "maaz-sadaqat", "usman-khan"],
+  "player_slugs": [
+    "hassan-khan",
+    "hunain-shah",
+    "shayan-jahangir",
+    "tayyab-arif",
+    "saim-ayub",
+    "maaz-sadaqat",
+    "usman-khan"
+  ],
   "sections": [
     {
       "heading": "How the transition works",
@@ -42,11 +50,20 @@
     }
   ],
   "related_links": [
-    {"href": "/team/jamaica-kingsmen/", "label": "Kingsmen team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/sabina-park/", "label": "Sabina Park guide"}
+    {
+      "href": "/team/jamaica-kingsmen/",
+      "label": "Kingsmen team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/sabina-park/",
+      "label": "Sabina Park guide"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-20",
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-07-29"
 }

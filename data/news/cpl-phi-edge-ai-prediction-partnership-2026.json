@@ -1,0 +1,58 @@
+{
+  "slug": "cpl-phi-edge-ai-prediction-partnership-2026",
+  "category": "Technology",
+  "title": "CPL Names Phi Edge as Official AI Prediction Partner for 2026",
+  "short_title": "CPL partners with Phi Edge",
+  "description": "CPL has appointed Phi Edge as its official AI prediction partner, bringing live probabilities, tactical insights and player match-ups to the 2026 tournament.",
+  "dek": "The partnership will introduce live win probabilities, tactical insights, player match-ups and pre-match analysis throughout CPL 2026.",
+  "date_published": "2026-07-28",
+  "date_modified": "2026-07-29",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/cpl-phi-edge-ai-prediction-partnership-2026-featured.webp",
+  "image_alt": "Cricket analytics graphic announcing the CPL and Phi Edge partnership",
+  "summary_heading": "What the Phi Edge partnership brings to CPL 2026",
+  "key_points": [
+    "Phi Edge has become the official AI prediction partner of the 2026 Caribbean Premier League.",
+    "Supporters are set to receive live win probabilities, tactical insights, player match-ups and pre-match analysis.",
+    "The service is due to launch before the tournament opener on 7 August."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "A new digital layer for the tournament",
+      "paragraphs": [
+        "The Caribbean Premier League has added Phi Edge as its official AI prediction partner for the 2026 season. The agreement is designed to give supporters more context around matches before the first ball, during play and after the result.",
+        "The rollout is scheduled to begin ahead of the opening fixture on 7 August. Supporters can follow every game through the complete <a href=\"/schedule/\">CPL 2026 schedule</a>, which covers the group stage and four-match playoff phase."
+      ]
+    },
+    {
+      "heading": "What fans can expect",
+      "paragraphs": [
+        "Phi Edge will produce live win probabilities alongside tactical analysis, individual player match-ups and pre-match predictions. The aim is to turn match data into short, understandable insights while the contest changes in real time.",
+        "That information will sit alongside the traditional competition picture, including the <a href=\"/points-table/\">CPL points table</a> and the developing race for playoff places."
+      ]
+    },
+    {
+      "heading": "Launch timed for the season opener",
+      "paragraphs": [
+        "CPL says its broadcast and digital reach passed 1.17 billion viewers in 2025. The league sees predictive content as another way to serve that audience without changing the cricket itself.",
+        "The partnership will cover the tournament from opening night through the final. Team rosters and availability details can be followed in the updated <a href=\"/squads/\">CPL squad guides</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/schedule/",
+      "label": "CPL 2026 schedule"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/watch-live/",
+      "label": "CPL viewing guide"
+    }
+  ],
+  "last_updated": "2026-07-29"
+}

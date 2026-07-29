@@ -6,9 +6,9 @@
   "description": "St Kitts & Nevis Patriots confirm Naseem Shah, Dasun Shanaka, Waqar Salamkheil, Wanindu Hasaranga and Nikhil Chaudhary for CPL 2026.",
   "dek": "The Patriots have added pace, wrist-spin and middle-order experience to a West Indian core led by Jason Holder, Kyle Mayers and Andre Fletcher.",
   "date_published": "2026-07-24",
-  "date_modified": "2026-07-27",
-  "image": "/static/img/official/teams/st-kitts-nevis-patriots.webp",
-  "image_alt": "St Kitts and Nevis Patriots team crest",
+  "date_modified": "2026-07-29",
+  "image": "/static/img/official/news/st-kitts-nevis-patriots-overseas-players-2026-featured.webp",
+  "image_alt": "St Kitts and Nevis Patriots cricketer during a CPL match",
   "team_slug": "st-kitts-nevis-patriots",
   "summary_heading": "Patriots complete their 17-player squad",
   "key_points": [
@@ -17,7 +17,13 @@
     "The Patriots open against Trinbago Knight Riders at Arnos Vale Stadium on 8 August."
   ],
   "players_heading": "The five overseas additions",
-  "player_slugs": ["naseem-shah", "dasun-shanaka", "waqar-salamkheil", "wanindu-hasaranga", "nikhil-chaudhary"],
+  "player_slugs": [
+    "naseem-shah",
+    "dasun-shanaka",
+    "waqar-salamkheil",
+    "wanindu-hasaranga",
+    "nikhil-chaudhary"
+  ],
   "sections": [
     {
       "heading": "A bowling group built for different phases",
@@ -42,11 +48,20 @@
     }
   ],
   "related_links": [
-    {"href": "/team/st-kitts-nevis-patriots/", "label": "Patriots team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/warner-park/", "label": "Warner Park guide"}
+    {
+      "href": "/team/st-kitts-nevis-patriots/",
+      "label": "Patriots team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/warner-park/",
+      "label": "Warner Park guide"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-24",
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-07-29"
 }

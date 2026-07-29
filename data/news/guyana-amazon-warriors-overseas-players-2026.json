@@ -7,7 +7,7 @@
   "dek": "Guyana’s five-player overseas group covers opening power, spin, finishing and seam bowling around a strong West Indian roster.",
   "date_published": "2026-07-13",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/news/guyana-amazon-warriors-unveil-overseas-contingent-for-cpl-2026.webp",
+  "image": "/static/img/official/news/guyana-amazon-warriors-overseas-players-2026-featured.webp",
   "image_alt": "Guyana Amazon Warriors player bowling during a CPL match",
   "team_slug": "guyana-amazon-warriors",
   "summary_heading": "Warriors add five experienced T20 internationals",
@@ -17,7 +17,13 @@
     "Guyana begin against Jamaica Kingsmen at Sabina Park on 13 August."
   ],
   "players_heading": "Guyana’s five overseas players",
-  "player_slugs": ["imran-tahir", "glenn-phillips", "mohammad-nabi", "rahmanullah-gurbaz", "dwaine-pretorius"],
+  "player_slugs": [
+    "imran-tahir",
+    "glenn-phillips",
+    "mohammad-nabi",
+    "rahmanullah-gurbaz",
+    "dwaine-pretorius"
+  ],
   "sections": [
     {
       "heading": "A group with clear T20 roles",
@@ -42,9 +48,18 @@
     }
   ],
   "related_links": [
-    {"href": "/team/guyana-amazon-warriors/", "label": "Warriors team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/providence-stadium/", "label": "Providence Stadium guide"}
+    {
+      "href": "/team/guyana-amazon-warriors/",
+      "label": "Warriors team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/providence-stadium/",
+      "label": "Providence Stadium guide"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-13",

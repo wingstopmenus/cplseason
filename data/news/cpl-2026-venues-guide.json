@@ -7,7 +7,7 @@
   "dek": "The schedule moves through eight host territories, with new milestones in St Vincent, Jamaica and Barbados.",
   "date_published": "2026-07-17",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/venues/arnos-vale-stadium.webp",
+  "image": "/static/img/official/news/cpl-2026-venues-guide-featured.webp",
   "image_alt": "Arnos Vale Stadium cricket ground in St Vincent",
   "summary_heading": "Eight grounds shape the six-week season",
   "key_points": [
@@ -40,9 +40,18 @@
     }
   ],
   "related_links": [
-    {"href": "/venues/", "label": "All eight venue guides"},
-    {"href": "/schedule/", "label": "CPL 2026 schedule"},
-    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"}
+    {
+      "href": "/venues/",
+      "label": "All eight venue guides"
+    },
+    {
+      "href": "/schedule/",
+      "label": "CPL 2026 schedule"
+    },
+    {
+      "href": "/venue/kensington-oval/",
+      "label": "Kensington Oval guide"
+    }
   ],
   "source_name": "CPL 2026 fixture allocation",
   "source_date": "2026-04-28",

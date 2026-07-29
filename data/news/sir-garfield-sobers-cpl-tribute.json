@@ -7,7 +7,7 @@
   "dek": "The league says the 20 September final at Kensington Oval will include a tribute to the Barbados and West Indies legend.",
   "date_published": "2026-07-18",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/venues/kensington-oval.webp",
+  "image": "/static/img/official/news/sir-garfield-sobers-cpl-tribute-featured.webp",
   "image_alt": "Kensington Oval cricket ground in Bridgetown, Barbados",
   "summary_heading": "A Barbados final with added meaning",
   "key_points": [
@@ -40,9 +40,18 @@
     }
   ],
   "related_links": [
-    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"},
-    {"href": "/schedule/", "label": "CPL 2026 playoff schedule"},
-    {"href": "/team/barbados-royals/", "label": "Barbados Tridents guide"}
+    {
+      "href": "/venue/kensington-oval/",
+      "label": "Kensington Oval guide"
+    },
+    {
+      "href": "/schedule/",
+      "label": "CPL 2026 playoff schedule"
+    },
+    {
+      "href": "/team/barbados-royals/",
+      "label": "Barbados Tridents guide"
+    }
   ],
   "source_name": "Statement from the CPL chief executive",
   "source_date": "2026-07-18",

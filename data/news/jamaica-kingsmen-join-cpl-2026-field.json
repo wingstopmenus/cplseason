@@ -6,9 +6,9 @@
   "description": "Jamaica Kingsmen become the seventh CPL team for 2026, restoring a Jamaica-based franchise with four home matches scheduled at Sabina Park.",
   "dek": "The Kingston-based franchise brings Jamaica back into the league and expands the men’s competition to seven teams.",
   "date_published": "2026-03-31",
-  "date_modified": "2026-07-27",
-  "image": "/static/img/official/teams/jamaica-kingsmen.webp",
-  "image_alt": "Jamaica Kingsmen team crest",
+  "date_modified": "2026-07-29",
+  "image": "/static/img/official/news/jamaica-kingsmen-join-cpl-2026-field-featured.webp",
+  "image_alt": "Jamaica Kingsmen launch press conference with CPL and Jamaican officials",
   "team_slug": "jamaica-kingsmen",
   "summary_heading": "A new franchise and a return to Sabina Park",
   "key_points": [
@@ -41,11 +41,20 @@
     }
   ],
   "related_links": [
-    {"href": "/team/jamaica-kingsmen/", "label": "Jamaica Kingsmen guide"},
-    {"href": "/venue/sabina-park/", "label": "Sabina Park guide"},
-    {"href": "/squads/", "label": "CPL 2026 squads"}
+    {
+      "href": "/team/jamaica-kingsmen/",
+      "label": "Jamaica Kingsmen guide"
+    },
+    {
+      "href": "/venue/sabina-park/",
+      "label": "Sabina Park guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "CPL 2026 squads"
+    }
   ],
   "source_name": "Caribbean Premier League franchise announcement",
   "source_date": "2026-03-31",
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-07-29"
 }

@@ -7,7 +7,7 @@
   "dek": "The dedicated cricket channel gives Caribbean viewers a confirmed television route for the 2026 men’s and women’s tournaments.",
   "date_published": "2026-06-23",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/news/cpl-and-rush-sports-launch-rush-live-louder.webp",
+  "image": "/static/img/official/news/rush-live-louder-cpl-2026-caribbean-featured.webp",
   "image_alt": "Rush Live and Louder CPL cricket broadcast announcement",
   "summary_heading": "A confirmed Caribbean television home",
   "key_points": [
@@ -40,9 +40,18 @@
     }
   ],
   "related_links": [
-    {"href": "/watch-live/", "label": "Coverage by country"},
-    {"href": "/schedule/", "label": "CPL 2026 fixtures"},
-    {"href": "/news/", "label": "Latest CPL news"}
+    {
+      "href": "/watch-live/",
+      "label": "Coverage by country"
+    },
+    {
+      "href": "/schedule/",
+      "label": "CPL 2026 fixtures"
+    },
+    {
+      "href": "/news/",
+      "label": "Latest CPL news"
+    }
   ],
   "source_name": "CPL and Rush Sports announcement",
   "source_date": "2026-06-23",

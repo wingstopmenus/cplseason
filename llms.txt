@@ -3,7 +3,7 @@
 > Complete canonical URL directory for CPL Season, an independent
 > Caribbean Premier League coverage site focused on the 2026 season.
 
-This file lists all 198 public URLs from https://cplseason.com/sitemap.xml.
+This file lists all 210 public URLs from https://cplseason.com/sitemap.xml.
 For changing information such as fixtures, match times, and standings, use the
 latest content on the linked page.
 
@@ -230,6 +230,7 @@ latest content on the linked page.
 - [Charles Wilkin CPL Tribute](https://cplseason.com/news/charles-wilkin-cpl-tribute/)
 - [CPL 2026 Schedule Window Confirmed](https://cplseason.com/news/cpl-2026-schedule-window-confirmed/)
 - [CPL 2026 Venues Guide](https://cplseason.com/news/cpl-2026-venues-guide/)
+- [CPL Phi Edge Ai Prediction Partnership 2026](https://cplseason.com/news/cpl-phi-edge-ai-prediction-partnership-2026/)
 - [Guyana Amazon Warriors Overseas Players 2026](https://cplseason.com/news/guyana-amazon-warriors-overseas-players-2026/)
 - [News](https://cplseason.com/news/)
 - [Jamaica Kingsmen Join CPL 2026 Field](https://cplseason.com/news/jamaica-kingsmen-join-cpl-2026-field/)
@@ -239,10 +240,36 @@ latest content on the linked page.
 - [Sir Garfield Sobers CPL Tribute](https://cplseason.com/news/sir-garfield-sobers-cpl-tribute/)
 - [St Kitts Nevis Patriots Overseas Players 2026](https://cplseason.com/news/st-kitts-nevis-patriots-overseas-players-2026/)
 - [Trinbago Knight Riders Overseas Players 2026](https://cplseason.com/news/trinbago-knight-riders-overseas-players-2026/)
+- [Trinbago Knight Riders Queens Park Oval Tickets 2026](https://cplseason.com/news/trinbago-knight-riders-queens-park-oval-tickets-2026/)
 
 ## Watch Live
 
 - [Watch Live](https://cplseason.com/watch-live/)
+
+## Authors
+
+- [Arshad Sial](https://cplseason.com/authors/arshad-sial/)
+- [Asad Sial](https://cplseason.com/authors/asad-sial/)
+- [Authors](https://cplseason.com/authors/)
+- [Saleem Sial](https://cplseason.com/authors/saleem-sial/)
+- [Shakir Ali](https://cplseason.com/authors/shakir-ali/)
+- [Waseem Sial](https://cplseason.com/authors/waseem-sial/)
+
+## Contact Us
+
+- [Contact Us](https://cplseason.com/contact-us/)
+
+## Google77Bcdd6Befcacc75.Html
+
+- [Google77bcdd6befcacc75.html](https://cplseason.com/google77bcdd6befcacc75.html)
+
+## Privacy Policy
+
+- [Privacy Policy](https://cplseason.com/privacy-policy/)
+
+## Terms Of Service
+
+- [Terms Of Service](https://cplseason.com/terms-of-service/)
 
 ## Discovery
 

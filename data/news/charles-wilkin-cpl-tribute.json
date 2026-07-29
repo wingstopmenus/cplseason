@@ -7,7 +7,7 @@
   "dek": "Charles L. A. Wilkin, a lawyer, former first-class cricketer and lifelong administrator in St Kitts and Nevis, died on 25 July 2026.",
   "date_published": "2026-07-26",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/venues/warner-park.webp",
+  "image": "/static/img/official/news/charles-wilkin-cpl-tribute-featured.webp",
   "image_alt": "Warner Park cricket ground in Basseterre, St Kitts",
   "summary_heading": "A formative figure in the league’s St Kitts story",
   "key_points": [
@@ -40,9 +40,18 @@
     }
   ],
   "related_links": [
-    {"href": "/venue/warner-park/", "label": "Warner Park guide"},
-    {"href": "/team/st-kitts-nevis-patriots/", "label": "Patriots team guide"},
-    {"href": "/news/", "label": "Latest CPL news"}
+    {
+      "href": "/venue/warner-park/",
+      "label": "Warner Park guide"
+    },
+    {
+      "href": "/team/st-kitts-nevis-patriots/",
+      "label": "Patriots team guide"
+    },
+    {
+      "href": "/news/",
+      "label": "Latest CPL news"
+    }
   ],
   "source_name": "Caribbean Premier League statement",
   "source_date": "2026-07-26",

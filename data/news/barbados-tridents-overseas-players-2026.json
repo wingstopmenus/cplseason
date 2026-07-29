@@ -7,7 +7,7 @@
   "dek": "The returning Tridents identity comes with a balanced overseas group built around Quinton de Kock’s opening batting and three distinct spin options.",
   "date_published": "2026-07-09",
   "date_modified": "2026-07-27",
-  "image": "/static/img/official/news/barbados-tridents-unveil-overseas-contingent-for-cpl-2026.webp",
+  "image": "/static/img/official/news/barbados-tridents-overseas-players-2026-featured.webp",
   "image_alt": "Barbados batter playing a shot during a CPL match",
   "team_slug": "barbados-royals",
   "summary_heading": "Barbados complete a balanced 17-player group",
@@ -17,7 +17,13 @@
     "Kensington Oval hosts the team’s league block and the CPL 2026 playoffs."
   ],
   "players_heading": "The five overseas additions",
-  "player_slugs": ["quinton-de-kock", "chris-green", "mujeeb-ur-rahman", "george-linde", "daniel-sams"],
+  "player_slugs": [
+    "quinton-de-kock",
+    "chris-green",
+    "mujeeb-ur-rahman",
+    "george-linde",
+    "daniel-sams"
+  ],
   "sections": [
     {
       "heading": "A new season under the Tridents name",
@@ -42,9 +48,18 @@
     }
   ],
   "related_links": [
-    {"href": "/team/barbados-royals/", "label": "Tridents team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"}
+    {
+      "href": "/team/barbados-royals/",
+      "label": "Tridents team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/kensington-oval/",
+      "label": "Kensington Oval guide"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-09",

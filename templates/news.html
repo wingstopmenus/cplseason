@@ -53,7 +53,7 @@
         </div>
       </div>
       <article class="news-desk-lead">
-        <a href="/news/{{ articles[0].slug }}/"><img src="{{ articles[0].image }}" alt="{{ articles[0].image_alt }}" width="1200" height="675"></a>
+        <a href="/news/{{ articles[0].slug }}/"><img src="{{ articles[0].image }}" alt="{{ articles[0].image_alt }}" width="1280" height="720"></a>
         <div>
           <span>{{ articles[0].category }}</span>
           <time datetime="{{ articles[0].date_published }}">{{ articles[0].date_label }}</time>
@@ -73,7 +73,7 @@
         {% for article in articles[1:] %}
         <article>
           <a class="news-desk-card-image" href="/news/{{ article.slug }}/">
-            <img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1200" height="675" loading="lazy">
+            <img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1280" height="720" loading="lazy">
           </a>
           <div>
             <p><span>{{ article.category }}</span><time datetime="{{ article.date_published }}">{{ article.date_label }}</time></p>

@@ -137,7 +137,9 @@ def build_authors() -> None:
     articles = []
     for path in article_paths:
         article = load_json(path)
-        article["author_slug"] = NEWS_AUTHOR_BY_SLUG[article["slug"]]
+        article["author_slug"] = article.get(
+            "author_slug", NEWS_AUTHOR_BY_SLUG.get(article["slug"], "asad-sial")
+        )
         article["date_label"] = human_date(article["date_published"])
         articles.append(article)
     articles.sort(
@@ -335,7 +337,9 @@ def build_news() -> None:
     articles = []
     for path in article_paths:
         article = load_json(path)
-        article["author_slug"] = NEWS_AUTHOR_BY_SLUG[article["slug"]]
+        article["author_slug"] = article.get(
+            "author_slug", NEWS_AUTHOR_BY_SLUG.get(article["slug"], "asad-sial")
+        )
         article["author"] = authors[article["author_slug"]]
         article["canonical"] = f"https://cplseason.com/news/{article['slug']}/"
         article["date_label"] = human_date(article["date_published"])

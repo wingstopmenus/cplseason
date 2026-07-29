@@ -6,9 +6,9 @@
   "description": "Antigua & Barbuda Falcons confirm Moeen Ali, Kusal Perera, Shadab Khan, Sufiyan Muqeem, Milind Kumar and Tajinder Singh for CPL 2026.",
   "dek": "Six overseas names will move through the Falcons squad on different availability windows, with Moeen Ali and Kusal Perera available throughout.",
   "date_published": "2026-07-21",
-  "date_modified": "2026-07-27",
-  "image": "/static/img/official/teams/antigua-barbuda-falcons.webp",
-  "image_alt": "Antigua and Barbuda Falcons team crest",
+  "date_modified": "2026-07-29",
+  "image": "/static/img/official/news/antigua-barbuda-falcons-overseas-players-2026-featured.webp",
+  "image_alt": "Antigua and Barbuda Falcons cricketer celebrating during a CPL match",
   "team_slug": "antigua-barbuda-falcons",
   "summary_heading": "Falcons plan around staggered availability",
   "key_points": [
@@ -17,7 +17,14 @@
     "Shadab Khan and Sufiyan Muqeem are each scheduled for seven matches."
   ],
   "players_heading": "The six announced overseas players",
-  "player_slugs": ["moeen-ali", "kusal-perera", "milind-kumar", "tajinder-singh", "shadab-khan", "sufiyan-muqeem"],
+  "player_slugs": [
+    "moeen-ali",
+    "kusal-perera",
+    "milind-kumar",
+    "tajinder-singh",
+    "shadab-khan",
+    "sufiyan-muqeem"
+  ],
   "sections": [
     {
       "heading": "Why the Falcons have announced six names",
@@ -42,11 +49,20 @@
     }
   ],
   "related_links": [
-    {"href": "/team/antigua-barbuda-falcons/", "label": "Falcons team guide"},
-    {"href": "/squads/", "label": "All CPL 2026 squads"},
-    {"href": "/venue/sir-vivian-richards-stadium/", "label": "Sir Vivian Richards Stadium"}
+    {
+      "href": "/team/antigua-barbuda-falcons/",
+      "label": "Falcons team guide"
+    },
+    {
+      "href": "/squads/",
+      "label": "All CPL 2026 squads"
+    },
+    {
+      "href": "/venue/sir-vivian-richards-stadium/",
+      "label": "Sir Vivian Richards Stadium"
+    }
   ],
   "source_name": "Caribbean Premier League newsroom",
   "source_date": "2026-07-21",
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-07-29"
 }
