@@ -26,6 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260729a">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -70,6 +71,7 @@
       <div class="broadcast-signal-board" aria-label="Confirmed viewing routes">
         <div class="broadcast-signal-top"><span><i></i> Confirmed coverage</span><small>2 confirmed services</small></div>
         <article>
+          <img class="broadcast-channel-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">
           <span class="broadcast-route-number">01</span>
           <small>Caribbean</small>
           <h2>{{ guide.status[0].platform }}</h2>
@@ -77,6 +79,7 @@
           <span class="broadcast-reference-note">Coverage begins 7 August</span>
         </article>
         <article>
+          <img class="broadcast-channel-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">
           <span class="broadcast-route-number">02</span>
           <small>United States &amp; Canada</small>
           <h2>{{ guide.status[1].platform }}</h2>
@@ -110,7 +113,7 @@
       </aside>
     </section>
 
-    <section class="broadcast-caribbean" aria-labelledby="broadcast-caribbean-title">
+    <section id="caribbean-providers" class="broadcast-caribbean" aria-labelledby="broadcast-caribbean-title">
       <header class="broadcast-section-header">
         <div>
           <p class="broadcast-index">02 / Caribbean providers</p>
@@ -144,6 +147,7 @@
             <p>{{ item.region }}</p>
             <small>{{ item.status }}</small>
           </header>
+          {% if loop.index == 1 %}<img class="broadcast-region-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">{% elif loop.index in [2, 3] %}<img class="broadcast-region-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">{% endif %}
           <h3>{{ item.platform }}</h3>
           <p>{{ item.access }}</p>
           <div>{{ item.note }}</div>

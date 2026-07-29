@@ -1,0 +1,67 @@
+.broadcast-page { overflow-x: clip; }
+.broadcast-guide {
+  width: min(100%, 1480px);
+  overflow: clip;
+  padding-inline: clamp(14px, 2vw, 28px);
+}
+.broadcast-hero {
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+  gap: clamp(28px, 4vw, 64px);
+  width: 100%;
+  min-width: 0;
+}
+.broadcast-hero-copy, .broadcast-signal-board { min-width: 0; }
+.broadcast-signal-board { overflow: hidden; }
+.broadcast-signal-board article {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  align-content: center;
+  gap: .45rem 1rem;
+  min-width: 0;
+  padding: clamp(24px, 3vw, 40px);
+}
+.broadcast-channel-logo {
+  grid-column: 1 / -1;
+  width: min(100%, 330px);
+  max-height: 64px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.26));
+}
+.broadcast-signal-board article:nth-of-type(3) .broadcast-channel-logo { width: min(78%, 280px); }
+.broadcast-signal-board article > small,
+.broadcast-signal-board article > h2,
+.broadcast-signal-board article > p,
+.broadcast-signal-board article > .broadcast-reference-note { grid-column: 1 / 2; }
+.broadcast-signal-board .broadcast-route-number { grid-column: 2; grid-row: 1 / span 4; align-self: start; }
+.broadcast-caribbean { scroll-margin-top: 100px; }
+.broadcast-provider-grid, .broadcast-region-grid { min-width: 0; }
+.broadcast-provider-grid article, .broadcast-region-grid article { min-width: 0; }
+.broadcast-region-logo {
+  width: min(100%, 220px);
+  max-height: 44px;
+  margin: 0 0 1rem;
+  object-fit: contain;
+  object-position: left center;
+}
+.broadcast-regions::before, .broadcast-faq::before { max-width: 100vw; }
+
+@media (max-width: 980px) {
+  .broadcast-hero { grid-template-columns: minmax(0,1fr); }
+  .broadcast-signal-board { min-height: 0; }
+}
+@media (max-width: 620px) {
+  .broadcast-guide { padding-inline: 12px; }
+  .broadcast-hero { border-radius: 20px; }
+  .broadcast-hero-copy { padding: 34px 24px 28px; }
+  .broadcast-hero-copy h1 { font-size: clamp(3rem, 14vw, 4.25rem); }
+  .broadcast-kicker { align-items: flex-start; flex-direction: column; }
+  .broadcast-actions { display: grid; grid-template-columns: minmax(0,1fr); }
+  .broadcast-actions .button { width: 100%; }
+  .broadcast-check { align-items: flex-start; flex-direction: column; }
+  .broadcast-signal-board article { grid-template-columns: minmax(0,1fr); }
+  .broadcast-signal-board .broadcast-route-number { grid-column: 1; grid-row: auto; justify-self: end; position: absolute; top: 22px; right: 22px; }
+  .broadcast-provider-grid, .broadcast-region-grid { grid-template-columns: minmax(0,1fr); }
+}
