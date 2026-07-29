@@ -9921,3 +9921,28 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
     font-size: 20px;
   }
 }
+
+/* Ticket guide: keep the pricing table inside the article column on narrow screens. */
+.news-story-layout,
+.news-story-body,
+.news-story-body > section {
+  min-width: 0;
+}
+.news-story-body .table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.news-story-body .table-wrap table { min-width: 620px; }
+@media (max-width: 700px) {
+  .news-story-body .table-wrap {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .news-story-body .table-wrap th,
+  .news-story-body .table-wrap td {
+    padding: 11px 12px;
+    white-space: nowrap;
+  }
+}
