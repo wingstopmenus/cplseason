@@ -3591,6 +3591,10 @@
   .team-dossier {
     width: min(100% - 24px, 1240px);
   }
+  .team-profile-faq::before {
+    right: 0;
+    width: min(420px, 100%);
+  }
   .team-profile-stage-copy {
     padding: 42px 26px;
   }
