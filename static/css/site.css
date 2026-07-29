@@ -4867,6 +4867,56 @@
 }
 
 /* Watch live broadcast desk */
+.broadcast-caribbean {
+  margin-top: clamp(64px, 8vw, 120px);
+}
+.broadcast-provider-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 30px;
+}
+.broadcast-provider-grid article {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(184, 255, 31, .18);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(28, 37, 78, .9), rgba(8, 24, 36, .92));
+}
+.broadcast-provider-grid article > span {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  aspect-ratio: 1;
+  color: #06101c;
+  border-radius: 9px;
+  background: #b8ff1f;
+  font-size: 10px;
+  font-weight: 950;
+}
+.broadcast-provider-grid h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 15px;
+}
+.broadcast-provider-grid p {
+  margin: 4px 0 0;
+  color: #b8ff1f;
+  font-size: 12px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 900px) {
+  .broadcast-provider-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .broadcast-provider-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
 .broadcast-page {
   --broadcast-amber: #ffcc00;
   --broadcast-red: #ff5a47;

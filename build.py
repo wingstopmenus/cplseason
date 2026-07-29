@@ -323,6 +323,57 @@ def build_homepage_news(articles: list[dict]) -> None:
     )
 
 
+def build_homepage_watch_live(
+    guide: dict, opening_fixtures: list[dict]
+) -> None:
+    """Render the homepage viewing guide from the main broadcast data."""
+    confirmed_routes = [
+        route for route in guide["status"] if route["status"] == "Confirmed"
+    ]
+    if not confirmed_routes or not opening_fixtures:
+        raise ValueError("Homepage watch module requires coverage and a fixture")
+
+    rendered = (
+        template_environment()
+        .get_template("partials/home-watch-live.html")
+        .render(
+            guide=guide,
+            confirmed_routes=confirmed_routes,
+            opening_fixture=opening_fixtures[0],
+        )
+        .strip()
+    )
+    homepage = ROOT / "index.html"
+    source = homepage.read_text(encoding="utf-8")
+    stylesheet = (
+        '<link rel="stylesheet" '
+        'href="/static/css/home-watch-live.css?v=20260729">'
+    )
+    if stylesheet not in source:
+        source = source.replace("</head>", f"  {stylesheet}\n</head>", 1)
+
+    marker_pattern = re.compile(
+        r"<!-- AUTO:HOME_WATCH:START -->.*?<!-- AUTO:HOME_WATCH:END -->",
+        re.DOTALL,
+    )
+    if marker_pattern.search(source):
+        updated, replacements = marker_pattern.subn(rendered, source, count=1)
+    else:
+        news_end = "<!-- AUTO:HOME_NEWS:END -->"
+        if news_end not in source:
+            raise ValueError("Homepage news marker is missing from index.html")
+        updated = source.replace(news_end, f"{news_end}\n\n{rendered}", 1)
+        replacements = 1
+
+    if replacements != 1:
+        raise ValueError("Expected one homepage watch module in index.html")
+    homepage.write_text(updated, encoding="utf-8")
+    print(
+        "Updated homepage watch module with "
+        + ", ".join(route["platform"] for route in confirmed_routes)
+    )
+
+
 def build_news() -> None:
     article_paths = sorted((ROOT / "data" / "news").glob("*.json"))
     players = {
@@ -1675,6 +1726,7 @@ def build_watch_live() -> None:
     output = ROOT / "watch-live" / "index.html"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(rendered + "\n", encoding="utf-8")
+    build_homepage_watch_live(guide, opening_fixtures)
     print(
         f"Rendered {output.relative_to(ROOT)} with "
         f"{len(guide['status'])} regional statuses"

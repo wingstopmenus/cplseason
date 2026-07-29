@@ -74,6 +74,25 @@
       "note": "CPL has not announced a free worldwide stream for the 2026 season."
     }
   ],
+  "caribbean_providers": [
+    {"territory": "Anguilla", "providers": "Digicel, Flow"},
+    {"territory": "Antigua", "providers": "Digicel, Flow"},
+    {"territory": "Bahamas", "providers": "BTC"},
+    {"territory": "Barbados", "providers": "Digicel, Flow"},
+    {"territory": "Bermuda", "providers": "Digicel"},
+    {"territory": "British Virgin Islands", "providers": "Digicel, Flow"},
+    {"territory": "Cayman Islands", "providers": "Digicel, Flow"},
+    {"territory": "Curaçao", "providers": "Digicel, Flow"},
+    {"territory": "Dominica", "providers": "Digicel, Flow"},
+    {"territory": "Grenada", "providers": "Digicel, Flow"},
+    {"territory": "Jamaica", "providers": "Digicel, Flow"},
+    {"territory": "Montserrat", "providers": "Digicel"},
+    {"territory": "St. Kitts & Nevis", "providers": "Digicel, Flow, The Cable"},
+    {"territory": "St. Lucia", "providers": "Flow"},
+    {"territory": "St. Vincent & the Grenadines", "providers": "Digicel, Flow"},
+    {"territory": "Trinidad & Tobago", "providers": "Digicel, Flow, Amplia & Airlink"},
+    {"territory": "Turks & Caicos", "providers": "Digicel, Flow"}
+  ],
   "steps": [
     {
       "title": "Start with your territory",

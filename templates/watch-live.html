@@ -110,10 +110,28 @@
       </aside>
     </section>
 
+    <section class="broadcast-caribbean" aria-labelledby="broadcast-caribbean-title">
+      <header class="broadcast-section-header">
+        <div>
+          <p class="broadcast-index">02 / Caribbean providers</p>
+          <h2 id="broadcast-caribbean-title">Where to find Rush Live &amp; Louder</h2>
+        </div>
+        <p>Rush lists these television providers across 17 Caribbean territories. Channel numbers and packages can differ, so confirm access with your local provider.</p>
+      </header>
+      <div class="broadcast-provider-grid">
+        {% for item in guide.caribbean_providers %}
+        <article>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <div><h3>{{ item.territory }}</h3><p>{{ item.providers }}</p></div>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
     <section id="country-guide" class="broadcast-regions" aria-labelledby="broadcast-regions-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">02 / Country guide</p>
+          <p class="broadcast-index">03 / Country guide</p>
           <h2 id="broadcast-regions-title">CPL 2026 TV channels by country</h2>
         </div>
         <p>Rush covers the Caribbean, while Willow covers the United States and Canada. Broadcasters for other regions will be added as they are announced.</p>
@@ -137,7 +155,7 @@
 
     <section class="broadcast-steps" aria-labelledby="broadcast-steps-title">
       <header>
-        <p class="broadcast-index">03 / Before you subscribe</p>
+        <p class="broadcast-index">04 / Before you subscribe</p>
         <h2 id="broadcast-steps-title">Check your access before subscribing</h2>
       </header>
       <ol>
@@ -153,7 +171,7 @@
 
     <section class="broadcast-devices" aria-labelledby="broadcast-devices-title">
       <div>
-        <p class="broadcast-index">04 / Devices</p>
+        <p class="broadcast-index">05 / Devices</p>
         <h2 id="broadcast-devices-title">Devices and streaming options</h2>
         <p>Willow lists browser, phone, tablet and connected-TV access in North America. Rush Live &amp; Louder is a linear channel, so Caribbean access depends on your local television provider and package.</p>
         <span class="broadcast-reference-note">Device access varies by region, provider and subscription.</span>
@@ -168,7 +186,7 @@
     <section class="broadcast-times" aria-labelledby="broadcast-times-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">05 / Match times</p>
+          <p class="broadcast-index">06 / Match times</p>
           <h2 id="broadcast-times-title">CPL 2026 match times by country</h2>
         </div>
         <p>Official times use the host ground's local clock. Most venues are UTC-4; Jamaica is UTC-5, so Sabina Park matches begin one hour later for international viewers.</p>
@@ -189,7 +207,7 @@
     <section id="opening-matches" class="broadcast-openers" aria-labelledby="broadcast-openers-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">06 / Fixtures</p>
+          <p class="broadcast-index">07 / Fixtures</p>
           <h2 id="broadcast-openers-title">CPL 2026 fixtures</h2>
         </div>
         <a href="/schedule/">Open all 39 fixtures <span>→</span></a>
@@ -215,7 +233,7 @@
 
     <section class="broadcast-replays" aria-labelledby="broadcast-replays-title">
       <div>
-        <p class="broadcast-index">07 / Replays</p>
+        <p class="broadcast-index">08 / Replays</p>
         <h2 id="broadcast-replays-title">Replays, highlights and live scores</h2>
       </div>
       <div>
@@ -226,7 +244,7 @@
 
     <section class="broadcast-faq" aria-labelledby="broadcast-faq-title">
       <header>
-        <p class="broadcast-index">08 / FAQs</p>
+        <p class="broadcast-index">09 / FAQs</p>
         <h2 id="broadcast-faq-title">CPL 2026 streaming FAQs</h2>
         <p class="broadcast-faq-intro">Clear answers about confirmed CPL 2026 viewing options, regional availability, devices, local start times and replays.</p>
       </header>

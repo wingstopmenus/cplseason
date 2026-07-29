@@ -1,0 +1,70 @@
+<!-- AUTO:HOME_WATCH:START -->
+<section class="home-watch" aria-labelledby="home-watch-title">
+  <div class="home-watch__glow home-watch__glow--one" aria-hidden="true"></div>
+  <div class="home-watch__glow home-watch__glow--two" aria-hidden="true"></div>
+  <div class="home-watch__inner">
+    <header class="home-watch__heading">
+      <div>
+        <p class="home-watch__eyebrow"><span></span> TV &amp; streaming guide</p>
+        <h2 id="home-watch-title">Watch CPL 2026 Live</h2>
+        <p>Find the confirmed channel or streaming service for your country, then check the exact match listing before first ball.</p>
+      </div>
+      <a class="home-watch__all-link" href="/watch-live/">Check coverage by country <span aria-hidden="true">→</span></a>
+    </header>
+
+    <div class="home-watch__grid">
+      <article class="home-watch__feature">
+        <div class="home-watch__feature-top">
+          <span class="home-watch__live-pill"><i></i> Coverage confirmed</span>
+          <span class="home-watch__season">CPL 2026</span>
+        </div>
+        <div class="home-watch__screen" aria-hidden="true">
+          <div class="home-watch__screen-lines"></div>
+          <div class="home-watch__play">
+            <span>▶</span>
+          </div>
+          <div class="home-watch__screen-copy">
+            <small>Opening night</small>
+            <strong>{{ opening_fixture.label }}</strong>
+          </div>
+        </div>
+        <div class="home-watch__fixture">
+          <div>
+            <p>First match</p>
+            <h3>{{ opening_fixture.match }}</h3>
+          </div>
+          <div class="home-watch__fixture-meta">
+            <span>{{ opening_fixture.time }}</span>
+            <span>{{ opening_fixture.venue.name }}</span>
+          </div>
+        </div>
+        <a class="home-watch__feature-link" href="{{ opening_fixture.match_url }}">Open match centre <span aria-hidden="true">→</span></a>
+      </article>
+
+      <div class="home-watch__routes" aria-label="Confirmed CPL 2026 viewing services">
+        {% for route in confirmed_routes %}
+        <article class="home-watch__route{% if loop.first %} home-watch__route--primary{% endif %}">
+          <div class="home-watch__route-head">
+            <span class="home-watch__route-icon" aria-hidden="true">{{ route.region[:2] | upper }}</span>
+            <span class="home-watch__confirmed">Confirmed</span>
+          </div>
+          <p>{{ route.region }}</p>
+          <h3>{{ route.platform }}</h3>
+          <span class="home-watch__access">{{ route.access }}</span>
+          {% if loop.first %}<span class="home-watch__territories">{{ guide.caribbean_providers | length }} Caribbean territories listed</span>{% endif %}
+        </article>
+        {% endfor %}
+        <a class="home-watch__pending" href="/watch-live/#coverage">
+          <span><strong>More countries</strong><small>Track the latest broadcaster announcements</small></span>
+          <b aria-hidden="true">→</b>
+        </a>
+      </div>
+    </div>
+
+    <footer class="home-watch__footer">
+      <p><span>39 matches</span><span>7 Aug — 20 Sep</span><span>7 teams</span></p>
+      <a href="/schedule/">View CPL 2026 fixtures <span aria-hidden="true">→</span></a>
+    </footer>
+  </div>
+</section>
+<!-- AUTO:HOME_WATCH:END -->
