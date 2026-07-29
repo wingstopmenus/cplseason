@@ -286,6 +286,41 @@ def build_authors() -> None:
     print(f"Rendered authors/index.html and {len(authors)} author profile pages")
 
 
+def build_homepage_news(articles: list[dict]) -> None:
+    """Replace the homepage news module with the three newest news records."""
+    if len(articles) < 3:
+        raise ValueError("Homepage news module requires at least three articles")
+
+    rendered = (
+        template_environment()
+        .get_template("partials/home-news.html")
+        .render(articles=articles[:3])
+        .strip()
+    )
+    homepage = ROOT / "index.html"
+    source = homepage.read_text(encoding="utf-8")
+    stylesheet = '<link rel="stylesheet" href="/static/css/home-news.css?v=20260729">'
+    if stylesheet not in source:
+        source = source.replace("</head>", f"  {stylesheet}\n</head>", 1)
+    marker_pattern = re.compile(
+        r"<!-- AUTO:HOME_NEWS:START -->.*?<!-- AUTO:HOME_NEWS:END -->",
+        re.DOTALL,
+    )
+    legacy_pattern = re.compile(
+        r'<section class="band home-news-band">.*?</section>',
+        re.DOTALL,
+    )
+    pattern = marker_pattern if marker_pattern.search(source) else legacy_pattern
+    updated, replacements = pattern.subn(rendered, source, count=1)
+    if replacements != 1:
+        raise ValueError("Expected one homepage news module in index.html")
+    homepage.write_text(updated, encoding="utf-8")
+    print(
+        "Updated homepage news module with "
+        + ", ".join(article["slug"] for article in articles[:3])
+    )
+
+
 def build_news() -> None:
     article_paths = sorted((ROOT / "data" / "news").glob("*.json"))
     players = {
@@ -383,6 +418,7 @@ def build_news() -> None:
     output = ROOT / "news" / "index.html"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(rendered + "\n", encoding="utf-8")
+    build_homepage_news(articles)
 
     template = template_environment().get_template("news-article.html")
     for article in articles:

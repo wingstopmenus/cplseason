@@ -1,0 +1,33 @@
+<!-- AUTO:HOME_NEWS:START -->
+<section class="band home-news-band home-news-auto">
+  <div class="section-heading home-news-heading">
+    <div>
+      <span class="badge">From the newsroom</span>
+      <h2>CPL 2026 News</h2>
+      <p>New squad decisions, tournament developments and stories that matter across Caribbean cricket.</p>
+    </div>
+    <a href="/news/">View all CPL news <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="home-news-auto-grid">
+{% for article in articles %}
+    <article class="home-news-auto-card{% if loop.first %} is-latest{% endif %}">
+      <a class="home-news-auto-media" href="/news/{{ article.slug }}/">
+        <img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1200" height="675" loading="lazy" decoding="async">
+{% if loop.first %}
+        <span>Latest</span>
+{% endif %}
+      </a>
+      <div class="home-news-auto-copy">
+        <p class="home-news-auto-meta">
+          <span>{{ article.category }}</span>
+          <time datetime="{{ article.date_published }}">{{ article.date_label }}</time>
+        </p>
+        <h3><a href="/news/{{ article.slug }}/">{{ article.title }}</a></h3>
+        <p>{{ article.dek }}</p>
+        <a class="home-news-auto-link" href="/news/{{ article.slug }}/">Read story <span aria-hidden="true">→</span></a>
+      </div>
+    </article>
+{% endfor %}
+  </div>
+</section>
+<!-- AUTO:HOME_NEWS:END -->
