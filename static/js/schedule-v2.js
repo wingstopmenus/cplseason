@@ -16,8 +16,19 @@
   const matchCentre = document.querySelector(".schedule-match-centre");
   const viewSidebar = document.querySelector("#schedule-view-sidebar");
   const resultsTitle = document.querySelector(".schedule-match-centre .section-heading h2");
+  const faqItems = [...document.querySelectorAll(".schedule-faq-list details")];
 
   if (!cards.length) return;
+
+  faqItems.forEach((item, index) => {
+    item.open = index === 0;
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      faqItems.forEach((other) => {
+        if (other !== item) other.open = false;
+      });
+    });
+  });
 
   const cardMonth = (card) =>
     card.querySelector("time")?.getAttribute("datetime")?.slice(5, 7) || "";
