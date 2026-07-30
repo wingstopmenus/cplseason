@@ -1601,6 +1601,232 @@ body .breadcrumbs span[aria-current="page"] {
   stroke-width: 1.9;
 }
 
+.schedule-playoff-route {
+  width: 100%;
+  padding: 66px max(24px, calc((100vw - 1320px) / 2));
+  background:
+    radial-gradient(circle at 90% 10%, rgba(116, 52, 191, .22), transparent 28rem),
+    #091126;
+  color: #ffffff;
+}
+
+.schedule-playoff-route-inner {
+  width: min(1320px, 100%);
+  margin: 0 auto;
+}
+
+.schedule-playoff-route-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: end;
+}
+
+.schedule-playoff-route .eyebrow {
+  margin-bottom: 12px;
+  color: #b894e1;
+}
+
+.schedule-playoff-route h2 {
+  max-width: 760px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(38px, 4.6vw, 62px);
+  line-height: .98;
+  letter-spacing: -.035em;
+}
+
+.schedule-playoff-route-heading p:last-child {
+  max-width: 720px;
+  margin: 17px 0 0;
+  color: #b9c4d9;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.schedule-playoff-route-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 7px;
+  color: #ffcb05;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-playoff-route-heading > a span {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.schedule-playoff-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 48px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.schedule-playoff-steps::before {
+  position: absolute;
+  top: 25px;
+  right: 9%;
+  left: 9%;
+  height: 2px;
+  background: linear-gradient(90deg, #6e43a9, #8b62bd 78%, #ffcb05);
+  content: "";
+}
+
+.schedule-playoff-steps li {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 13px;
+  text-align: center;
+}
+
+.schedule-playoff-steps b {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #65708b;
+  border-radius: 50%;
+  background: #101a35;
+  color: #dbe2ef;
+  font-size: 16px;
+}
+
+.schedule-playoff-steps strong {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-playoff-steps span {
+  color: #9facca;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.schedule-playoff-steps .is-final b {
+  border-color: #ffcb05;
+  background: #fffdf1;
+  color: #6b5600;
+  box-shadow: 0 0 0 7px rgba(255, 203, 5, .12);
+}
+
+@media (max-width: 780px) {
+  .schedule-finder {
+    grid-template-columns: minmax(180px, .72fr) minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .schedule-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-filter-reset {
+    grid-column: auto;
+  }
+
+  .schedule-explore nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .schedule-explore nav a {
+    min-height: 132px;
+    padding: 18px 16px;
+    border-bottom: 1px solid #dce1eb;
+  }
+
+  .schedule-explore nav a:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .schedule-explore nav strong {
+    font-size: 13px;
+  }
+
+  .schedule-explore nav span {
+    font-size: 16px;
+  }
+
+  .schedule-playoff-route {
+    padding: 52px 18px;
+  }
+
+  .schedule-playoff-route-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .schedule-playoff-route h2 {
+    font-size: clamp(36px, 9vw, 50px);
+  }
+
+  .schedule-playoff-route-heading > a {
+    justify-self: start;
+  }
+
+  .schedule-playoff-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 34px;
+  }
+
+  .schedule-playoff-steps::before {
+    top: 26px;
+    bottom: 26px;
+    left: 25px;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(#6e43a9, #8b62bd 78%, #ffcb05);
+  }
+
+  .schedule-playoff-steps li {
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    justify-items: start;
+    gap: 14px;
+    align-items: center;
+    min-height: 82px;
+    text-align: left;
+  }
+
+  .schedule-playoff-steps strong,
+  .schedule-playoff-steps span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 540px) {
+  .schedule-finder {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-explore {
+    padding-inline: 14px;
+  }
+
+  .schedule-explore nav a {
+    padding: 16px 13px;
+  }
+
+  .schedule-playoff-steps li {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+
+  .schedule-playoff-steps span {
+    grid-column: 2;
+    margin-top: -22px;
+  }
+}
+
 @media (max-width: 780px) {
   .schedule-next-match {
     grid-template-columns: 1fr;
