@@ -280,11 +280,17 @@
   border: 2px solid #ffcb05;
   background: #10162d;
   color: #fff;
+  font-size: 0;
   box-shadow: 0 7px 16px rgba(15, 21, 44, .15);
 }
 
 .schedule-match-card .schedule-versus::after {
-  display: none;
+  display: block;
+  color: #fff;
+  content: "VS";
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .04em;
 }
 
 .schedule-match-centre-cta {
