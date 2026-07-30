@@ -13,6 +13,13 @@
   const feedSignal = root.querySelector("[data-feed-signal]");
   const feedClock = root.querySelector("[data-feed-clock]");
   const feedMessage = root.querySelector("[data-feed-message]");
+  const heroContext = root.querySelector("[data-hero-context]");
+  const heroMatchLabel = root.querySelector("[data-hero-match-label]");
+  const heroMatchDate = root.querySelector("[data-hero-match-date]");
+  const heroMatchVenue = root.querySelector("[data-hero-match-venue]");
+  const heroMatchLink = root.querySelector("[data-hero-match-link]");
+  const heroCountdownValue = root.querySelector("[data-hero-countdown-value]");
+  const heroCountdownLabel = root.querySelector("[data-hero-countdown-label]");
   const matchStatus = root.querySelector("[data-match-status]");
   const matchLabel = root.querySelector("[data-match-label]");
   const matchDate = root.querySelector("[data-match-date]");
@@ -42,6 +49,10 @@
   const teamPanels = {
     home: root.querySelector('[data-score-team="home"]'),
     away: root.querySelector('[data-score-team="away"]'),
+  };
+  const heroTeamPanels = {
+    home: root.querySelector('[data-hero-team="home"]'),
+    away: root.querySelector('[data-hero-team="away"]'),
   };
 
   let matchDirectory = new Map();
@@ -144,6 +155,21 @@
     } else {
       text(score, "—");
       text(overs, isLive(currentStatus) ? "Awaiting innings score" : "Score pending");
+    }
+  };
+
+  const updateHeroTeam = (panel, team, localTeam) => {
+    if (!panel) return;
+    const displayName = localTeam?.name || team?.name || "To be confirmed";
+    const displayShort = localTeam?.shortName || team?.shortName || "TBC";
+    const displayLogo = localTeam?.logo || team?.logo;
+    const logo = panel.querySelector("img");
+    const shortName = panel.querySelector("strong");
+    text(shortName, displayShort);
+    if (localTeam?.url) panel.href = localTeam.url;
+    if (logo && displayLogo) {
+      logo.src = displayLogo;
+      logo.alt = `${displayName} logo`;
     }
   };
 
@@ -270,9 +296,23 @@
     const away = officialTeams.find((team) => !team.isHome) || officialTeams[1];
     currentFocusStart = Date.parse(match.startDate || local?.startIso || "");
     updateStatus(match.status);
+    text(
+      heroContext,
+      isLive(match.status)
+        ? "CPL match in progress"
+        : isComplete(match.status)
+          ? "Latest CPL result"
+          : "Next CPL match",
+    );
 
     text(
       matchLabel,
+      `Match ${match.matchNumber || local?.matchNumber || "—"} · ${
+        local?.stage || match.stage || "CPL 2026"
+      }`,
+    );
+    text(
+      heroMatchLabel,
       `Match ${match.matchNumber || local?.matchNumber || "—"} · ${
         local?.stage || match.stage || "CPL 2026"
       }`,
@@ -281,8 +321,14 @@
       matchDate.dateTime = local.startIso;
       text(matchDate, `${local.dateLabelLong} · ${local.timeLabel} local`);
     }
+    if (heroMatchDate && local) {
+      heroMatchDate.dateTime = local.startIso;
+      text(heroMatchDate, `${local.dateLabelLong} · ${local.timeLabel} local`);
+    }
     text(matchVenue, local?.venue || match.venue?.name);
+    text(heroMatchVenue, local?.venue || match.venue?.name);
     if (currentMatchLink) currentMatchLink.href = matchUrl(match.matchNumber);
+    if (heroMatchLink) heroMatchLink.href = matchUrl(match.matchNumber);
 
     updateTeam(
       teamPanels.home,
@@ -296,6 +342,8 @@
       local?.away,
       scoreForTeam(match, away?.id),
     );
+    updateHeroTeam(heroTeamPanels.home, home, local?.home);
+    updateHeroTeam(heroTeamPanels.away, away, local?.away);
     const lineupsEnabled = !isUpcoming(match.status);
     renderLineup(lineupPanels.home, home, lineupsEnabled);
     renderLineup(lineupPanels.away, away, lineupsEnabled);
@@ -488,6 +536,8 @@
     if (remaining <= 0) {
       text(countdownValue, isComplete(currentStatus) ? "Complete" : "Match window");
       text(countdownLabel, isComplete(currentStatus) ? "Official result" : "Live feed active");
+      text(heroCountdownValue, isComplete(currentStatus) ? "Complete" : "Live now");
+      text(heroCountdownLabel, isComplete(currentStatus) ? "Official result" : "Match in progress");
       return;
     }
     const totalSeconds = Math.floor(remaining / 1000);
@@ -495,13 +545,14 @@
     const hours = Math.floor((totalSeconds % 86400) / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-    text(
-      countdownValue,
-      `${days ? `${days}d ` : ""}${String(hours).padStart(2, "0")}:${String(
-        minutes,
-      ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`,
-    );
+    const countdownText = `${days ? `${days}d ` : ""}${String(hours).padStart(
+      2,
+      "0",
+    )}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    text(countdownValue, countdownText);
+    text(heroCountdownValue, countdownText);
     text(countdownLabel, "Until first ball");
+    text(heroCountdownLabel, "Until first ball");
   };
 
   refreshButton?.addEventListener("click", refreshScore);
