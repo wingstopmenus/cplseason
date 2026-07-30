@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate sitemap.xml from canonical, search-focused HTML routes."""
+"""Generate sitemap.xml from canonical, indexable HTML routes."""
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
-from subprocess import CalledProcessError, check_output
 from xml.etree.ElementTree import Element, ElementTree, SubElement, indent
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +28,19 @@ CONTENT_PREFIXES = (
     "/team/",
     "/venue/",
 )
+CANONICAL_RE = re.compile(
+    r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)["\']',
+    re.IGNORECASE,
+)
+ROBOTS_RE = re.compile(
+    r'<meta\s+name=["\']robots["\']\s+content=["\']([^"\']+)["\']',
+    re.IGNORECASE,
+)
+MODIFIED_RE = re.compile(
+    r'"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})'
+    r'|article:modified_time["\']\s+content=["\'](\d{4}-\d{2}-\d{2})',
+    re.IGNORECASE,
+)
 
 
 def route_for(path: Path) -> str:
@@ -43,17 +56,36 @@ def should_include(route: str) -> bool:
     return route in CORE_ROUTES or route.startswith(CONTENT_PREFIXES)
 
 
-def last_modified(path: Path) -> str:
-    """Use the page's latest Git commit date instead of an artificial build date."""
-    relative = path.relative_to(ROOT).as_posix()
-    try:
-        return check_output(
-            ["git", "log", "-1", "--format=%cs", "--", relative],
-            cwd=ROOT,
-            text=True,
-        ).strip()
-    except (CalledProcessError, FileNotFoundError):
-        return ""
+def page_metadata(route: str, path: Path) -> tuple[str, str]:
+    """Return the verified canonical and the page's own meaningful modified date."""
+    content = path.read_text(encoding="utf-8")
+    expected_canonical = f"{BASE_URL}{route}"
+    canonicals = CANONICAL_RE.findall(content)
+    if canonicals != [expected_canonical]:
+        raise ValueError(
+            f"{path.relative_to(ROOT)} must have one self-referencing canonical "
+            f"({expected_canonical}); found {canonicals or 'none'}"
+        )
+
+    robots = ROBOTS_RE.findall(content)
+    if not robots:
+        raise ValueError(f"{path.relative_to(ROOT)} is missing a robots meta tag")
+    if any("noindex" in value.lower() for value in robots):
+        raise ValueError(
+            f"{path.relative_to(ROOT)} is noindex and cannot enter the sitemap"
+        )
+
+    modified_dates = {
+        date
+        for match in MODIFIED_RE.findall(content)
+        for date in match
+        if date
+    }
+    if not modified_dates:
+        raise ValueError(
+            f"{path.relative_to(ROOT)} has no trustworthy dateModified value"
+        )
+    return expected_canonical, max(modified_dates)
 
 
 def main() -> None:
@@ -70,11 +102,10 @@ def main() -> None:
     namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
     urlset = Element("urlset", xmlns=namespace)
     for route, path in pages:
+        canonical, modified = page_metadata(route, path)
         url = SubElement(urlset, "url")
-        SubElement(url, "loc").text = f"{BASE_URL}{route}"
-        modified = last_modified(path)
-        if modified:
-            SubElement(url, "lastmod").text = modified
+        SubElement(url, "loc").text = canonical
+        SubElement(url, "lastmod").text = modified
     indent(urlset, space="  ")
     ElementTree(urlset).write(
         ROOT / "sitemap.xml",

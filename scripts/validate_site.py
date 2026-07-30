@@ -10,6 +10,9 @@ from html import escape, unescape
 from collections import deque
 from pathlib import Path
 from urllib.parse import unquote, urlparse
+from xml.etree import ElementTree
+
+from generate_sitemap import BASE_URL, should_include
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEAM_COUNTS = {
@@ -721,6 +724,60 @@ def main() -> int:
     orphan_routes = sorted(set(route_map) - reached - non_content_routes)
     if orphan_routes:
         errors.append(f"Orphan pages: {', '.join(orphan_routes)}")
+
+    sitemap_path = ROOT / "sitemap.xml"
+    sitemap_namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    try:
+        sitemap_root = ElementTree.parse(sitemap_path).getroot()
+        sitemap_entries = sitemap_root.findall("sm:url", sitemap_namespace)
+    except (ElementTree.ParseError, FileNotFoundError) as error:
+        errors.append(f"Invalid or missing sitemap.xml: {error}")
+        sitemap_entries = []
+    sitemap_locations: list[str] = []
+    for entry in sitemap_entries:
+        location = entry.findtext("sm:loc", default="", namespaces=sitemap_namespace)
+        modified = entry.findtext(
+            "sm:lastmod", default="", namespaces=sitemap_namespace
+        )
+        sitemap_locations.append(location)
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", modified):
+            errors.append(f"Sitemap entry has invalid lastmod: {location}")
+            continue
+        route = urlparse(location).path
+        expected_file = route_map.get(route)
+        if expected_file is None:
+            errors.append(f"Sitemap contains a missing page: {location}")
+            continue
+        page_html = expected_file.read_text(encoding="utf-8", errors="replace")
+        if f'<link rel="canonical" href="{location}">' not in page_html:
+            errors.append(f"Sitemap URL is not self-canonical: {location}")
+        if re.search(
+            r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex',
+            page_html,
+            re.IGNORECASE,
+        ):
+            errors.append(f"Sitemap contains a noindex page: {location}")
+    if len(sitemap_locations) != len(set(sitemap_locations)):
+        errors.append("Sitemap contains duplicate URLs")
+    expected_sitemap_locations = {
+        f"{BASE_URL}{route}" for route in route_map if should_include(route)
+    }
+    missing_sitemap_locations = sorted(
+        expected_sitemap_locations - set(sitemap_locations)
+    )
+    unexpected_sitemap_locations = sorted(
+        set(sitemap_locations) - expected_sitemap_locations
+    )
+    if missing_sitemap_locations:
+        errors.append(
+            "Sitemap is missing canonical routes: "
+            + ", ".join(missing_sitemap_locations)
+        )
+    if unexpected_sitemap_locations:
+        errors.append(
+            "Sitemap contains unexpected routes: "
+            + ", ".join(unexpected_sitemap_locations)
+        )
 
     if errors:
         print("Validation failed:")
