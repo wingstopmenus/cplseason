@@ -417,28 +417,48 @@
       const local = localMatch(match.matchNumber);
       card.hidden = false;
       card.dataset.matchNumber = String(match.matchNumber);
-      const top = card.querySelector("div");
-      const matchTag = top?.querySelector("span");
-      const date = top?.querySelector("time");
-      const shorts = card.querySelectorAll("article > p strong, p strong");
-      const title = card.querySelector("h3");
-      const detail = card.querySelector("small");
-      const link = card.querySelector("a");
-      text(matchTag, `Match ${match.matchNumber}`);
+      const matchTag = card.querySelector("[data-fixture-number]");
+      const date = card.querySelector("[data-fixture-date]");
+      const teamLinks = card.querySelectorAll("[data-fixture-team]");
+      const shorts = card.querySelectorAll("[data-fixture-short]");
+      const names = card.querySelectorAll("[data-fixture-name]");
+      const logos = card.querySelectorAll("[data-fixture-team] img");
+      const localTime = card.querySelector("[data-fixture-time]");
+      const venue = card.querySelector("[data-fixture-venue]");
+      const link = card.querySelector("[data-fixture-link]");
+      if (matchTag) {
+        matchTag.replaceChildren(
+          Object.assign(document.createElement("b"), {
+            textContent: String(match.matchNumber).padStart(2, "0"),
+          }),
+          document.createTextNode(` Match ${match.matchNumber}`),
+        );
+      }
       if (date && local) {
         date.dateTime = local.startIso;
         text(date, local.dateLabel);
       }
       text(shorts[0], local?.home?.shortName || match.teams?.[0]?.shortName);
       text(shorts[1], local?.away?.shortName || match.teams?.[1]?.shortName);
-      if (title && local) {
-        title.replaceChildren(
-          document.createTextNode(local.home.name),
-          Object.assign(document.createElement("span"), { textContent: " vs " }),
-          document.createTextNode(local.away.name),
-        );
+      text(names[0], local?.home?.name || match.teams?.[0]?.name);
+      text(names[1], local?.away?.name || match.teams?.[1]?.name);
+      if (local) {
+        if (teamLinks[0]) teamLinks[0].href = local.home.url;
+        if (teamLinks[1]) teamLinks[1].href = local.away.url;
+        if (logos[0] && local.home.logo) {
+          logos[0].src = local.home.logo;
+          logos[0].alt = `${local.home.name} logo`;
+        }
+        if (logos[1] && local.away.logo) {
+          logos[1].src = local.away.logo;
+          logos[1].alt = `${local.away.name} logo`;
+        }
+        if (localTime) {
+          localTime.dateTime = local.startIso;
+          text(localTime, local.timeLabel);
+        }
       }
-      text(detail, local ? `${local.timeLabel} local · ${local.venue}` : match.venue?.name);
+      text(venue, local?.venue || match.venue?.name);
       if (link) link.href = matchUrl(match.matchNumber);
     });
   };

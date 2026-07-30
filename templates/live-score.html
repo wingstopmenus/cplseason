@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731f">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731g">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -42,13 +42,6 @@
     </nav>
   </header>
 
-  <nav class="breadcrumbs live-score-breadcrumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><a href="/">Home</a></li>
-      <li aria-current="page">CPL Live Score</li>
-    </ol>
-  </nav>
-
   <main
     id="main"
     class="live-score-control"
@@ -58,25 +51,34 @@
   >
     <section class="live-score-hero" aria-labelledby="live-score-title">
       <div class="live-score-hero-shell">
-        <div class="live-score-hero-copy">
-          <p class="live-score-overline">Republic Bank Caribbean Premier League</p>
-          <h1 id="live-score-title">
-            <span>{{ config.headline_primary }}</span>
-            <strong>{{ config.headline_secondary }}</strong>
-          </h1>
-          <p class="live-score-hero-lede">{{ config.lede | safe }}</p>
-          <div class="live-score-hero-actions">
-            <a class="is-primary" href="#current-match">View today's live score <span aria-hidden="true">↓</span></a>
-            <a href="/schedule/">CPL 2026 schedule</a>
+        <nav class="breadcrumbs live-score-breadcrumbs" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li aria-current="page">CPL Live Score</li>
+          </ol>
+        </nav>
+
+        <div class="live-score-hero-layout">
+          <div class="live-score-hero-copy">
+            <p class="live-score-overline">Republic Bank Caribbean Premier League</p>
+            <h1 id="live-score-title">
+              <span>{{ config.headline_primary }}</span>
+              <strong>{{ config.headline_secondary }}</strong>
+            </h1>
+            <p class="live-score-hero-lede">{{ config.lede | safe }}</p>
+            <div class="live-score-hero-actions">
+              <a class="is-primary" href="#current-match">View today's live score <span aria-hidden="true">↓</span></a>
+              <a href="/schedule/">CPL 2026 schedule <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <div class="live-score-hero-mark" aria-hidden="true">
+            <span>2026</span>
+            <strong>LIVE</strong>
+            <b>SCORE</b>
+            <small>Every ball · Every wicket</small>
           </div>
         </div>
-
-        <dl class="live-score-facts" aria-label="CPL 2026 live-score coverage">
-          <div><span>01</span><dt>Matches</dt><dd>39</dd></div>
-          <div><span>02</span><dt>Teams</dt><dd>7</dd></div>
-          <div><span>03</span><dt>Refresh</dt><dd>{{ config.polling_seconds }} sec</dd></div>
-          <div><span>04</span><dt>Coverage</dt><dd>Live</dd></div>
-        </dl>
       </div>
     </section>
 
@@ -192,12 +194,41 @@
         </header>
         <div class="live-score-fixture-grid" data-upcoming-matches>
           {% for match in upcoming %}
-          <article data-upcoming-card data-match-number="{{ match.match_number }}">
-            <div><span>Match {{ match.match_number }}</span><time datetime="{{ match.start_iso }}">{{ match.date_label }}</time></div>
-            <p><strong>{{ match.home_short }}</strong><i aria-hidden="true">vs</i><strong>{{ match.away_short }}</strong></p>
-            <h3>{{ match.home_label }} <span>vs</span> {{ match.away_label }}</h3>
-            <small>{{ match.time_label }} local · {{ match.venue.name }}</small>
-            <a href="{{ match.url }}">Match centre <span aria-hidden="true">→</span></a>
+          <article class="live-score-fixture-card" data-upcoming-card data-match-number="{{ match.match_number }}">
+            <header class="live-score-fixture-top">
+              <span data-fixture-number><b>{{ "%02d"|format(match.match_number) }}</b> Match {{ match.match_number }}</span>
+              <time data-fixture-date datetime="{{ match.start_iso }}">{{ match.date_label }}</time>
+            </header>
+
+            <div class="live-score-fixture-teams">
+              <a data-fixture-team="home" href="/team/{{ match.home_team.slug }}/">
+                <span class="live-score-fixture-crest">
+                  <img src="{{ match.home_team.logo }}" width="92" height="92" alt="{{ match.home_label }} logo" loading="lazy">
+                </span>
+                <strong data-fixture-short>{{ match.home_short }}</strong>
+                <small data-fixture-name>{{ match.home_label }}</small>
+              </a>
+
+              <span class="live-score-fixture-vs" aria-label="versus">VS</span>
+
+              <a data-fixture-team="away" href="/team/{{ match.away_team.slug }}/">
+                <span class="live-score-fixture-crest">
+                  <img src="{{ match.away_team.logo }}" width="92" height="92" alt="{{ match.away_label }} logo" loading="lazy">
+                </span>
+                <strong data-fixture-short>{{ match.away_short }}</strong>
+                <small data-fixture-name>{{ match.away_label }}</small>
+              </a>
+            </div>
+
+            <div class="live-score-fixture-details">
+              <p><span>Local start</span><time data-fixture-time datetime="{{ match.start_iso }}">{{ match.time_label }}</time></p>
+              <p><span>Venue</span><strong data-fixture-venue>{{ match.venue.name }}</strong></p>
+            </div>
+
+            <a class="live-score-fixture-action" data-fixture-link href="{{ match.url }}">
+              <span>Match centre</span>
+              <i aria-hidden="true">→</i>
+            </a>
           </article>
           {% endfor %}
         </div>
@@ -251,6 +282,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260731c" defer></script>
+  <script src="/static/js/live-score.js?v=20260731d" defer></script>
 </body>
 </html>
