@@ -346,6 +346,11 @@ main {
   overflow-anchor: none;
 }
 
+.schedule-results-main {
+  min-width: 0;
+}
+
+.schedule-match-list[hidden],
 .schedule-match-card[hidden],
 .schedule-month-divider[hidden],
 .schedule-stage-heading[hidden] {
@@ -395,6 +400,11 @@ main {
   grid-template-columns: 230px minmax(0, 1fr);
   gap: 18px;
   align-items: start;
+}
+
+.schedule-match-centre.is-split-view .schedule-results-main {
+  grid-column: 2;
+  min-width: 0;
 }
 
 .schedule-match-centre,
@@ -883,6 +893,10 @@ main {
 
   .schedule-match-centre.is-split-view .schedule-results-shell {
     grid-template-columns: 1fr;
+  }
+
+  .schedule-match-centre.is-split-view .schedule-results-main {
+    grid-column: 1;
   }
 
   .schedule-view-sidebar {

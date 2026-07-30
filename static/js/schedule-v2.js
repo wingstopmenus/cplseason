@@ -12,6 +12,7 @@
   const timezoneSelect = document.querySelector("#schedule-timezone");
   const timezoneNote = document.querySelector("#schedule-timezone-note");
   const monthLabels = document.querySelectorAll("[data-schedule-month-label]");
+  const matchLists = [...document.querySelectorAll(".schedule-match-list")];
   const viewButtons = document.querySelectorAll("[data-schedule-view]");
   const matchCentre = document.querySelector(".schedule-match-centre");
   const viewSidebar = document.querySelector("#schedule-view-sidebar");
@@ -73,6 +74,12 @@
       label.hidden = !cards.some(
         (card) => !card.hidden && cardMonth(card) === labelMonth,
       );
+    });
+    matchLists.forEach((list) => {
+      const hasVisibleCard = [...list.querySelectorAll("[data-schedule-match]")].some(
+        (card) => !card.hidden,
+      );
+      list.hidden = !hasVisibleCard;
     });
   };
 
