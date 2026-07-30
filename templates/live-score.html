@@ -64,7 +64,7 @@
             <span>{{ config.headline_primary }}</span>
             <strong>{{ config.headline_secondary }}</strong>
           </h1>
-          <p class="live-score-hero-lede">{{ config.lede }}</p>
+          <p class="live-score-hero-lede">{{ config.lede | safe }}</p>
           <div class="live-score-hero-actions">
             <a class="is-primary" href="#current-match">View today's live score <span aria-hidden="true">↓</span></a>
             <a href="/schedule/">CPL 2026 schedule</a>

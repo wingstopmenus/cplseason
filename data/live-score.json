@@ -6,7 +6,7 @@
   "headline": "CPL Live Score 2026",
   "headline_primary": "CPL 2026",
   "headline_secondary": "Live Score",
-  "lede": "Follow today's Caribbean Premier League match with live runs, wickets and overs. Get the toss, confirmed playing XIs, recent ball-by-ball updates and the latest CPL 2026 results.",
+  "lede": "<strong>Caribbean Premier League (CPL) 2026</strong> promises another thrilling season of T20 cricket, bringing together the Caribbean's top franchises and some of the biggest names in the game. Running from <strong>August 7 to September 20, 2026</strong>, the tournament features <strong>35 league matches</strong>, <strong>three playoff games</strong>, and the <strong>CPL Final</strong>. Follow this page for <strong>live scores, ball-by-ball updates, match results, points table changes, and the latest news</strong> throughout the season. Every score and fixture is updated using the official local start time of the host venue, so you never miss a moment of the action.",
   "endpoint": "/api/cpl-live-score",
   "polling_seconds": 15,
   "source_name": "Official CPL MCPRO match feed",
