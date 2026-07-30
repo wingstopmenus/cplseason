@@ -1431,3 +1431,202 @@ main {
     margin-left: 38px;
   }
 }
+
+/* Editorial schedule canvas */
+body,
+main {
+  background: #f3f5f9;
+}
+
+.schedule-finder,
+.schedule-match-centre,
+.schedule-team-hub,
+.schedule-hosts-band,
+.schedule-faq-band,
+.schedule-explore {
+  color: #111a32;
+}
+
+.schedule-finder-heading h2,
+.schedule-match-centre .section-heading h2,
+.schedule-team-hub .section-heading h2,
+.schedule-hosts-band .section-heading h2,
+.schedule-faq-band .section-heading h2,
+.schedule-explore h2 {
+  color: #111a32;
+}
+
+.schedule-finder-heading > p,
+.schedule-match-centre .eyebrow,
+.schedule-team-hub .eyebrow,
+.schedule-hosts-band .eyebrow,
+.schedule-faq-band .eyebrow,
+.schedule-explore .eyebrow {
+  color: #6f35c6;
+}
+
+.schedule-finder .schedule-filters select {
+  border-color: #d8ddea;
+  background-color: #fff;
+  color: #111a32;
+}
+
+.schedule-filter-reset {
+  border-color: #d7b200;
+  background: #fff8d8;
+  color: #594900;
+}
+
+.schedule-jump-nav {
+  border-color: #dce1eb;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 8px 24px rgba(18, 26, 49, .1);
+}
+
+.schedule-jump-nav span,
+.schedule-jump-nav a {
+  border-color: #e3e7ef;
+  color: #26304a;
+}
+
+.schedule-jump-nav span,
+.schedule-jump-nav a.active,
+.schedule-jump-nav a[aria-current="true"] {
+  color: #6f35c6;
+}
+
+.schedule-match-centre .section-heading p,
+.schedule-team-hub .section-heading p,
+.schedule-hosts-band .section-heading p,
+.schedule-faq-band .section-heading p {
+  color: #667087;
+}
+
+.schedule-table-head {
+  border-color: #dbe0ea;
+  background: #e9edf5;
+}
+
+.schedule-table-head span {
+  border-color: #d4dae6;
+  color: #5f6a82;
+}
+
+.schedule-month-divider {
+  border-left-color: #ffcc12;
+  background: #fff5bf;
+  color: #3f3400;
+}
+
+.schedule-month-divider small {
+  color: #7a6811;
+}
+
+.schedule-match-card {
+  border-color: #dfe3eb;
+  background: #fff;
+}
+
+.schedule-match-details {
+  border-color: #dfe3eb;
+  background: #f7f8fb;
+}
+
+.schedule-match-details time,
+.schedule-team,
+.schedule-team strong {
+  color: #111a32;
+}
+
+.schedule-match-details p,
+.schedule-match-details p strong {
+  color: #657088;
+}
+
+.schedule-match-centre-cta {
+  border-color: #dfe3eb;
+  background: #fafbfe;
+  color: #4c2a91;
+}
+
+.schedule-stage-heading {
+  border-color: #d8c8f1;
+  background: linear-gradient(135deg, #f2ebff, #fff9dc);
+}
+
+.schedule-stage-heading h2 {
+  color: #111a32;
+}
+
+.schedule-stage-heading p {
+  color: #657088;
+}
+
+.schedule-team-picker button,
+.schedule-host-grid .info-panel,
+.schedule-faq-list details,
+.schedule-explore nav a {
+  border-color: #dfe3eb;
+  background: #fff;
+  color: #111a32;
+}
+
+.schedule-team-picker strong,
+.schedule-host-grid h3,
+.schedule-faq-list summary h3,
+.schedule-explore nav a {
+  color: #111a32;
+}
+
+.schedule-team-picker small,
+.schedule-host-grid p,
+.schedule-faq-list details > p {
+  color: #687289;
+}
+
+.schedule-host-grid .info-panel {
+  overflow: hidden;
+  padding-top: 126px;
+  background-position: top center;
+  background-size: 100% 108px;
+  background-repeat: no-repeat;
+}
+
+.schedule-host-grid .info-panel:nth-child(1) { background-image: url("/static/img/official/venues/arnos-vale-stadium.webp"); }
+.schedule-host-grid .info-panel:nth-child(2) { background-image: url("/static/img/official/venues/sabina-park.webp"); }
+.schedule-host-grid .info-panel:nth-child(3) { background-image: url("/static/img/official/venues/daren-sammy-cricket-ground.webp"); }
+.schedule-host-grid .info-panel:nth-child(4) { background-image: url("/static/img/official/venues/sir-vivian-richards-stadium.webp"); }
+.schedule-host-grid .info-panel:nth-child(5) { background-image: url("/static/img/official/venues/brian-lara-cricket-academy.webp"); }
+.schedule-host-grid .info-panel:nth-child(6) { background-image: url("/static/img/official/venues/warner-park.webp"); }
+.schedule-host-grid .info-panel:nth-child(7) { background-image: url("/static/img/official/venues/providence-stadium.webp"); }
+.schedule-host-grid .info-panel:nth-child(8) { background-image: url("/static/img/official/venues/kensington-oval.webp"); }
+
+.schedule-faq-list,
+.schedule-faq-list details {
+  border-color: #dfe3eb;
+}
+
+.schedule-explore {
+  background: #eef1f7;
+}
+
+.schedule-explore nav span {
+  color: #6f35c6;
+}
+
+@media (min-width: 1081px) {
+  .schedule-team-picker {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .schedule-team-picker button {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: 190px;
+    text-align: center;
+  }
+
+  .schedule-team-picker button > b {
+    display: none;
+  }
+}
