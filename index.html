@@ -54,6 +54,7 @@
   <link rel="stylesheet" href="/static/css/home-news.css?v=20260729">
   <link rel="stylesheet" href="/static/css/home-watch-live.css?v=20260729">
   <link rel="stylesheet" href="/static/css/home-faq.css?v=20260730">
+  <link rel="stylesheet" href="/static/css/home-match-centre.css?v=20260731">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -159,14 +160,107 @@
   </div>
 </section>
 
-<section class="home-match-rail" aria-labelledby="home-matches-title">
-  <div class="match-rail-heading">
+<section class="home-match-rail home-match-centre-v3" aria-labelledby="home-matches-title">
+  <header class="home-match-centre-heading">
     <div>
-      <span class="match-rail-kicker">Complete season</span>
-      <h2 id="home-matches-title">CPL 2026 match schedule</h2>
+      <span>Fixtures and scores</span>
+      <h2 id="home-matches-title">CPL 2026 Match Centre</h2>
+      <p>Find the next match, live-score coverage and upcoming Caribbean Premier League fixtures in one place.</p>
+    </div>
+    <a href="/schedule/">Complete schedule <span aria-hidden="true">→</span></a>
+  </header>
+
+  <div class="home-match-centre-feature">
+    <article class="home-match-centre-next">
+      <header>
+        <span><i aria-hidden="true">→</i> Opening fixture</span>
+        <small>Venue local time</small>
+      </header>
+      <div class="home-match-centre-next-layout">
+        <div class="home-match-centre-next-main">
+          <h3>Next tournament match</h3>
+          <div class="home-match-centre-teams">
+            <a href="/team/jamaica-kingsmen/">
+              <img src="/static/img/official/teams/jamaica-kingsmen.webp?v=20260726" width="104" height="104" alt="Jamaica Kingsmen official CPL logo">
+              <span>Jamaica</span>
+              <strong>Jamaica Kingsmen</strong>
+              <b>JAK</b>
+            </a>
+            <span class="home-match-centre-vs">VS</span>
+            <a href="/team/antigua-barbuda-falcons/">
+              <img src="/static/img/official/teams/antigua-barbuda-falcons.webp?v=20260726" width="104" height="104" alt="Antigua and Barbuda Falcons official CPL logo">
+              <span>Antigua &amp; Barbuda</span>
+              <strong>Antigua &amp; Barbuda Falcons</strong>
+              <b>ABF</b>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="home-match-centre-countdown"
+          data-match-countdown
+          data-countdown-target="2026-08-07T23:00:00Z"
+          role="timer"
+          aria-label="Time until the opening CPL 2026 match"
+        >
+          <span data-match-countdown-label>Starts in</span>
+          <div>
+            <p><strong data-countdown-days>00</strong><small>Days</small></p>
+            <p><strong data-countdown-hours>00</strong><small>Hours</small></p>
+            <p><strong data-countdown-minutes>00</strong><small>Mins</small></p>
+            <p><strong data-countdown-seconds>00</strong><small>Secs</small></p>
+          </div>
+          <time datetime="2026-08-07T19:00:00-04:00">Fri 7 Aug · 7pm local</time>
+        </div>
+      </div>
+      <footer>
+        <p><span>Date</span><strong>Friday, 7 August 2026</strong></p>
+        <p><span>Venue</span><a href="/venue/arnos-vale-stadium/">Arnos Vale Stadium, St Vincent</a></p>
+        <nav aria-label="Opening match links">
+          <a class="is-primary" href="/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/">Match centre <span aria-hidden="true">→</span></a>
+          <a href="/schedule/">Full fixture guide</a>
+        </nav>
+      </footer>
+    </article>
+
+    <aside class="home-match-centre-live" aria-labelledby="home-live-score-title">
+      <header>
+        <span>Match status</span>
+        <a href="/live-score/">Open live score <span aria-hidden="true">→</span></a>
+      </header>
+      <h3 id="home-live-score-title">CPL 2026 Live Scores</h3>
+      <p>Follow live CPL scores, innings updates, toss results and verified match status throughout the tournament.</p>
+
+      <div class="home-match-centre-live-state">
+        <div>
+          <span><i aria-hidden="true"></i> No live match</span>
+          <strong>Coverage starts on match day</strong>
+          <p>Toss details, playing XIs and live overs will appear as the official feed updates.</p>
+        </div>
+        <div>
+          <span>Next coverage</span>
+          <strong>JAK <b>VS</b> ABF</strong>
+          <p>Fri 7 Aug 2026 · 7pm local</p>
+          <small>Arnos Vale Stadium</small>
+        </div>
+      </div>
+
+      <footer>
+        <a class="is-primary" href="/live-score/">Live score <span aria-hidden="true">→</span></a>
+        <a href="/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/">Match centre</a>
+        <small>Updates every 15 seconds during play</small>
+      </footer>
+    </aside>
+  </div>
+
+  <div class="home-match-centre-upcoming">
+    <div>
+      <span>Next fixtures</span>
+      <h3>Upcoming CPL 2026 matches</h3>
+      <p>Confirmed fixtures, venue-local start times and dedicated match-centre pages.</p>
     </div>
     <div class="match-rail-actions">
-      <a href="/schedule/">Full schedule</a>
+      <a href="/schedule/">View full schedule</a>
       <button type="button" data-match-slider="previous" aria-label="Show previous matches" aria-controls="home-match-slider">←</button>
       <button type="button" data-match-slider="next" aria-label="Show next matches" aria-controls="home-match-slider">→</button>
     </div>
@@ -1113,11 +1207,7 @@
   </div>
 </section>
 
-<section
-  class="band home-opening-band"
-  data-home-match-window
-  data-match-status-endpoint="/api/cpl-matches"
->
+<section class="home-opening-band-retired" hidden aria-hidden="true">
   <div class="section-heading home-opening-heading">
     <div>
       <span class="badge" data-match-window-badge>Upcoming matches</span>
