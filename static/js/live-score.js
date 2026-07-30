@@ -67,6 +67,7 @@
   };
 
   const numberText = (value, digits = 1) => {
+    if (value === null || value === undefined || value === "") return "—";
     const number = Number(value);
     if (!Number.isFinite(number)) return "—";
     return number.toFixed(digits).replace(/\.0$/, "");
@@ -154,8 +155,8 @@
       empty.className = "live-score-empty";
       empty.textContent =
         mode === "bowler"
-          ? "The current bowler will appear after play begins."
-          : "Confirmed batters will appear after play begins.";
+          ? "The current bowler will appear when play begins."
+          : "The batters at the crease will appear when play begins.";
       container.append(empty);
       return;
     }
@@ -193,7 +194,7 @@
     if (!balls?.length) {
       const empty = document.createElement("p");
       empty.className = "live-score-empty";
-      empty.textContent = "Ball outcomes activate with the live innings.";
+      empty.textContent = "Recent deliveries will appear when play begins.";
       recentBalls.append(empty);
       return;
     }
@@ -227,7 +228,7 @@
       const empty = document.createElement("p");
       empty.className = "live-score-empty";
       empty.textContent =
-        "The confirmed XI will appear when the official match feed publishes it.";
+        "The confirmed XI will appear here after the toss.";
       panel.append(empty);
       return;
     }
@@ -303,24 +304,24 @@
       lineupsEnabled &&
         (home?.players?.length || away?.players?.length)
         ? "Official playing XIs"
-        : "Awaiting official team sheets",
+        : "Team sheets not yet published",
     );
 
     const state = isUpcoming(match.status)
-      ? "Live coverage begins on match day"
+      ? "Live score starts on match day"
       : isComplete(match.status)
         ? match.stateOfPlay || match.description || "The official match state has been closed."
         : match.stateOfPlay ||
           match.description ||
-          "Live innings information is updating from the official feed.";
+          "The live innings is updating from the CPL match feed.";
     text(stateHeading, state);
     text(
       stateCopy,
       isLive(match.status)
-        ? "Scores and match indicators refresh automatically while this page remains visible."
+        ? "The score, overs and match status refresh automatically while this page is open."
         : isComplete(match.status)
-          ? "Open the full match centre for the complete scorecard and innings detail."
-          : "The toss, playing XIs and innings scores will appear only after the official CPL feed confirms them.",
+          ? "View the full scorecard for complete innings details."
+          : "The toss, playing XIs and innings scores will appear as soon as the CPL match feed publishes them.",
     );
     text(liveToss, match.toss || "Awaiting confirmation");
     text(liveCrr, numberText(match.live?.currentRunRate));
@@ -338,8 +339,8 @@
     text(
       feedMessage,
       Number.isNaN(checked.getTime())
-        ? "Verified feed connected"
-        : `Verified ${checked.toLocaleTimeString("en-GB", {
+        ? "CPL match feed connected"
+        : `Last checked ${checked.toLocaleTimeString("en-GB", {
             hour: "2-digit",
             minute: "2-digit",
             second: "2-digit",
@@ -405,11 +406,11 @@
   const renderResults = (matches) => {
     if (!resultsContainer) return;
     if (!matches?.length) {
-      text(resultsStatus, "Updates after completed matches");
+      text(resultsStatus, "Results appear after each match");
       return;
     }
     resultsContainer.replaceChildren();
-    text(resultsStatus, `${matches.length} latest verified scorecards`);
+    text(resultsStatus, `${matches.length} latest completed matches`);
     matches.forEach((match) => {
       const card = document.createElement("article");
       card.className = "live-result-card";
@@ -456,13 +457,13 @@
       renderFocus(payload.focus, payload.fetchedAt);
       renderUpcoming(payload.schedule, payload.focus.matchNumber);
       renderResults(payload.recent || []);
-      setFeedSignal("Verified feed online", "connected");
+      setFeedSignal("CPL score feed connected", "connected");
     } catch (error) {
       console.warn("CPL live score refresh unavailable", error);
-      setFeedSignal("Feed retrying", "error");
+      setFeedSignal("Score feed temporarily unavailable", "error");
       text(
         feedMessage,
-        "Official feed unavailable · last verified state remains on screen",
+        "The score feed is unavailable. The last confirmed match update remains on screen.",
       );
     } finally {
       requestInProgress = false;

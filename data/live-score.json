@@ -1,31 +1,33 @@
 {
   "slug": "live-score",
-  "title": "CPL Live Score 2026: Live Match, Scorecard and Results",
-  "description": "Follow the CPL 2026 live score with automatic match status, innings scores, overs, recent results, upcoming fixtures and links to full scorecards.",
+  "title": "CPL Live Score 2026: Today's Match, Scorecard & Results",
+  "description": "Follow today's CPL live score with runs, wickets, overs, toss, playing XIs, ball-by-ball updates, full scorecards, fixtures and CPL 2026 results.",
   "canonical": "https://cplseason.com/live-score/",
-  "headline": "Every ball. One command centre.",
-  "lede": "Follow the current Caribbean Premier League match with verified score updates, innings state, match status and direct access to the full scorecard.",
+  "headline": "CPL Live Score 2026",
+  "headline_primary": "CPL 2026",
+  "headline_secondary": "Live Score",
+  "lede": "Follow today's Caribbean Premier League match with live runs, wickets and overs. Get the toss, confirmed playing XIs, recent ball-by-ball updates and the latest CPL 2026 results.",
   "endpoint": "/api/cpl-live-score",
   "polling_seconds": 15,
   "source_name": "Official CPL MCPRO match feed",
   "source_url": "https://match-center.cplt20.com/",
-  "source_note": "Scores are shown only after the official feed confirms them. If the feed is interrupted, the last verified state remains visible.",
+  "source_note": "The page displays scores supplied by the CPL match feed. If the connection drops, the last confirmed score stays on screen with a clear update notice.",
   "faq": [
     {
-      "question": "Does the CPL live score update automatically?",
-      "answer": "Yes. The live-score page checks the verified CPL match feed every 15 seconds while the page is visible. You can also request an immediate refresh."
+      "question": "How often does the CPL live score update?",
+      "answer": "The page checks the CPL match feed every 15 seconds while it is open. You can also use the refresh button to check for the latest score immediately."
     },
     {
-      "question": "What appears before a CPL match starts?",
-      "answer": "Before the toss, the page shows the confirmed fixture, venue, start time and a countdown. Scores, playing XIs and innings details remain pending until the official feed publishes them."
+      "question": "Where can I find today's CPL match score?",
+      "answer": "The current-match panel at the top of this page shows today's CPL fixture, live score, overs and match status. Before play begins, it shows the start time, venue and countdown."
     },
     {
-      "question": "What happens if the official score feed is unavailable?",
-      "answer": "The page keeps the last verified state on screen and clearly marks the connection issue. It does not replace missing data with an invented score."
+      "question": "Does the page show the toss and playing XI?",
+      "answer": "Yes. The toss result and confirmed playing XIs appear when they are published by the match feed. Before the toss, those fields remain clearly marked as pending."
     },
     {
-      "question": "Where can I see the full CPL scorecard?",
-      "answer": "Use the Open full match centre button for the selected fixture. Individual match pages include the official scorecard and ball-by-ball match-centre window."
+      "question": "Where can I view the full CPL scorecard?",
+      "answer": "Select View full scorecard in the current-match panel. The match page includes innings details and the ball-by-ball match-centre view."
     }
   ],
   "last_updated": "2026-07-31"
