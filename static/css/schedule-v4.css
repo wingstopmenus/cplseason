@@ -636,17 +636,25 @@ main {
   line-height: 1.16;
 }
 
-.schedule-versus {
+.schedule-match-card .schedule-versus {
   display: grid;
   place-items: center;
   width: 30px;
   height: 30px;
   border: 1px solid rgba(255, 204, 18, .24);
   border-radius: 50%;
-  color: var(--sch-gold);
-  font-size: 7px;
+  background: #080d20;
+  color: #fff;
+  font-size: 0;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+.schedule-match-card .schedule-versus::after {
+  content: "VS";
+  color: #fff;
+  font-size: 8px;
+  line-height: 1;
 }
 
 .schedule-match-centre-cta {
