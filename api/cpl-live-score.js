@@ -98,6 +98,25 @@ function normalizeRecentBall(ball) {
   };
 }
 
+function normalizeToss(toss) {
+  if (!toss) return "";
+  if (typeof toss === "string") return toss;
+  const winner = String(
+    toss?.winner?.name ||
+      toss?.team?.name ||
+      toss?.wonBy?.name ||
+      toss?.winnerName ||
+      "",
+  );
+  const decision = String(
+    toss?.decision || toss?.choice || toss?.electedTo || "",
+  );
+  if (!winner) return "";
+  return `${winner} won the toss${
+    decision ? ` and chose to ${decision.toLowerCase()}` : ""
+  }`;
+}
+
 function normalizeMatch(match) {
   const competition = match?.competition || {};
   const liveSummary = match?.liveSummary || {};
@@ -111,6 +130,7 @@ function normalizeMatch(match) {
     stage: String(competition?.stageName || competition?.name || "CPL 2026"),
     description: String(match?.description || match?.stateOfPlay || ""),
     stateOfPlay: String(match?.stateOfPlay || ""),
+    toss: normalizeToss(match?.toss),
     venue: {
       name: String(match?.venue?.fullName || match?.venue?.name || ""),
     },

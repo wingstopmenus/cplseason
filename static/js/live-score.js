@@ -322,7 +322,7 @@
           ? "Open the full match centre for the complete scorecard and innings detail."
           : "The toss, playing XIs and innings scores will appear only after the official CPL feed confirms them.",
     );
-    text(liveToss, isLive(match.status) ? "Check official match state" : "Awaiting confirmation");
+    text(liveToss, match.toss || "Awaiting confirmation");
     text(liveCrr, numberText(match.live?.currentRunRate));
     text(liveTarget, Number.isFinite(match.live?.target) ? match.live.target : "—");
     text(liveRrr, numberText(match.live?.requiredRunRate));
