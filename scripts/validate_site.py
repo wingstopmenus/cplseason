@@ -642,7 +642,8 @@ def main() -> int:
             continue
         reached.add(route)
         queue.extend(graph[route] - reached)
-    orphan_routes = sorted(set(route_map) - reached - {"/404.html"})
+    non_content_routes = {"/404.html", "/google77bcdd6befcacc75.html"}
+    orphan_routes = sorted(set(route_map) - reached - non_content_routes)
     if orphan_routes:
         errors.append(f"Orphan pages: {', '.join(orphan_routes)}")
 

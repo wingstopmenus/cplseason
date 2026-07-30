@@ -1,0 +1,67 @@
+{
+  "slug": "cpl-cricket-draft-fantasy-game-2026",
+  "category": "Fantasy",
+  "title": "CPL and The Cricket Draft Launch Free Fantasy Game for 2026",
+  "short_title": "CPL fantasy game launches",
+  "description": "CPL has partnered with The Cricket Draft to launch a free fantasy cricket game featuring squad building, transfers, live data and private leagues.",
+  "dek": "Supporters can select a 15-player squad with a virtual £100m budget and compete in public or private leagues throughout CPL 2026.",
+  "date_published": "2026-07-30",
+  "date_modified": "2026-07-30",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/cpl-cricket-draft-fantasy-game-2026-featured.webp",
+  "image_alt": "CPL supporters at the Brian Lara Cricket Academy during the 2025 tournament",
+  "summary_heading": "A new way to follow every CPL 2026 match",
+  "key_points": [
+    "The official CPL fantasy game is free to play on The Cricket Draft website and mobile app.",
+    "Managers receive a virtual £100m budget to select a squad of 15 players.",
+    "The game includes transfers, substitutions, live performance data and public or private leagues."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "CPL fantasy game opens before the season",
+      "paragraphs": [
+        "The Caribbean Premier League has joined forces with UK fantasy cricket platform The Cricket Draft to launch an official fantasy game for the 2026 tournament. Registration is open worldwide and the game is free to play.",
+        "Participants take the role of a Director of Cricket, working with a virtual £100m budget to assemble a 15-player squad. Fans weighing up their selections can review the confirmed names in the <a href=\"/squads/\">CPL 2026 squad hub</a> before locking in their first team."
+      ]
+    },
+    {
+      "heading": "Transfers, captaincy and live performance data",
+      "paragraphs": [
+        "Managers can choose a starting XI, assign captaincy, make substitutions and use transfers as the competition develops. Team layouts can be adjusted each week to reflect form, availability and match conditions.",
+        "Fantasy points cover the major parts of a T20 performance, including runs, wickets, catches, run-outs, strike rates and economy rates. The full sequence of games is available in the <a href=\"/schedule/\">CPL 2026 schedule</a>, giving managers a clear view of the upcoming fixtures."
+      ]
+    },
+    {
+      "heading": "Private leagues add another layer of competition",
+      "paragraphs": [
+        "Players can enter public leagues, create private competitions with friends or chase a place on the global leaderboard. Detailed player statistics and real-time match updates are designed to help managers make informed decisions during the season.",
+        "The fantasy launch gives supporters another interactive route into a tournament that begins in St Vincent on 7 August. Venue information for the opening leg is available in the <a href=\"/venue/arnos-vale-stadium/\">Arnos Vale Stadium guide</a>."
+      ]
+    },
+    {
+      "heading": "What happens next",
+      "paragraphs": [
+        "Fans can register, build their initial squad and join leagues before the opening match. Once the tournament begins, selection decisions will be driven by player availability, fixture timing and performances across the Caribbean."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/squads/",
+      "label": "CPL 2026 squads"
+    },
+    {
+      "href": "/schedule/",
+      "label": "CPL 2026 schedule"
+    },
+    {
+      "href": "/venue/arnos-vale-stadium/",
+      "label": "Arnos Vale Stadium guide"
+    }
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_url": "https://www.cplt20.com/news/cpl-partners-with-the-cricket-draft-to-launch-fantasy-game-for-2026/",
+  "source_date": "2026-07-30",
+  "last_updated": "2026-07-30"
+}

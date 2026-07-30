@@ -1,4 +1,16 @@
 {
   "version": 2,
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/news/cpl-cricket-draft-fantacy-game-2026",
+      "destination": "/news/cpl-cricket-draft-fantasy-game-2026",
+      "permanent": true
+    },
+    {
+      "source": "/news/cpl-cricket-draft-fantacy-game-2026/",
+      "destination": "/news/cpl-cricket-draft-fantasy-game-2026/",
+      "permanent": true
+    }
+  ]
 }
