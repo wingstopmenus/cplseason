@@ -171,6 +171,66 @@
   ]);
 
   let matchSchedule = [];
+  const liveSpotlight = document.querySelector("[data-schedule-live-spotlight]");
+  const teamSlugs = new Map([
+    ["Jamaica Kingsmen", "jamaica-kingsmen"],
+    ["Antigua & Barbuda Falcons", "antigua-barbuda-falcons"],
+    ["Barbados Tridents", "barbados-royals"],
+    ["Guyana Amazon Warriors", "guyana-amazon-warriors"],
+    ["Saint Lucia Kings", "saint-lucia-kings"],
+    ["St Kitts & Nevis Patriots", "st-kitts-nevis-patriots"],
+    ["Trinbago Knight Riders", "trinbago-knight-riders"],
+  ]);
+
+  const renderLiveSpotlight = (match, seasonComplete = false) => {
+    if (!liveSpotlight || !match) return;
+    const text = (selector, value) => {
+      const node = liveSpotlight.querySelector(selector);
+      if (node) node.textContent = value;
+    };
+    text("[data-live-kicker]", seasonComplete ? "Season complete · Final" : `Next fixture · Match ${String(match.matchNumber).padStart(2, "0")}`);
+    text("[data-live-home]", match.home);
+    text("[data-live-away]", match.away);
+    text("[data-live-date]", match.label);
+    text("[data-live-time]", match.time);
+    text("[data-live-venue]", match.venue);
+    const dateTime = liveSpotlight.querySelector("[data-live-datetime]");
+    if (dateTime) dateTime.dateTime = match.startIso;
+    const link = liveSpotlight.querySelector("[data-live-match-link]");
+    if (link) link.href = match.url;
+    [["home", match.home], ["away", match.away]].forEach(([side, name]) => {
+      const slug = teamSlugs.get(name);
+      const logo = liveSpotlight.querySelector(`[data-live-${side}-logo]`);
+      if (logo && slug) {
+        logo.src = `/static/img/official/teams/${slug}.webp`;
+        logo.alt = `${name} logo`;
+      }
+    });
+  };
+
+  const refreshLiveSpotlight = async () => {
+    if (!liveSpotlight || !matchSchedule.length) return;
+    let statuses = [];
+    try {
+      const response = await fetch("/api/cpl-matches", { cache: "no-store" });
+      if (response.ok) statuses = await response.json();
+    } catch (_) {}
+    const settled = new Set(["complete", "completed", "closed", "finished", "final", "abandoned", "cancelled", "canceled", "no result"]);
+    const statusByMatch = new Map(
+      (Array.isArray(statuses) ? statuses : []).map((item) => [
+        Number(item.matchNumber),
+        String(item.status || "").trim().toLowerCase().replace(/[_-]+/g, " "),
+      ]),
+    );
+    const next = matchSchedule.find((match) => {
+      const status = statusByMatch.get(Number(match.matchNumber));
+      if (settled.has(status)) return false;
+      if (status) return true;
+      const start = Date.parse(match.startIso);
+      return !Number.isFinite(start) || Date.now() < start + 6 * 60 * 60 * 1000;
+    });
+    renderLiveSpotlight(next || matchSchedule[matchSchedule.length - 1], !next);
+  };
 
   const renderConvertedTimes = () => {
     const timezone = timezoneSelect?.value || "";
@@ -224,6 +284,7 @@
     .then((schedule) => {
       matchSchedule = Array.isArray(schedule) ? schedule : [];
       renderConvertedTimes();
+      refreshLiveSpotlight();
     })
     .catch(() => {
       if (timezoneSelect) timezoneSelect.disabled = true;
@@ -232,6 +293,10 @@
           "Timezone conversion is temporarily unavailable. Fixture cards still show venue local time.";
       }
     });
+
+  window.setInterval(() => {
+    if (document.visibilityState === "visible") refreshLiveSpotlight();
+  }, 30000);
 
   applyFilters();
 })();
