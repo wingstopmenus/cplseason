@@ -12,6 +12,10 @@
   const timezoneSelect = document.querySelector("#schedule-timezone");
   const timezoneNote = document.querySelector("#schedule-timezone-note");
   const monthLabels = document.querySelectorAll("[data-schedule-month-label]");
+  const viewButtons = document.querySelectorAll("[data-schedule-view]");
+  const matchCentre = document.querySelector(".schedule-match-centre");
+  const viewSidebar = document.querySelector("#schedule-view-sidebar");
+  const resultsTitle = document.querySelector(".schedule-match-centre .section-heading h2");
 
   if (!cards.length) return;
 
@@ -87,6 +91,75 @@
         block: "start",
       });
     });
+  });
+
+  const sidebarOptions = (type) => {
+    const source = type === "team" ? teamFilter : venueFilter;
+    if (!source || !viewSidebar) return;
+    viewSidebar.replaceChildren();
+    const heading = document.createElement("strong");
+    heading.textContent = type === "team" ? "Choose a team" : "Choose a venue";
+    viewSidebar.append(heading);
+    [...source.options].slice(1).forEach((option, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = option.textContent;
+      button.dataset.value = option.value;
+      button.classList.toggle("active", index === 0);
+      button.addEventListener("click", () => {
+        const currentScroll = window.scrollY;
+        viewSidebar.querySelectorAll("button").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+        source.value = option.value;
+        if (resultsTitle) resultsTitle.textContent = `${option.textContent} fixtures`;
+        applyFilters();
+        requestAnimationFrame(() => window.scrollTo({ top: currentScroll, behavior: "instant" }));
+      });
+      viewSidebar.append(button);
+    });
+    source.value = source.options[1]?.value || "";
+  };
+
+  const setView = (view) => {
+    [venueFilter, teamFilter, monthFilter, stageFilter].filter(Boolean).forEach((control) => {
+      control.value = "";
+    });
+    matchCentre?.classList.remove("is-split-view");
+    if (viewSidebar) {
+      viewSidebar.hidden = true;
+      viewSidebar.replaceChildren();
+    }
+    if (view === "august" && monthFilter) monthFilter.value = "08";
+    if (view === "september" && monthFilter) monthFilter.value = "09";
+    if (view === "playoffs" && stageFilter) stageFilter.value = "playoffs";
+    if (view === "team") {
+      matchCentre?.classList.add("is-split-view");
+      if (viewSidebar) viewSidebar.hidden = false;
+      if (stageFilter) stageFilter.value = "league";
+      sidebarOptions("team");
+    }
+    if (view === "venue") {
+      matchCentre?.classList.add("is-split-view");
+      if (viewSidebar) viewSidebar.hidden = false;
+      sidebarOptions("venue");
+    }
+    if (resultsTitle) {
+      const titles = {
+        all: "Complete CPL 2026 schedule",
+        august: "August 2026 fixtures",
+        september: "September 2026 fixtures",
+        playoffs: "CPL 2026 playoffs and final",
+        team: `${teamFilter?.options[1]?.textContent || "Team"} fixtures`,
+        venue: `${venueFilter?.options[1]?.textContent || "Venue"} fixtures`,
+      };
+      resultsTitle.textContent = titles[view] || titles.all;
+    }
+    viewButtons.forEach((button) => button.classList.toggle("active", button.dataset.scheduleView === view));
+    applyFilters();
+  };
+
+  viewButtons.forEach((button) => {
+    button.addEventListener("click", () => setView(button.dataset.scheduleView || "all"));
   });
 
   const timezoneLabels = new Map([

@@ -58,7 +58,7 @@
       <p class="schedule-masthead-lede">The complete 39-match calendar, with dates, local start times, venues and match-centre links from opening night to the Barbados final.</p>
       <div class="schedule-masthead-actions">
         <a class="is-primary" href="#all-matches">Browse fixtures <span aria-hidden="true">↓</span></a>
-        <a href="/static/cpl-2026-schedule.ics" download>Download calendar</a>
+        <a href="/static/cpl-2026-schedule.ics" download>Add to calendar</a>
       </div>
     </div>
     <div class="schedule-masthead-visual">
@@ -153,14 +153,14 @@
   </div>
 </section>
 
-<nav class="schedule-tabs schedule-jump-nav" aria-label="CPL 2026 schedule sections">
-  <span>On this page</span>
-  <a href="#all-matches">All fixtures</a>
-  <a href="#playoffs-final">Playoffs</a>
-  <a href="#fixtures-by-team">By team</a>
-  <a href="#venue-route">Venue route</a>
-  <a href="#timezone-tools">Match times</a>
-  <a href="#schedule-faq">FAQs</a>
+<nav class="schedule-tabs schedule-jump-nav" aria-label="Browse CPL 2026 fixtures">
+  <span>Browse fixtures</span>
+  <button type="button" class="active" data-schedule-view="all">All matches</button>
+  <button type="button" data-schedule-view="august">August</button>
+  <button type="button" data-schedule-view="september">September</button>
+  <button type="button" data-schedule-view="team">By team</button>
+  <button type="button" data-schedule-view="venue">By venue</button>
+  <button type="button" data-schedule-view="playoffs">Playoffs</button>
 </nav>
 
 <section class="band schedule-match-centre" id="all-matches">
@@ -173,7 +173,9 @@
     <span class="schedule-match-count" id="schedule-filter-count" aria-live="polite">39 matches</span>
   </div>
 
-  <div class="schedule-match-list" id="league-stage">
+  <div class="schedule-results-shell">
+    <aside class="schedule-view-sidebar" id="schedule-view-sidebar" aria-label="Fixture view options" hidden></aside>
+    <div class="schedule-match-list" id="league-stage">
     <div class="schedule-table-head" aria-hidden="true">
       <span>Date &amp; venue</span><span>Fixture</span><span>Match link</span>
     </div>
@@ -3037,11 +3039,12 @@
     <a class="schedule-match-centre-cta" href="/match/cpl-2026-final/"><span>Match 39</span>Open match centre <b>→</b></a>
   </article>
 
+    </div>
+    <p class="schedule-empty-state" id="schedule-empty-state" hidden>No CPL 2026 matches match the selected view.</p>
   </div>
-  <p class="schedule-empty-state" id="schedule-empty-state" hidden>No CPL 2026 matches match both selected filters. Choose another team or venue.</p>
 </section>
 
-<section class="band schedule-team-hub" id="fixtures-by-team">
+<section class="band schedule-team-hub" id="fixtures-by-team" hidden>
   <div class="section-heading">
     <div>
       <p class="eyebrow">Fixtures by team</p>
@@ -3089,7 +3092,7 @@
   </div>
 </section>
 
-<section class="band schedule-hosts-band" id="venue-route">
+<section class="band schedule-hosts-band" id="venue-route" hidden>
   <div class="section-heading">
     <div>
       <p class="eyebrow">Eight host grounds</p>
@@ -3165,7 +3168,7 @@
       <span>Keep all 39 dates</span>
       <h3>Add CPL 2026 to your calendar</h3>
       <p>Download one calendar file containing every league match, playoff and the final. Calendar apps will display each start in your device timezone.</p>
-      <a href="/static/cpl-2026-schedule.ics" download>Download calendar <b aria-hidden="true">↓</b></a>
+      <a href="/static/cpl-2026-schedule.ics" download>Add to calendar <b aria-hidden="true">↓</b></a>
       <small>Compatible with Google Calendar, Apple Calendar and Outlook.</small>
     </aside>
   </div>
@@ -3280,6 +3283,6 @@
   </button>
 </footer>
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/schedule-v2.js?v=20260730a" defer></script>
+  <script src="/static/js/schedule-v2.js?v=20260730b" defer></script>
 </body>
 </html>
