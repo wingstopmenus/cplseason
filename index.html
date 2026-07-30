@@ -40,9 +40,6 @@
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
   <style>
-    .home-featured-card-link{position:absolute!important;inset:0;z-index:1;border-radius:inherit}
-    .home-featured-match .featured-match-venue,.home-featured-match .compact-actions{position:relative;z-index:2}
-    .home-featured-match:has(.home-featured-card-link:hover){border-color:rgba(255,210,10,.78);box-shadow:0 38px 96px rgba(0,0,0,.58),0 0 34px rgba(255,210,10,.1)}
     .match-rail-card,.match-centre-card{position:relative}
     .home-match-card-link{position:absolute;inset:0;z-index:1;border-radius:inherit}
     .match-rail-card>a:not(.home-match-card-link),.match-rail-card .match-rail-teams a,
@@ -56,6 +53,7 @@
   <link rel="stylesheet" href="/static/css/home-faq.css?v=20260730">
   <link rel="stylesheet" href="/static/css/home-match-centre.css?v=20260731">
   <link rel="stylesheet" href="/static/css/home-tournament-details.css?v=20260731d">
+  <link rel="stylesheet" href="/static/css/home-hero-editorial.css?v=20260731">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -78,85 +76,55 @@
     </nav>
   </header>
   <main id="main">
-<section class="hero home-hero">
-  <div class="home-hero-shell">
-    <div class="hero-copy home-hero-copy">
-      <div class="home-hero-status" aria-label="CPL 2026 tournament dates">
+<section class="home-hero-v4" aria-labelledby="home-hero-title">
+  <div class="home-hero-v4-shell">
+    <div class="home-hero-v4-copy">
+      <div class="home-hero-v4-season" aria-label="CPL 2026 tournament dates">
         <span><i aria-hidden="true"></i> 2026 season</span>
-        <time datetime="2026-08-07">7 Aug</time>
+        <time datetime="2026-08-07">7 August</time>
         <b aria-hidden="true">—</b>
-        <time datetime="2026-09-20">20 Sep</time>
+        <time datetime="2026-09-20">20 September</time>
       </div>
-      <p class="eyebrow">Republic Bank Caribbean Premier League 2026</p>
-      <h1>CPL 2026 Schedule, Teams, Squads and Live Coverage</h1>
-      <p class="home-hero-lede">CPL 2026 brings 39 matches across the Caribbean from 7 August to 20 September, with seven teams competing from opening night at Arnos Vale to finals week at Kensington Oval.</p>
-      <div class="hero-actions home-hero-actions">
-        <a class="button primary" href="/schedule/">
-          <span>Schedule</span>
-          <b aria-hidden="true">→</b>
-        </a>
-        <a class="button secondary" href="/watch-live/">Watch Live</a>
+
+      <p class="home-hero-v4-overline">Republic Bank Caribbean Premier League</p>
+      <h1 id="home-hero-title">
+        <span>CPL 2026</span>
+        <strong>Every match.</strong>
+        <em>Every Caribbean night.</em>
+      </h1>
+      <p class="home-hero-v4-lede">Follow the complete CPL 2026 schedule, live scores, teams, squads and tournament news from opening night in St Vincent to the final at Kensington Oval.</p>
+
+      <div class="home-hero-v4-actions">
+        <a class="is-primary" href="/schedule/">Explore the schedule <span aria-hidden="true">→</span></a>
+        <a href="/live-score/">Follow live scores</a>
       </div>
-      <p class="home-hero-note">
-        <strong>Opening night</strong>
-        Fri 7 Aug · Arnos Vale Stadium
-      </p>
+
+      <nav class="home-hero-v4-links" aria-label="Explore CPL 2026">
+        <a href="/teams/"><span>01</span> Seven teams</a>
+        <a href="/squads/"><span>02</span> Complete squads</a>
+        <a href="/watch-live/"><span>03</span> Viewing guide</a>
+      </nav>
     </div>
 
-    <aside class="next-match-card home-featured-match" aria-label="Next CPL 2026 match">
-      <a class="home-featured-card-link" href="/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/" aria-label="Open Match 1 centre: Jamaica Kingsmen versus Antigua and Barbuda Falcons"></a>
-      <div class="featured-match-top">
-        <span>Match 1</span>
-        <strong>Season opener</strong>
-      </div>
-      <div class="featured-match-heading">
-        <p>Next up</p>
-        <time datetime="2026-08-07">Fri 7 Aug · 7pm local</time>
-      </div>
-      <div class="match-teams">
-        <div class="match-team">
-          <span class="featured-team-logo">
-            <img class="team-disc" src="/static/img/official/teams/jamaica-kingsmen.webp?v=20260726" alt="Jamaica Kingsmen official CPL logo">
-          </span>
-          <strong>Jamaica Kingsmen</strong>
-        </div>
-        <div class="versus">
-          <small>First ball</small>
-          <span>VS</span>
-        </div>
-        <div class="match-team">
-          <span class="featured-team-logo">
-            <img class="team-disc" src="/static/img/official/teams/antigua-barbuda-falcons.webp?v=20260726" alt="Antigua &amp; Barbuda Falcons official CPL logo">
-          </span>
-          <strong>Antigua &amp; Barbuda Falcons</strong>
-        </div>
-      </div>
-      <a class="match-venue featured-match-venue" href="/venue/arnos-vale-stadium/">
-        <span>Arnos Vale Stadium</span>
-        <small>St Vincent</small>
-      </a>
-      <div class="hero-actions compact-actions">
-        <a class="button primary" href="/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/">Match centre</a>
-        <a class="button secondary" href="/venue/arnos-vale-stadium/">Venue guide</a>
-      </div>
-    </aside>
+    <div class="home-hero-v4-mark" aria-hidden="true">
+      <span>Republic Bank</span>
+      <strong>CPL</strong>
+      <b>26</b>
+      <small>Caribbean Premier League</small>
+    </div>
   </div>
 
-  <div class="home-hero-countdown" data-countdown-target="2026-08-07T23:00:00Z" aria-label="Countdown to the CPL 2026 opening match">
-    <div class="home-countdown-intro">
-      <span><i aria-hidden="true"></i> Season opener</span>
-      <strong data-countdown-status>CPL 2026 starts in</strong>
-      <time datetime="2026-08-07T19:00:00-04:00">Fri 7 Aug · 7pm AST</time>
-    </div>
-    <div class="home-countdown-clock" role="timer" aria-label="Time remaining until the CPL 2026 opening match">
-      <span><b data-countdown-days>00</b><small>Days</small></span>
-      <span><b data-countdown-hours>00</b><small>Hours</small></span>
-      <span><b data-countdown-minutes>00</b><small>Minutes</small></span>
-      <span><b data-countdown-seconds>00</b><small>Seconds</small></span>
-    </div>
+  <div class="home-hero-v4-index">
+    <dl aria-label="CPL 2026 tournament overview">
+      <div><dt>Matches</dt><dd>39</dd></div>
+      <div><dt>Teams</dt><dd>7</dd></div>
+      <div><dt>Host grounds</dt><dd>8</dd></div>
+      <div><dt>Season</dt><dd>45 days</dd></div>
+    </dl>
     <a href="/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/">
-      <span>Jamaica Kingsmen <b>vs</b> Antigua &amp; Barbuda Falcons</span>
-      <small>View opening match <b aria-hidden="true">→</b></small>
+      <span>Opening night</span>
+      <strong>7 August · Arnos Vale Stadium</strong>
+      <b aria-hidden="true">→</b>
     </a>
   </div>
 </section>
