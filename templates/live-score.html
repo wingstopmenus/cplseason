@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/social/cpl-2026-schedule-teams-live-coverage.webp">
+  <meta property="og:image:alt" content="CPL 2026 live score and match centre">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731a">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="live-score-page">
+  <a class="skip-link" href="#main">Skip to live score</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home">
+      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a>
+      <a href="/schedule/">Schedule</a>
+      <a href="/live-score/" aria-current="page">Live Score</a>
+      <a href="/teams/">Teams</a>
+      <a href="/points-table/">Points Table</a>
+      <a href="/players/">Players</a>
+      <a href="/squads/">Squads</a>
+      <a href="/venues/">Venues</a>
+      <a href="/watch-live/">Watch Live</a>
+      <a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <main
+    id="main"
+    class="live-score-control"
+    data-live-score
+    data-live-score-endpoint="{{ config.endpoint }}"
+    data-live-score-interval="{{ config.polling_seconds }}"
+  >
+    <nav class="live-score-breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li aria-current="page">CPL Live Score</li>
+      </ol>
+    </nav>
+
+    <section class="live-score-hero" aria-labelledby="live-score-title">
+      <div class="live-score-hero-copy">
+        <p class="live-score-kicker"><i aria-hidden="true"></i> Official-feed matchday hub</p>
+        <h1 id="live-score-title">{{ config.headline }}</h1>
+        <p>{{ config.lede }}</p>
+        <div class="live-score-hero-actions">
+          <a href="#current-match">Open live panel <span aria-hidden="true">↓</span></a>
+          <a href="/schedule/">Full CPL schedule <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <aside class="live-score-signal" aria-label="Live score feed status">
+        <div>
+          <span data-feed-signal><i aria-hidden="true"></i> Connecting</span>
+          <small>Auto refresh · {{ config.polling_seconds }} sec</small>
+        </div>
+        <strong data-feed-clock>--:--:--</strong>
+        <p>Verified feed time</p>
+        <button type="button" data-live-refresh>
+          <span aria-hidden="true">↻</span> Refresh now
+        </button>
+      </aside>
+    </section>
+
+    <dl class="live-score-rail" aria-label="CPL 2026 live score coverage">
+      <div><dt>Matches</dt><dd>39</dd><span>League + playoffs</span></div>
+      <div><dt>Teams</dt><dd>7</dd><span>One live hub</span></div>
+      <div><dt>Update rate</dt><dd>{{ config.polling_seconds }}s</dd><span>While page is open</span></div>
+      <div><dt>Score policy</dt><dd>Verified</dd><span>No invented data</span></div>
+    </dl>
+
+    <section id="current-match" class="live-score-board" aria-labelledby="current-match-title">
+      <header class="live-score-board-head">
+        <div>
+          <p>01 / Current match</p>
+          <h2 id="current-match-title">CPL 2026 match centre</h2>
+        </div>
+        <div class="live-score-status" aria-live="polite">
+          <span data-match-status><i aria-hidden="true"></i> Pre-match</span>
+          <small data-feed-message>Connecting to the verified score feed…</small>
+        </div>
+      </header>
+
+      <div class="live-score-console">
+        <div class="live-score-console-top">
+          <span data-match-label>Match {{ focus.match_number }} · {{ focus.stage }}</span>
+          <time data-match-date datetime="{{ focus.start_iso }}">{{ focus.date_label_long }} · {{ focus.time_label }} local</time>
+          <a data-match-venue href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }}</a>
+        </div>
+
+        <div class="live-score-versus" data-scoreboard>
+          <article class="live-score-team live-score-team--home" data-score-team="home">
+            <a data-team-link href="/team/{{ focus.home_team.slug }}/">
+              <img data-team-logo src="{{ focus.home_team.logo }}" width="170" height="170" alt="{{ focus.home_team.name }} logo">
+              <span>
+                <small data-team-short>{{ focus.home_short }}</small>
+                <strong data-team-name>{{ focus.home_label }}</strong>
+              </span>
+            </a>
+            <div class="live-score-innings">
+              <strong data-team-score>—</strong>
+              <span data-team-overs>Score pending</span>
+            </div>
+          </article>
+
+          <div class="live-score-centre-mark">
+            <span data-centre-status>VS</span>
+            <div class="live-score-countdown" data-live-countdown data-start="{{ focus.start_iso }}">
+              <strong data-countdown-value>--:--:--</strong>
+              <small data-countdown-label>Until first ball</small>
+            </div>
+          </div>
+
+          <article class="live-score-team live-score-team--away" data-score-team="away">
+            <a data-team-link href="/team/{{ focus.away_team.slug }}/">
+              <img data-team-logo src="{{ focus.away_team.logo }}" width="170" height="170" alt="{{ focus.away_team.name }} logo">
+              <span>
+                <small data-team-short>{{ focus.away_short }}</small>
+                <strong data-team-name>{{ focus.away_label }}</strong>
+              </span>
+            </a>
+            <div class="live-score-innings">
+              <strong data-team-score>—</strong>
+              <span data-team-overs>Score pending</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="live-score-state">
+          <div>
+            <span>Match state</span>
+            <strong data-state-heading>Live coverage begins on match day</strong>
+            <p data-state-copy>The toss, playing XIs and innings scores will appear only after the official CPL feed confirms them.</p>
+          </div>
+          <a data-current-match-link href="{{ focus.url }}">Open full match centre <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <section class="live-score-lineups" aria-labelledby="live-lineups-title">
+        <header>
+          <div><span>Playing XIs</span><strong id="live-lineups-title">Confirmed after the toss</strong></div>
+          <small data-lineups-status>Awaiting official team sheets</small>
+        </header>
+        <div>
+          <article data-live-lineup="home">
+            <h3>{{ focus.home_label }}</h3>
+            <p class="live-score-empty">The confirmed XI will appear when the official match feed publishes it.</p>
+          </article>
+          <article data-live-lineup="away">
+            <h3>{{ focus.away_label }}</h3>
+            <p class="live-score-empty">The confirmed XI will appear when the official match feed publishes it.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="live-score-metrics" aria-label="Current match details">
+        <article>
+          <span>Toss</span>
+          <strong data-live-toss>Awaiting confirmation</strong>
+        </article>
+        <article>
+          <span>Current run rate</span>
+          <strong data-live-crr>—</strong>
+        </article>
+        <article>
+          <span>Target</span>
+          <strong data-live-target>—</strong>
+        </article>
+        <article>
+          <span>Required rate</span>
+          <strong data-live-rrr>—</strong>
+        </article>
+      </div>
+
+      <div class="live-score-detail-grid">
+        <article class="live-score-batters">
+          <header><span>At the crease</span><strong>Batters</strong></header>
+          <div data-live-batters>
+            <p class="live-score-empty">Confirmed batters will appear after play begins.</p>
+          </div>
+        </article>
+        <article class="live-score-bowler">
+          <header><span>With the ball</span><strong>Current bowler</strong></header>
+          <div data-live-bowler>
+            <p class="live-score-empty">The current bowler will appear after play begins.</p>
+          </div>
+        </article>
+        <article class="live-score-recent">
+          <header><span>Latest sequence</span><strong>Recent balls</strong></header>
+          <div data-recent-balls aria-live="polite">
+            <p class="live-score-empty">Ball outcomes activate with the live innings.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="live-score-fixtures" aria-labelledby="upcoming-title">
+      <header class="live-score-section-head">
+        <div><p>02 / Match queue</p><h2 id="upcoming-title">Upcoming CPL matches</h2></div>
+        <a href="/schedule/">Complete schedule <span aria-hidden="true">→</span></a>
+      </header>
+      <div class="live-score-fixture-grid" data-upcoming-matches>
+        {% for match in upcoming %}
+        <article data-upcoming-card data-match-number="{{ match.match_number }}">
+          <div>
+            <span>Match {{ match.match_number }}</span>
+            <time datetime="{{ match.start_iso }}">{{ match.date_label }}</time>
+          </div>
+          <p><strong>{{ match.home_short }}</strong><i aria-hidden="true">vs</i><strong>{{ match.away_short }}</strong></p>
+          <h3>{{ match.home_label }} <span>vs</span> {{ match.away_label }}</h3>
+          <small>{{ match.time_label }} local · {{ match.venue.name }}</small>
+          <a href="{{ match.url }}">Match centre <span aria-hidden="true">→</span></a>
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="live-score-results" aria-labelledby="results-title">
+      <header class="live-score-section-head">
+        <div><p>03 / Verified scorecards</p><h2 id="results-title">Latest CPL results</h2></div>
+        <span data-results-status>Updates after completed matches</span>
+      </header>
+      <div class="live-score-result-grid" data-live-results>
+        <article class="live-score-no-results">
+          <span>Pre-season</span>
+          <strong>No completed CPL 2026 matches yet</strong>
+          <p>Final scores and result statements will appear here after the official feed closes each match.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="live-score-trust" aria-labelledby="score-policy-title">
+      <div>
+        <p>04 / Data standard</p>
+        <h2 id="score-policy-title">Fast enough for matchday. Careful enough to trust.</h2>
+        <p>{{ config.source_note }}</p>
+      </div>
+      <ol>
+        <li><span>01</span><strong>Official schedule</strong><p>The match queue comes from the current CPL competition feed.</p></li>
+        <li><span>02</span><strong>Verified score state</strong><p>Runs, wickets and overs display only when the match summary supplies them.</p></li>
+        <li><span>03</span><strong>Safe fallback</strong><p>A connection issue never turns an unknown score into a made-up number.</p></li>
+      </ol>
+      <small>Primary data route: {{ config.source_name }} · Last source review {{ config.last_updated }}</small>
+    </section>
+
+    <section class="live-score-faq" aria-labelledby="live-score-faq-title">
+      <header class="live-score-section-head">
+        <div><p>05 / Quick answers</p><h2 id="live-score-faq-title">CPL live score questions</h2></div>
+      </header>
+      <div>
+        {% for item in config.faq %}
+        <details{% if loop.first %} open{% endif %}>
+          <summary>{{ item.question }}<span aria-hidden="true">+</span></summary>
+          <p>{{ item.answer }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </section>
+
+    <script id="live-score-match-map" type="application/json">{{ match_map_json | safe }}</script>
+  </main>
+
+  {% include "partials/footer.html" %}
+  <script src="/static/js/site.js?v=20260729ms" defer></script>
+  <script src="/static/js/live-score.js?v=20260731a" defer></script>
+</body>
+</html>

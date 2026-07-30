@@ -10,6 +10,8 @@ The site uses static HTML, CSS and vanilla JavaScript.
   attribution and the CPL 2026 match allocation.
 - `data/matches/*.json` — one match record per file, including canonical team
   and venue references plus the official match-centre identifier.
+- `data/live-score.json` — metadata, refresh policy and trust copy for the
+  canonical `/live-score/` matchday hub.
 - `data/broadcast-guide.json` — verified regional viewing status, time
   conversions, source links and FAQs for `/watch-live/`.
 - `data/news/*.json` — one source record per CPL news article, including dates,
@@ -25,6 +27,12 @@ The site uses static HTML, CSS and vanilla JavaScript.
 - `templates/watch-live.html` — Jinja template for the legal viewing guide.
 - `templates/player.html` — shared Jinja template for every `/player/[slug]/` page.
 - `templates/match.html` — shared Jinja template for every `/match/[slug]/` page.
+- `templates/live-score.html` — Jinja template for the dynamic `/live-score/` hub.
+- `static/js/live-score.js` — polls the local live-score proxy, updates the
+  current score panel and preserves the last verified state on feed errors.
+- `api/cpl-live-score.js` — server-side normalized proxy for the official CPL
+  MCPRO schedule and match-summary feeds; the client key is never placed in the
+  live-score page.
 - `templates/venues.html` — Jinja template for `/venues/`.
 - `templates/news.html` — Jinja template for the `/news/` story index.
 - `templates/news-article.html` — shared Jinja template for every
@@ -37,7 +45,7 @@ The site uses static HTML, CSS and vanilla JavaScript.
   image references, and the generated squads page.
 
 `players/index.html`, `squads/index.html`, `teams/index.html`,
-`points-table/index.html`, `watch-live/index.html`, `venues/index.html`,
+`points-table/index.html`, `live-score/index.html`, `watch-live/index.html`, `venues/index.html`,
 every `player/*/index.html`, every `team/*/index.html`, and every
 `venue/*/index.html`, `match/*/index.html` and `news/*/index.html` file are
 generated. Do not edit them directly.
@@ -59,3 +67,12 @@ The static points-table HTML is a safe pre-season fallback. In the browser,
 `api.mcpro.cricket`, using the public CPL match-centre client identifier. Empty,
 partial or unavailable responses never create a ranking: the last confirmed
 table remains visible until a complete official ladder is returned.
+
+## Live score hub
+
+The live-score HTML is a confirmed-fixture fallback, not a frozen score page.
+`static/js/live-score.js` requests `/api/cpl-live-score` on load, every 15
+seconds while visible and whenever the visitor presses refresh. The proxy
+selects the live match when one is in progress, otherwise the next scheduled
+match or latest completed match, then normalizes official summary scores. Empty,
+invalid or unavailable responses leave the last verified browser state intact.

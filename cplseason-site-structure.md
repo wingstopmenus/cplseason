@@ -5,7 +5,7 @@ This repository is the isolated static build for `cplseason.com`.
 ## Canonical routes
 
 - `/` — tournament home
-- `/schedule/`, `/points-table/`, `/teams/`, `/players/`, `/squads/`, `/venues/`, `/watch-live/`, `/news/`
+- `/schedule/`, `/live-score/`, `/points-table/`, `/teams/`, `/players/`, `/squads/`, `/venues/`, `/watch-live/`, `/news/`
 - `/team/[slug]/` — one canonical page per CPL team
 - `/player/[slug]/` — one canonical page per player
 - `/venue/[slug]/` — one canonical page per venue
@@ -27,6 +27,11 @@ standings may only be populated from confirmed match data.
 Match pages are generated from `data/matches/*.json`. Each match must resolve
 both teams and its venue, and must use a match-specific official data endpoint
 for live scoring rather than invented or manually simulated updates.
+
+The `/live-score/` matchday hub is generated from `data/live-score.json` plus
+the canonical match, team and venue records. Its visible score state must poll
+the server-side `/api/cpl-live-score` proxy, retain the last verified state when
+the official feed is unavailable and never manufacture placeholder scores.
 
 The Watch Live guide is generated from `data/broadcast-guide.json`. A region
 may be marked confirmed only when a current CPL or broadcaster-owned source

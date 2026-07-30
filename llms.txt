@@ -3,7 +3,7 @@
 > Complete canonical URL directory for CPL Season, an independent
 > Caribbean Premier League coverage site focused on the 2026 season.
 
-This file lists all 211 public URLs from https://cplseason.com/sitemap.xml.
+This file lists all 212 public URLs from https://cplseason.com/sitemap.xml.
 For changing information such as fixtures, match times, and standings, use the
 latest content on the linked page.
 
@@ -14,6 +14,10 @@ latest content on the linked page.
 ## Schedule
 
 - [Schedule](https://cplseason.com/schedule/)
+
+## Live Score
+
+- [Live Score](https://cplseason.com/live-score/)
 
 ## Points Table
 

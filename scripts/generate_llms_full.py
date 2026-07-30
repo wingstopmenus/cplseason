@@ -46,6 +46,7 @@ def render() -> str:
     players = load_collection(ROOT / "data" / "players")
     news = load_collection(ROOT / "data" / "news")
     broadcast = load_json(ROOT / "data" / "broadcast-guide.json")
+    live_score = load_json(ROOT / "data" / "live-score.json")
 
     teams.sort(key=lambda item: item["name"])
     venues.sort(key=lambda item: item["name"])
@@ -55,7 +56,7 @@ def render() -> str:
     last_match = matches[-1]
     latest_update = max(
         item.get("last_updated", "")
-        for item in teams + venues + matches + players + news + [broadcast]
+        for item in teams + venues + matches + players + news + [broadcast, live_score]
     )
 
     lines = [
@@ -87,6 +88,7 @@ def render() -> str:
         "",
         f"- [Complete URL directory]({BASE_URL}/llms.txt)",
         f"- [Schedule]({BASE_URL}/schedule/)",
+        f"- [Live score]({BASE_URL}/live-score/)",
         f"- [Points table]({BASE_URL}/points-table/)",
         f"- [Teams]({BASE_URL}/teams/)",
         f"- [Squads]({BASE_URL}/squads/)",

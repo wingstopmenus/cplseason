@@ -477,6 +477,81 @@ def main() -> int:
         if f'href="/match/{slug}/"' not in schedule_page:
             errors.append(f"Schedule page does not link match {slug}")
 
+    live_score_data_path = ROOT / "data" / "live-score.json"
+    if not live_score_data_path.is_file():
+        errors.append("Missing data/live-score.json")
+        live_score_data = {}
+    else:
+        live_score_data = load_json(live_score_data_path)
+    for field in (
+        "slug",
+        "title",
+        "description",
+        "canonical",
+        "headline",
+        "lede",
+        "endpoint",
+        "polling_seconds",
+        "source_name",
+        "source_url",
+        "source_note",
+        "faq",
+        "last_updated",
+    ):
+        if not live_score_data.get(field):
+            errors.append(f"Live score data is missing {field}")
+    if live_score_data.get("slug") != "live-score":
+        errors.append("Live score data must use the live-score slug")
+    if live_score_data.get("endpoint") != "/api/cpl-live-score":
+        errors.append("Live score page must use the local server-side score proxy")
+    if live_score_data.get("polling_seconds") != 15:
+        errors.append("Live score page must poll the verified feed every 15 seconds")
+    if len(live_score_data.get("faq", [])) != 4:
+        errors.append("Live score page must contain four visible FAQ answers")
+
+    live_score_page_path = ROOT / "live-score" / "index.html"
+    if not live_score_page_path.is_file():
+        errors.append("Missing generated /live-score/ page")
+        live_score_page = ""
+    else:
+        live_score_page = live_score_page_path.read_text(encoding="utf-8")
+    if 'class="live-score-control"' not in live_score_page:
+        errors.append("Live score page was not rendered from the shared template")
+    if (
+        '<link rel="canonical" href="https://cplseason.com/live-score/">'
+        not in live_score_page
+    ):
+        errors.append("Live score page has the wrong canonical")
+    if 'data-live-score-endpoint="/api/cpl-live-score"' not in live_score_page:
+        errors.append("Live score page is missing its dynamic API endpoint")
+    if 'src="/static/js/live-score.js?' not in live_score_page:
+        errors.append("Live score page is missing the automatic polling script")
+    if 'href="/static/css/live-score.css?' not in live_score_page:
+        errors.append("Live score page is missing its dedicated responsive styles")
+    if live_score_page.count("data-upcoming-card") != 5:
+        errors.append("Live score page must render five verified fallback fixtures")
+    if live_score_page.count('"matchNumber":') != 39:
+        errors.append("Live score page must map all 39 canonical match centres")
+    if '"@type":"FAQPage"' not in live_score_page:
+        errors.append("Live score page is missing FAQ schema")
+    for match in sorted(matches.values(), key=lambda item: item["match_number"])[:5]:
+        if f'href="/match/{match["slug"]}/"' not in live_score_page:
+            errors.append(
+                f"Live score fallback does not link Match {match['match_number']}"
+            )
+
+    live_score_api_path = ROOT / "api" / "cpl-live-score.js"
+    if not live_score_api_path.is_file():
+        errors.append("Missing server-side CPL live score proxy")
+    else:
+        live_score_api = live_score_api_path.read_text(encoding="utf-8")
+        if "api.mcpro.cricket/v1" not in live_score_api:
+            errors.append("Live score proxy is not connected to the official feed")
+        if "inningsScores" not in live_score_api:
+            errors.append("Live score proxy does not normalize official innings scores")
+        if "status(503)" not in live_score_api:
+            errors.append("Live score proxy must fail closed when the feed is unavailable")
+
 
     broadcast_data_path = ROOT / "data" / "broadcast-guide.json"
     if not broadcast_data_path.is_file():

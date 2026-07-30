@@ -1,0 +1,32 @@
+{
+  "slug": "live-score",
+  "title": "CPL Live Score 2026: Live Match, Scorecard and Results",
+  "description": "Follow the CPL 2026 live score with automatic match status, innings scores, overs, recent results, upcoming fixtures and links to full scorecards.",
+  "canonical": "https://cplseason.com/live-score/",
+  "headline": "Every ball. One command centre.",
+  "lede": "Follow the current Caribbean Premier League match with verified score updates, innings state, match status and direct access to the full scorecard.",
+  "endpoint": "/api/cpl-live-score",
+  "polling_seconds": 15,
+  "source_name": "Official CPL MCPRO match feed",
+  "source_url": "https://match-center.cplt20.com/",
+  "source_note": "Scores are shown only after the official feed confirms them. If the feed is interrupted, the last verified state remains visible.",
+  "faq": [
+    {
+      "question": "Does the CPL live score update automatically?",
+      "answer": "Yes. The live-score page checks the verified CPL match feed every 15 seconds while the page is visible. You can also request an immediate refresh."
+    },
+    {
+      "question": "What appears before a CPL match starts?",
+      "answer": "Before the toss, the page shows the confirmed fixture, venue, start time and a countdown. Scores, playing XIs and innings details remain pending until the official feed publishes them."
+    },
+    {
+      "question": "What happens if the official score feed is unavailable?",
+      "answer": "The page keeps the last verified state on screen and clearly marks the connection issue. It does not replace missing data with an invented score."
+    },
+    {
+      "question": "Where can I see the full CPL scorecard?",
+      "answer": "Use the Open full match centre button for the selected fixture. Individual match pages include the official scorecard and ball-by-ball match-centre window."
+    }
+  ],
+  "last_updated": "2026-07-31"
+}

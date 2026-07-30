@@ -13,6 +13,7 @@ import xml.etree.ElementTree as ET
 CATEGORY_ORDER = [
     "",
     "schedule",
+    "live-score",
     "points-table",
     "teams",
     "team",
@@ -30,6 +31,7 @@ CATEGORY_ORDER = [
 CATEGORY_TITLES = {
     "": "Homepage",
     "schedule": "Schedule",
+    "live-score": "Live Score",
     "points-table": "Points Table",
     "teams": "Teams Directory",
     "team": "Team Pages",

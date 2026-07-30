@@ -1743,6 +1743,184 @@ def build_watch_live() -> None:
     )
 
 
+def build_live_score() -> None:
+    config = load_json(ROOT / "data" / "live-score.json")
+    teams = {
+        path.stem: load_json(path)
+        for path in sorted((ROOT / "data" / "teams").glob("*.json"))
+    }
+    venues = {
+        path.stem: load_json(path)
+        for path in sorted((ROOT / "data" / "venues").glob("*.json"))
+    }
+    source_matches = sorted(
+        (load_json(path) for path in (ROOT / "data" / "matches").glob("*.json")),
+        key=lambda match: match["match_number"],
+    )
+
+    def decorate_fixture(source: dict) -> dict:
+        match = dict(source)
+        start = datetime.fromisoformat(match["start_iso"])
+        home_team = teams.get(match.get("home_team_slug"))
+        away_team = teams.get(match.get("away_team_slug"))
+        venue = venues[match["venue_slug"]]
+        hour = start.strftime("%I").lstrip("0")
+        match.update(
+            {
+                "home_team": home_team,
+                "away_team": away_team,
+                "home_label": (
+                    home_team["name"] if home_team else match["home_team_label"]
+                ),
+                "away_label": (
+                    away_team["name"] if away_team else match["away_team_label"]
+                ),
+                "home_short": (
+                    home_team["short_name"] if home_team else "TBC"
+                ),
+                "away_short": (
+                    away_team["short_name"] if away_team else "TBC"
+                ),
+                "venue": venue,
+                "date_label": (
+                    f"{start.strftime('%a')} {start.day} {start.strftime('%b')}"
+                ),
+                "date_label_long": (
+                    f"{start.strftime('%A')}, {start.day} "
+                    f"{start.strftime('%B %Y')}"
+                ),
+                "time_label": (
+                    f"{hour}:{start.strftime('%M')}{start.strftime('%p').lower()}"
+                ),
+                "url": f"/match/{match['slug']}/",
+            }
+        )
+        return match
+
+    matches = [decorate_fixture(match) for match in source_matches]
+    focus = matches[0]
+    upcoming = matches[:5]
+    page = {
+        "title": config["title"],
+        "description": config["description"],
+        "canonical": config["canonical"],
+        "date_modified": config["last_updated"],
+    }
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{page['canonical']}#webpage",
+                "url": page["canonical"],
+                "name": page["title"],
+                "description": page["description"],
+                "dateModified": page["date_modified"],
+                "breadcrumb": {"@id": f"{page['canonical']}#breadcrumb"},
+                "mainEntity": {"@id": f"{page['canonical']}#matches"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{page['canonical']}#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://cplseason.com/",
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Live Score",
+                        "item": page["canonical"],
+                    },
+                ],
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{page['canonical']}#matches",
+                "name": "CPL 2026 live score and match centres",
+                "numberOfItems": len(matches),
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": match["match_number"],
+                        "url": f"https://cplseason.com{match['url']}",
+                        "name": (
+                            f"Match {match['match_number']}: "
+                            f"{match['home_label']} vs {match['away_label']}"
+                        ),
+                    }
+                    for match in matches
+                ],
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{page['canonical']}#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item["question"],
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": item["answer"],
+                        },
+                    }
+                    for item in config["faq"]
+                ],
+            },
+        ],
+    }
+    match_map = [
+        {
+            "matchNumber": match["match_number"],
+            "url": match["url"],
+            "startIso": match["start_iso"],
+            "dateLabel": match["date_label"],
+            "dateLabelLong": match["date_label_long"],
+            "timeLabel": match["time_label"],
+            "stage": match["stage"],
+            "home": {
+                "name": match["home_label"],
+                "shortName": match["home_short"],
+                "logo": match["home_team"]["logo"] if match["home_team"] else "",
+                "url": (
+                    f"/team/{match['home_team']['slug']}/"
+                    if match["home_team"]
+                    else ""
+                ),
+            },
+            "away": {
+                "name": match["away_label"],
+                "shortName": match["away_short"],
+                "logo": match["away_team"]["logo"] if match["away_team"] else "",
+                "url": (
+                    f"/team/{match['away_team']['slug']}/"
+                    if match["away_team"]
+                    else ""
+                ),
+            },
+            "venue": match["venue"]["name"],
+        }
+        for match in matches
+    ]
+    rendered = template_environment().get_template("live-score.html").render(
+        page=page,
+        config=config,
+        focus=focus,
+        upcoming=upcoming,
+        match_map_json=json.dumps(
+            match_map, ensure_ascii=False, separators=(",", ":")
+        ),
+        schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
+    )
+    output = ROOT / "live-score" / "index.html"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(rendered + "\n", encoding="utf-8")
+    print(f"Rendered {output.relative_to(ROOT)} with dynamic official score feed")
+
+
 def build_match_spotlight_schedule() -> list[dict]:
     """Publish the compact schedule used by live homepage/footer spotlights."""
     venues = {
@@ -2347,6 +2525,7 @@ if __name__ == "__main__":
     build_team_profiles()
     build_points_table()
     build_watch_live()
+    build_live_score()
     build_matches()
     link_schedule_matches()
     build_news()

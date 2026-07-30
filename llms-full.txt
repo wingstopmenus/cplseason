@@ -26,6 +26,7 @@
 
 - [Complete URL directory](https://cplseason.com/llms.txt)
 - [Schedule](https://cplseason.com/schedule/)
+- [Live score](https://cplseason.com/live-score/)
 - [Points table](https://cplseason.com/points-table/)
 - [Teams](https://cplseason.com/teams/)
 - [Squads](https://cplseason.com/squads/)
