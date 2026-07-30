@@ -1,0 +1,506 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPL Season//CPL 2026 Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CPL 2026 Schedule
+X-WR-CALDESC:All 39 Caribbean Premier League 2026 matches
+BEGIN:VEVENT
+UID:cpl2026-match-1@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260807T230000Z
+DTEND:20260808T030000Z
+SUMMARY:Jamaica Kingsmen vs Antigua & Barbuda Falcons
+LOCATION:Arnos Vale Stadium\, Saint Vincent and the Grenadines
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/jamaica-kingsmen-vs-antigua-barbuda-falcons/
+URL:https://cplseason.com/match/jamaica-kingsmen-vs-antigua-barbuda-falco
+ ns/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-2@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260808T230000Z
+DTEND:20260809T030000Z
+SUMMARY:St Kitts & Nevis Patriots vs Trinbago Knight Riders
+LOCATION:Arnos Vale Stadium\, Saint Vincent and the Grenadines
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/st-kitts-nevis-patriots-vs-trinbago-knight-riders/
+URL:https://cplseason.com/match/st-kitts-nevis-patriots-vs-trinbago-knigh
+ t-riders/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-3@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260809T230000Z
+DTEND:20260810T030000Z
+SUMMARY:Antigua & Barbuda Falcons vs Saint Lucia Kings
+LOCATION:Arnos Vale Stadium\, Saint Vincent and the Grenadines
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/antigua-barbuda-falcons-vs-saint-lucia-kings/
+URL:https://cplseason.com/match/antigua-barbuda-falcons-vs-saint-lucia-ki
+ ngs/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-4@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260812T000000Z
+DTEND:20260812T040000Z
+SUMMARY:Jamaica Kingsmen vs Barbados Tridents
+LOCATION:Sabina Park\, Jamaica
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/jamaica-kingsmen-vs-barbados-royals/
+URL:https://cplseason.com/match/jamaica-kingsmen-vs-barbados-royals/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-5@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260812T230000Z
+DTEND:20260813T030000Z
+SUMMARY:Saint Lucia Kings vs St Kitts & Nevis Patriots
+LOCATION:Daren Sammy Cricket Ground\, Saint Lucia
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/saint-lucia-kings-vs-st-kitts-nevis-patriots/
+URL:https://cplseason.com/match/saint-lucia-kings-vs-st-kitts-nevis-patri
+ ots/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-6@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260814T000000Z
+DTEND:20260814T040000Z
+SUMMARY:Jamaica Kingsmen vs Guyana Amazon Warriors
+LOCATION:Sabina Park\, Jamaica
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/jamaica-kingsmen-vs-guyana-amazon-warriors/
+URL:https://cplseason.com/match/jamaica-kingsmen-vs-guyana-amazon-warrior
+ s/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-7@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260814T230000Z
+DTEND:20260815T030000Z
+SUMMARY:Saint Lucia Kings vs Antigua & Barbuda Falcons
+LOCATION:Daren Sammy Cricket Ground\, Saint Lucia
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/saint-lucia-kings-vs-antigua-barbuda-falcons/
+URL:https://cplseason.com/match/saint-lucia-kings-vs-antigua-barbuda-falc
+ ons/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-8@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260816T000000Z
+DTEND:20260816T040000Z
+SUMMARY:Jamaica Kingsmen vs Trinbago Knight Riders
+LOCATION:Sabina Park\, Jamaica
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/jamaica-kingsmen-vs-trinbago-knight-riders/
+URL:https://cplseason.com/match/jamaica-kingsmen-vs-trinbago-knight-rider
+ s/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-9@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260816T230000Z
+DTEND:20260817T030000Z
+SUMMARY:Saint Lucia Kings vs Barbados Tridents
+LOCATION:Daren Sammy Cricket Ground\, Saint Lucia
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/saint-lucia-kings-vs-barbados-royals/
+URL:https://cplseason.com/match/saint-lucia-kings-vs-barbados-royals/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-10@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260819T000000Z
+DTEND:20260819T040000Z
+SUMMARY:Jamaica Kingsmen vs St Kitts & Nevis Patriots
+LOCATION:Sabina Park\, Jamaica
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/jamaica-kingsmen-vs-st-kitts-nevis-patriots/
+URL:https://cplseason.com/match/jamaica-kingsmen-vs-st-kitts-nevis-patrio
+ ts/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-11@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260819T230000Z
+DTEND:20260820T030000Z
+SUMMARY:Saint Lucia Kings vs Guyana Amazon Warriors
+LOCATION:Daren Sammy Cricket Ground\, Saint Lucia
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/saint-lucia-kings-vs-guyana-amazon-warriors/
+URL:https://cplseason.com/match/saint-lucia-kings-vs-guyana-amazon-warrio
+ rs/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-12@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260820T230000Z
+DTEND:20260821T030000Z
+SUMMARY:Antigua & Barbuda Falcons vs St Kitts & Nevis Patriots
+LOCATION:Sir Vivian Richards Stadium\, Antigua and Barbuda
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/antigua-barbuda-falcons-vs-st-kitts-nevis-patriots/
+URL:https://cplseason.com/match/antigua-barbuda-falcons-vs-st-kitts-nevis
+ -patriots/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-13@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260821T230000Z
+DTEND:20260822T030000Z
+SUMMARY:Saint Lucia Kings vs Jamaica Kingsmen
+LOCATION:Daren Sammy Cricket Ground\, Saint Lucia
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/saint-lucia-kings-vs-jamaica-kingsmen/
+URL:https://cplseason.com/match/saint-lucia-kings-vs-jamaica-kingsmen/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-14@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260822T230000Z
+DTEND:20260823T030000Z
+SUMMARY:Antigua & Barbuda Falcons vs Trinbago Knight Riders
+LOCATION:Sir Vivian Richards Stadium\, Antigua and Barbuda
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/antigua-barbuda-falcons-vs-trinbago-knight-riders/
+URL:https://cplseason.com/match/antigua-barbuda-falcons-vs-trinbago-knigh
+ t-riders/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-15@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260823T230000Z
+DTEND:20260824T030000Z
+SUMMARY:Antigua & Barbuda Falcons vs Guyana Amazon Warriors
+LOCATION:Sir Vivian Richards Stadium\, Antigua and Barbuda
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/antigua-barbuda-falcons-vs-guyana-amazon-warriors/
+URL:https://cplseason.com/match/antigua-barbuda-falcons-vs-guyana-amazon-
+ warriors/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-16@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260825T230000Z
+DTEND:20260826T030000Z
+SUMMARY:Antigua & Barbuda Falcons vs Barbados Tridents
+LOCATION:Sir Vivian Richards Stadium\, Antigua and Barbuda
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/antigua-barbuda-falcons-vs-barbados-royals/
+URL:https://cplseason.com/match/antigua-barbuda-falcons-vs-barbados-royal
+ s/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-17@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260826T230000Z
+DTEND:20260827T030000Z
+SUMMARY:Trinbago Knight Riders vs Saint Lucia Kings
+LOCATION:Brian Lara Cricket Academy\, Trinidad and Tobago
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/trinbago-knight-riders-vs-saint-lucia-kings/
+URL:https://cplseason.com/match/trinbago-knight-riders-vs-saint-lucia-kin
+ gs/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-18@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260827T230000Z
+DTEND:20260828T030000Z
+SUMMARY:St Kitts & Nevis Patriots vs Jamaica Kingsmen
+LOCATION:Warner Park\, Saint Kitts and Nevis
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/st-kitts-nevis-patriots-vs-jamaica-kingsmen/
+URL:https://cplseason.com/match/st-kitts-nevis-patriots-vs-jamaica-kingsm
+ en/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-19@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260829T000000Z
+DTEND:20260829T040000Z
+SUMMARY:Trinbago Knight Riders vs Barbados Tridents
+LOCATION:Brian Lara Cricket Academy\, Trinidad and Tobago
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/trinbago-knight-riders-vs-barbados-royals/
+URL:https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals
+ /
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-20@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260829T230000Z
+DTEND:20260830T030000Z
+SUMMARY:Trinbago Knight Riders vs Guyana Amazon Warriors
+LOCATION:Brian Lara Cricket Academy\, Trinidad and Tobago
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/trinbago-knight-riders-vs-guyana-amazon-warriors/
+URL:https://cplseason.com/match/trinbago-knight-riders-vs-guyana-amazon-w
+ arriors/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-21@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260830T230000Z
+DTEND:20260831T030000Z
+SUMMARY:St Kitts & Nevis Patriots vs Antigua & Barbuda Falcons
+LOCATION:Warner Park\, Saint Kitts and Nevis
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/st-kitts-nevis-patriots-vs-antigua-barbuda-falcons/
+URL:https://cplseason.com/match/st-kitts-nevis-patriots-vs-antigua-barbud
+ a-falcons/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-22@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260831T210000Z
+DTEND:20260901T010000Z
+SUMMARY:Trinbago Knight Riders vs Jamaica Kingsmen
+LOCATION:Brian Lara Cricket Academy\, Trinidad and Tobago
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/trinbago-knight-riders-vs-jamaica-kingsmen/
+URL:https://cplseason.com/match/trinbago-knight-riders-vs-jamaica-kingsme
+ n/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-23@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260901T230000Z
+DTEND:20260902T030000Z
+SUMMARY:St Kitts & Nevis Patriots vs Barbados Tridents
+LOCATION:Warner Park\, Saint Kitts and Nevis
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/st-kitts-nevis-patriots-vs-barbados-royals/
+URL:https://cplseason.com/match/st-kitts-nevis-patriots-vs-barbados-royal
+ s/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-24@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260902T230000Z
+DTEND:20260903T030000Z
+SUMMARY:Trinbago Knight Riders vs Antigua & Barbuda Falcons
+LOCATION:Brian Lara Cricket Academy\, Trinidad and Tobago
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/trinbago-knight-riders-vs-antigua-barbuda-falcons/
+URL:https://cplseason.com/match/trinbago-knight-riders-vs-antigua-barbuda
+ -falcons/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-25@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260903T230000Z
+DTEND:20260904T030000Z
+SUMMARY:St Kitts & Nevis Patriots vs Saint Lucia Kings
+LOCATION:Warner Park\, Saint Kitts and Nevis
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/st-kitts-nevis-patriots-vs-saint-lucia-kings/
+URL:https://cplseason.com/match/st-kitts-nevis-patriots-vs-saint-lucia-ki
+ ngs/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-26@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260904T230000Z
+DTEND:20260905T030000Z
+SUMMARY:Guyana Amazon Warriors vs Jamaica Kingsmen
+LOCATION:Providence Stadium\, Guyana
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/guyana-amazon-warriors-vs-jamaica-kingsmen/
+URL:https://cplseason.com/match/guyana-amazon-warriors-vs-jamaica-kingsme
+ n/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-27@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260906T000000Z
+DTEND:20260906T040000Z
+SUMMARY:Barbados Tridents vs Trinbago Knight Riders
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/barbados-royals-vs-trinbago-knight-riders/
+URL:https://cplseason.com/match/barbados-royals-vs-trinbago-knight-riders
+ /
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-28@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260906T140000Z
+DTEND:20260906T180000Z
+SUMMARY:Guyana Amazon Warriors vs St Kitts & Nevis Patriots
+LOCATION:Providence Stadium\, Guyana
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/guyana-amazon-warriors-vs-st-kitts-nevis-patriots/
+URL:https://cplseason.com/match/guyana-amazon-warriors-vs-st-kitts-nevis-
+ patriots/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-29@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260906T230000Z
+DTEND:20260907T030000Z
+SUMMARY:Barbados Tridents vs Saint Lucia Kings
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/barbados-royals-vs-saint-lucia-kings/
+URL:https://cplseason.com/match/barbados-royals-vs-saint-lucia-kings/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-30@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260908T230000Z
+DTEND:20260909T030000Z
+SUMMARY:Guyana Amazon Warriors vs Antigua & Barbuda Falcons
+LOCATION:Providence Stadium\, Guyana
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/guyana-amazon-warriors-vs-antigua-barbuda-falcons/
+URL:https://cplseason.com/match/guyana-amazon-warriors-vs-antigua-barbuda
+ -falcons/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-31@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260909T230000Z
+DTEND:20260910T030000Z
+SUMMARY:Guyana Amazon Warriors vs Saint Lucia Kings
+LOCATION:Providence Stadium\, Guyana
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/guyana-amazon-warriors-vs-saint-lucia-kings/
+URL:https://cplseason.com/match/guyana-amazon-warriors-vs-saint-lucia-kin
+ gs/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-32@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260910T230000Z
+DTEND:20260911T030000Z
+SUMMARY:Barbados Tridents vs St Kitts & Nevis Patriots
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/barbados-royals-vs-st-kitts-nevis-patriots/
+URL:https://cplseason.com/match/barbados-royals-vs-st-kitts-nevis-patriot
+ s/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-33@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260911T230000Z
+DTEND:20260912T030000Z
+SUMMARY:Guyana Amazon Warriors vs Trinbago Knight Riders
+LOCATION:Providence Stadium\, Guyana
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/guyana-amazon-warriors-vs-trinbago-knight-riders/
+URL:https://cplseason.com/match/guyana-amazon-warriors-vs-trinbago-knight
+ -riders/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-34@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260913T000000Z
+DTEND:20260913T040000Z
+SUMMARY:Barbados Tridents vs Jamaica Kingsmen
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/barbados-royals-vs-jamaica-kingsmen/
+URL:https://cplseason.com/match/barbados-royals-vs-jamaica-kingsmen/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-35@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260913T230000Z
+DTEND:20260914T030000Z
+SUMMARY:Barbados Tridents vs Guyana Amazon Warriors
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 League stage. Match centre: https://cplseason.com/ma
+ tch/barbados-royals-vs-guyana-amazon-warriors/
+URL:https://cplseason.com/match/barbados-royals-vs-guyana-amazon-warriors
+ /
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-36@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260916T230000Z
+DTEND:20260917T030000Z
+SUMMARY:Third-place team vs Fourth-place team
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 Eliminator. Match centre: https://cplseason.com/matc
+ h/cpl-2026-eliminator/
+URL:https://cplseason.com/match/cpl-2026-eliminator/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-37@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260918T000000Z
+DTEND:20260918T040000Z
+SUMMARY:First-place team vs Second-place team
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 Qualifier 1. Match centre: https://cplseason.com/mat
+ ch/cpl-2026-qualifier-1/
+URL:https://cplseason.com/match/cpl-2026-qualifier-1/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-38@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260918T230000Z
+DTEND:20260919T030000Z
+SUMMARY:Eliminator winner vs Qualifier 1 loser
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 Qualifier 2. Match centre: https://cplseason.com/mat
+ ch/cpl-2026-qualifier-2/
+URL:https://cplseason.com/match/cpl-2026-qualifier-2/
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cpl2026-match-39@cplseason.com
+DTSTAMP:20260730T000000Z
+DTSTART:20260920T230000Z
+DTEND:20260921T030000Z
+SUMMARY:Qualifier 1 winner vs Qualifier 2 winner
+LOCATION:Kensington Oval\, Barbados
+DESCRIPTION:CPL 2026 Final. Match centre: https://cplseason.com/match/cpl
+ -2026-final/
+URL:https://cplseason.com/match/cpl-2026-final/
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
