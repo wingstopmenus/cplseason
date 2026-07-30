@@ -1,0 +1,58 @@
+{
+  "slug": "reeza-hendricks",
+  "name": "Reeza Hendricks",
+  "team_slug": "jamaica-kingsmen",
+  "category": "Overseas player",
+  "selection_note": "Confirmed overseas signing announced 23 July 2026",
+  "image": "/static/img/official/players/reeza-hendricks.webp",
+  "initials": "RH",
+  "external_ids": {
+    "wikipedia": "Reeza_Hendricks",
+    "cpl": null
+  },
+  "last_updated": "2026-07-31",
+  "profile": {
+    "full_name": "Reeza Raphael Hendricks",
+    "birth_date": "14 August 1989",
+    "birth_place": "Kimberley, Northern Cape, South Africa",
+    "country": "South Africa",
+    "role": "Opening batter",
+    "batting_style": "Right-handed",
+    "bowling_style": "Right-arm off break",
+    "international_span": "2014–present",
+    "career_teams": [
+      "Gauteng",
+      "Joburg Super Kings",
+      "MI Cape Town",
+      "Karachi Kings",
+      "Dambulla Sixers",
+      "Jamaica Kingsmen"
+    ],
+    "records": [
+      {
+        "format": "T20I",
+        "matches": "88",
+        "runs": "2,491",
+        "wickets": "0",
+        "best_bowling": "–",
+        "hundreds_fifties": "1/18"
+      },
+      {
+        "format": "ODI",
+        "matches": "38",
+        "runs": "974",
+        "wickets": "1",
+        "best_bowling": "1/13",
+        "hundreds_fifties": "1/7"
+      },
+      {
+        "format": "FC",
+        "matches": "146",
+        "runs": "8,160",
+        "wickets": "11",
+        "best_bowling": "2/25",
+        "hundreds_fifties": "16/39"
+      }
+    ]
+  }
+}

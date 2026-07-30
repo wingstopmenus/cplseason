@@ -586,6 +586,11 @@ def build_squads() -> None:
         teams.append(team)
 
     total_players = sum(len(team["players"]) for team in teams)
+    directory_updated = max(
+        player["last_updated"]
+        for team in teams
+        for player in team["players"]
+    )
     page = {
         "title": "CPL 2026 Squads: Players for All Seven Teams",
         "description": (
@@ -593,7 +598,7 @@ def build_squads() -> None:
             "grouped by team and player category with a profile page for each name."
         ),
         "canonical": "https://cplseason.com/squads/",
-        "checked_label": "26 July 2026",
+        "checked_label": human_date(directory_updated),
     }
     schema = {
         "@context": "https://schema.org",
@@ -604,7 +609,7 @@ def build_squads() -> None:
                 "url": page["canonical"],
                 "name": page["title"],
                 "description": page["description"],
-                "dateModified": "2026-07-26",
+                "dateModified": directory_updated,
                 "mainEntity": {
                     "@type": "ItemList",
                     "numberOfItems": total_players,
@@ -686,10 +691,11 @@ def build_players() -> None:
 
     all_players = [player for team in teams for player in team["players"]]
     portrait_count = sum(bool(player["image"]) for player in all_players)
+    directory_updated = max(player["last_updated"] for player in all_players)
     page = {
         "title": "CPL 2026 Players by Team: Full Squad List",
         "description": (
-            "Find all 122 players named for CPL 2026, browse each team roster "
+            f"Find all {len(all_players)} players named for CPL 2026, browse each team roster "
             "and open profiles showing squad category and franchise details."
         ),
         "canonical": "https://cplseason.com/players/",
@@ -703,7 +709,7 @@ def build_players() -> None:
                 "url": page["canonical"],
                 "name": page["title"],
                 "description": page["description"],
-                "dateModified": "2026-07-26",
+                "dateModified": directory_updated,
                 "mainEntity": {
                     "@type": "ItemList",
                     "name": "CPL 2026 player profiles",
@@ -873,6 +879,10 @@ def build_player_profiles() -> None:
         player = dict(source_player)
         team = dict(teams_by_slug[player["team_slug"]])
         team["short_name"] = SHORT_NAMES[team["slug"]]
+        category_label = player["category"].lower()
+        player["category_article"] = (
+            "an" if category_label.startswith(("a", "e", "i", "o", "u")) else "a"
+        )
         player["about"] = player_about_copy(player, team)
         player["captain"] = (
             team["slug"] == "jamaica-kingsmen"
@@ -898,7 +908,7 @@ def build_player_profiles() -> None:
                 if player["image"]
                 else f"https://cplseason.com{team['logo']}"
             ),
-            "updated_label": "26 Jul 2026",
+            "updated_label": human_date(player["last_updated"]),
         }
         person_schema = {
             "@type": "Person",
@@ -1986,13 +1996,14 @@ def link_schedule_matches() -> None:
         opening, body, closing = card_match.groups()
         match_url = f"/match/{match['slug']}/"
         opening = re.sub(r'\sdata-match-url="[^"]*"', "", opening)
-        opening = opening[:-1] + f'\n    data-match-url="{match_url}"\n  >'
+        opening = opening[:-1].rstrip() + f'\n    data-match-url="{match_url}"\n  >'
         body = re.sub(
             r'\s*<a class="schedule-match-centre-cta"[^>]*>.*?</a>\s*$',
-            "\n",
+            "",
             body,
             flags=re.DOTALL,
         )
+        body = body.rstrip()
         cta = (
             f'\n    <a class="schedule-match-centre-cta" href="{match_url}">'
             f'<span>Match {match["match_number"]:02d}</span>'

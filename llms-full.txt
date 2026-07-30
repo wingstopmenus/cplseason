@@ -8,7 +8,7 @@
 - Canonical origin: https://cplseason.com/
 - Coverage: schedules, match pages, standings, teams, squads, player profiles, venues, broadcast information, and news.
 - Relationship to CPL: independent information site; not the official Caribbean Premier League website.
-- Latest source-data update represented here: 2026-07-29.
+- Latest source-data update represented here: 2026-07-31.
 
 ## 2026 tournament snapshot
 
@@ -17,8 +17,8 @@
 - Tournament window: 7 August 2026 to 20 September 2026.
 - Teams represented: 7.
 - Host venues represented: 8.
-- Player profiles: 122.
-- Published news articles: 16.
+- Player profiles: 123.
+- Published news articles: 25.
 - Match times are local to the host venue unless a page explicitly states otherwise.
 - Fixtures, squads, broadcasters, playing XIs, results, and standings may change.
 
@@ -140,6 +140,7 @@
   - [Hunain Shah](https://cplseason.com/player/hunain-shah/)
   - [Shayan Jahangir](https://cplseason.com/player/shayan-jahangir/)
   - [Tayyab Arif](https://cplseason.com/player/tayyab-arif/)
+  - [Reeza Hendricks](https://cplseason.com/player/reeza-hendricks/)
   - [Saim Ayub](https://cplseason.com/player/saim-ayub/)
   - [Maaz Sadaqat](https://cplseason.com/player/maaz-sadaqat/)
   - [Usman Khan](https://cplseason.com/player/usman-khan/)

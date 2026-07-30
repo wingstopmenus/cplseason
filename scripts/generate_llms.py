@@ -129,7 +129,7 @@ def main() -> None:
     sitemap_path = Path(args.sitemap)
     output_path = Path(args.output)
     urls = read_urls(sitemap_path)
-    output_path.write_text(render(urls), encoding="utf-8", newline="\n")
+    output_path.write_text(render(urls), encoding="utf-8")
     print(f"Generated {output_path} with {len(urls)} sitemap URLs")
 
 

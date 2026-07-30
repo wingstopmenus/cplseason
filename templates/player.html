@@ -66,7 +66,7 @@
 
         <p class="profile-kicker">Player profile / {{ roster_number }}</p>
         <h1>{{ player.name }}</h1>
-        <p class="profile-lede">{{ player.name }} is listed in the {{ team.name }} squad for the 2026 Caribbean Premier League as a {{ player.category | lower }}. {{ player.selection_note }}.</p>
+        <p class="profile-lede">{{ player.name }} is listed in the {{ team.name }} squad for the 2026 Caribbean Premier League as {{ player.category_article }} {{ player.category | lower }}. {{ player.selection_note }}.</p>
 
         <div class="profile-tags" aria-label="{{ player.name }} squad details">
           <span>{{ player.category }}</span>
@@ -255,7 +255,7 @@
         <h2>More CPL 2026 guides</h2>
       </div>
       <nav aria-label="Related CPL 2026 directories">
-        <a href="/players/">All 122 players <span>→</span></a>
+        <a href="/players/">All players <span>→</span></a>
         <a href="/squads/">All seven squads <span>→</span></a>
         <a href="/schedule/">Match schedule <span>→</span></a>
       </nav>

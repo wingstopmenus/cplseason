@@ -16,7 +16,7 @@ EXPECTED_TEAM_COUNTS = {
     "antigua-barbuda-falcons": 18,
     "barbados-royals": 17,
     "guyana-amazon-warriors": 17,
-    "jamaica-kingsmen": 19,
+    "jamaica-kingsmen": 20,
     "st-kitts-nevis-patriots": 17,
     "saint-lucia-kings": 17,
     "trinbago-knight-riders": 17,
@@ -72,8 +72,8 @@ def main() -> int:
     news_articles = {path.stem: load_json(path) for path in news_files}
     matches = {path.stem: load_json(path) for path in match_files}
 
-    if len(players) != 122:
-        errors.append(f"Expected 122 player records, found {len(players)}")
+    if len(players) != 123:
+        errors.append(f"Expected 123 player records, found {len(players)}")
     if len(teams) != 7:
         errors.append(f"Expected 7 team records, found {len(teams)}")
     if len(venues) != 8:
@@ -359,8 +359,8 @@ def main() -> int:
 
     generated = (ROOT / "squads" / "index.html").read_text(encoding="utf-8")
     card_count = generated.count("data-squad-player")
-    if card_count != 122:
-        errors.append(f"Generated squads page has {card_count} player cards, expected 122")
+    if card_count != 123:
+        errors.append(f"Generated squads page has {card_count} player cards, expected 123")
     for slug in players:
         if f'href="/player/{slug}/"' not in generated:
             errors.append(f"Generated squads page does not link player {slug}")
@@ -370,10 +370,10 @@ def main() -> int:
 
     players_page = (ROOT / "players" / "index.html").read_text(encoding="utf-8")
     directory_card_count = players_page.count("data-directory-player")
-    if directory_card_count != 122:
+    if directory_card_count != 123:
         errors.append(
             f"Generated players page has {directory_card_count} player cards, "
-            "expected 122"
+            "expected 123"
         )
     for slug in players:
         if f'href="/player/{slug}/"' not in players_page:

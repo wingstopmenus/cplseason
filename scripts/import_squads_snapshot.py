@@ -99,8 +99,8 @@ def main() -> None:
             encoding="utf-8",
         )
 
-    if total != 122:
-        raise SystemExit(f"Expected 122 players, extracted {total}")
+    if total != 123:
+        raise SystemExit(f"Expected 123 players, extracted {total}")
     print(f"Imported 7 teams and {total} players")
 
 

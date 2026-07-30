@@ -51,7 +51,7 @@
       <div class="squads-hero-copy">
         <p class="eyebrow">Republic Bank Caribbean Premier League 2026</p>
         <h1>CPL 2026<br><span>Team Squads</span></h1>
-        <p class="squads-lede">All 122 listed players across the seven franchises, grouped into West Indian, overseas and breakout categories.</p>
+        <p class="squads-lede">All {{ totals.players }} listed players across the seven franchises, grouped into West Indian, overseas and breakout categories.</p>
         <div class="squads-hero-actions">
           <a class="button primary" href="#team-rosters">Browse all squads</a>
         </div>
@@ -75,13 +75,13 @@
         <li><strong>05</strong><span>Overseas players</span></li>
         <li><strong>03</strong><span>Breakout players</span></li>
       </ol>
-      <p>Antigua and Jamaica list additional names connected with different availability windows, which brings the published total to 122.</p>
+      <p>Antigua and Jamaica list additional names connected with different availability windows and later signings, which brings the published total to {{ totals.players }}.</p>
     </section>
 
     <section class="squad-tools" aria-label="Squad filters">
       <div class="squad-search">
         <label for="squad-player-search">Find a player</label>
-        <input id="squad-player-search" type="search" placeholder="Search all 122 players…" autocomplete="off">
+        <input id="squad-player-search" type="search" placeholder="Search all {{ totals.players }} players…" autocomplete="off">
       </div>
       <div class="squad-filter-group" aria-label="Filter players by category">
         <button class="is-active" type="button" data-squad-filter="all" aria-pressed="true">All players</button>

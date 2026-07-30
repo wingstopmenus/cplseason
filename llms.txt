@@ -3,7 +3,7 @@
 > Complete canonical URL directory for CPL Season, an independent
 > Caribbean Premier League coverage site focused on the 2026 season.
 
-This file lists all 201 public URLs from https://cplseason.com/sitemap.xml.
+This file lists all 211 public URLs from https://cplseason.com/sitemap.xml.
 For changing information such as fixtures, match times, and standings, use the
 latest content on the linked page.
 
@@ -134,6 +134,7 @@ latest content on the linked page.
 - [Rahkeem Cornwall](https://cplseason.com/player/rahkeem-cornwall/)
 - [Rahmanullah Gurbaz](https://cplseason.com/player/rahmanullah-gurbaz/)
 - [Ramon Simmonds](https://cplseason.com/player/ramon-simmonds/)
+- [Reeza Hendricks](https://cplseason.com/player/reeza-hendricks/)
 - [Rivaldo Clarke](https://cplseason.com/player/rivaldo-clarke/)
 - [Romaine Morris](https://cplseason.com/player/romaine-morris/)
 - [Romario Shepherd](https://cplseason.com/player/romario-shepherd/)
@@ -232,16 +233,25 @@ latest content on the linked page.
 - [CPL 2026 Schedule Window Confirmed](https://cplseason.com/news/cpl-2026-schedule-window-confirmed/)
 - [CPL 2026 Tickets Prices How To Buy](https://cplseason.com/news/cpl-2026-tickets-prices-how-to-buy/)
 - [CPL 2026 Venues Guide](https://cplseason.com/news/cpl-2026-venues-guide/)
+- [CPL Cricket Draft Fantasy Game 2026](https://cplseason.com/news/cpl-cricket-draft-fantasy-game-2026/)
 - [CPL Phi Edge Ai Prediction Partnership 2026](https://cplseason.com/news/cpl-phi-edge-ai-prediction-partnership-2026/)
+- [Early Bird Tickets On Sale From June 19 For Mega Concert](https://cplseason.com/news/early-bird-tickets-on-sale-from-june-19-for-mega-concert/)
+- [Flow Announced As Official Partner Of The CPL](https://cplseason.com/news/flow-announced-as-official-partner-of-the-cpl/)
 - [Guyana Amazon Warriors Overseas Players 2026](https://cplseason.com/news/guyana-amazon-warriors-overseas-players-2026/)
 - [Jamaica Kingsmen Join CPL 2026 Field](https://cplseason.com/news/jamaica-kingsmen-join-cpl-2026-field/)
 - [Jamaica Kingsmen Overseas Players 2026](https://cplseason.com/news/jamaica-kingsmen-overseas-players-2026/)
+- [Limacol In As Wcpl Title Sponsor](https://cplseason.com/news/limacol-in-as-wcpl-title-sponsor/)
+- [Local Players Confirmed For Wcpl Following Draft](https://cplseason.com/news/local-players-confirmed-for-wcpl-following-draft/)
 - [Rush Live Louder CPL 2026 Caribbean](https://cplseason.com/news/rush-live-louder-cpl-2026-caribbean/)
 - [Saint Lucia Kings Overseas Players 2026](https://cplseason.com/news/saint-lucia-kings-overseas-players-2026/)
 - [Sir Garfield Sobers CPL Tribute](https://cplseason.com/news/sir-garfield-sobers-cpl-tribute/)
 - [St Kitts Nevis Patriots Overseas Players 2026](https://cplseason.com/news/st-kitts-nevis-patriots-overseas-players-2026/)
+- [St Vincent Kids Tickets CPL 2026](https://cplseason.com/news/st-vincent-kids-tickets-cpl-2026/)
+- [Ticket Bundles Launched For Finals Week Party Stand](https://cplseason.com/news/ticket-bundles-launched-for-finals-week-party-stand/)
 - [Trinbago Knight Riders Overseas Players 2026](https://cplseason.com/news/trinbago-knight-riders-overseas-players-2026/)
 - [Trinbago Knight Riders Queens Park Oval Tickets 2026](https://cplseason.com/news/trinbago-knight-riders-queens-park-oval-tickets-2026/)
+- [Wcpl Fixtures Confirmed As Jamaica Empress Joins Reimagined Womens Cricket Festival](https://cplseason.com/news/wcpl-fixtures-confirmed-as-jamaica-empress-joins-reimagined-womens-cricket-festival/)
+- [Wcpl Standalone Tickets On Sale](https://cplseason.com/news/wcpl-standalone-tickets-on-sale/)
 
 ## Watch Live
 

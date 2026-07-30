@@ -197,7 +197,7 @@ def main() -> None:
     parser.add_argument("output", nargs="?", default=str(ROOT / "llms-full.txt"))
     args = parser.parse_args()
     output_path = Path(args.output)
-    output_path.write_text(render(), encoding="utf-8", newline="\n")
+    output_path.write_text(render(), encoding="utf-8")
     print(f"Generated {output_path}")
 
 
