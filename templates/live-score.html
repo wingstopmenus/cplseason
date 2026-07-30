@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731c">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731f">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -70,39 +70,6 @@
             <a href="/schedule/">CPL 2026 schedule</a>
           </div>
         </div>
-
-        <aside class="live-score-next-card" aria-label="Next CPL match">
-          <div class="live-score-next-head">
-            <span data-feed-signal><i aria-hidden="true"></i> Connecting</span>
-            <small>Auto refresh: {{ config.polling_seconds }} sec</small>
-          </div>
-          <div class="live-score-next-title">
-            <span data-hero-context>Next CPL match</span>
-            <strong data-hero-match-label>Match {{ focus.match_number }} · {{ focus.stage }}</strong>
-          </div>
-          <div class="live-score-next-teams">
-            <a data-hero-team="home" href="/team/{{ focus.home_team.slug }}/">
-              <img src="{{ focus.home_team.logo }}" width="90" height="90" alt="{{ focus.home_team.name }} logo">
-              <strong>{{ focus.home_short }}</strong>
-            </a>
-            <span>VS</span>
-            <a data-hero-team="away" href="/team/{{ focus.away_team.slug }}/">
-              <img src="{{ focus.away_team.logo }}" width="90" height="90" alt="{{ focus.away_team.name }} logo">
-              <strong>{{ focus.away_short }}</strong>
-            </a>
-          </div>
-          <div class="live-score-next-meta">
-            <time data-hero-match-date datetime="{{ focus.start_iso }}">{{ focus.date_label_long }} · {{ focus.time_label }} local</time>
-            <a data-hero-match-venue href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }}</a>
-          </div>
-          <div class="live-score-next-footer">
-            <div>
-              <strong data-hero-countdown-value>--:--:--</strong>
-              <small data-hero-countdown-label>Until first ball</small>
-            </div>
-            <a data-hero-match-link href="{{ focus.url }}">Match centre <span aria-hidden="true">→</span></a>
-          </div>
-        </aside>
 
         <dl class="live-score-facts" aria-label="CPL 2026 live-score coverage">
           <div><span>01</span><dt>Matches</dt><dd>39</dd></div>
