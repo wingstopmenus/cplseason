@@ -719,10 +719,10 @@ if (liveMatchData) {
   const loadMatch = async () => {
     if (!Number.isFinite(matchNumber)) return;
     if (liveMatchRefresh) liveMatchRefresh.disabled = true;
-    feedStatus.textContent = "Checking the latest official match data…";
+    feedStatus.textContent = "Checking the latest match update…";
     try {
       const response = await fetch(`/api/cpl-live-score?match=${matchNumber}`, { cache: "no-store" });
-      if (!response.ok) throw new Error("Official feed unavailable");
+      if (!response.ok) throw new Error("Score unavailable");
       const payload = await response.json();
       if (!payload.match || payload.source !== "official-cpl-mcpro") throw new Error("Unverified response");
       renderMatch(payload.match, payload.fetchedAt);
@@ -733,7 +733,7 @@ if (liveMatchData) {
       }
     } catch {
       feedState.textContent = "Feed unavailable";
-      feedStatus.textContent = "The official feed could not be reached. The confirmed fixture details below remain available.";
+      feedStatus.textContent = "Live scores are temporarily unavailable. The confirmed fixture details below remain available.";
       if (liveMatchRefresh) liveMatchRefresh.disabled = false;
       window.clearTimeout(pollTimer);
       pollTimer = window.setTimeout(loadMatch, 30000);
