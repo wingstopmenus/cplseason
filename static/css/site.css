@@ -3795,6 +3795,9 @@
 }
 
 /* Homepage standings: compact, scan-friendly cards on phones */
+.home-standings-band {
+  padding-inline: max(18px, calc((100vw - var(--wide)) / 2));
+}
 @media (max-width: 620px) {
   .home-points-shell {
     overflow: visible;
@@ -8661,6 +8664,7 @@
 
 /* Homepage newsroom: lead report with compact, team-led supporting stories */
 .home-news-band{
+  padding-inline:max(18px,calc((100vw - var(--wide)) / 2));
   padding-block:clamp(58px,7vw,94px);
   background:
     linear-gradient(180deg,rgba(5,6,23,.7),rgba(5,6,23,.98)),
@@ -10033,6 +10037,7 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
 
 /* Homepage teams: compact franchise dossiers */
 .home-teams-band {
+  padding-inline: max(18px, calc((100vw - var(--wide)) / 2));
   padding-block: clamp(58px, 7vw, 92px);
   background:
     linear-gradient(180deg, rgba(7, 10, 34, .72), rgba(5, 6, 23, .97)),
@@ -10229,6 +10234,7 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  padding-inline: max(18px, calc((100vw - var(--wide)) / 2));
   background:
     radial-gradient(circle at 94% 12%, rgba(83, 214, 255, .09), transparent 27rem),
     linear-gradient(145deg, rgba(7, 10, 36, .98), rgba(5, 7, 22, .98) 58%, rgba(19, 16, 19, .98));
@@ -10405,6 +10411,15 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
     top: 13px;
     right: 13px;
     font-size: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .home-standings-band,
+  .home-teams-band,
+  .home-players-showcase,
+  .home-news-band {
+    padding-inline: 14px;
   }
 }
 
