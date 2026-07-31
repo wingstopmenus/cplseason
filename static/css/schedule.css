@@ -29,11 +29,6 @@ body {
   scroll-margin-top: 158px;
 }
 
-.breadcrumbs {
-  border-bottom: 1px solid var(--sch-line);
-  background: var(--sch-bg);
-}
-
 main {
   background: var(--sch-bg);
 }
@@ -1123,24 +1118,6 @@ main {
 body,
 main {
   background: #f3f5f9;
-}
-
-body .breadcrumbs {
-  border-bottom: 1px solid #dfe3eb;
-  background: #fff !important;
-  color: #667087;
-}
-
-body .breadcrumbs a {
-  color: #27314a !important;
-}
-
-body .breadcrumbs span[aria-current="page"] {
-  color: #6f35c6 !important;
-}
-
-.breadcrumbs li + li::before {
-  color: #9aa3b6;
 }
 
 .schedule-finder,
