@@ -72,6 +72,25 @@
           <section>
             <h2>{{ section.heading }}</h2>
             {% for paragraph in section.paragraphs %}<p>{{ paragraph | safe }}</p>{% endfor %}
+            {% if section.squad %}
+            <div class="news-squad-table">
+              <header>
+                <div><span>Confirmed roster</span><strong>{{ section.squad.team.name }}</strong></div>
+                <b>{{ section.squad.player_count }} players</b>
+              </header>
+              <table aria-label="{{ section.squad.team.name }} confirmed CPL 2026 squad">
+                <thead><tr><th scope="col">No.</th><th scope="col">Player</th><th scope="col">No.</th><th scope="col">Player</th></tr></thead>
+                <tbody>
+                  {% for row in section.squad.rows %}
+                  <tr>
+                    <td>{{ "%02d" | format(row.left_number) }}</td><td>{{ row.left_name }}</td>
+                    <td>{% if row.right_number %}{{ "%02d" | format(row.right_number) }}{% endif %}</td><td>{{ row.right_name or "" }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            {% endif %}
           </section>
           {% endfor %}
 

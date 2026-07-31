@@ -401,6 +401,45 @@ def build_news() -> None:
         article["team"] = (
             teams[article["team_slug"]] if article.get("team_slug") else None
         )
+        for section in article["sections"]:
+            squad_team_slug = section.get("squad_team_slug")
+            if not squad_team_slug:
+                section["squad"] = None
+                continue
+            if squad_team_slug not in teams:
+                raise ValueError(
+                    f"{article['slug']}: unknown squad team {squad_team_slug}"
+                )
+            squad_players = section.get("squad_players", [])
+            if len(squad_players) != 17:
+                raise ValueError(
+                    f"{article['slug']}: {squad_team_slug} must list 17 players"
+                )
+            split_at = (len(squad_players) + 1) // 2
+            squad_rows = []
+            for index in range(split_at):
+                right_index = index + split_at
+                squad_rows.append(
+                    {
+                        "left_number": index + 1,
+                        "left_name": squad_players[index],
+                        "right_number": (
+                            right_index + 1
+                            if right_index < len(squad_players)
+                            else None
+                        ),
+                        "right_name": (
+                            squad_players[right_index]
+                            if right_index < len(squad_players)
+                            else None
+                        ),
+                    }
+                )
+            section["squad"] = {
+                "team": teams[squad_team_slug],
+                "rows": squad_rows,
+                "player_count": len(squad_players),
+            }
         articles.append(article)
     articles.sort(
         key=lambda item: (item["date_published"], item["title"]),
@@ -477,11 +516,17 @@ def build_news() -> None:
 
     template = template_environment().get_template("news-article.html")
     for article in articles:
-        article_body = " ".join(
+        article_body_parts = [
             re.sub(r"<[^>]+>", "", paragraph)
             for section in article["sections"]
             for paragraph in section["paragraphs"]
+        ]
+        article_body_parts.extend(
+            " ".join(section.get("squad_players", []))
+            for section in article["sections"]
+            if section.get("squad_players")
         )
+        article_body = " ".join(article_body_parts)
         schema = {
             "@context": "https://schema.org",
             "@graph": [

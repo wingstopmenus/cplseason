@@ -28,51 +28,58 @@
     {
       "heading": "Antigua & Barbuda Falcons squad",
       "paragraphs": [
-        "The Falcons have built around Evin Lewis, Fabian Allen and returning Antiguan fast bowler Alzarri Joseph. Moeen Ali, Shadab Khan and Kusal Perera add international experience, while Jayden Seales strengthens a pace group that also contains Shamar Springer and Anderson Phillip.",
-        "Full squad: Alzarri Joseph, Evin Lewis, Fabian Allen, Jayden Seales, Amir Jangoo, Shamar Springer, Jahmar Hamilton, Rahkeem Cornwall, Anderson Phillip, Karima Gore, Anderson Mahase, Joshua James, Moeen Ali, Shadab Khan, Kusal Perera, Sufiyan Muqeem and Milind Kumar. Visit the <a href=\"/team/antigua-barbuda-falcons/\">Antigua & Barbuda Falcons team page</a> for player profiles and fixtures."
-      ]
+        "The Falcons have built around Evin Lewis, Fabian Allen and returning Antiguan fast bowler Alzarri Joseph. Moeen Ali, Shadab Khan and Kusal Perera add international experience, while Jayden Seales strengthens a pace group that also contains Shamar Springer and Anderson Phillip. Visit the <a href=\"/team/antigua-barbuda-falcons/\">Antigua & Barbuda Falcons team page</a> for player profiles and fixtures."
+      ],
+      "squad_team_slug": "antigua-barbuda-falcons",
+      "squad_players": ["Alzarri Joseph", "Evin Lewis", "Fabian Allen", "Jayden Seales", "Amir Jangoo", "Shamar Springer", "Jahmar Hamilton", "Rahkeem Cornwall", "Anderson Phillip", "Karima Gore", "Anderson Mahase", "Joshua James", "Moeen Ali", "Shadab Khan", "Kusal Perera", "Sufiyan Muqeem", "Milind Kumar"]
     },
     {
       "heading": "Barbados Tridents squad",
       "paragraphs": [
-        "Barbados have added proven T20 quality around Quinton de Kock, Brandon King and Sherfane Rutherford. Chris Green, Mujeeb Ur Rahman, George Linde and Daniel Sams give the Tridents several bowling combinations for a campaign that ends on home soil.",
-        "Full squad: Gudakesh Motie, Sherfane Rutherford, Brandon King, Zachary Carter, Kadeem Alleyne, Ramon Simmonds, Shadrack Descarte, Rivaldo Clarke, Zishan Motara, Jakeem Pollard, Johann Layne, Kofi James, Quinton de Kock, Chris Green, Mujeeb Ur Rahman, George Linde and Daniel Sams. See the <a href=\"/team/barbados-royals/\">Barbados Tridents team page</a>."
-      ]
+        "Barbados have added proven T20 quality around Quinton de Kock, Brandon King and Sherfane Rutherford. Chris Green, Mujeeb Ur Rahman, George Linde and Daniel Sams give the Tridents several bowling combinations for a campaign that ends on home soil. See the <a href=\"/team/barbados-royals/\">Barbados Tridents team page</a>."
+      ],
+      "squad_team_slug": "barbados-royals",
+      "squad_players": ["Gudakesh Motie", "Sherfane Rutherford", "Brandon King", "Zachary Carter", "Kadeem Alleyne", "Ramon Simmonds", "Shadrack Descarte", "Rivaldo Clarke", "Zishan Motara", "Jakeem Pollard", "Johann Layne", "Kofi James", "Quinton de Kock", "Chris Green", "Mujeeb Ur Rahman", "George Linde", "Daniel Sams"]
     },
     {
       "heading": "Guyana Amazon Warriors squad",
       "paragraphs": [
-        "Imran Tahir will again lead a Warriors group featuring Shai Hope, Shimron Hetmyer, Romario Shepherd and Shamar Joseph. Glenn Phillips, Muhammad Nabi, Rahmanullah Gurbaz and Dwaine Pretorius give Guyana experience across the batting and bowling units.",
-        "Full squad: Shimron Hetmyer, Romario Shepherd, Shai Hope, Khary Pierre, Shamar Joseph, Ronaldo Alimohamed, Veerasammy Permaul, Matthew Nandu, Jonathan Van Lange, Mavendra Dindyal, Isai Thorne, Quentin Sampson, Imran Tahir, Glenn Phillips, Muhammad Nabi, Rahmanullah Gurbaz and Dwaine Pretorius. See the <a href=\"/team/guyana-amazon-warriors/\">Guyana Amazon Warriors team page</a>."
-      ]
+        "Imran Tahir will again lead a Warriors group featuring Shai Hope, Shimron Hetmyer, Romario Shepherd and Shamar Joseph. Glenn Phillips, Muhammad Nabi, Rahmanullah Gurbaz and Dwaine Pretorius give Guyana experience across the batting and bowling units. See the <a href=\"/team/guyana-amazon-warriors/\">Guyana Amazon Warriors team page</a>."
+      ],
+      "squad_team_slug": "guyana-amazon-warriors",
+      "squad_players": ["Shimron Hetmyer", "Romario Shepherd", "Shai Hope", "Khary Pierre", "Shamar Joseph", "Ronaldo Alimohamed", "Veerasammy Permaul", "Matthew Nandu", "Jonathan Van Lange", "Mavendra Dindyal", "Isai Thorne", "Quentin Sampson", "Imran Tahir", "Glenn Phillips", "Muhammad Nabi", "Rahmanullah Gurbaz", "Dwaine Pretorius"]
     },
     {
       "heading": "Jamaica Kingsmen squad",
       "paragraphs": [
-        "Jamaica Kingsmen enter their first CPL season with Rovman Powell, Andre Russell and Odean Smith at the heart of the local group. Saim Ayub, Usman Khan, Hassan Khan, Maaz Sadaqat and Hunain Shah bring further depth to a squad designed to compete immediately.",
-        "Full squad: Rovman Powell, Andre Russell, Keemo Paul, Keacy Carty, Jediah Blades, Shaqkere Parris, Odean Smith, Vitel Lawes, Romaine Morris, Kirk McKenzie, Kelvin Pitman, Jeavor Royal, Saim Ayub, Usman Khan, Hassan Khan, Maaz Sadaqat and Hunain Shah. See the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team page</a>."
-      ]
+        "Jamaica Kingsmen enter their first CPL season with Rovman Powell, Andre Russell and Odean Smith at the heart of the local group. Saim Ayub, Usman Khan, Hassan Khan, Maaz Sadaqat and Hunain Shah bring further depth to a squad designed to compete immediately. See the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team page</a>."
+      ],
+      "squad_team_slug": "jamaica-kingsmen",
+      "squad_players": ["Rovman Powell", "Andre Russell", "Keemo Paul", "Keacy Carty", "Jediah Blades", "Shaqkere Parris", "Odean Smith", "Vitel Lawes", "Romaine Morris", "Kirk McKenzie", "Kelvin Pitman", "Jeavor Royal", "Saim Ayub", "Usman Khan", "Hassan Khan", "Maaz Sadaqat", "Hunain Shah"]
     },
     {
       "heading": "St Kitts & Nevis Patriots squad",
       "paragraphs": [
-        "Johnson Charles and Andre Fletcher give the Patriots an experienced opening pair, with Jason Holder and Kyle Mayers supplying all-round quality. Naseem Shah brings high pace, while Wanindu Hasaranga and Waqar Salamkheil provide two attacking wrist-spin options.",
-        "Full squad: Johnson Charles, Jason Holder, Kyle Mayers, Andre Fletcher, Kevin Wickham, Obed McCoy, Ashmead Nedd, Jeremiah Louis, Alick Athanaze, Micah McKenzie, Navin Bidaisee, Mikyle Louis, Naseem Shah, Dasun Shanaka, Waqar Salamkheil, Wanindu Hasaranga and Nikhil Chaudhary. See the <a href=\"/team/st-kitts-nevis-patriots/\">St Kitts & Nevis Patriots team page</a>."
-      ]
+        "Johnson Charles and Andre Fletcher give the Patriots an experienced opening pair, with Jason Holder and Kyle Mayers supplying all-round quality. Naseem Shah brings high pace, while Wanindu Hasaranga and Waqar Salamkheil provide two attacking wrist-spin options. See the <a href=\"/team/st-kitts-nevis-patriots/\">St Kitts & Nevis Patriots team page</a>."
+      ],
+      "squad_team_slug": "st-kitts-nevis-patriots",
+      "squad_players": ["Johnson Charles", "Jason Holder", "Kyle Mayers", "Andre Fletcher", "Kevin Wickham", "Obed McCoy", "Ashmead Nedd", "Jeremiah Louis", "Alick Athanaze", "Micah McKenzie", "Navin Bidaisee", "Mikyle Louis", "Naseem Shah", "Dasun Shanaka", "Waqar Salamkheil", "Wanindu Hasaranga", "Nikhil Chaudhary"]
     },
     {
       "heading": "Saint Lucia Kings squad",
       "paragraphs": [
-        "Roston Chase anchors a balanced Kings squad alongside Ackeem Auguste, Jewel Andrew and Charith Asalanka. Noor Ahmad and Maheesh Theekshana headline the spin attack, with Matthew Forde and McKenny Clarke among the pace options.",
-        "Full squad: Roston Chase, Jewel Andrew, Matthew Forde, Kamil Pooran, Darron Nedd, McKenny Clarke, Joshua Bishop, Damion Joachim, Keon Gaston, Amari Goodridge, Johann Jeremiah, Ackeem Auguste, Noor Ahmad, Tim Seifert, Maheesh Theekshana, Charith Asalanka and Shadley van Schalkwyk. See the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team page</a>."
-      ]
+        "Roston Chase anchors a balanced Kings squad alongside Ackeem Auguste, Jewel Andrew and Charith Asalanka. Noor Ahmad and Maheesh Theekshana headline the spin attack, with Matthew Forde and McKenny Clarke among the pace options. See the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team page</a>."
+      ],
+      "squad_team_slug": "saint-lucia-kings",
+      "squad_players": ["Roston Chase", "Jewel Andrew", "Matthew Forde", "Kamil Pooran", "Darron Nedd", "McKenny Clarke", "Joshua Bishop", "Damion Joachim", "Keon Gaston", "Amari Goodridge", "Johann Jeremiah", "Ackeem Auguste", "Noor Ahmad", "Tim Seifert", "Maheesh Theekshana", "Charith Asalanka", "Shadley van Schalkwyk"]
     },
     {
       "heading": "Trinbago Knight Riders squad",
       "paragraphs": [
-        "The defending champions retain Nicholas Pooran, Kieron Pollard, Sunil Narine and Akeal Hosein. Alex Hales, Colin Munro and Usman Tariq return, while Justin Greaves, Matthew Breetzke and Amshi de Silva add fresh options as TKR chase a sixth CPL title.",
-        "Full squad: Sunil Narine, Nicholas Pooran, Kieron Pollard, Akeal Hosein, Justin Greaves, Dominic Drakes, Jyd Goolie, Dexter Sween, Terrance Hinds, Nathan Edward, Joshua Da Silva, Abdul-Raheem Toppin, Alex Hales, Usman Tariq, Colin Munro, Matthew Breetzke and Amshi de Silva. See the <a href=\"/team/trinbago-knight-riders/\">Trinbago Knight Riders team page</a>."
-      ]
+        "The defending champions retain Nicholas Pooran, Kieron Pollard, Sunil Narine and Akeal Hosein. Alex Hales, Colin Munro and Usman Tariq return, while Justin Greaves, Matthew Breetzke and Amshi de Silva add fresh options as TKR chase a sixth CPL title. See the <a href=\"/team/trinbago-knight-riders/\">Trinbago Knight Riders team page</a>."
+      ],
+      "squad_team_slug": "trinbago-knight-riders",
+      "squad_players": ["Sunil Narine", "Nicholas Pooran", "Kieron Pollard", "Akeal Hosein", "Justin Greaves", "Dominic Drakes", "Jyd Goolie", "Dexter Sween", "Terrance Hinds", "Nathan Edward", "Joshua Da Silva", "Abdul-Raheem Toppin", "Alex Hales", "Usman Tariq", "Colin Munro", "Matthew Breetzke", "Amshi de Silva"]
     },
     {
       "heading": "When does CPL 2026 start?",
