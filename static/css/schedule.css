@@ -2493,7 +2493,8 @@ body .breadcrumbs span[aria-current="page"] {
     text-align: center;
   }
 
-  .schedule-team img {
+  .schedule-team img,
+  .schedule-team:last-child img {
     grid-column: 1;
     grid-row: 1;
     width: 52px;
