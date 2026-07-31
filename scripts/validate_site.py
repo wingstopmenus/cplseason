@@ -31,6 +31,37 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def webp_dimensions(path: Path) -> tuple[int, int]:
+    """Read WebP dimensions without adding an image-library build dependency."""
+    data = path.read_bytes()
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        raise ValueError("invalid WebP header")
+    offset = 12
+    while offset + 8 <= len(data):
+        chunk_type = data[offset : offset + 4]
+        chunk_size = int.from_bytes(data[offset + 4 : offset + 8], "little")
+        payload = data[offset + 8 : offset + 8 + chunk_size]
+        if chunk_type == b"VP8X" and len(payload) >= 10:
+            width = 1 + int.from_bytes(payload[4:7], "little")
+            height = 1 + int.from_bytes(payload[7:10], "little")
+            return width, height
+        if chunk_type == b"VP8 " and len(payload) >= 10:
+            if payload[3:6] != b"\x9d\x01\x2a":
+                raise ValueError("invalid VP8 frame header")
+            width = int.from_bytes(payload[6:8], "little") & 0x3FFF
+            height = int.from_bytes(payload[8:10], "little") & 0x3FFF
+            return width, height
+        if chunk_type == b"VP8L" and len(payload) >= 5:
+            if payload[0] != 0x2F:
+                raise ValueError("invalid VP8L frame header")
+            packed = int.from_bytes(payload[1:5], "little")
+            width = (packed & 0x3FFF) + 1
+            height = ((packed >> 14) & 0x3FFF) + 1
+            return width, height
+        offset += 8 + chunk_size + (chunk_size % 2)
+    raise ValueError("WebP image chunk not found")
+
+
 def route_for_html(path: Path) -> str:
     relative = path.relative_to(ROOT)
     if relative.name == "index.html":
@@ -177,6 +208,23 @@ def main() -> int:
         image_path = ROOT / str(article.get("image", "")).lstrip("/")
         if not image_path.is_file():
             errors.append(f"{slug}: missing news image {article.get('image')}")
+        else:
+            expected_news_dir = ROOT / "static" / "img" / "official" / "news"
+            if image_path.parent != expected_news_dir:
+                errors.append(f"{slug}: news image must be stored in the news folder")
+            if image_path.suffix.lower() != ".webp":
+                errors.append(f"{slug}: news image must use WebP")
+            else:
+                try:
+                    dimensions = webp_dimensions(image_path)
+                except ValueError as error:
+                    errors.append(f"{slug}: unreadable WebP image ({error})")
+                else:
+                    if dimensions != (1280, 720):
+                        errors.append(
+                            f"{slug}: news image is {dimensions[0]}x{dimensions[1]}, "
+                            "expected 1280x720"
+                        )
         if len(article.get("key_points", [])) < 3:
             errors.append(f"{slug}: news story needs at least three key points")
         if len(article.get("sections", [])) < 3:
@@ -198,6 +246,18 @@ def main() -> int:
                 errors.append(
                     f"{slug}: unknown news player reference {player_slug}"
                 )
+
+    news_image_dir = ROOT / "static" / "img" / "official" / "news"
+    non_webp_news_images = sorted(
+        path.name
+        for path in news_image_dir.iterdir()
+        if path.is_file() and path.suffix.lower() != ".webp"
+    )
+    if non_webp_news_images:
+        errors.append(
+            "News image folder contains non-WebP files: "
+            + ", ".join(non_webp_news_images)
+        )
 
     rostered: list[str] = []
     for slug, team in teams.items():

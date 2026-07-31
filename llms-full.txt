@@ -18,7 +18,7 @@
 - Teams represented: 7.
 - Host venues represented: 8.
 - Player profiles: 123.
-- Published news articles: 25.
+- Published news articles: 26.
 - Match times are local to the host venue unless a page explicitly states otherwise.
 - Fixtures, squads, broadcasters, playing XIs, results, and standings may change.
 
