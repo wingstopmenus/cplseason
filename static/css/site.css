@@ -1942,6 +1942,57 @@
 .match-live-frame-shell iframe { display: block; width: 100%; height: 850px; border: 0; background: white; }
 .match-live-frame-shell iframe[hidden],
 .match-live-prestart[hidden] { display: none; }
+.match-live-scoreboard {
+  padding: clamp(24px, 4vw, 44px);
+  background:
+    radial-gradient(circle at 50% 0, rgba(96, 53, 204, .22), transparent 50%),
+    #09112b;
+  color: white;
+}
+.match-live-scoreboard[hidden] { display: none; }
+.match-live-score-teams {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+}
+.match-live-score-teams article {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .055);
+}
+.match-live-score-teams article:last-of-type { flex-direction: row-reverse; text-align: right; }
+.match-live-score-teams img { width: 72px; height: 72px; object-fit: contain; }
+.match-live-score-teams article div { display: grid; min-width: 0; gap: 4px; }
+.match-live-score-teams small { overflow: hidden; color: #bcc7dc; font-size: 12px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+.match-live-score-teams strong { color: white; font-size: clamp(28px, 5vw, 46px); line-height: 1; }
+.match-live-score-teams article span { color: var(--match-cyan); font-size: 12px; font-weight: 800; }
+.match-live-score-vs { display: grid; width: 48px; height: 48px; place-items: center; border: 2px solid var(--match-yellow); border-radius: 50%; background: #4e229c; font-size: 12px; font-weight: 950; }
+.match-live-score-summary { display: grid; gap: 7px; margin-top: 22px; padding: 18px 20px; border-left: 4px solid var(--match-yellow); background: rgba(255, 255, 255, .06); }
+.match-live-score-summary strong { font-size: 18px; }
+.match-live-score-summary span { color: #c4cee0; font-size: 13px; }
+.match-live-current { display: grid; grid-template-columns: 1fr 1fr 1.3fr; gap: 12px; margin-top: 16px; }
+.match-live-current[hidden] { display: none; }
+.match-live-current > div { display: flex; flex-wrap: wrap; gap: 8px; min-height: 44px; padding: 12px; border: 1px solid rgba(255, 255, 255, .1); border-radius: 9px; background: rgba(0, 0, 0, .15); }
+.match-live-current span { padding: 6px 8px; border-radius: 6px; background: rgba(255, 255, 255, .08); color: #dbe3f2; font-size: 11px; }
+.match-live-current span strong { margin-right: 4px; color: white; }
+.match-live-verified { display: block; margin-top: 18px; color: #94a2bd; font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.match-live-frame-shell[data-feed-mode="live"] .match-live-frame-status strong { color: var(--match-lime); }
+.match-live-frame-shell[data-feed-mode="complete"] .match-live-frame-status strong { color: var(--match-yellow); }
+@media (max-width: 700px) {
+  .match-live-score-teams { grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr); gap: 8px; }
+  .match-live-score-teams article,
+  .match-live-score-teams article:last-of-type { flex-direction: column; gap: 10px; padding: 16px 9px; text-align: center; }
+  .match-live-score-teams img { width: 58px; height: 58px; }
+  .match-live-score-teams small { max-width: 125px; white-space: normal; }
+  .match-live-score-vs { width: 38px; height: 38px; }
+  .match-live-current { grid-template-columns: 1fr; }
+}
 .match-live-data-note { max-width: 860px; margin: 16px 0 0; color: var(--muted); font-size: 12px; }
 .match-live-preview {
   display: grid;

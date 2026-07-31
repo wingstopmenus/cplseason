@@ -2093,11 +2093,11 @@ def build_matches() -> None:
         canonical = f"https://cplseason.com/match/{match['slug']}/"
         page = {
             "title": (
-                f"{matchup_label} Live Score, CPL 2026 {fixture_label}"
+                f"{matchup_label} Live Score & Result, CPL 2026 {fixture_label}"
             ),
             "description": (
-                f"Follow {matchup_label} live score, "
-                "full scorecard, ball-by-ball updates, squads and match details "
+                f"Follow the verified {matchup_label} live score, "
+                "innings updates, toss, final result, squads and match details "
                 f"for CPL 2026 Match {match['match_number']}."
             ),
             "canonical": canonical,

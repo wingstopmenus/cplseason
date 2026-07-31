@@ -217,6 +217,13 @@ module.exports = async function cplLiveScore(request, response) {
 
     officialMatches.sort((a, b) => matchNumber(a) - matchNumber(b));
     const now = Date.now();
+    const requestedNumber = numeric(request.query?.match);
+    const requestedSource = Number.isFinite(requestedNumber)
+      ? officialMatches.find((match) => matchNumber(match) === requestedNumber)
+      : null;
+    if (Number.isFinite(requestedNumber) && !requestedSource) {
+      return response.status(404).json({ error: "CPL match not found" });
+    }
     const liveMatch = officialMatches.find(isLive);
     const nextMatch = officialMatches.find(
       (match) =>
@@ -231,9 +238,14 @@ module.exports = async function cplLiveScore(request, response) {
       officialMatches[0];
 
     const recentSources = completedMatches.slice(-3).reverse();
-    const [focus, recent] = await Promise.all([
+    const [focus, recent, requestedMatch] = await Promise.all([
       fetchSummary(focusSource),
       Promise.all(recentSources.map(fetchSummary)),
+      requestedSource
+        ? (isUpcoming(requestedSource)
+            ? Promise.resolve(normalizeMatch(requestedSource))
+            : fetchSummary(requestedSource))
+        : Promise.resolve(null),
     ]);
 
     const schedule = officialMatches.map(normalizeMatch);
@@ -246,6 +258,7 @@ module.exports = async function cplLiveScore(request, response) {
       source: "official-cpl-mcpro",
       fetchedAt: new Date().toISOString(),
       focus,
+      match: requestedMatch,
       schedule,
       recent,
     });

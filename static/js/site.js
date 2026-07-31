@@ -623,40 +623,123 @@ if (liveMatchCountdown) {
   }
 }
 
-const liveMatchFrame = document.querySelector("[data-match-frame]");
-const liveMatchRefresh = document.querySelector("[data-match-frame-refresh]");
-const liveMatchFrameStatus = document.querySelector("[data-match-frame-status]");
-const liveMatchFrameShell = document.querySelector("[data-match-frame-shell]");
+const liveMatchData = document.querySelector("[data-match-live-data]");
+const liveMatchRefresh = document.querySelector("[data-match-data-refresh]");
 const liveMatchPrestart = document.querySelector("[data-match-prestart]");
 
-if (liveMatchFrame && liveMatchFrameShell) {
-  const matchStart = Date.parse(liveMatchFrameShell.dataset.matchStart);
-  const liveWindowStart = matchStart - (6 * 60 * 60 * 1000);
-  const activateMatchFrame = () => {
-    if (!liveMatchFrame.hasAttribute("src") && liveMatchFrame.dataset.src) {
-      liveMatchFrame.src = liveMatchFrame.dataset.src;
-    }
-    liveMatchFrame.hidden = false;
-    if (liveMatchPrestart) liveMatchPrestart.hidden = true;
+if (liveMatchData) {
+  const matchNumber = Number(liveMatchData.dataset.matchNumber);
+  const scoreboard = liveMatchData.querySelector("[data-match-scoreboard]");
+  const feedState = liveMatchData.querySelector("[data-match-feed-state]");
+  const feedStatus = liveMatchData.querySelector("[data-match-feed-status]");
+  const summary = liveMatchData.querySelector("[data-match-summary]");
+  const toss = liveMatchData.querySelector("[data-match-toss]");
+  const fetched = liveMatchData.querySelector("[data-match-fetched]");
+  const current = liveMatchData.querySelector("[data-match-current]");
+  const batters = liveMatchData.querySelector("[data-match-batters]");
+  const bowler = liveMatchData.querySelector("[data-match-bowler]");
+  const recentBalls = liveMatchData.querySelector("[data-match-recent-balls]");
+  const completePattern = /complete|completed|result|abandon|cancel|no result/i;
+  const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
+  let pollTimer;
+
+  const formatScore = (innings) => {
+    if (!innings || innings.runs === null) return "Yet to bat";
+    return `${innings.runs}${innings.wickets === null ? "" : `/${innings.wickets}`}`;
   };
 
-  if (Number.isFinite(matchStart) && Date.now() >= liveWindowStart) {
-    activateMatchFrame();
-  } else if (liveMatchRefresh) {
-    liveMatchRefresh.disabled = true;
-    liveMatchRefresh.title = "Available within six hours of the scheduled start";
-  }
+  const textLine = (label, value) => {
+    const node = document.createElement("span");
+    const strong = document.createElement("strong");
+    strong.textContent = label;
+    node.append(strong, document.createTextNode(value));
+    return node;
+  };
 
-  liveMatchFrame.addEventListener("load", () => {
-    if (liveMatchFrameStatus) {
-      liveMatchFrameStatus.textContent = "Match centre loaded · live panels refresh automatically";
+  const renderMatch = (match, fetchedAt) => {
+    const status = String(match.status || "Scheduled");
+    const isComplete = completePattern.test(status);
+    const isUpcoming = upcomingPattern.test(status);
+    const isLive = !isComplete && !isUpcoming;
+    liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
+    feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
+    feedStatus.textContent = isComplete
+      ? "The official feed has confirmed the match result."
+      : isLive
+        ? "Scores refresh automatically every 15 seconds."
+        : "Live scores will appear when official match coverage begins.";
+
+    if (isUpcoming && !match.innings?.length && !match.toss) {
+      scoreboard.hidden = true;
+      if (liveMatchPrestart) liveMatchPrestart.hidden = false;
+      if (liveMatchRefresh) liveMatchRefresh.disabled = false;
+      return;
     }
-  });
-  if (liveMatchRefresh) {
-    liveMatchRefresh.addEventListener("click", () => {
-      if (liveMatchRefresh.disabled) return;
-      if (liveMatchFrameStatus) liveMatchFrameStatus.textContent = "Refreshing match centre…";
-      liveMatchFrame.src = liveMatchFrame.src;
+
+    if (liveMatchPrestart) liveMatchPrestart.hidden = true;
+    scoreboard.hidden = false;
+    (match.teams || []).slice(0, 2).forEach((team, index) => {
+      const label = scoreboard.querySelector(`[data-match-team-label="${index}"]`);
+      if (label && team.name) label.textContent = team.name;
+      const teamInnings = (match.innings || []).filter((entry) => entry.battingTeamId === team.id);
+      const latestInnings = teamInnings[teamInnings.length - 1];
+      const score = scoreboard.querySelector(`[data-match-team-score="${index}"]`);
+      const overs = scoreboard.querySelector(`[data-match-team-overs="${index}"]`);
+      if (score) score.textContent = formatScore(latestInnings);
+      if (overs) overs.textContent = latestInnings?.overs === null || latestInnings?.overs === undefined ? "" : `${latestInnings.overs} overs`;
     });
-  }
+
+    summary.textContent = match.stateOfPlay || match.description || (isComplete ? "Match complete" : "Match in progress");
+    if (match.toss) {
+      toss.textContent = match.toss;
+      toss.hidden = false;
+    } else {
+      toss.hidden = true;
+    }
+
+    batters.replaceChildren();
+    (match.live?.batters || []).forEach((player) => {
+      batters.append(textLine(player.name || "Batter", ` ${player.runs ?? 0} (${player.balls ?? 0})`));
+    });
+    bowler.replaceChildren();
+    if (match.live?.bowler?.name) {
+      bowler.append(textLine(match.live.bowler.name, ` ${match.live.bowler.wickets ?? 0}/${match.live.bowler.runsConceded ?? 0}`));
+    }
+    recentBalls.replaceChildren();
+    (match.live?.recentBalls || []).forEach((ball) => {
+      const node = document.createElement("span");
+      node.textContent = ball.label || "•";
+      recentBalls.append(node);
+    });
+    current.hidden = !(batters.childElementCount || bowler.childElementCount || recentBalls.childElementCount);
+    fetched.textContent = `Updated ${new Date(fetchedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}`;
+    if (liveMatchRefresh) liveMatchRefresh.disabled = false;
+  };
+
+  const loadMatch = async () => {
+    if (!Number.isFinite(matchNumber)) return;
+    if (liveMatchRefresh) liveMatchRefresh.disabled = true;
+    feedStatus.textContent = "Checking the latest official match data…";
+    try {
+      const response = await fetch(`/api/cpl-live-score?match=${matchNumber}`, { cache: "no-store" });
+      if (!response.ok) throw new Error("Official feed unavailable");
+      const payload = await response.json();
+      if (!payload.match || payload.source !== "official-cpl-mcpro") throw new Error("Unverified response");
+      renderMatch(payload.match, payload.fetchedAt);
+      window.clearTimeout(pollTimer);
+      const status = String(payload.match.status || "");
+      if (!completePattern.test(status)) {
+        pollTimer = window.setTimeout(loadMatch, upcomingPattern.test(status) ? 60000 : 15000);
+      }
+    } catch {
+      feedState.textContent = "Feed unavailable";
+      feedStatus.textContent = "The official feed could not be reached. The confirmed fixture details below remain available.";
+      if (liveMatchRefresh) liveMatchRefresh.disabled = false;
+      window.clearTimeout(pollTimer);
+      pollTimer = window.setTimeout(loadMatch, 30000);
+    }
+  };
+
+  if (liveMatchRefresh) liveMatchRefresh.addEventListener("click", loadMatch);
+  loadMatch();
 }
