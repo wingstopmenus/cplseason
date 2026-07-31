@@ -2249,6 +2249,73 @@ def link_schedule_matches() -> None:
     print("Linked all 39 schedule cards to match centre pages")
 
 
+def normalize_schedule_schema() -> None:
+    """Keep the schedule index lean and point its fixture list at match pages."""
+    schedule_path = ROOT / "schedule" / "index.html"
+    html = schedule_path.read_text(encoding="utf-8")
+    matches = sorted(
+        (
+            load_json(path)
+            for path in (ROOT / "data" / "matches").glob("*.json")
+        ),
+        key=lambda item: item["match_number"],
+    )
+    schema_pattern = re.compile(
+        r'(<script type="application/ld\+json">)(.*?)(</script>)',
+        re.DOTALL,
+    )
+    updated_schema = False
+
+    def normalize(match: re.Match[str]) -> str:
+        nonlocal updated_schema
+        try:
+            schema = json.loads(match.group(2))
+        except json.JSONDecodeError:
+            return match.group(0)
+        graph = schema.get("@graph") if isinstance(schema, dict) else None
+        if not isinstance(graph, list):
+            return match.group(0)
+
+        schema["@graph"] = [
+            node
+            for node in graph
+            if not (
+                isinstance(node, dict)
+                and node.get("@type") in {"Event", "SportsEvent"}
+            )
+        ]
+        fixture_list = next(
+            (
+                node
+                for node in schema["@graph"]
+                if isinstance(node, dict)
+                and node.get("@type") == "ItemList"
+                and node.get("numberOfItems") == len(matches)
+            ),
+            None,
+        )
+        if fixture_list is None:
+            return match.group(0)
+
+        items = fixture_list.get("itemListElement", [])
+        if len(items) != len(matches):
+            raise ValueError(
+                "Schedule schema fixture count does not match match data"
+            )
+        for item, fixture in zip(items, matches):
+            item["url"] = f"https://cplseason.com/match/{fixture['slug']}/"
+
+        updated_schema = True
+        compact = json.dumps(schema, ensure_ascii=False, separators=(",", ":"))
+        return f"{match.group(1)}{compact}{match.group(3)}"
+
+    html = schema_pattern.sub(normalize, html)
+    if not updated_schema:
+        raise ValueError("Could not locate the 39-match schedule ItemList schema")
+    schedule_path.write_text(html, encoding="utf-8")
+    print("Normalized schedule schema and removed duplicate event entities")
+
+
 def build_venues() -> None:
     venues = [
         load_json(ROOT / "data" / "venues" / f"{slug}.json")
@@ -2602,6 +2669,7 @@ if __name__ == "__main__":
     build_live_score()
     build_matches()
     link_schedule_matches()
+    normalize_schedule_schema()
     build_news()
     build_venues()
     build_venue_profiles()
