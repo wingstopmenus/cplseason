@@ -26,7 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260729b">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260801c">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -132,10 +132,28 @@
       </div>
     </section>
 
+    <section class="broadcast-steps broadcast-north-america" aria-labelledby="broadcast-north-america-title">
+      <header>
+        <p class="broadcast-index">03 / United States &amp; Canada</p>
+        <h2 id="broadcast-north-america-title">{{ guide.north_america.heading }}</h2>
+        <p>{{ guide.north_america.intro }}</p>
+      </header>
+      <ol>
+        {% for route in guide.north_america.routes %}
+        <li><span>{{ "%02d" | format(loop.index) }}</span><div><h3>{{ route.title }}</h3><p>{{ route.text }}</p></div></li>
+        {% endfor %}
+      </ol>
+      <aside>
+        <strong>Confirmed tournament listing</strong>
+        <p>Willow's CPL 2026 series page lists 39 T20 matches from 7 August to 20 September.</p>
+        <a class="broadcast-source-link" href="{{ guide.north_america.schedule_url }}" rel="noopener">Open the Willow CPL schedule <span>↗</span></a>
+      </aside>
+    </section>
+
     <section id="country-guide" class="broadcast-regions" aria-labelledby="broadcast-regions-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">03 / Country guide</p>
+          <p class="broadcast-index">04 / Country guide</p>
           <h2 id="broadcast-regions-title">CPL 2026 TV channels by country</h2>
         </div>
         <p>Rush covers the Caribbean, while Willow covers the United States and Canada. Broadcasters for other regions will be added as they are announced.</p>
@@ -160,7 +178,7 @@
 
     <section class="broadcast-steps" aria-labelledby="broadcast-steps-title">
       <header>
-        <p class="broadcast-index">04 / Before you subscribe</p>
+        <p class="broadcast-index">05 / Before you subscribe</p>
         <h2 id="broadcast-steps-title">Check your access before subscribing</h2>
       </header>
       <ol>
@@ -176,7 +194,7 @@
 
     <section class="broadcast-devices" aria-labelledby="broadcast-devices-title">
       <div>
-        <p class="broadcast-index">05 / Devices</p>
+        <p class="broadcast-index">06 / Devices</p>
         <h2 id="broadcast-devices-title">Devices and streaming options</h2>
         <p>Willow lists browser, phone, tablet and connected-TV access in North America. Rush Live &amp; Louder is a linear channel, so Caribbean access depends on your local television provider and package.</p>
         <span class="broadcast-reference-note">Device access varies by region, provider and subscription.</span>
@@ -191,7 +209,7 @@
     <section class="broadcast-times" aria-labelledby="broadcast-times-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">06 / Match times</p>
+          <p class="broadcast-index">07 / Match times</p>
           <h2 id="broadcast-times-title">CPL 2026 match times by country</h2>
         </div>
         <p>Official times use the host ground's local clock. Most venues are UTC-4; Jamaica is UTC-5, so Sabina Park matches begin one hour later for international viewers.</p>
@@ -212,7 +230,7 @@
     <section id="opening-matches" class="broadcast-openers" aria-labelledby="broadcast-openers-title">
       <header class="broadcast-section-header">
         <div>
-          <p class="broadcast-index">07 / Fixtures</p>
+          <p class="broadcast-index">08 / Fixtures</p>
           <h2 id="broadcast-openers-title">CPL 2026 fixtures</h2>
         </div>
         <a href="/schedule/">Open all 39 fixtures <span>→</span></a>
@@ -238,7 +256,7 @@
 
     <section class="broadcast-replays" aria-labelledby="broadcast-replays-title">
       <div>
-        <p class="broadcast-index">08 / Replays</p>
+        <p class="broadcast-index">09 / Replays</p>
         <h2 id="broadcast-replays-title">Replays, highlights and live scores</h2>
       </div>
       <div>
@@ -249,7 +267,7 @@
 
     <section class="broadcast-faq" aria-labelledby="broadcast-faq-title">
       <header>
-        <p class="broadcast-index">09 / FAQs</p>
+        <p class="broadcast-index">10 / FAQs</p>
         <h2 id="broadcast-faq-title">CPL 2026 streaming FAQs</h2>
         <p class="broadcast-faq-intro">Clear answers about confirmed CPL 2026 viewing options, regional availability, devices, local start times and replays.</p>
       </header>

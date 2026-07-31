@@ -1,13 +1,13 @@
 {
   "slug": "watch-live",
   "title": "How to Watch CPL 2026: TV Channels and Live Streaming",
-  "description": "Find confirmed CPL 2026 TV channels and live-streaming options for the Caribbean, United States and Canada, plus the latest status for other countries.",
+  "description": "Complete CPL 2026 TV and streaming guide for the Caribbean, United States and Canada, with providers, devices, match times and country-by-country rights status.",
   "canonical": "https://cplseason.com/watch-live/",
   "eyebrow": "TV and streaming guide",
   "headline": "CPL 2026 live streaming and TV channels",
   "lede": "Rush Live & Louder will show CPL 2026 across the Caribbean, while Willow lists the tournament for viewers in the United States and Canada. Check the service available in your country before the first match on 7 August.",
-  "hero_checked_label": "Updated 29 July",
-  "checked_label": "29 July 2026",
+  "hero_checked_label": "Updated 1 August",
+  "checked_label": "1 August 2026",
   "status": [
     {
       "region": "Caribbean",
@@ -50,23 +50,47 @@
       "note": "Historical CPL broadcasters do not establish who will show the 2026 tournament."
     },
     {
-      "region": "Pakistan & Bangladesh",
+      "region": "Pakistan",
       "status": "Pending",
       "platform": "No 2026 partner confirmed",
       "access": "Check local sports schedules near the opening match",
       "action": "Check official CPL news",
-      "note": "CPL 2026 broadcast details for Pakistan and Bangladesh have not been announced."
+      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for Pakistan."
     },
     {
-      "region": "Australia & New Zealand",
+      "region": "Bangladesh",
+      "status": "Pending",
+      "platform": "No 2026 partner confirmed",
+      "access": "Check local sports schedules near the opening match",
+      "action": "Check official CPL news",
+      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for Bangladesh."
+    },
+    {
+      "region": "Australia",
       "status": "Pending",
       "platform": "No 2026 partner confirmed",
       "access": "Check local cricket listings before subscribing",
       "action": "Check official CPL news",
-      "note": "Previous-season arrangements can change, so this guide does not carry them forward."
+      "note": "No current rights-holder listing confirms CPL 2026 coverage in Australia. Previous-season arrangements are not carried forward."
     },
     {
-      "region": "South Africa & other territories",
+      "region": "New Zealand",
+      "status": "Pending",
+      "platform": "No 2026 partner confirmed",
+      "access": "Check local cricket listings before subscribing",
+      "action": "Check official CPL news",
+      "note": "No current rights-holder listing confirms CPL 2026 coverage in New Zealand. Previous-season arrangements are not carried forward."
+    },
+    {
+      "region": "South Africa",
+      "status": "Pending",
+      "platform": "No 2026 partner confirmed",
+      "access": "Check local sports listings before subscribing",
+      "action": "Check official CPL news",
+      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for South Africa."
+    },
+    {
+      "region": "Other territories",
       "status": "Pending",
       "platform": "No worldwide stream confirmed",
       "access": "Follow CPL announcements for additional partners",
@@ -74,6 +98,25 @@
       "note": "CPL has not announced a free worldwide stream for the 2026 season."
     }
   ],
+  "north_america": {
+    "heading": "How to watch CPL 2026 on Willow",
+    "intro": "Willow lists the complete 39-match CPL 2026 season for viewers in the United States and Canada. Check the individual fixture in Willow's schedule before subscribing.",
+    "schedule_url": "https://www.willow.tv/cricket-series/12123/caribbean-premier-league-2026/matches",
+    "routes": [
+      {
+        "title": "Stream on the Willow website or apps",
+        "text": "Subscribers can watch through willow.tv and Willow by Cricbuzz apps on supported phones, tablets and connected televisions."
+      },
+      {
+        "title": "Use a participating US TV provider",
+        "text": "Willow lists DISH, Sling, Verizon Fios, Spectrum, Xfinity, Optimum, DIRECTV, DIRECTV Stream, Fubo and YouTube TV among its United States television routes. Package access varies."
+      },
+      {
+        "title": "Check the digital stream during clashes",
+        "text": "When several matches overlap, Willow may place another event on Willow Extra or its website and apps. Registered subscribers should check the live schedule for the correct stream."
+      }
+    ]
+  },
   "caribbean_providers": [
     {"territory": "Anguilla", "providers": "Digicel, Flow"},
     {"territory": "Antigua", "providers": "Digicel, Flow"},
@@ -189,7 +232,15 @@
     {
       "question": "Will replays and highlights be available?",
       "answer": "Rush Live & Louder says its schedule includes live matches, highlights and other cricket programming. Willow advertises live streams, match replays and highlights for subscribers, subject to rights and availability."
+    },
+    {
+      "question": "How many devices can use one Willow subscription?",
+      "answer": "Willow says subscribers can access premium content on up to two devices at the same time. App-store purchases must be linked to the same Willow account before access is restored on another device."
+    },
+    {
+      "question": "What should I do if a CPL match is not on the main Willow TV channel?",
+      "answer": "Check Willow's live streaming schedule. When events overlap, another match may appear on Willow Extra, willow.tv or the Willow by Cricbuzz apps for registered subscribers."
     }
   ],
-  "last_updated": "2026-07-29"
+  "last_updated": "2026-08-01"
 }

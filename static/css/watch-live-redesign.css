@@ -199,6 +199,31 @@
   align-items: center;
 }
 .broadcast-steps aside p { margin: 0; }
+.broadcast-north-america > header p:last-child {
+  max-width: 760px;
+  margin-top: 14px;
+  color: var(--broadcast-muted);
+  line-height: 1.7;
+}
+.broadcast-source-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 204, 0, .42);
+  border-radius: 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 950;
+}
+.broadcast-source-link:hover,
+.broadcast-source-link:focus-visible {
+  border-color: var(--gold);
+  background: rgba(255, 204, 0, .1);
+  color: white;
+}
 
 /* Devices */
 .broadcast-devices {

@@ -2592,7 +2592,7 @@ def sync_shared_footer() -> None:
     )
     external_anchor_pattern = re.compile(
         r'<a\b(?=[^>]*\bhref=["\']https?://(?!'
-        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com)'
+        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com|(?:www\.)?willow\.tv)'
         r'(?:/|["\'])))[^>]*>(.*?)</a>',
         re.IGNORECASE | re.DOTALL,
     )

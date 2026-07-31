@@ -677,8 +677,8 @@ def main() -> int:
     ):
         if not broadcast_guide.get(field):
             errors.append(f"Broadcast guide is missing {field}")
-    if len(broadcast_guide.get("status", [])) != 8:
-        errors.append("Broadcast guide must contain eight regional statuses")
+    if len(broadcast_guide.get("status", [])) != 11:
+        errors.append("Broadcast guide must contain eleven regional statuses")
     confirmed_regions = [
         item for item in broadcast_guide.get("status", [])
         if item.get("status") == "Confirmed"
@@ -693,8 +693,14 @@ def main() -> int:
     )
     if 'class="broadcast-guide"' not in watch_page:
         errors.append("Watch Live page was not rendered from the shared template")
-    if watch_page.count("data-broadcast-region") != 8:
-        errors.append("Watch Live page does not contain eight regional cards")
+    if watch_page.count("data-broadcast-region") != 11:
+        errors.append("Watch Live page does not contain eleven regional cards")
+    if (
+        'href="https://www.willow.tv/cricket-series/12123/'
+        'caribbean-premier-league-2026/matches"'
+        not in watch_page
+    ):
+        errors.append("Watch Live page is missing the official Willow CPL schedule link")
     if watch_page.count("data-broadcast-fixture") != 5:
         errors.append("Watch Live page does not contain five opening fixtures")
     if watch_page.count('class="broadcast-match-centre-link"') != 5:
@@ -802,6 +808,8 @@ def main() -> int:
                     "cplseason.com",
                     "www.cplseason.com",
                     "cpl-cpl.shop.secutix.com",
+                    "willow.tv",
+                    "www.willow.tv",
                 }
             ):
                 errors.append(f"{route} -> external link {href}")
