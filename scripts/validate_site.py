@@ -760,7 +760,11 @@ def main() -> int:
             if (
                 parsed_href.scheme in {"http", "https"}
                 and parsed_href.netloc.lower()
-                not in {"cplseason.com", "www.cplseason.com"}
+                not in {
+                    "cplseason.com",
+                    "www.cplseason.com",
+                    "cpl-cpl.shop.secutix.com",
+                }
             ):
                 errors.append(f"{route} -> external link {href}")
                 continue

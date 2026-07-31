@@ -51,7 +51,9 @@
           <div class="news-story-byline">
             <span>By <a href="/authors/{{ article.author.slug }}/">{{ article.author.name }}</a></span>
             <time datetime="{{ article.date_published }}">Published {{ article.date_label }}</time>
+            {% if article.date_modified != article.date_published %}
             <time datetime="{{ article.date_modified }}">Updated {{ article.modified_label }}</time>
+            {% endif %}
           </div>
         </div>
         <figure><img src="{{ article.image }}" alt="{{ article.image_alt }}" width="1280" height="720"></figure>

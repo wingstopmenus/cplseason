@@ -2472,7 +2472,8 @@ def sync_shared_footer() -> None:
     )
     external_anchor_pattern = re.compile(
         r'<a\b(?=[^>]*\bhref=["\']https?://(?!'
-        r'(?:www\.)?cplseason\.com(?:/|["\'])))[^>]*>(.*?)</a>',
+        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com)'
+        r'(?:/|["\'])))[^>]*>(.*?)</a>',
         re.IGNORECASE | re.DOTALL,
     )
     css_pattern = re.compile(r'/static/css/site\.css\?v=[^"&<]+')

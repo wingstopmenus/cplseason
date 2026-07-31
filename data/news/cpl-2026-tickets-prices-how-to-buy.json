@@ -29,7 +29,7 @@
     {
       "heading": "How to buy CPL 2026 tickets online",
       "paragraphs": [
-        "Start at the official CPL website and follow its ticket link. Choose the host territory, venue or playoff event, select the match and compare the available categories before signing in to the secure checkout.",
+        "Open the <a href=\"https://cpl-cpl.shop.secutix.com/list/events\">official CPL ticket shop</a>, choose the host territory, venue or playoff event, select the match and compare the available categories before signing in to the secure checkout.",
         "Confirm the event date, local start time, venue and whether the product is standard admission or hospitality. Keep the confirmation email and follow the mobile-ticket, print-at-home or collection instructions attached to the order."
       ]
     },
@@ -81,6 +81,10 @@
     {
       "href": "/teams/",
       "label": "CPL team guides"
+    },
+    {
+      "href": "https://cpl-cpl.shop.secutix.com/list/events",
+      "label": "Official CPL ticket shop"
     }
   ],
   "source_name": "Caribbean Premier League official ticket shop and newsroom",
