@@ -68,6 +68,33 @@
             <ul>{% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}</ul>
           </section>
 
+          {%- if article.get("challenge_join_steps") %}
+          <section class="news-challenge-join" aria-labelledby="challenge-join-title">
+            <header>
+              <p class="news-desk-kicker">Join the challenge</p>
+              <h2 id="challenge-join-title">{{ article.challenge_join_heading }}</h2>
+              <p>{{ article.challenge_join_intro }}</p>
+            </header>
+            <div class="news-challenge-join-grid">
+              <aside class="news-challenge-qr">
+                <img src="{{ article.challenge_qr_image }}" alt="{{ article.challenge_qr_alt }}" width="300" height="300" loading="lazy" decoding="async">
+                <span>Official sign-up code</span>
+                <strong>{{ article.challenge_code }}</strong>
+                <small>Scan with your phone camera to open the YuMuuv registration route.</small>
+              </aside>
+              <ol class="news-challenge-steps">
+                {% for step in article.challenge_join_steps %}
+                <li>
+                  <span>{{ "%02d" | format(loop.index) }}</span>
+                  <div><h3>{{ step.title }}</h3><p>{{ step.text }}</p></div>
+                </li>
+                {% endfor %}
+              </ol>
+            </div>
+            <p class="news-challenge-note"><strong>Before you start:</strong> allow health-data access and confirm that a recent step count appears in YuMuuv. Tracker permissions or battery restrictions can interrupt syncing.</p>
+          </section>
+          {%- endif %}
+
           {%- if article.get("ticket_events") %}
           <section class="news-ticket-events" aria-labelledby="ticket-events-title">
             <header>

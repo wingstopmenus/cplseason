@@ -6,7 +6,7 @@
   "description": "Learn how to join the CPL Step Challenge 2026 through the YuMuuv app, use code CPL-MOVES, select a team and track steps from 1 August to 19 September.",
   "dek": "Fans can join a 50-day virtual journey across the CPL host route, support their chosen franchise and help chase a combined target of 200 million steps.",
   "date_published": "2026-07-31",
-  "date_modified": "2026-07-31",
+  "date_modified": "2026-08-01",
   "author_slug": "asad-sial",
   "image": "/static/img/official/news/cpl-step-challenge-2026-how-to-join-featured.webp",
   "image_alt": "Guyana Amazon Warriors supporters celebrate during a CPL match at Providence Stadium",
@@ -16,6 +16,37 @@
     "Participants join through the YuMuuv app using the challenge code CPL-MOVES.",
     "The 2026 collective target is 200 million steps, up from 179 million recorded in 2025.",
     "Team standings will use average steps per participant rather than each team's total steps."
+  ],
+  "challenge_join_heading": "How to join the CPL Step Challenge",
+  "challenge_join_intro": "Set up the YuMuuv challenge in six steps. Keep the code ready before opening the app.",
+  "challenge_qr_image": "/static/img/official/news/cpl-step-challenge-2026-qr.webp",
+  "challenge_qr_alt": "QR code for joining the CPL Step Challenge through YuMuuv",
+  "challenge_code": "CPL-MOVES",
+  "challenge_join_steps": [
+    {
+      "title": "Download the YuMuuv app",
+      "text": "Scan the official QR code or search for YuMuuv in the Apple App Store on iPhone or Google Play Store on Android."
+    },
+    {
+      "title": "Enter the challenge code",
+      "text": "Open YuMuuv and use the official sign-up code CPL-MOVES to enter the CPL Step Challenge."
+    },
+    {
+      "title": "Complete your registration",
+      "text": "Provide your full name, email address and country of residence when the app asks for your participant details."
+    },
+    {
+      "title": "Connect your step tracker",
+      "text": "Choose Apple Health on iOS or Google Fit on Android, then allow YuMuuv to read the step data needed for the challenge."
+    },
+    {
+      "title": "Select your CPL team",
+      "text": "Choose the franchise you want to support. The 2026 team table uses average steps per participant, so each participant's activity affects the ranking."
+    },
+    {
+      "title": "Start walking",
+      "text": "Check that your steps appear in YuMuuv, then keep moving through 19 September. Walks outdoors and steps recorded during everyday activity count toward your total."
+    }
   ],
   "player_slugs": [],
   "sections": [
@@ -83,5 +114,5 @@
   "source_name": "Caribbean Premier League newsroom",
   "source_url": "https://cplt20.com/news/20431",
   "source_date": "2026-07-31",
-  "last_updated": "2026-07-31"
+  "last_updated": "2026-08-01"
 }

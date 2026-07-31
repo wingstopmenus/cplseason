@@ -6163,6 +6163,134 @@
   padding-left: 20px;
   color: #dce5f6;
 }
+
+.news-challenge-join {
+  overflow: hidden;
+  border: 1px solid #d8deeb;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f8f9fd, #fff);
+  box-shadow: 0 20px 48px rgba(10, 18, 45, .09);
+}
+.news-challenge-join > header {
+  padding: 28px 30px 24px;
+  border-bottom: 1px solid #dfe4ef;
+}
+.news-challenge-join > header h2 { margin: 5px 0 8px; }
+.news-challenge-join > header p:last-child {
+  max-width: 700px;
+  margin: 0;
+  color: #55627b;
+}
+.news-challenge-join-grid {
+  display: grid;
+  grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
+  gap: 30px;
+  padding: 30px;
+}
+.news-challenge-qr {
+  align-self: start;
+  padding: 20px;
+  border-radius: 12px;
+  background: #09112d;
+  color: #fff;
+  text-align: center;
+}
+.news-challenge-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 10px solid #fff;
+  border-radius: 8px;
+  image-rendering: pixelated;
+}
+.news-challenge-qr span {
+  display: block;
+  margin-top: 18px;
+  color: #aeb9d2;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.news-challenge-qr strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--gold);
+  font-size: 25px;
+  letter-spacing: .06em;
+}
+.news-challenge-qr small {
+  display: block;
+  margin-top: 10px;
+  color: #c8d1e4;
+  font-size: 12px;
+  line-height: 1.55;
+}
+.news-challenge-steps {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.news-challenge-steps li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 15px;
+  padding: 0 0 20px;
+  position: relative;
+}
+.news-challenge-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: 5px;
+  left: 20px;
+  width: 2px;
+  background: #e4e8f1;
+}
+.news-challenge-steps li > span {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 50%;
+  background: #6c2bd9;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+.news-challenge-steps h3 {
+  margin: 1px 0 5px;
+  color: #111a31;
+  font-size: 17px;
+}
+.news-challenge-steps p {
+  margin: 0;
+  color: #56627a;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.news-challenge-note {
+  margin: 0;
+  padding: 18px 30px;
+  border-top: 1px solid #dfe4ef;
+  background: #f3effc;
+  color: #3e4860;
+  font-size: 13px;
+}
+@media (max-width: 760px) {
+  .news-challenge-join > header,
+  .news-challenge-join-grid { padding: 22px 20px; }
+  .news-challenge-join-grid { grid-template-columns: 1fr; }
+  .news-challenge-qr {
+    width: min(100%, 320px);
+    justify-self: center;
+  }
+  .news-challenge-note { padding: 17px 20px; }
+}
 .news-ticket-events > header {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;

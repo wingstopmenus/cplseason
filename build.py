@@ -530,6 +530,10 @@ def build_news() -> None:
             " ".join((event["name"], event["date_range"], event["venue"]))
             for event in article.get("ticket_events", [])
         )
+        article_body_parts.extend(
+            " ".join((step["title"], step["text"]))
+            for step in article.get("challenge_join_steps", [])
+        )
         article_body = " ".join(article_body_parts)
         schema = {
             "@context": "https://schema.org",
