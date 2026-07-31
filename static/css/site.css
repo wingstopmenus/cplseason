@@ -8661,92 +8661,6 @@
   .schedule-host-grid .info-panel,.schedule-faq-grid article{min-height:0}
 }
 
-/* Shared breadcrumb trail */
-.breadcrumbs{
-  position:relative;
-  z-index:30;
-  max-width:none;
-  margin:0;
-  padding:0 max(16px,calc((100vw - var(--wide)) / 2));
-  border-bottom:1px solid rgba(83,214,255,.16);
-  background:linear-gradient(90deg,rgba(7,10,35,.98),rgba(8,13,39,.94) 54%,rgba(5,23,29,.9));
-  box-shadow:inset 0 1px rgba(255,255,255,.025)
-}
-.breadcrumbs::after{
-  position:absolute;
-  right:max(16px,calc((100vw - var(--wide)) / 2));
-  bottom:-1px;
-  width:72px;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--cyan));
-  content:""
-}
-.breadcrumbs ol{
-  display:flex;
-  flex-wrap:nowrap;
-  align-items:center;
-  gap:0;
-  width:min(var(--wide),100%);
-  min-height:46px;
-  margin:0 auto;
-  padding:0;
-  overflow:hidden;
-  color:#91a0bc;
-  font-size:12px;
-  font-weight:850;
-  letter-spacing:.035em;
-  list-style:none
-}
-.breadcrumbs li{
-  display:inline-flex;
-  align-items:center;
-  min-width:0;
-  white-space:nowrap
-}
-.breadcrumbs li:first-child a::before{
-  width:7px;
-  height:7px;
-  margin-right:9px;
-  border:1px solid var(--gold);
-  background:rgba(255,204,0,.15);
-  transform:rotate(45deg);
-  content:""
-}
-.breadcrumbs li+li::before{
-  width:7px;
-  height:7px;
-  margin:0 15px 0 13px;
-  border-top:1px solid rgba(83,214,255,.55);
-  border-right:1px solid rgba(83,214,255,.55);
-  color:transparent;
-  transform:rotate(45deg);
-  content:""
-}
-.breadcrumbs a{
-  display:inline-flex;
-  align-items:center;
-  min-height:32px;
-  color:#b7c3d8;
-  transition:color 160ms ease
-}
-.breadcrumbs a:hover,.breadcrumbs a:focus-visible{color:var(--gold)}
-.breadcrumbs [aria-current="page"],.breadcrumbs li:last-child:not(:has(a)){
-  overflow:hidden;
-  padding:5px 10px;
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:999px;
-  background:rgba(255,255,255,.045);
-  color:#f2f6ff;
-  text-overflow:ellipsis
-}
-@media(max-width:620px){
-  .breadcrumbs{padding-inline:14px}
-  .breadcrumbs::after{right:14px;width:46px}
-  .breadcrumbs ol{min-height:42px;font-size:11px}
-  .breadcrumbs li+li::before{margin-inline:11px 9px}
-  .breadcrumbs [aria-current="page"],.breadcrumbs li:last-child:not(:has(a)){max-width:58vw}
-}
-
 /* Authors directory and named profile system */
 .authors-breadcrumbs{
   width:min(1240px,calc(100vw - 40px));
@@ -8882,79 +8796,102 @@ nav[aria-label="Breadcrumb"]{
   position:relative;
   z-index:30;
   display:block;
-  width:min(1240px,calc(100% - 40px));
+  width:100%;
   max-width:none;
-  margin:0 auto;
-  padding:24px 0;
+  margin:0;
+  padding:0 max(16px,calc((100vw - var(--wide)) / 2));
   border:0;
-  background:transparent;
-  box-shadow:none
+  border-bottom:1px solid rgba(83,214,255,.16);
+  background:linear-gradient(90deg,rgba(7,10,35,.98),rgba(8,13,39,.94) 54%,rgba(5,23,29,.9));
+  box-shadow:inset 0 1px rgba(255,255,255,.025)
 }
 .standings-control>nav[aria-label="Breadcrumb"]{width:100%}
-nav[aria-label="Breadcrumb"]::after{display:none;content:none}
+nav[aria-label="Breadcrumb"]::after{
+  position:absolute;
+  right:max(16px,calc((100vw - var(--wide)) / 2));
+  bottom:-1px;
+  display:block;
+  width:72px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan));
+  content:""
+}
 nav[aria-label="Breadcrumb"] ol{
   display:flex;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   align-items:center;
-  gap:9px;
-  width:auto;
-  min-height:0;
-  margin:0;
+  gap:0;
+  width:min(var(--wide),100%);
+  min-height:46px;
+  margin:0 auto;
   padding:0;
-  overflow:visible;
-  color:#aeb9d5;
+  overflow:hidden;
+  color:#91a0bc;
   font-size:12px;
-  font-weight:400;
-  letter-spacing:0;
+  font-weight:850;
+  letter-spacing:.035em;
   list-style:none
 }
 nav[aria-label="Breadcrumb"] li{
   display:inline-flex;
   align-items:center;
   min-width:0;
-  color:#aeb9d5;
-  white-space:normal
+  color:#91a0bc;
+  white-space:nowrap
 }
-nav[aria-label="Breadcrumb"] li:first-child a::before{display:none;content:none}
+nav[aria-label="Breadcrumb"] li:first-child a::before{
+  display:block;
+  width:7px;
+  height:7px;
+  margin-right:9px;
+  border:1px solid var(--gold);
+  background:rgba(255,204,0,.15);
+  transform:rotate(45deg);
+  content:""
+}
 nav[aria-label="Breadcrumb"] li+li::before{
-  display:inline;
-  width:auto;
-  height:auto;
-  margin:0 9px 0 0;
+  display:block;
+  width:7px;
+  height:7px;
+  margin:0 15px 0 13px;
   border:0;
-  color:rgba(255,255,255,.35);
-  transform:none;
-  content:"/"
+  border-top:1px solid rgba(83,214,255,.55);
+  border-right:1px solid rgba(83,214,255,.55);
+  color:transparent;
+  transform:rotate(45deg);
+  content:""
 }
 nav[aria-label="Breadcrumb"] a{
-  display:inline;
-  min-height:0;
+  display:inline-flex;
+  align-items:center;
+  min-height:32px;
   padding:0;
   border:0;
   background:transparent;
-  color:white;
-  font-weight:400
+  color:#b7c3d8;
+  font-weight:850
 }
 nav[aria-label="Breadcrumb"] a:hover,
 nav[aria-label="Breadcrumb"] a:focus-visible{color:var(--gold)}
 nav[aria-label="Breadcrumb"] [aria-current="page"],
 nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
-  max-width:none;
-  overflow:visible;
-  padding:0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-  color:#aeb9d5;
-  text-overflow:clip
+  overflow:hidden;
+  padding:5px 10px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:999px;
+  background:rgba(255,255,255,.045);
+  color:#f2f6ff;
+  text-overflow:ellipsis
 }
 @media(max-width:620px){
   nav[aria-label="Breadcrumb"]{
-    width:calc(100vw - 28px);
-    padding:18px 0
+    padding-inline:14px
   }
-  nav[aria-label="Breadcrumb"] ol{font-size:11px}
-  nav[aria-label="Breadcrumb"] li+li::before{margin-right:8px}
+  nav[aria-label="Breadcrumb"]::after{right:14px;width:46px}
+  nav[aria-label="Breadcrumb"] ol{min-height:42px;font-size:11px}
+  nav[aria-label="Breadcrumb"] li+li::before{margin-inline:11px 9px}
+  nav[aria-label="Breadcrumb"] [aria-current="page"],
+  nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){max-width:58vw}
 }
 
 /* Contact page: editorial scorecard */
