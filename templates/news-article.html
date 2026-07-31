@@ -68,6 +68,38 @@
             <ul>{% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}</ul>
           </section>
 
+          {%- if article.get("ticket_events") %}
+          <section class="news-ticket-events" aria-labelledby="ticket-events-title">
+            <header>
+              <div>
+                <p class="news-desk-kicker">Official ticket shop</p>
+                <h2 id="ticket-events-title">{{ article.ticket_events_heading }}</h2>
+                <p>{{ article.ticket_events_intro }}</p>
+              </div>
+              <a href="{{ article.ticket_shop_url }}" rel="noopener">View all tickets <span>→</span></a>
+            </header>
+            <div class="news-ticket-event-list">
+              {% for event in article.ticket_events %}
+              <article class="news-ticket-event">
+                <div class="news-ticket-date-card" aria-hidden="true">
+                  <small>{{ event.code }}</small>
+                  <strong>{{ event.date_badge }}</strong>
+                  <span>CPL 2026</span>
+                </div>
+                <div class="news-ticket-event-copy">
+                  <h3>{{ event.name }}</h3>
+                  <p><span>Date</span>{{ event.date_range }}</p>
+                  <p><span>Venue</span>{{ event.venue }}</p>
+                </div>
+                <a class="news-ticket-buy" href="{{ event.href }}" rel="noopener">Buy Tickets <span>→</span></a>
+              </article>
+              {% endfor %}
+            </div>
+            <p class="news-ticket-disclaimer">Ticket products, prices and availability can change. The official SecuTix checkout is the final source before payment.</p>
+          </section>
+          {%- endif %}
+
+
           {% for section in article.sections %}
           <section>
             <h2>{{ section.heading }}</h2>

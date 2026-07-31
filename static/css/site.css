@@ -6163,6 +6163,148 @@
   padding-left: 20px;
   color: #dce5f6;
 }
+.news-ticket-events > header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+.news-ticket-events > header h2 {
+  margin-bottom: 12px;
+}
+.news-ticket-events > header p:last-child {
+  max-width: 620px;
+  margin: 0;
+  color: #aebbd0;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.news-ticket-events > header > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 204, 0, .38);
+  border-radius: 7px;
+  background: rgba(255, 204, 0, .07);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 950;
+}
+.news-ticket-event-list {
+  display: grid;
+  gap: 12px;
+}
+.news-ticket-event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 124px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 142px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(83, 214, 255, .18);
+  border-radius: 10px;
+  background: linear-gradient(110deg, rgba(14, 21, 65, .96), rgba(5, 9, 31, .98));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .22);
+}
+.news-ticket-event::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 110px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  content: "";
+}
+.news-ticket-date-card {
+  display: grid;
+  align-content: space-between;
+  min-height: 116px;
+  padding: 13px;
+  border: 1px solid rgba(255, 204, 0, .3);
+  border-radius: 8px;
+  background:
+    linear-gradient(155deg, rgba(103, 47, 209, .92), rgba(15, 20, 70, .98) 54%),
+    #11164b;
+}
+.news-ticket-date-card small,
+.news-ticket-date-card span {
+  color: #dce6fa;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.news-ticket-date-card strong {
+  color: var(--gold);
+  font-size: 17px;
+  line-height: 1.05;
+}
+.news-ticket-date-card span {
+  color: var(--lime);
+  font-size: 8px;
+}
+.news-ticket-event-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.news-ticket-event-copy h3 {
+  color: white;
+  font-size: 22px;
+}
+.news-ticket-event-copy p {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 9px;
+  margin: 0;
+  color: #c4cfe3;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+.news-ticket-event-copy p span {
+  color: #7f90b2;
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.news-ticket-buy {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 118px;
+  min-height: 46px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  color: #151000;
+  font-size: 12px;
+  font-weight: 950;
+  box-shadow: 0 10px 26px rgba(255, 204, 0, .12);
+}
+.news-ticket-buy:hover,
+.news-ticket-buy:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 15px 32px rgba(255, 204, 0, .22);
+}
+.news-ticket-disclaimer {
+  margin: 16px 0 0 !important;
+  padding-left: 13px;
+  border-left: 3px solid var(--gold);
+  color: #8f9fbd !important;
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
 .news-story-players > div {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -6308,6 +6450,46 @@
   }
   .news-story-summary {
     padding: 20px !important;
+  }
+  .news-ticket-events > header {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 15px;
+  }
+  .news-ticket-events > header > a {
+    width: fit-content;
+  }
+  .news-ticket-event {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 0;
+    padding: 10px;
+  }
+  .news-ticket-date-card {
+    grid-row: 1 / span 2;
+    min-height: 118px;
+    padding: 10px;
+  }
+  .news-ticket-date-card strong {
+    font-size: 14px;
+  }
+  .news-ticket-event-copy {
+    gap: 7px;
+  }
+  .news-ticket-event-copy h3 {
+    font-size: 18px;
+    line-height: 1.08;
+  }
+  .news-ticket-event-copy p {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    font-size: 11px;
+  }
+  .news-ticket-buy {
+    grid-column: 2;
+    width: fit-content;
+    min-width: 108px;
+    min-height: 40px;
   }
   .news-squad-table > header {
     align-items: flex-start;

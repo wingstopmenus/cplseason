@@ -526,6 +526,10 @@ def build_news() -> None:
             for section in article["sections"]
             if section.get("squad_players")
         )
+        article_body_parts.extend(
+            " ".join((event["name"], event["date_range"], event["venue"]))
+            for event in article.get("ticket_events", [])
+        )
         article_body = " ".join(article_body_parts)
         schema = {
             "@context": "https://schema.org",

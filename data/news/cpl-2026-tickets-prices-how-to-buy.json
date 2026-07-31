@@ -6,7 +6,7 @@
   "description": "Find out how to buy CPL 2026 tickets, where official tickets are sold, current playoff prices, venue guidance and practical matchday advice.",
   "dek": "A practical guide to official ticket sales, current playoff availability, venue planning and the checks every supporter should make before paying.",
   "date_published": "2026-07-29",
-  "date_modified": "2026-07-29",
+  "date_modified": "2026-08-01",
   "author_slug": "asad-sial",
   "image": "/static/img/official/news/cpl-2026-tickets-prices-how-to-buy-featured.webp",
   "image_alt": "Cricket tickets overlooking a Caribbean stadium under floodlights",
@@ -16,6 +16,83 @@
     "Group-stage sales opened in May, with availability and box-office arrangements varying by territory.",
     "Kensington Oval hosts all four playoffs, with listed prices starting at US$20 for the first three knockout matches.",
     "Prices and availability are live and should be checked again before payment or travel."
+  ],
+  "ticket_events_heading": "Official CPL 2026 ticket categories",
+  "ticket_events_intro": "Choose a host window below, then use the official SecuTix shop to check the matches, ticket types and prices currently available.",
+  "ticket_shop_url": "https://cpl-cpl.shop.secutix.com/list/events",
+  "ticket_events": [
+    {
+      "name": "CPL games in St. Vincent",
+      "date_range": "Friday, 7 August 2026 – Sunday, 9 August 2026",
+      "venue": "Arnos Vale Stadium, St. Vincent",
+      "code": "SVG",
+      "date_badge": "7–9 AUG",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229210650674"
+    },
+    {
+      "name": "CPL games in Jamaica",
+      "date_range": "Tuesday, 11 August 2026 – Tuesday, 18 August 2026",
+      "venue": "Sabina Park, Jamaica",
+      "code": "JAM",
+      "date_badge": "11–18 AUG",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229214263450"
+    },
+    {
+      "name": "CPL Games in St. Lucia",
+      "date_range": "Wednesday, 12 August 2026 – Friday, 21 August 2026",
+      "venue": "Daren Sammy Cricket Ground",
+      "code": "SLU",
+      "date_badge": "12–21 AUG",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245753"
+    },
+    {
+      "name": "CPL Games in Antigua",
+      "date_range": "Thursday, 20 August 2026 – Tuesday, 25 August 2026",
+      "venue": "Sir Vivian Richards Stadium, Antigua",
+      "code": "ANU",
+      "date_badge": "20–25 AUG",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245751"
+    },
+    {
+      "name": "CPL Games in Trinidad",
+      "date_range": "Wednesday, 26 August 2026 – Wednesday, 2 September 2026",
+      "venue": "Queens Park Oval",
+      "code": "TTO",
+      "date_badge": "26 AUG–2 SEP",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245754"
+    },
+    {
+      "name": "CPL Games in St. Kitts",
+      "date_range": "Thursday, 27 August 2026 – Thursday, 3 September 2026",
+      "venue": "Warner Park Cricket Stadium",
+      "code": "SKN",
+      "date_badge": "27 AUG–3 SEP",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245752"
+    },
+    {
+      "name": "CPL Games in Barbados",
+      "date_range": "Saturday, 5 September 2026 – Sunday, 13 September 2026",
+      "venue": "Kensington Oval, Barbados",
+      "code": "BRB",
+      "date_badge": "5–13 SEP",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245750"
+    },
+    {
+      "name": "WCPL games in Barbados",
+      "date_range": "Sunday, 6 September 2026 – Wednesday, 16 September 2026",
+      "venue": "Kensington Oval, Barbados",
+      "code": "WCPL",
+      "date_badge": "6–16 SEP",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229219651187"
+    },
+    {
+      "name": "Playoffs 2026",
+      "date_range": "Wednesday, 16 September 2026 – Friday, 18 September 2026",
+      "venue": "Kensington Oval, Barbados",
+      "code": "PLAYOFFS",
+      "date_badge": "16–18 SEP",
+      "href": "https://cpl-cpl.shop.secutix.com/selection/event/date?productId=10229195245757"
+    }
   ],
   "player_slugs": [],
   "sections": [
@@ -89,6 +166,6 @@
   ],
   "source_name": "Caribbean Premier League official ticket shop and newsroom",
   "source_url": "https://cpl-cpl.shop.secutix.com/list/events",
-  "source_date": "2026-07-29",
-  "last_updated": "2026-07-29"
+  "source_date": "2026-08-01",
+  "last_updated": "2026-08-01"
 }
