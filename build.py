@@ -2478,6 +2478,18 @@ def sync_shared_footer() -> None:
     )
     css_pattern = re.compile(r'/static/css/site\.css\?v=[^"&<]+')
     js_pattern = re.compile(r'/static/js/site\.js\?v=[^"&<]+')
+    adsense_script_pattern = re.compile(
+        r'\s*<script\b[^>]*\bsrc=["\']'
+        r'https://pagead2\.googlesyndication\.com/pagead/js/adsbygoogle\.js'
+        r'\?client=ca-pub-\d+["\'][^>]*>\s*</script>',
+        re.IGNORECASE,
+    )
+    adsense_script = (
+        '  <script async '
+        'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+        '?client=ca-pub-0093554134829472" '
+        'crossorigin="anonymous"></script>'
+    )
     synchronized = 0
 
     for html_path in sorted(ROOT.rglob("*.html")):
@@ -2504,6 +2516,14 @@ def sync_shared_footer() -> None:
         updated = external_anchor_pattern.sub(unlink_external, updated)
         updated = css_pattern.sub("/static/css/site.css?v=20260731breadcrumbs", updated)
         updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
+        updated = adsense_script_pattern.sub("", updated)
+        if "</head>" not in updated:
+            raise ValueError(f"Expected </head> in {html_path.relative_to(ROOT)}")
+        updated = updated.replace("</head>", f"{adsense_script}\n</head>", 1)
+        if updated.count("ca-pub-0093554134829472") != 1:
+            raise ValueError(
+                f"Expected one AdSense script in {html_path.relative_to(ROOT)}"
+            )
         if len(re.findall(r'class="back-to-top"', updated)) != 1:
             raise ValueError(
                 f"Expected one back-to-top button in {html_path.relative_to(ROOT)}"
