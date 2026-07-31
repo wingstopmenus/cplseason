@@ -2494,6 +2494,8 @@ body .breadcrumbs span[aria-current="page"] {
   }
 
   .schedule-team img {
+    grid-column: 1;
+    grid-row: 1;
     width: 52px;
     height: 52px;
   }
