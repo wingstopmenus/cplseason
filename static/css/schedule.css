@@ -2485,17 +2485,18 @@ body .breadcrumbs span[aria-current="page"] {
     padding: 18px 12px;
   }
 
-  .schedule-team,
-  .schedule-team:last-child {
-    grid-template-columns: 1fr;
-    justify-items: center;
+  .schedule-team {
+    grid-template-columns: 52px minmax(0, 1fr);
     gap: 8px;
-    text-align: center;
+    text-align: left;
+  }
+
+  .schedule-team:last-child {
+    grid-template-columns: minmax(0, 1fr) 52px;
+    text-align: right;
   }
 
   .schedule-team img {
-    grid-column: 1;
-    grid-row: 1;
     width: 52px;
     height: 52px;
   }
