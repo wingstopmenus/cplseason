@@ -4,7 +4,7 @@
   --hw-cyan: #57ddff;
   position: relative;
   overflow: hidden;
-  padding: clamp(4.5rem, 8vw, 7.5rem) max(1rem, calc((100vw - 1420px) / 2));
+  padding: clamp(4.5rem, 8vw, 7.5rem) max(18px, calc((100vw - var(--wide)) / 2));
   color: #fff;
   background:
     radial-gradient(circle at 8% 12%, rgba(83, 74, 210, .32), transparent 28rem),
@@ -26,7 +26,7 @@
   background-size: auto, 54px 54px, 54px 54px;
   mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
 }
-.home-watch__inner { width: min(100%, 1420px); margin-inline: auto; }
+.home-watch__inner { width: min(100%, var(--wide)); margin-inline: auto; }
 .home-watch__header {
   display: flex;
   align-items: end;
@@ -199,7 +199,7 @@
   .home-watch__match-meta { display: none; }
 }
 @media (max-width: 620px) {
-  .home-watch { padding-inline: 1rem; }
+  .home-watch { padding-inline: 14px; }
   .home-watch__header h2 { font-size: clamp(3rem, 15vw, 4.5rem); }
   .home-watch__coverage-link { width: 100%; justify-content: space-between; }
   .home-watch__logo-stage { min-height: 210px; padding-inline: 1.15rem; }

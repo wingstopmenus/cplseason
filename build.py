@@ -347,7 +347,7 @@ def build_homepage_watch_live(
     source = homepage.read_text(encoding="utf-8")
     stylesheet = (
         '<link rel="stylesheet" '
-        'href="/static/css/home-watch-live.css?v=20260729">'
+        'href="/static/css/home-watch-live.css?v=20260801hw">'
     )
     if stylesheet not in source:
         source = source.replace("</head>", f"  {stylesheet}\n</head>", 1)
