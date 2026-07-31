@@ -1,0 +1,87 @@
+{
+  "slug": "cpl-step-challenge-2026-how-to-join",
+  "category": "Fan Guide",
+  "title": "CPL Step Challenge 2026: How to Join, Dates and 200 Million-Step Goal",
+  "short_title": "CPL Step Challenge 2026",
+  "description": "Learn how to join the CPL Step Challenge 2026 through the YuMuuv app, use code CPL-MOVES, select a team and track steps from 1 August to 19 September.",
+  "dek": "Fans can join a 50-day virtual journey across the CPL host route, support their chosen franchise and help chase a combined target of 200 million steps.",
+  "date_published": "2026-07-31",
+  "date_modified": "2026-07-31",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/cpl-step-challenge-2026-how-to-join-featured.webp",
+  "image_alt": "Guyana Amazon Warriors supporters celebrate during a CPL match at Providence Stadium",
+  "summary_heading": "CPL Step Challenge details at a glance",
+  "key_points": [
+    "The challenge runs for 50 days from 1 August to 19 September 2026.",
+    "Participants join through the YuMuuv app using the challenge code CPL-MOVES.",
+    "The 2026 collective target is 200 million steps, up from 179 million recorded in 2025.",
+    "Team standings will use average steps per participant rather than each team's total steps."
+  ],
+  "player_slugs": [],
+  "sections": [
+    {
+      "heading": "CPL Step Challenge returns for 2026",
+      "paragraphs": [
+        "The Republic Bank Caribbean Premier League has brought back its fan Step Challenge for a second year. The 2026 edition starts on 1 August and ends on 19 September, giving participants 50 days to log activity while following the tournament.",
+        "CPL has set a shared target of 200 million steps. The virtual route moves through Antigua, St Kitts & Nevis, Saint Lucia, Trinidad & Tobago, Jamaica, Guyana and Barbados, with destination milestones unlocking digital content, trivia and team leaderboard updates."
+      ]
+    },
+    {
+      "heading": "How to join the CPL Step Challenge",
+      "paragraphs": [
+        "Download the YuMuuv app from the Apple App Store or Google Play Store, open it and enter the official challenge code <strong>CPL-MOVES</strong>. Registration asks for your full name, email address and country of residence.",
+        "Choose a CPL team after completing your profile. The selected franchise determines which team leaderboard your activity supports, while your individual steps also count toward the competition-wide goal."
+      ]
+    },
+    {
+      "heading": "Connect Apple Health or Google Fit",
+      "paragraphs": [
+        "YuMuuv can collect steps through Apple Health on iOS or Google Fit on Android. Select the appropriate tracker and grant the permissions needed for the health app to share step data with YuMuuv.",
+        "Check that step totals appear inside the challenge after setup. Phone settings, battery restrictions and health-data permissions can interrupt syncing, so participants should review both apps if a recent walk does not register."
+      ]
+    },
+    {
+      "heading": "How the team leaderboard works",
+      "paragraphs": [
+        "CPL has changed the team scoring method for 2026. Franchise rankings will be based on average steps per participant, which means a team with fewer registered supporters can still compete if its members remain active.",
+        "Guyana Amazon Warriors supporters led the inaugural challenge with 53 million steps. Across all teams, fans recorded 179 million steps in 2025, which CPL described as more than 80,000 miles."
+      ]
+    },
+    {
+      "heading": "Milestones, content and prizes",
+      "paragraphs": [
+        "Progress along the virtual host route will unlock CPL content, trivia, team tables and milestone updates. The announcement also says prizes are available during the challenge, but it does not publish a prize list or detailed eligibility terms.",
+        "Participants should use the YuMuuv challenge screen and official CPL updates for current prize rules, eligibility, winner selection and any territory restrictions before relying on a promotion."
+      ]
+    },
+    {
+      "heading": "Follow the challenge alongside CPL 2026",
+      "paragraphs": [
+        "The Step Challenge overlaps almost the entire cricket season, which runs from 7 August to 20 September. Fans can use the <a href=\"/schedule/\">CPL 2026 schedule</a> to match each virtual destination with the tournament's host windows.",
+        "The <a href=\"/teams/\">CPL team directory</a> covers all seven franchises, while the <a href=\"/squads/\">2026 squad hub</a> lists the players representing each side."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/schedule/",
+      "label": "Complete CPL 2026 schedule"
+    },
+    {
+      "href": "/teams/",
+      "label": "CPL 2026 team guides"
+    },
+    {
+      "href": "/squads/",
+      "label": "Confirmed CPL 2026 squads"
+    },
+    {
+      "href": "/news/",
+      "label": "Latest CPL news"
+    }
+  ],
+  "source_name": "Caribbean Premier League newsroom",
+  "source_url": "https://cplt20.com/news/20431",
+  "source_date": "2026-07-31",
+  "last_updated": "2026-07-31"
+}
