@@ -8896,47 +8896,61 @@ nav[aria-label="Breadcrumb"] ol{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:9px;
+  gap:10px;
   width:auto;
   min-height:0;
   margin:0;
   padding:0;
   overflow:visible;
-  color:#aeb9d5;
-  font-size:12px;
-  font-weight:400;
-  letter-spacing:0;
-  list-style:none
+  color:#7f8ca8;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.06em;
+  list-style:none;
+  text-transform:uppercase
 }
 nav[aria-label="Breadcrumb"] li{
   display:inline-flex;
   align-items:center;
   min-width:0;
-  color:#aeb9d5;
-  white-space:normal
+  color:#7f8ca8;
+  white-space:nowrap
 }
-nav[aria-label="Breadcrumb"] li:first-child a::before{display:none;content:none}
-nav[aria-label="Breadcrumb"] li+li::before{
-  display:inline;
-  width:auto;
-  height:auto;
-  margin:0 9px 0 0;
+nav[aria-label="Breadcrumb"] li:first-child a::before{
+  display:block;
+  width:6px;
+  height:6px;
+  margin-right:9px;
   border:0;
-  color:rgba(255,255,255,.35);
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 4px rgba(255,204,0,.11);
   transform:none;
-  content:"/"
+  content:""
+}
+nav[aria-label="Breadcrumb"] li+li::before{
+  display:block;
+  width:17px;
+  height:1px;
+  margin:0 10px 0 0;
+  border:0;
+  background:rgba(255,255,255,.2);
+  color:transparent;
+  transform:none;
+  content:""
 }
 nav[aria-label="Breadcrumb"] a{
-  display:inline;
+  display:inline-flex;
+  align-items:center;
   min-height:0;
   padding:0;
   border:0;
   background:transparent;
-  color:white;
-  font-weight:400
+  color:#aeb9cf;
+  font-weight:900
 }
 nav[aria-label="Breadcrumb"] a:hover,
-nav[aria-label="Breadcrumb"] a:focus-visible{color:var(--gold)}
+nav[aria-label="Breadcrumb"] a:focus-visible{color:white}
 nav[aria-label="Breadcrumb"] [aria-current="page"],
 nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
   max-width:none;
@@ -8945,7 +8959,7 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
   border:0;
   border-radius:0;
   background:transparent;
-  color:#aeb9d5;
+  color:var(--gold);
   text-overflow:clip
 }
 @media(max-width:620px){
@@ -8953,8 +8967,8 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
     width:calc(100vw - 28px);
     padding:18px 0
   }
-  nav[aria-label="Breadcrumb"] ol{font-size:11px}
-  nav[aria-label="Breadcrumb"] li+li::before{margin-right:8px}
+  nav[aria-label="Breadcrumb"] ol{font-size:9px}
+  nav[aria-label="Breadcrumb"] li+li::before{width:14px;margin-right:8px}
 }
 
 /* Contact page: editorial scorecard */

@@ -2502,7 +2502,7 @@ def sync_shared_footer() -> None:
             return content.replace(" ↗", "")
 
         updated = external_anchor_pattern.sub(unlink_external, updated)
-        updated = css_pattern.sub("/static/css/site.css?v=20260729news3", updated)
+        updated = css_pattern.sub("/static/css/site.css?v=20260731breadcrumbs", updated)
         updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
         if len(re.findall(r'class="back-to-top"', updated)) != 1:
             raise ValueError(
