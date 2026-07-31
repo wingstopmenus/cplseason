@@ -182,6 +182,44 @@ def main() -> int:
     if sorted(match_numbers) != list(range(1, 40)):
         errors.append("Match numbers must be unique and cover 1 through 39")
 
+    schedule_path = ROOT / "schedule" / "index.html"
+    schedule_html = schedule_path.read_text(encoding="utf-8")
+    if '"@type":"SportsEvent"' in schedule_html:
+        errors.append(
+            "Schedule page must not duplicate match SportsEvent entities"
+        )
+    expected_match_urls = [
+        f"https://cplseason.com/match/{match['slug']}/"
+        for match in sorted(matches.values(), key=lambda item: item["match_number"])
+    ]
+    schedule_item_urls: list[str] | None = None
+    for raw_schema in re.findall(
+        r'<script type="application/ld\+json">(.*?)</script>',
+        schedule_html,
+        flags=re.DOTALL,
+    ):
+        try:
+            schedule_schema = json.loads(raw_schema)
+        except json.JSONDecodeError:
+            continue
+        graph = schedule_schema.get("@graph", [])
+        for node in graph if isinstance(graph, list) else []:
+            if (
+                isinstance(node, dict)
+                and node.get("@type") == "ItemList"
+                and node.get("numberOfItems") == 39
+            ):
+                schedule_item_urls = [
+                    item.get("url")
+                    for item in node.get("itemListElement", [])
+                    if isinstance(item, dict)
+                ]
+                break
+    if schedule_item_urls != expected_match_urls:
+        errors.append(
+            "Schedule ItemList must link all 39 canonical match pages in order"
+        )
+
     for slug, article in news_articles.items():
         if article.get("slug") != slug:
             errors.append(f"News filename/slug mismatch: {slug}")
