@@ -1404,7 +1404,8 @@ body .breadcrumbs span[aria-current="page"] {
   min-height: 0;
   padding-top: 58px;
   padding-bottom: 58px;
-  background: #ffffff;
+  border-block: 1px solid #e1e5ee;
+  background: #f3f5f9;
   color: #11182e;
 }
 
@@ -1419,7 +1420,11 @@ body .breadcrumbs span[aria-current="page"] {
 .schedule-faq-list {
   display: block;
   margin-top: 30px;
-  border-top: 1px solid #dce1eb;
+  overflow: hidden;
+  border: 1px solid #dfe3ec;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(31, 40, 66, .08);
 }
 
 .schedule-faq-list details {
@@ -1431,22 +1436,26 @@ body .breadcrumbs span[aria-current="page"] {
   box-shadow: none;
 }
 
+.schedule-faq-list details:last-child {
+  border-bottom: 0;
+}
+
 .schedule-faq-list details:hover {
-  background: #fbf9fe;
+  background: #faf9fd;
   transform: none;
 }
 
 .schedule-faq-list details[open] {
   border-color: #d3c3e7;
-  background: #fbf9fe;
-  box-shadow: inset 3px 0 #7434bf;
+  background: linear-gradient(90deg, #faf7ff 0%, #ffffff 72%);
+  box-shadow: inset 4px 0 #7434bf;
 }
 
 .schedule-faq-list summary {
   display: grid;
   align-items: center;
   grid-template-columns: minmax(0, 1fr) 30px;
-  padding: 21px 4px;
+  padding: 21px 24px;
   cursor: pointer;
   list-style: none;
 }
@@ -1504,7 +1513,7 @@ body .breadcrumbs span[aria-current="page"] {
   max-width: 980px;
   color: #596379;
   margin: 0;
-  padding: 0 44px 22px 16px;
+  padding: 0 60px 24px 24px;
   font-size: 16px;
   line-height: 1.65;
 }
