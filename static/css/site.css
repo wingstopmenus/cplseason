@@ -6220,32 +6220,44 @@
 
 .news-challenge-join {
   overflow: hidden;
-  border: 1px solid #d8deeb;
+  border: 1px solid #cad4e7;
   border-radius: 14px;
-  background: linear-gradient(145deg, #f8f9fd, #fff);
-  box-shadow: 0 20px 48px rgba(10, 18, 45, .09);
+  background: #f7f9fd;
+  box-shadow: 0 20px 48px rgba(3, 10, 32, .16);
 }
 .news-challenge-join > header {
   padding: 28px 30px 24px;
-  border-bottom: 1px solid #dfe4ef;
+  border-bottom: 1px solid #d6deec;
+  background: linear-gradient(120deg, #0b1534 0%, #172554 68%, #25145b 100%);
 }
-.news-challenge-join > header h2 { margin: 5px 0 8px; }
+.news-challenge-join > header .news-desk-kicker {
+  margin: 0 0 8px;
+  color: #ffd400;
+}
+.news-challenge-join > header h2 {
+  margin: 0 0 10px;
+  color: #fff;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.08;
+}
 .news-challenge-join > header p:last-child {
   max-width: 700px;
   margin: 0;
-  color: #55627b;
+  color: #d7e1f5;
 }
 .news-challenge-join-grid {
   display: grid;
   grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
   gap: 30px;
   padding: 30px;
+  background: #f7f9fd;
 }
 .news-challenge-qr {
   align-self: start;
   padding: 20px;
   border-radius: 12px;
-  background: #09112d;
+  border: 1px solid #25345d;
+  background: linear-gradient(160deg, #0b1432, #111d42);
   color: #fff;
   text-align: center;
 }
@@ -6301,7 +6313,7 @@
   bottom: 5px;
   left: 20px;
   width: 2px;
-  background: #e4e8f1;
+  background: #cfd8ea;
 }
 .news-challenge-steps li > span {
   position: relative;
@@ -6311,28 +6323,31 @@
   height: 42px;
   place-items: center;
   border-radius: 50%;
-  background: #6c2bd9;
+  border: 3px solid #f7f9fd;
+  outline: 2px solid #7540dc;
+  background: #6730c8;
   color: #fff;
   font-size: 12px;
   font-weight: 900;
 }
 .news-challenge-steps h3 {
   margin: 1px 0 5px;
-  color: #111a31;
+  color: #0b1633;
   font-size: 17px;
 }
 .news-challenge-steps p {
   margin: 0;
-  color: #56627a;
+  color: #44516b;
   font-size: 14px;
   line-height: 1.65;
 }
 .news-challenge-note {
   margin: 0;
   padding: 18px 30px;
-  border-top: 1px solid #dfe4ef;
-  background: #f3effc;
-  color: #3e4860;
+  border-top: 1px solid #d6deec;
+  border-left: 4px solid #ffd400;
+  background: #ece8fa;
+  color: #283550;
   font-size: 13px;
 }
 @media (max-width: 760px) {
