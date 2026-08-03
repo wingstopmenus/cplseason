@@ -669,6 +669,7 @@ def main() -> int:
         "lede",
         "hero_checked_label",
         "checked_label",
+        "caribbean_directory_url",
         "status",
         "steps",
         "time_conversions",
@@ -695,6 +696,13 @@ def main() -> int:
         errors.append("Watch Live page was not rendered from the shared template")
     if watch_page.count("data-broadcast-region") != 11:
         errors.append("Watch Live page does not contain eleven regional cards")
+    if len(broadcast_guide.get("caribbean_providers", [])) != 23:
+        errors.append("Broadcast guide must contain 23 official Caribbean market routes")
+    if (
+        'href="https://www.rushcaribbean.co/wheretowatch"'
+        not in watch_page
+    ):
+        errors.append("Watch Live page is missing the official Rush provider directory")
     if (
         'href="https://www.willow.tv/cricket-series/12123/'
         'caribbean-premier-league-2026/matches"'
@@ -810,6 +818,8 @@ def main() -> int:
                     "cpl-cpl.shop.secutix.com",
                     "willow.tv",
                     "www.willow.tv",
+                    "rushcaribbean.co",
+                    "www.rushcaribbean.co",
                 }
             ):
                 errors.append(f"{route} -> external link {href}")

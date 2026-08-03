@@ -2592,7 +2592,7 @@ def sync_shared_footer() -> None:
     )
     external_anchor_pattern = re.compile(
         r'<a\b(?=[^>]*\bhref=["\']https?://(?!'
-        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com|(?:www\.)?willow\.tv)'
+        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com|(?:www\.)?willow\.tv|(?:www\.)?rushcaribbean\.co)'
         r'(?:/|["\'])))[^>]*>(.*?)</a>',
         re.IGNORECASE | re.DOTALL,
     )
@@ -2634,7 +2634,12 @@ def sync_shared_footer() -> None:
             return content.replace(" ↗", "")
 
         updated = external_anchor_pattern.sub(unlink_external, updated)
-        updated = css_pattern.sub("/static/css/site.css?v=20260731breadcrumbs", updated)
+        site_css_url = (
+            "/static/css/site.css?v=20260801challengecolors"
+            if html_path == ROOT / "news" / "cpl-step-challenge-2026-how-to-join" / "index.html"
+            else "/static/css/site.css?v=20260731breadcrumbs"
+        )
+        updated = css_pattern.sub(site_css_url, updated)
         updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
         updated = adsense_script_pattern.sub("", updated)
         if "</head>" not in updated:

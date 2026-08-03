@@ -144,6 +144,25 @@
 .broadcast-provider-grid article > span { margin-top: 1px; }
 .broadcast-provider-grid h3 { font-size: 16px; line-height: 1.25; }
 .broadcast-provider-grid article:last-child { grid-column: span 2; }
+.broadcast-provider-source {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  margin-top: 22px;
+  padding: 18px;
+  border: 1px solid var(--broadcast-line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .035);
+}
+.broadcast-provider-source > span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.broadcast-provider-source > p { margin: 0; color: var(--broadcast-muted); }
 
 /* Country coverage cards */
 .broadcast-regions {
@@ -323,6 +342,7 @@
   .broadcast-section-header > p { justify-self: start; }
   .broadcast-provider-grid,
   .broadcast-region-grid { grid-template-columns: minmax(0,1fr); }
+  .broadcast-provider-source { grid-template-columns: minmax(0,1fr); }
   .broadcast-provider-grid article:last-child { grid-column: auto; }
   .broadcast-provider-grid article { min-height: 0; }
   .broadcast-region-grid article { min-height: 0; }

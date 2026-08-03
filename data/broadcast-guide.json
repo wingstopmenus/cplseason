@@ -6,8 +6,8 @@
   "eyebrow": "TV and streaming guide",
   "headline": "CPL 2026 live streaming and TV channels",
   "lede": "Rush Live & Louder will show CPL 2026 across the Caribbean, while Willow lists the tournament for viewers in the United States and Canada. Check the service available in your country before the first match on 7 August.",
-  "hero_checked_label": "Updated 1 August",
-  "checked_label": "1 August 2026",
+  "hero_checked_label": "Verified 4 August",
+  "checked_label": "4 August 2026",
   "status": [
     {
       "region": "Caribbean",
@@ -117,24 +117,31 @@
       }
     ]
   },
+  "caribbean_directory_url": "https://www.rushcaribbean.co/wheretowatch",
   "caribbean_providers": [
     {"territory": "Anguilla", "providers": "Digicel, Flow"},
-    {"territory": "Antigua", "providers": "Digicel, Flow"},
-    {"territory": "Bahamas", "providers": "BTC"},
+    {"territory": "Antigua", "providers": "Flow"},
+    {"territory": "Aruba", "providers": "SETAR"},
     {"territory": "Barbados", "providers": "Digicel, Flow"},
-    {"territory": "Bermuda", "providers": "Digicel"},
+    {"territory": "Belize", "providers": "Nexgen"},
+    {"territory": "Bonaire", "providers": "Flamingo TV"},
+    {"territory": "Bahamas", "providers": "BTC, ALIV"},
     {"territory": "British Virgin Islands", "providers": "Digicel, Flow"},
-    {"territory": "Cayman Islands", "providers": "Digicel, Flow"},
+    {"territory": "Cayman Islands", "providers": "Digicel, Flow, Logic, C3"},
     {"territory": "Curaçao", "providers": "Digicel, Flow"},
+    {"territory": "Jamaica", "providers": "Digicel, Flow"},
     {"territory": "Dominica", "providers": "Digicel, Flow"},
     {"territory": "Grenada", "providers": "Digicel, Flow"},
-    {"territory": "Jamaica", "providers": "Digicel, Flow"},
     {"territory": "Montserrat", "providers": "Digicel"},
     {"territory": "St. Kitts & Nevis", "providers": "Digicel, Flow, The Cable"},
     {"territory": "St. Lucia", "providers": "Flow"},
     {"territory": "St. Vincent & the Grenadines", "providers": "Digicel, Flow"},
-    {"territory": "Trinidad & Tobago", "providers": "Digicel, Flow, Amplia & Airlink"},
-    {"territory": "Turks & Caicos", "providers": "Digicel, Flow"}
+    {"territory": "St. Maarten", "providers": "Ideal TV"},
+    {"territory": "Suriname", "providers": "Telesur, SCCN"},
+    {"territory": "Turks & Caicos", "providers": "Digicel, Flow"},
+    {"territory": "Trinidad & Tobago", "providers": "Digicel, Flow, Amplia, Airlink"},
+    {"territory": "Guyana", "providers": "E-Networks"},
+    {"territory": "Bermuda", "providers": "One Communications, Digicel, TeleBermuda"}
   ],
   "steps": [
     {
@@ -240,7 +247,11 @@
     {
       "question": "What should I do if a CPL match is not on the main Willow TV channel?",
       "answer": "Check Willow's live streaming schedule. When events overlap, another match may appear on Willow Extra, willow.tv or the Willow by Cricbuzz apps for registered subscribers."
+    },
+    {
+      "question": "How do I find Rush Live & Louder in my Caribbean territory?",
+      "answer": "Use the official Rush Caribbean Where to Watch directory to find the television provider currently listed for your territory. Channel numbers, packages and availability are controlled by the local provider and can change."
     }
   ],
-  "last_updated": "2026-08-01"
+  "last_updated": "2026-08-04"
 }

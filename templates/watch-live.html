@@ -26,7 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260801c">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260804a">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -120,7 +120,7 @@
           <p class="broadcast-index">02 / Caribbean providers</p>
           <h2 id="broadcast-caribbean-title">Where to find Rush Live &amp; Louder</h2>
         </div>
-        <p>Rush lists these television providers across 17 Caribbean territories. Channel numbers and packages can differ, so confirm access with your local provider.</p>
+        <p>Rush's official directory currently lists viewing routes across 23 Caribbean markets. Channel numbers and packages can differ, so confirm access with your local provider.</p>
       </header>
       <div class="broadcast-provider-grid">
         {% for item in guide.caribbean_providers %}
@@ -129,6 +129,11 @@
           <div><h3>{{ item.territory }}</h3><p>{{ item.providers }}</p></div>
         </article>
         {% endfor %}
+      </div>
+      <div class="broadcast-provider-source">
+        <span>Official provider directory</span>
+        <p>Use Rush Caribbean's live directory for the latest territory, provider and package information.</p>
+        <a class="broadcast-source-link" href="{{ guide.caribbean_directory_url }}" rel="noopener">Open the Rush Where to Watch guide <span>↗</span></a>
       </div>
     </section>
 
