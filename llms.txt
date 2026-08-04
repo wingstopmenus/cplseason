@@ -3,7 +3,7 @@
 > Complete canonical URL directory for CPL Season, an independent
 > Caribbean Premier League coverage site focused on the 2026 season.
 
-This file lists all 216 public URLs from https://cplseason.com/sitemap.xml.
+This file lists all 221 public URLs from https://cplseason.com/sitemap.xml.
 For changing information such as fixtures, match times, and standings, use the
 latest content on the linked page.
 
@@ -26,16 +26,13 @@ latest content on the linked page.
 ## Teams Directory
 
 - [Teams](https://cplseason.com/teams/)
-
-## Team Pages
-
-- [Antigua Barbuda Falcons](https://cplseason.com/team/antigua-barbuda-falcons/)
-- [Barbados Royals](https://cplseason.com/team/barbados-royals/)
-- [Guyana Amazon Warriors](https://cplseason.com/team/guyana-amazon-warriors/)
-- [Jamaica Kingsmen](https://cplseason.com/team/jamaica-kingsmen/)
-- [Saint Lucia Kings](https://cplseason.com/team/saint-lucia-kings/)
-- [St Kitts Nevis Patriots](https://cplseason.com/team/st-kitts-nevis-patriots/)
-- [Trinbago Knight Riders](https://cplseason.com/team/trinbago-knight-riders/)
+- [Antigua Barbuda Falcons](https://cplseason.com/teams/antigua-barbuda-falcons/)
+- [Barbados Royals](https://cplseason.com/teams/barbados-royals/)
+- [Guyana Amazon Warriors](https://cplseason.com/teams/guyana-amazon-warriors/)
+- [Jamaica Kingsmen](https://cplseason.com/teams/jamaica-kingsmen/)
+- [Saint Lucia Kings](https://cplseason.com/teams/saint-lucia-kings/)
+- [St Kitts Nevis Patriots](https://cplseason.com/teams/st-kitts-nevis-patriots/)
+- [Trinbago Knight Riders](https://cplseason.com/teams/trinbago-knight-riders/)
 
 ## Squads
 
@@ -220,10 +217,10 @@ latest content on the linked page.
 ## Venue Pages
 
 - [Arnos Vale Stadium](https://cplseason.com/venue/arnos-vale-stadium/)
-- [Brian Lara Cricket Academy](https://cplseason.com/venue/brian-lara-cricket-academy/)
 - [Daren Sammy Cricket Ground](https://cplseason.com/venue/daren-sammy-cricket-ground/)
 - [Kensington Oval](https://cplseason.com/venue/kensington-oval/)
 - [Providence Stadium](https://cplseason.com/venue/providence-stadium/)
+- [Queens Park Oval](https://cplseason.com/venue/queens-park-oval/)
 - [Sabina Park](https://cplseason.com/venue/sabina-park/)
 - [Sir Vivian Richards Stadium](https://cplseason.com/venue/sir-vivian-richards-stadium/)
 - [Warner Park](https://cplseason.com/venue/warner-park/)
@@ -239,6 +236,8 @@ latest content on the linked page.
 - [CPL 2026 Tickets Prices How To Buy](https://cplseason.com/news/cpl-2026-tickets-prices-how-to-buy/)
 - [CPL 2026 Venues Guide](https://cplseason.com/news/cpl-2026-venues-guide/)
 - [CPL Cricket Draft Fantasy Game 2026](https://cplseason.com/news/cpl-cricket-draft-fantasy-game-2026/)
+- [CPL Free Health Testing Fans 2026](https://cplseason.com/news/cpl-free-health-testing-fans-2026/)
+- [CPL Hall Of Fame Launched 2026](https://cplseason.com/news/cpl-hall-of-fame-launched-2026/)
 - [CPL Phi Edge Ai Prediction Partnership 2026](https://cplseason.com/news/cpl-phi-edge-ai-prediction-partnership-2026/)
 - [CPL Step Challenge 2026 How To Join](https://cplseason.com/news/cpl-step-challenge-2026-how-to-join/)
 - [Early Bird Tickets On Sale From June 19 For Mega Concert](https://cplseason.com/news/early-bird-tickets-on-sale-from-june-19-for-mega-concert/)
@@ -264,9 +263,21 @@ latest content on the linked page.
 
 - [Watch Live](https://cplseason.com/watch-live/)
 
+## Cpl 2026 Live Streaming
+
+- [CPL 2026 Live Streaming](https://cplseason.com/cpl-2026-live-streaming/)
+
 ## Cpl History
 
 - [CPL History](https://cplseason.com/cpl-history/)
+
+## Cpl Winners List
+
+- [CPL Winners List](https://cplseason.com/cpl-winners-list/)
+
+## Most Successful Cpl Teams
+
+- [Most Successful CPL Teams](https://cplseason.com/most-successful-cpl-teams/)
 
 ## Discovery
 
