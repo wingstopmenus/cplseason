@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727cq">
-  <link rel="stylesheet" href="/static/css/player-profile-scorecard.css?v=20260805a">
+  <link rel="stylesheet" href="/static/css/player-profile-scorecard.css?v=20260805b">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="profile-2026 ppx-body">
@@ -39,10 +39,8 @@
   {% set hero_record = player.about.records[0] %}
   <main id="main" class="ppx-page">
     <section class="ppx-hero" aria-labelledby="player-name">
-      <div class="ppx-hero-team">
-        <a href="/team/{{ team.slug }}/"><img src="{{ team.logo }}" width="150" height="150" alt="{{ team.name }} logo"><span>{{ team.short_name }}</span></a>
-      </div>
       <div class="ppx-hero-copy">
+        <a class="ppx-hero-team" href="/team/{{ team.slug }}/"><img src="{{ team.logo }}" width="64" height="64" alt="{{ team.name }} logo"><span>{{ team.short_name }}</span></a>
         <p class="ppx-kicker">CPL 2026 player profile</p>
         <h1 id="player-name">{{ player.name }}</h1>
         <div class="ppx-identity-line">
@@ -61,12 +59,11 @@
       </div>
       <figure class="ppx-hero-visual">
         {% if player.image %}<img src="{{ player.image }}" width="560" height="560" alt="{{ player.name }} official CPL player photo">{% else %}<span aria-label="{{ player.name }} photo unavailable">{{ player.initials }}</span>{% endif %}
-        <figcaption><small>{{ player.category }}</small><strong>{{ player.name }}</strong></figcaption>
       </figure>
     </section>
 
     <section class="ppx-stat-strip" aria-label="{{ player.name }} career snapshot">
-      <div><small>{{ hero_record.format }} matches</small><strong>{{ hero_record.matches or "—" }}</strong></div>
+      <div><small>{{ hero_record.format }} career matches</small><strong>{{ hero_record.matches or "—" }}</strong></div>
       <div><small>Runs</small><strong>{{ hero_record.runs or "—" }}</strong></div>
       <div><small>Wickets</small><strong>{{ hero_record.wickets or "—" }}</strong></div>
       <div><small>Best bowling</small><strong>{{ hero_record.best_bowling or "—" }}</strong></div>
@@ -83,7 +80,7 @@
         <p class="ppx-kicker">Player overview</p>
         <h2>About {{ player.name }}</h2>
         <p class="ppx-overview-intro">{{ player.about.biography }}</p>
-        <h3>{{ player.name }} biography</h3>
+        <p class="ppx-facts-label">Player details</p>
         <dl class="ppx-quick-facts">
           <div><dt>Full name</dt><dd>{{ profile.full_name or player.name }}</dd></div>
           <div><dt>Date of birth</dt><dd>{{ profile.birth_date or "Not listed" }}</dd></div>
@@ -98,7 +95,7 @@
       <aside id="cpl-2026" class="ppx-cpl-card">
         <p class="ppx-kicker">Current squad</p>
         <h2>{{ player.name }} at CPL 2026</h2>
-        <p>{{ player.selection_note }}. The player is listed in the {{ player.category | lower }} group for {{ team.name }}.</p>
+        <p>{{ player.selection_note }}. The player is listed in the {{ player.category }} group for {{ team.name }}.</p>
         <dl>
           <div><dt>Role</dt><dd>{{ profile.role or player.category }}</dd></div>
           <div><dt>Franchise</dt><dd>{{ team.name }}</dd></div>
@@ -111,7 +108,7 @@
     </section>
 
     <section id="career-record" class="ppx-career-record">
-      <header class="ppx-section-heading"><div><p class="ppx-kicker">Career record</p><h2>{{ player.name }} records</h2></div><p>Available senior career figures from the structured player record.</p></header>
+      <header class="ppx-section-heading"><div><p class="ppx-kicker">Career record</p><h2>{{ player.name }} career records</h2></div><p>Available senior career figures from the structured player record.</p></header>
       <div class="ppx-record-table-wrap">
         <table>
           <thead><tr><th>Format</th><th>Matches</th><th>Runs</th><th>Wickets</th><th>Best bowling</th><th>100s / 50s</th></tr></thead>
@@ -125,21 +122,16 @@
     <section id="career-path" class="ppx-career-path">
       <article>
         <p class="ppx-kicker">Career</p>
-        <h2>{{ player.name }}’s cricket career</h2>
+        <h2>{{ player.name }}’s teams and career</h2>
         <p>{{ player.about.career }}</p>
         {% if profile.career_teams %}<div class="ppx-career-teams" aria-label="Career teams">{% for career_team in profile.career_teams %}<span>{{ career_team }}</span>{% endfor %}</div>{% endif %}
       </article>
-      <aside>
-        <p class="ppx-kicker">Financial profile</p>
-        <h3>{{ player.name }} net worth</h3>
-        <p>{{ player.about.net_worth }}</p>
-      </aside>
     </section>
 
     <section id="teammates" class="ppx-related" aria-labelledby="related-player-title">
       <header class="ppx-section-heading"><div><p class="ppx-kicker">Same squad</p><h2 id="related-player-title">More {{ team.short_name }} players</h2></div><a href="/squads/#{{ team.slug }}">Full squad →</a></header>
       <div class="ppx-related-grid">
-        {% for related in related_players %}
+        {% for related in related_players[:4] %}
         <a href="/player/{{ related.slug }}/">
           <span class="ppx-related-media">{% if related.image %}<img src="{{ related.image }}" width="120" height="120" alt="{{ related.name }} official CPL player photo" loading="lazy">{% else %}<b aria-hidden="true">{{ related.initials }}</b>{% endif %}</span>
           <span><strong>{{ related.name }}</strong><small>{{ related.profile.role or related.category }}</small></span><em>↗</em>
