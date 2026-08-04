@@ -16,7 +16,7 @@
 }
 
 /* CPL history hub */
-.cpl-history-page { background: #f3f5fa; color: #111a32; }
+.cpl-history-page { background: #111a32; color: #111a32; }
 .history-shell { max-width: 1320px; margin: 0 auto; padding: 0 24px 80px; }
 .history-hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr); gap: 42px; margin: 18px 0 26px; padding: clamp(42px, 7vw, 92px); border: 1px solid rgba(255, 204, 0, .35); border-radius: 28px; color: #f8fbff; background: radial-gradient(circle at 85% 15%, rgba(84, 46, 181, .36), transparent 36%), linear-gradient(135deg, #050617, #13254a); }
 .history-hero > div > p:first-child, .history-section > header > p { margin: 0 0 12px; color: #6b36d8; font-size: 12px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
