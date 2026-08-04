@@ -44,7 +44,7 @@ VENUE_ORDER = [
     "sabina-park",
     "daren-sammy-cricket-ground",
     "sir-vivian-richards-stadium",
-    "brian-lara-cricket-academy",
+    "queens-park-oval",
     "warner-park",
     "providence-stadium",
     "kensington-oval",
@@ -1074,9 +1074,14 @@ def build_teams() -> None:
         path.stem: load_json(path)
         for path in sorted((ROOT / "data" / "venues").glob("*.json"))
     }
+    active_match_venues = {
+        load_json(path)["venue_slug"]
+        for path in (ROOT / "data" / "matches").glob("*.json")
+    }
     all_venue_fixtures = [
         fixture
-        for venue in venues_by_slug.values()
+        for slug, venue in venues_by_slug.items()
+        if slug in active_match_venues
         for fixture in venue["fixtures"]
         if " vs " in fixture["match"]
     ]
@@ -2195,18 +2200,43 @@ def build_matches() -> None:
                 ),
             }
         )
-        probable_source = match.get("probable_xi") or {}
+        probable_source = match.get("probable_xi") or {
+            "home": home_team.get("probable_xi", []) if home_team else [],
+            "away": away_team.get("probable_xi", []) if away_team else [],
+        }
         match["probable_xi"] = {
             "home": [players[slug] for slug in probable_source.get("home", []) if slug in players],
             "away": [players[slug] for slug in probable_source.get("away", []) if slug in players],
         }
         match["head_to_head"] = match.get("head_to_head")
+        if home_team and away_team and not match["head_to_head"]:
+            match["head_to_head"] = {
+                "matches": 0,
+                "home_wins": 0,
+                "away_wins": 0,
+                "no_results": 0,
+                "through": "the start of CPL 2026",
+                "scope": "season",
+                "summary": (
+                    f"The 2026 season series between {home_label} and {away_label} "
+                    "will update here after each completed meeting."
+                ),
+                "recent": [],
+            }
         match["prediction"] = match.get("prediction") or {
-            "label": "Pre-match assessment",
-            "headline": "Prediction pending closer to match day",
-            "analysis": "The match outlook will be published after current form, player availability and venue conditions can be assessed. No team is selected without enough verified pre-match information.",
-            "confidence": "Not yet rated",
-            "factors": ["Current form", "Confirmed availability", "Pitch conditions", "Toss"],
+            "label": "Early match outlook",
+            "headline": f"{home_label} vs {away_label}: key contest areas",
+            "analysis": (
+                f"The balance between {home_label}'s top order and {away_label}'s "
+                f"bowling options should shape this game at {venue['name']}. Powerplay "
+                "wickets, middle-overs control and the ability to finish the innings are "
+                "the leading pre-match factors."
+            ) if home_team and away_team else (
+                "The playoff outlook will update when the qualifying teams and their route "
+                "through the league stage are confirmed."
+            ),
+            "confidence": "Pre-match view",
+            "factors": ["Powerplay wickets", "Middle-overs control", "Finishing depth", "Venue conditions"],
         }
         match["match_stats"] = [
             {"label": "Match", "value": f"{match['match_number']} of 39"},

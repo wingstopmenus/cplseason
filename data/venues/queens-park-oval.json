@@ -1,0 +1,41 @@
+{
+  "slug": "queens-park-oval",
+  "name": "Queen's Park Oval",
+  "city": "Port of Spain",
+  "territory": "Trinidad and Tobago",
+  "capacity": 20000,
+  "matches": 5,
+  "date_window": "26 August–2 September",
+  "stage_label": "Trinidad block",
+  "summary": "Queen's Park Oval hosts five Trinbago Knight Riders fixtures during the CPL 2026 Trinidad leg.",
+  "tagline": "One of the Caribbean's best-known cricket grounds in the heart of Port of Spain.",
+  "established": "Established in 1896",
+  "former_name": "—",
+  "ends": "Brian Lara Pavilion End and Media Centre End",
+  "home_team": "Trinidad and Tobago Red Force and Trinbago Knight Riders",
+  "story": [
+    "Queen's Park Oval is a historic international cricket venue in Port of Spain and the home of the Queen's Park Cricket Club.",
+    "The ground has staged Test, one-day international, T20 international and Caribbean Premier League cricket across several eras.",
+    "Five Trinbago Knight Riders league matches are scheduled at the Oval in 2026, including a 5pm fixture on 31 August."
+  ],
+  "highlights": [
+    {"label": "Location", "title": "Central Port of Spain", "text": "The Oval sits close to the city's main commercial and entertainment districts."},
+    {"label": "History", "title": "Established in 1896", "text": "It is one of the longest-serving major cricket venues in the Caribbean."},
+    {"label": "CPL 2026", "title": "Five league matches", "text": "The Trinidad block runs from 26 August to 2 September."}
+  ],
+  "visitor_note": "Use the latest organizer information for ticket gates, parking and match-day transport in Port of Spain.",
+  "fixtures": [
+    {"date": "2026-08-26", "label": "Wed 26 Aug", "match": "Trinbago Knight Riders vs Saint Lucia Kings", "time": "7pm"},
+    {"date": "2026-08-28", "label": "Fri 28 Aug", "match": "Trinbago Knight Riders vs Barbados Tridents", "time": "8pm"},
+    {"date": "2026-08-29", "label": "Sat 29 Aug", "match": "Trinbago Knight Riders vs Jamaica Kingsmen", "time": "7pm"},
+    {"date": "2026-08-31", "label": "Mon 31 Aug", "match": "Trinbago Knight Riders vs Guyana Amazon Warriors", "time": "5pm"},
+    {"date": "2026-09-02", "label": "Wed 2 Sep", "match": "Trinbago Knight Riders vs Antigua & Barbuda Falcons", "time": "7pm"}
+  ],
+  "image": "/static/img/official/news/trinbago-knight-riders-queens-park-oval-tickets-2026-featured.webp",
+  "image_source": "https://cplt20.com/",
+  "image_credit": "Republic Bank CPL",
+  "image_license": "Used for editorial coverage",
+  "image_license_url": "https://cplt20.com/",
+  "external_ids": {"wikipedia": "Queen's Park Oval", "cpl": null},
+  "last_updated": "2026-08-04"
+}

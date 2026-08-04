@@ -18,7 +18,7 @@ VENUE_TIMEZONES = {
     "sabina-park": ("America/Jamaica", "-05:00"),
     "daren-sammy-cricket-ground": ("America/St_Lucia", "-04:00"),
     "sir-vivian-richards-stadium": ("America/Antigua", "-04:00"),
-    "brian-lara-cricket-academy": ("America/Port_of_Spain", "-04:00"),
+    "queens-park-oval": ("America/Port_of_Spain", "-04:00"),
     "warner-park": ("America/St_Kitts", "-04:00"),
     "providence-stadium": ("America/Guyana", "-04:00"),
     "kensington-oval": ("America/Barbados", "-04:00"),

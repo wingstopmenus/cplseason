@@ -192,6 +192,20 @@ function hasMatchup(match, homeName, awayName) {
   return requested.every(Boolean) && actual.length === 2 && actual[0] === requested[0] && actual[1] === requested[1];
 }
 
+function seasonHeadToHead(matches, homeName, awayName) {
+  const completed = matches
+    .filter((match) => hasMatchup(match, homeName, awayName) && isCompleted(match))
+    .map(normalizeMatch);
+  const homeKey = comparableTeamName(homeName);
+  const awayKey = comparableTeamName(awayName);
+  return {
+    matches: completed.length,
+    homeWins: completed.filter((match) => comparableTeamName(match.winnerName) === homeKey).length,
+    awayWins: completed.filter((match) => comparableTeamName(match.winnerName) === awayKey).length,
+    through: completed.length ? "latest completed 2026 meeting" : "start of CPL 2026",
+  };
+}
+
 function isCompleted(match) {
   return completedPattern.test(String(match?.status || ""));
 }
@@ -282,6 +296,13 @@ module.exports = async function cplLiveScore(request, response) {
     ]);
 
     const schedule = officialMatches.map(normalizeMatch);
+    if (requestedMatch) {
+      requestedMatch.seasonHeadToHead = seasonHeadToHead(
+        officialMatches,
+        requestedHome || requestedMatch.teams?.[0]?.name,
+        requestedAway || requestedMatch.teams?.[1]?.name,
+      );
+    }
     response.setHeader(
       "Cache-Control",
       "public, s-maxage=12, stale-while-revalidate=45",

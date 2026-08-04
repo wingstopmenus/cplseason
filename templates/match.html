@@ -179,7 +179,7 @@
     </section>
 
     <section id="match-head-to-head" class="match-research-section match-head-to-head" aria-labelledby="match-h2h-title">
-      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">{{ match.home_label }} vs {{ match.away_label }} record</h2><span>Men's CPL meetings before this 2026 fixture.</span></div></header>
+      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">{{ match.home_label }} vs {{ match.away_label }} record</h2><span>{% if match.head_to_head and match.head_to_head.get("scope") == "season" %}CPL 2026 season series, updated after completed matches.{% else %}Men's CPL meetings before this 2026 fixture.{% endif %}</span></div></header>
       {% if match.head_to_head %}
       <div class="match-h2h-score" data-match-h2h data-home-name="{{ match.home_label }}" data-away-name="{{ match.away_label }}" data-base-matches="{{ match.head_to_head.matches }}" data-base-home-wins="{{ match.head_to_head.home_wins }}" data-base-away-wins="{{ match.head_to_head.away_wins }}">
         <article><small>{{ match.home_label }}</small><strong data-h2h-home-wins>{{ match.head_to_head.home_wins }}</strong><span>Wins</span></article>

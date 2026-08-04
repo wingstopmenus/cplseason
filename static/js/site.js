@@ -775,6 +775,13 @@ if (liveMatchData) {
     setLiveStat(liveStats.requiredRate, match.live?.requiredRunRate);
     setLiveStat(liveStats.target, match.live?.target);
 
+    if (h2h && match.seasonHeadToHead && Number(h2h.dataset.baseMatches || 0) === 0) {
+      h2h.querySelector("[data-h2h-matches]").textContent = String(match.seasonHeadToHead.matches || 0);
+      h2h.querySelector("[data-h2h-home-wins]").textContent = String(match.seasonHeadToHead.homeWins || 0);
+      h2h.querySelector("[data-h2h-away-wins]").textContent = String(match.seasonHeadToHead.awayWins || 0);
+      h2h.querySelector("[data-h2h-through]").textContent = `Through ${match.seasonHeadToHead.through || "CPL 2026"}`;
+    }
+
     if (h2h && isComplete && match.winnerName) {
       const baseMatches = Number(h2h.dataset.baseMatches || 0);
       const baseHomeWins = Number(h2h.dataset.baseHomeWins || 0);

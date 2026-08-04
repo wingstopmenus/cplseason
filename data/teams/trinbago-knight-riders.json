@@ -5,7 +5,7 @@
   "short_name": "Knight Riders",
   "territory": "Trinidad and Tobago",
   "city": "Tarouba",
-  "venue_slug": "brian-lara-cricket-academy",
+  "venue_slug": "queens-park-oval",
   "schedule_names": [
     "Trinbago Knight Riders"
   ],
@@ -27,7 +27,7 @@
   "history": [
     "The franchise entered the inaugural CPL season in 2013 as Trinidad & Tobago Red Steel, won its first title in 2015 and adopted the Trinbago Knight Riders name in 2016.",
     "Further championships followed in 2017, 2018 and an unbeaten 2020 campaign. A fifth CPL crown in 2025 made TKR the tournament's most successful team and sends them into 2026 as defending champions.",
-    "Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein headline a highly experienced local group. Brian Lara Cricket Academy hosts five TKR fixtures from 26 August to 2 September."
+    "Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein headline a highly experienced local group. Queen's Park Oval hosts five TKR fixtures from 26 August to 2 September."
   ],
   "profile_highlights": [
     {
@@ -43,11 +43,11 @@
     {
       "label": "Home base",
       "title": "Five matches at Tarouba",
-      "text": "Brian Lara Cricket Academy stages TKR's complete 2026 home block."
+      "text": "Queen's Park Oval stages TKR's complete 2026 home block."
     }
   ],
   "summary": "The 2025 champions retain a decorated core led by Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein as they pursue another title.",
-  "storyline": "Trinbago's five-match home block at Brian Lara Cricket Academy runs from 26 August to 2 September before the league-stage finish in Guyana.",
+  "storyline": "Trinbago's five-match home block at Queen's Park Oval runs from 26 August to 2 September before the league-stage finish in Guyana.",
   "roster": [
     "sunil-narine",
     "nicholas-pooran",
@@ -67,6 +67,7 @@
     "matthew-breetzke",
     "amshi-de-silva"
   ],
+  "probable_xi": ["alex-hales", "colin-munro", "nicholas-pooran", "kieron-pollard", "matthew-breetzke", "sunil-narine", "dominic-drakes", "akeal-hosein", "terrance-hinds", "usman-tariq", "abdul-raheem-toppin"],
   "external_ids": {
     "wikipedia": null,
     "cpl": null,
