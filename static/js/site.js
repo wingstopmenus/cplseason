@@ -136,21 +136,25 @@ if (matchSpotlights.length) {
 
 const playerDirectorySearch = document.querySelector("#player-directory-search");
 const playerDirectoryCards = document.querySelectorAll("[data-directory-player]");
-const playerCategoryButtons = document.querySelectorAll("button[data-player-filter]");
-const playerTeamButtons = document.querySelectorAll(".player-team-filter button[data-player-team]");
-const playerTeamSections = document.querySelectorAll("[data-player-team-section]");
+const playerCategorySelect = document.querySelector("#player-category-select");
+const playerTeamSelect = document.querySelector("#player-team-select");
+const playerTeamButtons = document.querySelectorAll(".pd-team-shortcuts button[data-player-team]");
 const playerDirectoryCount = document.querySelector("#player-directory-count");
 const playerDirectoryEmpty = document.querySelector("#player-directory-empty");
+const playerDirectoryReset = document.querySelector("#player-directory-reset");
+const playerPagePrev = document.querySelector("#player-page-prev");
+const playerPageNext = document.querySelector("#player-page-next");
+const playerPageStatus = document.querySelector("#player-page-status");
 
 if (playerDirectorySearch && playerDirectoryCards.length) {
-  let activePlayerCategory = "all";
-  let activePlayerTeam = "all";
+  const pageSize = 12;
+  let activePlayerPage = 1;
 
   const updatePlayerDirectory = () => {
     const query = playerDirectorySearch.value.trim().toLowerCase();
-    let visiblePlayers = 0;
-
-    playerDirectoryCards.forEach((card) => {
+    const activePlayerCategory = playerCategorySelect?.value || "all";
+    const activePlayerTeam = playerTeamSelect?.value || "all";
+    const matchingCards = [...playerDirectoryCards].filter((card) => {
       const matchesQuery =
         !query ||
         card.dataset.playerName.includes(query) ||
@@ -161,47 +165,75 @@ if (playerDirectorySearch && playerDirectoryCards.length) {
       const matchesTeam =
         activePlayerTeam === "all" ||
         card.dataset.playerTeam === activePlayerTeam;
-      const isVisible = matchesQuery && matchesCategory && matchesTeam;
-      card.hidden = !isVisible;
-      if (isVisible) visiblePlayers += 1;
+      return matchesQuery && matchesCategory && matchesTeam;
     });
 
-    playerTeamSections.forEach((section) => {
-      const hasVisiblePlayers = [...section.querySelectorAll("[data-directory-player]")]
-        .some((card) => !card.hidden);
-      section.hidden = !hasVisiblePlayers;
+    const pageCount = Math.max(1, Math.ceil(matchingCards.length / pageSize));
+    activePlayerPage = Math.min(activePlayerPage, pageCount);
+    const pageStart = (activePlayerPage - 1) * pageSize;
+    const visiblePageCards = new Set(matchingCards.slice(pageStart, pageStart + pageSize));
+    playerDirectoryCards.forEach((card) => {
+      card.hidden = !visiblePageCards.has(card);
     });
 
     if (playerDirectoryCount) {
       playerDirectoryCount.textContent =
-        `${visiblePlayers} ${visiblePlayers === 1 ? "player" : "players"} shown`;
+        `${matchingCards.length} ${matchingCards.length === 1 ? "player" : "players"} found`;
     }
-    if (playerDirectoryEmpty) playerDirectoryEmpty.hidden = visiblePlayers !== 0;
+    if (playerDirectoryEmpty) playerDirectoryEmpty.hidden = matchingCards.length !== 0;
+    if (playerPageStatus) playerPageStatus.textContent = `Page ${activePlayerPage} of ${pageCount}`;
+    if (playerPagePrev) playerPagePrev.disabled = activePlayerPage <= 1;
+    if (playerPageNext) playerPageNext.disabled = activePlayerPage >= pageCount;
   };
 
-  playerDirectorySearch.addEventListener("input", updatePlayerDirectory);
-  playerCategoryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      activePlayerCategory = button.dataset.playerFilter;
-      playerCategoryButtons.forEach((candidate) => {
-        const isActive = candidate === button;
-        candidate.classList.toggle("is-active", isActive);
-        candidate.setAttribute("aria-pressed", String(isActive));
-      });
-      updatePlayerDirectory();
+  const resetPlayerPageAndUpdate = () => {
+    activePlayerPage = 1;
+    updatePlayerDirectory();
+  };
+
+  playerDirectorySearch.addEventListener("input", resetPlayerPageAndUpdate);
+  playerCategorySelect?.addEventListener("change", resetPlayerPageAndUpdate);
+  playerTeamSelect?.addEventListener("change", () => {
+    playerTeamButtons.forEach((button) => {
+      const isActive = button.dataset.playerTeam === playerTeamSelect.value;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
     });
+    resetPlayerPageAndUpdate();
   });
   playerTeamButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      activePlayerTeam = button.dataset.playerTeam;
+      if (playerTeamSelect) playerTeamSelect.value = button.dataset.playerTeam;
       playerTeamButtons.forEach((candidate) => {
         const isActive = candidate === button;
         candidate.classList.toggle("is-active", isActive);
         candidate.setAttribute("aria-pressed", String(isActive));
       });
-      updatePlayerDirectory();
+      resetPlayerPageAndUpdate();
     });
   });
+  playerDirectoryReset?.addEventListener("click", () => {
+    playerDirectorySearch.value = "";
+    if (playerCategorySelect) playerCategorySelect.value = "all";
+    if (playerTeamSelect) playerTeamSelect.value = "all";
+    playerTeamButtons.forEach((button) => {
+      const isActive = button.dataset.playerTeam === "all";
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+    resetPlayerPageAndUpdate();
+  });
+  playerPagePrev?.addEventListener("click", () => {
+    if (activePlayerPage > 1) activePlayerPage -= 1;
+    updatePlayerDirectory();
+    document.querySelector("#player-directory")?.scrollIntoView({ behavior: "smooth" });
+  });
+  playerPageNext?.addEventListener("click", () => {
+    activePlayerPage += 1;
+    updatePlayerDirectory();
+    document.querySelector("#player-directory")?.scrollIntoView({ behavior: "smooth" });
+  });
+  updatePlayerDirectory();
 }
 
 const mainHeader = document.querySelector(".site-header");

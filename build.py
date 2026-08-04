@@ -758,6 +758,11 @@ def build_players() -> None:
         for player_slug in team["roster"]:
             player = dict(players_by_slug[player_slug])
             player["category_slug"] = player["category"].lower().replace(" ", "-")
+            player["role"] = player.get("profile", {}).get("role") or player["category"].removesuffix(" player")
+            player["team_name"] = team["name"]
+            player["team_slug"] = team_slug
+            player["team_short_name"] = SHORT_NAMES[team_slug]
+            player["team_logo"] = team["logo"]
             player["captain"] = (
                 team_slug == "jamaica-kingsmen"
                 and player_slug == "rovman-powell"
@@ -772,6 +777,45 @@ def build_players() -> None:
     all_players = [player for team in teams for player in team["players"]]
     portrait_count = sum(bool(player["image"]) for player in all_players)
     directory_updated = max(player["last_updated"] for player in all_players)
+    directory_updated_display = datetime.strptime(directory_updated, "%Y-%m-%d").strftime("%d %b %Y")
+    players_by_directory_slug = {player["slug"]: player for player in all_players}
+    featured_players = [
+        players_by_directory_slug[slug]
+        for slug in (
+            "andre-russell",
+            "shimron-hetmyer",
+            "nicholas-pooran",
+            "shamar-joseph",
+            "alzarri-joseph",
+            "sunil-narine",
+            "rovman-powell",
+            "jason-holder",
+        )
+        if slug in players_by_directory_slug
+    ]
+    role_players = [
+        players_by_directory_slug[slug]
+        for slug in ("nicholas-pooran", "andre-russell", "alzarri-joseph", "sunil-narine")
+        if slug in players_by_directory_slug
+    ]
+    faqs = [
+        {
+            "question": "How many players are listed for CPL 2026?",
+            "answer": f"This directory currently lists {len(all_players)} announced player profiles across seven CPL 2026 franchises.",
+        },
+        {
+            "question": "Can I filter CPL 2026 players by team?",
+            "answer": "Yes. Use the team and squad-category filters to narrow the directory, or search by player or franchise name.",
+        },
+        {
+            "question": "Are these the confirmed playing XIs?",
+            "answer": "No. These are announced squad players. A match playing XI is only confirmed after the toss and the official team-sheet release.",
+        },
+        {
+            "question": "Can CPL squads change during the season?",
+            "answer": "Yes. Availability, injuries and approved replacements can change a squad, so the directory is updated when new team information is confirmed.",
+        },
+    ]
     page = {
         "title": "CPL 2026 Players by Team: Full Squad List",
         "description": (
@@ -823,11 +867,30 @@ def build_players() -> None:
                     },
                 ],
             },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item["question"],
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": item["answer"],
+                        },
+                    }
+                    for item in faqs
+                ],
+            },
         ],
     }
     rendered = template_environment().get_template("players.html").render(
         page=page,
         teams=teams,
+        all_players=all_players,
+        featured_players=featured_players,
+        role_players=role_players,
+        faqs=faqs,
+        directory_updated_display=directory_updated_display,
         totals={
             "teams": len(teams),
             "players": len(all_players),
