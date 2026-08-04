@@ -301,13 +301,15 @@
     }
     text(
       commentaryCopy,
-      match.stateOfPlay ||
-        match.description ||
-        (live
-          ? "Follow the latest action as the innings unfolds."
-          : complete
-            ? "The match has finished. Review the final score and key moments below."
-            : `${local?.dateLabelLong || "Match day"} · ${local?.timeLabel || "Local time"} at ${local?.venue || match.venue?.name || "the host venue"}.`),
+      live
+        ? match.stateOfPlay ||
+          match.description ||
+          "Follow the latest action as the innings unfolds."
+        : complete
+          ? match.stateOfPlay ||
+            match.description ||
+            "The match has finished. Review the final score and key moments below."
+          : `${local?.dateLabelLong || "Match day"} · ${local?.timeLabel || "Local time"} at ${local?.venue || match.venue?.name || "the host venue"}.`,
     );
 
     (match.live?.recentBalls || []).forEach((ball, index) => {
