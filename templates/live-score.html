@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260804a">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805hub">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -72,12 +72,12 @@
             </div>
           </div>
 
-          <div class="live-score-hero-mark" aria-hidden="true">
-            <span>2026</span>
-            <strong>LIVE</strong>
-            <b>SCORE</b>
-            <small>Every ball · Every wicket</small>
-          </div>
+          <aside class="live-score-hero-brief" aria-label="Next CPL match">
+            <span>Next match</span>
+            <strong>Match {{ focus.match_number }}</strong>
+            <time datetime="{{ focus.start_iso }}">{{ focus.date_label_long }} · {{ focus.time_label }} local</time>
+            <a href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }} <i aria-hidden="true">→</i></a>
+          </aside>
         </div>
       </div>
     </section>
@@ -145,15 +145,54 @@
           </div>
         </div>
 
-        <div class="live-score-match-details">
-          <div class="live-score-metrics" aria-label="Current match details">
-            <article><span>Toss</span><strong data-live-toss>Awaiting confirmation</strong></article>
-            <article><span>Current run rate</span><strong data-live-crr>—</strong></article>
-            <article><span>Target</span><strong data-live-target>—</strong></article>
-            <article><span>Required rate</span><strong data-live-rrr>—</strong></article>
-          </div>
+        <div class="live-score-workspace">
+          <div class="live-score-workspace-main">
+            <nav class="live-score-tabs" aria-label="Live match sections">
+              <a href="#commentary-title" aria-current="page">Commentary</a>
+              <a href="#live-stats">Live stats</a>
+              <a href="#live-lineups-title">Playing XI</a>
+              <a href="#match-info-title">Match info</a>
+            </nav>
 
-          <div class="live-score-detail-grid">
+            <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
+              <header class="live-score-section-heading">
+                <div>
+                  <p>Ball-by-ball coverage</p>
+                  <h2 id="commentary-title">CPL live commentary</h2>
+                </div>
+                <span class="live-score-commentary-status" data-commentary-status>
+                  <i aria-hidden="true"></i>
+                  Updates on match day
+                </span>
+              </header>
+
+              <div class="live-score-commentary-layout">
+                <article class="live-score-commentary-lead">
+                  <span>Current match</span>
+                  <h3 data-commentary-heading>{{ focus.home_label }} vs {{ focus.away_label }}</h3>
+                  <p data-commentary-copy>Follow every delivery here when live coverage begins.</p>
+                  <a data-commentary-match-link href="{{ focus.url }}">Open match centre <span aria-hidden="true">→</span></a>
+                </article>
+
+                <div class="live-score-commentary-feed" data-commentary-feed aria-live="polite" aria-atomic="false">
+                  <div class="live-score-commentary-empty">
+                    <span>Commentary desk</span>
+                    <strong>Coverage begins at the first ball</strong>
+                    <p>Runs, wickets, boundaries and key moments will appear here throughout the match.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="live-stats" class="live-score-match-details" aria-label="Live match statistics">
+              <div class="live-score-metrics" aria-label="Current match details">
+                <article><span>Toss</span><strong data-live-toss>Awaiting confirmation</strong></article>
+                <article><span>Current run rate</span><strong data-live-crr>—</strong></article>
+                <article><span>Target</span><strong data-live-target>—</strong></article>
+                <article><span>Required rate</span><strong data-live-rrr>—</strong></article>
+              </div>
+
+              <div class="live-score-detail-grid">
             <article>
               <header><span>Batting</span><strong>Batters at the crease</strong></header>
               <div data-live-batters><p class="live-score-empty">The batters at the crease will appear when play begins.</p></div>
@@ -166,9 +205,9 @@
               <header><span>Ball by ball</span><strong>Recent deliveries</strong></header>
               <div data-recent-balls aria-live="polite"><p class="live-score-empty">Recent deliveries will appear when play begins.</p></div>
             </article>
-          </div>
+              </div>
 
-          <section class="live-score-lineups" aria-labelledby="live-lineups-title">
+              <section class="live-score-lineups" aria-labelledby="live-lineups-title">
             <header>
               <div><span>Team news</span><strong id="live-lineups-title">Playing XIs</strong></div>
               <small data-lineups-status>Team sheets not yet published</small>
@@ -183,37 +222,41 @@
                 <p class="live-score-empty">The confirmed XI will appear here after the toss.</p>
               </article>
             </div>
-          </section>
-        </div>
-      </section>
-
-      <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
-        <header class="live-score-section-heading">
-          <div>
-            <p>Ball-by-ball coverage</p>
-            <h2 id="commentary-title">CPL live commentary</h2>
+              </section>
+            </section>
           </div>
-          <span class="live-score-commentary-status" data-commentary-status>
-            <i aria-hidden="true"></i>
-            Updates on match day
-          </span>
-        </header>
 
-        <div class="live-score-commentary-layout">
-          <article class="live-score-commentary-lead">
-            <span>Current match</span>
-            <h3 data-commentary-heading>{{ focus.home_label }} vs {{ focus.away_label }}</h3>
-            <p data-commentary-copy>Follow every delivery here when live coverage begins.</p>
-            <a data-commentary-match-link href="{{ focus.url }}">Open match centre <span aria-hidden="true">→</span></a>
-          </article>
+          <aside class="live-score-sidebar" aria-label="Match centre information">
+            <section class="live-score-side-panel live-score-other-matches" aria-labelledby="other-matches-title">
+              <header><div><span>Up next</span><h2 id="other-matches-title">Other matches</h2></div><a href="/schedule/">View all</a></header>
+              <div>
+                {% for match in upcoming[:3] %}
+                <a href="{{ match.url }}">
+                  <span>{{ match.date_label }}</span>
+                  <strong>{{ match.home_short }} <i>vs</i> {{ match.away_short }}</strong>
+                  <small>{{ match.venue.name }}</small>
+                </a>
+                {% endfor %}
+              </div>
+            </section>
 
-          <div class="live-score-commentary-feed" data-commentary-feed aria-live="polite" aria-atomic="false">
-            <div class="live-score-commentary-empty">
-              <span>Commentary desk</span>
-              <strong>Coverage begins at the first ball</strong>
-              <p>Runs, wickets, boundaries and key moments will appear here throughout the match.</p>
-            </div>
-          </div>
+            <section class="live-score-side-panel live-score-match-info" aria-labelledby="match-info-title">
+              <header><span>Details</span><h2 id="match-info-title">Match information</h2></header>
+              <dl>
+                <div><dt>Match</dt><dd>{{ focus.home_label }} vs {{ focus.away_label }}</dd></div>
+                <div><dt>Date</dt><dd>{{ focus.date_label_long }}</dd></div>
+                <div><dt>Start</dt><dd>{{ focus.time_label }} local</dd></div>
+                <div><dt>Venue</dt><dd><a href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }}</a></dd></div>
+                <div><dt>Stage</dt><dd>{{ focus.stage }}</dd></div>
+              </dl>
+            </section>
+
+            <section class="live-score-side-panel live-score-watch-panel" aria-labelledby="watch-panel-title">
+              <header><span>Legal coverage</span><h2 id="watch-panel-title">How to watch</h2></header>
+              <p>Find the official TV channel or streaming service available in your country.</p>
+              <a href="/watch-live/">Find your broadcaster <span aria-hidden="true">→</span></a>
+            </section>
+          </aside>
         </div>
       </section>
 
@@ -312,6 +355,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260804a" defer></script>
+  <script src="/static/js/live-score.js?v=20260805hub" defer></script>
 </body>
 </html>
