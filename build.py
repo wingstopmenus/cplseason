@@ -2969,6 +2969,12 @@ def sync_shared_footer() -> None:
             site_css_url = "/static/css/site.css?v=20260801challengecolors"
         elif html_path == ROOT / "teams" / "index.html":
             site_css_url = "/static/css/site.css?v=20260804teams16"
+        elif html_path.parent.name in {
+            "cpl-history",
+            "cpl-winners-list",
+            "most-successful-cpl-teams",
+        }:
+            site_css_url = "/static/css/site.css?v=20260805records"
         else:
             site_css_url = "/static/css/site.css?v=20260731breadcrumbs"
         updated = css_pattern.sub(site_css_url, updated)
