@@ -12,7 +12,9 @@ BASE_URL = "https://cplseason.com"
 CORE_ROUTES = {
     "/",
     "/cpl-history/",
+    "/cpl-winners-list/",
     "/live-score/",
+    "/most-successful-cpl-teams/",
     "/news/",
     "/players/",
     "/points-table/",

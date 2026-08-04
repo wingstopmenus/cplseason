@@ -119,18 +119,34 @@ def main() -> int:
         )
     if len(matches) != 39:
         errors.append(f"Expected 39 match records, found {len(matches)}")
-    champions = history.get("champions", [])
-    if len(champions) != 13 or [item.get("year") for item in champions] != list(range(2013, 2026)):
-        errors.append("CPL history must contain one champion for every season from 2013 to 2025")
-    history_page_path = ROOT / "cpl-history" / "index.html"
-    if not history_page_path.exists():
-        errors.append("Generated CPL history page is missing")
-    else:
-        history_page = history_page_path.read_text(encoding="utf-8")
-        if '"@type":"ItemList"' not in history_page:
-            errors.append("CPL history page is missing champions ItemList schema")
-        if history_page.count("<tbody>") != 1 or history_page.count("<tr>") != 14:
-            errors.append("CPL history page must render 13 champion rows")
+    seasons = history.get("seasons", [])
+    champions = [item for item in seasons if item.get("status") == "complete"]
+    if len(seasons) != 14 or [item.get("year") for item in seasons] != list(range(2013, 2027)):
+        errors.append("CPL history must contain every season from 2013 to 2026")
+    if len(champions) != 13 or any(not item.get("winner") for item in champions):
+        errors.append("CPL history must contain 13 completed champions through 2025")
+    upcoming = seasons[-1] if seasons else {}
+    if upcoming.get("year") != 2026 or upcoming.get("status") != "scheduled" or upcoming.get("winner") is not None:
+        errors.append("CPL 2026 must remain scheduled with no winner before the final")
+    for route in ("cpl-history", "cpl-winners-list", "most-successful-cpl-teams"):
+        page_path = ROOT / route / "index.html"
+        if not page_path.exists():
+            errors.append(f"Generated {route} page is missing")
+            continue
+        page_html = page_path.read_text(encoding="utf-8")
+        if '"@type":"ItemList"' not in page_html or '"@type":"BreadcrumbList"' not in page_html:
+            errors.append(f"{route} page is missing required list or breadcrumb schema")
+    winners_path = ROOT / "cpl-winners-list" / "index.html"
+    if winners_path.exists():
+        winners_page = winners_path.read_text(encoding="utf-8")
+        if winners_page.count("<tbody>") != 1 or winners_page.count("<tr") != 15:
+            errors.append("CPL winners list must render 14 season rows including 2026 TBD")
+    rankings = history.get("team_rankings", [])
+    if not rankings or rankings[0].get("titles") != 5:
+        errors.append("CPL team rankings must identify TKR as five-time champions")
+    guyana = next((item for item in rankings if item.get("name") == "Guyana Amazon Warriors"), {})
+    if guyana.get("finals") != 8:
+        errors.append("Guyana must have the record eight CPL final appearances")
 
     history_years_by_team: dict[str, list[int]] = {}
     for season in champions:

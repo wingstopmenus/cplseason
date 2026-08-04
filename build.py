@@ -1994,92 +1994,75 @@ def build_live_score() -> None:
 
 
 def build_cpl_history() -> None:
-    """Render the canonical CPL history and champions hub."""
+    """Render distinct CPL history, winners and team-success record pages."""
     history = load_json(ROOT / "data" / "cpl-history.json")
     teams = {
         path.stem: load_json(path)
         for path in sorted((ROOT / "data" / "teams").glob("*.json"))
     }
-    champions = []
-    for season in history["champions"]:
+    seasons = []
+    for season in history["seasons"]:
         item = dict(season)
         item["team"] = teams.get(item.get("team_slug"))
-        champions.append(item)
+        seasons.append(item)
+    rankings = []
+    for ranking in history["team_rankings"]:
+        item = dict(ranking)
+        item["team"] = teams.get(item.get("team_slug"))
+        rankings.append(item)
 
-    title_counts = Counter(season["franchise_record"] for season in champions)
-    leaderboard = [
+    pages = [
         {
-            "name": name,
-            "titles": count,
-            "years": [
-                season["year"]
-                for season in champions
-                if season["franchise_record"] == name
+            "kind": "history", "route": "cpl-history", "breadcrumb": "CPL History",
+            "title": "CPL History: Every Season, Champion and Final",
+            "description": "Explore CPL history from 2013 to 2026 with every champion, runner-up, final score, season story, franchise change and major tournament record.",
+            "kicker": "The complete men's CPL archive · 2013–2026",
+            "heading": "Caribbean Premier League<br><span>History</span>",
+            "lede": "Every season, champion and final result, plus the records and franchise changes that shaped the Caribbean Premier League."
+        },
+        {
+            "kind": "winners", "route": "cpl-winners-list", "breadcrumb": "CPL Winners List",
+            "title": "CPL Winners List From 2013 to 2026",
+            "description": "See the complete CPL winners list from 2013 to 2026, including every champion, runner-up, final score, winning margin and franchise title record.",
+            "kicker": "Champions and runners-up · 2013–2026",
+            "heading": "CPL Winners <span>List</span>",
+            "lede": "A quick, accurate year-by-year table of Caribbean Premier League champions, runners-up and final results."
+        },
+        {
+            "kind": "teams", "route": "most-successful-cpl-teams", "breadcrumb": "Most Successful CPL Teams",
+            "title": "Most Successful CPL Teams of All Time",
+            "description": "Rank the most successful CPL teams by titles, finals appearances and win percentage through 2025, with franchise-name continuity clearly explained.",
+            "kicker": "All-time franchise rankings · through 2025",
+            "heading": "Most Successful<br><span>CPL Teams</span>",
+            "lede": "Championships decide the order. Finals appearances and win percentage reveal the wider record behind each CPL franchise."
+        },
+    ]
+    completed = [season for season in seasons if season["status"] == "complete"]
+    for page in pages:
+        page["canonical"] = f"https://cplseason.com/{page['route']}/"
+        page["date_modified"] = history["last_updated"]
+        items = rankings if page["kind"] == "teams" else completed
+        item_names = (
+            [f"{team['name']}: {team['titles']} CPL titles" for team in rankings]
+            if page["kind"] == "teams"
+            else [f"{season['year']} CPL champion: {season['winner']}" for season in completed]
+        )
+        schema = {
+            "@context": "https://schema.org",
+            "@graph": [
+                {"@type": "CollectionPage", "@id": f"{page['canonical']}#webpage", "url": page["canonical"], "name": page["title"], "description": page["description"], "dateModified": page["date_modified"], "breadcrumb": {"@id": f"{page['canonical']}#breadcrumb"}, "mainEntity": {"@id": f"{page['canonical']}#list"}},
+                {"@type": "ItemList", "@id": f"{page['canonical']}#list", "name": page["breadcrumb"], "numberOfItems": len(items), "itemListElement": [{"@type": "ListItem", "position": index, "name": name} for index, name in enumerate(item_names, start=1)]},
+                {"@type": "BreadcrumbList", "@id": f"{page['canonical']}#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cplseason.com/"}, {"@type": "ListItem", "position": 2, "name": page["breadcrumb"], "item": page["canonical"]}]},
             ],
         }
-        for name, count in sorted(
-            title_counts.items(), key=lambda item: (-item[1], item[0])
+        rendered = template_environment().get_template("cpl-history.html").render(
+            page=page, history=history, seasons=seasons, rankings=rankings,
+            schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
         )
-    ]
-    page = {
-        "title": "CPL Winners List: Champions and Tournament History",
-        "description": (
-            "Explore every Caribbean Premier League champion from 2013 to 2025, "
-            "the most successful CPL teams, franchise name changes, title records "
-            "and past winners by year."
-        ),
-        "canonical": "https://cplseason.com/cpl-history/",
-        "date_modified": history["last_updated"],
-    }
-    schema = {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "CollectionPage",
-                "@id": f"{page['canonical']}#webpage",
-                "url": page["canonical"],
-                "name": page["title"],
-                "description": page["description"],
-                "dateModified": page["date_modified"],
-                "breadcrumb": {"@id": f"{page['canonical']}#breadcrumb"},
-                "mainEntity": {"@id": f"{page['canonical']}#champions"},
-            },
-            {
-                "@type": "ItemList",
-                "@id": f"{page['canonical']}#champions",
-                "name": "Caribbean Premier League champions by season",
-                "numberOfItems": len(champions),
-                "itemListOrder": "https://schema.org/ItemListOrderDescending",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": index,
-                        "name": f"{season['year']} CPL champion: {season['winner']}",
-                    }
-                    for index, season in enumerate(reversed(champions), start=1)
-                ],
-            },
-            {
-                "@type": "BreadcrumbList",
-                "@id": f"{page['canonical']}#breadcrumb",
-                "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cplseason.com/"},
-                    {"@type": "ListItem", "position": 2, "name": "CPL History", "item": page["canonical"]},
-                ],
-            },
-        ],
-    }
-    rendered = template_environment().get_template("cpl-history.html").render(
-        page=page,
-        history=history,
-        champions=list(reversed(champions)),
-        leaderboard=leaderboard,
-        schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
-    )
-    output = ROOT / "cpl-history" / "index.html"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(rendered + "\n", encoding="utf-8")
-    print(f"Rendered {output.relative_to(ROOT)} with {len(champions)} seasons")
+        output = ROOT / page["route"] / "index.html"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered + "\n", encoding="utf-8")
+        print(f"Rendered {output.relative_to(ROOT)}")
 
 
 def build_match_spotlight_schedule() -> list[dict]:

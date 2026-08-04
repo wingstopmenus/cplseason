@@ -1,0 +1,59 @@
+{
+  "slug": "cpl-hall-of-fame-launched-2026",
+  "category": "CPL History",
+  "title": "Republic Bank CPL Launches Annual Hall of Fame",
+  "short_title": "CPL launches Hall of Fame",
+  "description": "The Caribbean Premier League has launched an annual Hall of Fame honouring one player and one off-field contributor each year.",
+  "dek": "The first two inductees will be celebrated at a Barbados gala on 15 September, with proceeds supporting prostate cancer awareness and testing.",
+  "date_published": "2026-08-03",
+  "date_modified": "2026-08-04",
+  "source_name": "Caribbean Premier League",
+  "source_date": "2026-08-03",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/cpl-hall-of-fame-launched-2026-featured.webp",
+  "image_alt": "Fireworks above Providence Stadium during a Caribbean Premier League match",
+  "summary_heading": "A permanent annual honour for CPL's defining figures",
+  "key_points": [
+    "The CPL Hall of Fame will induct two people annually: one player and one influential off-field contributor.",
+    "The inaugural gala dinner is scheduled for 15 September 2026 in Barbados.",
+    "Event proceeds will support The Sir Clive Lloyd Healthcare Foundation's prostate cancer awareness and testing work."
+  ],
+  "player_slugs": ["tim-seifert", "andre-russell", "kieron-pollard"],
+  "players_heading": "CPL figures referenced in the Hall of Fame announcement",
+  "sections": [
+    {
+      "heading": "CPL creates an annual Hall of Fame",
+      "paragraphs": [
+        "The Republic Bank Caribbean Premier League has launched a Hall of Fame to recognise the people who have shaped the tournament since its first season in 2013. Two honourees will be selected each year: one player and one individual whose work away from the field made a major contribution to the event.",
+        "The new award is intended to preserve the performances, leadership and behind-the-scenes work that helped establish CPL as a major franchise tournament. Supporters can explore the current competition through the <a href=\"/schedule/\">CPL 2026 schedule</a>."
+      ]
+    },
+    {
+      "heading": "Thirteen seasons of landmark performances",
+      "paragraphs": [
+        "CPL's announcement highlighted several moments from its history, including Chris Gayle guiding Jamaica to the inaugural title, Shakib Al Hasan taking 6 for 6 and Trinbago Knight Riders completing an unbeaten championship season in 2020.",
+        "It also pointed to the competition's fastest centuries, record team totals and the sustained success of figures such as Dwayne Bravo and Kieron Pollard. Profiles and current tournament information are available in the <a href=\"/players/\">CPL player directory</a>."
+      ]
+    },
+    {
+      "heading": "First inductees to be honoured in Barbados",
+      "paragraphs": [
+        "The inaugural gala dinner will take place in Barbados on 15 September 2026. CPL says the first player and off-field inductee will be announced in the coming weeks, before the ceremony brings together members of the Caribbean cricket community and West Indies legends.",
+        "The gala falls during the closing Barbados leg of the season, with the tournament final scheduled for 20 September at <a href=\"/venue/kensington-oval/\">Kensington Oval</a>."
+      ]
+    },
+    {
+      "heading": "Gala proceeds will support men's health",
+      "paragraphs": [
+        "Proceeds from the event will support The Sir Clive Lloyd Healthcare Foundation. Its work focuses on prostate cancer awareness, testing and early detection across the Caribbean, including through the Great Catch initiative.",
+        "CPL plans to hold the Hall of Fame celebration every year, announcing new inductees before each gala while using the event to support causes relevant to Caribbean communities."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/schedule/", "label": "CPL 2026 schedule"},
+    {"href": "/players/", "label": "CPL players"},
+    {"href": "/venue/kensington-oval/", "label": "Kensington Oval guide"}
+  ],
+  "last_updated": "2026-08-04"
+}

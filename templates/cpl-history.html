@@ -15,39 +15,59 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260804history">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260804records">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
-<body class="cpl-history-page">
+<body class="cpl-history-page cpl-records-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/live-score/">Live Score</a><a href="/teams/">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
-    </nav>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/live-score/">Live Score</a><a href="/teams/">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a></nav>
   </header>
-  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">CPL History</span></li></ol></nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">{{ page.breadcrumb }}</span></li></ol></nav>
   <main id="main" class="history-shell">
     <section class="history-hero">
-      <div><p>CPL archive / 2013–2025</p><h1>Every CPL champion.<br><span>One clear record.</span></h1><p class="history-lede">A season-by-season Caribbean Premier League winners list, with franchise name changes separated carefully from new teams.</p></div>
-      <dl><div><dt>Completed seasons</dt><dd>13</dd></div><div><dt>Different champions</dt><dd>7</dd></div><div><dt>Record holder</dt><dd>TKR · 5 titles</dd></div></dl>
+      <div>
+        <p>{{ page.kicker }}</p>
+        <h1>{{ page.heading | safe }}</h1>
+        <p class="history-lede">{{ page.lede }}</p>
+        <nav class="record-page-nav" aria-label="CPL records pages"><a{% if page.kind == 'history' %} aria-current="page"{% endif %} href="/cpl-history/">Season history</a><a{% if page.kind == 'winners' %} aria-current="page"{% endif %} href="/cpl-winners-list/">Winners list</a><a{% if page.kind == 'teams' %} aria-current="page"{% endif %} href="/most-successful-cpl-teams/">Successful teams</a></nav>
+      </div>
+      <dl><div><dt>Completed seasons</dt><dd>13</dd></div><div><dt>Championship franchises</dt><dd>6</dd></div><div><dt>Record holder</dt><dd>TKR · 5 titles</dd></div></dl>
     </section>
-    <section class="history-section" aria-labelledby="winners-title">
-      <header><p>01 / Winners list</p><h2 id="winners-title">CPL champions by year</h2><span>The winner name shown is the franchise identity used in that season.</span></header>
-      <div class="history-table-wrap"><table><thead><tr><th>Season</th><th>Champion</th><th>Current franchise record</th></tr></thead><tbody>
-      {% for season in champions %}<tr><td>{{ season.year }}</td><td><strong>{{ season.winner }}</strong></td><td>{% if season.team %}<a href="/team/{{ season.team.slug }}/">{{ season.franchise_record }}</a>{% else %}{{ season.franchise_record }}{% endif %}</td></tr>{% endfor %}
-      </tbody></table></div>
+
+    {% if page.kind == "history" %}
+    <section class="history-section history-intro" aria-labelledby="history-intro-title">
+      <header><p>How the competition evolved</p><h2 id="history-intro-title">Caribbean Premier League history, season by season</h2></header>
+      <div class="history-prose"><p>The Caribbean Premier League began in 2013 and quickly established a tournament identity built around franchise cricket, packed Caribbean grounds and a compact T20 schedule. Jamaica Tallawahs won the inaugural final, but the balance of power soon shifted towards Trinidad and Guyana.</p><p>Trinbago Knight Riders have built the strongest championship record, while Guyana Amazon Warriors have reached more finals than any other team. The archive also includes breakthrough titles for St Kitts &amp; Nevis Patriots in 2021, Guyana in 2023 and Saint Lucia in 2024.</p><p>The 2026 season is included as an upcoming edition, not as a completed result. It runs from 7 August to 20 September, with the champion and runner-up to be added only after the final.</p></div>
     </section>
-    <section class="history-section history-leaders" aria-labelledby="leaders-title">
-      <header><p>02 / Title table</p><h2 id="leaders-title">Most successful CPL teams</h2><span>Titles follow the continuous franchise record, including documented name changes.</span></header>
-      <div>{% for team in leaderboard %}<article><span>{{ "%02d" | format(loop.index) }}</span><h3>{{ team.name }}</h3><strong>{{ team.titles }} title{% if team.titles != 1 %}s{% endif %}</strong><p>{{ team.years | join(", ") }}</p></article>{% endfor %}</div>
+    <section class="history-section" aria-labelledby="timeline-title">
+      <header><p>2013 to 2026</p><h2 id="timeline-title">Every CPL season and final result</h2><span>Scores show the final only. The winner is listed under the name used in that season.</span></header>
+      <div class="season-timeline">
+      {% for season in seasons %}<article class="season-entry{% if season.status == 'scheduled' %} is-upcoming{% endif %}">
+        <div class="season-year"><span>{{ season.year }}</span><small>{{ "Upcoming" if season.status == "scheduled" else "Completed" }}</small></div>
+        <div class="season-copy"><p class="season-final">{% if season.winner %}<strong>{{ season.winner }}</strong> beat {{ season.runner_up }}{% else %}<strong>Champion to be decided</strong>{% endif %}</p><h3>{{ season.result }}</h3><p>{{ season.summary }}</p><dl><div><dt>Final score</dt><dd>{{ season.final_score }}</dd></div><div><dt>Venue</dt><dd>{{ season.venue }}</dd></div></dl></div>
+      </article>{% endfor %}
+      </div>
     </section>
-    <section class="history-section history-notes" aria-labelledby="identity-title">
-      <header><p>03 / Franchise identity</p><h2 id="identity-title">How name changes are counted</h2></header>
-      <ol>{% for note in history.notes %}<li><span>{{ "%02d" | format(loop.index) }}</span><p>{{ note }}</p></li>{% endfor %}</ol>
-      <nav aria-label="Related CPL history links"><a href="/teams/">Current CPL teams <span>→</span></a><a href="/schedule/">CPL 2026 schedule <span>→</span></a><a href="/points-table/">CPL 2026 points table <span>→</span></a></nav>
+    <section class="history-section history-records" aria-labelledby="records-title"><header><p>League records</p><h2 id="records-title">CPL championship records</h2></header><div>{% for record in history.records %}<article><span>{{ record.label }}</span><strong>{{ record.value }}</strong><p>{{ record.holder }}</p></article>{% endfor %}</div></section>
+    {% elif page.kind == "winners" %}
+    <section class="history-section history-intro" aria-labelledby="winners-answer"><header><p>Quick answer</p><h2 id="winners-answer">Who has won the CPL?</h2></header><div class="history-prose"><p>Six continuous franchise records have won the men's Caribbean Premier League. Trinbago Knight Riders lead with five titles, Jamaica Tallawahs won three, and the Barbados franchise won twice. Guyana Amazon Warriors, Saint Lucia and St Kitts &amp; Nevis Patriots have one title each.</p><p>The 2026 row remains open because the tournament has not been completed. It will be updated after the final on 20 September 2026.</p></div></section>
+    <section class="history-section" aria-labelledby="winners-title"><header><p>Complete reference table</p><h2 id="winners-title">CPL winners list from 2013 to 2026</h2><span>Runner-up and final result are included for every completed season.</span></header>
+      <div class="history-table-wrap"><table class="winners-table"><thead><tr><th>Year</th><th>Winner</th><th>Runner-up</th><th>Final result</th></tr></thead><tbody>{% for season in seasons %}<tr{% if season.status == 'scheduled' %} class="is-upcoming"{% endif %}><td>{{ season.year }}</td><td><strong>{{ season.winner or "TBD" }}</strong></td><td>{{ season.runner_up or "TBD" }}</td><td>{{ season.result }}</td></tr>{% endfor %}</tbody></table></div>
     </section>
+    <section class="history-section history-notes" aria-labelledby="names-title"><header><p>Franchise continuity</p><h2 id="names-title">How renamed teams are counted</h2></header><ol>{% for note in history.notes %}<li><span>{{ "%02d" | format(loop.index) }}</span><p>{{ note }}</p></li>{% endfor %}</ol></section>
+    {% else %}
+    <section class="history-section history-intro" aria-labelledby="ranking-answer"><header><p>Ranking rule</p><h2 id="ranking-answer">Which is the most successful CPL team?</h2></header><div class="history-prose"><p>Trinbago Knight Riders are the most successful CPL team by championships, with five titles from six final appearances. Guyana Amazon Warriors lead the league for final appearances with eight, but have converted one of those runs into a title.</p><p>The ranking below is ordered by titles first, then finals appearances. Win percentage provides a second measure of long-term performance but does not replace championships as the primary ranking rule.</p></div></section>
+    <section class="history-section" aria-labelledby="teams-title"><header><p>All-time title ranking</p><h2 id="teams-title">Most successful CPL teams of all time</h2><span>Results cover completed men's CPL matches through the 2025 final.</span></header>
+      <div class="history-table-wrap"><table class="success-table"><thead><tr><th>Rank</th><th>Franchise</th><th>Titles</th><th>Finals</th><th>Runner-up</th><th>Win %</th></tr></thead><tbody>{% for team in rankings %}<tr><td>{{ team.rank }}</td><td><strong>{% if team.team %}<a href="/team/{{ team.team.slug }}/">{{ team.name }}</a>{% else %}{{ team.name }}{% endif %}</strong><small>{{ team.note }}</small></td><td><b>{{ team.titles }}</b><small>{{ team.title_years | join(", ") }}</small></td><td>{{ team.finals }}</td><td>{{ team.runner_up_finishes }}</td><td>{{ "%.1f" | format(team.win_percentage) }}%</td></tr>{% endfor %}</tbody></table></div>
+      <p class="record-method">{{ history.methodology }}</p>
+    </section>
+    <section class="history-section history-leaders" aria-labelledby="team-analysis"><header><p>What the numbers show</p><h2 id="team-analysis">Titles, finals and conversion</h2></header><div>{% for team in rankings %}<article><span>{{ "%02d" | format(team.rank) }}</span><h3>{{ team.name }}</h3><strong>{{ team.titles }} title{% if team.titles != 1 %}s{% endif %} · {{ team.finals }} finals</strong><p>{{ team.note }}</p></article>{% endfor %}</div></section>
+    {% endif %}
+
+    <section class="history-section history-notes record-related" aria-labelledby="related-title"><header><p>Continue exploring</p><h2 id="related-title">CPL records and 2026 coverage</h2></header><nav aria-label="Related CPL links"><a href="/cpl-history/">Full CPL history <span>→</span></a><a href="/cpl-winners-list/">CPL winners list <span>→</span></a><a href="/most-successful-cpl-teams/">Most successful teams <span>→</span></a><a href="/schedule/">CPL 2026 schedule <span>→</span></a></nav></section>
   </main>
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
