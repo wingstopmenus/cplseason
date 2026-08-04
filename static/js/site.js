@@ -629,6 +629,8 @@ const liveMatchPrestart = document.querySelector("[data-match-prestart]");
 
 if (liveMatchData) {
   const matchNumber = Number(liveMatchData.dataset.matchNumber);
+  const matchHome = liveMatchData.dataset.matchHome || "";
+  const matchAway = liveMatchData.dataset.matchAway || "";
   const scoreboard = liveMatchData.querySelector("[data-match-scoreboard]");
   const feedState = liveMatchData.querySelector("[data-match-feed-state]");
   const feedStatus = liveMatchData.querySelector("[data-match-feed-status]");
@@ -639,6 +641,23 @@ if (liveMatchData) {
   const batters = liveMatchData.querySelector("[data-match-batters]");
   const bowler = liveMatchData.querySelector("[data-match-bowler]");
   const recentBalls = liveMatchData.querySelector("[data-match-recent-balls]");
+  const commentaryPanel = document.querySelector("[data-match-commentary-panel]");
+  const commentaryStatus = commentaryPanel?.querySelector("[data-commentary-status]");
+  const commentarySummary = commentaryPanel?.querySelector("[data-commentary-summary]");
+  const commentaryCopy = commentaryPanel?.querySelector("[data-commentary-copy]");
+  const commentaryBalls = commentaryPanel?.querySelector("[data-commentary-balls]");
+  const confirmedXi = document.querySelector("[data-confirmed-xi]");
+  const probableXi = document.querySelector("[data-probable-xi]");
+  const xiKicker = document.querySelector("[data-xi-kicker]");
+  const xiTitle = document.querySelector("[data-xi-title]");
+  const xiStatus = document.querySelector("[data-xi-status]");
+  const h2h = document.querySelector("[data-match-h2h]");
+  const liveStats = {
+    runRate: document.querySelector('[data-live-stat="run-rate"]'),
+    requiredRate: document.querySelector('[data-live-stat="required-rate"]'),
+    target: document.querySelector('[data-live-stat="target"]'),
+  };
+  const commentaryHistory = new Map();
   const completePattern = /complete|completed|result|abandon|cancel|no result/i;
   const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
   let pollTimer;
@@ -654,6 +673,58 @@ if (liveMatchData) {
     strong.textContent = label;
     node.append(strong, document.createTextNode(value));
     return node;
+  };
+
+  const renderConfirmedXi = (teams = []) => {
+    if (!confirmedXi) return;
+    const lineups = teams.map((team) => ({
+      team,
+      players: (team.players || []).filter((player) => !player.substitute),
+    }));
+    if (lineups.length !== 2 || lineups.some((entry) => entry.players.length < 11)) return;
+    const fragment = document.createDocumentFragment();
+    lineups.forEach(({ team, players }) => {
+      const article = document.createElement("article");
+      const header = document.createElement("header");
+      if (team.logo) {
+        const image = document.createElement("img");
+        image.src = team.logo;
+        image.alt = `${team.name} logo`;
+        image.width = 68;
+        image.height = 68;
+        header.append(image);
+      }
+      const heading = document.createElement("h3");
+      heading.textContent = team.name;
+      header.append(heading);
+      const list = document.createElement("ol");
+      players.slice(0, 11).forEach((player, index) => {
+        const item = document.createElement("li");
+        const number = document.createElement("span");
+        number.textContent = String(index + 1).padStart(2, "0");
+        const name = document.createElement("strong");
+        name.textContent = player.name;
+        const role = document.createElement("small");
+        role.textContent = [player.captain ? "Captain" : "", player.wicketKeeper ? "WK" : ""].filter(Boolean).join(" · ");
+        item.append(number, name, role);
+        list.append(item);
+      });
+      article.append(header, list);
+      fragment.append(article);
+    });
+    confirmedXi.replaceChildren(fragment);
+    confirmedXi.hidden = false;
+    if (probableXi) probableXi.hidden = true;
+    if (xiKicker) xiKicker.textContent = "05 / Confirmed XI";
+    if (xiTitle) xiTitle.textContent = "Confirmed playing XIs";
+    if (xiStatus) xiStatus.textContent = "Official lineups after the toss.";
+  };
+
+  const setLiveStat = (element, value) => {
+    if (!element || value === null || value === undefined) return;
+    element.hidden = false;
+    const output = element.querySelector("[data-live-stat-value]");
+    if (output) output.textContent = String(value);
   };
 
   const renderMatch = (match, fetchedAt) => {
@@ -690,11 +761,33 @@ if (liveMatchData) {
     });
 
     summary.textContent = match.stateOfPlay || match.description || (isComplete ? "Match complete" : "Match in progress");
+    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Final match summary" : isLive ? "Updating with the live score feed" : "Commentary begins when match coverage goes live.";
+    if (commentarySummary) commentarySummary.textContent = summary.textContent;
+    if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The confirmed result and final scores are shown above." : isLive ? "The latest state of play is synchronized with the match centre." : "Pre-match updates, the toss and key moments will appear here as the match develops.");
     if (match.toss) {
       toss.textContent = match.toss;
       toss.hidden = false;
     } else {
       toss.hidden = true;
+    }
+    renderConfirmedXi(match.teams || []);
+    setLiveStat(liveStats.runRate, match.live?.currentRunRate);
+    setLiveStat(liveStats.requiredRate, match.live?.requiredRunRate);
+    setLiveStat(liveStats.target, match.live?.target);
+
+    if (h2h && isComplete && match.winnerName) {
+      const baseMatches = Number(h2h.dataset.baseMatches || 0);
+      const baseHomeWins = Number(h2h.dataset.baseHomeWins || 0);
+      const baseAwayWins = Number(h2h.dataset.baseAwayWins || 0);
+      const winner = match.winnerName.toLowerCase();
+      const homeWon = winner.includes(String(h2h.dataset.homeName || "").toLowerCase());
+      const awayWon = winner.includes(String(h2h.dataset.awayName || "").toLowerCase());
+      if (homeWon || awayWon) {
+        h2h.querySelector("[data-h2h-matches]").textContent = String(baseMatches + 1);
+        h2h.querySelector("[data-h2h-home-wins]").textContent = String(baseHomeWins + (homeWon ? 1 : 0));
+        h2h.querySelector("[data-h2h-away-wins]").textContent = String(baseAwayWins + (awayWon ? 1 : 0));
+        h2h.querySelector("[data-h2h-through]").textContent = "Including this match";
+      }
     }
 
     batters.replaceChildren();
@@ -711,6 +804,31 @@ if (liveMatchData) {
       node.textContent = ball.label || "•";
       recentBalls.append(node);
     });
+    if (commentaryBalls) {
+      const balls = match.live?.recentBalls || [];
+      balls.forEach((ball) => {
+        const key = `${ball.over ?? ""}.${ball.ball ?? ""}:${ball.label || ""}`;
+        commentaryHistory.set(key, ball);
+      });
+      commentaryBalls.replaceChildren();
+      if (commentaryHistory.size) {
+        [...commentaryHistory.values()].slice(-24).reverse().forEach((ball) => {
+          const node = document.createElement("article");
+          const delivery = document.createElement("strong");
+          delivery.textContent = ball.over !== null && ball.ball !== null ? `${ball.over}.${ball.ball}` : "Ball";
+          const text = document.createElement("p");
+          text.textContent = ball.commentary || ball.label || "Delivery update";
+          const outcome = document.createElement("span");
+          outcome.textContent = ball.label || "•";
+          node.append(delivery, text, outcome);
+          commentaryBalls.append(node);
+        });
+      } else {
+        const node = document.createElement("span");
+        node.textContent = isComplete ? "FT" : isLive ? "Live" : "Upcoming";
+        commentaryBalls.append(node);
+      }
+    }
     current.hidden = !(batters.childElementCount || bowler.childElementCount || recentBalls.childElementCount);
     fetched.textContent = `Updated ${new Date(fetchedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}`;
     if (liveMatchRefresh) liveMatchRefresh.disabled = false;
@@ -721,7 +839,12 @@ if (liveMatchData) {
     if (liveMatchRefresh) liveMatchRefresh.disabled = true;
     feedStatus.textContent = "Checking the latest match update…";
     try {
-      const response = await fetch(`/api/cpl-live-score?match=${matchNumber}`, { cache: "no-store" });
+      const matchQuery = new URLSearchParams({
+        match: String(matchNumber),
+        home: matchHome,
+        away: matchAway,
+      });
+      const response = await fetch(`/api/cpl-live-score?${matchQuery}`, { cache: "no-store" });
       if (!response.ok) throw new Error("Score unavailable");
       const payload = await response.json();
       if (!payload.match || payload.source !== "official-cpl-mcpro") throw new Error("Unverified response");

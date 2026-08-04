@@ -17,5 +17,29 @@
   "preview_heading": "Knight Riders meet Warriors in Tarouba",
   "preview": "Trinbago Knight Riders face Guyana Amazon Warriors in CPL 2026 Match 20 at Brian Lara Cricket Academy. The match is scheduled for Sat 29 Aug at 7pm local time.",
   "preview_detail": "The 2025 champions retain a decorated core led by Sunil Narine, Nicholas Pooran, Kieron Pollard and Akeal Hosein as they pursue another title. Guyana retain Shimron Hetmyer, Romario Shepherd, Shai Hope and Shamar Joseph, while 10 of their 12 locally selected players come from Guyana. The final playing XIs will be confirmed after the toss.",
-  "last_updated": "2026-07-27"
+  "head_to_head": {
+    "matches": 34,
+    "home_wins": 18,
+    "away_wins": 16,
+    "no_results": 0,
+    "through": "2025 CPL final",
+    "summary": "Trinbago hold a narrow two-win advantage, but the rivalry has swung repeatedly in recent seasons. The teams split their two league meetings in 2025 before TKR won the final by three wickets.",
+    "recent": [
+      {"date": "21 Sep 2025", "winner": "Trinbago Knight Riders", "result": "Won by 3 wickets", "stage": "2025 Final"},
+      {"date": "7 Sep 2025", "winner": "Guyana Amazon Warriors", "result": "Won by 3 wickets", "stage": "League"},
+      {"date": "30 Aug 2025", "winner": "Trinbago Knight Riders", "result": "Won by 6 wickets", "stage": "League"}
+    ]
+  },
+  "probable_xi": {
+    "home": ["alex-hales", "colin-munro", "nicholas-pooran", "kieron-pollard", "matthew-breetzke", "sunil-narine", "dominic-drakes", "akeal-hosein", "terrance-hinds", "usman-tariq", "abdul-raheem-toppin"],
+    "away": ["rahmanullah-gurbaz", "shai-hope", "glenn-phillips", "shimron-hetmyer", "mohammad-nabi", "romario-shepherd", "dwaine-pretorius", "imran-tahir", "khary-pierre", "shamar-joseph", "ronaldo-alimohamed"]
+  },
+  "prediction": {
+    "label": "Early match outlook",
+    "headline": "A close contest with TKR carrying a slight home-ground edge",
+    "analysis": "TKR have the deeper recent championship record and play this fixture at Brian Lara Cricket Academy, but Guyana's spin options and experienced middle order make this a balanced matchup. Conditions, overseas-player availability and the toss are likely to matter more than the narrow historical head-to-head gap.",
+    "confidence": "Low before confirmed XIs",
+    "factors": ["TKR home conditions", "Guyana's spin depth", "Powerplay wickets", "Toss and surface"]
+  },
+  "last_updated": "2026-08-04"
 }

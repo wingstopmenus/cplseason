@@ -95,6 +95,14 @@ function normalizeRecentBall(ball) {
     ),
     over: numeric(ball?.overNumber),
     ball: numeric(ball?.ballDisplayNumber ?? ball?.ballNumber),
+    commentary: String(
+      ball?.commentary ||
+        ball?.description ||
+        ball?.longDescription ||
+        ball?.text ||
+        ball?.shortDescription ||
+        "",
+    ),
   };
 }
 
@@ -120,6 +128,8 @@ function normalizeToss(toss) {
 function normalizeMatch(match) {
   const competition = match?.competition || {};
   const liveSummary = match?.liveSummary || {};
+  const winner =
+    match?.winner || match?.winningTeam || match?.result?.winner || {};
   return {
     matchId: String(match?.matchId || ""),
     matchNumber: numeric(competition?.matchNumber ?? match?.matchNumber),
@@ -130,6 +140,12 @@ function normalizeMatch(match) {
     stage: String(competition?.stageName || competition?.name || "CPL 2026"),
     description: String(match?.description || match?.stateOfPlay || ""),
     stateOfPlay: String(match?.stateOfPlay || ""),
+    winnerName: String(
+      winner?.name ||
+        match?.winnerName ||
+        match?.result?.winnerName ||
+        "",
+    ),
     toss: normalizeToss(match?.toss),
     venue: {
       name: String(match?.venue?.fullName || match?.venue?.name || ""),
@@ -161,6 +177,19 @@ function normalizeMatch(match) {
 
 function matchNumber(match) {
   return numeric(match?.competition?.matchNumber ?? match?.matchNumber) || 999;
+}
+
+function comparableTeamName(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/saint/g, "st")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+function hasMatchup(match, homeName, awayName) {
+  const requested = [homeName, awayName].map(comparableTeamName).sort();
+  const actual = (match?.teams || []).map((team) => comparableTeamName(team?.name)).sort();
+  return requested.every(Boolean) && actual.length === 2 && actual[0] === requested[0] && actual[1] === requested[1];
 }
 
 function isCompleted(match) {
@@ -218,9 +247,13 @@ module.exports = async function cplLiveScore(request, response) {
     officialMatches.sort((a, b) => matchNumber(a) - matchNumber(b));
     const now = Date.now();
     const requestedNumber = numeric(request.query?.match);
-    const requestedSource = Number.isFinite(requestedNumber)
-      ? officialMatches.find((match) => matchNumber(match) === requestedNumber)
-      : null;
+    const requestedHome = String(request.query?.home || "");
+    const requestedAway = String(request.query?.away || "");
+    const requestedSource =
+      officialMatches.find((match) => hasMatchup(match, requestedHome, requestedAway)) ||
+      (Number.isFinite(requestedNumber)
+        ? officialMatches.find((match) => matchNumber(match) === requestedNumber)
+        : null);
     if (Number.isFinite(requestedNumber) && !requestedSource) {
       return response.status(404).json({ error: "CPL match not found" });
     }

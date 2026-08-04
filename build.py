@@ -2195,6 +2195,25 @@ def build_matches() -> None:
                 ),
             }
         )
+        probable_source = match.get("probable_xi") or {}
+        match["probable_xi"] = {
+            "home": [players[slug] for slug in probable_source.get("home", []) if slug in players],
+            "away": [players[slug] for slug in probable_source.get("away", []) if slug in players],
+        }
+        match["head_to_head"] = match.get("head_to_head")
+        match["prediction"] = match.get("prediction") or {
+            "label": "Pre-match assessment",
+            "headline": "Prediction pending closer to match day",
+            "analysis": "The match outlook will be published after current form, player availability and venue conditions can be assessed. No team is selected without enough verified pre-match information.",
+            "confidence": "Not yet rated",
+            "factors": ["Current form", "Confirmed availability", "Pitch conditions", "Toss"],
+        }
+        match["match_stats"] = [
+            {"label": "Match", "value": f"{match['match_number']} of 39"},
+            {"label": "Format", "value": "T20 · 20 overs"},
+            {"label": "Venue capacity", "value": f"{venue['capacity']:,}"},
+            {"label": "Stage", "value": match["stage"]},
+        ]
 
         canonical = f"https://cplseason.com/match/{match['slug']}/"
         playoff_title_labels = {

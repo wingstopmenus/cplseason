@@ -79,6 +79,10 @@
       <div><dt>Venue</dt><dd><a href="/venue/brian-lara-cricket-academy/">Brian Lara Cricket Academy</a></dd></div>
     </dl>
 
+    <nav class="match-page-index" aria-label="Match page sections">
+      <a href="#match-preview">Preview</a><a href="#match-head-to-head">Head to head</a><a href="#probable-xi">Probable XI</a><a href="#match-prediction">Prediction</a><a href="#live-score">Live score</a><a href="#match-commentary">Commentary</a><a href="#match-stats">Stats</a><a href="#match-venue">Venue</a>
+    </nav>
+
     <section id="live-score" class="match-live-centre" aria-labelledby="match-live-centre-title">
       <header class="match-live-section-head">
         <div>
@@ -91,7 +95,7 @@
           <button type="button" data-match-data-refresh>Refresh score</button>
         </div>
       </header>
-      <div class="match-live-frame-shell" data-match-live-data data-match-number="19" data-match-start="2026-08-28T20:00:00-04:00">
+      <div class="match-live-frame-shell" data-match-live-data data-match-number="19" data-match-home="Trinbago Knight Riders" data-match-away="Barbados Tridents" data-match-start="2026-08-28T20:00:00-04:00">
         <div class="match-live-frame-status">
           <strong data-match-feed-state>Checking match status</strong>
           <span data-match-feed-status aria-live="polite">Loading the latest match status…</span>
@@ -131,9 +135,17 @@
       <p class="match-live-data-note">Playing XIs, toss details and scores will appear as they become available on match day.</p>
     </section>
 
-    <section class="match-live-preview" aria-labelledby="match-preview-title">
+    <section id="match-commentary" class="match-commentary-panel" aria-labelledby="match-commentary-title" data-match-commentary-panel>
+      <header class="match-live-section-head"><div><p>02 / Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage goes live.</span></div><span class="match-commentary-state"><i aria-hidden="true"></i> Match feed</span></header>
+      <div class="match-commentary-body">
+        <article class="match-commentary-latest"><small>Latest update</small><strong data-commentary-summary>Scheduled · Friday, 28 August 2026</strong><p data-commentary-copy>Pre-match updates, the toss and key moments will appear here as the match develops.</p></article>
+        <div class="match-commentary-balls" data-commentary-balls aria-live="polite"><span>Coverage not started</span></div>
+      </div>
+    </section>
+
+    <section id="match-preview" class="match-live-preview" aria-labelledby="match-preview-title">
       <header>
-        <p>02 / Match preview</p>
+        <p>03 / Match preview</p>
         <h2 id="match-preview-title">Knight Riders meet Tridents in Tarouba</h2>
       </header>
       <div>
@@ -151,9 +163,30 @@
       </aside>
     </section>
 
+    <section id="match-head-to-head" class="match-research-section match-head-to-head" aria-labelledby="match-h2h-title">
+      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">Trinbago Knight Riders vs Barbados Tridents record</h2><span>Men's CPL meetings before this 2026 fixture.</span></div></header>
+      <div class="match-data-pending"><strong>Head-to-head verification in progress</strong><p>This record will appear after the historical match list for these teams has been checked. No unverified total is displayed.</p></div>
+    </section>
+
+    <section id="probable-xi" class="match-research-section match-probable-xi" aria-labelledby="probable-xi-title">
+      <header class="match-live-section-head"><div><p data-xi-kicker>05 / Probable XI</p><h2 id="probable-xi-title" data-xi-title>Projected playing XIs</h2><span data-xi-status>These are projections, not confirmed lineups.</span></div></header>
+      <div class="confirmed-xi-grid" data-confirmed-xi hidden></div>
+      <div class="match-data-pending"><strong>Probable XIs not published yet</strong><p>Projected lineups will be added when team availability can be assessed. Confirmed XIs will replace projections after the toss.</p></div>
+    </section>
+
+    <section id="match-prediction" class="match-research-section match-prediction" aria-labelledby="match-prediction-title">
+      <header class="match-live-section-head"><div><p>06 / Prediction</p><h2 id="match-prediction-title">Prediction pending closer to match day</h2><span>Pre-match assessment · Not yet rated</span></div></header>
+      <div class="match-prediction-grid"><p>The match outlook will be published after current form, player availability and venue conditions can be assessed. No team is selected without enough verified pre-match information.</p><aside><small>Factors to watch</small><ul><li>Current form</li><li>Confirmed availability</li><li>Pitch conditions</li><li>Toss</li></ul></aside></div>
+    </section>
+
+    <section id="match-stats" class="match-research-section match-stats" aria-labelledby="match-stats-title">
+      <header class="match-live-section-head"><div><p>07 / Match stats</p><h2 id="match-stats-title">Fixture numbers and key context</h2><span>Pre-match facts update as confirmed match data becomes available.</span></div></header>
+      <dl><div><dt>Match</dt><dd>19 of 39</dd></div><div><dt>Format</dt><dd>T20 · 20 overs</dd></div><div><dt>Venue capacity</dt><dd>15,000</dd></div><div><dt>Stage</dt><dd>League stage</dd></div><div data-live-stat="run-rate" hidden><dt>Run rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="required-rate" hidden><dt>Required rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="target" hidden><dt>Target</dt><dd data-live-stat-value>—</dd></div></dl>
+    </section>
+
     <section class="match-live-squads" aria-labelledby="match-squads-title">
       <header class="match-live-section-head">
-        <div><p>03 / Confirmed squads</p><h2 id="match-squads-title">Players available for Match 19</h2><span>Playing XIs will replace squad lists after the toss.</span></div>
+        <div><p>08 / Team squads</p><h2 id="match-squads-title">Trinbago Knight Riders and Barbados Tridents squads</h2><span>Full tournament squads for both teams.</span></div>
       </header>
       <div class="match-live-squad-grid">
         <article>
@@ -203,7 +236,7 @@
       </div>
     </section>
 
-    <section class="match-live-venue" aria-labelledby="match-venue-title">
+    <section id="match-venue" class="match-live-venue" aria-labelledby="match-venue-title">
       <img src="/static/img/official/venues/brian-lara-cricket-academy.webp" width="960" height="640" alt="Brian Lara Cricket Academy in Tarouba">
       <div>
         <p>04 / Match venue</p>

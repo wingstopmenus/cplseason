@@ -17,7 +17,7 @@
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260801ml">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
@@ -92,6 +92,10 @@
       <div><dt>Venue</dt><dd><a href="/venue/{{ match.venue.slug }}/">{{ match.venue.name }}</a></dd></div>
     </dl>
 
+    <nav class="match-page-index" aria-label="Match page sections">
+      <a href="#match-preview">Preview</a><a href="#match-head-to-head">Head to head</a><a href="#probable-xi">Probable XI</a><a href="#match-prediction">Prediction</a><a href="#live-score">Live score</a><a href="#match-commentary">Commentary</a><a href="#match-stats">Stats</a><a href="#match-venue">Venue</a>
+    </nav>
+
     <section id="live-score" class="match-live-centre" aria-labelledby="match-live-centre-title">
       <header class="match-live-section-head">
         <div>
@@ -104,7 +108,7 @@
           <button type="button" data-match-data-refresh>Refresh score</button>
         </div>
       </header>
-      <div class="match-live-frame-shell" data-match-live-data data-match-number="{{ match.match_number }}" data-match-start="{{ match.start_iso }}">
+      <div class="match-live-frame-shell" data-match-live-data data-match-number="{{ match.match_number }}" data-match-home="{{ match.home_label }}" data-match-away="{{ match.away_label }}" data-match-start="{{ match.start_iso }}">
         <div class="match-live-frame-status">
           <strong data-match-feed-state>Checking match status</strong>
           <span data-match-feed-status aria-live="polite">Loading the latest match status…</span>
@@ -146,9 +150,17 @@
       <p class="match-live-data-note">Playing XIs, toss details and scores will appear as they become available on match day.</p>
     </section>
 
-    <section class="match-live-preview" aria-labelledby="match-preview-title">
+    <section id="match-commentary" class="match-commentary-panel" aria-labelledby="match-commentary-title" data-match-commentary-panel>
+      <header class="match-live-section-head"><div><p>02 / Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage goes live.</span></div><span class="match-commentary-state"><i aria-hidden="true"></i> Match feed</span></header>
+      <div class="match-commentary-body">
+        <article class="match-commentary-latest"><small>Latest update</small><strong data-commentary-summary>{{ match.status }} · {{ match.date_label_long }}</strong><p data-commentary-copy>Pre-match updates, the toss and key moments will appear here as the match develops.</p></article>
+        <div class="match-commentary-balls" data-commentary-balls aria-live="polite"><span>Coverage not started</span></div>
+      </div>
+    </section>
+
+    <section id="match-preview" class="match-live-preview" aria-labelledby="match-preview-title">
       <header>
-        <p>02 / Match preview</p>
+        <p>03 / Match preview</p>
         <h2 id="match-preview-title">{{ match.preview_heading }}</h2>
       </header>
       <div>
@@ -166,9 +178,44 @@
       </aside>
     </section>
 
+    <section id="match-head-to-head" class="match-research-section match-head-to-head" aria-labelledby="match-h2h-title">
+      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">{{ match.home_label }} vs {{ match.away_label }} record</h2><span>Men's CPL meetings before this 2026 fixture.</span></div></header>
+      {% if match.head_to_head %}
+      <div class="match-h2h-score" data-match-h2h data-home-name="{{ match.home_label }}" data-away-name="{{ match.away_label }}" data-base-matches="{{ match.head_to_head.matches }}" data-base-home-wins="{{ match.head_to_head.home_wins }}" data-base-away-wins="{{ match.head_to_head.away_wins }}">
+        <article><small>{{ match.home_label }}</small><strong data-h2h-home-wins>{{ match.head_to_head.home_wins }}</strong><span>Wins</span></article>
+        <div><strong data-h2h-matches>{{ match.head_to_head.matches }}</strong><span>Matches</span><small data-h2h-through>Through {{ match.head_to_head.through }}</small></div>
+        <article><small>{{ match.away_label }}</small><strong data-h2h-away-wins>{{ match.head_to_head.away_wins }}</strong><span>Wins</span></article>
+      </div>
+      <p class="match-research-copy">{{ match.head_to_head.summary }}</p>
+      <div class="match-recent-results">{% for result in match.head_to_head.recent %}<article><time>{{ result.date }}</time><span>{{ result.stage }}</span><strong>{{ result.winner }}</strong><small>{{ result.result }}</small></article>{% endfor %}</div>
+      {% else %}
+      <div class="match-data-pending"><strong>Head-to-head verification in progress</strong><p>This record will appear after the historical match list for these teams has been checked. No unverified total is displayed.</p></div>
+      {% endif %}
+    </section>
+
+    <section id="probable-xi" class="match-research-section match-probable-xi" aria-labelledby="probable-xi-title">
+      <header class="match-live-section-head"><div><p data-xi-kicker>05 / Probable XI</p><h2 id="probable-xi-title" data-xi-title>Projected playing XIs</h2><span data-xi-status>These are projections, not confirmed lineups.</span></div></header>
+      <div class="confirmed-xi-grid" data-confirmed-xi hidden></div>
+      {% if match.probable_xi.home and match.probable_xi.away %}
+      <div class="probable-xi-grid" data-probable-xi>{% for team, lineup in [(match.home_team, match.probable_xi.home), (match.away_team, match.probable_xi.away)] %}<article><header><img src="{{ team.logo }}" width="68" height="68" alt="{{ team.name }} logo"><h3>{{ team.name }}</h3></header><ol>{% for player in lineup %}<li><span>{{ loop.index }}</span><a href="/player/{{ player.slug }}/">{{ player.name }}</a><small>{{ player.category | replace(" player", "") }}</small></li>{% endfor %}</ol></article>{% endfor %}</div>
+      {% else %}
+      <div class="match-data-pending"><strong>Probable XIs not published yet</strong><p>Projected lineups will be added when team availability can be assessed. Confirmed XIs will replace projections after the toss.</p></div>
+      {% endif %}
+    </section>
+
+    <section id="match-prediction" class="match-research-section match-prediction" aria-labelledby="match-prediction-title">
+      <header class="match-live-section-head"><div><p>06 / Prediction</p><h2 id="match-prediction-title">{{ match.prediction.headline }}</h2><span>{{ match.prediction.label }} · {{ match.prediction.confidence }}</span></div></header>
+      <div class="match-prediction-grid"><p>{{ match.prediction.analysis }}</p><aside><small>Factors to watch</small><ul>{% for factor in match.prediction.factors %}<li>{{ factor }}</li>{% endfor %}</ul></aside></div>
+    </section>
+
+    <section id="match-stats" class="match-research-section match-stats" aria-labelledby="match-stats-title">
+      <header class="match-live-section-head"><div><p>07 / Match stats</p><h2 id="match-stats-title">Fixture numbers and key context</h2><span>Pre-match facts update as confirmed match data becomes available.</span></div></header>
+      <dl>{% for stat in match.match_stats %}<div><dt>{{ stat.label }}</dt><dd>{{ stat.value }}</dd></div>{% endfor %}<div data-live-stat="run-rate" hidden><dt>Run rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="required-rate" hidden><dt>Required rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="target" hidden><dt>Target</dt><dd data-live-stat-value>—</dd></div></dl>
+    </section>
+
     <section class="match-live-squads{% if not match.home_team %} match-live-squads-pending{% endif %}" aria-labelledby="match-squads-title">
       <header class="match-live-section-head">
-        <div><p>03 / Confirmed squads</p><h2 id="match-squads-title">{% if match.home_team %}Players available for Match {{ match.match_number }}{% else %}Playoff teams will be confirmed{% endif %}</h2><span>{% if match.home_team %}Playing XIs will replace squad lists after the toss.{% else %}This section will update as soon as the qualifying teams are known.{% endif %}</span></div>
+        <div><p>08 / Team squads</p><h2 id="match-squads-title">{% if match.home_team %}{{ match.home_label }} and {{ match.away_label }} squads{% else %}Playoff teams will be confirmed{% endif %}</h2><span>{% if match.home_team %}Full tournament squads for both teams.{% else %}This section will update as soon as the qualifying teams are known.{% endif %}</span></div>
       </header>
       {% if match.home_team %}
       <div class="match-live-squad-grid">
@@ -191,7 +238,7 @@
       {% endif %}
     </section>
 
-    <section class="match-live-venue" aria-labelledby="match-venue-title">
+    <section id="match-venue" class="match-live-venue" aria-labelledby="match-venue-title">
       <img src="{{ match.venue.image }}" width="960" height="640" alt="{{ match.venue.name }} in {{ match.venue.city }}">
       <div>
         <p>04 / Match venue</p>
@@ -204,6 +251,6 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260801ml" defer></script>
+  <script src="/static/js/site.js?v=20260804matchpages" defer></script>
 </body>
 </html>
