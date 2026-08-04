@@ -38,7 +38,7 @@
 
 ## Teams and published rosters
 
-### [Antigua & Barbuda Falcons](https://cplseason.com/teams/antigua-barbuda-falcons/)
+### [Antigua & Barbuda Falcons](https://cplseason.com/team/antigua-barbuda-falcons/)
 
 - Territory: Antigua and Barbuda.
 - Home venue: [Sir Vivian Richards Stadium](https://cplseason.com/venue/sir-vivian-richards-stadium/).
@@ -65,7 +65,7 @@
   - [Shadab Khan](https://cplseason.com/player/shadab-khan/)
   - [Sufyan Moqim](https://cplseason.com/player/sufiyan-muqeem/)
 
-### [Barbados Tridents](https://cplseason.com/teams/barbados-royals/)
+### [Barbados Tridents](https://cplseason.com/team/barbados-royals/)
 
 - Territory: Barbados.
 - Home venue: [Kensington Oval](https://cplseason.com/venue/kensington-oval/).
@@ -91,7 +91,7 @@
   - [George Linde](https://cplseason.com/player/george-linde/)
   - [Daniel Sams](https://cplseason.com/player/daniel-sams/)
 
-### [Guyana Amazon Warriors](https://cplseason.com/teams/guyana-amazon-warriors/)
+### [Guyana Amazon Warriors](https://cplseason.com/team/guyana-amazon-warriors/)
 
 - Territory: Guyana.
 - Home venue: [Providence Stadium](https://cplseason.com/venue/providence-stadium/).
@@ -117,7 +117,7 @@
   - [Rahmanullah Gurbaz](https://cplseason.com/player/rahmanullah-gurbaz/)
   - [Dwaine Pretorius](https://cplseason.com/player/dwaine-pretorius/)
 
-### [Jamaica Kingsmen](https://cplseason.com/teams/jamaica-kingsmen/)
+### [Jamaica Kingsmen](https://cplseason.com/team/jamaica-kingsmen/)
 
 - Territory: Jamaica.
 - Home venue: [Sabina Park](https://cplseason.com/venue/sabina-park/).
@@ -146,7 +146,7 @@
   - [Maaz Sadaqat](https://cplseason.com/player/maaz-sadaqat/)
   - [Usman Khan](https://cplseason.com/player/usman-khan/)
 
-### [Saint Lucia Kings](https://cplseason.com/teams/saint-lucia-kings/)
+### [Saint Lucia Kings](https://cplseason.com/team/saint-lucia-kings/)
 
 - Territory: Saint Lucia.
 - Home venue: [Daren Sammy Cricket Ground](https://cplseason.com/venue/daren-sammy-cricket-ground/).
@@ -172,7 +172,7 @@
   - [Charith Asalanka](https://cplseason.com/player/charith-asalanka/)
   - [Shadley van Schalkwyk](https://cplseason.com/player/shadley-van-schalkwyk/)
 
-### [St Kitts & Nevis Patriots](https://cplseason.com/teams/st-kitts-nevis-patriots/)
+### [St Kitts & Nevis Patriots](https://cplseason.com/team/st-kitts-nevis-patriots/)
 
 - Territory: Saint Kitts and Nevis.
 - Home venue: [Warner Park](https://cplseason.com/venue/warner-park/).
@@ -198,7 +198,7 @@
   - [Wanindu Hasaranga](https://cplseason.com/player/wanindu-hasaranga/)
   - [Nikhil Chaudhary](https://cplseason.com/player/nikhil-chaudhary/)
 
-### [Trinbago Knight Riders](https://cplseason.com/teams/trinbago-knight-riders/)
+### [Trinbago Knight Riders](https://cplseason.com/team/trinbago-knight-riders/)
 
 - Territory: Trinidad and Tobago.
 - Home venue: [Queen's Park Oval](https://cplseason.com/venue/queens-park-oval/).

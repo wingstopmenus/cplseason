@@ -3,13 +3,13 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/team/:slug",
-      "destination": "/teams/:slug",
+      "source": "/teams/:slug",
+      "destination": "/team/:slug",
       "permanent": true
     },
     {
-      "source": "/team/:slug/",
-      "destination": "/teams/:slug/",
+      "source": "/teams/:slug/",
+      "destination": "/team/:slug/",
       "permanent": true
     },
     {

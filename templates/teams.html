@@ -67,7 +67,7 @@
       <div class="teams-command-grid">
         {% for team in teams %}
         <article id="{{ team.slug }}" class="teams-command-card" data-team-card>
-          <a class="teams-command-card-top" href="/teams/{{ team.slug }}/" aria-label="Open {{ team.name }} profile">
+          <a class="teams-command-card-top" href="/team/{{ team.slug }}/" aria-label="Open {{ team.name }} profile">
             <span class="teams-command-card-number">{{ "%02d" | format(loop.index) }}</span>
             <img class="teams-command-card-ground" src="{{ team.venue.image }}" width="900" height="600" alt="" aria-hidden="true" loading="lazy">
             <img class="teams-command-card-logo" src="{{ team.logo }}" width="180" height="180" alt="{{ team.name }} logo" loading="lazy">
@@ -77,7 +77,7 @@
             <p>{{ team.territory }}</p><h3>{{ team.name }}</h3><p class="teams-command-card-summary">{{ team.summary }}</p>
             <dl class="teams-command-leaders"><div><dt>Captain</dt><dd>{{ team.captain.name }}</dd></div><div><dt>Head coach</dt><dd>{{ team.coach.name }}</dd></div></dl>
             <dl class="teams-command-card-stats"><div><dt>Titles</dt><dd>{{ team.title_count }}</dd></div><div><dt>Squad</dt><dd>{{ team.players | length }}</dd></div><div><dt>Home games</dt><dd>{{ team.home_matches }}</dd></div></dl>
-            <div class="teams-command-card-links"><a href="/teams/{{ team.slug }}/">Team profile <span>→</span></a><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></div>
+            <div class="teams-command-card-links"><a href="/team/{{ team.slug }}/">Team profile <span>→</span></a><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></div>
           </div>
         </article>
         {% endfor %}
@@ -86,7 +86,7 @@
 
     <section class="teams-command-compare" aria-labelledby="compare-title">
       <header><div><p>At a glance</p><h2 id="compare-title">Compare CPL 2026 Teams</h2></div><a href="/schedule/">Full schedule <span>→</span></a></header>
-      <div><table><thead><tr><th>Team</th><th>Home ground</th><th>Captain</th><th>Coach</th><th>Titles</th><th>Squad</th></tr></thead><tbody>{% for team in teams %}<tr><td><a href="/teams/{{ team.slug }}/"><img src="{{ team.logo }}" width="46" height="46" alt=""><strong>{{ team.name }}</strong></a></td><td><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></td><td>{{ team.captain.name }}</td><td>{{ team.coach.name }}</td><td>{{ team.title_count }}</td><td><a href="/squads/#{{ team.slug }}">{{ team.players | length }} players</a></td></tr>{% endfor %}</tbody></table></div>
+      <div><table><thead><tr><th>Team</th><th>Home ground</th><th>Captain</th><th>Coach</th><th>Titles</th><th>Squad</th></tr></thead><tbody>{% for team in teams %}<tr><td><a href="/team/{{ team.slug }}/"><img src="{{ team.logo }}" width="46" height="46" alt=""><strong>{{ team.name }}</strong></a></td><td><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></td><td>{{ team.captain.name }}</td><td>{{ team.coach.name }}</td><td>{{ team.title_count }}</td><td><a href="/squads/#{{ team.slug }}">{{ team.players | length }} players</a></td></tr>{% endfor %}</tbody></table></div>
     </section>
 
     <section class="teams-command-route" aria-labelledby="route-title"><div><p>Season format</p><h2 id="route-title">The road to Kensington Oval</h2><p>Each franchise plays 10 league matches. The top four enter the Eliminator and Qualifiers before the CPL 2026 final in Barbados on 20 September.</p><a href="/points-table/">Follow the points table <span>→</span></a></div><ol><li><span>01</span><div><strong>League stage</strong><p>Seven teams compete across 35 matches.</p></div></li><li><span>02</span><div><strong>Playoffs</strong><p>Four teams progress to three knockout matches.</p></div></li><li><span>03</span><div><strong>Final</strong><p>The last two teams meet at Kensington Oval.</p></div></li></ol></section>

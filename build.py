@@ -1016,7 +1016,7 @@ def build_player_profiles() -> None:
                 "@type": "SportsTeam",
                 "name": team["name"],
                 "sport": "Cricket",
-                "url": f"https://cplseason.com/teams/{team['slug']}/",
+                "url": f"https://cplseason.com/team/{team['slug']}/",
             },
         }
         if player["image"]:
@@ -1225,12 +1225,12 @@ def build_teams() -> None:
                         "@type": "ListItem",
                         "position": index,
                         "name": team["name"],
-                        "url": f"https://cplseason.com/teams/{team['slug']}/",
+                        "url": f"https://cplseason.com/team/{team['slug']}/",
                         "item": {
                             "@type": "SportsTeam",
                             "name": team["name"],
                             "sport": "Cricket",
-                            "url": f"https://cplseason.com/teams/{team['slug']}/",
+                            "url": f"https://cplseason.com/team/{team['slug']}/",
                             "logo": f"https://cplseason.com{team['logo']}",
                             "location": {
                                 "@type": "Place",
@@ -1480,7 +1480,7 @@ def build_team_profiles() -> None:
                 ),
             },
         ]
-        canonical = f"https://cplseason.com/teams/{team['slug']}/"
+        canonical = f"https://cplseason.com/team/{team['slug']}/"
         page = {
             "title": f"{team['name']}: CPL 2026 Squad and Fixtures",
             "description": (
@@ -1583,7 +1583,7 @@ def build_team_profiles() -> None:
                 schema, ensure_ascii=False, separators=(",", ":")
             ),
         )
-        output = ROOT / "teams" / team["slug"] / "index.html"
+        output = ROOT / "team" / team["slug"] / "index.html"
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered + "\n", encoding="utf-8")
 
@@ -1715,7 +1715,7 @@ def build_points_table() -> None:
                         "@type": "ListItem",
                         "position": index,
                         "name": team["name"],
-                        "url": f"https://cplseason.com/teams/{team['slug']}/",
+                        "url": f"https://cplseason.com/team/{team['slug']}/",
                     }
                     for index, team in enumerate(teams, start=1)
                 ],
@@ -2107,7 +2107,7 @@ def build_live_score() -> None:
                 "shortName": match["home_short"],
                 "logo": match["home_team"]["logo"] if match["home_team"] else "",
                 "url": (
-                    f"/teams/{match['home_team']['slug']}/"
+                    f"/team/{match['home_team']['slug']}/"
                     if match["home_team"]
                     else ""
                 ),
@@ -2117,7 +2117,7 @@ def build_live_score() -> None:
                 "shortName": match["away_short"],
                 "logo": match["away_team"]["logo"] if match["away_team"] else "",
                 "url": (
-                    f"/teams/{match['away_team']['slug']}/"
+                    f"/team/{match['away_team']['slug']}/"
                     if match["away_team"]
                     else ""
                 ),
@@ -2461,7 +2461,7 @@ def build_matches() -> None:
                         {
                             "@type": "SportsTeam",
                             "name": home_team["name"],
-                            "url": f"https://cplseason.com/teams/{home_team['slug']}/",
+                            "url": f"https://cplseason.com/team/{home_team['slug']}/",
                         }
                         if home_team
                         else {
@@ -2473,7 +2473,7 @@ def build_matches() -> None:
                         {
                             "@type": "SportsTeam",
                             "name": away_team["name"],
-                            "url": f"https://cplseason.com/teams/{away_team['slug']}/",
+                            "url": f"https://cplseason.com/team/{away_team['slug']}/",
                         }
                         if away_team
                         else {

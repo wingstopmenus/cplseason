@@ -168,7 +168,7 @@
         <aside class="news-story-sidebar">
           <div><span>Published</span><strong>{{ article.date_label }}</strong></div>
           <div><span>Category</span><strong>{{ article.category }}</strong></div>
-          {% if article.team %}<a href="/teams/{{ article.team.slug }}/"><span>Team guide</span><strong>{{ article.team.name }}</strong></a>{% endif %}
+          {% if article.team %}<a href="/team/{{ article.team.slug }}/"><span>Team guide</span><strong>{{ article.team.name }}</strong></a>{% endif %}
           <a href="/schedule/"><span>Tournament</span><strong>View all 39 fixtures</strong></a>
         </aside>
       </div>

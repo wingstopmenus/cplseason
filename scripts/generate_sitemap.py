@@ -28,7 +28,7 @@ CONTENT_PREFIXES = (
     "/match/",
     "/news/",
     "/player/",
-    "/teams/",
+    "/team/",
     "/venue/",
 )
 CANONICAL_RE = re.compile(

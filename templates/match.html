@@ -50,7 +50,7 @@
       </div>
       <div class="match-live-versus">
         {% if match.home_team %}
-        <a href="/teams/{{ match.home_team.slug }}/">
+        <a href="/team/{{ match.home_team.slug }}/">
           <img src="{{ match.home_team.logo }}" width="180" height="180" alt="{{ match.home_team.name }} logo">
           <span><small>{{ match.home_team.short_name }}</small><strong>{{ match.home_team.name }}</strong></span>
         </a>
@@ -65,7 +65,7 @@
           <time datetime="{{ match.start_iso }}">{{ match.date_label_short }}<br>{{ match.local_time_label }} local</time>
         </div>
         {% if match.away_team %}
-        <a href="/teams/{{ match.away_team.slug }}/">
+        <a href="/team/{{ match.away_team.slug }}/">
           <img src="{{ match.away_team.logo }}" width="180" height="180" alt="{{ match.away_team.name }} logo">
           <span><small>{{ match.away_team.short_name }}</small><strong>{{ match.away_team.name }}</strong></span>
         </a>

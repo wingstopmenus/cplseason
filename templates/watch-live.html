@@ -246,9 +246,9 @@
           <span>{{ "%02d" | format(loop.index) }}</span>
           <time>{{ fixture.label }}</time>
           <div class="broadcast-match-teams">
-            <a href="/teams/{{ fixture.teams[0].slug }}/"><img src="{{ fixture.teams[0].logo }}" width="62" height="62" alt="{{ fixture.teams[0].name }} logo" loading="lazy"><strong>{{ fixture.teams[0].name }}</strong></a>
+            <a href="/team/{{ fixture.teams[0].slug }}/"><img src="{{ fixture.teams[0].logo }}" width="62" height="62" alt="{{ fixture.teams[0].name }} logo" loading="lazy"><strong>{{ fixture.teams[0].name }}</strong></a>
             <b>vs</b>
-            <a href="/teams/{{ fixture.teams[1].slug }}/"><img src="{{ fixture.teams[1].logo }}" width="62" height="62" alt="{{ fixture.teams[1].name }} logo" loading="lazy"><strong>{{ fixture.teams[1].name }}</strong></a>
+            <a href="/team/{{ fixture.teams[1].slug }}/"><img src="{{ fixture.teams[1].logo }}" width="62" height="62" alt="{{ fixture.teams[1].name }} logo" loading="lazy"><strong>{{ fixture.teams[1].name }}</strong></a>
           </div>
           <a class="broadcast-match-venue" href="/venue/{{ fixture.venue.slug }}/"><strong>{{ fixture.time }} local</strong><span>{{ fixture.venue.name }}</span></a>
           <a class="broadcast-match-centre-link" href="{{ fixture.match_url }}" aria-label="Open Match {{ fixture.match_number }} centre">

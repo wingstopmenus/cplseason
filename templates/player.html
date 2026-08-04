@@ -57,7 +57,7 @@
           <small>CPL 2026</small>
         </div>
 
-        <a class="profile-team-lockup" href="/teams/{{ team.slug }}/">
+        <a class="profile-team-lockup" href="/team/{{ team.slug }}/">
           <img src="{{ team.logo }}" width="48" height="48" alt="{{ team.name }} logo">
           <span>
             <small>2026 franchise</small>
@@ -76,7 +76,7 @@
         </div>
 
         <div class="profile-actions">
-          <a class="profile-action profile-action-primary" href="/teams/{{ team.slug }}/">View {{ team.short_name }}</a>
+          <a class="profile-action profile-action-primary" href="/team/{{ team.slug }}/">View {{ team.short_name }}</a>
           <a class="profile-action" href="/squads/#{{ team.slug }}">Open squad</a>
           <a class="profile-action" href="/players/">All players</a>
         </div>
@@ -102,7 +102,7 @@
     </section>
 
     <section class="profile-fact-rail" aria-label="{{ player.name }} quick facts">
-      <a href="/teams/{{ team.slug }}/">
+      <a href="/team/{{ team.slug }}/">
         <small>Team</small>
         <strong>{{ team.name }}</strong>
         <span>Open profile →</span>
@@ -138,7 +138,7 @@
           </div>
           <div>
             <dt>Franchise</dt>
-            <dd><a href="/teams/{{ team.slug }}/">{{ team.name }}</a></dd>
+            <dd><a href="/team/{{ team.slug }}/">{{ team.name }}</a></dd>
           </div>
           <div>
             <dt>Category</dt>
@@ -166,7 +166,7 @@
           <div><dt>Player listing</dt><dd>{{ roster_number }} / {{ team.roster | length }}</dd></div>
           <div><dt>Squad group</dt><dd>{{ player.category }}</dd></div>
         </dl>
-        <a href="/teams/{{ team.slug }}/">Explore the team <span>→</span></a>
+        <a href="/team/{{ team.slug }}/">Explore the team <span>→</span></a>
       </aside>
     </section>
 

@@ -25,6 +25,10 @@ EXPECTED_TEAM_COUNTS = {
     "trinbago-knight-riders": 17,
 }
 HREF_RE = re.compile(r'<a\b[^>]*\bhref=["\']([^"\']+)["\']', re.IGNORECASE)
+FORBIDDEN_RESEARCH_LABELS = (
+    "Sources and checking method",
+    "Research notes",
+)
 
 
 def load_json(path: Path) -> dict:
@@ -216,8 +220,8 @@ def main() -> int:
             if match.get("home_team_slug"):
                 references.extend(
                     (
-                        f'/teams/{match.get("home_team_slug")}/',
-                        f'/teams/{match.get("away_team_slug")}/',
+                        f'/team/{match.get("home_team_slug")}/',
+                        f'/team/{match.get("away_team_slug")}/',
                     )
                 )
             for reference in references:
@@ -432,7 +436,7 @@ def main() -> int:
                 errors.append(f"{slug}: player profile was not rendered from the shared template")
             if f'<link rel="canonical" href="{expected_canonical}">' not in profile:
                 errors.append(f"{slug}: player profile has the wrong canonical")
-            if f'href="/teams/{player["team_slug"]}/"' not in profile:
+            if f'href="/team/{player["team_slug"]}/"' not in profile:
                 errors.append(f"{slug}: player profile does not link its team")
             if 'href="/players/"' not in profile or 'href="/squads/' not in profile:
                 errors.append(f"{slug}: player profile is missing directory links")
@@ -540,7 +544,7 @@ def main() -> int:
     for slug, team in teams.items():
         if f'id="{slug}"' not in teams_page:
             errors.append(f"Generated teams page is missing card {slug}")
-        if f'href="/teams/{slug}/"' not in teams_page:
+        if f'href="/team/{slug}/"' not in teams_page:
             errors.append(f"Generated teams page does not link team {slug}")
         if f'href="/squads/#{slug}"' not in teams_page:
             errors.append(f"Generated teams page does not link squad {slug}")
@@ -550,12 +554,12 @@ def main() -> int:
             )
         if str(team.get("summary")) not in unescape(teams_page):
             errors.append(f"Generated teams page is missing {slug} summary")
-        profile_path = ROOT / "teams" / slug / "index.html"
+        profile_path = ROOT / "team" / slug / "index.html"
         if not profile_path.is_file():
             errors.append(f"{slug}: missing canonical team profile")
             continue
         profile = profile_path.read_text(encoding="utf-8")
-        expected_canonical = f"https://cplseason.com/teams/{slug}/"
+        expected_canonical = f"https://cplseason.com/team/{slug}/"
         if 'class="team-profile-stage"' not in profile:
             errors.append(
                 f"{slug}: team profile was not rendered from the shared template"
@@ -599,7 +603,7 @@ def main() -> int:
     ):
         errors.append("Generated points table has the wrong canonical")
     for slug, team in teams.items():
-        if f'href="/teams/{slug}/"' not in points_page:
+        if f'href="/team/{slug}/"' not in points_page:
             errors.append(f"Generated points table does not link team {slug}")
         if team["logo"] not in points_page:
             errors.append(f"Generated points table does not use logo for {slug}")
@@ -851,6 +855,9 @@ def main() -> int:
     graph: dict[str, set[str]] = {route: set() for route in route_map}
     for route, path in route_map.items():
         content = path.read_text(encoding="utf-8", errors="replace")
+        for label in FORBIDDEN_RESEARCH_LABELS:
+            if label.casefold() in content.casefold():
+                errors.append(f"{route} contains forbidden editorial label: {label}")
         for href in HREF_RE.findall(content):
             parsed_href = urlparse(href)
             if (

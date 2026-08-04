@@ -276,7 +276,7 @@
       </header>
       <div>
         {% for related in related_teams %}
-        <a href="/teams/{{ related.slug }}/">
+        <a href="/team/{{ related.slug }}/">
           <img src="{{ related.logo }}" width="100" height="100" alt="{{ related.name }} logo" loading="lazy">
           <span><small>{{ related.territory }}</small><strong>{{ related.name }}</strong></span>
           <b>→</b>
