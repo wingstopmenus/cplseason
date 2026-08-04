@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260726p">
-  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805b">
+  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805d">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="players-directory-body">
@@ -40,111 +40,87 @@
     <section class="pd-hero" aria-labelledby="players-page-title">
       <div class="pd-hero-copy">
         <p class="pd-kicker">CPL 2026 player directory</p>
-        <h1 id="players-page-title">CPL 2026 Players<br><span>by Team</span></h1>
+        <h1 id="players-page-title">CPL 2026 Players <br><span>by Team</span></h1>
         <p>Browse every announced franchise squad, search individual profiles and compare the West Indian, overseas and breakout groups.</p>
-        <div class="pd-hero-actions">
-          <a href="#find-a-player">Find a player</a>
-          <a href="#squad-tracker">View squad tracker</a>
-        </div>
-        <dl class="pd-hero-stats">
-          <div><dt>Profiles</dt><dd>{{ totals.players }}</dd></div>
-          <div><dt>Teams</dt><dd>{{ totals.teams }}</dd></div>
-          <div><dt>Player photos</dt><dd>{{ totals.portraits }}</dd></div>
-          <div><dt>Updated</dt><dd>{{ directory_updated_display }}</dd></div>
+        <a class="pd-hero-cta" href="#find-a-player">Explore the player directory <span>↓</span></a>
+        <dl class="pd-hero-stats" aria-label="CPL 2026 squad summary">
+          <div><dd>{{ totals.players }}</dd><dt>Profiles</dt></div>
+          <div><dd>{{ totals.teams }}</dd><dt>Teams</dt></div>
+          <div><dd>{{ totals.portraits }}</dd><dt>Player photos</dt></div>
+          <div><dd>{{ directory_updated_display }}</dd><dt>Updated</dt></div>
         </dl>
       </div>
-      <div class="pd-hero-art" aria-label="Featured CPL 2026 players">
+      <div class="pd-hero-collage" aria-label="Featured CPL 2026 players">
         {% for player in featured_players[:4] %}
         <a href="/player/{{ player.slug }}/" class="pd-hero-player pd-hero-player-{{ loop.index }}" aria-label="View {{ player.name }} profile">
-          <img src="{{ player.image }}" width="380" height="480" alt="{{ player.name }} CPL player portrait">
-          <span>{{ player.name }}</span>
+          <img src="{{ player.image }}" width="1024" height="1024" alt="{{ player.name }} CPL player portrait">
         </a>
         {% endfor %}
+        <span class="pd-hero-collage-label">123 profiles · 7 squads · one directory</span>
       </div>
     </section>
 
     <section id="find-a-player" class="pd-filter-panel" aria-labelledby="player-search-title">
       <header>
-        <p class="pd-kicker">Player finder</p>
-        <h2 id="player-search-title">Find a player</h2>
-        <button id="player-directory-reset" type="button">Reset filters</button>
+        <div><p class="pd-kicker">Player finder</p><h2 id="player-search-title">Find a player</h2></div>
+        <button id="player-directory-reset" type="button">Reset</button>
       </header>
       <div class="pd-filter-grid">
         <label class="pd-search-field">
           <span>Search by player or team</span>
-          <input id="player-directory-search" type="search" placeholder="Start typing a name…" autocomplete="off">
+          <input id="player-directory-search" type="search" placeholder="Search players by name…" autocomplete="off">
         </label>
-        <label>
-          <span>Team</span>
-          <select id="player-team-select">
-            <option value="all">All seven teams</option>
-            {% for team in teams %}<option value="{{ team.slug }}">{{ team.name }}</option>{% endfor %}
-          </select>
-        </label>
-        <label>
-          <span>Squad category</span>
-          <select id="player-category-select">
-            <option value="all">All player categories</option>
-            <option value="west-indian-player">West Indian players</option>
-            <option value="overseas-player">Overseas players</option>
-            <option value="breakout-player">Breakout players</option>
-          </select>
-        </label>
+        <label><span>Team</span><select id="player-team-select"><option value="all">All teams</option>{% for team in teams %}<option value="{{ team.slug }}">{{ team.name }}</option>{% endfor %}</select></label>
+        <label><span>Squad category</span><select id="player-category-select"><option value="all">All categories</option><option value="west-indian-player">West Indian players</option><option value="overseas-player">Overseas players</option><option value="breakout-player">Breakout players</option></select></label>
       </div>
-      <nav class="pd-team-shortcuts" aria-label="Quick team filters">
-        <button class="is-active" type="button" data-player-team="all" aria-pressed="true"><span>All teams</span></button>
-        {% for team in teams %}
-        <button type="button" data-player-team="{{ team.slug }}" aria-pressed="false"><img src="{{ team.logo }}" width="42" height="42" alt=""><span>{{ team.short_name }}</span></button>
-        {% endfor %}
-      </nav>
+      <div class="pd-role-filters" aria-label="Filter by player role">
+        <span>Role</span>
+        <button class="is-active" type="button" data-player-role="all" aria-pressed="true">All roles</button>
+        <button type="button" data-player-role="batter" aria-pressed="false">Batter</button>
+        <button type="button" data-player-role="wicketkeeper" aria-pressed="false">Wicketkeeper</button>
+        <button type="button" data-player-role="all-rounder" aria-pressed="false">All-rounder</button>
+        <button type="button" data-player-role="bowler" aria-pressed="false">Bowler</button>
+      </div>
     </section>
 
     <section class="pd-featured" aria-labelledby="featured-players-title">
-      <header class="pd-section-heading">
-        <div><p class="pd-kicker">Players to know</p><h2 id="featured-players-title">Featured CPL 2026 players</h2></div>
-        <p>Four established names from across the 2026 franchise rosters.</p>
-      </header>
+      <header class="pd-section-heading"><div><p class="pd-kicker">Players to know</p><h2 id="featured-players-title">Featured CPL 2026 players</h2></div><p>Four established names from across the 2026 franchise rosters.</p></header>
       <div class="pd-featured-grid">
         {% for player in featured_players[:4] %}
         <a class="pd-feature-card" href="/player/{{ player.slug }}/">
-          <span class="pd-feature-image"><img src="{{ player.image }}" width="360" height="420" alt="{{ player.name }} official CPL player photo" loading="lazy"><img class="pd-card-team-logo" src="{{ player.team_logo }}" width="46" height="46" alt=""></span>
+          <span class="pd-feature-image"><img src="{{ player.image }}" width="1024" height="1024" alt="{{ player.name }} official CPL player photo" loading="lazy"><img class="pd-card-team-logo" src="{{ player.team_logo }}" width="46" height="46" alt=""></span>
           <span class="pd-feature-copy"><small>{{ player.category }}</small><strong>{{ player.name }}</strong><span>{{ player.team_name }}</span><em>{{ player.role }}</em></span>
-          <span class="pd-profile-link">View profile <b>↗</b></span>
+          <span class="pd-profile-link">View profile <b>→</b></span>
         </a>
         {% endfor %}
       </div>
     </section>
 
     <section id="player-directory" class="pd-directory" aria-labelledby="player-directory-title">
-      <header class="pd-section-heading">
-        <div><p class="pd-kicker">Complete directory</p><h2 id="player-directory-title">All CPL 2026 players</h2></div>
-        <p id="player-directory-count" aria-live="polite">{{ totals.players }} players found</p>
-      </header>
+      <header class="pd-section-heading"><div><p class="pd-kicker">Complete directory</p><h2 id="player-directory-title">All CPL 2026 players</h2></div><p id="player-directory-count" aria-live="polite">{{ totals.players }} players found</p></header>
       <div class="pd-directory-grid">
         {% for player in all_players %}
-        <a class="directory-player-card" href="/player/{{ player.slug }}/" data-directory-player data-player-name="{{ player.name | lower }}" data-team-name="{{ player.team_name | lower }}" data-player-team="{{ player.team_slug }}" data-player-category="{{ player.category_slug }}">
-          <span class="directory-player-media">
-            {% if player.image %}<img src="{{ player.image }}" width="210" height="230" alt="{{ player.name }} official CPL player photo" loading="lazy">{% else %}<span class="directory-player-initials" aria-hidden="true">{{ player.initials }}</span>{% endif %}
-            <img class="directory-player-team-mark" src="{{ player.team_logo }}" width="34" height="34" alt="">
-          </span>
-          <span class="directory-player-copy"><small>{{ player.category }}</small><strong>{{ player.name }}{% if player.captain %}<sup>C</sup>{% endif %}</strong><span>{{ player.team_short_name }}</span><em>{{ player.role }}</em></span>
-          <span class="directory-player-open">View profile <b>↗</b></span>
-        </a>
+        <article class="directory-player-card" data-directory-player data-player-name="{{ player.name | lower }}" data-team-name="{{ player.team_name | lower }}" data-player-team="{{ player.team_slug }}" data-player-category="{{ player.category_slug }}" data-player-role="{{ player.role_slug }}">
+          <a class="directory-player-media" href="/player/{{ player.slug }}/" tabindex="-1" aria-hidden="true">
+            {% if player.image %}<img src="{{ player.image }}" width="1024" height="1024" alt="" loading="lazy">{% else %}<span class="directory-player-initials" aria-hidden="true">{{ player.initials }}</span>{% endif %}
+            <img class="directory-player-team-mark" src="{{ player.team_logo }}" width="44" height="44" alt="">
+          </a>
+          <div class="directory-player-copy"><small>{{ player.category }}</small><h3>{{ player.name }}{% if player.captain %}<sup>C</sup>{% endif %}</h3><strong>{{ player.team_name }}</strong><span>{{ player.role }}</span></div>
+          <a class="directory-player-open" href="/player/{{ player.slug }}/">View profile <b>→</b></a>
+        </article>
         {% endfor %}
       </div>
       <p id="player-directory-empty" class="player-directory-empty" hidden>No players match the selected filters.</p>
       <nav class="pd-pagination" aria-label="Player directory pages">
         <button id="player-page-prev" type="button">← Previous</button>
-        <span id="player-page-status">Page 1</span>
+        <span id="player-page-numbers" class="pd-page-numbers"></span>
+        <span id="player-page-status" class="sr-only">Page 1</span>
         <button id="player-page-next" type="button">Next →</button>
       </nav>
     </section>
 
     <section id="squad-tracker" class="pd-squad-tracker" aria-labelledby="squad-tracker-title">
-      <header class="pd-section-heading">
-        <div><p class="pd-kicker">Franchise overview</p><h2 id="squad-tracker-title">CPL 2026 team squad tracker</h2></div>
-        <p>{{ totals.players }} profiles across seven announced team lists.</p>
-      </header>
+      <header class="pd-section-heading"><div><p class="pd-kicker">Franchise overview</p><h2 id="squad-tracker-title">CPL 2026 team squad tracker</h2></div><p>{{ totals.players }} profiles across seven announced team lists.</p></header>
       <div class="pd-tracker-list">
         {% for team in teams %}
         <a id="{{ team.slug }}-players" href="/team/{{ team.slug }}/" class="pd-tracker-row" data-player-team-section="{{ team.slug }}">
@@ -158,15 +134,32 @@
       </div>
     </section>
 
+    <section class="pd-squad-system" aria-labelledby="squad-system-title">
+      <header class="pd-section-heading"><div><p class="pd-kicker">Squad guide</p><h2 id="squad-system-title">How CPL 2026 squads work</h2></div></header>
+      <div class="pd-system-grid">
+        <article><span>01</span><h3>West Indies players</h3><p>The local core of every franchise, covering established internationals and domestic performers.</p><strong>{{ totals.west_indian }} listed</strong></article>
+        <article><span>02</span><h3>Overseas players</h3><p>International signings whose places can depend on availability and approved replacement windows.</p><strong>{{ totals.overseas }} listed</strong></article>
+        <article><span>03</span><h3>Breakout players</h3><p>Emerging Caribbean cricketers selected to take the next step on the CPL stage.</p><strong>{{ totals.breakout }} listed</strong></article>
+        <article><span>04</span><h3>Roster updates</h3><p>Injuries and availability can change a squad, so profiles are updated when team information is confirmed.</p><strong>Tracked through 2026</strong></article>
+      </div>
+    </section>
+
+    <section class="pd-roles" aria-labelledby="roles-title">
+      <header class="pd-section-heading"><div><p class="pd-kicker">On-field jobs</p><h2 id="roles-title">Player roles explained</h2></div></header>
+      <div class="pd-role-grid">
+        {% for player in role_players %}
+        <a href="/player/{{ player.slug }}/"><img src="{{ player.image }}" width="1024" height="1024" alt="{{ player.name }} CPL player portrait" loading="lazy"><span><small>{{ player.role }}</small><strong>{{ player.name }}</strong><p>{{ player.team_name }}</p></span></a>
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="pd-faq" aria-labelledby="players-faq-title">
       <header class="pd-section-heading"><div><p class="pd-kicker">Quick answers</p><h2 id="players-faq-title">CPL 2026 players FAQ</h2></div></header>
-      <div class="pd-faq-list">
-        {% for item in faqs %}<details><summary>{{ item.question }}</summary><p>{{ item.answer }}</p></details>{% endfor %}
-      </div>
+      <div class="pd-faq-list">{% for item in faqs %}<details><summary>{{ item.question }}</summary><p>{{ item.answer }}</p></details>{% endfor %}</div>
     </section>
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260805playersb" defer></script>
+  <script src="/static/js/site.js?v=20260805playersd" defer></script>
 </body>
 </html>
