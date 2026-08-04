@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ page.canonical }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.canonical }}">
+  <meta property="og:image" content="https://cplseason.com/static/img/social/cpl-2026-schedule-teams-live-coverage.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/webp" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260804history">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="cpl-history-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/live-score/">Live Score</a><a href="/teams/">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
+    </nav>
+  </header>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><span aria-current="page">CPL History</span></li></ol></nav>
+  <main id="main" class="history-shell">
+    <section class="history-hero">
+      <div><p>CPL archive / 2013–2025</p><h1>Every CPL champion.<br><span>One clear record.</span></h1><p class="history-lede">A season-by-season Caribbean Premier League winners list, with franchise name changes separated carefully from new teams.</p></div>
+      <dl><div><dt>Completed seasons</dt><dd>13</dd></div><div><dt>Different champions</dt><dd>7</dd></div><div><dt>Record holder</dt><dd>TKR · 5 titles</dd></div></dl>
+    </section>
+    <section class="history-section" aria-labelledby="winners-title">
+      <header><p>01 / Winners list</p><h2 id="winners-title">CPL champions by year</h2><span>The winner name shown is the franchise identity used in that season.</span></header>
+      <div class="history-table-wrap"><table><thead><tr><th>Season</th><th>Champion</th><th>Current franchise record</th></tr></thead><tbody>
+      {% for season in champions %}<tr><td>{{ season.year }}</td><td><strong>{{ season.winner }}</strong></td><td>{% if season.team %}<a href="/team/{{ season.team.slug }}/">{{ season.franchise_record }}</a>{% else %}{{ season.franchise_record }}{% endif %}</td></tr>{% endfor %}
+      </tbody></table></div>
+    </section>
+    <section class="history-section history-leaders" aria-labelledby="leaders-title">
+      <header><p>02 / Title table</p><h2 id="leaders-title">Most successful CPL teams</h2><span>Titles follow the continuous franchise record, including documented name changes.</span></header>
+      <div>{% for team in leaderboard %}<article><span>{{ "%02d" | format(loop.index) }}</span><h3>{{ team.name }}</h3><strong>{{ team.titles }} title{% if team.titles != 1 %}s{% endif %}</strong><p>{{ team.years | join(", ") }}</p></article>{% endfor %}</div>
+    </section>
+    <section class="history-section history-notes" aria-labelledby="identity-title">
+      <header><p>03 / Franchise identity</p><h2 id="identity-title">How name changes are counted</h2></header>
+      <ol>{% for note in history.notes %}<li><span>{{ "%02d" | format(loop.index) }}</span><p>{{ note }}</p></li>{% endfor %}</ol>
+      <nav aria-label="Related CPL history links"><a href="/teams/">Current CPL teams <span>→</span></a><a href="/schedule/">CPL 2026 schedule <span>→</span></a><a href="/points-table/">CPL 2026 points table <span>→</span></a></nav>
+    </section>
+  </main>
+  {% include "partials/footer.html" %}
+  <script src="/static/js/site.js?v=20260729ms" defer></script>
+</body>
+</html>

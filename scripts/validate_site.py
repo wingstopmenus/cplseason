@@ -105,6 +105,7 @@ def main() -> int:
     venues = {path.stem: load_json(path) for path in venue_files}
     news_articles = {path.stem: load_json(path) for path in news_files}
     matches = {path.stem: load_json(path) for path in match_files}
+    history = load_json(ROOT / "data" / "cpl-history.json")
 
     if len(players) != 123:
         errors.append(f"Expected 123 player records, found {len(players)}")
@@ -118,6 +119,33 @@ def main() -> int:
         )
     if len(matches) != 39:
         errors.append(f"Expected 39 match records, found {len(matches)}")
+    champions = history.get("champions", [])
+    if len(champions) != 13 or [item.get("year") for item in champions] != list(range(2013, 2026)):
+        errors.append("CPL history must contain one champion for every season from 2013 to 2025")
+    history_page_path = ROOT / "cpl-history" / "index.html"
+    if not history_page_path.exists():
+        errors.append("Generated CPL history page is missing")
+    else:
+        history_page = history_page_path.read_text(encoding="utf-8")
+        if '"@type":"ItemList"' not in history_page:
+            errors.append("CPL history page is missing champions ItemList schema")
+        if history_page.count("<tbody>") != 1 or history_page.count("<tr>") != 14:
+            errors.append("CPL history page must render 13 champion rows")
+
+    history_years_by_team: dict[str, list[int]] = {}
+    for season in champions:
+        team_slug = season.get("team_slug")
+        if team_slug:
+            history_years_by_team.setdefault(team_slug, []).append(season["year"])
+    for team_slug, title_years in history_years_by_team.items():
+        if team_slug not in teams:
+            errors.append(f"CPL history references unknown team: {team_slug}")
+            continue
+        if teams[team_slug].get("title_years") != title_years:
+            errors.append(
+                f"CPL history title years do not match {team_slug}: "
+                f"{title_years} vs {teams[team_slug].get('title_years')}"
+            )
 
     match_numbers: list[int] = []
     for slug, match in matches.items():

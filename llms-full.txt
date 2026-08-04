@@ -8,7 +8,7 @@
 - Canonical origin: https://cplseason.com/
 - Coverage: schedules, match pages, standings, teams, squads, player profiles, venues, broadcast information, and news.
 - Relationship to CPL: independent information site; not the official Caribbean Premier League website.
-- Latest source-data update represented here: 2026-07-31.
+- Latest source-data update represented here: 2026-08-04.
 
 ## 2026 tournament snapshot
 
@@ -18,7 +18,7 @@
 - Teams represented: 7.
 - Host venues represented: 8.
 - Player profiles: 123.
-- Published news articles: 26.
+- Published news articles: 28.
 - Match times are local to the host venue unless a page explicitly states otherwise.
 - Fixtures, squads, broadcasters, playing XIs, results, and standings may change.
 
@@ -318,16 +318,19 @@
 
 ## Broadcast status
 
-Source page: [How to Watch CPL 2026: TV Channels and Live Streaming](https://cplseason.com/watch-live/). Data last updated 2026-07-29.
+Source page: [How to Watch CPL 2026: TV Channels and Live Streaming](https://cplseason.com/watch-live/). Data last updated 2026-08-04.
 
 - Caribbean: Confirmed — Rush Live & Louder. CPL says the channel will carry comprehensive coverage of the 2026 season from 7 August. Provider channel numbers and packages vary by territory.
 - United States: Confirmed — Willow by Cricbuzz. Willow lists Caribbean Premier League 2026 from 7 August to 20 September and identifies CPL among its covered T20 leagues.
 - Canada: Confirmed — Willow by Cricbuzz. Willow describes its service as a cricket broadcaster for the United States and Canada. Confirm the individual match listing before paying.
 - India: Pending — No 2026 partner confirmed. CPL 2026 broadcast details for India have not been announced.
 - United Kingdom & Ireland: Pending — No 2026 partner confirmed. Historical CPL broadcasters do not establish who will show the 2026 tournament.
-- Pakistan & Bangladesh: Pending — No 2026 partner confirmed. CPL 2026 broadcast details for Pakistan and Bangladesh have not been announced.
-- Australia & New Zealand: Pending — No 2026 partner confirmed. Previous-season arrangements can change, so this guide does not carry them forward.
-- South Africa & other territories: Pending — No worldwide stream confirmed. CPL has not announced a free worldwide stream for the 2026 season.
+- Pakistan: Pending — No 2026 partner confirmed. No current CPL or broadcaster source confirms a 2026 television or streaming partner for Pakistan.
+- Bangladesh: Pending — No 2026 partner confirmed. No current CPL or broadcaster source confirms a 2026 television or streaming partner for Bangladesh.
+- Australia: Pending — No 2026 partner confirmed. No current rights-holder listing confirms CPL 2026 coverage in Australia. Previous-season arrangements are not carried forward.
+- New Zealand: Pending — No 2026 partner confirmed. No current rights-holder listing confirms CPL 2026 coverage in New Zealand. Previous-season arrangements are not carried forward.
+- South Africa: Pending — No 2026 partner confirmed. No current CPL or broadcaster source confirms a 2026 television or streaming partner for South Africa.
+- Other territories: Pending — No worldwide stream confirmed. CPL has not announced a free worldwide stream for the 2026 season.
 
 Broadcast availability is territory-specific. A historical broadcaster
 does not establish 2026 rights; confirm the exact fixture before paying.

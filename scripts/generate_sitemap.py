@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://cplseason.com"
 CORE_ROUTES = {
     "/",
+    "/cpl-history/",
     "/live-score/",
     "/news/",
     "/players/",

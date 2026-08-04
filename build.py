@@ -35,6 +35,10 @@ SHORT_NAMES = {
     "saint-lucia-kings": "Kings",
     "trinbago-knight-riders": "Knight Riders",
 }
+SEO_SHORT_NAMES = {
+    **SHORT_NAMES,
+    "trinbago-knight-riders": "TKR",
+}
 VENUE_ORDER = [
     "arnos-vale-stadium",
     "sabina-park",
@@ -949,12 +953,27 @@ def build_player_profiles() -> None:
         ][:6]
 
         canonical = f"https://cplseason.com/player/{player_slug}/"
+        title_candidates = (
+            f"{player['name']} Profile: Career, Records and CPL 2026 Team",
+            f"{player['name']} Profile: Records and CPL 2026 Team",
+            f"{player['name']} Profile: Stats and CPL 2026 Team",
+        )
+        seo_title = next(
+            (candidate for candidate in title_candidates if 50 <= len(candidate) <= 60),
+            min(title_candidates, key=lambda candidate: abs(len(candidate) - 55)),
+        )
+        seo_description = (
+            f"Read {player['name']}'s profile, biography, playing role, career "
+            "record and CPL 2026 team, with verified squad information and "
+            "clearly sourced cricket statistics."
+        )
+        if len(seo_description) > 160:
+            seo_description = seo_description.replace("clearly ", "")
+        if len(seo_description) > 160:
+            seo_description = seo_description.replace("playing ", "")
         page = {
-            "title": f"{player['name']} Profile: Career, Records and CPL 2026 Team",
-            "description": (
-                f"Read {player['name']}'s biography, cricket career, playing "
-                f"record, CPL 2026 team and a fact-checked note about net worth."
-            ),
+            "title": seo_title,
+            "description": seo_description,
             "canonical": canonical,
             "og_image": (
                 f"https://cplseason.com{player['image']}"
@@ -1974,6 +1993,95 @@ def build_live_score() -> None:
     print(f"Rendered {output.relative_to(ROOT)} with dynamic official score feed")
 
 
+def build_cpl_history() -> None:
+    """Render the canonical CPL history and champions hub."""
+    history = load_json(ROOT / "data" / "cpl-history.json")
+    teams = {
+        path.stem: load_json(path)
+        for path in sorted((ROOT / "data" / "teams").glob("*.json"))
+    }
+    champions = []
+    for season in history["champions"]:
+        item = dict(season)
+        item["team"] = teams.get(item.get("team_slug"))
+        champions.append(item)
+
+    title_counts = Counter(season["franchise_record"] for season in champions)
+    leaderboard = [
+        {
+            "name": name,
+            "titles": count,
+            "years": [
+                season["year"]
+                for season in champions
+                if season["franchise_record"] == name
+            ],
+        }
+        for name, count in sorted(
+            title_counts.items(), key=lambda item: (-item[1], item[0])
+        )
+    ]
+    page = {
+        "title": "CPL Winners List: Champions and Tournament History",
+        "description": (
+            "Explore every Caribbean Premier League champion from 2013 to 2025, "
+            "the most successful CPL teams, franchise name changes, title records "
+            "and past winners by year."
+        ),
+        "canonical": "https://cplseason.com/cpl-history/",
+        "date_modified": history["last_updated"],
+    }
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "@id": f"{page['canonical']}#webpage",
+                "url": page["canonical"],
+                "name": page["title"],
+                "description": page["description"],
+                "dateModified": page["date_modified"],
+                "breadcrumb": {"@id": f"{page['canonical']}#breadcrumb"},
+                "mainEntity": {"@id": f"{page['canonical']}#champions"},
+            },
+            {
+                "@type": "ItemList",
+                "@id": f"{page['canonical']}#champions",
+                "name": "Caribbean Premier League champions by season",
+                "numberOfItems": len(champions),
+                "itemListOrder": "https://schema.org/ItemListOrderDescending",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": index,
+                        "name": f"{season['year']} CPL champion: {season['winner']}",
+                    }
+                    for index, season in enumerate(reversed(champions), start=1)
+                ],
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{page['canonical']}#breadcrumb",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cplseason.com/"},
+                    {"@type": "ListItem", "position": 2, "name": "CPL History", "item": page["canonical"]},
+                ],
+            },
+        ],
+    }
+    rendered = template_environment().get_template("cpl-history.html").render(
+        page=page,
+        history=history,
+        champions=list(reversed(champions)),
+        leaderboard=leaderboard,
+        schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
+    )
+    output = ROOT / "cpl-history" / "index.html"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(rendered + "\n", encoding="utf-8")
+    print(f"Rendered {output.relative_to(ROOT)} with {len(champions)} seasons")
+
+
 def build_match_spotlight_schedule() -> list[dict]:
     """Publish the compact schedule used by live homepage/footer spotlights."""
     venues = {
@@ -2091,15 +2199,35 @@ def build_matches() -> None:
         )
 
         canonical = f"https://cplseason.com/match/{match['slug']}/"
+        playoff_title_labels = {
+            "Eliminator": "CPL Eliminator",
+            "Qualifier 1": "CPL Qualifier 1",
+            "Qualifier 2": "CPL Qualifier 2",
+            "Final": "Championship Final",
+        }
+        title_matchup = (
+            f"{SEO_SHORT_NAMES[home_team['slug']]} vs "
+            f"{SEO_SHORT_NAMES[away_team['slug']]}"
+            if home_team and away_team
+            else playoff_title_labels.get(fixture_label, fixture_label)
+        )
+        meta_description = (
+            f"Follow {matchup_label} live score, toss, playing XIs, "
+            "match updates and result for "
+            f"CPL 2026 Match {match['match_number']} at {venue['name']}."
+        )
+        if len(meta_description) > 165:
+            meta_description = meta_description.replace("playing XIs, ", "")
+        if len(meta_description) < 145:
+            meta_description = meta_description.replace(
+                "match updates and result", "ball-by-ball updates, squads and result"
+            )
         page = {
             "title": (
-                f"{matchup_label} Live Score & Result, CPL 2026 {fixture_label}"
+                f"{title_matchup}: CPL 2026 Match {match['match_number']} "
+                "Live Score & Result"
             ),
-            "description": (
-                f"Follow the verified {matchup_label} live score, "
-                "innings updates, toss, final result, squads and match details "
-                f"for CPL 2026 Match {match['match_number']}."
-            ),
+            "description": meta_description,
             "canonical": canonical,
         }
         schema = {
@@ -2672,6 +2800,7 @@ if __name__ == "__main__":
     build_points_table()
     build_watch_live()
     build_live_score()
+    build_cpl_history()
     build_matches()
     link_schedule_matches()
     normalize_schedule_schema()

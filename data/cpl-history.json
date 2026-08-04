@@ -1,0 +1,23 @@
+{
+  "last_updated": "2026-08-04",
+  "champions": [
+    {"year": 2013, "winner": "Jamaica Tallawahs", "franchise_record": "Jamaica Tallawahs", "team_slug": null},
+    {"year": 2014, "winner": "Barbados Tridents", "franchise_record": "Barbados Tridents", "team_slug": "barbados-royals"},
+    {"year": 2015, "winner": "Trinidad & Tobago Red Steel", "franchise_record": "Trinbago Knight Riders", "team_slug": "trinbago-knight-riders"},
+    {"year": 2016, "winner": "Jamaica Tallawahs", "franchise_record": "Jamaica Tallawahs", "team_slug": null},
+    {"year": 2017, "winner": "Trinbago Knight Riders", "franchise_record": "Trinbago Knight Riders", "team_slug": "trinbago-knight-riders"},
+    {"year": 2018, "winner": "Trinbago Knight Riders", "franchise_record": "Trinbago Knight Riders", "team_slug": "trinbago-knight-riders"},
+    {"year": 2019, "winner": "Barbados Tridents", "franchise_record": "Barbados Tridents", "team_slug": "barbados-royals"},
+    {"year": 2020, "winner": "Trinbago Knight Riders", "franchise_record": "Trinbago Knight Riders", "team_slug": "trinbago-knight-riders"},
+    {"year": 2021, "winner": "St Kitts & Nevis Patriots", "franchise_record": "St Kitts & Nevis Patriots", "team_slug": "st-kitts-nevis-patriots"},
+    {"year": 2022, "winner": "Jamaica Tallawahs", "franchise_record": "Jamaica Tallawahs", "team_slug": null},
+    {"year": 2023, "winner": "Guyana Amazon Warriors", "franchise_record": "Guyana Amazon Warriors", "team_slug": "guyana-amazon-warriors"},
+    {"year": 2024, "winner": "Saint Lucia Kings", "franchise_record": "Saint Lucia Kings", "team_slug": "saint-lucia-kings"},
+    {"year": 2025, "winner": "Trinbago Knight Riders", "franchise_record": "Trinbago Knight Riders", "team_slug": "trinbago-knight-riders"}
+  ],
+  "notes": [
+    "The 2015 title won by Trinidad & Tobago Red Steel belongs to the franchise now known as Trinbago Knight Riders.",
+    "Barbados won in 2014 and 2019 as the Tridents. The same franchise used the Royals name from 2021 to 2025 and restored the Tridents identity for 2026.",
+    "Jamaica Tallawahs and Jamaica Kingsmen are separate franchises. Tallawahs titles are not assigned to the Kingsmen, who enter the men's CPL in 2026."
+  ]
+}
