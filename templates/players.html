@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260726p">
-  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805d">
+  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805e">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="players-directory-body">
@@ -50,14 +50,7 @@
           <div><dd>{{ directory_updated_display }}</dd><dt>Updated</dt></div>
         </dl>
       </div>
-      <div class="pd-hero-collage" aria-label="Featured CPL 2026 players">
-        {% for player in featured_players[:4] %}
-        <a href="/player/{{ player.slug }}/" class="pd-hero-player pd-hero-player-{{ loop.index }}" aria-label="View {{ player.name }} profile">
-          <img src="{{ player.image }}" width="1024" height="1024" alt="{{ player.name }} CPL player portrait">
-        </a>
-        {% endfor %}
-        <span class="pd-hero-collage-label">123 profiles · 7 squads · one directory</span>
-      </div>
+      <div class="pd-hero-art" aria-hidden="true"></div>
     </section>
 
     <section id="find-a-player" class="pd-filter-panel" aria-labelledby="player-search-title">
