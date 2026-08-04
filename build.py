@@ -759,6 +759,17 @@ def build_players() -> None:
             player = dict(players_by_slug[player_slug])
             player["category_slug"] = player["category"].lower().replace(" ", "-")
             player["role"] = player.get("profile", {}).get("role") or player["category"].removesuffix(" player")
+            role_key = player["role"].casefold()
+            if "wicket" in role_key or "keeper" in role_key:
+                player["role_slug"] = "wicketkeeper"
+            elif "all-round" in role_key or "all round" in role_key or "allround" in role_key:
+                player["role_slug"] = "all-rounder"
+            elif "bowl" in role_key:
+                player["role_slug"] = "bowler"
+            elif "batt" in role_key or "batsman" in role_key:
+                player["role_slug"] = "batter"
+            else:
+                player["role_slug"] = "other"
             player["team_name"] = team["name"]
             player["team_slug"] = team_slug
             player["team_short_name"] = SHORT_NAMES[team_slug]
@@ -795,7 +806,7 @@ def build_players() -> None:
     ]
     role_players = [
         players_by_directory_slug[slug]
-        for slug in ("nicholas-pooran", "andre-russell", "alzarri-joseph", "sunil-narine")
+        for slug in ("shimron-hetmyer", "nicholas-pooran", "andre-russell", "alzarri-joseph")
         if slug in players_by_directory_slug
     ]
     faqs = [
@@ -3034,7 +3045,12 @@ def sync_shared_footer() -> None:
         else:
             site_css_url = "/static/css/site.css?v=20260731breadcrumbs"
         updated = css_pattern.sub(site_css_url, updated)
-        updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
+        site_js_url = (
+            "/static/js/site.js?v=20260805playersd"
+            if html_path == ROOT / "players" / "index.html"
+            else "/static/js/site.js?v=20260729ms"
+        )
+        updated = js_pattern.sub(site_js_url, updated)
         updated = adsense_script_pattern.sub("", updated)
         if "</head>" not in updated:
             raise ValueError(f"Expected </head> in {html_path.relative_to(ROOT)}")
