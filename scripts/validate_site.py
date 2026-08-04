@@ -677,13 +677,13 @@ def main() -> int:
         errors.append("Live score page is missing the automatic polling script")
     if 'href="/static/css/live-score.css?' not in live_score_page:
         errors.append("Live score page is missing its dedicated responsive styles")
-    if live_score_page.count("data-upcoming-card") != 5:
-        errors.append("Live score page must render five verified fallback fixtures")
+    if live_score_page.count("data-upcoming-card") != 3:
+        errors.append("Live score page must render three verified fallback fixtures")
     if live_score_page.count('"matchNumber":') != 39:
         errors.append("Live score page must map all 39 canonical match centres")
     if '"@type":"FAQPage"' not in live_score_page:
         errors.append("Live score page is missing FAQ schema")
-    for match in sorted(matches.values(), key=lambda item: item["match_number"])[:5]:
+    for match in sorted(matches.values(), key=lambda item: item["match_number"])[1:4]:
         if f'href="/match/{match["slug"]}/"' not in live_score_page:
             errors.append(
                 f"Live score fallback does not link Match {match['match_number']}"

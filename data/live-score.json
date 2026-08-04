@@ -6,7 +6,7 @@
   "headline": "CPL Live Score 2026",
   "headline_primary": "CPL 2026",
   "headline_secondary": "Live Score",
-  "lede": "Follow the <strong>CPL 2026 live score</strong> with real-time updates, ball-by-ball coverage, match results, and the latest fixtures throughout the tournament. From the opening match to the championship final, stay on top of every wicket, boundary, and match-winning moment.",
+  "lede": "Follow the <strong>CPL 2026 live score</strong>, ball-by-ball updates, fixtures and results from every match.",
   "endpoint": "/api/cpl-live-score",
   "polling_seconds": 15,
   "source_name": "Official CPL MCPRO match feed",
@@ -15,7 +15,7 @@
   "faq": [
     {
       "question": "How often does the CPL live score update?",
-      "answer": "The page checks the CPL match feed every 15 seconds while it is open. You can also use the refresh button to check for the latest score immediately."
+      "answer": "The page checks the CPL match feed every 15 seconds while it is open. New runs, wickets and overs appear automatically when the feed publishes them."
     },
     {
       "question": "Where can I find today's CPL match score?",

@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805hub">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805mc2">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -72,12 +72,6 @@
             </div>
           </div>
 
-          <aside class="live-score-hero-brief" aria-label="Next CPL match">
-            <span>Next match</span>
-            <strong>Match {{ focus.match_number }}</strong>
-            <time datetime="{{ focus.start_iso }}">{{ focus.date_label_long }} · {{ focus.time_label }} local</time>
-            <a href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }} <i aria-hidden="true">→</i></a>
-          </aside>
         </div>
       </div>
     </section>
@@ -148,8 +142,9 @@
         <div class="live-score-workspace">
           <div class="live-score-workspace-main">
             <nav class="live-score-tabs" aria-label="Live match sections">
-              <a href="#commentary-title" aria-current="page">Commentary</a>
-              <a href="#live-stats">Live stats</a>
+              <a href="#current-match" aria-current="page">Summary</a>
+              <a href="{{ focus.url }}">Scorecard</a>
+              <a href="#commentary-title">Ball by ball</a>
               <a href="#live-lineups-title">Playing XI</a>
               <a href="#match-info-title">Match info</a>
             </nav>
@@ -157,8 +152,8 @@
             <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
               <header class="live-score-section-heading">
                 <div>
-                  <p>Ball-by-ball coverage</p>
-                  <h2 id="commentary-title">CPL live commentary</h2>
+                  <p>Match commentary</p>
+                  <h2 id="commentary-title">CPL ball-by-ball updates</h2>
                 </div>
                 <span class="live-score-commentary-status" data-commentary-status>
                   <i aria-hidden="true"></i>
@@ -230,7 +225,7 @@
             <section class="live-score-side-panel live-score-other-matches" aria-labelledby="other-matches-title">
               <header><div><span>Up next</span><h2 id="other-matches-title">Other matches</h2></div><a href="/schedule/">View all</a></header>
               <div>
-                {% for match in upcoming[:3] %}
+                {% for match in upcoming[1:4] %}
                 <a href="{{ match.url }}">
                   <span>{{ match.date_label }}</span>
                   <strong>{{ match.home_short }} <i>vs</i> {{ match.away_short }}</strong>
@@ -266,7 +261,7 @@
           <a href="/schedule/">View full schedule <span aria-hidden="true">→</span></a>
         </header>
         <div class="live-score-fixture-grid" data-upcoming-matches>
-          {% for match in upcoming %}
+          {% for match in upcoming[1:4] %}
           <article class="live-score-fixture-card" data-upcoming-card data-match-number="{{ match.match_number }}">
             <header class="live-score-fixture-top">
               <span data-fixture-number><b>{{ "%02d"|format(match.match_number) }}</b> Match {{ match.match_number }}</span>
@@ -319,20 +314,6 @@
             <p>Final scores and match results will appear here after each CPL 2026 game is completed.</p>
           </article>
         </div>
-      </section>
-
-      <section class="live-score-information" aria-labelledby="score-policy-title">
-        <div>
-          <p>Live-score information</p>
-          <h2 id="score-policy-title">How CPL live scores are checked</h2>
-          <p>{{ config.source_note }}</p>
-        </div>
-        <ol>
-          <li><span>01</span><strong>Fixture details</strong><p>Match dates, teams and venues come from the current CPL competition feed.</p></li>
-          <li><span>02</span><strong>Live score updates</strong><p>Runs, wickets and overs appear when the match feed supplies them.</p></li>
-          <li><span>03</span><strong>Connection problems</strong><p>If the feed drops, the page keeps the last confirmed score and shows an update notice.</p></li>
-        </ol>
-        <small>Data source: {{ config.source_name }} · Page reviewed {{ config.last_updated }}</small>
       </section>
 
       <section class="live-score-faq" aria-labelledby="live-score-faq-title">
