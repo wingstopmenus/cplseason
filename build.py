@@ -930,8 +930,11 @@ def player_about_copy(player: dict, team: dict) -> dict:
         identity_parts.append(f"From {birth_place},")
 
     if role:
+        role_article = (
+            "an" if role.lower().startswith(("a", "e", "i", "o", "u")) else "a"
+        )
         identity_parts.append(
-            f"{full_name} is a {role.lower()} selected by {team['name']} for CPL 2026."
+            f"{full_name} is {role_article} {role.lower()} selected by {team['name']} for CPL 2026."
         )
     else:
         identity_parts.append(
@@ -977,7 +980,7 @@ def player_about_copy(player: dict, team: dict) -> dict:
 
     career_sentences.append(
         f"In CPL 2026, {player['name']} joins {team['name']} in the "
-        f"{player['category'].lower()} group. {player['selection_note']}."
+        f"{player['category']} group. {player['selection_note']}."
     )
     career = " ".join(career_sentences)
 
@@ -997,12 +1000,6 @@ def player_about_copy(player: dict, team: dict) -> dict:
         "biography": biography,
         "career": career,
         "records": records,
-        "net_worth": (
-            f"{player['name']}'s net worth has not been publicly disclosed in a "
-            "dependable financial record. Cricket contracts, match fees, "
-            "endorsements and private assets are not fully public, so an exact "
-            "figure would be speculation."
-        ),
     }
 
 
@@ -1022,10 +1019,6 @@ def build_player_profiles() -> None:
         player = dict(source_player)
         team = dict(teams_by_slug[player["team_slug"]])
         team["short_name"] = SHORT_NAMES[team["slug"]]
-        category_label = player["category"].lower()
-        player["category_article"] = (
-            "an" if category_label.startswith(("a", "e", "i", "o", "u")) else "a"
-        )
         player["about"] = player_about_copy(player, team)
         player["captain"] = (
             team["slug"] == "jamaica-kingsmen"

@@ -147,7 +147,7 @@ const playerPageNext = document.querySelector("#player-page-next");
 const playerPageStatus = document.querySelector("#player-page-status");
 
 if (playerDirectorySearch && playerDirectoryCards.length) {
-  const pageSize = 12;
+  const pageSize = window.matchMedia("(max-width: 520px)").matches ? 8 : 12;
   let activePlayerPage = 1;
 
   const updatePlayerDirectory = () => {

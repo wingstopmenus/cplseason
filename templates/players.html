@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260726p">
-  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805a">
+  <link rel="stylesheet" href="/static/css/players-directory.css?v=20260805b">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="players-directory-body">
@@ -101,11 +101,11 @@
 
     <section class="pd-featured" aria-labelledby="featured-players-title">
       <header class="pd-section-heading">
-        <div><p class="pd-kicker">Players to know</p><h2 id="featured-players-title">All announced CPL 2026 players by team</h2></div>
-        <p>Eight established names from across the 2026 franchise rosters.</p>
+        <div><p class="pd-kicker">Players to know</p><h2 id="featured-players-title">Featured CPL 2026 players</h2></div>
+        <p>Four established names from across the 2026 franchise rosters.</p>
       </header>
       <div class="pd-featured-grid">
-        {% for player in featured_players %}
+        {% for player in featured_players[:4] %}
         <a class="pd-feature-card" href="/player/{{ player.slug }}/">
           <span class="pd-feature-image"><img src="{{ player.image }}" width="360" height="420" alt="{{ player.name }} official CPL player photo" loading="lazy"><img class="pd-card-team-logo" src="{{ player.team_logo }}" width="46" height="46" alt=""></span>
           <span class="pd-feature-copy"><small>{{ player.category }}</small><strong>{{ player.name }}</strong><span>{{ player.team_name }}</span><em>{{ player.role }}</em></span>
@@ -117,7 +117,7 @@
 
     <section id="player-directory" class="pd-directory" aria-labelledby="player-directory-title">
       <header class="pd-section-heading">
-        <div><p class="pd-kicker">Complete directory</p><h2 id="player-directory-title">Players by team</h2></div>
+        <div><p class="pd-kicker">Complete directory</p><h2 id="player-directory-title">All CPL 2026 players</h2></div>
         <p id="player-directory-count" aria-live="polite">{{ totals.players }} players found</p>
       </header>
       <div class="pd-directory-grid">
@@ -158,26 +158,6 @@
       </div>
     </section>
 
-    <section class="pd-squad-system" aria-labelledby="squad-system-title">
-      <header class="pd-section-heading"><div><p class="pd-kicker">Squad categories</p><h2 id="squad-system-title">How this player directory is organised</h2></div></header>
-      <div class="pd-system-grid">
-        <article><span>01</span><strong>West Indian players</strong><p>The Caribbean core of every franchise roster, including established internationals and regional performers.</p><b>{{ totals.west_indian }} listed</b></article>
-        <article><span>02</span><strong>Overseas players</strong><p>International signings listed by the franchises, with availability subject to official team updates.</p><b>{{ totals.overseas }} listed</b></article>
-        <article><span>03</span><strong>Breakout players</strong><p>Emerging players identified within the published 2026 team groups and development pathways.</p><b>{{ totals.breakout }} listed</b></article>
-      </div>
-    </section>
-
-    <section class="pd-roles" aria-labelledby="player-roles-title">
-      <header class="pd-section-heading"><div><p class="pd-kicker">On-field roles</p><h2 id="player-roles-title">Four ways players shape a T20 match</h2></div></header>
-      <div class="pd-role-grid">
-        {% set role_labels = ["Batter / wicketkeeper", "All-rounder", "Fast bowler", "Spin bowler"] %}
-        {% set role_copy = ["Scores quickly and adds value behind the stumps.", "Balances the XI by contributing with bat and ball.", "Uses pace, bounce and variation to take wickets.", "Controls tempo through turn, accuracy and changes of pace."] %}
-        {% for player in role_players %}
-        <a href="/player/{{ player.slug }}/"><img src="{{ player.image }}" width="300" height="260" alt="{{ player.name }}"><span><small>{{ role_labels[loop.index0] }}</small><strong>{{ player.name }}</strong><p>{{ role_copy[loop.index0] }}</p></span></a>
-        {% endfor %}
-      </div>
-    </section>
-
     <section class="pd-faq" aria-labelledby="players-faq-title">
       <header class="pd-section-heading"><div><p class="pd-kicker">Quick answers</p><h2 id="players-faq-title">CPL 2026 players FAQ</h2></div></header>
       <div class="pd-faq-list">
@@ -187,6 +167,6 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260805players" defer></script>
+  <script src="/static/js/site.js?v=20260805playersb" defer></script>
 </body>
 </html>
