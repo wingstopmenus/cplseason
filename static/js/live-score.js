@@ -37,6 +37,11 @@
   const liveBatters = root.querySelector("[data-live-batters]");
   const liveBowler = root.querySelector("[data-live-bowler]");
   const recentBalls = root.querySelector("[data-recent-balls]");
+  const commentaryStatus = root.querySelector("[data-commentary-status]");
+  const commentaryHeading = root.querySelector("[data-commentary-heading]");
+  const commentaryCopy = root.querySelector("[data-commentary-copy]");
+  const commentaryMatchLink = root.querySelector("[data-commentary-match-link]");
+  const commentaryFeed = root.querySelector("[data-commentary-feed]");
   const upcomingContainer = root.querySelector("[data-upcoming-matches]");
   const resultsContainer = root.querySelector("[data-live-results]");
   const resultsStatus = root.querySelector("[data-results-status]");
@@ -70,6 +75,8 @@
     root.querySelector("[data-live-countdown]")?.dataset.start || "",
   );
   let currentStatus = "Upcoming";
+  let commentaryMatchNumber = null;
+  const commentaryHistory = new Map();
 
   const text = (element, value) => {
     if (element && value !== null && value !== undefined && value !== "") {
@@ -240,6 +247,127 @@
     recentBalls.append(list);
   };
 
+  const commentaryKey = (ball, index) => {
+    const delivery =
+      Number.isFinite(ball?.over) && Number.isFinite(ball?.ball)
+        ? `${ball.over}.${ball.ball}`
+        : `recent-${index}`;
+    return `${delivery}:${ball?.label || ""}:${ball?.commentary || ""}`;
+  };
+
+  const commentaryEmpty = (eyebrow, heading, copy) => {
+    if (!commentaryFeed) return;
+    const state = document.createElement("div");
+    state.className = "live-score-commentary-empty";
+    const label = document.createElement("span");
+    label.textContent = eyebrow;
+    const title = document.createElement("strong");
+    title.textContent = heading;
+    const body = document.createElement("p");
+    body.textContent = copy;
+    state.append(label, title, body);
+    commentaryFeed.replaceChildren(state);
+  };
+
+  const renderCommentary = (match, local) => {
+    if (!commentaryFeed || !match) return;
+    const matchNumber = Number(match.matchNumber || local?.matchNumber);
+    if (commentaryMatchNumber !== matchNumber) {
+      commentaryHistory.clear();
+      commentaryMatchNumber = matchNumber;
+    }
+
+    const teams = match.teams || [];
+    const home = teams.find((team) => team.isHome) || teams[0];
+    const away = teams.find((team) => !team.isHome) || teams[1];
+    const homeName = local?.home?.name || home?.name || "Home team";
+    const awayName = local?.away?.name || away?.name || "Away team";
+    text(commentaryHeading, `${homeName} vs ${awayName}`);
+    if (commentaryMatchLink) commentaryMatchLink.href = matchUrl(matchNumber);
+
+    const live = isLive(match.status);
+    const complete = isComplete(match.status);
+    commentaryStatus?.classList.toggle("is-live", live);
+    commentaryStatus?.classList.toggle("is-complete", complete);
+    if (commentaryStatus) {
+      const dot = document.createElement("i");
+      dot.setAttribute("aria-hidden", "true");
+      const statusLabel = live
+        ? `Live · refreshes every ${intervalSeconds} sec`
+        : complete
+          ? "Match complete"
+          : "Updates on match day";
+      commentaryStatus.replaceChildren(dot, document.createTextNode(statusLabel));
+    }
+    text(
+      commentaryCopy,
+      match.stateOfPlay ||
+        match.description ||
+        (live
+          ? "Follow the latest action as the innings unfolds."
+          : complete
+            ? "The match has finished. Review the final score and key moments below."
+            : `${local?.dateLabelLong || "Match day"} · ${local?.timeLabel || "Local time"} at ${local?.venue || match.venue?.name || "the host venue"}.`),
+    );
+
+    (match.live?.recentBalls || []).forEach((ball, index) => {
+      commentaryHistory.set(commentaryKey(ball, index), ball);
+    });
+    while (commentaryHistory.size > 30) {
+      commentaryHistory.delete(commentaryHistory.keys().next().value);
+    }
+
+    const balls = [...commentaryHistory.values()].reverse();
+    if (!balls.length) {
+      if (live) {
+        commentaryEmpty(
+          "Live commentary",
+          "Waiting for the next delivery",
+          "The latest ball will appear here as soon as play resumes.",
+        );
+      } else if (complete) {
+        commentaryEmpty(
+          "Match complete",
+          match.stateOfPlay || match.description || "Final result confirmed",
+          "Open the match centre for the complete scorecard and innings details.",
+        );
+      } else {
+        commentaryEmpty(
+          "Commentary desk",
+          "Coverage begins at the first ball",
+          "Runs, wickets, boundaries and key moments will appear here throughout the match.",
+        );
+      }
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    balls.forEach((ball, index) => {
+      const item = document.createElement("article");
+      item.className = "live-score-commentary-item";
+      if (index === 0) item.classList.add("is-latest");
+      const delivery = document.createElement("div");
+      delivery.className = "live-score-commentary-delivery";
+      const over = document.createElement("span");
+      over.textContent =
+        Number.isFinite(ball.over) && Number.isFinite(ball.ball)
+          ? `${ball.over}.${ball.ball}`
+          : "Ball";
+      const outcome = document.createElement("b");
+      outcome.textContent = ball.label || "•";
+      delivery.append(over, outcome);
+      const detail = document.createElement("div");
+      const label = document.createElement("small");
+      label.textContent = index === 0 ? "Latest delivery" : "Ball-by-ball update";
+      const copy = document.createElement("p");
+      copy.textContent = ball.commentary || ball.label || "Delivery completed.";
+      detail.append(label, copy);
+      item.append(delivery, detail);
+      fragment.append(item);
+    });
+    commentaryFeed.replaceChildren(fragment);
+  };
+
   const renderLineup = (panel, team, enabled) => {
     if (!panel) return;
     const heading = panel.querySelector("h3");
@@ -382,6 +510,7 @@
       "bowler",
     );
     renderRecentBalls(match.live?.recentBalls || []);
+    renderCommentary(match, local);
 
     const checked = new Date(fetchedAt);
     text(

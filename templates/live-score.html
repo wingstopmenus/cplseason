@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260731g">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260804a">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -187,6 +187,36 @@
         </div>
       </section>
 
+      <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
+        <header class="live-score-section-heading">
+          <div>
+            <p>Ball-by-ball coverage</p>
+            <h2 id="commentary-title">CPL live commentary</h2>
+          </div>
+          <span class="live-score-commentary-status" data-commentary-status>
+            <i aria-hidden="true"></i>
+            Updates on match day
+          </span>
+        </header>
+
+        <div class="live-score-commentary-layout">
+          <article class="live-score-commentary-lead">
+            <span>Current match</span>
+            <h3 data-commentary-heading>{{ focus.home_label }} vs {{ focus.away_label }}</h3>
+            <p data-commentary-copy>Follow every delivery here when live coverage begins.</p>
+            <a data-commentary-match-link href="{{ focus.url }}">Open match centre <span aria-hidden="true">→</span></a>
+          </article>
+
+          <div class="live-score-commentary-feed" data-commentary-feed aria-live="polite" aria-atomic="false">
+            <div class="live-score-commentary-empty">
+              <span>Commentary desk</span>
+              <strong>Coverage begins at the first ball</strong>
+              <p>Runs, wickets, boundaries and key moments will appear here throughout the match.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="live-score-fixtures" aria-labelledby="upcoming-title">
         <header class="live-score-section-heading">
           <div><p>Next fixtures</p><h2 id="upcoming-title">Upcoming CPL 2026 matches</h2></div>
@@ -282,6 +312,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260731d" defer></script>
+  <script src="/static/js/live-score.js?v=20260804a" defer></script>
 </body>
 </html>
