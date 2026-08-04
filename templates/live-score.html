@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805mc2">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805mc3">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -142,11 +142,11 @@
         <div class="live-score-workspace">
           <div class="live-score-workspace-main">
             <nav class="live-score-tabs" aria-label="Live match sections">
-              <a href="#current-match" aria-current="page">Summary</a>
-              <a href="{{ focus.url }}">Scorecard</a>
-              <a href="#commentary-title">Ball by ball</a>
-              <a href="#live-lineups-title">Playing XI</a>
-              <a href="#match-info-title">Match info</a>
+              <a href="#current-match" aria-current="page"><span>01</span><strong>Summary</strong></a>
+              <a href="{{ focus.url }}"><span>02</span><strong>Scorecard</strong></a>
+              <a href="#commentary-title"><span>03</span><strong>Ball by ball</strong></a>
+              <a href="#live-lineups-title"><span>04</span><strong>Playing XI</strong></a>
+              <a href="#match-info-title"><span>05</span><strong>Match info</strong></a>
             </nav>
 
             <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
@@ -180,6 +180,10 @@
             </section>
 
             <section id="live-stats" class="live-score-match-details" aria-label="Live match statistics">
+              <header class="live-score-telemetry-heading">
+                <div><span>Live match data</span><strong>Match stats</strong></div>
+                <small>Updates during play</small>
+              </header>
               <div class="live-score-metrics" aria-label="Current match details">
                 <article><span>Toss</span><strong data-live-toss>Awaiting confirmation</strong></article>
                 <article><span>Current run rate</span><strong data-live-crr>—</strong></article>
