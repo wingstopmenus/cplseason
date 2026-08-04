@@ -139,16 +139,53 @@ const playerDirectoryCards = document.querySelectorAll("[data-directory-player]"
 const playerCategorySelect = document.querySelector("#player-category-select");
 const playerTeamSelect = document.querySelector("#player-team-select");
 const playerTeamButtons = document.querySelectorAll(".pd-team-shortcuts button[data-player-team]");
+const playerRoleButtons = document.querySelectorAll(".pd-role-filters button[data-player-role]");
 const playerDirectoryCount = document.querySelector("#player-directory-count");
 const playerDirectoryEmpty = document.querySelector("#player-directory-empty");
 const playerDirectoryReset = document.querySelector("#player-directory-reset");
 const playerPagePrev = document.querySelector("#player-page-prev");
 const playerPageNext = document.querySelector("#player-page-next");
 const playerPageStatus = document.querySelector("#player-page-status");
+const playerPageNumbers = document.querySelector("#player-page-numbers");
 
 if (playerDirectorySearch && playerDirectoryCards.length) {
-  const pageSize = window.matchMedia("(max-width: 520px)").matches ? 8 : 12;
+  const pageSize = 8;
   let activePlayerPage = 1;
+  let activePlayerRole = "all";
+
+  const renderPlayerPageNumbers = (pageCount) => {
+    if (!playerPageNumbers) return;
+    playerPageNumbers.replaceChildren();
+    const pages = [...new Set([
+      1,
+      activePlayerPage - 1,
+      activePlayerPage,
+      activePlayerPage + 1,
+      pageCount,
+    ].filter((page) => page >= 1 && page <= pageCount))].sort((a, b) => a - b);
+
+    pages.forEach((page, index) => {
+      if (index && page - pages[index - 1] > 1) {
+        const ellipsis = document.createElement("span");
+        ellipsis.className = "pd-page-ellipsis";
+        ellipsis.textContent = "…";
+        ellipsis.setAttribute("aria-hidden", "true");
+        playerPageNumbers.append(ellipsis);
+      }
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = String(page);
+      button.classList.toggle("is-active", page === activePlayerPage);
+      button.setAttribute("aria-label", `Show player page ${page}`);
+      if (page === activePlayerPage) button.setAttribute("aria-current", "page");
+      button.addEventListener("click", () => {
+        activePlayerPage = page;
+        updatePlayerDirectory();
+        document.querySelector("#player-directory")?.scrollIntoView({ behavior: "smooth" });
+      });
+      playerPageNumbers.append(button);
+    });
+  };
 
   const updatePlayerDirectory = () => {
     const query = playerDirectorySearch.value.trim().toLowerCase();
@@ -165,7 +202,10 @@ if (playerDirectorySearch && playerDirectoryCards.length) {
       const matchesTeam =
         activePlayerTeam === "all" ||
         card.dataset.playerTeam === activePlayerTeam;
-      return matchesQuery && matchesCategory && matchesTeam;
+      const matchesRole =
+        activePlayerRole === "all" ||
+        card.dataset.playerRole === activePlayerRole;
+      return matchesQuery && matchesCategory && matchesTeam && matchesRole;
     });
 
     const pageCount = Math.max(1, Math.ceil(matchingCards.length / pageSize));
@@ -184,6 +224,7 @@ if (playerDirectorySearch && playerDirectoryCards.length) {
     if (playerPageStatus) playerPageStatus.textContent = `Page ${activePlayerPage} of ${pageCount}`;
     if (playerPagePrev) playerPagePrev.disabled = activePlayerPage <= 1;
     if (playerPageNext) playerPageNext.disabled = activePlayerPage >= pageCount;
+    renderPlayerPageNumbers(pageCount);
   };
 
   const resetPlayerPageAndUpdate = () => {
@@ -212,12 +253,29 @@ if (playerDirectorySearch && playerDirectoryCards.length) {
       resetPlayerPageAndUpdate();
     });
   });
+  playerRoleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      activePlayerRole = button.dataset.playerRole || "all";
+      playerRoleButtons.forEach((candidate) => {
+        const isActive = candidate === button;
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-pressed", String(isActive));
+      });
+      resetPlayerPageAndUpdate();
+    });
+  });
   playerDirectoryReset?.addEventListener("click", () => {
     playerDirectorySearch.value = "";
     if (playerCategorySelect) playerCategorySelect.value = "all";
     if (playerTeamSelect) playerTeamSelect.value = "all";
+    activePlayerRole = "all";
     playerTeamButtons.forEach((button) => {
       const isActive = button.dataset.playerTeam === "all";
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+    playerRoleButtons.forEach((button) => {
+      const isActive = button.dataset.playerRole === "all";
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-pressed", String(isActive));
     });
