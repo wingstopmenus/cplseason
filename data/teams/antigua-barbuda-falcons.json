@@ -17,6 +17,8 @@
   "title_count": 0,
   "title_years": [],
   "honours": "Chasing a first CPL title",
+  "captain": {"name": "To be announced", "status": "CPL 2026 captaincy has not been formally announced"},
+  "coach": {"name": "Paul Nixon", "status": "Head coach for CPL 2026"},
   "profile_lede": "A young franchise built around Antiguan pace, Caribbean experience and a carefully phased overseas group for its second CPL campaign.",
   "history": [
     "The Falcons entered the Caribbean Premier League in 2024, restoring an Antigua and Barbuda-based franchise to the competition. This is a distinct modern team and its record is presented separately from the former Antigua Hawksbills.",
@@ -68,5 +70,5 @@
     "cpl": null,
     "mcpro_team_id": "a0bb030f-9bcb-48ed-b031-621a6138c454"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

@@ -21,6 +21,8 @@
     2019
   ],
   "honours": "CPL champions in 2014 and 2019",
+  "captain": {"name": "To be announced", "status": "CPL 2026 captaincy has not been formally announced"},
+  "coach": {"name": "To be announced", "status": "CPL 2026 head coach has not been formally announced"},
   "profile_lede": "A twice-crowned founding franchise returning to the Tridents name and Barbados colours for a home-heavy finish at Kensington Oval.",
   "history": [
     "Barbados were one of the six founding CPL franchises in 2013 and won championships under the Tridents name in 2014 and 2019. Those two titles remain part of the same Barbados franchise record.",
@@ -71,5 +73,5 @@
     "cpl": null,
     "mcpro_team_id": "a9ca4a61-d60a-45ea-b5e0-8e3875222b34"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

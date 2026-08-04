@@ -19,6 +19,8 @@
     2023
   ],
   "honours": "CPL champions in 2023",
+  "captain": {"name": "Imran Tahir", "status": "Captain for the 2026 campaign"},
+  "coach": {"name": "To be announced", "status": "CPL 2026 head coach has not been formally announced"},
   "profile_lede": "Perennial contenders with a title-winning pedigree, a deeply Guyanese local core and a decisive late-season home block at Providence.",
   "history": [
     "Guyana Amazon Warriors have competed in every CPL season since the inaugural 2013 tournament. Repeated trips to the final made the franchise one of the competition's most consistent contenders before the long-awaited breakthrough.",
@@ -69,5 +71,5 @@
     "cpl": null,
     "mcpro_team_id": "9f05bd7c-1239-49a8-bc79-b71bf245fcd7"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

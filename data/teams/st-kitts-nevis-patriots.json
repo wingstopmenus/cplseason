@@ -19,6 +19,8 @@
     2021
   ],
   "honours": "CPL champions in 2021",
+  "captain": {"name": "To be announced", "status": "CPL 2026 captaincy has not been formally announced"},
+  "coach": {"name": "To be announced", "status": "CPL 2026 head coach has not been formally announced"},
   "profile_lede": "The CPL's first expansion franchise, pairing a title-winning history with veteran Caribbean run-makers and a compact Warner Park home stand.",
   "history": [
     "St Kitts & Nevis Patriots joined the CPL in 2015 as the competition's first expansion franchise. Warner Park in Basseterre has been the team's home ground from the beginning.",
@@ -69,5 +71,5 @@
     "cpl": null,
     "mcpro_team_id": "537f5a82-e672-4ead-9499-bc7a03b4cd56"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

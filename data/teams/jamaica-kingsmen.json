@@ -17,6 +17,8 @@
   "title_count": 0,
   "title_years": [],
   "honours": "Entering a first CPL season",
+  "captain": {"name": "Rovman Powell", "status": "Captain for the franchise's debut season"},
+  "coach": {"name": "To be announced", "status": "CPL 2026 head coach has not been formally announced"},
   "profile_lede": "A new Kingston-based franchise bringing CPL men's cricket back to Jamaica with an explosive local core and four nights at Sabina Park.",
   "history": [
     "Jamaica Kingsmen were launched as a new Caribbean Premier League franchise for the 2026 season. The team has its own identity, ownership and record; honours won by the former Jamaica Tallawahs are not assigned to the Kingsmen.",
@@ -70,5 +72,5 @@
     "cpl": null,
     "mcpro_team_id": "sr:competitor:1346078"
   },
-  "last_updated": "2026-07-31"
+  "last_updated": "2026-08-04"
 }

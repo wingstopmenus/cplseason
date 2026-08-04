@@ -28,7 +28,7 @@ def human_date(value: str) -> str:
 
 
 def team_url(slug: str) -> str:
-    return f"{BASE_URL}/team/{slug}/"
+    return f"{BASE_URL}/teams/{slug}/"
 
 
 def venue_url(slug: str) -> str:

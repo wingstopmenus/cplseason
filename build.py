@@ -1016,7 +1016,7 @@ def build_player_profiles() -> None:
                 "@type": "SportsTeam",
                 "name": team["name"],
                 "sport": "Cricket",
-                "url": f"https://cplseason.com/team/{team['slug']}/",
+                "url": f"https://cplseason.com/teams/{team['slug']}/",
             },
         }
         if player["image"]:
@@ -1225,12 +1225,12 @@ def build_teams() -> None:
                         "@type": "ListItem",
                         "position": index,
                         "name": team["name"],
-                        "url": f"https://cplseason.com/team/{team['slug']}/",
+                        "url": f"https://cplseason.com/teams/{team['slug']}/",
                         "item": {
                             "@type": "SportsTeam",
                             "name": team["name"],
                             "sport": "Cricket",
-                            "url": f"https://cplseason.com/team/{team['slug']}/",
+                            "url": f"https://cplseason.com/teams/{team['slug']}/",
                             "logo": f"https://cplseason.com{team['logo']}",
                             "location": {
                                 "@type": "Place",
@@ -1285,7 +1285,7 @@ def build_teams() -> None:
     output = ROOT / "teams" / "index.html"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(rendered + "\n", encoding="utf-8")
-    print(f"Rendered {output.relative_to(ROOT)} with {len(teams)} teams")
+    print(f"Rendered teams/index.html with {len(teams)} teams")
 
 
 def build_team_profiles() -> None:
@@ -1297,6 +1297,16 @@ def build_team_profiles() -> None:
         path.stem: load_json(path)
         for path in sorted((ROOT / "data" / "venues").glob("*.json"))
     }
+    history_data = load_json(ROOT / "data" / "cpl-history.json")
+    history_stats = {
+        item["team_slug"]: item
+        for item in history_data["team_rankings"]
+        if item.get("team_slug")
+    }
+    news_items = [
+        load_json(path)
+        for path in sorted((ROOT / "data" / "news").glob("*.json"))
+    ]
     scheduled_fixtures = []
     for venue_slug in VENUE_ORDER:
         venue = venues_by_slug[venue_slug]
@@ -1386,6 +1396,8 @@ def build_team_profiles() -> None:
                     "match": display_match,
                     "is_home": fixture["venue"]["slug"] == team["venue_slug"],
                     "match_url": f"/match/{match_record['slug']}/",
+                    "status": match_record.get("status", "Scheduled"),
+                    "result": match_record.get("result"),
                 }
             )
         if len(fixtures) != team["league_fixtures"]:
@@ -1394,6 +1406,36 @@ def build_team_profiles() -> None:
                 f"expected {team['league_fixtures']}"
             )
         team["fixtures"] = fixtures
+        team["results"] = [
+            fixture
+            for fixture in fixtures
+            if fixture["status"].lower() in {"complete", "completed", "finished"}
+            or fixture.get("result")
+        ]
+        team["overseas_players"] = [
+            player for player in roster if player["category"] == "Overseas player"
+        ]
+        team["all_time_stats"] = history_stats.get(team["slug"], {
+            "titles": 0,
+            "finals": 0,
+            "wins": 0,
+            "losses": 0,
+            "no_results": 0,
+            "win_percentage": 0.0,
+            "note": (
+                "The franchise begins its CPL record in 2026."
+                if team["founded"] == 2026
+                else "The franchise has not yet completed a full CPL season."
+            ),
+        })
+        team["related_articles"] = sorted(
+            (
+                article for article in news_items
+                if team["slug"] in json.dumps(article, ensure_ascii=False)
+            ),
+            key=lambda article: article.get("date_published", ""),
+            reverse=True,
+        )[:3]
 
         home_fixtures = [fixture for fixture in fixtures if fixture["is_home"]]
         team["home_window"] = (
@@ -1438,7 +1480,7 @@ def build_team_profiles() -> None:
                 ),
             },
         ]
-        canonical = f"https://cplseason.com/team/{team['slug']}/"
+        canonical = f"https://cplseason.com/teams/{team['slug']}/"
         page = {
             "title": f"{team['name']}: CPL 2026 Squad and Fixtures",
             "description": (
@@ -1541,7 +1583,7 @@ def build_team_profiles() -> None:
                 schema, ensure_ascii=False, separators=(",", ":")
             ),
         )
-        output = ROOT / "team" / team["slug"] / "index.html"
+        output = ROOT / "teams" / team["slug"] / "index.html"
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(rendered + "\n", encoding="utf-8")
 
@@ -1673,7 +1715,7 @@ def build_points_table() -> None:
                         "@type": "ListItem",
                         "position": index,
                         "name": team["name"],
-                        "url": f"https://cplseason.com/team/{team['slug']}/",
+                        "url": f"https://cplseason.com/teams/{team['slug']}/",
                     }
                     for index, team in enumerate(teams, start=1)
                 ],
@@ -1843,6 +1885,85 @@ def build_watch_live() -> None:
     )
 
 
+def build_cpl_live_streaming() -> None:
+    guide = load_json(ROOT / "data" / "cpl-live-streaming-guide.json")
+    page = {
+        "title": guide["title"],
+        "description": guide["description"],
+        "canonical": guide["canonical"],
+        "date_published": guide["date_published"],
+        "date_modified": guide["date_modified"],
+    }
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "@id": f"{page['canonical']}#webpage",
+                "url": page["canonical"],
+                "name": page["title"],
+                "description": page["description"],
+                "datePublished": page["date_published"],
+                "dateModified": page["date_modified"],
+                "breadcrumb": {"@id": f"{page['canonical']}#breadcrumb"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": f"{page['canonical']}#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://cplseason.com/",
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Watch Live",
+                        "item": "https://cplseason.com/watch-live/",
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "CPL 2026 Live Streaming Guide",
+                        "item": page["canonical"],
+                    },
+                ],
+            },
+            {
+                "@type": "FAQPage",
+                "@id": f"{page['canonical']}#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": item["question"],
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": item["answer"],
+                        },
+                    }
+                    for item in guide["faq"]
+                ],
+            },
+        ],
+    }
+    rendered = template_environment().get_template(
+        "cpl-live-streaming.html"
+    ).render(
+        page=page,
+        guide=guide,
+        schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
+    )
+    output = ROOT / guide["slug"] / "index.html"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(rendered + "\n", encoding="utf-8")
+    print(
+        f"Rendered {output.relative_to(ROOT)} with "
+        f"{len(guide['regions'])} country and regional entries"
+    )
+
+
 def build_live_score() -> None:
     config = load_json(ROOT / "data" / "live-score.json")
     teams = {
@@ -1986,7 +2107,7 @@ def build_live_score() -> None:
                 "shortName": match["home_short"],
                 "logo": match["home_team"]["logo"] if match["home_team"] else "",
                 "url": (
-                    f"/team/{match['home_team']['slug']}/"
+                    f"/teams/{match['home_team']['slug']}/"
                     if match["home_team"]
                     else ""
                 ),
@@ -1996,7 +2117,7 @@ def build_live_score() -> None:
                 "shortName": match["away_short"],
                 "logo": match["away_team"]["logo"] if match["away_team"] else "",
                 "url": (
-                    f"/team/{match['away_team']['slug']}/"
+                    f"/teams/{match['away_team']['slug']}/"
                     if match["away_team"]
                     else ""
                 ),
@@ -2340,7 +2461,7 @@ def build_matches() -> None:
                         {
                             "@type": "SportsTeam",
                             "name": home_team["name"],
-                            "url": f"https://cplseason.com/team/{home_team['slug']}/",
+                            "url": f"https://cplseason.com/teams/{home_team['slug']}/",
                         }
                         if home_team
                         else {
@@ -2352,7 +2473,7 @@ def build_matches() -> None:
                         {
                             "@type": "SportsTeam",
                             "name": away_team["name"],
-                            "url": f"https://cplseason.com/team/{away_team['slug']}/",
+                            "url": f"https://cplseason.com/teams/{away_team['slug']}/",
                         }
                         if away_team
                         else {
@@ -2802,7 +2923,7 @@ def sync_shared_footer() -> None:
     )
     external_anchor_pattern = re.compile(
         r'<a\b(?=[^>]*\bhref=["\']https?://(?!'
-        r'(?:(?:www\.)?cplseason\.com|cpl-cpl\.shop\.secutix\.com|(?:www\.)?willow\.tv|(?:www\.)?rushcaribbean\.co)'
+        r'(?:(?:www\.)?cplseason\.com|(?:www\.)?cplt20\.com|cpl-cpl\.shop\.secutix\.com|(?:www\.)?willow\.tv|(?:www\.)?rushcaribbean\.co)'
         r'(?:/|["\'])))[^>]*>(.*?)</a>',
         re.IGNORECASE | re.DOTALL,
     )
@@ -2844,11 +2965,12 @@ def sync_shared_footer() -> None:
             return content.replace(" ↗", "")
 
         updated = external_anchor_pattern.sub(unlink_external, updated)
-        site_css_url = (
-            "/static/css/site.css?v=20260801challengecolors"
-            if html_path == ROOT / "news" / "cpl-step-challenge-2026-how-to-join" / "index.html"
-            else "/static/css/site.css?v=20260731breadcrumbs"
-        )
+        if html_path == ROOT / "news" / "cpl-step-challenge-2026-how-to-join" / "index.html":
+            site_css_url = "/static/css/site.css?v=20260801challengecolors"
+        elif html_path == ROOT / "teams" / "index.html":
+            site_css_url = "/static/css/site.css?v=20260804teams16"
+        else:
+            site_css_url = "/static/css/site.css?v=20260731breadcrumbs"
         updated = css_pattern.sub(site_css_url, updated)
         updated = js_pattern.sub("/static/js/site.js?v=20260729ms", updated)
         updated = adsense_script_pattern.sub("", updated)
@@ -2882,6 +3004,7 @@ if __name__ == "__main__":
     build_team_profiles()
     build_points_table()
     build_watch_live()
+    build_cpl_live_streaming()
     build_live_score()
     build_cpl_history()
     build_matches()

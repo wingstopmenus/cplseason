@@ -23,6 +23,8 @@
     2025
   ],
   "honours": "CPL champions in 2015, 2017, 2018, 2020 and 2025",
+  "captain": {"name": "Nicholas Pooran", "status": "Captain of the defending champions"},
+  "coach": {"name": "Dwayne Bravo", "status": "Head coach"},
   "profile_lede": "The competition's most successful franchise begins its title defence with a decorated Trinidad and Tobago core and five matches at Tarouba.",
   "history": [
     "The franchise entered the inaugural CPL season in 2013 as Trinidad & Tobago Red Steel, won its first title in 2015 and adopted the Trinbago Knight Riders name in 2016.",
@@ -73,5 +75,5 @@
     "cpl": null,
     "mcpro_team_id": "70949cf7-1fd0-429d-b45d-4ae8f05db1b2"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

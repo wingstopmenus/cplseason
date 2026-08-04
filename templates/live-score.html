@@ -103,7 +103,7 @@
 
           <div class="live-score-scoreboard" data-scoreboard>
             <article class="live-score-team live-score-team-home" data-score-team="home">
-              <a data-team-link href="/team/{{ focus.home_team.slug }}/">
+              <a data-team-link href="/teams/{{ focus.home_team.slug }}/">
                 <img data-team-logo src="{{ focus.home_team.logo }}" width="170" height="170" alt="{{ focus.home_team.name }} logo">
                 <small data-team-short>{{ focus.home_short }}</small>
                 <strong data-team-name>{{ focus.home_label }}</strong>
@@ -123,7 +123,7 @@
             </div>
 
             <article class="live-score-team live-score-team-away" data-score-team="away">
-              <a data-team-link href="/team/{{ focus.away_team.slug }}/">
+              <a data-team-link href="/teams/{{ focus.away_team.slug }}/">
                 <img data-team-logo src="{{ focus.away_team.logo }}" width="170" height="170" alt="{{ focus.away_team.name }} logo">
                 <small data-team-short>{{ focus.away_short }}</small>
                 <strong data-team-name>{{ focus.away_label }}</strong>
@@ -231,7 +231,7 @@
             </header>
 
             <div class="live-score-fixture-teams">
-              <a data-fixture-team="home" href="/team/{{ match.home_team.slug }}/">
+              <a data-fixture-team="home" href="/teams/{{ match.home_team.slug }}/">
                 <span class="live-score-fixture-crest">
                   <img src="{{ match.home_team.logo }}" width="92" height="92" alt="{{ match.home_label }} logo" loading="lazy">
                 </span>
@@ -241,7 +241,7 @@
 
               <span class="live-score-fixture-vs" aria-label="versus">VS</span>
 
-              <a data-fixture-team="away" href="/team/{{ match.away_team.slug }}/">
+              <a data-fixture-team="away" href="/teams/{{ match.away_team.slug }}/">
                 <span class="live-score-fixture-crest">
                   <img src="{{ match.away_team.logo }}" width="92" height="92" alt="{{ match.away_label }} logo" loading="lazy">
                 </span>

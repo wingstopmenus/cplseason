@@ -1,0 +1,89 @@
+.streaming-guide-hero {
+  grid-template-columns: minmax(0, 1.15fr) minmax(340px, .65fr);
+}
+.streaming-guide-summary {
+  align-self: center;
+  margin: clamp(22px, 3vw, 42px);
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid rgba(100, 231, 255, .25);
+  border-top: 4px solid var(--gold);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(12, 18, 54, .96), rgba(4, 12, 31, .94));
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .3);
+}
+.streaming-guide-summary > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b8ff1f;
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.streaming-guide-summary > span i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 5px rgba(184, 255, 31, .1);
+}
+.streaming-guide-summary > strong {
+  display: block;
+  margin-top: 22px;
+  color: var(--gold);
+  font-size: clamp(64px, 8vw, 104px);
+  line-height: .8;
+}
+.streaming-guide-summary h2 { margin-top: 13px; color: white; font-size: 25px; }
+.streaming-guide-summary p { margin: 13px 0 0; color: #aeb9cd; font-size: 13px; line-height: 1.65; }
+.streaming-guide-summary a { display: flex; justify-content: space-between; gap: 20px; margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .12); color: white; font-size: 12px; font-weight: 900; }
+.streaming-guide-summary a:hover { color: var(--gold); }
+
+.streaming-country-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.streaming-country-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 505px;
+  padding: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 14px;
+  background: linear-gradient(155deg, rgba(20, 27, 67, .95), rgba(7, 12, 35, .97));
+}
+.streaming-country-card::before { position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #6b5bb1; content: ""; }
+.streaming-country-card.is-confirmed::before { background: linear-gradient(90deg, var(--gold), #b8ff1f); }
+.streaming-country-card > header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 13px; align-items: center; }
+.streaming-country-flag { font-size: 31px; line-height: 1; }
+.streaming-country-card header small { color: #6fe1ff; font-size: 9px; font-weight: 900; }
+.streaming-country-card h3 { margin-top: 2px; color: white; font-size: 21px; }
+.streaming-country-card header b { padding: 7px 9px; border: 1px solid rgba(150, 137, 215, .3); border-radius: 999px; color: #b9afd9; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
+.streaming-country-card.is-confirmed header b { border-color: rgba(184, 255, 31, .28); background: rgba(184, 255, 31, .07); color: #c9ff5d; }
+.streaming-country-platform { margin-top: 24px; padding: 17px; border: 1px solid rgba(255, 255, 255, .09); border-radius: 9px; background: rgba(255, 255, 255, .035); }
+.streaming-country-platform span, .streaming-country-time > span { display: block; color: #8290aa; font-size: 8px; font-weight: 950; letter-spacing: .1em; text-transform: uppercase; }
+.streaming-country-platform strong { display: block; margin-top: 7px; color: var(--gold); font-size: 17px; line-height: 1.25; }
+.streaming-country-card > p { margin: 18px 0 0; color: #d8deea; font-size: 13px; line-height: 1.65; }
+.streaming-country-card > .streaming-country-detail { margin-top: 10px; color: #91a0ba; font-size: 11px; }
+.streaming-country-time { margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); }
+.streaming-country-time p { margin: 7px 0 0; color: #b6c2d7; font-size: 11px; line-height: 1.55; }
+.streaming-country-card > a { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; color: #6fe1ff; font-size: 11px; font-weight: 900; }
+.streaming-country-card > a:hover { color: var(--gold); }
+.streaming-caribbean .broadcast-provider-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.streaming-caribbean .broadcast-provider-grid article:last-child { grid-column: auto; }
+
+@media (max-width: 1040px) {
+  .streaming-guide-hero { grid-template-columns: 1fr; }
+  .streaming-country-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .streaming-country-grid, .streaming-caribbean .broadcast-provider-grid { grid-template-columns: 1fr; }
+  .streaming-country-card { min-height: 0; }
+  .streaming-country-time { margin-top: 24px; }
+}
+@media (max-width: 520px) {
+  .streaming-guide-summary { margin: 14px; padding: 25px 21px; }
+  .streaming-country-card { padding: 21px 18px; }
+  .streaming-country-card > header { grid-template-columns: auto minmax(0, 1fr); }
+  .streaming-country-card header b { grid-column: 1 / -1; width: fit-content; }
+}

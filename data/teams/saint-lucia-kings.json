@@ -19,6 +19,8 @@
     2024
   ],
   "honours": "CPL champions in 2024",
+  "captain": {"name": "To be announced", "status": "CPL 2026 captaincy has not been formally announced"},
+  "coach": {"name": "To be announced", "status": "CPL 2026 head coach has not been formally announced"},
   "profile_lede": "Saint Lucia's founding CPL franchise, now carrying the Kings identity and the confidence of its first championship into a five-match home block.",
   "history": [
     "Saint Lucia's CPL franchise began in 2013 as the Zouks, competed as the Stars in 2017 and 2018, returned to the Zouks name, and adopted the Kings identity in 2021. Those names form one continuous franchise history.",
@@ -69,5 +71,5 @@
     "cpl": null,
     "mcpro_team_id": "37bc79a8-04d6-473e-89e7-2f71a187a929"
   },
-  "last_updated": "2026-07-27"
+  "last_updated": "2026-08-04"
 }

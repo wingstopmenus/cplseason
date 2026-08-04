@@ -161,7 +161,7 @@
           <p class="broadcast-index">04 / Country guide</p>
           <h2 id="broadcast-regions-title">CPL 2026 TV channels by country</h2>
         </div>
-        <p>Rush covers the Caribbean, while Willow covers the United States and Canada. Broadcasters for other regions will be added as they are announced.</p>
+        <p>Rush covers the Caribbean, while Willow covers the United States and Canada. <a href="/cpl-2026-live-streaming/">Open the complete 12-region streaming guide</a> for current status and local match times.</p>
       </header>
       <div class="broadcast-region-grid">
         {% for item in guide.status %}
@@ -246,9 +246,9 @@
           <span>{{ "%02d" | format(loop.index) }}</span>
           <time>{{ fixture.label }}</time>
           <div class="broadcast-match-teams">
-            <a href="/team/{{ fixture.teams[0].slug }}/"><img src="{{ fixture.teams[0].logo }}" width="62" height="62" alt="{{ fixture.teams[0].name }} logo" loading="lazy"><strong>{{ fixture.teams[0].name }}</strong></a>
+            <a href="/teams/{{ fixture.teams[0].slug }}/"><img src="{{ fixture.teams[0].logo }}" width="62" height="62" alt="{{ fixture.teams[0].name }} logo" loading="lazy"><strong>{{ fixture.teams[0].name }}</strong></a>
             <b>vs</b>
-            <a href="/team/{{ fixture.teams[1].slug }}/"><img src="{{ fixture.teams[1].logo }}" width="62" height="62" alt="{{ fixture.teams[1].name }} logo" loading="lazy"><strong>{{ fixture.teams[1].name }}</strong></a>
+            <a href="/teams/{{ fixture.teams[1].slug }}/"><img src="{{ fixture.teams[1].logo }}" width="62" height="62" alt="{{ fixture.teams[1].name }} logo" loading="lazy"><strong>{{ fixture.teams[1].name }}</strong></a>
           </div>
           <a class="broadcast-match-venue" href="/venue/{{ fixture.venue.slug }}/"><strong>{{ fixture.time }} local</strong><span>{{ fixture.venue.name }}</span></a>
           <a class="broadcast-match-centre-link" href="{{ fixture.match_url }}" aria-label="Open Match {{ fixture.match_number }} centre">

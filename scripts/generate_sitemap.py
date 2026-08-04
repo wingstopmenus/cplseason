@@ -12,6 +12,7 @@ BASE_URL = "https://cplseason.com"
 CORE_ROUTES = {
     "/",
     "/cpl-history/",
+    "/cpl-2026-live-streaming/",
     "/cpl-winners-list/",
     "/live-score/",
     "/most-successful-cpl-teams/",
@@ -20,7 +21,6 @@ CORE_ROUTES = {
     "/points-table/",
     "/schedule/",
     "/squads/",
-    "/teams/",
     "/venues/",
     "/watch-live/",
 }
@@ -28,7 +28,7 @@ CONTENT_PREFIXES = (
     "/match/",
     "/news/",
     "/player/",
-    "/team/",
+    "/teams/",
     "/venue/",
 )
 CANONICAL_RE = re.compile(

@@ -45,14 +45,14 @@
     <nav class="team-dossier-breadcrumbs" aria-label="Breadcrumb">
       <ol>
         <li><a href="/">Home</a></li>
-        <li><a href="/teams/">Teams</a></li>
+        <li><a href="/teams/">CPL 2026 Teams</a></li>
         <li aria-current="page">{{ team.name }}</li>
       </ol>
     </nav>
 
-    <section class="team-profile-stage" aria-labelledby="team-profile-title">
+    <section id="team-overview" class="team-profile-stage" aria-labelledby="team-profile-title">
       <div class="team-profile-stage-copy">
-        <p class="team-profile-kicker"><span>{{ "%02d" | format(team_number) }}</span> {{ team.identity }}</p>
+        <p class="team-profile-kicker"><span>{{ "%02d" | format(team_number) }}</span> Team overview · {{ team.identity }}</p>
         <h1 id="team-profile-title">{{ team.name }}</h1>
         <p class="team-profile-lede">{{ team.profile_lede }}</p>
         <div class="team-profile-actions">
@@ -81,13 +81,24 @@
     <dl class="team-profile-stat-rail" aria-label="{{ team.name }} profile summary">
       <div><dt>Founded</dt><dd>{{ team.founded }}</dd></div>
       <div><dt>Home ground</dt><dd><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></dd></div>
-      <div><dt>2026 roster</dt><dd>{{ team.players | length }} published names</dd></div>
-      <div><dt>Home block</dt><dd>{{ team.home_window }}</dd></div>
+      <div><dt>Captain</dt><dd>{{ team.captain.name }}</dd></div>
+      <div><dt>Head coach</dt><dd>{{ team.coach.name }}</dd></div>
     </dl>
 
-    <section class="team-profile-story" aria-labelledby="team-story-title">
+    <section id="team-leadership" class="team-profile-leadership" aria-labelledby="team-leadership-title">
       <header>
-        <p class="team-profile-index">01 / Franchise story</p>
+        <p class="team-profile-index">01 / Team leadership</p>
+        <h2 id="team-leadership-title">Captain and coach</h2>
+      </header>
+      <div>
+        <article><span>Captain</span><h3>{{ team.captain.name }}</h3><p>{{ team.captain.status }}</p></article>
+        <article><span>Head coach</span><h3>{{ team.coach.name }}</h3><p>{{ team.coach.status }}</p></article>
+      </div>
+    </section>
+
+    <section id="team-history" class="team-profile-story" aria-labelledby="team-story-title">
+      <header>
+        <p class="team-profile-index">02 / Franchise story</p>
         <h2 id="team-story-title">{{ team.name }} history and 2026 outlook</h2>
       </header>
       <div class="team-profile-story-copy">
@@ -121,8 +132,8 @@
     <section id="team-squad" class="team-profile-squad" aria-labelledby="team-squad-title">
       <header class="team-profile-section-header">
         <div>
-          <p class="team-profile-index">02 / Updated squad</p>
-          <h2 id="team-squad-title">Squad</h2>
+          <p class="team-profile-index">03 / Full squad</p>
+          <h2 id="team-squad-title">{{ team.name }} full squad</h2>
         </div>
         <div class="team-profile-counts" aria-label="Squad category totals">
           <span><strong>{{ category_counts["West Indian player"] }}</strong> West Indian</span>
@@ -162,10 +173,25 @@
       {% endfor %}
     </section>
 
+    <section id="team-overseas" class="team-profile-overseas" aria-labelledby="team-overseas-title">
+      <header class="team-profile-section-header">
+        <div><p class="team-profile-index">04 / International group</p><h2 id="team-overseas-title">Overseas players</h2></div>
+        <p>{{ team.overseas_players | length }} overseas players are listed in the published 2026 directory.</p>
+      </header>
+      <div class="team-profile-overseas-grid">
+        {% for player in team.overseas_players %}
+        <a href="/player/{{ player.slug }}/">
+          {% if player.image %}<img src="{{ player.image }}" width="120" height="120" alt="{{ player.name }}" loading="lazy">{% else %}<span>{{ player.initials }}</span>{% endif %}
+          <div><strong>{{ player.name }}</strong><small>{{ player.profile.country or player.selection_note }}</small></div><b>→</b>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
     <section id="team-fixtures" class="team-profile-fixtures" aria-labelledby="team-fixtures-title">
       <header class="team-profile-section-header">
         <div>
-          <p class="team-profile-index">03 / Campaign route</p>
+          <p class="team-profile-index">05 / Campaign route</p>
           <h2 id="team-fixtures-title">{{ team.name }} Fixtures</h2>
         </div>
         <p>Ten matches across the Caribbean, including {{ team.home_matches }} at {{ team.venue.name }}.</p>
@@ -189,13 +215,40 @@
       <a class="team-profile-schedule-link" href="/schedule/">Open the complete CPL 2026 schedule <span>→</span></a>
     </section>
 
+    <section id="team-results" class="team-profile-results" aria-labelledby="team-results-title">
+      <header class="team-profile-section-header">
+        <div><p class="team-profile-index">06 / Match results</p><h2 id="team-results-title">CPL 2026 results</h2></div>
+        <p>Completed matches will move into this record as the season progresses.</p>
+      </header>
+      {% if team.results %}
+      <ol class="team-profile-result-list">
+        {% for result in team.results %}<li><time>{{ result.label }}</time><strong>{{ result.match }}</strong><span>{{ result.result }}</span><a href="{{ result.match_url }}">Scorecard →</a></li>{% endfor %}
+      </ol>
+      {% else %}
+      <div class="team-profile-empty-state"><strong>No CPL 2026 result yet</strong><p>{{ team.name }} begin their campaign on {{ team.fixtures[0].label }} against {{ team.fixtures[0].match.split(' vs ')[1] if team.name in team.fixtures[0].match.split(' vs ')[0] else team.fixtures[0].match.split(' vs ')[0] }}.</p><a href="{{ team.fixtures[0].match_url }}">Open Match 1 centre →</a></div>
+      {% endif %}
+    </section>
+
+    <section id="team-stats" class="team-profile-record" aria-labelledby="team-record-title">
+      <header><p class="team-profile-index">07 / All-time record</p><h2 id="team-record-title">CPL stats</h2><p>{{ team.all_time_stats.note }}</p></header>
+      <dl>
+        <div><dt>Titles</dt><dd>{{ team.all_time_stats.titles }}</dd></div>
+        <div><dt>Finals</dt><dd>{{ team.all_time_stats.finals }}</dd></div>
+        <div><dt>Wins</dt><dd>{{ team.all_time_stats.wins }}</dd></div>
+        <div><dt>Losses</dt><dd>{{ team.all_time_stats.losses }}</dd></div>
+        <div><dt>No results</dt><dd>{{ team.all_time_stats.no_results }}</dd></div>
+        <div><dt>Win rate</dt><dd>{{ "%.1f" | format(team.all_time_stats.win_percentage) }}%</dd></div>
+      </dl>
+      <a href="/most-successful-cpl-teams/">Compare all-time CPL team records <span>→</span></a>
+    </section>
+
     <section class="team-profile-home" aria-labelledby="team-home-title">
       <div class="team-profile-home-visual">
         <img src="{{ team.venue.image }}" width="1200" height="800" alt="{{ team.venue.name }}, {{ team.venue.city }}" loading="lazy">
         <span>Home<br>ground</span>
       </div>
       <div>
-        <p class="team-profile-index">04 / Matchday base</p>
+        <p class="team-profile-index">08 / Matchday base</p>
         <h2 id="team-home-title">{{ team.venue.name }}</h2>
         <p>{{ team.venue.tagline }}</p>
         <dl>
@@ -207,14 +260,23 @@
       </div>
     </section>
 
+    <section id="team-related-articles" class="team-profile-articles" aria-labelledby="team-articles-title">
+      <header><p class="team-profile-index">09 / Latest coverage</p><h2 id="team-articles-title">Related {{ team.short_name }} articles</h2></header>
+      <div>
+        {% for article in team.related_articles %}
+        <a href="/news/{{ article.slug }}/"><img src="{{ article.image }}" width="400" height="225" alt="{{ article.image_alt }}" loading="lazy"><span><small>{{ article.category }} · {{ article.date_published }}</small><strong>{{ article.title }}</strong><b>Read article →</b></span></a>
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="team-profile-related" aria-labelledby="team-related-title">
       <header>
-        <p class="team-profile-index">05 / Around the league</p>
+        <p class="team-profile-index">10 / Around the league</p>
         <h2 id="team-related-title">Other CPL 2026 teams</h2>
       </header>
       <div>
         {% for related in related_teams %}
-        <a href="/team/{{ related.slug }}/">
+        <a href="/teams/{{ related.slug }}/">
           <img src="{{ related.logo }}" width="100" height="100" alt="{{ related.name }} logo" loading="lazy">
           <span><small>{{ related.territory }}</small><strong>{{ related.name }}</strong></span>
           <b>→</b>
@@ -225,7 +287,7 @@
 
     <section class="team-profile-faq" aria-labelledby="team-faq-title">
       <header>
-        <p class="team-profile-index">06 / Quick answers</p>
+        <p class="team-profile-index">11 / Team questions</p>
         <h2 id="team-faq-title">{{ team.name }} questions and answers</h2>
         <p class="team-profile-faq-intro">Essential answers about {{ team.name }}, their 2026 squad, home ground and CPL campaign.</p>
       </header>

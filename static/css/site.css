@@ -591,6 +591,315 @@
   .roster-player-grid { grid-template-columns: 1fr; }
   .roster-player-copy strong { font-size: 15px; }
 }
+
+/* Team dossier sections: leadership, overseas group, results, records and coverage. */
+.team-profile-leadership,
+.team-profile-overseas,
+.team-profile-results,
+.team-profile-record,
+.team-profile-articles {
+  margin-top: 72px;
+}
+.team-profile-leadership > header,
+.team-profile-record > header,
+.team-profile-articles > header {
+  margin-bottom: 24px;
+}
+.team-profile-leadership h2,
+.team-profile-record h2,
+.team-profile-articles h2 {
+  margin: 4px 0 0;
+  color: #f7f8ff;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1;
+}
+.team-profile-leadership > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid rgba(52, 174, 203, .25);
+  background: linear-gradient(120deg, rgba(13, 27, 54, .94), rgba(8, 12, 34, .98));
+}
+.team-profile-leadership article { padding: 28px; }
+.team-profile-leadership article + article { border-left: 1px solid rgba(255, 255, 255, .12); }
+.team-profile-leadership article > span,
+.team-profile-overseas-grid small,
+.team-profile-articles small {
+  color: #48c5dc;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.team-profile-leadership h3 { margin: 10px 0 5px; color: #fff; font-size: 26px; }
+.team-profile-leadership article p { margin: 0; color: #aebbd0; }
+.team-profile-overseas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.team-profile-overseas-grid > a {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 104px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(10, 20, 43, .8);
+  color: #fff;
+  text-decoration: none;
+}
+.team-profile-overseas-grid img,
+.team-profile-overseas-grid > a > span {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  background: #121c35;
+  color: #ffcf00;
+  font-weight: 900;
+}
+.team-profile-overseas-grid strong { display: block; margin-bottom: 7px; font-size: 18px; }
+.team-profile-overseas-grid b { color: #ffcf00; }
+.team-profile-empty-state {
+  padding: 32px;
+  border: 1px solid rgba(255, 207, 0, .28);
+  background: linear-gradient(135deg, rgba(255, 207, 0, .08), rgba(10, 20, 43, .85));
+}
+.team-profile-empty-state strong { color: #fff; font-size: 23px; }
+.team-profile-empty-state p { color: #b9c4d8; }
+.team-profile-empty-state a,
+.team-profile-record > a { color: #ffcf00; font-weight: 900; text-decoration: none; }
+.team-profile-result-list { margin: 0; padding: 0; list-style: none; }
+.team-profile-result-list li {
+  display: grid;
+  grid-template-columns: 150px 1.3fr 1fr auto;
+  gap: 18px;
+  padding: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+.team-profile-record {
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(255, 207, 0, .28);
+  background: #0a1329;
+}
+.team-profile-record > header p:last-child { max-width: 760px; color: #aebbd0; }
+.team-profile-record dl {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 28px 0;
+  border-block: 1px solid rgba(255, 255, 255, .12);
+}
+.team-profile-record dl div { padding: 22px 15px; }
+.team-profile-record dl div + div { border-left: 1px solid rgba(255, 255, 255, .12); }
+.team-profile-record dt { color: #8ea0bc; font-size: 11px; font-weight: 900; text-transform: uppercase; }
+.team-profile-record dd { margin: 8px 0 0; color: #fff; font-size: 27px; font-weight: 900; }
+.team-profile-articles > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.team-profile-articles a { overflow: hidden; border: 1px solid rgba(255, 255, 255, .12); background: #0a1329; color: #fff; text-decoration: none; }
+.team-profile-articles img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.team-profile-articles a > span { display: grid; gap: 10px; padding: 18px; }
+.team-profile-articles strong { font-size: 18px; line-height: 1.25; }
+.team-profile-articles b { color: #ffcf00; font-size: 12px; }
+@media (max-width: 900px) {
+  .team-profile-record dl { grid-template-columns: repeat(3, 1fr); }
+  .team-profile-record dl div:nth-child(4) { border-left: 0; }
+  .team-profile-articles > div { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .team-profile-leadership,
+  .team-profile-overseas,
+  .team-profile-results,
+  .team-profile-record,
+  .team-profile-articles { margin-top: 48px; }
+  .team-profile-leadership > div,
+  .team-profile-overseas-grid { grid-template-columns: 1fr; }
+  .team-profile-leadership article + article { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .12); }
+  .team-profile-result-list li { grid-template-columns: 1fr; gap: 7px; }
+  .team-profile-record dl { grid-template-columns: repeat(2, 1fr); }
+  .team-profile-record dl div:nth-child(odd) { border-left: 0; }
+  .team-profile-record dl div:nth-child(4) { border-left: 1px solid rgba(255, 255, 255, .12); }
+}
+
+/* CPL teams command centre */
+.teams-command-page { background: #050716; }
+.teams-command { overflow: hidden; color: #f5f7ff; }
+.teams-command-breadcrumbs,
+.teams-command-hero,
+.teams-command-intro,
+.teams-command-directory,
+.teams-command-compare,
+.teams-command-faq { width: min(1260px, calc(100% - 40px)); margin-inline: auto; }
+.teams-command-breadcrumbs { padding: 20px 0; }
+.teams-command-breadcrumbs ol { display: flex; gap: 26px; margin: 0; padding: 0; list-style: none; color: #8f9bb2; font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+.teams-command-breadcrumbs li + li { position: relative; color: #ffcf00; }
+.teams-command-breadcrumbs li + li::before { content: ""; position: absolute; top: 50%; left: -17px; width: 8px; border-top: 1px solid #58627a; }
+.teams-command-hero { position: relative; display: grid; grid-template-columns: minmax(0,1fr) minmax(440px,.88fr); column-gap:64px; row-gap:16px; align-items: center; min-height: 520px; margin-bottom: 46px; padding: 60px 64px; overflow: visible; border: 1px solid rgba(255,255,255,.12); border-radius: 28px; background: linear-gradient(120deg, rgba(5,7,22,.98) 0 48%, rgba(7,20,42,.88)), url('/static/img/official/teams-banner.webp') center/cover; box-shadow: 0 36px 90px rgba(0,0,0,.36); }
+.teams-command-hero::after { content: "CPL"; position: absolute; right: 20px; top: 0; color: rgba(255,255,255,.035); font-size: 260px; font-weight: 950; line-height: 1; pointer-events: none; }
+.teams-command-eyebrow { display: flex; align-items: center; gap: 16px; margin: 0 0 22px; color: #c8d1e4; font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.teams-command-eyebrow span { width:auto; padding:9px 14px; border:0; border-radius:999px; background:#b8ff32; color:#101600; }
+.teams-command-hero h1 { max-width: 650px; margin: 0; font-size: clamp(58px, 5.6vw, 82px); letter-spacing: -.05em; line-height: .92; }
+.teams-command-hero h1 > span,
+.teams-command-hero h1 em > span { display:block; }
+.teams-command-hero h1 em { display:block; }
+.teams-command-hero h1 em { color: #ffcf00; font-style: normal; }
+.teams-command-hero-copy { grid-row:1 / span 2; }
+.teams-command-hero-copy > p:last-of-type { max-width: 650px; margin: 27px 0 0; color: #c1cbdd; font-size: 18px; line-height: 1.7; }
+.teams-command-actions { display: flex; gap: 10px; margin-top: 28px; }
+.teams-command-actions a { display: inline-flex; justify-content: space-between; gap: 34px; min-height: 50px; padding: 14px 18px; border: 1px solid rgba(255,207,0,.45); border-radius: 7px; color: #fff; font-size: 12px; font-weight: 900; }
+.teams-command-actions a:first-child { background: #ffcf00; color: #11131d; }
+.teams-command-hero > .teams-command-actions { grid-column:2; margin-top:0; }
+.teams-command-hero > .teams-command-actions a { flex:1 1 0; }
+.teams-command-hero-field { position: relative; z-index: 1; padding: 20px; border: 1px solid rgba(75,197,225,.3); border-radius: 18px; background: rgba(5,10,29,.78); backdrop-filter: blur(12px); }
+.teams-command-hero-field > p { display: flex; justify-content: space-between; margin: 0 0 14px; color: #8f9bb2; font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.teams-command-hero-field > p strong { color: #4bc5e1; }
+.teams-command-hero-field > div { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.teams-command-hero-field a { position: relative; display: grid; place-items: center; aspect-ratio: 1; border: 1px solid rgba(255,255,255,.09); border-radius: 12px; background: rgba(255,255,255,.035); transition: transform .2s ease, border-color .2s ease; }
+.teams-command-hero-field a:hover { transform: translateY(-4px); border-color: #ffcf00; }
+.teams-command-hero-field a:last-child { grid-column: auto; aspect-ratio: 1; }
+.teams-command-hero-field img { width: 76%; height: 76%; object-fit: contain; filter: drop-shadow(0 12px 16px rgba(0,0,0,.5)); }
+.teams-command-hero-field a > span { position: absolute; top: 7px; left: 8px; color: #ffcf00; font-size: 8px; font-weight: 900; }
+.teams-command-season { position: absolute; right: 72px; bottom: 0; left: 72px; z-index: 2; display: grid; grid-template-columns: repeat(4,1fr); margin: 0; transform: translateY(50%); border: 1px solid rgba(255,207,0,.32); border-radius: 12px; background: #090d26; box-shadow: 0 20px 50px rgba(0,0,0,.42); }
+.teams-command-season div { min-height: 92px; padding: 22px; }
+.teams-command-season div + div { border-left: 1px solid rgba(255,255,255,.11); }
+.teams-command-season dt { color: #8090ad; font-size: 9px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.teams-command-season dd { margin: 8px 0 0; color: #fff; font-size: 22px; font-weight: 900; }
+.teams-command-intro { display:grid; grid-template-columns:minmax(0,.78fr) minmax(420px,1.22fr); gap:80px; padding:88px 0; }
+.teams-command-intro header > p { margin:0 0 15px; color:#4bc5e1; font-size:10px; font-weight:900; letter-spacing:.13em; text-transform:uppercase; }
+.teams-command-intro h2 { max-width:610px; margin:0; font-size:clamp(34px,3.5vw,50px); letter-spacing:-.035em; line-height:1.05; }
+.teams-command-intro h2 span { display:block; }
+.teams-command-intro > div > p { margin:0; color:#c3cce0; font-size:18px; font-weight:650; line-height:1.8; }
+.teams-command-intro dl { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin:42px 0 0; padding:0; border-block:1px solid rgba(255,255,255,.12); }
+.teams-command-intro dl div { position:relative; min-width:0; min-height:126px; padding:30px 22px 24px; }
+.teams-command-intro dl div:first-child { padding-left:0; }
+.teams-command-intro dl div:nth-child(even) { border-left:1px solid rgba(255,255,255,.12); }
+.teams-command-intro dl div:nth-child(n+3) { border-top:1px solid rgba(255,255,255,.12); }
+.teams-command-intro dl div:nth-child(3) { padding-left:0; }
+.teams-command-intro dl span { position:absolute; top:11px; right:13px; color:rgba(255,207,0,.36); font-size:10px; font-weight:900; }
+.teams-command-intro dt { color:#8795ae; font-size:9px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+.teams-command-intro dd { margin:12px 0 0; color:#fff; font-size:20px; font-weight:900; }
+.teams-command-intro dd a { color:#ffcf00; }
+.teams-command-directory { padding: 0 0 92px; }
+.teams-command-directory > header,
+.teams-command-compare > header { display: grid; grid-template-columns: 1fr minmax(320px,.62fr); gap: 60px; align-items: end; margin-bottom: 34px; }
+.teams-command-directory header p:first-child,
+.teams-command-compare header p,
+.teams-command-route > div > p:first-child,
+.teams-command-faq header p { margin: 0 0 8px; color: #4bc5e1; font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+.teams-command-directory h2,
+.teams-command-compare h2,
+.teams-command-route h2,
+.teams-command-faq h2 { margin: 0; font-size: clamp(34px,3.5vw,50px); letter-spacing: -.035em; line-height: 1.05; }
+.teams-command-directory > header > p { margin: 0; color: #98a6be; font-size: 14px; line-height: 1.7; }
+.teams-command-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
+.teams-command-card { overflow: hidden; border: 1px solid rgba(255,255,255,.11); border-radius: 16px; background: #090d24; box-shadow: 0 18px 50px rgba(0,0,0,.22); }
+.teams-command-card-top { position: relative; display: block; height: 250px; overflow: hidden; background: #071021; }
+.teams-command-card-ground { width: 100%; height: 100%; object-fit: cover; opacity: .52; transition: transform .35s ease, opacity .35s ease; }
+.teams-command-card:hover .teams-command-card-ground { transform: scale(1.04); opacity: .66; }
+.teams-command-card-top::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(4,6,20,.08),rgba(4,6,20,.9)); }
+.teams-command-card-number { position:absolute; top:16px; left:17px; z-index:2; color:#ffcf00; font-size:10px; font-weight:900; }
+.teams-command-card-logo { position:absolute; top:50%; left:50%; z-index:2; width:142px; height:142px; object-fit:contain; transform:translate(-50%,-48%); filter:drop-shadow(0 16px 20px rgba(0,0,0,.6)); }
+.teams-command-card-status { position:absolute; right:16px; bottom:14px; z-index:2; color:#baff34; font-size:9px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.teams-command-card-body { padding: 24px; }
+.teams-command-card-body > p:first-child { margin:0 0 5px; color:#4bc5e1; font-size:9px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; }
+.teams-command-card h3 { min-height: 64px; font-size: 28px; letter-spacing: -.035em; line-height: 1.08; }
+.teams-command-card-summary { min-height: 94px; margin: 16px 0 0; color:#b5c0d4; font-size:13px; line-height:1.65; }
+.teams-command-leaders { display:grid; grid-template-columns:1fr 1fr; margin:20px 0 0; border-block:1px solid rgba(255,255,255,.1); }
+.teams-command-leaders div { padding:14px 0; }
+.teams-command-leaders div + div { padding-left:14px; border-left:1px solid rgba(255,255,255,.1); }
+.teams-command-leaders dt,.teams-command-card-stats dt { color:#7887a3; font-size:8px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+.teams-command-leaders dd { margin:6px 0 0; color:#fff; font-size:12px; font-weight:900; }
+.teams-command-card-stats { display:grid; grid-template-columns:repeat(3,1fr); margin:0; }
+.teams-command-card-stats div { padding:15px 0; }
+.teams-command-card-stats dd { margin:5px 0 0; color:#ffcf00; font-size:21px; font-weight:900; }
+.teams-command-card-links { display:grid; grid-template-columns:1.1fr .9fr; gap:8px; }
+.teams-command-card-links a { display:flex; align-items:center; justify-content:space-between; min-height:43px; padding:10px 12px; border:1px solid rgba(255,255,255,.13); border-radius:6px; color:#dce4f2; font-size:10px; font-weight:900; }
+.teams-command-card-links a:first-child { border-color:#ffcf00; background:#ffcf00; color:#11131d; }
+.teams-command-card-links a:last-child { overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.teams-command-card:nth-child(7) { display:grid; grid-template-columns:minmax(340px,.82fr) minmax(0,1.18fr); grid-column:1/-1; }
+.teams-command-card:nth-child(7) .teams-command-card-top { height:100%; min-height:360px; }
+.teams-command-card:nth-child(7) .teams-command-card-body { display:grid; grid-template-columns:1fr 1fr; gap:0 28px; align-content:center; }
+.teams-command-card:nth-child(7) .teams-command-card-body > p:first-child,
+.teams-command-card:nth-child(7) .teams-command-card-body > h3,
+.teams-command-card:nth-child(7) .teams-command-card-summary { grid-column:1/-1; }
+.teams-command-card:nth-child(7) .teams-command-card-summary { min-height:0; }
+.teams-command-card:nth-child(7) .teams-command-leaders { grid-column:1; }
+.teams-command-card:nth-child(7) .teams-command-card-stats { grid-column:2; align-self:end; }
+.teams-command-card:nth-child(7) .teams-command-card-links { grid-column:1/-1; }
+.teams-command-compare { padding: 0 0 92px; }
+.teams-command-compare header > a { justify-self:end; color:#fff; font-size:11px; font-weight:900; }
+.teams-command-compare header > a span { margin-left:12px; color:#ffcf00; }
+.teams-command-compare > div { overflow-x:auto; border:1px solid rgba(255,255,255,.11); border-radius:14px; }
+.teams-command-compare table { min-width:980px; margin:0; }
+.teams-command-compare th { padding:13px 16px; background:#0d1630; color:#4bc5e1; font-size:9px; letter-spacing:.1em; }
+.teams-command-compare td { padding:14px 16px; color:#b8c3d5; font-size:12px; }
+.teams-command-compare tbody tr { background:#090d24; }
+.teams-command-compare tbody tr + tr { border-top:1px solid rgba(255,255,255,.08); }
+.teams-command-compare td:first-child a { display:grid; grid-template-columns:42px minmax(180px,1fr); gap:12px; align-items:center; }
+.teams-command-compare td:first-child img { width:40px; height:40px; object-fit:contain; }
+.teams-command-compare td strong { color:#fff; }
+.teams-command-compare td a { color:inherit; }
+.teams-command-route { display:grid; grid-template-columns:.88fr 1.12fr; gap:72px; padding:84px max(20px,calc((100vw - 1260px)/2)); border-block:1px solid rgba(255,207,0,.18); background:linear-gradient(120deg,rgba(255,207,0,.07),transparent 42%),#081027; }
+.teams-command-route > div > p:not(:first-child) { max-width:570px; color:#aab6ca; line-height:1.7; }
+.teams-command-route > div > a { display:inline-flex; gap:18px; margin-top:18px; color:#ffcf00; font-size:12px; font-weight:900; }
+.teams-command-route ol { margin:0; padding:0; list-style:none; border-top:1px solid rgba(255,255,255,.11); }
+.teams-command-route li { display:grid; grid-template-columns:54px 1fr; gap:18px; align-items:center; min-height:104px; border-bottom:1px solid rgba(255,255,255,.11); }
+.teams-command-route li > span { color:#ffcf00; font-size:11px; font-weight:900; }
+.teams-command-route strong { color:#fff; font-size:18px; }
+.teams-command-route li p { margin:5px 0 0; color:#93a1b9; font-size:12px; }
+.teams-command-faq { padding:88px 0; }
+.teams-command-faq > div { margin-top:28px; border-top:1px solid rgba(255,255,255,.12); }
+.teams-command-faq details { border-bottom:1px solid rgba(255,255,255,.12); }
+.teams-command-faq summary { display:grid; grid-template-columns:44px 1fr 20px; gap:12px; align-items:center; min-height:72px; cursor:pointer; color:#fff; font-size:15px; font-weight:900; list-style:none; }
+.teams-command-faq summary::-webkit-details-marker { display:none; }
+.teams-command-faq summary span { color:#ffcf00; font-size:10px; }
+.teams-command-faq summary b::before { content:"+"; color:#4bc5e1; font-size:20px; }
+.teams-command-faq details[open] summary b::before { content:"−"; }
+.teams-command-faq details > p { max-width:900px; margin:0 0 24px 56px; color:#aeb9cc; line-height:1.7; }
+@media (max-width: 1050px) {
+  .teams-command-hero { grid-template-columns:1fr; padding-bottom:110px; }
+  .teams-command-hero-copy { grid-row:auto; }
+  .teams-command-hero > .teams-command-actions { grid-column:auto; }
+  .teams-command-hero-field { max-width:720px; }
+  .teams-command-grid { grid-template-columns:repeat(2,1fr); }
+  .teams-command-card:nth-child(7) { display:block; grid-column:auto; }
+  .teams-command-card:nth-child(7) .teams-command-card-top { height:250px; min-height:0; }
+  .teams-command-card:nth-child(7) .teams-command-card-body { display:block; }
+}
+@media (max-width: 760px) {
+  .teams-command-breadcrumbs,.teams-command-hero,.teams-command-intro,.teams-command-directory,.teams-command-compare,.teams-command-faq { width:calc(100% - 28px); }
+  .teams-command-hero { min-height:0; margin-bottom:0; padding:44px 20px 150px; overflow:hidden; border-radius:20px; }
+  .teams-command-hero h1 { font-size:clamp(48px,14vw,64px); }
+  .teams-command-eyebrow { gap:10px; font-size:8px; }
+  .teams-command-eyebrow span { padding:8px 10px; }
+  .teams-command-hero-copy > p:last-of-type { font-size:15px; }
+  .teams-command-actions { display:grid; }
+  .teams-command-hero-field > div { grid-template-columns:repeat(3,1fr); }
+  .teams-command-hero-field a:last-child { grid-column:auto; aspect-ratio:1; }
+  .teams-command-season { right:14px; bottom:22px; left:14px; grid-template-columns:repeat(2,1fr); transform:none; }
+  .teams-command-season div { min-height:70px; padding:14px; }
+  .teams-command-season div:nth-child(3) { border-left:0; border-top:1px solid rgba(255,255,255,.1); }
+  .teams-command-season div:nth-child(4) { border-top:1px solid rgba(255,255,255,.1); }
+  .teams-command-season dd { font-size:17px; }
+  .teams-command-intro { grid-template-columns:1fr; gap:28px; padding:64px 0; }
+  .teams-command-intro > div > p { font-size:15px; }
+  .teams-command-intro dl { display:grid; grid-template-columns:1fr; margin-top:28px; border-bottom:0; }
+  .teams-command-intro dl div,.teams-command-intro dl div:first-child { display:grid; grid-template-columns:38px minmax(90px,.7fr) 1fr; gap:10px; align-items:center; min-height:68px; padding:13px 0; border-bottom:1px solid rgba(255,255,255,.12); }
+  .teams-command-intro dl div + div { border-left:0; }
+  .teams-command-intro dl span { position:static; color:#ffcf00; }
+  .teams-command-intro dt { align-self:center; }
+  .teams-command-intro dd { margin:0; text-align:right; }
+  .teams-command-intro dd { font-size:16px; }
+  .teams-command-directory { padding:0 0 64px; }
+  .teams-command-directory > header,.teams-command-compare > header { grid-template-columns:1fr; gap:16px; }
+  .teams-command-grid { grid-template-columns:1fr; }
+  .teams-command-card h3,.teams-command-card-summary { min-height:0; }
+  .teams-command-card-summary { margin-bottom:18px; }
+  .teams-command-compare header > a { justify-self:start; }
+  .teams-command-route { grid-template-columns:1fr; gap:38px; padding:64px 14px; }
+  .teams-command-faq { padding:64px 0; }
+  .teams-command-faq details > p { margin-left:0; }
+}
 @media (prefers-reduced-motion: reduce) {
   .roster-player { transition: none; }
 }

@@ -16,217 +16,84 @@
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260727t">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260804teams5">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
-<body class="teams-directory-page">
+<body class="teams-directory-page teams-command-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="CPL Season home">
-      <img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo">
-    </a>
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
     <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="/">Home</a>
-      <a href="/schedule/">Schedule</a>
-      <a href="/live-score/">Live Score</a>
-      <a href="/teams/" aria-current="page">Teams</a>
-      <a href="/points-table/">Points Table</a>
-      <a href="/players/">Players</a>
-      <a href="/squads/">Squads</a>
-      <a href="/venues/">Venues</a>
-      <a href="/watch-live/">Watch Live</a>
-      <a href="/news/">News</a>
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/live-score/">Live Score</a><a href="/teams/" aria-current="page">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
     </nav>
   </header>
 
-  <main id="main" class="teams-atlas">
-    <nav class="teams-atlas-breadcrumbs" aria-label="Breadcrumb">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li aria-current="page">Teams</li>
-      </ol>
-    </nav>
+  <main id="main" class="teams-command teams-atlas">
+    <nav class="teams-command-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">CPL 2026 Teams</li></ol></nav>
 
-    <section class="teams-atlas-hero" aria-labelledby="teams-page-title">
-      <div class="teams-atlas-hero-copy">
-        <p class="teams-atlas-kicker"><span>Seven franchises</span> Republic Bank CPL</p>
-        <h1 id="teams-page-title">Meet the Seven<br><em>CPL 2026 Teams</em></h1>
-        <p class="teams-atlas-lede">Compare each franchise’s squad, home ground, league fixtures and CPL title record before the season begins on 7 August.</p>
-        <div class="teams-atlas-actions">
-          <a class="button primary" href="#franchise-field">Explore the teams</a>
-          <a class="button secondary" href="/squads/">Open all squads</a>
-        </div>
-        <div class="teams-atlas-hero-stats" aria-label="Tournament team summary">
-          <div><strong>{{ totals.teams }}</strong><span>Franchises</span></div>
-          <div><strong>{{ totals.league_matches }}</strong><span>League matches</span></div>
-          <div><strong>{{ totals.players }}</strong><span>Published names</span></div>
-        </div>
+    <section class="teams-command-hero" aria-labelledby="teams-page-title">
+      <div class="teams-command-hero-copy">
+        <p class="teams-command-eyebrow"><span>Seven franchises</span> Republic Bank Caribbean Premier League</p>
+        <h1 id="teams-page-title"><span>Meet the</span><span>Seven</span><em><span>CPL 2026</span><span>Teams</span></em></h1>
+        <p>Meet the seven Caribbean Premier League franchises, explore their confirmed squads and follow every team through the 2026 season.</p>
       </div>
-      <div class="teams-atlas-crest-field" aria-label="CPL 2026 team crests">
-        <span class="teams-atlas-field-label">The 2026 field</span>
-        <div>
-          {% for team in teams %}
-          <a href="#{{ team.slug }}" aria-label="Jump to {{ team.name }}">
-            <img src="{{ team.logo }}" width="120" height="120" alt="{{ team.name }} logo">
-            <small>{{ team.short_name }}</small>
-          </a>
-          {% endfor %}
-        </div>
+      <div class="teams-command-hero-field" aria-label="CPL 2026 franchise logos">
+        <p><span>2026 CPL</span><strong>{{ totals.teams }} franchises</strong></p>
+        <div>{% for team in teams %}<a href="#{{ team.slug }}"><img src="{{ team.logo }}" width="116" height="116" alt="{{ team.name }} logo"><span>{{ "%02d" | format(loop.index) }}</span></a>{% endfor %}</div>
       </div>
+      <div class="teams-command-actions"><a href="#team-directory">Explore all teams <span>↓</span></a><a href="/squads/">Complete squads</a></div>
+      <dl class="teams-command-season"><div><dt>Season</dt><dd>7 Aug–20 Sep</dd></div><div><dt>Matches</dt><dd>39</dd></div><div><dt>League matches</dt><dd>{{ totals.league_matches }}</dd></div><div><dt>Players listed</dt><dd>{{ totals.players }}</dd></div></dl>
     </section>
 
-    <nav class="teams-atlas-jump" aria-label="Jump to a CPL team">
-      {% for team in teams %}
-      <a href="#{{ team.slug }}">
-        <span>{{ "%02d" | format(loop.index) }}</span>
-        <img src="{{ team.logo }}" width="42" height="42" alt="" aria-hidden="true">
-        <strong>{{ team.short_name }}</strong>
-      </a>
-      {% endfor %}
-    </nav>
-
-    <section class="teams-atlas-intro" aria-labelledby="teams-intro-title">
-      <div>
-        <p class="teams-atlas-index">01 / Tournament field</p>
-        <h2 id="teams-intro-title">Seven teams will compete in CPL 2026</h2>
-      </div>
+    <section class="teams-command-intro" aria-labelledby="teams-intro-title">
+      <header>
+        <p>01 / Tournament field</p>
+        <h2 id="teams-intro-title"><span>Seven teams will</span><span>compete in CPL</span><span>2026</span></h2>
+      </header>
       <div>
         <p>The 2026 season expands to seven franchises. Jamaica Kingsmen enter as a new team, Barbados compete again as the Tridents, and Trinbago Knight Riders begin the campaign as defending champions.</p>
         <dl>
-          <div><dt>Season</dt><dd>7 Aug–20 Sep</dd></div>
-          <div><dt>League phase</dt><dd>35 matches</dd></div>
-          <div><dt>Playoffs</dt><dd>Top four</dd></div>
-          <div><dt>Finals venue</dt><dd><a href="/venue/kensington-oval/">Kensington Oval</a></dd></div>
+          <div><span>01</span><dt>Season</dt><dd>7 Aug–20 Sep</dd></div>
+          <div><span>02</span><dt>League phase</dt><dd>35 matches</dd></div>
+          <div><span>03</span><dt>Playoffs</dt><dd>Top four</dd></div>
+          <div><span>04</span><dt>Finals venue</dt><dd><a href="/venue/kensington-oval/">Kensington Oval</a></dd></div>
         </dl>
       </div>
     </section>
 
-    <section id="franchise-field" class="teams-franchise-section" aria-labelledby="franchise-field-title">
-      <header>
-        <div>
-          <p class="teams-atlas-index">02 / Franchise atlas</p>
-          <h2 id="franchise-field-title">CPL 2026 team directory</h2>
-        </div>
-        <p>Roster totals reflect published squad names. Availability replacements can make a team’s directory total higher than the active match squad limit.</p>
-      </header>
-
-      <div class="teams-franchise-grid">
+    <section id="team-directory" class="teams-command-directory" aria-labelledby="directory-title">
+      <header><div><p>Franchise directory</p><h2 id="directory-title">CPL 2026 Teams</h2></div><p>Open a franchise profile for its history, captain, coach, full squad, overseas players, fixtures, results and all-time CPL record.</p></header>
+      <div class="teams-command-grid">
         {% for team in teams %}
-        <article id="{{ team.slug }}" class="teams-franchise-card" data-team-card>
-          <div class="teams-franchise-visual">
-            <img class="teams-franchise-ground" src="{{ team.venue.image }}" width="900" height="600" alt="{{ team.venue.name }} in {{ team.venue.city }}" loading="lazy">
-            <span class="teams-franchise-number">{{ "%02d" | format(loop.index) }}</span>
-            <img class="teams-franchise-logo" src="{{ team.logo }}" width="180" height="180" alt="{{ team.name }} logo" loading="lazy">
-            <div>
-              <small>{{ team.territory }}</small>
-              <strong>{{ team.status_label }}</strong>
-            </div>
-          </div>
-          <div class="teams-franchise-copy">
-            <header>
-              <p>{{ team.short_name }}</p>
-              <h3>{{ team.name }}</h3>
-            </header>
-            <p class="teams-franchise-summary">{{ team.summary }}</p>
-            <div class="teams-franchise-stats" aria-label="{{ team.name }} 2026 summary">
-              <span><strong>{{ team.league_fixtures }}</strong><small>League fixtures</small></span>
-              <span><strong>{{ team.players | length }}</strong><small>Roster names</small></span>
-              <span><strong>{{ team.home_matches }}</strong><small>Home matches</small></span>
-            </div>
-            <div class="teams-franchise-ground-link">
-              <span>Home ground</span>
-              <a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }} <b>↗</b></a>
-              <small>{{ team.venue.city }} · {{ team.home_window }}</small>
-            </div>
-            <p class="teams-franchise-storyline">{{ team.storyline }}</p>
-            <div class="teams-franchise-core">
-              <span>Squad spotlight</span>
-              <div>
-                {% for player in team.spotlight_players %}
-                <a href="/player/{{ player.slug }}/">{{ player.name }}</a>
-                {% endfor %}
-              </div>
-            </div>
-            <footer>
-              <a class="teams-franchise-primary" href="/team/{{ team.slug }}/">Full team profile <span>→</span></a>
-              <a href="/squads/#{{ team.slug }}">View squad</a>
-            </footer>
+        <article id="{{ team.slug }}" class="teams-command-card" data-team-card>
+          <a class="teams-command-card-top" href="/teams/{{ team.slug }}/" aria-label="Open {{ team.name }} profile">
+            <span class="teams-command-card-number">{{ "%02d" | format(loop.index) }}</span>
+            <img class="teams-command-card-ground" src="{{ team.venue.image }}" width="900" height="600" alt="" aria-hidden="true" loading="lazy">
+            <img class="teams-command-card-logo" src="{{ team.logo }}" width="180" height="180" alt="{{ team.name }} logo" loading="lazy">
+            <span class="teams-command-card-status">{{ team.status_label }}</span>
+          </a>
+          <div class="teams-command-card-body">
+            <p>{{ team.territory }}</p><h3>{{ team.name }}</h3><p class="teams-command-card-summary">{{ team.summary }}</p>
+            <dl class="teams-command-leaders"><div><dt>Captain</dt><dd>{{ team.captain.name }}</dd></div><div><dt>Head coach</dt><dd>{{ team.coach.name }}</dd></div></dl>
+            <dl class="teams-command-card-stats"><div><dt>Titles</dt><dd>{{ team.title_count }}</dd></div><div><dt>Squad</dt><dd>{{ team.players | length }}</dd></div><div><dt>Home games</dt><dd>{{ team.home_matches }}</dd></div></dl>
+            <div class="teams-command-card-links"><a href="/teams/{{ team.slug }}/">Team profile <span>→</span></a><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></div>
           </div>
         </article>
         {% endfor %}
       </div>
     </section>
 
-    <section class="teams-atlas-compare" aria-labelledby="teams-compare-title">
-      <header>
-        <div>
-          <p class="teams-atlas-index">03 / At a glance</p>
-          <h2 id="teams-compare-title">2026 team comparison</h2>
-        </div>
-        <a href="/schedule/">Open full schedule <span>→</span></a>
-      </header>
-      <div class="teams-atlas-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Franchise</th>
-              <th>Territory</th>
-              <th>Home ground</th>
-              <th>Home block</th>
-              <th>Roster</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for team in teams %}
-            <tr>
-              <td data-label="Franchise">
-                <a href="/team/{{ team.slug }}/">
-                  <img src="{{ team.logo }}" width="42" height="42" alt="" aria-hidden="true">
-                  <strong>{{ team.name }}</strong>
-                </a>
-              </td>
-              <td data-label="Territory">{{ team.territory }}</td>
-              <td data-label="Home ground"><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></td>
-              <td data-label="Home block">{{ team.home_window }}</td>
-              <td data-label="Roster"><a href="/squads/#{{ team.slug }}">{{ team.players | length }} names</a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
+    <section class="teams-command-compare" aria-labelledby="compare-title">
+      <header><div><p>At a glance</p><h2 id="compare-title">Compare CPL 2026 Teams</h2></div><a href="/schedule/">Full schedule <span>→</span></a></header>
+      <div><table><thead><tr><th>Team</th><th>Home ground</th><th>Captain</th><th>Coach</th><th>Titles</th><th>Squad</th></tr></thead><tbody>{% for team in teams %}<tr><td><a href="/teams/{{ team.slug }}/"><img src="{{ team.logo }}" width="46" height="46" alt=""><strong>{{ team.name }}</strong></a></td><td><a href="/venue/{{ team.venue.slug }}/">{{ team.venue.name }}</a></td><td>{{ team.captain.name }}</td><td>{{ team.coach.name }}</td><td>{{ team.title_count }}</td><td><a href="/squads/#{{ team.slug }}">{{ team.players | length }} players</a></td></tr>{% endfor %}</tbody></table></div>
     </section>
 
-    <section class="teams-atlas-format" aria-labelledby="teams-format-title">
-      <div>
-        <p class="teams-atlas-index">04 / Season route</p>
-        <h2 id="teams-format-title">How the 2026 competition works</h2>
-        <p>Each franchise plays 10 league matches. The top four advance to the knockout stage at Kensington Oval, where the Eliminator and two Qualifiers determine the finalists.</p>
-        <a href="/points-table/">Follow the Points Table <span>→</span></a>
-      </div>
-      <ol>
-        <li><span>35</span><div><strong>League matches</strong><p>Seven teams complete a 10-match programme across the regional venue blocks.</p></div></li>
-        <li><span>04</span><div><strong>Playoff places</strong><p>The top four positions move forward after the league stage.</p></div></li>
-        <li><span>01</span><div><strong>Champion</strong><p>The final is scheduled for 20 September at Kensington Oval in Barbados.</p></div></li>
-      </ol>
-    </section>
+    <section class="teams-command-route" aria-labelledby="route-title"><div><p>Season format</p><h2 id="route-title">The road to Kensington Oval</h2><p>Each franchise plays 10 league matches. The top four enter the Eliminator and Qualifiers before the CPL 2026 final in Barbados on 20 September.</p><a href="/points-table/">Follow the points table <span>→</span></a></div><ol><li><span>01</span><div><strong>League stage</strong><p>Seven teams compete across 35 matches.</p></div></li><li><span>02</span><div><strong>Playoffs</strong><p>Four teams progress to three knockout matches.</p></div></li><li><span>03</span><div><strong>Final</strong><p>The last two teams meet at Kensington Oval.</p></div></li></ol></section>
 
-    <section class="teams-atlas-faq" aria-labelledby="teams-faq-title">
-      <p class="teams-atlas-index">05 / Quick answers</p>
-      <h2 id="teams-faq-title">CPL 2026 team questions and answers</h2>
-      <div>
-        {% for item in faq %}
-        <article>
-          <span>{{ "%02d" | format(loop.index) }}</span>
-          <h3>{{ item.question }}</h3>
-          <p>{{ item.answer }}</p>
-        </article>
-        {% endfor %}
-      </div>
-    </section>
+    <section class="teams-command-faq" aria-labelledby="faq-title"><header><p>Team guide</p><h2 id="faq-title">CPL 2026 team questions</h2></header><div data-teams-faq>{% for item in faq %}<details{% if loop.first %} open{% endif %}><summary><span>{{ "%02d" | format(loop.index) }}</span>{{ item.question }}<b aria-hidden="true"></b></summary><p>{{ item.answer }}</p></details>{% endfor %}</div></section>
   </main>
-
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260729ms" defer></script>
+  <script src="/static/js/site.js?v=20260804faq1" defer></script>
 </body>
 </html>
