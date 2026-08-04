@@ -432,7 +432,10 @@ def main() -> int:
         if profile_path.is_file():
             profile = profile_path.read_text(encoding="utf-8")
             expected_canonical = f"https://cplseason.com/player/{slug}/"
-            if 'class="profile-stage"' not in profile:
+            if not any(
+                marker in profile
+                for marker in ('class="profile-stage"', 'class="ppx-hero"')
+            ):
                 errors.append(f"{slug}: player profile was not rendered from the shared template")
             if f'<link rel="canonical" href="{expected_canonical}">' not in profile:
                 errors.append(f"{slug}: player profile has the wrong canonical")
