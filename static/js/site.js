@@ -873,3 +873,53 @@ if (liveMatchData) {
   if (liveMatchRefresh) liveMatchRefresh.addEventListener("click", loadMatch);
   loadMatch();
 }
+
+const homePlayerGrid = document.querySelector("[data-home-player-grid]");
+if (homePlayerGrid) {
+  const renderRandomPlayers = async () => {
+    try {
+      const response = await fetch("/static/home-player-pool.json", { cache: "no-cache" });
+      if (!response.ok) return;
+      const players = await response.json();
+      if (!Array.isArray(players) || players.length < 8) return;
+      const shuffled = [...players];
+      for (let index = shuffled.length - 1; index > 0; index -= 1) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+      }
+      const fragment = document.createDocumentFragment();
+      shuffled.slice(0, 8).forEach((player, index) => {
+        const card = document.createElement("a");
+        card.className = "home-player-card";
+        card.href = `/player/${player.slug}/`;
+        const number = document.createElement("span");
+        number.className = "home-player-number";
+        number.setAttribute("aria-hidden", "true");
+        number.textContent = String(index + 1).padStart(2, "0");
+        const media = document.createElement("div");
+        media.className = "home-player-media";
+        const image = document.createElement("img");
+        image.src = player.image;
+        image.alt = `${player.name} official CPL player photo`;
+        image.loading = "lazy";
+        image.decoding = "async";
+        media.append(image);
+        const copy = document.createElement("div");
+        copy.className = "home-player-copy";
+        const category = document.createElement("span");
+        category.textContent = player.category;
+        const heading = document.createElement("h3");
+        heading.textContent = player.name;
+        const team = document.createElement("small");
+        team.textContent = player.team;
+        copy.append(category, heading, team);
+        card.append(number, media, copy);
+        fragment.append(card);
+      });
+      homePlayerGrid.replaceChildren(fragment);
+    } catch {
+      // Keep the server-rendered eight-player selection as a stable fallback.
+    }
+  };
+  renderRandomPlayers();
+}

@@ -74,6 +74,29 @@ def load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def build_home_player_pool() -> None:
+    teams = {
+        path.stem: load_json(path)
+        for path in (ROOT / "data" / "teams").glob("*.json")
+    }
+    pool = []
+    for path in sorted((ROOT / "data" / "players").glob("*.json")):
+        player = load_json(path)
+        team = teams.get(player.get("team_slug"))
+        if not team or not player.get("image"):
+            continue
+        pool.append({
+            "slug": player["slug"],
+            "name": player["name"],
+            "category": player["category"],
+            "image": player["image"],
+            "team": team["name"],
+        })
+    output = ROOT / "static" / "home-player-pool.json"
+    output.write_text(json.dumps(pool, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    print(f"Generated homepage player pool with {len(pool)} players")
+
+
 def template_environment() -> Environment:
     return Environment(
         loader=FileSystemLoader(ROOT / "templates"),
@@ -2135,6 +2158,7 @@ def build_matches() -> None:
         path.stem: load_json(path)
         for path in sorted((ROOT / "data" / "venues").glob("*.json"))
     }
+    head_to_head_records = load_json(ROOT / "data" / "head-to-head.json")
     template = template_environment().get_template("match.html")
     rendered_count = 0
 
@@ -2208,21 +2232,32 @@ def build_matches() -> None:
             "home": [players[slug] for slug in probable_source.get("home", []) if slug in players],
             "away": [players[slug] for slug in probable_source.get("away", []) if slug in players],
         }
-        match["head_to_head"] = match.get("head_to_head")
-        if home_team and away_team and not match["head_to_head"]:
-            match["head_to_head"] = {
-                "matches": 0,
-                "home_wins": 0,
-                "away_wins": 0,
-                "no_results": 0,
-                "through": "the start of CPL 2026",
-                "scope": "season",
-                "summary": (
-                    f"The 2026 season series between {home_label} and {away_label} "
-                    "will update here after each completed meeting."
-                ),
-                "recent": [],
-            }
+        match["head_to_head"] = None
+        match["first_meeting"] = False
+        if home_team and away_team:
+            pair_slugs = sorted([home_team["slug"], away_team["slug"]])
+            pair_key = "|".join(pair_slugs)
+            record = head_to_head_records.get(pair_key)
+            if record:
+                home_is_a = home_team["slug"] == pair_slugs[0]
+                home_wins = record["team_a_wins"] if home_is_a else record["team_b_wins"]
+                away_wins = record["team_b_wins"] if home_is_a else record["team_a_wins"]
+                match["head_to_head"] = {
+                    "matches": record["matches"],
+                    "home_wins": home_wins,
+                    "away_wins": away_wins,
+                    "no_results": record["no_results"],
+                    "through": "CPL 2025",
+                    "scope": "all_time",
+                    "summary": (
+                        f"Across {record['matches']} CPL meetings through 2025, "
+                        f"{home_label} have {home_wins} wins and {away_label} have {away_wins}."
+                        + (f" {record['no_results']} match{'es' if record['no_results'] != 1 else ''} ended without a result." if record["no_results"] else "")
+                    ),
+                    "recent": record["recent"],
+                }
+            elif "jamaica-kingsmen" in pair_slugs:
+                match["first_meeting"] = True
         match["prediction"] = match.get("prediction") or {
             "label": "Early match outlook",
             "headline": f"{home_label} vs {away_label}: key contest areas",
@@ -2835,6 +2870,7 @@ def sync_shared_footer() -> None:
 
 
 if __name__ == "__main__":
+    build_home_player_pool()
     build_contact_page()
     build_privacy_policy()
     build_terms_of_service()

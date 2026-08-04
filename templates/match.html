@@ -179,7 +179,7 @@
     </section>
 
     <section id="match-head-to-head" class="match-research-section match-head-to-head" aria-labelledby="match-h2h-title">
-      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">{{ match.home_label }} vs {{ match.away_label }} record</h2><span>{% if match.head_to_head and match.head_to_head.get("scope") == "season" %}CPL 2026 season series, updated after completed matches.{% else %}Men's CPL meetings before this 2026 fixture.{% endif %}</span></div></header>
+      <header class="match-live-section-head"><div><p>04 / Head to head</p><h2 id="match-h2h-title">{{ match.home_label }} vs {{ match.away_label }} record</h2><span>All men's CPL meetings through the end of the 2025 season.</span></div></header>
       {% if match.head_to_head %}
       <div class="match-h2h-score" data-match-h2h data-home-name="{{ match.home_label }}" data-away-name="{{ match.away_label }}" data-base-matches="{{ match.head_to_head.matches }}" data-base-home-wins="{{ match.head_to_head.home_wins }}" data-base-away-wins="{{ match.head_to_head.away_wins }}">
         <article><small>{{ match.home_label }}</small><strong data-h2h-home-wins>{{ match.head_to_head.home_wins }}</strong><span>Wins</span></article>
@@ -188,6 +188,8 @@
       </div>
       <p class="match-research-copy">{{ match.head_to_head.summary }}</p>
       <div class="match-recent-results">{% for result in match.head_to_head.recent %}<article><time>{{ result.date }}</time><span>{{ result.stage }}</span><strong>{{ result.winner }}</strong><small>{{ result.result }}</small></article>{% endfor %}</div>
+      {% elif match.first_meeting %}
+      <div class="match-data-pending"><strong>First CPL meeting</strong><p>{{ match.home_label }} and {{ match.away_label }} have not previously met in the Caribbean Premier League. This record will begin with their first completed 2026 fixture.</p></div>
       {% else %}
       <div class="match-data-pending"><strong>Head-to-head verification in progress</strong><p>This record will appear after the historical match list for these teams has been checked. No unverified total is displayed.</p></div>
       {% endif %}
