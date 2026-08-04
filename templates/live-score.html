@@ -19,6 +19,7 @@
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
   <link rel="stylesheet" href="/static/css/live-score.css?v=20260805mc3">
+  <link rel="stylesheet" href="/static/css/live-score-match-centre.css?v=20260805espn1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="live-score-page">
@@ -142,18 +143,18 @@
         <div class="live-score-workspace">
           <div class="live-score-workspace-main">
             <nav class="live-score-tabs" aria-label="Live match sections">
-              <a href="#current-match" aria-current="page"><span>01</span><strong>Summary</strong></a>
-              <a href="{{ focus.url }}"><span>02</span><strong>Scorecard</strong></a>
-              <a href="#commentary-title"><span>03</span><strong>Ball by ball</strong></a>
-              <a href="#live-lineups-title"><span>04</span><strong>Playing XI</strong></a>
-              <a href="#match-info-title"><span>05</span><strong>Match info</strong></a>
+              <a href="#commentary-title" aria-current="page"><strong>Commentary</strong></a>
+              <a href="{{ focus.url }}"><strong>Scorecard</strong></a>
+              <a href="#live-stats"><strong>Live stats</strong></a>
+              <a href="#live-lineups-title"><strong>Playing XI</strong></a>
+              <a href="#match-info-title"><strong>Match info</strong></a>
             </nav>
 
             <section class="live-score-commentary" aria-labelledby="commentary-title" data-live-commentary>
               <header class="live-score-section-heading">
                 <div>
-                  <p>Match commentary</p>
-                  <h2 id="commentary-title">CPL ball-by-ball updates</h2>
+                  <p>Ball-by-ball</p>
+                  <h2 id="commentary-title">CPL live commentary</h2>
                 </div>
                 <span class="live-score-commentary-status" data-commentary-status>
                   <i aria-hidden="true"></i>
@@ -172,7 +173,7 @@
                 <div class="live-score-commentary-feed" data-commentary-feed aria-live="polite" aria-atomic="false">
                   <div class="live-score-commentary-empty">
                     <span>Commentary desk</span>
-                    <strong>Coverage begins at the first ball</strong>
+                    <strong>Commentary will begin at the first ball</strong>
                     <p>Runs, wickets, boundaries and key moments will appear here throughout the match.</p>
                   </div>
                 </div>
