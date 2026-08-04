@@ -39,7 +39,7 @@
 }
 .live-score-tabs a:hover { color: #172033; background: #f8f9fa; }
 .live-score-tabs a[aria-current="page"] { color: #172033; }
-.live-score-tabs a[aria-current="page"]::after { background: #17a2b8; }
+.live-score-tabs a[aria-current="page"]::after { background: #ffcc12; }
 
 .live-score-workspace .live-score-commentary {
   padding: 0;
@@ -55,7 +55,7 @@
   padding: 17px 20px;
   border-bottom: 1px solid #e7e9ec;
 }
-.live-score-workspace .live-score-commentary .live-score-section-heading p { color: #17829a; }
+.live-score-workspace .live-score-commentary .live-score-section-heading p { color: #7434bf; }
 .live-score-workspace .live-score-commentary .live-score-section-heading h2 {
   color: #172033;
   font-size: clamp(22px, 2.2vw, 28px);
@@ -137,11 +137,11 @@
   margin-bottom: 13px;
   border: 1px solid #ccd2d9;
   background:
-    radial-gradient(circle, #17a2b8 0 3px, transparent 4px),
+    radial-gradient(circle, #7434bf 0 3px, transparent 4px),
     linear-gradient(90deg, transparent 48%, #d6dbe1 49% 51%, transparent 52%),
     linear-gradient(transparent 48%, #d6dbe1 49% 51%, transparent 52%);
 }
-.live-score-workspace .live-score-commentary-empty span { color: #17829a; }
+.live-score-workspace .live-score-commentary-empty span { color: #7434bf; }
 .live-score-workspace .live-score-commentary-empty strong {
   max-width: 500px;
   color: #172033;
@@ -165,7 +165,7 @@
   padding: 14px 18px;
   border-bottom: 1px solid #e7e9ec;
 }
-.live-score-telemetry-heading span { color: #17829a; }
+.live-score-telemetry-heading span { color: #7434bf; }
 .live-score-telemetry-heading strong { color: #172033; font-size: 18px; }
 .live-score-telemetry-heading small { color: #7a8493; }
 .live-score-workspace .live-score-metrics {
@@ -207,7 +207,7 @@
   border: 0;
 }
 .live-score-workspace .live-score-detail-grid header span,
-.live-score-workspace .live-score-lineups > header span { color: #17829a; }
+.live-score-workspace .live-score-lineups > header span { color: #7434bf; }
 .live-score-workspace .live-score-detail-grid header strong,
 .live-score-workspace .live-score-lineups > header strong { color: #172033; }
 .live-score-workspace .live-score-empty { margin: 0; color: #697485; }
@@ -244,7 +244,7 @@
 }
 .live-score-side-panel > header { border-color: #e7e9ec; }
 .live-score-side-panel > header span,
-.live-score-side-panel > header div > span { color: #17829a; }
+.live-score-side-panel > header div > span { color: #7434bf; }
 .live-score-side-panel h2 { color: #172033; }
 .live-score-other-matches > header a { color: #526072; }
 .live-score-other-matches > div > a {
@@ -255,7 +255,7 @@
 .live-score-other-matches > div span,
 .live-score-other-matches > div small { color: #778191; }
 .live-score-other-matches > div i,
-.live-score-match-info dd a { color: #17829a; }
+.live-score-match-info dd a { color: #7434bf; }
 .live-score-match-info dl > div { border-color: #e7e9ec; }
 .live-score-match-info dt { color: #778191; }
 .live-score-match-info dd { color: #172033; }
