@@ -48,7 +48,10 @@
 .history-table-wrap td strong { color: #111a32; }
 .history-table-wrap a, .history-notes a { color: #5a2bc2; font-weight: 850; text-decoration: none; }
 .winners-table td:nth-child(2), .winners-table td:nth-child(3) { min-width: 210px; }
-.winners-table td:last-child { min-width: 320px; }
+.winners-table td:nth-child(4) { min-width: 360px; }
+.winners-table td:nth-child(4) span, .winners-table td:nth-child(4) small { display: block; }
+.winners-table td:nth-child(4) small { margin-top: 5px; color: #657189; line-height: 1.45; }
+.winners-table td:last-child { min-width: 240px; }
 .history-table-wrap tr.is-upcoming td { background: #fff8d8; }
 .success-table td:nth-child(2) { min-width: 300px; }
 .success-table td:nth-child(2) small, .success-table td:nth-child(3) small { display: block; max-width: 440px; margin-top: 5px; color: #68738a; line-height: 1.45; }
@@ -81,14 +84,36 @@
 .history-leaders h3 { max-width: 220px; margin: 28px 0 8px; font-size: 20px; }
 .history-leaders strong { color: #6b36d8; }
 .history-leaders article > p { margin: 8px 0 0; color: #66718a; }
+.winner-insight-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.winner-insight-grid article { padding: 24px; border: 1px solid #dfe3ed; border-radius: 16px; background: #f7f8fc; }
+.winner-insight-grid article > strong { display: block; color: #5a2bc2; font-size: 36px; line-height: 1; }
+.winner-insight-grid h3 { margin: 16px 0 8px; color: #111a32; font-size: 20px; }
+.winner-insight-grid p { margin: 0; color: #5c6880; line-height: 1.6; }
+.winners-eras .history-prose h3 { margin: 0 0 8px; color: #151e36; font-size: 20px; }
+.winners-eras .history-prose p + h3 { margin-top: 26px; }
+.team-comparisons > div { display: grid; gap: 14px; }
+.team-comparisons article { display: grid; grid-template-columns: 68px minmax(0,1fr); gap: 22px; padding: 26px; border: 1px solid #dfe3ed; border-radius: 16px; background: #f8f9fc; }
+.team-rank-number { color: #6b36d8; font-size: 26px; font-weight: 950; }
+.team-comparisons h3 { color: #111a32; font-size: 26px; }
+.team-comparisons article p { margin: 12px 0 20px; color: #526078; line-height: 1.7; }
+.team-comparisons dl { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); margin: 0; border: 1px solid #dfe3ed; border-radius: 10px; background: white; }
+.team-comparisons dl div { padding: 12px 14px; border-right: 1px solid #dfe3ed; }
+.team-comparisons dl div:last-child { border-right: 0; }
+.team-comparisons dt { color: #758097; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.team-comparisons dd { margin: 3px 0 0; color: #151e36; font-weight: 900; }
+.record-sources > p { max-width: 900px; color: #526078; line-height: 1.7; }
+.record-sources ul { display: grid; gap: 0; margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid #dfe3ed; }
+.record-sources li { display: grid; grid-template-columns: minmax(220px,.65fr) minmax(0,1.35fr); gap: 24px; padding: 15px 0; border-bottom: 1px solid #dfe3ed; }
+.record-sources a { color: #5a2bc2; font-weight: 900; }
+.record-sources span { color: #64708a; }
 .history-notes ol { display: grid; gap: 12px; padding: 0; list-style: none; }
 .history-notes li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px; border-left: 3px solid #ffcf00; background: #f7f8fc; }
 .history-notes li span { color: #6b36d8; font-weight: 900; }
 .history-notes li p { margin: 0; line-height: 1.65; }
 .history-notes nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .history-notes nav a { padding: 13px 16px; border: 1px solid #d8deea; border-radius: 10px; }
-@media (max-width: 860px) { .history-hero, .history-intro { grid-template-columns: 1fr; } .history-hero { padding: 42px 28px; } .history-section > header { grid-template-columns: 1fr; } .history-leaders > div, .history-records > div { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .history-shell { padding-inline: 12px; } .history-hero { border-radius: 18px; padding: 34px 20px; } .history-hero h1 { font-size: 44px; } .record-page-nav { display: grid; } .history-leaders > div, .history-records > div { grid-template-columns: 1fr; } .history-section { padding: 24px 18px; } .season-entry { grid-template-columns: 1fr; } .season-year { grid-template-columns: auto auto; justify-content: space-between; padding: 14px 18px; } .season-copy { padding: 20px 18px; } .season-copy dl { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .history-hero, .history-intro { grid-template-columns: 1fr; } .history-hero { padding: 42px 28px; } .history-section > header { grid-template-columns: 1fr; } .history-leaders > div, .history-records > div, .winner-insight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .team-comparisons dl { grid-template-columns: repeat(2,minmax(0,1fr)); } .team-comparisons dl div:nth-child(2) { border-right: 0; } .team-comparisons dl div:nth-child(-n+2) { border-bottom: 1px solid #dfe3ed; } }
+@media (max-width: 560px) { .history-shell { padding-inline: 12px; } .history-hero { border-radius: 18px; padding: 34px 20px; } .history-hero h1 { font-size: 44px; } .record-page-nav { display: grid; } .history-leaders > div, .history-records > div, .winner-insight-grid { grid-template-columns: 1fr; } .history-section { padding: 24px 18px; } .season-entry { grid-template-columns: 1fr; } .season-year { grid-template-columns: auto auto; justify-content: space-between; padding: 14px 18px; } .season-copy { padding: 20px 18px; } .season-copy dl { grid-template-columns: 1fr; } .team-comparisons article { grid-template-columns: 1fr; gap: 8px; padding: 20px; } .team-comparisons dl { grid-template-columns: 1fr 1fr; } .record-sources li { grid-template-columns: 1fr; gap: 4px; } }
 
 /* Shared professional footer */
 .site-footer.site-footer-pro{position:relative;border-top:1px solid rgba(255,211,0,.3);background:linear-gradient(135deg,rgba(255,211,0,.045),transparent 35%),radial-gradient(circle at 82% 8%,rgba(0,191,255,.1),transparent 30%),#050814;color:#c8d1e7;overflow:hidden}

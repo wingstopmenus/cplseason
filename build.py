@@ -2009,7 +2009,21 @@ def build_cpl_history() -> None:
     for ranking in history["team_rankings"]:
         item = dict(ranking)
         item["team"] = teams.get(item.get("team_slug"))
+        item["decided_matches"] = item["wins"] + item["losses"]
+        item["final_conversion"] = round((item["titles"] / item["finals"]) * 100, 1)
         rankings.append(item)
+
+    chasing_winners = {2013, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025}
+    final_patterns = {
+        "chasing_wins": sum(1 for season in seasons if season["year"] in chasing_winners),
+        "defending_wins": sum(
+            1 for season in seasons
+            if season["status"] == "complete" and season["year"] not in chasing_winners
+        ),
+        "closest": "St Kitts & Nevis Patriots, final ball in 2021",
+        "largest_wickets": "9 wickets, Jamaica in 2016 and Guyana in 2023",
+        "largest_runs": "27 runs, Barbados in 2019",
+    }
 
     pages = [
         {
@@ -2057,6 +2071,7 @@ def build_cpl_history() -> None:
         }
         rendered = template_environment().get_template("cpl-history.html").render(
             page=page, history=history, seasons=seasons, rankings=rankings,
+            final_patterns=final_patterns,
             schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
         )
         output = ROOT / page["route"] / "index.html"
