@@ -170,7 +170,7 @@ def build_authors() -> None:
         article["date_label"] = human_date(article["date_published"])
         articles.append(article)
     articles.sort(
-        key=lambda item: (item["date_published"], item["title"]),
+        key=lambda item: (item.get("published_at", item["date_published"]), item["title"]),
         reverse=True,
     )
 
@@ -469,7 +469,7 @@ def build_news() -> None:
             }
         articles.append(article)
     articles.sort(
-        key=lambda item: (item["date_published"], item["title"]),
+        key=lambda item: (item.get("published_at", item["date_published"]), item["title"]),
         reverse=True,
     )
 
