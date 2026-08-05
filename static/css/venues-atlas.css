@@ -1,63 +1,81 @@
-/* CPL 2026 venues — Caribbean grounds atlas */
+/* CPL 2026 venues — night-stadium directory */
 .venues-2026 {
-  --atlas-ink: #102c31;
-  --atlas-teal: #073f47;
-  --atlas-teal-2: #0b5961;
-  --atlas-sea: #1599a7;
-  --atlas-sand: #f4eddc;
-  --atlas-paper: #fffdf7;
-  --atlas-coral: #ff7657;
-  --atlas-yellow: #f5c847;
-  --atlas-muted: #66777a;
-  --atlas-line: #d9d2c1;
-  background: var(--atlas-sand);
+  --venue-bg: #07091a;
+  --venue-bg-2: #0b1025;
+  --venue-panel: #10162d;
+  --venue-panel-2: #151d38;
+  --venue-text: #f7f8fc;
+  --venue-muted: #aab5ce;
+  --venue-line: rgba(255, 255, 255, .12);
+  --venue-gold: #ffcc12;
+  --venue-cyan: #42d4e7;
+  --venue-green: #92db52;
+  background: var(--venue-bg);
+  color: var(--venue-text);
 }
 
 .venues-2026 main {
   overflow: clip;
-  color: var(--atlas-ink);
+  color: var(--venue-text);
+  background:
+    radial-gradient(circle at 85% 8%, rgba(66, 212, 231, .08), transparent 27rem),
+    var(--venue-bg);
 }
 
 .venues-breadcrumbs {
-  width: min(1360px, calc(100% - 40px));
-  padding: 20px 0;
+  width: min(1320px, calc(100% - 48px));
+  padding: 22px 0;
+  border: 0;
+  background: transparent;
 }
 
 .venues-breadcrumbs ol {
-  color: var(--atlas-muted);
-  font-size: 11px;
+  color: #7f8ca8;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
 .venues-breadcrumbs a {
-  color: var(--atlas-ink);
+  color: #aeb9cf;
+}
+
+.venues-breadcrumbs li + li::before {
+  color: rgba(255, 255, 255, .25);
+  content: "—";
+}
+
+.venues-breadcrumbs [aria-current="page"],
+.venues-breadcrumbs li:last-child:not(:has(a)) {
+  color: var(--venue-gold);
 }
 
 .venues-stage {
   position: relative;
   isolation: isolate;
-  grid-template-columns: minmax(0, .92fr) minmax(480px, 1.08fr);
+  grid-template-columns: minmax(0, 1.04fr) minmax(460px, .96fr);
   gap: 0;
-  width: min(1360px, calc(100% - 40px));
-  min-height: 610px;
+  width: min(1320px, calc(100% - 48px));
+  min-height: 560px;
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  border: 0;
-  border-radius: 4px;
-  background: var(--atlas-teal);
-  box-shadow: 0 30px 70px rgba(16, 44, 49, .19);
+  border: 1px solid var(--venue-line);
+  border-radius: 16px;
+  background: var(--venue-bg-2);
+  box-shadow: 0 28px 74px rgba(0, 0, 0, .32);
 }
 
 .venues-stage::before {
+  position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(90deg, var(--atlas-coral) 0 11%, var(--atlas-yellow) 11% 24%, transparent 24%) top left / 100% 6px no-repeat,
-    radial-gradient(circle at 7% 82%, transparent 0 76px, rgba(255, 255, 255, .07) 77px 79px, transparent 80px 128px, rgba(255, 255, 255, .045) 129px 131px, transparent 132px),
-    linear-gradient(130deg, transparent 0 58%, rgba(21, 153, 167, .18) 58% 58.5%, transparent 58.5%);
+    linear-gradient(90deg, var(--venue-gold) 0 14%, var(--venue-cyan) 14% 24%, transparent 24%) top left / 100% 5px no-repeat,
+    radial-gradient(circle at 14% 78%, rgba(255, 204, 18, .11), transparent 18rem),
+    linear-gradient(120deg, transparent 0 57%, rgba(66, 212, 231, .08) 57% 57.3%, transparent 57.3%);
+  content: "";
 }
 
 .venues-stage-copy {
@@ -65,21 +83,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(48px, 6vw, 82px);
+  padding: clamp(48px, 5.2vw, 74px);
 }
 
 .venues-kicker,
 .venues-section-index {
-  margin: 0 0 16px;
-  color: var(--atlas-sea);
+  margin: 0 0 14px;
+  color: var(--venue-gold);
   font-size: 10px;
   font-weight: 950;
-  letter-spacing: .18em;
+  letter-spacing: .17em;
   text-transform: uppercase;
-}
-
-.venues-kicker {
-  color: #8ee5e7;
 }
 
 .venues-stage h1,
@@ -87,237 +101,267 @@
 .venues-directory-heading h2,
 .venues-planning h2,
 .venues-faq h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  letter-spacing: -.045em;
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-weight: 900;
+  letter-spacing: -.055em;
 }
 
 .venues-stage h1 {
-  max-width: 680px;
+  max-width: 690px;
   margin: 0;
-  color: white;
-  font-size: clamp(58px, 6.4vw, 94px);
-  font-weight: 700;
-  line-height: .88;
+  color: var(--venue-text);
+  font-size: clamp(62px, 6.7vw, 98px);
+  line-height: .86;
 }
 
 .venues-stage h1 span {
-  color: var(--atlas-yellow);
+  display: block;
+  color: var(--venue-gold);
 }
 
 .venues-lede {
-  max-width: 610px;
-  margin: 28px 0 0;
+  max-width: 590px;
+  margin: 27px 0 0;
   padding: 0;
   border: 0;
-  color: #d7e7e5;
+  color: #cbd4e7;
   font-size: 17px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .venues-stage-actions {
-  gap: 9px;
-  margin-top: 30px;
+  gap: 10px;
+  margin-top: 29px;
 }
 
 .venues-stage-actions .button {
-  min-height: 48px;
-  border-radius: 3px;
+  min-height: 50px;
+  padding-inline: 19px;
+  border-radius: 7px;
 }
 
 .venues-stage-actions .button.primary {
-  background: var(--atlas-coral);
-  color: #2c110a;
+  border-color: var(--venue-gold);
+  background: var(--venue-gold);
+  color: #171200;
 }
 
 .venues-stage-actions .button.secondary {
-  border-color: rgba(255, 255, 255, .25);
+  border-color: rgba(255, 255, 255, .22);
   background: rgba(255, 255, 255, .055);
+  color: var(--venue-text);
 }
 
 .venues-stage-note {
-  margin-top: 36px;
+  margin-top: 32px;
   padding-top: 17px;
-  border-top: 1px solid rgba(255, 255, 255, .17);
-  color: white;
+  border-top: 1px solid var(--venue-line);
+  color: var(--venue-text);
 }
 
 .venues-stage-note i {
-  background: var(--atlas-yellow);
-  box-shadow: 0 0 0 5px rgba(245, 200, 71, .13);
+  background: var(--venue-green);
+  box-shadow: 0 0 0 5px rgba(146, 219, 82, .11);
 }
 
 .venues-stage-note small {
-  color: var(--atlas-yellow);
+  color: var(--venue-gold);
 }
 
 .venues-feature {
   align-self: stretch;
-  min-height: 610px;
+  min-height: 560px;
   margin: 0;
+  overflow: hidden;
   border: 0;
+  border-left: 1px solid var(--venue-line);
   border-radius: 0;
-  background: #052f35;
+  background: #050817;
 }
 
 .venues-feature > a,
 .venues-feature > a > img {
-  min-height: 610px;
+  min-height: 560px;
   height: 100%;
 }
 
 .venues-feature > a > img {
   width: 100%;
   object-fit: cover;
-  filter: saturate(.92) contrast(1.03);
+  filter: saturate(.98) contrast(1.06) brightness(.88);
 }
 
 .venues-feature-shade {
-  background: linear-gradient(180deg, transparent 30%, rgba(3, 25, 29, .91));
+  background: linear-gradient(180deg, rgba(3, 6, 18, .03) 28%, rgba(3, 6, 18, .94));
 }
 
 .venues-feature figcaption {
-  right: 34px;
-  bottom: 32px;
-  left: 34px;
+  right: 32px;
+  bottom: 30px;
+  left: 32px;
   padding: 0;
 }
 
 .venues-feature figcaption small {
-  color: var(--atlas-yellow);
+  color: var(--venue-gold);
 }
 
 .venues-feature figcaption strong {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(30px, 3.2vw, 44px);
+  color: var(--venue-text);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-size: clamp(31px, 3vw, 44px);
+  font-weight: 900;
+  letter-spacing: -.045em;
+}
+
+.venues-feature figcaption span {
+  color: #c6d0e3;
 }
 
 .venues-stat-rail {
   position: relative;
   z-index: 2;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  width: min(1270px, calc(100% - 88px));
-  margin: -36px auto 0;
-  overflow: hidden;
+  gap: 10px;
+  width: min(1320px, calc(100% - 48px));
+  margin: 12px auto 0;
+  overflow: visible;
   border: 0;
-  border-radius: 4px;
-  background: var(--atlas-paper);
-  box-shadow: 0 18px 40px rgba(16, 44, 49, .13);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .venues-stat-rail div {
-  min-height: 112px;
-  padding: 22px 24px;
-  border-right: 1px solid var(--atlas-line);
-  background: transparent;
+  min-height: 100px;
+  padding: 20px 22px;
+  border: 1px solid var(--venue-line);
+  border-radius: 9px;
+  background: var(--venue-panel);
 }
 
 .venues-stat-rail small {
-  color: var(--atlas-sea);
+  color: var(--venue-cyan);
 }
 
 .venues-stat-rail strong {
-  color: var(--atlas-ink);
-  font-family: Georgia, "Times New Roman", serif;
+  color: var(--venue-text);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
   font-size: 26px;
+  font-weight: 900;
 }
 
 .venues-stat-rail span {
-  color: var(--atlas-muted);
+  color: var(--venue-muted);
 }
 
 .venues-route {
-  grid-template-columns: minmax(280px, .7fr) minmax(0, 1.3fr);
-  gap: clamp(48px, 7vw, 100px);
-  width: min(1240px, calc(100% - 40px));
+  grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(50px, 7vw, 96px);
+  width: min(1320px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 104px 0 92px;
-  border-bottom: 0;
+  padding: 92px 0;
+  border: 0;
 }
 
 .venues-route header h2,
 .venues-directory-heading h2,
 .venues-planning h2,
 .venues-faq h2 {
-  color: var(--atlas-ink);
-  font-size: clamp(40px, 4.7vw, 66px);
-  line-height: .95;
+  margin: 0;
+  color: var(--venue-text);
+  font-size: clamp(42px, 4.8vw, 68px);
+  line-height: .91;
 }
 
 .venues-route header > p:last-child,
 .venues-directory-heading > p {
-  color: var(--atlas-muted);
+  color: var(--venue-muted);
 }
 
 .venues-route ol {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 7px;
+  gap: 10px;
 }
 
 .venues-route a {
-  min-height: 124px;
-  padding: 18px;
-  border: 1px solid #d4cbb7;
-  border-radius: 3px;
-  background: rgba(255, 253, 247, .66);
+  min-height: 120px;
+  padding: 17px;
+  border: 1px solid var(--venue-line);
+  border-radius: 8px;
+  background: var(--venue-panel);
 }
 
 .venues-route a:hover {
-  border-color: var(--atlas-sea);
-  background: var(--atlas-paper);
-  transform: translateY(-2px);
+  border-color: rgba(66, 212, 231, .55);
+  background: var(--venue-panel-2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+  transform: translateY(-3px);
 }
 
 .venues-route a > span {
-  color: var(--atlas-coral);
+  color: var(--venue-gold);
 }
 
 .venues-route a strong {
-  color: var(--atlas-ink);
-  font-size: 16px;
+  color: var(--venue-text);
+  font-size: 15px;
 }
 
 .venues-route a small {
-  color: var(--atlas-muted);
+  color: var(--venue-muted);
 }
 
 .venues-directory {
-  padding: 92px max(20px, calc((100vw - 1360px) / 2)) 104px;
+  padding: 88px max(24px, calc((100vw - 1320px) / 2)) 98px;
+  border-block: 1px solid rgba(255, 255, 255, .07);
   background:
-    radial-gradient(circle at 9% 7%, rgba(21, 153, 167, .09), transparent 23rem),
-    #e5eee9;
+    radial-gradient(circle at 85% 8%, rgba(66, 212, 231, .09), transparent 25rem),
+    #090d1e;
 }
 
 .venues-directory-heading {
-  grid-template-columns: minmax(0, 1fr) minmax(300px, .7fr);
-  gap: 50px;
-  width: min(1240px, 100%);
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .62fr);
+  gap: 56px;
+  width: min(1320px, 100%);
   margin: 0 auto 38px;
 }
 
 .venues-photo-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
-  width: min(1240px, 100%);
+  width: min(1320px, 100%);
   margin: 0 auto;
 }
 
-.venue-photo-card {
+.venue-photo-card,
+.venue-photo-card.is-final {
+  display: flex;
+  grid-column: auto;
+  grid-template-columns: none;
+  flex-direction: column;
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid #cbd8d3;
-  border-radius: 4px;
-  background: var(--atlas-paper);
-  box-shadow: 0 14px 34px rgba(16, 44, 49, .07);
+  border: 1px solid var(--venue-line);
+  border-radius: 10px;
+  background: var(--venue-panel);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, .2);
 }
 
 .venue-photo-card.is-final {
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr);
-  border-color: rgba(255, 118, 87, .6);
-  background: var(--atlas-teal);
+  border-color: rgba(255, 204, 18, .5);
+  background: var(--venue-panel);
 }
 
-.venue-photo-card figure {
-  background: var(--atlas-teal);
+.venue-photo-card:hover {
+  border-color: rgba(66, 212, 231, .48);
+  transform: translateY(-4px);
+}
+
+.venue-photo-card figure,
+.venue-photo-card.is-final figure {
+  flex: 0 0 auto;
+  background: #050817;
 }
 
 .venue-photo-card figure > a {
@@ -325,233 +369,232 @@
 }
 
 .venue-photo-card figure > a::after {
-  background: linear-gradient(180deg, transparent 58%, rgba(7, 63, 71, .48));
+  background: linear-gradient(180deg, transparent 56%, rgba(5, 8, 23, .56));
 }
 
 .venue-photo-card figure img,
 .venue-photo-card.is-final figure img {
   width: 100%;
-  height: 250px;
+  height: auto;
   min-height: 0;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.94) contrast(1.02);
-}
-
-.venue-photo-card.is-final figure img {
-  height: 100%;
-  min-height: 470px;
+  filter: saturate(.94) contrast(1.05) brightness(.9);
 }
 
 .venue-card-index,
 .venue-card-label {
-  top: 14px;
-  border-radius: 3px;
+  top: 13px;
+  border-radius: 4px;
 }
 
 .venue-card-index {
-  background: var(--atlas-coral);
-  color: #2c110a;
+  background: var(--venue-gold);
+  color: #171200;
 }
 
 .venue-card-label {
-  background: var(--atlas-paper);
-  color: var(--atlas-ink);
+  background: rgba(7, 9, 26, .88);
+  color: var(--venue-text);
+  backdrop-filter: blur(8px);
 }
 
-.venue-photo-copy {
-  padding: 24px 22px 22px;
+.venue-photo-copy,
+.venue-photo-card.is-final .venue-photo-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 23px 20px 20px;
 }
 
-.venue-photo-copy > p:first-child {
-  color: var(--atlas-sea);
+.venue-photo-copy > p:first-child,
+.venue-photo-card.is-final .venue-photo-copy > p:first-child {
+  color: var(--venue-cyan);
 }
 
-.venue-photo-copy h3 {
-  min-height: 2.05em;
-  margin: 8px 0 13px;
-  color: var(--atlas-ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(24px, 2.3vw, 34px);
+.venue-photo-copy h3,
+.venue-photo-card.is-final .venue-photo-copy h3 {
+  min-height: 2.15em;
+  margin: 8px 0 12px;
+  color: var(--venue-text);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-size: clamp(23px, 2vw, 30px);
+  font-weight: 900;
   line-height: 1.02;
+  letter-spacing: -.04em;
 }
 
-.venue-photo-copy > p:not(:first-child) {
-  color: var(--atlas-muted);
+.venue-photo-copy > p:not(:first-child),
+.venue-photo-card.is-final .venue-photo-copy > p:not(:first-child) {
+  color: var(--venue-muted);
   font-size: 12px;
+  line-height: 1.62;
 }
 
-.venue-photo-copy dl {
-  border-color: var(--atlas-line);
+.venue-photo-copy dl,
+.venue-photo-card.is-final .venue-photo-copy dl {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: auto;
+  border-color: var(--venue-line);
 }
 
-.venue-photo-copy dl div {
-  border-right-color: var(--atlas-line);
+.venue-photo-copy dl div,
+.venue-photo-card.is-final .venue-photo-copy dl div {
+  min-width: 0;
+  padding: 12px 8px;
+  border-right-color: var(--venue-line);
 }
 
-.venue-photo-copy dt {
-  color: var(--atlas-muted);
-}
-
-.venue-photo-copy dd {
-  color: var(--atlas-ink);
-}
-
-.venue-open-link {
-  border-top-color: var(--atlas-line);
-  color: var(--atlas-ink);
-}
-
-.venue-open-link span {
-  color: var(--atlas-coral);
-}
-
-.venue-photo-card.is-final .venue-photo-copy > p:first-child,
-.venue-photo-card.is-final .venue-photo-copy h3,
-.venue-photo-card.is-final .venue-photo-copy dd,
-.venue-photo-card.is-final .venue-open-link {
-  color: white;
-}
-
-.venue-photo-card.is-final .venue-photo-copy > p:not(:first-child),
+.venue-photo-copy dt,
 .venue-photo-card.is-final .venue-photo-copy dt {
-  color: #b9d2d1;
+  color: #7f8ca8;
+  font-size: 8px;
 }
 
-.venue-photo-card.is-final .venue-photo-copy dl,
-.venue-photo-card.is-final .venue-photo-copy dl div,
+.venue-photo-copy dd,
+.venue-photo-card.is-final .venue-photo-copy dd {
+  overflow-wrap: anywhere;
+  color: var(--venue-text);
+  font-size: 11px;
+}
+
+.venue-open-link,
 .venue-photo-card.is-final .venue-open-link {
-  border-color: rgba(255, 255, 255, .16);
+  margin-top: 16px;
+  padding-top: 15px;
+  border-top-color: var(--venue-line);
+  color: var(--venue-text);
+}
+
+.venue-open-link span,
+.venue-photo-card.is-final .venue-open-link span {
+  color: var(--venue-gold);
 }
 
 .venues-planning {
-  grid-template-columns: .68fr 1.32fr;
-  gap: clamp(44px, 7vw, 100px);
-  width: min(1240px, calc(100% - 40px));
+  grid-template-columns: .64fr 1.36fr;
+  gap: clamp(48px, 7vw, 96px);
+  width: min(1320px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 104px 0;
-  border-bottom: 0;
+  padding: 94px 0;
+  border: 0;
 }
 
 .venues-planning > div {
-  gap: 8px;
+  gap: 10px;
 }
 
 .venues-planning article {
-  min-height: 245px;
-  padding: 26px;
-  border: 0;
-  border-radius: 4px;
-  background: var(--atlas-teal);
+  min-height: 230px;
+  padding: 25px;
+  border: 1px solid var(--venue-line);
+  border-radius: 9px;
+  background: var(--venue-panel);
 }
 
 .venues-planning article:nth-child(2) {
-  background: var(--atlas-sea);
+  background: #10223a;
 }
 
 .venues-planning article:nth-child(3) {
-  background: var(--atlas-coral);
-}
-
-.venues-planning article > span,
-.venues-planning article h3,
-.venues-planning article p {
-  color: white;
+  background: #171d35;
 }
 
 .venues-planning article > span {
-  color: var(--atlas-yellow);
-}
-
-.venues-planning article:nth-child(3) > span,
-.venues-planning article:nth-child(3) h3,
-.venues-planning article:nth-child(3) p {
-  color: #28100b;
+  color: var(--venue-gold);
 }
 
 .venues-planning article h3 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 24px;
+  color: var(--venue-text);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-size: 23px;
+  font-weight: 900;
 }
 
 .venues-planning article p {
-  opacity: .78;
+  color: var(--venue-muted);
 }
 
 .venues-planning > nav {
   grid-column: 2;
-  border: 1px solid var(--atlas-line);
-  border-radius: 3px;
-  background: var(--atlas-paper);
+  overflow: hidden;
+  border: 1px solid var(--venue-line);
+  border-radius: 8px;
+  background: var(--venue-panel);
 }
 
 .venues-planning nav a {
-  border-right-color: var(--atlas-line);
-  color: var(--atlas-ink);
+  border-right-color: var(--venue-line);
+  color: var(--venue-text);
 }
 
 .venues-planning nav a span {
-  color: var(--atlas-coral);
+  color: var(--venue-gold);
 }
 
 .venues-faq {
-  padding: 90px max(20px, calc((100vw - 1240px) / 2)) 100px;
-  background: var(--atlas-teal);
+  padding: 86px max(24px, calc((100vw - 1320px) / 2)) 96px;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(66, 212, 231, .09), transparent 24rem),
+    #0b1228;
 }
 
-.venues-faq header {
-  width: min(1240px, 100%);
-  margin: 0 auto;
-}
-
-.venues-faq .venues-section-index {
-  color: var(--atlas-yellow);
+.venues-faq header,
+.venues-faq > div {
+  width: min(1320px, 100%);
+  margin-inline: auto;
 }
 
 .venues-faq h2 {
   max-width: 800px;
-  color: white;
 }
 
 .venues-faq > div {
-  gap: 8px;
-  width: min(1240px, 100%);
-  margin: 36px auto 0;
+  gap: 12px;
+  margin-top: 34px;
 }
 
 .venues-faq article {
-  min-height: 190px;
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-top: 4px solid var(--atlas-coral);
-  border-radius: 3px;
-  background: rgba(255, 255, 255, .055);
+  min-height: 178px;
+  padding: 25px;
+  border: 1px solid var(--venue-line);
+  border-top: 3px solid var(--venue-gold);
+  border-radius: 8px;
+  background: var(--venue-panel);
 }
 
 .venues-faq article:nth-child(2) {
-  border-top-color: var(--atlas-yellow);
+  border-top-color: var(--venue-cyan);
 }
 
 .venues-faq article:nth-child(3) {
-  border-top-color: #8ee5e7;
+  border-top-color: var(--venue-green);
 }
 
 .venues-faq article h3 {
-  color: white;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 23px;
+  color: var(--venue-text);
+  font-family: "Aptos Display", "Trebuchet MS", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
 }
 
 .venues-faq article p {
-  color: #bfd4d3;
+  color: var(--venue-muted);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .venues-stage {
     grid-template-columns: 1fr;
   }
 
   .venues-stage-copy {
-    min-height: 520px;
+    min-height: 500px;
+  }
+
+  .venues-feature {
+    border-top: 1px solid var(--venue-line);
+    border-left: 0;
   }
 
   .venues-feature,
@@ -563,52 +606,32 @@
   .venues-photo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .venue-photo-card.is-final {
-    grid-column: 1 / -1;
-  }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 820px) {
   .venues-breadcrumbs,
   .venues-stage,
+  .venues-stat-rail,
   .venues-route,
   .venues-planning {
-    width: calc(100% - 24px);
+    width: calc(100% - 32px);
   }
 
   .venues-stage {
-    margin-top: 0;
-    border-radius: 3px;
+    border-radius: 11px;
   }
 
   .venues-stage-copy {
     min-height: 0;
-    padding: 48px 22px 38px;
+    padding: 52px 34px 42px;
   }
 
   .venues-stage h1 {
-    font-size: clamp(49px, 14vw, 68px);
-  }
-
-  .venues-feature,
-  .venues-feature > a,
-  .venues-feature > a > img {
-    min-height: 0;
-    height: 350px;
+    font-size: clamp(58px, 11.8vw, 86px);
   }
 
   .venues-stat-rail {
     grid-template-columns: repeat(2, 1fr);
-    width: calc(100% - 48px);
-    margin-top: -20px;
-  }
-
-  .venues-stat-rail div,
-  .venues-stat-rail div:last-child {
-    min-height: 100px;
-    border-right: 1px solid var(--atlas-line);
-    border-bottom: 1px solid var(--atlas-line);
   }
 
   .venues-route,
@@ -618,62 +641,39 @@
   }
 
   .venues-route {
-    padding: 76px 0 68px;
+    padding: 74px 0;
   }
 
   .venues-route ol {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .venues-directory {
-    padding: 68px 12px 74px;
-  }
-
-  .venues-photo-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .venue-photo-card.is-final {
-    grid-column: auto;
-    grid-template-columns: 1fr;
-  }
-
-  .venue-photo-card figure img,
-  .venue-photo-card.is-final figure img {
-    height: 250px;
-    min-height: 0;
-  }
-
-  .venue-photo-copy h3 {
-    min-height: 0;
+    padding: 72px 16px 78px;
   }
 
   .venues-planning {
     padding: 76px 0;
   }
 
-  .venues-planning > div {
-    grid-template-columns: 1fr;
-  }
-
-  .venues-planning article {
-    min-height: 0;
-  }
-
   .venues-planning > nav {
     grid-column: auto;
   }
-
-  .venues-faq {
-    padding: 72px 12px 78px;
-  }
-
-  .venues-faq > div {
-    grid-template-columns: 1fr;
-  }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .venues-stage-copy {
+    padding: 46px 22px 36px;
+  }
+
+  .venues-stage h1 {
+    font-size: clamp(52px, 15vw, 70px);
+  }
+
+  .venues-lede {
+    font-size: 15px;
+  }
+
   .venues-stage-actions {
     display: grid;
   }
@@ -682,13 +682,10 @@
     width: 100%;
   }
 
-  .venues-stage-note {
-    align-items: flex-start;
-  }
-
   .venues-feature,
   .venues-feature > a,
   .venues-feature > a > img {
+    min-height: 0;
     height: 290px;
   }
 
@@ -702,37 +699,42 @@
     grid-template-columns: 1fr;
   }
 
-  .venues-stat-rail div,
-  .venues-stat-rail div:last-child {
-    border-right: 0;
-  }
-
   .venues-route ol {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .venues-route a {
-    min-height: 108px;
-    padding: 15px;
+  .venues-photo-grid {
+    grid-template-columns: 1fr;
   }
 
-  .venue-photo-copy dl {
-    grid-template-columns: repeat(2, 1fr);
+  .venue-photo-copy h3,
+  .venue-photo-card.is-final .venue-photo-copy h3 {
+    min-height: 0;
   }
 
-  .venue-photo-copy dl div:last-child {
-    grid-column: 1 / -1;
+  .venues-planning > div,
+  .venues-faq > div {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-planning article,
+  .venues-faq article {
+    min-height: 0;
   }
 
   .venues-planning nav a {
     border-right: 0;
-    border-bottom: 1px solid var(--atlas-line);
+    border-bottom: 1px solid var(--venue-line);
+  }
+
+  .venues-faq {
+    padding: 68px 16px 74px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .venues-feature > a > img,
-  .venue-photo-card figure img,
+  .venue-photo-card,
   .venues-route a {
     transition: none;
   }
