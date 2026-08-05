@@ -2847,6 +2847,21 @@ def build_venue_profiles() -> None:
         load_json(ROOT / "data" / "venues" / f"{slug}.json")
         for slug in VENUE_ORDER
     ]
+    match_urls = {
+        (match["date"], match["venue_slug"]): f"/match/{match['slug']}/"
+        for match in (
+            load_json(path)
+            for path in (ROOT / "data" / "matches").glob("*.json")
+        )
+    }
+    for venue in venues:
+        for fixture in venue["fixtures"]:
+            key = (fixture["date"], venue["slug"])
+            if key not in match_urls:
+                raise ValueError(
+                    f"Missing match page for {venue['slug']} on {fixture['date']}"
+                )
+            fixture["match_url"] = match_urls[key]
     env = template_environment()
     template = env.get_template("venue.html")
     for index, venue in enumerate(venues):
