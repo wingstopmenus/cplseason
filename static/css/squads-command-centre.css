@@ -9,10 +9,9 @@
   --sq-panel-2: #101631;
   padding: 0 0 84px;
   background:
-    linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
-    #060818;
-  background-size: 44px 44px;
+    radial-gradient(circle at 12% 10%, rgba(73, 215, 243, .075), transparent 34rem),
+    radial-gradient(circle at 88% 42%, rgba(173, 120, 239, .055), transparent 30rem),
+    linear-gradient(180deg, #07091a 0%, #060818 56%, #050716 100%);
 }
 
 .squads-2026 .eyebrow {
@@ -373,8 +372,9 @@
 .roster-group-heading span { border-radius: 3px; background: color-mix(in srgb, var(--team-accent) 14%, transparent); color: var(--team-accent); }
 .roster-player-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
 .roster-player {
-  grid-template-columns: 54px minmax(0, 1fr) auto;
-  min-height: 68px;
+  --player-photo-size: 76px;
+  grid-template-columns: var(--player-photo-size) minmax(0, 1fr) auto;
+  min-height: calc(var(--player-photo-size) + 16px);
   border-radius: 3px;
   background: rgba(255,255,255,.024);
 }
@@ -383,9 +383,14 @@
   border-color: var(--team-accent);
   background: color-mix(in srgb, var(--team-accent) 8%, transparent);
 }
-.roster-player-media { width: 52px; height: 52px; border-radius: 2px; }
-.roster-player-media img { width: 52px; height: 52px; }
-.roster-player-copy strong { font-size: 13px; }
+.roster-player-media { width: var(--player-photo-size); height: var(--player-photo-size); border-radius: 3px; }
+.roster-player-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+.roster-player-copy strong { font-size: 14px; }
 .roster-player-copy small { font-size: 9px; letter-spacing: .035em; text-transform: uppercase; }
 .roster-player:hover .roster-player-arrow { color: var(--team-accent); }
 
@@ -394,6 +399,7 @@
   .squads-hero-copy { padding: 56px 42px; }
   .squads-hero::after { right: 340px; }
   .roster-player-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .roster-player { --player-photo-size: 72px; }
   .squad-tools { position: relative; top: auto; }
 }
 
@@ -409,6 +415,7 @@
   .squad-filter-group, .squad-team-jump, .squad-result-count { grid-column: 1; }
   .squad-team-jump { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .roster-player-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roster-player { --player-photo-size: 78px; }
 }
 
 @media (max-width: 650px) {
@@ -437,5 +444,10 @@
   .roster-team-count strong { font-size: 36px; }
   .roster-group { padding: 17px 14px 20px; }
   .roster-player-grid { grid-template-columns: 1fr; }
+  .roster-player {
+    --player-photo-size: clamp(82px, 24vw, 96px);
+    gap: 14px;
+    padding: 8px 12px 8px 8px;
+  }
   .roster-player-copy strong { font-size: 14px; }
 }
