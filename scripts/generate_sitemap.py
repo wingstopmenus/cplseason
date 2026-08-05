@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://cplseason.com"
 CORE_ROUTES = {
     "/",
+    "/authors/",
     "/cpl-history/",
     "/cpl-2026-live-streaming/",
     "/cpl-winners-list/",
@@ -21,10 +22,12 @@ CORE_ROUTES = {
     "/points-table/",
     "/schedule/",
     "/squads/",
+    "/teams/",
     "/venues/",
     "/watch-live/",
 }
 CONTENT_PREFIXES = (
+    "/authors/",
     "/match/",
     "/news/",
     "/player/",

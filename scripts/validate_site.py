@@ -12,7 +12,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 from xml.etree import ElementTree
 
-from generate_sitemap import BASE_URL, should_include
+from generate_sitemap import BASE_URL, page_metadata, should_include
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEAM_COUNTS = {
@@ -905,6 +905,8 @@ def main() -> int:
     sitemap_namespace = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     try:
         sitemap_root = ElementTree.parse(sitemap_path).getroot()
+        if sitemap_root.tag != "{http://www.sitemaps.org/schemas/sitemap/0.9}urlset":
+            errors.append("Sitemap must use the standard sitemap urlset namespace")
         sitemap_entries = sitemap_root.findall("sm:url", sitemap_namespace)
     except (ElementTree.ParseError, FileNotFoundError) as error:
         errors.append(f"Invalid or missing sitemap.xml: {error}")
@@ -925,6 +927,15 @@ def main() -> int:
             errors.append(f"Sitemap contains a missing page: {location}")
             continue
         page_html = expected_file.read_text(encoding="utf-8", errors="replace")
+        try:
+            _, expected_lastmod = page_metadata(route, expected_file)
+            if modified != expected_lastmod:
+                errors.append(
+                    f"Sitemap lastmod does not match page metadata: {location} "
+                    f"({modified} != {expected_lastmod})"
+                )
+        except ValueError as error:
+            errors.append(str(error))
         if f'<link rel="canonical" href="{location}">' not in page_html:
             errors.append(f"Sitemap URL is not self-canonical: {location}")
         if re.search(
@@ -935,6 +946,10 @@ def main() -> int:
             errors.append(f"Sitemap contains a noindex page: {location}")
     if len(sitemap_locations) != len(set(sitemap_locations)):
         errors.append("Sitemap contains duplicate URLs")
+    if len(sitemap_locations) > 50_000:
+        errors.append("Sitemap exceeds Google's 50,000 URL limit")
+    if sitemap_path.exists() and sitemap_path.stat().st_size > 50 * 1024 * 1024:
+        errors.append("Sitemap exceeds Google's 50 MB uncompressed limit")
     expected_sitemap_locations = {
         f"{BASE_URL}{route}" for route in route_map if should_include(route)
     }
@@ -954,6 +969,11 @@ def main() -> int:
             "Sitemap contains unexpected routes: "
             + ", ".join(unexpected_sitemap_locations)
         )
+
+    robots_path = ROOT / "robots.txt"
+    robots_text = robots_path.read_text(encoding="utf-8", errors="replace")
+    if "Sitemap: https://cplseason.com/sitemap.xml" not in robots_text:
+        errors.append("robots.txt is missing the canonical sitemap declaration")
 
     if errors:
         print("Validation failed:")
