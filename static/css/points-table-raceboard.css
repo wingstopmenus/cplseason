@@ -313,6 +313,14 @@
   color: var(--race-ink);
 }
 
+@media (min-width: 761px) {
+  .standings-table th:not(:first-child),
+  .standings-table td:not(:first-child),
+  .standings-table td:last-child {
+    text-align: left;
+  }
+}
+
 .standings-table-note {
   border-top: 1px solid var(--race-line);
   background: #eef2f6;
