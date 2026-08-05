@@ -2720,7 +2720,7 @@ def build_venues() -> None:
         for slug in VENUE_ORDER
     ]
     page = {
-        "title": "CPL 2026 Venues: Fixtures, Cities and Ground Guides",
+        "title": "CPL 2026 Venues: Fixtures, Cities and Stadiums Guide",
         "description": (
             "See the eight grounds hosting CPL 2026, with match dates, host "
             "cities, stadium photos, capacities and a fixture list for every venue."
