@@ -1,0 +1,739 @@
+/* CPL 2026 venues — Caribbean grounds atlas */
+.venues-2026 {
+  --atlas-ink: #102c31;
+  --atlas-teal: #073f47;
+  --atlas-teal-2: #0b5961;
+  --atlas-sea: #1599a7;
+  --atlas-sand: #f4eddc;
+  --atlas-paper: #fffdf7;
+  --atlas-coral: #ff7657;
+  --atlas-yellow: #f5c847;
+  --atlas-muted: #66777a;
+  --atlas-line: #d9d2c1;
+  background: var(--atlas-sand);
+}
+
+.venues-2026 main {
+  overflow: clip;
+  color: var(--atlas-ink);
+}
+
+.venues-breadcrumbs {
+  width: min(1360px, calc(100% - 40px));
+  padding: 20px 0;
+}
+
+.venues-breadcrumbs ol {
+  color: var(--atlas-muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.venues-breadcrumbs a {
+  color: var(--atlas-ink);
+}
+
+.venues-stage {
+  position: relative;
+  isolation: isolate;
+  grid-template-columns: minmax(0, .92fr) minmax(480px, 1.08fr);
+  gap: 0;
+  width: min(1360px, calc(100% - 40px));
+  min-height: 610px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: var(--atlas-teal);
+  box-shadow: 0 30px 70px rgba(16, 44, 49, .19);
+}
+
+.venues-stage::before {
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, var(--atlas-coral) 0 11%, var(--atlas-yellow) 11% 24%, transparent 24%) top left / 100% 6px no-repeat,
+    radial-gradient(circle at 7% 82%, transparent 0 76px, rgba(255, 255, 255, .07) 77px 79px, transparent 80px 128px, rgba(255, 255, 255, .045) 129px 131px, transparent 132px),
+    linear-gradient(130deg, transparent 0 58%, rgba(21, 153, 167, .18) 58% 58.5%, transparent 58.5%);
+}
+
+.venues-stage-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 6vw, 82px);
+}
+
+.venues-kicker,
+.venues-section-index {
+  margin: 0 0 16px;
+  color: var(--atlas-sea);
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.venues-kicker {
+  color: #8ee5e7;
+}
+
+.venues-stage h1,
+.venues-route header h2,
+.venues-directory-heading h2,
+.venues-planning h2,
+.venues-faq h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.045em;
+}
+
+.venues-stage h1 {
+  max-width: 680px;
+  margin: 0;
+  color: white;
+  font-size: clamp(58px, 6.4vw, 94px);
+  font-weight: 700;
+  line-height: .88;
+}
+
+.venues-stage h1 span {
+  color: var(--atlas-yellow);
+}
+
+.venues-lede {
+  max-width: 610px;
+  margin: 28px 0 0;
+  padding: 0;
+  border: 0;
+  color: #d7e7e5;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.venues-stage-actions {
+  gap: 9px;
+  margin-top: 30px;
+}
+
+.venues-stage-actions .button {
+  min-height: 48px;
+  border-radius: 3px;
+}
+
+.venues-stage-actions .button.primary {
+  background: var(--atlas-coral);
+  color: #2c110a;
+}
+
+.venues-stage-actions .button.secondary {
+  border-color: rgba(255, 255, 255, .25);
+  background: rgba(255, 255, 255, .055);
+}
+
+.venues-stage-note {
+  margin-top: 36px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255, 255, 255, .17);
+  color: white;
+}
+
+.venues-stage-note i {
+  background: var(--atlas-yellow);
+  box-shadow: 0 0 0 5px rgba(245, 200, 71, .13);
+}
+
+.venues-stage-note small {
+  color: var(--atlas-yellow);
+}
+
+.venues-feature {
+  align-self: stretch;
+  min-height: 610px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: #052f35;
+}
+
+.venues-feature > a,
+.venues-feature > a > img {
+  min-height: 610px;
+  height: 100%;
+}
+
+.venues-feature > a > img {
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(.92) contrast(1.03);
+}
+
+.venues-feature-shade {
+  background: linear-gradient(180deg, transparent 30%, rgba(3, 25, 29, .91));
+}
+
+.venues-feature figcaption {
+  right: 34px;
+  bottom: 32px;
+  left: 34px;
+  padding: 0;
+}
+
+.venues-feature figcaption small {
+  color: var(--atlas-yellow);
+}
+
+.venues-feature figcaption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.2vw, 44px);
+}
+
+.venues-stat-rail {
+  position: relative;
+  z-index: 2;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(1270px, calc(100% - 88px));
+  margin: -36px auto 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: var(--atlas-paper);
+  box-shadow: 0 18px 40px rgba(16, 44, 49, .13);
+}
+
+.venues-stat-rail div {
+  min-height: 112px;
+  padding: 22px 24px;
+  border-right: 1px solid var(--atlas-line);
+  background: transparent;
+}
+
+.venues-stat-rail small {
+  color: var(--atlas-sea);
+}
+
+.venues-stat-rail strong {
+  color: var(--atlas-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+}
+
+.venues-stat-rail span {
+  color: var(--atlas-muted);
+}
+
+.venues-route {
+  grid-template-columns: minmax(280px, .7fr) minmax(0, 1.3fr);
+  gap: clamp(48px, 7vw, 100px);
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 104px 0 92px;
+  border-bottom: 0;
+}
+
+.venues-route header h2,
+.venues-directory-heading h2,
+.venues-planning h2,
+.venues-faq h2 {
+  color: var(--atlas-ink);
+  font-size: clamp(40px, 4.7vw, 66px);
+  line-height: .95;
+}
+
+.venues-route header > p:last-child,
+.venues-directory-heading > p {
+  color: var(--atlas-muted);
+}
+
+.venues-route ol {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.venues-route a {
+  min-height: 124px;
+  padding: 18px;
+  border: 1px solid #d4cbb7;
+  border-radius: 3px;
+  background: rgba(255, 253, 247, .66);
+}
+
+.venues-route a:hover {
+  border-color: var(--atlas-sea);
+  background: var(--atlas-paper);
+  transform: translateY(-2px);
+}
+
+.venues-route a > span {
+  color: var(--atlas-coral);
+}
+
+.venues-route a strong {
+  color: var(--atlas-ink);
+  font-size: 16px;
+}
+
+.venues-route a small {
+  color: var(--atlas-muted);
+}
+
+.venues-directory {
+  padding: 92px max(20px, calc((100vw - 1360px) / 2)) 104px;
+  background:
+    radial-gradient(circle at 9% 7%, rgba(21, 153, 167, .09), transparent 23rem),
+    #e5eee9;
+}
+
+.venues-directory-heading {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, .7fr);
+  gap: 50px;
+  width: min(1240px, 100%);
+  margin: 0 auto 38px;
+}
+
+.venues-photo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.venue-photo-card {
+  overflow: hidden;
+  border: 1px solid #cbd8d3;
+  border-radius: 4px;
+  background: var(--atlas-paper);
+  box-shadow: 0 14px 34px rgba(16, 44, 49, .07);
+}
+
+.venue-photo-card.is-final {
+  grid-column: 1 / -1;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr);
+  border-color: rgba(255, 118, 87, .6);
+  background: var(--atlas-teal);
+}
+
+.venue-photo-card figure {
+  background: var(--atlas-teal);
+}
+
+.venue-photo-card figure > a {
+  min-height: 0;
+}
+
+.venue-photo-card figure > a::after {
+  background: linear-gradient(180deg, transparent 58%, rgba(7, 63, 71, .48));
+}
+
+.venue-photo-card figure img,
+.venue-photo-card.is-final figure img {
+  width: 100%;
+  height: 250px;
+  min-height: 0;
+  object-fit: cover;
+  filter: saturate(.94) contrast(1.02);
+}
+
+.venue-photo-card.is-final figure img {
+  height: 100%;
+  min-height: 470px;
+}
+
+.venue-card-index,
+.venue-card-label {
+  top: 14px;
+  border-radius: 3px;
+}
+
+.venue-card-index {
+  background: var(--atlas-coral);
+  color: #2c110a;
+}
+
+.venue-card-label {
+  background: var(--atlas-paper);
+  color: var(--atlas-ink);
+}
+
+.venue-photo-copy {
+  padding: 24px 22px 22px;
+}
+
+.venue-photo-copy > p:first-child {
+  color: var(--atlas-sea);
+}
+
+.venue-photo-copy h3 {
+  min-height: 2.05em;
+  margin: 8px 0 13px;
+  color: var(--atlas-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 2.3vw, 34px);
+  line-height: 1.02;
+}
+
+.venue-photo-copy > p:not(:first-child) {
+  color: var(--atlas-muted);
+  font-size: 12px;
+}
+
+.venue-photo-copy dl {
+  border-color: var(--atlas-line);
+}
+
+.venue-photo-copy dl div {
+  border-right-color: var(--atlas-line);
+}
+
+.venue-photo-copy dt {
+  color: var(--atlas-muted);
+}
+
+.venue-photo-copy dd {
+  color: var(--atlas-ink);
+}
+
+.venue-open-link {
+  border-top-color: var(--atlas-line);
+  color: var(--atlas-ink);
+}
+
+.venue-open-link span {
+  color: var(--atlas-coral);
+}
+
+.venue-photo-card.is-final .venue-photo-copy > p:first-child,
+.venue-photo-card.is-final .venue-photo-copy h3,
+.venue-photo-card.is-final .venue-photo-copy dd,
+.venue-photo-card.is-final .venue-open-link {
+  color: white;
+}
+
+.venue-photo-card.is-final .venue-photo-copy > p:not(:first-child),
+.venue-photo-card.is-final .venue-photo-copy dt {
+  color: #b9d2d1;
+}
+
+.venue-photo-card.is-final .venue-photo-copy dl,
+.venue-photo-card.is-final .venue-photo-copy dl div,
+.venue-photo-card.is-final .venue-open-link {
+  border-color: rgba(255, 255, 255, .16);
+}
+
+.venues-planning {
+  grid-template-columns: .68fr 1.32fr;
+  gap: clamp(44px, 7vw, 100px);
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 104px 0;
+  border-bottom: 0;
+}
+
+.venues-planning > div {
+  gap: 8px;
+}
+
+.venues-planning article {
+  min-height: 245px;
+  padding: 26px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--atlas-teal);
+}
+
+.venues-planning article:nth-child(2) {
+  background: var(--atlas-sea);
+}
+
+.venues-planning article:nth-child(3) {
+  background: var(--atlas-coral);
+}
+
+.venues-planning article > span,
+.venues-planning article h3,
+.venues-planning article p {
+  color: white;
+}
+
+.venues-planning article > span {
+  color: var(--atlas-yellow);
+}
+
+.venues-planning article:nth-child(3) > span,
+.venues-planning article:nth-child(3) h3,
+.venues-planning article:nth-child(3) p {
+  color: #28100b;
+}
+
+.venues-planning article h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+}
+
+.venues-planning article p {
+  opacity: .78;
+}
+
+.venues-planning > nav {
+  grid-column: 2;
+  border: 1px solid var(--atlas-line);
+  border-radius: 3px;
+  background: var(--atlas-paper);
+}
+
+.venues-planning nav a {
+  border-right-color: var(--atlas-line);
+  color: var(--atlas-ink);
+}
+
+.venues-planning nav a span {
+  color: var(--atlas-coral);
+}
+
+.venues-faq {
+  padding: 90px max(20px, calc((100vw - 1240px) / 2)) 100px;
+  background: var(--atlas-teal);
+}
+
+.venues-faq header {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+.venues-faq .venues-section-index {
+  color: var(--atlas-yellow);
+}
+
+.venues-faq h2 {
+  max-width: 800px;
+  color: white;
+}
+
+.venues-faq > div {
+  gap: 8px;
+  width: min(1240px, 100%);
+  margin: 36px auto 0;
+}
+
+.venues-faq article {
+  min-height: 190px;
+  padding: 26px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-top: 4px solid var(--atlas-coral);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.venues-faq article:nth-child(2) {
+  border-top-color: var(--atlas-yellow);
+}
+
+.venues-faq article:nth-child(3) {
+  border-top-color: #8ee5e7;
+}
+
+.venues-faq article h3 {
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+}
+
+.venues-faq article p {
+  color: #bfd4d3;
+}
+
+@media (max-width: 1080px) {
+  .venues-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-stage-copy {
+    min-height: 520px;
+  }
+
+  .venues-feature,
+  .venues-feature > a,
+  .venues-feature > a > img {
+    min-height: 470px;
+  }
+
+  .venues-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .venue-photo-card.is-final {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .venues-breadcrumbs,
+  .venues-stage,
+  .venues-route,
+  .venues-planning {
+    width: calc(100% - 24px);
+  }
+
+  .venues-stage {
+    margin-top: 0;
+    border-radius: 3px;
+  }
+
+  .venues-stage-copy {
+    min-height: 0;
+    padding: 48px 22px 38px;
+  }
+
+  .venues-stage h1 {
+    font-size: clamp(49px, 14vw, 68px);
+  }
+
+  .venues-feature,
+  .venues-feature > a,
+  .venues-feature > a > img {
+    min-height: 0;
+    height: 350px;
+  }
+
+  .venues-stat-rail {
+    grid-template-columns: repeat(2, 1fr);
+    width: calc(100% - 48px);
+    margin-top: -20px;
+  }
+
+  .venues-stat-rail div,
+  .venues-stat-rail div:last-child {
+    min-height: 100px;
+    border-right: 1px solid var(--atlas-line);
+    border-bottom: 1px solid var(--atlas-line);
+  }
+
+  .venues-route,
+  .venues-directory-heading,
+  .venues-planning {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-route {
+    padding: 76px 0 68px;
+  }
+
+  .venues-route ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .venues-directory {
+    padding: 68px 12px 74px;
+  }
+
+  .venues-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venue-photo-card.is-final {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .venue-photo-card figure img,
+  .venue-photo-card.is-final figure img {
+    height: 250px;
+    min-height: 0;
+  }
+
+  .venue-photo-copy h3 {
+    min-height: 0;
+  }
+
+  .venues-planning {
+    padding: 76px 0;
+  }
+
+  .venues-planning > div {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-planning article {
+    min-height: 0;
+  }
+
+  .venues-planning > nav {
+    grid-column: auto;
+  }
+
+  .venues-faq {
+    padding: 72px 12px 78px;
+  }
+
+  .venues-faq > div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .venues-stage-actions {
+    display: grid;
+  }
+
+  .venues-stage-actions .button {
+    width: 100%;
+  }
+
+  .venues-stage-note {
+    align-items: flex-start;
+  }
+
+  .venues-feature,
+  .venues-feature > a,
+  .venues-feature > a > img {
+    height: 290px;
+  }
+
+  .venues-feature figcaption {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .venues-stat-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-stat-rail div,
+  .venues-stat-rail div:last-child {
+    border-right: 0;
+  }
+
+  .venues-route ol {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .venues-route a {
+    min-height: 108px;
+    padding: 15px;
+  }
+
+  .venue-photo-copy dl {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venue-photo-copy dl div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .venues-planning nav a {
+    border-right: 0;
+    border-bottom: 1px solid var(--atlas-line);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .venues-feature > a > img,
+  .venue-photo-card figure img,
+  .venues-route a {
+    transition: none;
+  }
+}
