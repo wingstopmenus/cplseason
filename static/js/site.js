@@ -1,5 +1,75 @@
 const toggle = document.querySelector(".nav-toggle"); const nav = document.querySelector("#site-nav"); if (toggle && nav) { toggle.addEventListener("click", () => { const isOpen = nav.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", String(isOpen)); }); } const backToTop = document.querySelector(".back-to-top"); if (backToTop) { const setBackToTopState = () => { const isVisible = window.scrollY > 420; backToTop.classList.toggle("is-visible", isVisible); backToTop.setAttribute("aria-hidden", String(!isVisible)); backToTop.tabIndex = isVisible ? 0 : -1; }; backToTop.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); }); setBackToTopState(); window.addEventListener("scroll", setBackToTopState, { passive: true }); } const matchSlider = document.querySelector("#home-match-slider"); const matchSliderButtons = document.querySelectorAll("[data-match-slider]"); if (matchSlider && matchSliderButtons.length) { matchSliderButtons.forEach((button) => { button.addEventListener("click", () => { const direction = button.dataset.matchSlider === "previous" ? -1 : 1; const card = matchSlider.querySelector(".match-rail-card"); const gap = 14; const distance = card ? card.getBoundingClientRect().width + gap : matchSlider.clientWidth; matchSlider.scrollLeft += direction * distance; }); }); } const scheduleVenueFilter = document.querySelector("#schedule-venue-filter"); const scheduleTeamFilter = document.querySelector("#schedule-team-filter"); const scheduleMatchCards = document.querySelectorAll("[data-schedule-match]"); const scheduleFilterCount = document.querySelector("#schedule-filter-count"); const scheduleEmptyState = document.querySelector("#schedule-empty-state"); const scheduleStageHeading = document.querySelector("[data-schedule-stage-heading]"); if (scheduleMatchCards.length && scheduleVenueFilter && scheduleTeamFilter) { const updateScheduleFilters = () => { const venue = scheduleVenueFilter.value; const team = scheduleTeamFilter.value; let visibleMatches = 0; scheduleMatchCards.forEach((card) => { const teamSlugs = card.dataset.teamSlugs.trim().split(/\s+/).filter(Boolean); const venueMatches = !venue || card.dataset.venueSlug === venue; const teamMatches = !team || teamSlugs.includes(team); const isVisible = venueMatches && teamMatches; card.hidden = !isVisible; if (isVisible) { visibleMatches += 1; } }); if (scheduleFilterCount) { scheduleFilterCount.textContent = `${visibleMatches} ${visibleMatches === 1 ? "match" : "matches"}`; } if (scheduleEmptyState) { scheduleEmptyState.hidden = visibleMatches !== 0; } if (scheduleStageHeading) { const hasVisiblePlayoff = [...scheduleMatchCards].some( (card) => !card.hidden && card.dataset.stage !== "League", ); scheduleStageHeading.hidden = !hasVisiblePlayoff; } }; scheduleVenueFilter.addEventListener("change", updateScheduleFilters); scheduleTeamFilter.addEventListener("change", updateScheduleFilters); }
 
+const adsterraExcludedPaths = new Set([
+  "/404.html",
+  "/authors/",
+  "/contact-us/",
+  "/privacy-policy/",
+  "/terms-of-service/",
+]);
+const adsterraIsExcluded =
+  adsterraExcludedPaths.has(window.location.pathname) ||
+  window.location.pathname.startsWith("/authors/");
+
+if (!adsterraIsExcluded) {
+  const adMain = document.querySelector("main#main");
+  const adAnchor = adMain?.querySelector(":scope > section") || adMain?.querySelector("section");
+
+  if (adMain && adAnchor && !document.querySelector("[data-adsterra-banner]")) {
+    const adBanner = document.createElement("aside");
+    adBanner.className = "site-ad-banner";
+    adBanner.dataset.adsterraBanner = "";
+    adBanner.setAttribute("aria-label", "Advertisement");
+
+    const adLabel = document.createElement("span");
+    adLabel.className = "site-ad-label";
+    adLabel.textContent = "Advertisement";
+
+    const adFrame = document.createElement("div");
+    adFrame.className = "site-ad-frame";
+    adFrame.dataset.adsterraFrame = "";
+    adBanner.append(adLabel, adFrame);
+    adAnchor.after(adBanner);
+
+    const mobileAdQuery = window.matchMedia("(max-width: 799px)");
+    const adUnits = {
+      desktop: {
+        key: "a8dc0e9fbc89cd9ca00f2f2adf50432f",
+        width: 728,
+        height: 90,
+      },
+      mobile: {
+        key: "56d2800b0941446f2757b73bf69f9e75",
+        width: 300,
+        height: 250,
+      },
+    };
+    let activeAdSize = "";
+
+    const renderAdsterraBanner = () => {
+      const size = mobileAdQuery.matches ? "mobile" : "desktop";
+      if (size === activeAdSize) return;
+      activeAdSize = size;
+      const unit = adUnits[size];
+      const adIframe = document.createElement("iframe");
+      const adScriptUrl = `https://unsettledradiator.com/${unit.key}/invoke.js`;
+      adIframe.title = `${unit.width} by ${unit.height} advertisement`;
+      adIframe.width = String(unit.width);
+      adIframe.height = String(unit.height);
+      adIframe.loading = "lazy";
+      adIframe.scrolling = "no";
+      adIframe.referrerPolicy = "strict-origin-when-cross-origin";
+      adIframe.setAttribute("frameborder", "0");
+      adIframe.srcdoc = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;overflow:hidden"><script>atOptions={'key':'${unit.key}','format':'iframe','height':${unit.height},'width':${unit.width},'params':{}};<\/script><script src="${adScriptUrl}"><\/script></body></html>`;
+      adFrame.replaceChildren(adIframe);
+      adBanner.dataset.adSize = `${unit.width}x${unit.height}`;
+    };
+
+    renderAdsterraBanner();
+    mobileAdQuery.addEventListener?.("change", renderAdsterraBanner);
+  }
+}
+
 const squadSearch = document.querySelector("#squad-player-search");
 const squadFilterButtons = document.querySelectorAll("[data-squad-filter]");
 const squadPlayers = document.querySelectorAll("[data-squad-player]");
