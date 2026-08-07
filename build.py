@@ -401,6 +401,59 @@ def build_homepage_watch_live(
     )
 
 
+def build_match_previews() -> None:
+    preview_paths = sorted((ROOT / "data" / "match-previews").glob("*.json"))
+    authors = load_authors()
+    template = template_environment().get_template("match-preview.html")
+    for path in preview_paths:
+        preview = load_json(path)
+        preview["author"] = authors[preview["author_slug"]]
+        preview["canonical"] = (
+            f"https://cplseason.com/match-preview/{preview['slug']}/"
+        )
+        preview["date_label"] = human_date(preview["date_published"])
+        body_parts = list(preview["intro"])
+        for section in preview["sections"]:
+            body_parts.extend(section.get("paragraphs", []))
+            body_parts.extend(item["text"] for item in section.get("contests", []))
+            body_parts.extend(item["text"] for item in section.get("players", []))
+            if section.get("call"):
+                body_parts.append(section["call"])
+        article_body = re.sub(r"<[^>]+>", "", " ".join(body_parts))
+        schema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": f"{preview['canonical']}#article",
+            "mainEntityOfPage": preview["canonical"],
+            "url": preview["canonical"],
+            "headline": preview["title"],
+            "description": preview["meta_description"],
+            "datePublished": preview["date_published"],
+            "dateModified": preview["date_modified"],
+            "articleSection": "Match Preview",
+            "articleBody": article_body,
+            "image": f"https://cplseason.com{preview['image']}",
+            "author": {
+                "@type": "Person",
+                "name": preview["author"]["name"],
+                "url": f"https://cplseason.com/authors/{preview['author']['slug']}/",
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "CPL Season",
+                "url": "https://cplseason.com/",
+            },
+        }
+        rendered = template.render(
+            preview=preview,
+            schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
+        )
+        output = ROOT / "match-preview" / preview["slug"] / "index.html"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(rendered + "\n", encoding="utf-8")
+    print(f"Rendered {len(preview_paths)} standalone match preview post")
+
+
 def build_news() -> None:
     article_paths = sorted((ROOT / "data" / "news").glob("*.json"))
     players = {
@@ -3111,6 +3164,7 @@ if __name__ == "__main__":
     build_live_score()
     build_cpl_history()
     build_matches()
+    build_match_previews()
     link_schedule_matches()
     normalize_schedule_schema()
     build_news()
