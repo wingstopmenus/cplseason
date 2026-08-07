@@ -22,8 +22,7 @@
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
   <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807d">
-  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807a">
-  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807b">
+  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807c">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page streaming-guide-page">
@@ -94,18 +93,9 @@
             <b>Confirmed</b>
           </header>
           <div class="streaming-country-identity">
-            <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
-              {% if item.get('logos') %}
-                {% for logo in item.get('logos', []) %}
-                <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
-                {% endfor %}
-              {% else %}
-                <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
-              {% endif %}
-            </div>
             <div><span>Territory</span><h3>{{ item.territory }}</h3></div>
+            <div class="streaming-network-wordmark"><span>Official broadcaster</span><strong>{{ item.broadcaster }}</strong></div>
           </div>
-          <div class="streaming-country-platform"><span>Official 2026 broadcaster</span><strong>{{ item.broadcaster }}</strong></div>
           <p>{{ guide.territory_notes[item.territory] }}</p>
           <a href="/news/cpl-2026-broadcast-partners-confirmed/">View official announcement <span aria-hidden="true">↗</span></a>
         </article>
