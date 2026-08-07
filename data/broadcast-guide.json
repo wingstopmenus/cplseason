@@ -6,8 +6,8 @@
   "eyebrow": "TV and streaming guide",
   "headline": "CPL 2026 live streaming and TV channels",
   "lede": "Rush Live & Louder will show CPL 2026 across the Caribbean, while Willow lists the tournament for viewers in the United States and Canada. Check the service available in your country before the first match on 7 August.",
-  "hero_checked_label": "Verified 4 August",
-  "checked_label": "4 August 2026",
+  "hero_checked_label": "Verified 7 August",
+  "checked_label": "7 August 2026",
   "status": [
     {
       "region": "Caribbean",
@@ -253,5 +253,5 @@
       "answer": "Use the official Rush Caribbean Where to Watch directory to find the television provider currently listed for your territory. Channel numbers, packages and availability are controlled by the local provider and can change."
     }
   ],
-  "last_updated": "2026-08-04"
+  "last_updated": "2026-08-07"
 }

@@ -26,7 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260804a">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807b">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -65,27 +65,31 @@
           <a class="button secondary" href="#opening-matches">See CPL fixtures</a>
         </div>
         <div class="broadcast-check">
-          <span>CPL 2026 viewing guide</span>
-          <strong>{{ guide.checked_label }}</strong>
+          <span><i aria-hidden="true"></i> CPL 2026 viewing guide</span>
+          <strong>Checked {{ guide.checked_label }}</strong>
         </div>
       </div>
       <div class="broadcast-signal-board" aria-label="Confirmed viewing routes">
-        <div class="broadcast-signal-top"><span><i></i> Confirmed coverage</span><small>2 confirmed services</small></div>
+        <div class="broadcast-signal-top"><span><i></i> Broadcast desk</span><small>Confirmed services</small></div>
         <article>
-          <img class="broadcast-channel-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">
+          <div class="broadcast-route-copy">
+            <small>Caribbean</small>
+            <img class="broadcast-channel-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">
+            <h2>{{ guide.status[0].platform }}</h2>
+            <p>{{ guide.status[0].access }}</p>
+          </div>
           <span class="broadcast-route-number">01</span>
-          <small>Caribbean</small>
-          <h2>{{ guide.status[0].platform }}</h2>
-          <p>{{ guide.status[0].access }}</p>
-          <span class="broadcast-reference-note">Coverage begins 7 August</span>
+          <a class="broadcast-route-link" href="#caribbean-providers">Find your provider <span aria-hidden="true">&#8595;</span></a>
         </article>
         <article>
-          <img class="broadcast-channel-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">
+          <div class="broadcast-route-copy">
+            <small>United States &amp; Canada</small>
+            <img class="broadcast-channel-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">
+            <h2>{{ guide.status[1].platform }}</h2>
+            <p>TV, web, mobile apps and supported television providers.</p>
+          </div>
           <span class="broadcast-route-number">02</span>
-          <small>United States &amp; Canada</small>
-          <h2>{{ guide.status[1].platform }}</h2>
-          <p>TV, web, mobile apps and supported television providers.</p>
-          <span class="broadcast-reference-note">Listed from 7 August to 20 September</span>
+          <a class="broadcast-route-link" href="#north-america">See Willow options <span aria-hidden="true">&#8595;</span></a>
         </article>
       </div>
     </section>
@@ -96,6 +100,19 @@
       <div><dt>Teams</dt><dd>7</dd></div>
       <div><dt>Official time basis</dt><dd>Host venue local time</dd></div>
     </dl>
+
+    <nav class="broadcast-jump-nav" aria-label="Watch Live page sections">
+      <div>
+        <span>Quick access</span>
+        <strong>Find your viewing route</strong>
+      </div>
+      <a href="#caribbean-providers"><span>01</span>Caribbean</a>
+      <a href="#north-america"><span>02</span>US &amp; Canada</a>
+      <a href="#country-guide"><span>03</span>Country guide</a>
+      <a href="#match-times"><span>04</span>Match times</a>
+      <a href="#opening-matches"><span>05</span>Fixtures</a>
+      <a href="#streaming-faq"><span>06</span>FAQs</a>
+    </nav>
 
     <section class="broadcast-answer" aria-labelledby="broadcast-answer-title">
       <header>
@@ -137,7 +154,7 @@
       </div>
     </section>
 
-    <section class="broadcast-steps broadcast-north-america" aria-labelledby="broadcast-north-america-title">
+    <section id="north-america" class="broadcast-steps broadcast-north-america" aria-labelledby="broadcast-north-america-title">
       <header>
         <p class="broadcast-index">03 / United States &amp; Canada</p>
         <h2 id="broadcast-north-america-title">{{ guide.north_america.heading }}</h2>
@@ -211,7 +228,7 @@
       </div>
     </section>
 
-    <section class="broadcast-times" aria-labelledby="broadcast-times-title">
+    <section id="match-times" class="broadcast-times" aria-labelledby="broadcast-times-title">
       <header class="broadcast-section-header">
         <div>
           <p class="broadcast-index">07 / Match times</p>
@@ -270,7 +287,7 @@
       </div>
     </section>
 
-    <section class="broadcast-faq" aria-labelledby="broadcast-faq-title">
+    <section id="streaming-faq" class="broadcast-faq" aria-labelledby="broadcast-faq-title">
       <header>
         <p class="broadcast-index">10 / FAQs</p>
         <h2 id="broadcast-faq-title">CPL 2026 streaming FAQs</h2>
