@@ -21,8 +21,9 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807d">
-  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807c">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807g">
+  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807b">
+  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807e">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page streaming-guide-page">
@@ -83,21 +84,29 @@
     <section id="country-list" class="broadcast-regions streaming-country-section" aria-labelledby="country-list-title">
       <header class="broadcast-section-header">
         <div><p class="broadcast-index">02 / Official directory</p><h2 id="country-list-title">CPL live streaming by country</h2></div>
-        <p>Every card below comes from CPL's confirmed 2026 broadcaster announcement. Streaming availability can still depend on your current location.</p>
+        <p>Find your country below to see the TV channel or streaming service carrying CPL 2026. Availability still depends on where you are.</p>
       </header>
       <div class="streaming-country-grid">
         {% for item in official_broadcasts %}
         <article class="streaming-country-card is-confirmed" data-streaming-territory>
           <header>
             <small>{{ "%02d" | format(loop.index) }}</small>
-            <b>Confirmed</b>
+            <b>Where to watch</b>
           </header>
           <div class="streaming-country-identity">
-            <div><span>Territory</span><h3>{{ item.territory }}</h3></div>
-            <div class="streaming-network-wordmark"><span>Official broadcaster</span><strong>{{ item.broadcaster }}</strong></div>
+            <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
+              {% if item.get('logos') %}
+                {% for logo in item.get('logos', []) %}
+                <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
+                {% endfor %}
+              {% else %}
+                <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
+            {% endif %}
+            </div>
+            <div><span>{{ item.territory }}</span><h3>{{ item.broadcaster }}</h3></div>
           </div>
           <p>{{ guide.territory_notes[item.territory] }}</p>
-          <a href="/news/cpl-2026-broadcast-partners-confirmed/">View official announcement <span aria-hidden="true">↗</span></a>
+          <a href="/news/cpl-2026-broadcast-partners-confirmed/">Check viewing details <span aria-hidden="true">↗</span></a>
         </article>
         {% endfor %}
       </div>

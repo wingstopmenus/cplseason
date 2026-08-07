@@ -108,17 +108,15 @@
 
 .streaming-country-identity {
   display: grid;
-  grid-template-columns: minmax(0, .85fr) minmax(160px, 1.15fr);
+  grid-template-columns: 140px minmax(0, 1fr);
   gap: 16px;
-  align-items: stretch;
+  align-items: center;
   margin-top: 19px;
   padding-bottom: 17px;
   border-bottom: 1px solid rgba(255, 255, 255, .09);
 }
 
-.streaming-country-identity > div:first-child > span,
-.streaming-network-wordmark span,
-.streaming-country-platform span,
+.streaming-country-identity > div:last-child > span,
 .streaming-time-grid small {
   display: block;
   color: #8794ae;
@@ -127,21 +125,8 @@
   letter-spacing: .11em;
   text-transform: uppercase;
 }
-.streaming-network-wordmark {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 11px 14px;
-  border: 1px solid rgba(99, 220, 255, .17);
-  border-left: 3px solid var(--gold);
-  border-radius: 9px;
-  background: linear-gradient(135deg, rgba(99, 220, 255, .07), rgba(255, 209, 42, .035));
-}
-.streaming-network-wordmark strong { margin-top: 5px; color: #fff; font-size: 14px; line-height: 1.2; }
 .streaming-country-card h3 { margin-top: 5px; color: white; font-size: 20px; line-height: 1.2; }
-.streaming-country-platform { margin-top: 17px; }
-.streaming-country-platform strong { display: block; margin-top: 5px; color: var(--gold); font-size: 17px; line-height: 1.25; }
-.streaming-country-card > p { margin: 13px 0 0; color: #b5c0d4; font-size: 12px; line-height: 1.6; }
+.streaming-country-card > p { margin: 17px 0 0; color: #c3ccdc; font-size: 12px; line-height: 1.65; }
 .streaming-country-card > a { display: flex; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 17px; color: var(--stream-cyan); font-size: 10px; font-weight: 900; }
 .streaming-country-card > a:hover { color: var(--gold); }
 
@@ -213,7 +198,7 @@
 @media (max-width: 520px) {
   .streaming-guide-summary { margin: 14px; padding: 25px 21px; }
   .streaming-country-card { min-height: 0; padding: 20px 18px; }
-  .streaming-country-identity { grid-template-columns: 1fr; }
+  .streaming-country-identity { grid-template-columns: 118px minmax(0, 1fr); }
   .streaming-platforms,
   .streaming-times { padding: 25px 18px; }
 }
