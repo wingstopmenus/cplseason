@@ -108,16 +108,16 @@
 
 .streaming-country-identity {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
+  grid-template-columns: minmax(0, .85fr) minmax(160px, 1.15fr);
   gap: 16px;
-  align-items: center;
+  align-items: stretch;
   margin-top: 19px;
   padding-bottom: 17px;
   border-bottom: 1px solid rgba(255, 255, 255, .09);
 }
 
-.streaming-country-identity .broadcast-channel-logos { min-height: 40px; }
-.streaming-country-identity > div:last-child > span,
+.streaming-country-identity > div:first-child > span,
+.streaming-network-wordmark span,
 .streaming-country-platform span,
 .streaming-time-grid small {
   display: block;
@@ -127,6 +127,17 @@
   letter-spacing: .11em;
   text-transform: uppercase;
 }
+.streaming-network-wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px 14px;
+  border: 1px solid rgba(99, 220, 255, .17);
+  border-left: 3px solid var(--gold);
+  border-radius: 9px;
+  background: linear-gradient(135deg, rgba(99, 220, 255, .07), rgba(255, 209, 42, .035));
+}
+.streaming-network-wordmark strong { margin-top: 5px; color: #fff; font-size: 14px; line-height: 1.2; }
 .streaming-country-card h3 { margin-top: 5px; color: white; font-size: 20px; line-height: 1.2; }
 .streaming-country-platform { margin-top: 17px; }
 .streaming-country-platform strong { display: block; margin-top: 5px; color: var(--gold); font-size: 17px; line-height: 1.25; }
@@ -202,7 +213,7 @@
 @media (max-width: 520px) {
   .streaming-guide-summary { margin: 14px; padding: 25px 21px; }
   .streaming-country-card { min-height: 0; padding: 20px 18px; }
-  .streaming-country-identity { grid-template-columns: 78px minmax(0, 1fr); }
+  .streaming-country-identity { grid-template-columns: 1fr; }
   .streaming-platforms,
   .streaming-times { padding: 25px 18px; }
 }
