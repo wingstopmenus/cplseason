@@ -729,24 +729,52 @@ def main() -> int:
     ):
         if not broadcast_guide.get(field):
             errors.append(f"Broadcast guide is missing {field}")
-    if len(broadcast_guide.get("status", [])) != 11:
-        errors.append("Broadcast guide must contain eleven regional statuses")
+    if len(broadcast_guide.get("status", [])) != 2:
+        errors.append("Broadcast guide must contain two headline viewing routes")
     confirmed_regions = [
         item for item in broadcast_guide.get("status", [])
         if item.get("status") == "Confirmed"
     ]
-    if len(confirmed_regions) != 3:
+    if {
+        item.get("platform") for item in confirmed_regions
+    } != {"Rush Live & Louder", "Willow"}:
         errors.append(
-            "Broadcast guide must contain the three verified Caribbean, "
-            "United States and Canada routes"
+            "Broadcast guide must contain the confirmed Pan-Caribbean and "
+            "North America headline routes"
         )
+    broadcast_announcement_path = (
+        ROOT
+        / "data"
+        / "news"
+        / "cpl-2026-broadcast-partners-confirmed.json"
+    )
+    if not broadcast_announcement_path.is_file():
+        errors.append("Missing official CPL 2026 broadcast announcement data")
+        official_broadcasts = []
+    else:
+        official_broadcasts = load_json(broadcast_announcement_path).get(
+            "broadcast_territories", []
+        )
+    if len(official_broadcasts) != 16:
+        errors.append("Official CPL broadcast list must contain 16 territories")
     watch_page = (ROOT / "watch-live" / "index.html").read_text(
         encoding="utf-8"
     )
     if 'class="broadcast-guide"' not in watch_page:
         errors.append("Watch Live page was not rendered from the shared template")
-    if watch_page.count("data-broadcast-region") != 11:
-        errors.append("Watch Live page does not contain eleven regional cards")
+    if watch_page.count("data-broadcast-region") != len(official_broadcasts):
+        errors.append("Watch Live page does not contain all official territory cards")
+    for broadcast in official_broadcasts:
+        if escape(broadcast["territory"]) not in watch_page:
+            errors.append(
+                "Watch Live page is missing official territory: "
+                f"{broadcast['territory']}"
+            )
+        if escape(broadcast["broadcaster"]) not in watch_page:
+            errors.append(
+                "Watch Live page is missing official broadcaster: "
+                f"{broadcast['broadcaster']}"
+            )
     if len(broadcast_guide.get("caribbean_providers", [])) != 23:
         errors.append("Broadcast guide must contain 23 official Caribbean market routes")
     if (
@@ -800,13 +828,7 @@ def main() -> int:
         errors.append("Watch Live SEO title must be 45 to 60 characters")
     if not 140 <= len(broadcast_guide.get("description", "")) <= 160:
         errors.append("Watch Live meta description must be 140 to 160 characters")
-    for unsupported_claim in (
-        "Star Sports",
-        "FanCode",
-        "TNT Sports",
-        "Kayo Sports",
-        "Tapmad",
-    ):
+    for unsupported_claim in ("Star Sports", "TNT Sports", "Kayo Sports"):
         if unsupported_claim in watch_page:
             errors.append(
                 f"Watch Live page contains unverified 2026 claim: "
