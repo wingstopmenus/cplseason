@@ -68,6 +68,26 @@
             <ul>{% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}</ul>
           </section>
 
+          {%- if article.get("broadcast_territories") %}
+          <section class="news-broadcast-directory" aria-labelledby="broadcast-directory-title">
+            <header>
+              <p class="news-desk-kicker">Where to watch</p>
+              <h2 id="broadcast-directory-title">{{ article.broadcast_heading }}</h2>
+              <p>{{ article.broadcast_intro }}</p>
+            </header>
+            <div class="news-broadcast-grid">
+              {% for item in article.broadcast_territories %}
+              <article class="news-broadcast-card">
+                <span>{{ "%02d" | format(loop.index) }}</span>
+                <div><small>Territory</small><h3>{{ item.territory }}</h3></div>
+                <div><small>Broadcaster</small><strong>{{ item.broadcaster }}</strong></div>
+              </article>
+              {% endfor %}
+            </div>
+            <p class="news-broadcast-note">Platform availability can vary by package and location. Check the broadcaster in your territory before match time.</p>
+          </section>
+          {%- endif %}
+
           {%- if article.get("challenge_join_steps") %}
           <section class="news-challenge-join" aria-labelledby="challenge-join-title">
             <header>
