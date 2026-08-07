@@ -19,16 +19,16 @@
 }
 
 .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) {
-  gap: 8px;
+  gap: 10px;
 }
 
 .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .broadcast-channel-logo {
-  max-width: 48px;
-  height: 44px;
+  max-width: 58px;
+  height: 48px;
 }
 
 .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .channel-logo-tapmad {
-  max-width: 90px;
+  max-width: 96px;
 }
 
 .channel-logo-fox-sports,
@@ -53,6 +53,6 @@
 @media (max-width: 520px) {
   .broadcast-channel-logo { height: 46px; }
   .broadcast-channel-logo:only-child { max-width: 136px; }
-  .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .broadcast-channel-logo { height: 40px; }
-  .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .channel-logo-tapmad { max-width: 82px; }
+  .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .broadcast-channel-logo { height: 44px; }
+  .broadcast-channel-logos:has(.broadcast-channel-logo + .broadcast-channel-logo) .channel-logo-tapmad { max-width: 90px; }
 }
