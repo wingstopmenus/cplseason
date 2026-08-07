@@ -21,8 +21,9 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260804a">
-  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260804a">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807d">
+  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807a">
+  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807b">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page streaming-guide-page">
@@ -55,10 +56,10 @@
         </div>
       </div>
       <aside class="streaming-guide-summary" aria-label="Current CPL 2026 streaming status">
-        <span><i></i> Rights check complete</span>
-        <strong>3</strong>
-        <h2>confirmed viewing routes</h2>
-        <p>Caribbean, United States and Canada have current 2026 coverage. Nine requested markets remain pending.</p>
+        <span><i></i> Official global line-up</span>
+        <strong>16</strong>
+        <h2>territory entries confirmed</h2>
+        <p>Television and digital partners are now named across the Caribbean, North America, Europe, Asia and Oceania.</p>
         <a href="/watch-live/">Open the main Watch Live guide <b aria-hidden="true">→</b></a>
       </aside>
     </section>
@@ -66,46 +67,67 @@
     <dl class="broadcast-fact-rail" aria-label="CPL 2026 streaming guide facts">
       <div><dt>Season dates</dt><dd>7 Aug to 20 Sep</dd></div>
       <div><dt>Matches</dt><dd>39</dd></div>
-      <div><dt>Countries covered</dt><dd>12</dd></div>
-      <div><dt>Last rights check</dt><dd>4 Aug 2026</dd></div>
+      <div><dt>Official territories</dt><dd>16</dd></div>
+      <div><dt>Last update</dt><dd>7 Aug 2026</dd></div>
     </dl>
 
     <section class="broadcast-answer" aria-labelledby="quick-answer-title">
       <header><p class="broadcast-index">01 / Quick answer</p><h2 id="quick-answer-title">Where to watch CPL 2026 live</h2></header>
       <div>
-        <p><strong>USA and Canada:</strong> Willow by Cricbuzz lists the complete 39-match tournament from 7 August to 20 September.</p>
-        <p><strong>Caribbean:</strong> Rush Live &amp; Louder carries CPL 2026 through listed cable and television providers across the region.</p>
-        <p><strong>Other requested countries:</strong> a current 2026 rights holder has not yet been announced. Use the pending cards below instead of relying on an older season’s broadcaster list.</p>
+        <p><strong>USA and Canada:</strong> Willow is the official North American broadcaster announced for CPL 2026.</p>
+        <p><strong>Caribbean:</strong> Rush Live &amp; Louder provides pan-Caribbean coverage, with E-Networks, Winners TV and CNC3 named in selected local markets.</p>
+        <p><strong>India, Pakistan and Bangladesh:</strong> JioStar, FanCode, YouTube and TapMad appear in CPL's confirmed territory list. Use the directory below for the exact split.</p>
       </div>
       <aside><span>Before subscribing</span><strong>Find the exact CPL match in the service schedule.</strong><p>Platform access, packages and geographic rights can differ even when a broadcaster carries cricket.</p></aside>
     </section>
 
     <section id="country-list" class="broadcast-regions streaming-country-section" aria-labelledby="country-list-title">
       <header class="broadcast-section-header">
-        <div><p class="broadcast-index">02 / Territory directory</p><h2 id="country-list-title">CPL live streaming by country</h2></div>
-        <p>Each card shows the current 2026 rights status, the safest viewing route and the usual conversion for a 7pm host-venue start.</p>
+        <div><p class="broadcast-index">02 / Official directory</p><h2 id="country-list-title">CPL live streaming by country</h2></div>
+        <p>Every card below comes from CPL's confirmed 2026 broadcaster announcement. Streaming availability can still depend on your current location.</p>
       </header>
       <div class="streaming-country-grid">
-        {% for item in guide.regions %}
-        <article class="streaming-country-card {{ 'is-confirmed' if item.status == 'Confirmed' else 'is-pending' }}">
+        {% for item in official_broadcasts %}
+        <article class="streaming-country-card is-confirmed" data-streaming-territory>
           <header>
-            <span class="streaming-country-flag" aria-hidden="true">{{ item.flag }}</span>
-            <div><small>{{ "%02d" | format(loop.index) }}</small><h3>{{ item.name }}</h3></div>
-            <b>{{ item.status }}</b>
+            <small>{{ "%02d" | format(loop.index) }}</small>
+            <b>Confirmed</b>
           </header>
-          <div class="streaming-country-platform"><span>2026 viewing route</span><strong>{{ item.platform }}</strong></div>
-          <p>{{ item.access }}</p>
-          <p class="streaming-country-detail">{{ item.detail }}</p>
-          <div class="streaming-country-time"><span>Typical 7pm start</span><p>{{ item.time }}</p></div>
-          <a href="{{ item.source_url }}" rel="noopener">{{ item.source_label }} <span aria-hidden="true">↗</span></a>
+          <div class="streaming-country-identity">
+            <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
+              {% if item.get('logos') %}
+                {% for logo in item.get('logos', []) %}
+                <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
+                {% endfor %}
+              {% else %}
+                <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
+              {% endif %}
+            </div>
+            <div><span>Territory</span><h3>{{ item.territory }}</h3></div>
+          </div>
+          <div class="streaming-country-platform"><span>Official 2026 broadcaster</span><strong>{{ item.broadcaster }}</strong></div>
+          <p>{{ guide.territory_notes[item.territory] }}</p>
+          <a href="/news/cpl-2026-broadcast-partners-confirmed/">View official announcement <span aria-hidden="true">↗</span></a>
         </article>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="streaming-platforms" aria-labelledby="platform-guide-title">
+      <header class="broadcast-section-header">
+        <div><p class="broadcast-index">03 / Platform guide</p><h2 id="platform-guide-title">How the digital routes are divided</h2></div>
+        <p>These are territory-specific rights. A platform named in one market does not automatically carry the tournament everywhere.</p>
+      </header>
+      <div class="streaming-platform-grid">
+        {% for item in guide.platform_guides %}
+        <article><span>{{ "%02d" | format(loop.index) }}</span><small>{{ item.label }}</small><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
         {% endfor %}
       </div>
     </section>
 
     <section class="broadcast-caribbean streaming-caribbean" aria-labelledby="caribbean-title">
       <header class="broadcast-section-header">
-        <div><p class="broadcast-index">03 / Caribbean access</p><h2 id="caribbean-title">Rush providers in six CPL markets</h2></div>
+        <div><p class="broadcast-index">04 / Caribbean access</p><h2 id="caribbean-title">Rush providers in six CPL markets</h2></div>
         <p>These provider names come from the Rush Where to Watch directory. Channel numbers and packages remain under each local provider’s control.</p>
       </header>
       <div class="broadcast-provider-grid">
@@ -119,8 +141,21 @@
       </div>
     </section>
 
+    <section class="streaming-times" aria-labelledby="streaming-times-title">
+      <header class="broadcast-section-header">
+        <div><p class="broadcast-index">05 / Time guide</p><h2 id="streaming-times-title">Typical 7pm CPL start by country</h2></div>
+        <p>Most host grounds use UTC-4. Jamaica uses UTC-5, so its 7pm fixtures appear one hour later for international viewers.</p>
+      </header>
+      <div class="streaming-time-grid">
+        {% for item in guide.time_guides %}
+        <article data-streaming-time><span>{{ "%02d" | format(loop.index) }}</span><div><small>{{ item.zone }}</small><h3>{{ item.region }}</h3></div><div><small>Most grounds</small><strong>{{ item.standard }}</strong></div><div><small>Jamaica</small><strong>{{ item.jamaica }}</strong></div></article>
+        {% endfor %}
+      </div>
+      <p class="streaming-time-note">This is a reference for 7pm fixtures only. CPL 2026 also includes 10am, 5pm and 8pm starts, so use the <a href="/schedule/">full schedule</a> for the match you plan to watch.</p>
+    </section>
+
     <section class="broadcast-steps" aria-labelledby="streaming-check-title">
-      <header><p class="broadcast-index">04 / Access check</p><h2 id="streaming-check-title">Check the stream before the first ball</h2></header>
+      <header><p class="broadcast-index">06 / Access check</p><h2 id="streaming-check-title">Check the stream before the first ball</h2></header>
       <ol>
         <li><span>01</span><div><h3>Start with your country card</h3><p>Use the confirmed service only when the card includes a current 2026 source link.</p></div></li>
         <li><span>02</span><div><h3>Open the match listing</h3><p>Search for the exact teams and start time. A general cricket subscription does not guarantee every CPL fixture.</p></div></li>
@@ -130,7 +165,7 @@
     </section>
 
     <section class="broadcast-faq" aria-labelledby="streaming-faq-title">
-      <header><p class="broadcast-index">05 / FAQs</p><h2 id="streaming-faq-title">CPL 2026 streaming questions</h2><p class="broadcast-faq-intro">Current answers for confirmed services, pending markets, match times and free-stream claims.</p></header>
+      <header><p class="broadcast-index">07 / FAQs</p><h2 id="streaming-faq-title">CPL 2026 streaming questions</h2><p class="broadcast-faq-intro">Current answers for the official territory list, platform availability and international match times.</p></header>
       <div class="broadcast-faq-list">
         {% for item in guide.faq %}
         <details{% if loop.first %} open{% endif %}>
