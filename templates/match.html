@@ -185,6 +185,9 @@
       <div>
         <p>{{ match.preview }}</p>
         <p>{{ match.preview_detail }}</p>
+        {% if match.get("preview_url") %}
+        <a class="match-live-preview-link" href="{{ match.preview_url }}">Full match preview <span aria-hidden="true">→</span></a>
+        {% endif %}
       </div>
       <aside>
         <span>At a glance</span>
