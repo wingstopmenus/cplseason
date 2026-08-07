@@ -1,101 +1,29 @@
 {
   "slug": "watch-live",
   "title": "How to Watch CPL 2026: TV Channels and Live Streaming",
-  "description": "Complete CPL 2026 TV and streaming guide for the Caribbean, United States and Canada, with providers, devices, match times and country-by-country rights status.",
+  "description": "Official CPL 2026 TV and streaming guide covering confirmed broadcasters across the Caribbean, North America, Europe, Asia, Oceania and the rest of the world.",
   "canonical": "https://cplseason.com/watch-live/",
   "eyebrow": "TV and streaming guide",
   "headline": "CPL 2026 live streaming and TV channels",
-  "lede": "Rush Live & Louder will show CPL 2026 across the Caribbean, while Willow lists the tournament for viewers in the United States and Canada. Check the service available in your country before the first match on 7 August.",
+  "lede": "CPL has confirmed its worldwide broadcast partners for the 2026 season. Find the television channel or digital platform announced for your territory before choosing where to watch.",
   "hero_checked_label": "Verified 7 August",
   "checked_label": "7 August 2026",
   "status": [
     {
-      "region": "Caribbean",
+      "region": "Pan-Caribbean",
       "status": "Confirmed",
       "platform": "Rush Live & Louder",
-      "access": "Linear television through major regional cable and TV networks",
+      "access": "Pan-Caribbean coverage, with additional local partners in Guyana, Saint Lucia and Trinidad and Tobago",
       "action": "Check your provider guide",
-      "note": "CPL says the channel will carry comprehensive coverage of the 2026 season from 7 August. Provider channel numbers and packages vary by territory."
+      "note": "CPL lists Rush Live & Louder for pan-Caribbean coverage. E-Networks, Winners TV and CNC3 are also named for specific markets."
     },
     {
-      "region": "United States",
+      "region": "North America",
       "status": "Confirmed",
-      "platform": "Willow by Cricbuzz",
-      "access": "Willow TV, willow.tv, mobile apps and participating TV providers",
+      "platform": "Willow",
+      "access": "Willow coverage for viewers in North America",
       "action": "Check the Willow schedule",
-      "note": "Willow lists Caribbean Premier League 2026 from 7 August to 20 September and identifies CPL among its covered T20 leagues."
-    },
-    {
-      "region": "Canada",
-      "status": "Confirmed",
-      "platform": "Willow by Cricbuzz",
-      "access": "Willow web and app subscription in Canada",
-      "action": "Check the Willow schedule",
-      "note": "Willow describes its service as a cricket broadcaster for the United States and Canada. Confirm the individual match listing before paying."
-    },
-    {
-      "region": "India",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Wait for a CPL or broadcaster announcement",
-      "action": "Check official CPL news",
-      "note": "CPL 2026 broadcast details for India have not been announced."
-    },
-    {
-      "region": "United Kingdom & Ireland",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Wait for a territory-specific listing",
-      "action": "Check official CPL news",
-      "note": "Historical CPL broadcasters do not establish who will show the 2026 tournament."
-    },
-    {
-      "region": "Pakistan",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Check local sports schedules near the opening match",
-      "action": "Check official CPL news",
-      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for Pakistan."
-    },
-    {
-      "region": "Bangladesh",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Check local sports schedules near the opening match",
-      "action": "Check official CPL news",
-      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for Bangladesh."
-    },
-    {
-      "region": "Australia",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Check local cricket listings before subscribing",
-      "action": "Check official CPL news",
-      "note": "No current rights-holder listing confirms CPL 2026 coverage in Australia. Previous-season arrangements are not carried forward."
-    },
-    {
-      "region": "New Zealand",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Check local cricket listings before subscribing",
-      "action": "Check official CPL news",
-      "note": "No current rights-holder listing confirms CPL 2026 coverage in New Zealand. Previous-season arrangements are not carried forward."
-    },
-    {
-      "region": "South Africa",
-      "status": "Pending",
-      "platform": "No 2026 partner confirmed",
-      "access": "Check local sports listings before subscribing",
-      "action": "Check official CPL news",
-      "note": "No current CPL or broadcaster source confirms a 2026 television or streaming partner for South Africa."
-    },
-    {
-      "region": "Other territories",
-      "status": "Pending",
-      "platform": "No worldwide stream confirmed",
-      "access": "Follow CPL announcements for additional partners",
-      "action": "Check official CPL news",
-      "note": "CPL has not announced a free worldwide stream for the 2026 season."
+      "note": "CPL lists Willow as its 2026 North American broadcast partner."
     }
   ],
   "north_america": {
@@ -222,11 +150,11 @@
     },
     {
       "question": "Can I watch CPL 2026 free on YouTube?",
-      "answer": "CPL has not announced a free worldwide YouTube stream for the 2026 season. Highlights may appear on CPL channels, but they do not include full live-match coverage."
+      "answer": "YouTube is included in CPL's official 2026 distribution list for Australia, the Indian subcontinent's digital coverage, New Zealand, Pakistan, Bangladesh and the rest of the world. Availability still depends on the territory attached to the stream."
     },
     {
       "question": "Who will show CPL 2026 in India?",
-      "answer": "CPL has not announced its 2026 broadcaster for India. Check the CPL schedule and local sports listings before subscribing to a service."
+      "answer": "CPL lists JioStar for linear television in India, with YouTube and FanCode providing digital coverage across the Indian subcontinent."
     },
     {
       "question": "Are CPL fixture times shown in my local time?",

@@ -1849,6 +1849,10 @@ def build_points_table() -> None:
 
 def build_watch_live() -> None:
     guide = load_json(ROOT / "data" / "broadcast-guide.json")
+    broadcast_announcement = load_json(
+        ROOT / "data" / "news" / "cpl-2026-broadcast-partners-confirmed.json"
+    )
+    official_broadcasts = broadcast_announcement["broadcast_territories"]
     teams = {
         slug: load_json(ROOT / "data" / "teams" / f"{slug}.json")
         for slug in TEAM_ORDER
@@ -1939,6 +1943,7 @@ def build_watch_live() -> None:
     rendered = template_environment().get_template("watch-live.html").render(
         page=page,
         guide=guide,
+        official_broadcasts=official_broadcasts,
         opening_fixtures=opening_fixtures,
         schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
     )
@@ -1948,7 +1953,7 @@ def build_watch_live() -> None:
     build_homepage_watch_live(guide, opening_fixtures)
     print(
         f"Rendered {output.relative_to(ROOT)} with "
-        f"{len(guide['status'])} regional statuses"
+        f"{len(official_broadcasts)} official broadcast territories"
     )
 
 
