@@ -26,7 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807b">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807c">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -122,7 +122,7 @@
       <div>
         <p><strong>Caribbean viewers:</strong> Rush Live &amp; Louder is the confirmed television home. CPL says the channel carries the men's and women's tournaments and is distributed through major cable and TV networks across the region.</p>
         <p><strong>United States and Canada:</strong> Willow by Cricbuzz lists the 2026 tournament from 7 August to 20 September. You can access Willow through its direct service or a supported television provider, subject to the match schedule and your subscription.</p>
-        <p><strong>Other regions:</strong> CPL 2026 viewing details are still pending in several markets. Check this guide again before match day for newly announced broadcasters.</p>
+        <p><strong>Worldwide coverage:</strong> CPL has now named partners across Europe, India, Pakistan, Bangladesh, Australia, New Zealand, MENA, South East Asia and the United Kingdom, with YouTube listed for the rest of the world.</p>
       </div>
       <aside>
         <span>Before you pay</span>
@@ -137,7 +137,7 @@
           <p class="broadcast-index">02 / Caribbean providers</p>
           <h2 id="broadcast-caribbean-title">Where to find Rush Live &amp; Louder</h2>
         </div>
-        <p>Rush's official directory currently lists viewing routes across 23 Caribbean markets. Channel numbers and packages can differ, so confirm access with your local provider.</p>
+        <p>Rush's directory lists viewing routes across 23 Caribbean markets. CPL also names E-Networks for Guyana, Winners TV for Saint Lucia and CNC3 for Trinidad and Tobago.</p>
       </header>
       <div class="broadcast-provider-grid">
         {% for item in guide.caribbean_providers %}
@@ -178,24 +178,28 @@
           <p class="broadcast-index">04 / Country guide</p>
           <h2 id="broadcast-regions-title">CPL 2026 TV channels by country</h2>
         </div>
-        <p>Rush covers the Caribbean, while Willow covers the United States and Canada. <a href="/cpl-2026-live-streaming/">Open the complete 12-region streaming guide</a> for current status and local match times.</p>
+        <p>This is the official 16-territory broadcast list announced by CPL. <a href="/news/cpl-2026-broadcast-partners-confirmed/">Read the broadcast announcement</a> or open the <a href="/cpl-2026-live-streaming/">expanded streaming guide</a>.</p>
       </header>
-      <div class="broadcast-region-grid">
-        {% for item in guide.status %}
-        <article class="{{ 'is-confirmed' if item.status == 'Confirmed' else 'is-pending' }}" data-broadcast-region>
-          <header>
-            <span>{{ "%02d" | format(loop.index) }}</span>
-            <p>{{ item.region }}</p>
-            <small>{{ item.status }}</small>
-          </header>
-          {% if loop.index == 1 %}<img class="broadcast-region-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">{% elif loop.index in [2, 3] %}<img class="broadcast-region-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">{% endif %}
-          <h3>{{ item.platform }}</h3>
-          <p>{{ item.access }}</p>
-          <div>{{ item.note }}</div>
-          <span class="broadcast-region-note">Updated {{ guide.checked_label }}</span>
+      <div class="broadcast-official-grid">
+        {% for item in official_broadcasts %}
+        <article data-broadcast-region>
+          <span>{{ "%02d" | format(loop.index) }}</span>
+          <div>
+            <small>Territory</small>
+            <strong>{{ item.territory }}</strong>
+          </div>
+          <div>
+            <small>Broadcaster</small>
+            <strong>{{ item.broadcaster }}</strong>
+          </div>
         </article>
         {% endfor %}
       </div>
+      <footer class="broadcast-official-note">
+        <span>Official CPL announcement</span>
+        <p>Broadcaster platforms may apply geographic restrictions, account requirements or subscription terms.</p>
+        <a href="/news/cpl-2026-broadcast-partners-confirmed/">Open full announcement <span aria-hidden="true">&#8599;</span></a>
+      </footer>
     </section>
 
     <section class="broadcast-steps" aria-labelledby="broadcast-steps-title">
@@ -283,7 +287,7 @@
       </div>
       <div>
         <p>Rush says its channel will include highlights, original programmes and classic matches alongside live cricket. Willow advertises full-match replays and custom highlights, subject to the event rights attached to your account.</p>
-        <p>Outside the Caribbean, United States and Canada, check CPL announcements before match day. Use the <a href="/schedule/">schedule</a> for match times and the <a href="/points-table/">Points Table</a> for results.</p>
+        <p>Use the official territory list above to find your broadcaster, the <a href="/schedule/">schedule</a> for match times and the <a href="/points-table/">Points Table</a> for results.</p>
       </div>
     </section>
 
