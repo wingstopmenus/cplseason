@@ -26,8 +26,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807d">
-  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807a">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807e">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -75,7 +74,7 @@
         <article>
           <div class="broadcast-route-copy">
             <small>Caribbean</small>
-            <img class="broadcast-channel-logo" src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder">
+            <span class="broadcast-route-logo"><img src="/static/img/channels/rush-live-louder-logo.webp" width="900" height="160" alt="Rush Live and Louder"></span>
             <h2>{{ guide.status[0].platform }}</h2>
             <p>{{ guide.status[0].access }}</p>
           </div>
@@ -85,7 +84,7 @@
         <article>
           <div class="broadcast-route-copy">
             <small>United States &amp; Canada</small>
-            <img class="broadcast-channel-logo" src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow">
+            <span class="broadcast-route-logo"><img src="/static/img/channels/willow-by-cricbuzz-logo.webp" width="890" height="126" alt="Willow by Cricbuzz"></span>
             <h2>{{ guide.status[1].platform }}</h2>
             <p>TV, web, mobile apps and supported television providers.</p>
           </div>
@@ -128,7 +127,7 @@
       <aside>
         <span>Before you pay</span>
         <strong>Find the exact match in the provider schedule.</strong>
-        <p>A logo on a rights page does not guarantee that every fixture is available on every plan or device.</p>
+        <p>A broadcaster listing does not guarantee that every fixture is available on every plan or device.</p>
       </aside>
     </section>
 
@@ -185,15 +184,7 @@
         {% for item in official_broadcasts %}
         <article data-broadcast-region>
           <span>{{ "%02d" | format(loop.index) }}</span>
-          <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
-            {% if item.get('logos') %}
-              {% for logo in item.get('logos', []) %}
-              <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
-              {% endfor %}
-            {% else %}
-              <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
-            {% endif %}
-          </div>
+          <div class="broadcast-network-wordmark" aria-label="{{ item.broadcaster }} broadcaster">{{ item.broadcaster }}</div>
           <div>
             <small>Territory</small>
             <strong>{{ item.territory }}</strong>
