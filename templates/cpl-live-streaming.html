@@ -21,9 +21,9 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807g">
-  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807b">
-  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807e">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807h">
+  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807c">
+  <link rel="stylesheet" href="/static/css/cpl-live-streaming.css?v=20260807f">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page streaming-guide-page">
@@ -91,22 +91,16 @@
         <article class="streaming-country-card is-confirmed" data-streaming-territory>
           <header>
             <small>{{ "%02d" | format(loop.index) }}</small>
-            <b>Where to watch</b>
+            <b>{{ item.territory }}</b>
           </header>
           <div class="streaming-country-identity">
             <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
-              {% if item.get('logos') %}
-                {% for logo in item.get('logos', []) %}
-                <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
-                {% endfor %}
-              {% else %}
-                <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
-            {% endif %}
+              {% for logo in item.get('logos', []) %}
+              <img class="broadcast-channel-logo channel-logo-{{ logo.key }}" src="/static/img/channels/{{ logo.key }}-logo.webp" width="180" height="72" alt="{{ logo.alt }}" loading="lazy" decoding="async">
+              {% endfor %}
             </div>
-            <div><span>{{ item.territory }}</span><h3>{{ item.broadcaster }}</h3></div>
+            <h3>Watch CPL Live on <em>{{ item.broadcaster }}</em> in {{ item.territory }}</h3>
           </div>
-          <p>{{ guide.territory_notes[item.territory] }}</p>
-          <a href="/news/cpl-2026-broadcast-partners-confirmed/">Check viewing details <span aria-hidden="true">↗</span></a>
         </article>
         {% endfor %}
       </div>

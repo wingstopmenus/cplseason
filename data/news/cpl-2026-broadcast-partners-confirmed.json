@@ -34,7 +34,7 @@
     {"territory": "Bangladesh", "broadcaster": "TapMad and YouTube", "logos": [{"key": "tapmad", "alt": "TapMad logo"}, {"key": "youtube", "alt": "YouTube logo"}]},
     {"territory": "Pan-Caribbean", "broadcaster": "Rush Live & Louder", "logos": [{"key": "rush", "alt": "Rush Live and Louder logo"}]},
     {"territory": "Rest of the world", "broadcaster": "YouTube", "logos": [{"key": "youtube", "alt": "YouTube logo"}]},
-    {"territory": "Saint Lucia", "broadcaster": "Winners TV", "logo_text": "Winners TV"},
+    {"territory": "Saint Lucia", "broadcaster": "Winners TV", "logos": [{"key": "winners-tv", "alt": "Winners TV logo"}]},
     {"territory": "South East Asia", "broadcaster": "Cricbuzz", "logos": [{"key": "cricbuzz", "alt": "Cricbuzz logo"}]},
     {"territory": "Trinidad & Tobago", "broadcaster": "CNC3", "logos": [{"key": "cnc3", "alt": "CNC3 logo"}]},
     {"territory": "United Kingdom", "broadcaster": "TNT", "logos": [{"key": "tnt", "alt": "TNT logo"}]}
