@@ -635,7 +635,7 @@
 .broadcast-official-grid article {
   position: relative;
   display: grid;
-  grid-template-columns: 34px 150px minmax(0, 1fr);
+  grid-template-columns: 34px 176px minmax(0, 1fr);
   gap: 18px;
   align-items: center;
   min-height: 142px;
@@ -684,11 +684,14 @@
   align-items: center;
   justify-content: flex-start;
   gap: 12px !important;
-  width: 150px;
+  width: 176px;
   min-height: 68px;
   padding-right: 18px;
   border-right: 1px solid rgba(255, 255, 255, .1);
   background: transparent;
+}
+.broadcast-regions {
+  scroll-margin-top: 96px;
 }
 .broadcast-official-grid article > div {
   display: grid;
