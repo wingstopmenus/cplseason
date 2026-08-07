@@ -1959,6 +1959,10 @@ def build_watch_live() -> None:
 
 def build_cpl_live_streaming() -> None:
     guide = load_json(ROOT / "data" / "cpl-live-streaming-guide.json")
+    broadcast_announcement = load_json(
+        ROOT / "data" / "news" / "cpl-2026-broadcast-partners-confirmed.json"
+    )
+    official_broadcasts = broadcast_announcement["broadcast_territories"]
     page = {
         "title": guide["title"],
         "description": guide["description"],
@@ -2025,6 +2029,7 @@ def build_cpl_live_streaming() -> None:
     ).render(
         page=page,
         guide=guide,
+        official_broadcasts=official_broadcasts,
         schema_json=json.dumps(schema, ensure_ascii=False, separators=(",", ":")),
     )
     output = ROOT / guide["slug"] / "index.html"
@@ -2032,7 +2037,7 @@ def build_cpl_live_streaming() -> None:
     output.write_text(rendered + "\n", encoding="utf-8")
     print(
         f"Rendered {output.relative_to(ROOT)} with "
-        f"{len(guide['regions'])} country and regional entries"
+        f"{len(official_broadcasts)} official broadcast territories"
     )
 
 
