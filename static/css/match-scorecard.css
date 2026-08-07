@@ -409,6 +409,27 @@
 .match-live-preview > header p,
 .match-live-venue > div > p:first-child { color: var(--mp-purple); }
 .match-live-preview > div p { color: #4f5969; font-size: 14px; line-height: 1.7; }
+.match-live-preview-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 46px;
+  margin-top: 8px;
+  padding: 11px 17px;
+  border: 1px solid #e1b900;
+  border-radius: 6px;
+  background: var(--mp-gold);
+  color: var(--mp-ink);
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.match-live-preview-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(98, 73, 0, .16);
+}
+.match-live-preview-link span { color: var(--mp-purple); font-size: 17px; }
 .match-live-preview aside {
   padding: 18px;
   border-color: #eadff7;
