@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ preview.title }}</title>
+  <meta name="description" content="{{ preview.meta_description }}">
+  <meta name="author" content="{{ preview.author.name }}">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="{{ preview.canonical }}">
+  <meta property="og:title" content="{{ preview.title }}">
+  <meta property="og:description" content="{{ preview.meta_description }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ preview.canonical }}">
+  <meta property="og:site_name" content="CPL Season">
+  <meta property="article:published_time" content="{{ preview.date_published }}">
+  <meta property="article:modified_time" content="{{ preview.date_modified }}">
+  <meta property="og:image" content="https://cplseason.com{{ preview.image }}">
+  <meta property="og:image:alt" content="{{ preview.image_alt }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ preview.title }}">
+  <meta name="twitter:description" content="{{ preview.meta_description }}">
+  <meta name="twitter:image" content="https://cplseason.com{{ preview.image }}">
+  <meta name="theme-color" content="#050617">
+  <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808preview2">
+  <script type="application/ld+json">{{ schema_json | safe }}</script>
+</head>
+<body class="match-live-page match-preview-post-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="CPL Season home"><img class="brand-logo" src="/static/img/brand/cplseason-logo.webp" width="1024" height="395" alt="CPL Season Caribbean Premier League 2026 logo"></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/">Home</a><a href="/schedule/">Schedule</a><a href="/live-score/">Live Score</a><a href="/teams/">Teams</a><a href="/points-table/">Points Table</a><a href="/players/">Players</a><a href="/squads/">Squads</a><a href="/venues/">Venues</a><a href="/watch-live/">Watch Live</a><a href="/news/">News</a>
+    </nav>
+  </header>
+
+  <main id="main" class="match-live">
+    <nav class="match-live-breadcrumbs standings-breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li>Match Preview</li><li aria-current="page">{{ preview.short_title }}</li></ol></nav>
+    <article class="match-live-preview match-live-preview-article match-preview-standalone">
+      <header>
+        <p>Match Preview · CPL 2026</p>
+        <h1>{{ preview.title }}</h1>
+        <div class="match-preview-byline"><span>By <a href="/authors/{{ preview.author.slug }}/">{{ preview.author.name }}</a></span><time datetime="{{ preview.date_published }}">Published {{ preview.date_label }}</time></div>
+      </header>
+      <figure class="match-preview-feature"><img src="{{ preview.image }}" width="1280" height="720" alt="{{ preview.image_alt }}"></figure>
+      <div class="match-preview-story">
+        <div class="match-preview-intro">{% for paragraph in preview.intro %}<p>{{ paragraph | safe }}</p>{% endfor %}</div>
+        <section class="match-preview-details" aria-labelledby="match-preview-details-title">
+          <h2 id="match-preview-details-title">Match details</h2>
+          <dl>{% for item in preview.match_details %}<div><dt>{{ item.label }}</dt><dd>{{ item.value }}</dd></div>{% endfor %}</dl>
+        </section>
+        {% for section in preview.sections %}
+        <section class="match-preview-copy-section">
+          <h2>{{ section.heading }}</h2>
+          {% for paragraph in section.get("paragraphs", []) %}<p>{{ paragraph | safe }}</p>{% endfor %}
+          {% if section.get("contests") %}<div class="match-preview-contests">{% for contest in section.contests %}<article><h3>{{ contest.heading }}</h3><p>{{ contest.text }}</p></article>{% endfor %}</div>{% endif %}
+          {% if section.get("players") %}<div class="match-preview-players">{% for player in section.players %}<article><h3><a href="/player/{{ player.slug }}/">{{ player.name }}</a></h3><p>{{ player.text }}</p></article>{% endfor %}</div>{% endif %}
+          {% if section.get("call") %}<p class="match-preview-call">{{ section.call }}</p>{% endif %}
+        </section>
+        {% endfor %}
+        <footer class="match-preview-actions">
+          <a href="/match/{{ preview.match_slug }}/">Open Match 1 centre <span>→</span></a>
+          <a href="/team/jamaica-kingsmen/">Jamaica Kingsmen <span>→</span></a>
+          <a href="/team/antigua-barbuda-falcons/">Antigua & Barbuda Falcons <span>→</span></a>
+        </footer>
+      </div>
+    </article>
+  </main>
+  {% include "partials/footer.html" %}
+  <script src="/static/js/site.js?v=20260804matchpages" defer></script>
+</body>
+</html>

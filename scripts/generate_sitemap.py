@@ -29,6 +29,7 @@ CORE_ROUTES = {
 CONTENT_PREFIXES = (
     "/authors/",
     "/match/",
+    "/match-preview/",
     "/news/",
     "/player/",
     "/team/",
