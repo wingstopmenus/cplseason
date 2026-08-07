@@ -835,6 +835,43 @@ def main() -> int:
                 f"{unsupported_claim}"
             )
 
+    streaming_guide = load_json(ROOT / "data" / "cpl-live-streaming-guide.json")
+    streaming_page = (ROOT / "cpl-2026-live-streaming" / "index.html").read_text(
+        encoding="utf-8"
+    )
+    if streaming_page.count("data-streaming-territory") != len(official_broadcasts):
+        errors.append("Live streaming guide does not contain all official territory cards")
+    for broadcast in official_broadcasts:
+        if escape(broadcast["territory"]) not in streaming_page:
+            errors.append(
+                "Live streaming guide is missing official territory: "
+                f"{broadcast['territory']}"
+            )
+        if escape(broadcast["broadcaster"]) not in streaming_page:
+            errors.append(
+                "Live streaming guide is missing official broadcaster: "
+                f"{broadcast['broadcaster']}"
+            )
+    if streaming_page.count("data-streaming-time") != 8:
+        errors.append("Live streaming guide does not contain eight time conversions")
+    if streaming_page.count("<h1") != 1:
+        errors.append("Live streaming guide must contain exactly one H1")
+    if (
+        '<link rel="canonical" href="https://cplseason.com/cpl-2026-live-streaming/">'
+        not in streaming_page
+    ):
+        errors.append("Live streaming guide has the wrong canonical")
+    if '"@type":"FAQPage"' not in streaming_page:
+        errors.append("Live streaming guide is missing FAQ schema")
+    if len(streaming_guide.get("platform_guides", [])) != 5:
+        errors.append("Live streaming guide must contain five platform guides")
+    for stale_claim in (
+        "2026 broadcaster not announced",
+        "Nine requested markets remain pending",
+    ):
+        if stale_claim in streaming_page:
+            errors.append(f"Live streaming guide contains stale claim: {stale_claim}")
+
     venues_page = (ROOT / "venues" / "index.html").read_text(encoding="utf-8")
     venue_card_count = venues_page.count("data-venue-card")
     if venue_card_count != 8:
