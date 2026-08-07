@@ -26,7 +26,8 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727wm">
-  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807e">
+  <link rel="stylesheet" href="/static/css/watch-live-redesign.css?v=20260807g">
+  <link rel="stylesheet" href="/static/css/channel-logos.css?v=20260807b">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="broadcast-page">
@@ -178,19 +179,23 @@
           <p class="broadcast-index">04 / Country guide</p>
           <h2 id="broadcast-regions-title">CPL 2026 TV channels by country</h2>
         </div>
-        <p>This is the official 16-territory broadcast list announced by CPL. <a href="/news/cpl-2026-broadcast-partners-confirmed/">Read the broadcast announcement</a> or open the <a href="/cpl-2026-live-streaming/">expanded streaming guide</a>.</p>
+        <p>Pick your country to see where CPL 2026 is available. For platform notes and viewing help, open the <a href="/cpl-2026-live-streaming/">full streaming guide</a>.</p>
       </header>
       <div class="broadcast-official-grid">
         {% for item in official_broadcasts %}
         <article data-broadcast-region>
           <span>{{ "%02d" | format(loop.index) }}</span>
-          <div class="broadcast-network-wordmark" aria-label="{{ item.broadcaster }} broadcaster">{{ item.broadcaster }}</div>
-          <div>
-            <small>Territory</small>
-            <strong>{{ item.territory }}</strong>
+          <div class="broadcast-channel-logos" aria-label="{{ item.broadcaster }} logo{% if item.get('logos', []) | length > 1 %}s{% endif %}">
+            {% if item.get('logos') %}
+              {% for logo in item.get('logos', []) %}
+              <span class="broadcast-channel-logo channel-logo-{{ logo.key }}{% if logo.get('theme') %} is-{{ logo.theme }}{% endif %}" role="img" aria-label="{{ logo.alt }}"></span>
+              {% endfor %}
+            {% else %}
+              <span class="broadcast-channel-wordmark" aria-hidden="true">{{ item.get('logo_text', item.broadcaster) }}</span>
+            {% endif %}
           </div>
-          <div>
-            <small>Broadcaster</small>
+          <div class="broadcast-card-copy">
+            <small>{{ item.territory }}</small>
             <strong>{{ item.broadcaster }}</strong>
           </div>
         </article>
