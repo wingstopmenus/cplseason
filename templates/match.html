@@ -169,6 +169,7 @@
         </section>
         <section class="match-page-rail-card match-page-rail-links">
           <header><span>CPL 2026</span><h2>Match coverage</h2></header>
+          {% if match.get("preview_url") %}<a href="{{ match.preview_url }}">Full match preview <span>→</span></a>{% endif %}
           <a href="/live-score/">All live scores <span>→</span></a>
           <a href="/schedule/">Full schedule <span>→</span></a>
           <a href="/watch-live/">Official broadcasters <span>→</span></a>
