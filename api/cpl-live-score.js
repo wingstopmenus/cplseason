@@ -313,8 +313,8 @@ module.exports = async function cplLiveScore(request, response) {
     const completedMatches = officialMatches.filter(isCompleted);
     const focusSource =
       liveMatch ||
-      completedMatches[completedMatches.length - 1] ||
       nextMatch ||
+      completedMatches[completedMatches.length - 1] ||
       officialMatches[0];
 
     const recentSources = completedMatches.slice(-3).reverse();
