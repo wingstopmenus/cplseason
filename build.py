@@ -3123,11 +3123,12 @@ def sync_shared_footer() -> None:
         else:
             site_css_url = "/static/css/site.css?v=20260731breadcrumbs"
         updated = css_pattern.sub(site_css_url, updated)
-        site_js_url = (
-            "/static/js/site.js?v=20260805playersd"
-            if html_path == ROOT / "players" / "index.html"
-            else "/static/js/site.js?v=20260729ms"
-        )
+        if html_path == ROOT / "players" / "index.html":
+            site_js_url = "/static/js/site.js?v=20260805playersd"
+        elif html_path.parent.parent == ROOT / "match":
+            site_js_url = "/static/js/site.js?v=20260808live2"
+        else:
+            site_js_url = "/static/js/site.js?v=20260729ms"
         updated = js_pattern.sub(site_js_url, updated)
         updated = adsense_script_pattern.sub("", updated)
         if "</head>" not in updated:

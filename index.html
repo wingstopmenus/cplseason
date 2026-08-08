@@ -38,7 +38,7 @@
   <meta name="theme-color" content="#05061d">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/webp" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260808hydrate1">
   <style>
     .match-rail-card,.match-centre-card{position:relative}
     .home-match-card-link{position:absolute;inset:0;z-index:1;border-radius:inherit}
@@ -134,6 +134,7 @@
   class="home-match-rail home-match-centre-v3"
   aria-labelledby="home-matches-title"
   data-home-live-centre
+  data-hydration-state="pending"
   data-live-score-endpoint="/api/cpl-live-score"
   data-fixture-endpoint="/static/match-spotlight.json"
 >
@@ -1338,6 +1339,7 @@
 <section
   class="band muted home-standings-band"
   data-live-standings
+  data-hydration-state="pending"
   data-standings-endpoint="/api/cpl-standings"
   data-standings-surface="compact"
 >
@@ -2015,8 +2017,8 @@
       });
     })();
   </script>
-  <script src="/static/js/home-live-centre.js?v=20260808a" defer></script>
-  <script src="/static/js/standings.js?v=20260808a" defer></script>
+  <script src="/static/js/home-live-centre.js?v=20260808hydrate1" defer></script>
+  <script src="/static/js/standings.js?v=20260808hydrate1" defer></script>
   <script src="/static/js/site.js?v=20260729ms" defer></script>
 </body>
 </html>

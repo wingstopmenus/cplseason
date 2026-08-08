@@ -678,3 +678,20 @@
     transition: none;
   }
 }
+.standings-control[data-hydration-state="pending"] .standings-hero-board,
+.standings-control[data-hydration-state="pending"] .standings-leaderboard { position: relative; min-height: 300px; }
+.standings-control[data-hydration-state="pending"] .standings-hero-board > *,
+.standings-control[data-hydration-state="pending"] .standings-leaderboard > * { visibility: hidden; }
+.standings-control[data-hydration-state="pending"] .standings-hero-board::after,
+.standings-control[data-hydration-state="pending"] .standings-leaderboard::after {
+  content: "Loading current standings…";
+  position: absolute;
+  inset: 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dfe4ea;
+  border-radius: 10px;
+  background: #f6f7f9;
+  color: #667085;
+  font-size: 13px;
+}

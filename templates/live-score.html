@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260805mc3">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260808hydrate1">
   <link rel="stylesheet" href="/static/css/live-score-match-centre.css?v=20260805espn1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
@@ -47,6 +47,7 @@
     id="main"
     class="live-score-control"
     data-live-score
+    data-hydration-state="pending"
     data-live-score-endpoint="{{ config.endpoint }}"
     data-live-score-interval="{{ config.polling_seconds }}"
   >
@@ -340,6 +341,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260805hub" defer></script>
+  <script src="/static/js/live-score.js?v=20260808hydrate1" defer></script>
 </body>
 </html>

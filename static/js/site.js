@@ -799,6 +799,7 @@ if (liveMatchData) {
   const batters = liveMatchData.querySelector("[data-match-batters]");
   const bowler = liveMatchData.querySelector("[data-match-bowler]");
   const recentBalls = liveMatchData.querySelector("[data-match-recent-balls]");
+  const liveStream = liveMatchData.querySelector("[data-match-live-stream]");
   const commentaryPanel = document.querySelector("[data-match-commentary-panel]");
   const commentaryStatus = commentaryPanel?.querySelector("[data-commentary-status]");
   const commentarySummary = commentaryPanel?.querySelector("[data-commentary-summary]");
@@ -1060,6 +1061,100 @@ if (liveMatchData) {
     }
   };
 
+  const renderLiveStream = (match, isComplete, isLive) => {
+    if (!liveStream) return;
+    liveStream.replaceChildren();
+    const commentary = Array.isArray(match.commentary) ? match.commentary : [];
+    const recent = commentary.length ? commentary.slice(0, 30) : (match.live?.recentBalls || []).slice().reverse();
+    const performers = [
+      match.topPerformers?.mostRuns ? `Top scorer: ${match.topPerformers.mostRuns.name} · ${match.topPerformers.mostRuns.value ?? "—"} runs` : "",
+      match.topPerformers?.mostWickets ? `Top bowler: ${match.topPerformers.mostWickets.name} · ${match.topPerformers.mostWickets.value ?? "—"} wickets` : "",
+    ].filter(Boolean);
+
+    if (match.playerOfMatch?.name) {
+      const award = document.createElement("article");
+      award.className = "match-live-award";
+      if (match.playerOfMatch.image) {
+        const image = document.createElement("img");
+        image.src = match.playerOfMatch.image;
+        image.alt = match.playerOfMatch.name;
+        image.width = 48;
+        image.height = 48;
+        award.append(image);
+      }
+      const copy = document.createElement("div");
+      const label = document.createElement("small");
+      label.textContent = "Player of the match";
+      const name = document.createElement("strong");
+      name.textContent = match.playerOfMatch.name;
+      copy.append(label, name);
+      if (match.playerOfMatch.detail) {
+        const detail = document.createElement("span");
+        detail.textContent = match.playerOfMatch.detail;
+        copy.append(detail);
+      }
+      award.append(copy);
+      liveStream.append(award);
+    }
+
+    if (isComplete || performers.length) {
+      const recap = document.createElement("article");
+      recap.className = "match-live-recap";
+      const heading = document.createElement("strong");
+      heading.textContent = match.description || match.stateOfPlay || "Match complete";
+      recap.append(heading);
+      performers.forEach((line) => {
+        const item = document.createElement("p");
+        item.textContent = line;
+        recap.append(item);
+      });
+      liveStream.append(recap);
+    }
+
+    if (!recent.length) {
+      if (isLive) {
+        const waiting = document.createElement("p");
+        waiting.className = "match-live-stream-empty";
+        waiting.textContent = "Waiting for the next delivery.";
+        liveStream.append(waiting);
+      }
+      liveStream.hidden = !liveStream.childElementCount;
+      return;
+    }
+
+    const groups = new Map();
+    recent.forEach((ball) => {
+      const over = Number.isFinite(ball.over) ? String(ball.over) : "Current over";
+      if (!groups.has(over)) groups.set(over, []);
+      groups.get(over).push(ball);
+    });
+    [...groups.entries()].slice(0, 4).forEach(([over, balls]) => {
+      const section = document.createElement("section");
+      section.className = "match-live-over";
+      const header = document.createElement("header");
+      const title = document.createElement("strong");
+      title.textContent = over === "Current over" ? over : `Over ${over}`;
+      const outcomes = document.createElement("span");
+      outcomes.textContent = balls.slice().reverse().map((ball) => ball.label || "•").join(" ");
+      header.append(title, outcomes);
+      const list = document.createElement("div");
+      balls.forEach((ball) => {
+        const row = document.createElement("article");
+        const delivery = document.createElement("strong");
+        delivery.textContent = Number.isFinite(ball.over) && Number.isFinite(ball.ball) ? `${ball.over}.${ball.ball}` : "Ball";
+        const text = document.createElement("p");
+        text.textContent = ball.commentary || ball.label || "Delivery update";
+        const outcome = document.createElement("span");
+        outcome.textContent = ball.label || "•";
+        row.append(delivery, text, outcome);
+        list.append(row);
+      });
+      section.append(header, list);
+      liveStream.append(section);
+    });
+    liveStream.hidden = false;
+  };
+
   const setLiveStat = (element, value) => {
     if (!element || value === null || value === undefined) return;
     element.hidden = false;
@@ -1082,6 +1177,7 @@ if (liveMatchData) {
     renderFullScorecard(match);
     renderConfirmedXi(match);
     renderFullCommentary(match, isComplete, isLive);
+    renderLiveStream(match, isComplete, isLive);
 
     if (currentStats.status) currentStats.status.textContent = status;
     const currentInnings = (match.innings || []).slice(-1)[0];
@@ -1105,6 +1201,7 @@ if (liveMatchData) {
       scoreboard.hidden = true;
       if (liveMatchPrestart) liveMatchPrestart.hidden = false;
       if (liveMatchRefresh) liveMatchRefresh.disabled = false;
+      liveMatchData.dataset.hydrationState = "ready";
       return;
     }
 
@@ -1192,6 +1289,7 @@ if (liveMatchData) {
     current.hidden = !(batters.childElementCount || bowler.childElementCount || recentBalls.childElementCount);
     fetched.textContent = `Updated ${new Date(fetchedAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit", second: "2-digit" })}`;
     if (liveMatchRefresh) liveMatchRefresh.disabled = false;
+    liveMatchData.dataset.hydrationState = "ready";
   };
 
   const loadMatch = async () => {
@@ -1217,6 +1315,7 @@ if (liveMatchData) {
     } catch {
       if (feedState) feedState.textContent = "Update delayed";
       if (feedStatus) feedStatus.textContent = "Live scores are temporarily delayed. Match details remain available.";
+      liveMatchData.dataset.hydrationState = "ready";
       if (liveMatchRefresh) liveMatchRefresh.disabled = false;
       window.clearTimeout(pollTimer);
       pollTimer = window.setTimeout(loadMatch, 30000);

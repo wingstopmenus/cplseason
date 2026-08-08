@@ -818,6 +818,7 @@
       requestInProgress = false;
       refreshButton?.classList.remove("is-loading");
       if (refreshButton) refreshButton.disabled = false;
+      root.dataset.hydrationState = "ready";
     }
   };
 

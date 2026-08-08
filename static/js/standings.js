@@ -171,7 +171,10 @@
       console.warn("CPL standings refresh unavailable", error);
     } finally {
       requestInProgress = false;
-      roots.forEach((root) => root.removeAttribute("aria-busy"));
+      roots.forEach((root) => {
+        root.removeAttribute("aria-busy");
+        root.dataset.hydrationState = "ready";
+      });
     }
   };
 

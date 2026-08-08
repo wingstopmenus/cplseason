@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
-  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808tabs1">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808live2">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
@@ -100,7 +100,7 @@
           <span>Scores update automatically during play.</span>
         </div>
       </header>
-      <div class="match-live-frame-shell" data-match-live-data data-match-number="{{ match.match_number }}" data-match-home="{{ match.home_label }}" data-match-away="{{ match.away_label }}" data-match-start="{{ match.start_iso }}">
+      <div class="match-live-frame-shell" data-match-live-data data-hydration-state="pending" data-match-number="{{ match.match_number }}" data-match-home="{{ match.home_label }}" data-match-away="{{ match.away_label }}" data-match-start="{{ match.start_iso }}">
         <div class="match-live-frame-status"><strong data-match-feed-state>Match status</strong></div>
         <div class="match-live-prestart" data-match-prestart>
           <span><i aria-hidden="true"></i> Match {{ match.match_number }} · {{ match.date_label_long }}</span>
@@ -133,6 +133,7 @@
             <div data-match-bowler></div>
             <div data-match-recent-balls></div>
           </div>
+          <div class="match-live-stream" data-match-live-stream hidden></div>
           <small class="match-live-verified"><span data-match-fetched>Waiting for update</span></small>
         </div>
       </div>
@@ -274,6 +275,6 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260808tabs1" defer></script>
+  <script src="/static/js/site.js?v=20260808live2" defer></script>
 </body>
 </html>

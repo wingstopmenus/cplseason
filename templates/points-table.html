@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727pt">
-  <link rel="stylesheet" href="/static/css/points-table-raceboard.css?v=20260805b">
+  <link rel="stylesheet" href="/static/css/points-table-raceboard.css?v=20260808hydrate1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="standings-page">
@@ -46,6 +46,7 @@
     id="main"
     class="standings-control"
     data-live-standings
+    data-hydration-state="pending"
     data-standings-endpoint="/api/cpl-standings"
     data-standings-surface="full"
   >
@@ -243,7 +244,7 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/standings.js?v=20260808a" defer></script>
+  <script src="/static/js/standings.js?v=20260808hydrate1" defer></script>
   <script src="/static/js/site.js?v=20260729ms" defer></script>
 </body>
 </html>

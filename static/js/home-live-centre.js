@@ -208,6 +208,7 @@
     } finally {
       requestInProgress = false;
       root.removeAttribute("aria-busy");
+      root.dataset.hydrationState = "ready";
     }
   };
 

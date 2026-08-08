@@ -11045,3 +11045,24 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
   .news-broadcast-grid { grid-template-columns: 1fr; }
   .news-broadcast-card { grid-template-columns: 1.7rem minmax(0, 1fr) minmax(0, .85fr); }
 }
+/* Hold dynamic homepage modules until their first current-data response. */
+[data-home-live-centre][data-hydration-state="pending"],
+.home-standings-band[data-hydration-state="pending"] { position: relative; min-height: 320px; }
+[data-home-live-centre][data-hydration-state="pending"] > *,
+.home-standings-band[data-hydration-state="pending"] > * { visibility: hidden; }
+[data-home-live-centre][data-hydration-state="pending"]::after,
+.home-standings-band[data-hydration-state="pending"]::after {
+  content: "Loading current CPL data…";
+  position: absolute;
+  inset: 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2e6ec;
+  border-radius: 12px;
+  background: linear-gradient(100deg, #f4f6f8 25%, #fff 45%, #f4f6f8 65%);
+  background-size: 220% 100%;
+  color: #667085;
+  font-size: 13px;
+  animation: cpl-hydration-shimmer 1.3s linear infinite;
+}
+@keyframes cpl-hydration-shimmer { to { background-position: -220% 0; } }

@@ -67,7 +67,7 @@ function normalizePlayerPerformance(performance) {
   const player =
     performance?.player || performance?.person || performance?.batter || {};
   return {
-    inningsId: String(innings?.inningsId || ""),
+    inningsId: String(performance?.inningsId || ""),
     name: displayPlayerName(
       player?.cardNameF ||
         player?.cardNameS ||
@@ -127,6 +127,32 @@ function normalizeToss(toss) {
   return `${winner} won the toss${
     decision ? ` and chose to ${decision.toLowerCase()}` : ""
   }`;
+}
+
+function normalizePlayerOfMatch(match) {
+  const award =
+    match?.playerOfTheMatch ||
+    match?.playerOfMatch ||
+    match?.awards?.playerOfTheMatch ||
+    match?.awards?.playerOfMatch ||
+    match?.matchAwards?.playerOfTheMatch ||
+    null;
+  if (!award) return null;
+  const player = award?.player || award?.person || award;
+  const name = displayPlayerName(
+    player?.cardNameF ||
+      player?.cardNameS ||
+      player?.fullName ||
+      player?.name ||
+      award?.name ||
+      "",
+  );
+  if (!name) return null;
+  return {
+    name,
+    image: logoUrl(player?.image || player?.photo || player?.headshot),
+    detail: String(award?.description || award?.performance || ""),
+  };
 }
 
 function normalizeCommentaryBall(ball, inningsNumber) {
@@ -283,6 +309,7 @@ function normalizeMatch(match) {
         "wickets",
       ),
     },
+    playerOfMatch: normalizePlayerOfMatch(match),
     live: {
       batters: Array.isArray(liveSummary?.currentBatters)
         ? liveSummary.currentBatters.map(normalizePlayerPerformance).slice(0, 2)
