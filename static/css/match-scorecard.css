@@ -47,6 +47,8 @@
   border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 .match-live-topline span { color: var(--mp-gold); }
+.match-live-topline span[data-match-state="live"] { color: #b8ff1f; }
+.match-live-topline span[data-match-state="complete"] { color: #53d6ff; }
 .match-live-topline strong,
 .match-live-topline small { color: #b8c2d5; }
 .match-live-title {
@@ -112,6 +114,10 @@
 }
 .match-live-countdown > * { min-height: 58px; padding: 9px 16px; }
 .match-live-countdown strong { color: var(--mp-gold); font-size: 20px; }
+.match-live-countdown.is-live,
+.match-live-countdown.is-complete { grid-template-columns: 1fr; }
+.match-live-countdown.is-live > p,
+.match-live-countdown.is-complete > p { min-height: 64px; color: var(--mp-gold); text-align: center; }
 
 .match-page-index {
   top: 76px;
