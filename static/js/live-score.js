@@ -836,7 +836,7 @@
     if (!countdownValue || !Number.isFinite(currentFocusStart)) return;
     const remaining = currentFocusStart - Date.now();
     if (remaining <= 0) {
-      text(countdownValue, isComplete(currentStatus) ? "Complete" : "Match window");
+      text(countdownValue, isComplete(currentStatus) ? "Complete" : "Live now");
       text(countdownLabel, isComplete(currentStatus) ? "Official result" : "Live feed active");
       text(heroCountdownValue, isComplete(currentStatus) ? "Complete" : "Live now");
       text(heroCountdownLabel, isComplete(currentStatus) ? "Official result" : "Match in progress");

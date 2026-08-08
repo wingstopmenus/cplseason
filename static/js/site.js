@@ -761,7 +761,7 @@ if (liveMatchCountdown) {
     const remaining = targetTime - Date.now();
     if (remaining <= 0) {
       liveMatchCountdown.classList.add("is-live");
-      if (label) label.textContent = "Match window open · live data appears above";
+      if (label) label.textContent = "Match started";
       return true;
     }
     const totalSeconds = Math.floor(remaining / 1000);
@@ -1168,6 +1168,10 @@ if (liveMatchData) {
     const isUpcoming = upcomingPattern.test(status);
     const isLive = !isComplete && !isUpcoming;
     liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
+    const heroCountdownLabel = liveMatchCountdown?.querySelector("[data-match-countdown-label]");
+    if (heroCountdownLabel && !isUpcoming) {
+      heroCountdownLabel.textContent = isComplete ? "Match completed" : "Match in progress";
+    }
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
     const summaryText = match.stateOfPlay || match.description || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
     summary.textContent = summaryText;
