@@ -1,7 +1,13 @@
 const API_ROOT = "https://api.mcpro.cricket/v1";
 const COMPETITION_ID = "sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
-const verifiedMatchAwards = require("../data/match-awards.json");
+const verifiedMatchAwards = {
+  "1": {
+    name: "Alzarri Joseph",
+    image: "/static/img/official/players/alzarri-joseph.webp",
+    detail: "3 wickets",
+  },
+};
 
 const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
 const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
