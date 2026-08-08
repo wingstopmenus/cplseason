@@ -118,6 +118,28 @@
 .match-live-countdown.is-complete { grid-template-columns: 1fr; }
 .match-live-countdown.is-live > p,
 .match-live-countdown.is-complete > p { min-height: 64px; color: var(--mp-gold); text-align: center; }
+.match-live-countdown > [hidden] { display: none !important; }
+
+.match-live-hero[data-match-hero-hydration="pending"] {
+  position: relative;
+  min-height: 302px;
+}
+.match-live-hero[data-match-hero-hydration="pending"] > * { visibility: hidden; }
+.match-live-hero[data-match-hero-hydration="pending"]::after {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 12% 40%, rgba(116, 52, 191, .28), transparent 24rem),
+    linear-gradient(135deg, var(--mp-navy) 0%, #0c1531 65%, #071d26 100%);
+  color: #b8c2d5;
+  content: "Loading match status…";
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
 
 .match-page-index {
   top: 76px;

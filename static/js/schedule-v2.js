@@ -1,5 +1,10 @@
 (() => {
   const cards = [...document.querySelectorAll("[data-schedule-match]")];
+  cards.forEach((card) => {
+    card.dataset.matchState = "upcoming";
+    const cta = card.querySelector(".schedule-match-centre-cta");
+    if (cta) cta.dataset.statusLabel = "UPCOMING";
+  });
   const venueFilter = document.querySelector("#schedule-venue-filter");
   const teamFilter = document.querySelector("#schedule-team-filter");
   const monthFilter = document.querySelector("#schedule-month-filter");
@@ -163,7 +168,7 @@
     }
     if (resultsTitle) {
       const titles = {
-        all: "Complete CPL 2026 schedule",
+        all: "CPL 2026 fixtures, live status and results",
         august: "August 2026 fixtures",
         september: "September 2026 fixtures",
         playoffs: "CPL 2026 playoffs and final",
@@ -240,6 +245,25 @@
         String(item.status || "").trim().toLowerCase().replace(/[_-]+/g, " "),
       ]),
     );
+    cards.forEach((card) => {
+      const matchLabel = card.querySelector(".schedule-match-label strong")?.textContent || "";
+      const matchNumber = Number(matchLabel.match(/\d+/)?.[0]);
+      const fixture = matchSchedule.find((item) => Number(item.matchNumber) === matchNumber);
+      let status = statusByMatch.get(matchNumber) || "";
+      if (!status && fixture?.startIso) {
+        const start = Date.parse(fixture.startIso);
+        if (Number.isFinite(start) && Date.now() >= start + 6 * 60 * 60 * 1000) status = "complete";
+      }
+      const isComplete = settled.has(status);
+      const isLive = Boolean(status) && !isComplete && !/upcoming|scheduled|fixture|pre match/.test(status);
+      const state = isComplete ? "complete" : isLive ? "live" : "upcoming";
+      const cta = card.querySelector(".schedule-match-centre-cta");
+      card.dataset.matchState = state;
+      if (!cta) return;
+      cta.dataset.statusLabel = isComplete ? "COMPLETED" : isLive ? "LIVE" : "UPCOMING";
+      const actionText = [...cta.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim());
+      if (actionText) actionText.nodeValue = isComplete ? "View result " : isLive ? "Follow live " : "Open match centre ";
+    });
     const next = matchSchedule.find((match) => {
       const status = statusByMatch.get(Number(match.matchNumber));
       if (settled.has(status)) return false;

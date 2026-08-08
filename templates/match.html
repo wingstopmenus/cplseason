@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
-  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808state2">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808state5">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
@@ -39,7 +39,7 @@
       <ol><li><a href="/">Home</a></li><li><a href="/schedule/">Schedule</a></li><li aria-current="page">Match {{ match.match_number }}</li></ol>
     </nav>
 
-    <section class="match-live-hero" aria-labelledby="match-live-title">
+    <section class="match-live-hero" aria-labelledby="match-live-title" data-match-hero-hydration="pending">
       <div class="match-live-topline">
         <span data-match-hero-status><i aria-hidden="true"></i> {{ match.status }}</span>
         <strong>Match {{ "%02d" | format(match.match_number) }}</strong>
@@ -275,6 +275,6 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260808state2" defer></script>
+  <script src="/static/js/site.js?v=20260808state5" defer></script>
 </body>
 </html>

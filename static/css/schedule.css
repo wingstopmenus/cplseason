@@ -2394,10 +2394,20 @@ main {
   border-radius: 999px;
   background: rgba(255, 203, 5, .14);
   color: #ffcb05;
-  content: "UPCOMING";
+  content: attr(data-status-label);
   font-size: 9px;
   font-weight: 900;
   letter-spacing: .08em;
+}
+
+.schedule-match-card[data-match-state="complete"] .schedule-match-centre-cta::before {
+  background: rgba(83, 214, 255, .15);
+  color: #53d6ff;
+}
+
+.schedule-match-card[data-match-state="live"] .schedule-match-centre-cta::before {
+  background: rgba(185, 255, 43, .15);
+  color: #b9ff2b;
 }
 
 .schedule-match-centre-cta span {

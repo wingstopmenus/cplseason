@@ -1,6 +1,7 @@
 const API_ROOT = "https://api.mcpro.cricket/v1";
 const COMPETITION_ID = "sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
+const verifiedMatchAwards = require("../data/match-awards.json");
 
 const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
 const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
@@ -173,16 +174,31 @@ function normalizePlayerOfMatch(match) {
 
 function normalizeCommentaryBall(ball, inningsNumber) {
   return {
-    inningsNumber: numeric(inningsNumber),
-    label: String(ball?.shortDescription || ball?.displayValue || "•"),
-    over: numeric(ball?.overNumber),
-    ball: numeric(ball?.ballDisplayNumber ?? ball?.ballNumber),
-    commentary: String(ball?.description || ball?.commentary || ""),
+    inningsNumber: numeric(ball?.matchInningsNumber ?? ball?.inningsNumber ?? inningsNumber),
+    label: String(ball?.shortDescription || ball?.displayValue || ball?.outcome || ball?.runs || "•"),
+    over: numeric(ball?.overNumber ?? ball?.over),
+    ball: numeric(ball?.ballDisplayNumber ?? ball?.ballNumber ?? ball?.ball),
+    commentary: String(ball?.description || ball?.commentary || ball?.longDescription || ball?.text || ""),
     score: {
       runs: numeric(ball?.inningsProgressiveScore?.runs),
       wickets: numeric(ball?.inningsProgressiveScore?.wickets),
     },
   };
+}
+
+function extractCommentaryBalls(payload, fallbackInningsNumber) {
+  const root = payload?.data ?? payload;
+  const candidates = Array.isArray(root)
+    ? root
+    : root?.inningsBalls || root?.balls || root?.ballByBall || root?.commentary || [];
+  if (!Array.isArray(candidates)) return [];
+  return candidates.flatMap((entry) => {
+    if (Array.isArray(entry?.balls)) {
+      const inningsNumber = entry?.matchInningsNumber ?? entry?.inningsNumber ?? fallbackInningsNumber;
+      return entry.balls.map((ball) => normalizeCommentaryBall(ball, inningsNumber));
+    }
+    return [normalizeCommentaryBall(entry, fallbackInningsNumber)];
+  });
 }
 
 function normalizeScorecard(rawScorecard) {
@@ -409,27 +425,21 @@ async function fetchSummary(match, includeCommentary = false) {
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
     }
+    if (!summary.playerOfMatch) {
+      summary.playerOfMatch = verifiedMatchAwards[String(summary.matchNumber)] || null;
+    }
     if (includeCommentary) {
-      const innings = Array.isArray(rawSummary?.inningsScores)
-        ? rawSummary.inningsScores.filter((item) => item?.inningsId)
-        : [];
-      const [ballResponses, rawScorecard] = await Promise.all([
-        Promise.all(innings.map((item) =>
+      const rawScorecard = await fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null);
+      const innings = [...(rawSummary?.inningsScores || []), ...(rawScorecard?.inningsScorecards || [])]
+        .filter((item, index, items) => item?.inningsId && items.findIndex((candidate) => String(candidate?.inningsId) === String(item.inningsId)) === index);
+      const ballResponses = await Promise.all(innings.map((item) =>
           fetchOfficial(
             `/match/${matchId}/balls?inningsId=${encodeURIComponent(item.inningsId)}`,
           ).catch(() => null),
-        )),
-        fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null),
-      ]);
+        ));
       summary.commentary = ballResponses
-        .flatMap((payload) =>
-          Array.isArray(payload?.inningsBalls) ? payload.inningsBalls : [],
-        )
-        .flatMap((inningsData) =>
-          (inningsData?.balls || []).map((ball) =>
-            normalizeCommentaryBall(ball, inningsData?.matchInningsNumber),
-          ),
-        )
+        .flatMap((payload, index) => extractCommentaryBalls(payload, innings[index]?.matchInningsNumber))
+        .filter((ball) => ball.commentary || ball.label !== "•")
         .reverse();
       summary.scorecard = normalizeScorecard(rawScorecard);
     }

@@ -1483,6 +1483,57 @@
   .live-score-telemetry-heading { align-items: flex-start; flex-direction: column; gap: 4px; }
   .live-score-workspace .live-score-metrics article { padding: 13px; }
   .live-score-sidebar { padding: 0 10px 10px; }
+
+  /* Keep the match hero readable above the fold on narrow phones. */
+  .live-score-match-meta { padding: 12px 14px; }
+  .live-score-scoreboard {
+    grid-template-columns: minmax(0, 1fr) 66px minmax(0, 1fr);
+    align-items: stretch;
+  }
+  .live-score-team {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 12px;
+    min-width: 0;
+    min-height: 250px;
+    padding: 18px 12px;
+  }
+  .live-score-team-home {
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 0;
+  }
+  .live-score-team-away {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 255, 255, .1);
+  }
+  .live-score-team > a,
+  .live-score-team-away > a {
+    justify-items: center;
+    text-align: center;
+  }
+  .live-score-team img { width: 66px; height: 66px; }
+  .live-score-team > a strong { font-size: 14px; line-height: 1.25; }
+  .live-score-innings,
+  .live-score-team-away .live-score-innings {
+    justify-items: center;
+    padding: 10px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, .11);
+  }
+  .live-score-innings strong { font-size: 30px; }
+  .live-score-innings span { font-size: 9px; text-align: center; }
+  .live-score-centre {
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 12px;
+    min-height: 250px;
+    padding: 12px 4px;
+    border-block: 0;
+  }
+  .live-score-centre > span { width: 54px; height: 54px; }
+  .live-score-centre strong { font-size: 14px; }
+  .live-score-centre small { font-size: 8px; }
+  .live-score-match-state { gap: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
