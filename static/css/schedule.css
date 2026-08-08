@@ -2390,6 +2390,10 @@ main {
 }
 
 .schedule-match-centre-cta::before {
+  box-sizing: border-box;
+  width: 112px;
+  min-height: 24px;
+  margin-inline: auto;
   padding: 4px 7px;
   border-radius: 999px;
   background: rgba(255, 203, 5, .14);
@@ -2398,6 +2402,11 @@ main {
   font-size: 9px;
   font-weight: 900;
   letter-spacing: .08em;
+}
+
+.schedule-match-centre-cta {
+  grid-template-rows: 24px 14px minmax(34px, auto) 20px;
+  min-width: 142px;
 }
 
 .schedule-match-card[data-match-state="complete"] .schedule-match-centre-cta::before {

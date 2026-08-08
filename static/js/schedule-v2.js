@@ -168,7 +168,7 @@
     }
     if (resultsTitle) {
       const titles = {
-        all: "CPL 2026 match schedule, live scores and results",
+        all: "CPL 2026 Schedule & Fixtures",
         august: "August 2026 fixtures",
         september: "September 2026 fixtures",
         playoffs: "CPL 2026 playoffs and final",
@@ -262,7 +262,7 @@
       if (!cta) return;
       cta.dataset.statusLabel = isComplete ? "COMPLETED" : isLive ? "LIVE" : "UPCOMING";
       const actionText = [...cta.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim());
-      if (actionText) actionText.nodeValue = isComplete ? "View result " : isLive ? "Follow live " : "Open match centre ";
+      if (actionText) actionText.nodeValue = isComplete ? "View match result " : isLive ? "Follow match live " : "Open match centre ";
     });
     const next = matchSchedule.find((match) => {
       const status = statusByMatch.get(Number(match.matchNumber));
