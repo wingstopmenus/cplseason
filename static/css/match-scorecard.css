@@ -18,8 +18,12 @@
 
 .match-live-breadcrumbs {
   width: min(1180px, calc(100% - 42px));
+  margin: 0 auto;
   padding: 20px 0 14px;
   color: #657184;
+}
+.match-live-page .site-ad-banner {
+  width: min(1180px, calc(100% - 42px));
 }
 .match-live-breadcrumbs a { color: #566174; }
 .match-live-breadcrumbs [aria-current="page"] { color: var(--mp-purple); }
@@ -847,4 +851,7 @@
   background: #f6f7f9;
   color: var(--mp-muted);
   font-size: 13px;
+}
+@media (max-width: 700px) {
+  .match-live-page .site-ad-banner { width: calc(100% - 24px); border-radius: 10px; }
 }
