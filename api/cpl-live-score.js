@@ -130,15 +130,31 @@ function normalizeToss(toss) {
 }
 
 function normalizePlayerOfMatch(match) {
+  const awardCollections = [
+    match?.awards,
+    match?.matchAwards,
+    match?.playerAwards,
+  ].flatMap((collection) =>
+    Array.isArray(collection) ? collection : collection && typeof collection === "object" ? Object.values(collection) : [],
+  );
+  const namedAward = awardCollections.find((entry) =>
+    /player\s+of\s+the\s+match|player\s+of\s+match|man\s+of\s+the\s+match/i.test(
+      String(entry?.type || entry?.title || entry?.awardName || entry?.label || ""),
+    ),
+  );
   const award =
     match?.playerOfTheMatch ||
     match?.playerOfMatch ||
+    match?.playerOfMatchAward ||
+    match?.bestPlayer ||
     match?.awards?.playerOfTheMatch ||
     match?.awards?.playerOfMatch ||
     match?.matchAwards?.playerOfTheMatch ||
+    namedAward ||
     null;
   if (!award) return null;
-  const player = award?.player || award?.person || award;
+  if (typeof award === "string") return { name: displayPlayerName(award), image: null, detail: "" };
+  const player = award?.player || award?.person || award?.recipient || award?.winner || award;
   const name = displayPlayerName(
     player?.cardNameF ||
       player?.cardNameS ||

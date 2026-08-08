@@ -799,6 +799,7 @@ if (liveMatchData) {
   const batters = liveMatchData.querySelector("[data-match-batters]");
   const bowler = liveMatchData.querySelector("[data-match-bowler]");
   const recentBalls = liveMatchData.querySelector("[data-match-recent-balls]");
+  const matchDataNote = document.querySelector("[data-match-data-note]");
   const liveStream = liveMatchData.querySelector("[data-match-live-stream]");
   const commentaryPanel = document.querySelector("[data-match-commentary-panel]");
   const commentaryStatus = commentaryPanel?.querySelector("[data-commentary-status]");
@@ -1173,8 +1174,9 @@ if (liveMatchData) {
       heroCountdownLabel.textContent = isComplete ? "Match completed" : "Match in progress";
     }
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
-    const summaryText = match.stateOfPlay || match.description || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
-    summary.textContent = summaryText;
+    const summaryText = (isComplete ? match.description || match.stateOfPlay : match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
+    summary.textContent = isComplete ? "Match result" : summaryText;
+    if (matchDataNote) matchDataNote.hidden = !isUpcoming;
     if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Updating automatically during play" : "Commentary begins when match coverage goes live.";
     if (commentarySummary) commentarySummary.textContent = summaryText;
     if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "The latest state of play updates automatically." : "Pre-match updates, the toss and full commentary will appear as the match develops.");
@@ -1222,7 +1224,10 @@ if (liveMatchData) {
       if (overs) overs.textContent = latestInnings?.overs === null || latestInnings?.overs === undefined ? "" : `${latestInnings.overs} overs`;
     });
 
-    if (match.toss) {
+    if (isComplete) {
+      toss.textContent = match.description || match.stateOfPlay || "Match completed";
+      toss.hidden = false;
+    } else if (match.toss) {
       toss.textContent = match.toss;
       toss.hidden = false;
     } else {
