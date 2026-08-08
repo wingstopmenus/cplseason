@@ -159,6 +159,7 @@
 .match-page-primary-main { display: grid; gap: 16px; min-width: 0; }
 
 .match-live-centre,
+.match-scorecard-panel,
 .match-commentary-panel {
   width: 100%;
   margin: 0;
@@ -169,6 +170,35 @@
   background: var(--mp-card);
   box-shadow: 0 1px 2px rgba(24, 31, 50, .04);
 }
+[data-match-panel][hidden] { display: none !important; }
+.match-scorecard-panel {
+  overflow: hidden;
+  border: 1px solid var(--mp-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--mp-ink);
+}
+.match-scorecard-body { display: grid; gap: 16px; padding: 18px; }
+.match-scorecard-innings { overflow-x: auto; border: 1px solid var(--mp-line); border-radius: 7px; background: #fff; }
+.match-scorecard-innings > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; background: #f8f9fa; }
+.match-scorecard-innings > header h3 { color: var(--mp-ink); font-size: 18px; }
+.match-scorecard-innings > header strong { color: var(--mp-purple); font-size: 18px; }
+.match-scorecard-innings table { width: 100%; min-width: 660px; border-collapse: collapse; }
+.match-scorecard-innings th,
+.match-scorecard-innings td { padding: 10px 12px; border-bottom: 1px solid var(--mp-line); color: var(--mp-muted); font-size: 11px; text-align: right; }
+.match-scorecard-innings th:first-child,
+.match-scorecard-innings td:first-child { color: var(--mp-ink); text-align: left; }
+.match-scorecard-innings th:nth-child(2),
+.match-scorecard-innings td:nth-child(2) { text-align: left; }
+.match-scorecard-innings thead th { background: #f1f2f4; color: #687283; font-size: 9px; text-transform: uppercase; }
+.match-scorecard-innings h4 { padding: 16px 18px 8px; color: var(--mp-ink); font-size: 15px; }
+.match-scorecard-extras,
+.match-scorecard-fall { margin: 0; padding: 12px 18px; color: var(--mp-muted); font-size: 11px; }
+.match-scorecard-fall { border-top: 1px solid var(--mp-line); }
+.match-commentary-load-more { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 18px; border-top: 1px solid var(--mp-line); }
+.match-commentary-load-more > span { min-height: 0; background: transparent; color: var(--mp-muted); font-size: 10px; }
+.match-commentary-load-more button { padding: 10px 16px; border: 0; border-radius: 6px; background: var(--mp-gold); color: var(--mp-ink); font: inherit; font-size: 11px; font-weight: 900; cursor: pointer; }
+.match-stats dl:not([data-current-match-stats]) { display: none; }
 .match-live-section-head {
   min-height: 70px;
   margin: 0;

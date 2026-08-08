@@ -143,6 +143,78 @@ function normalizeCommentaryBall(ball, inningsNumber) {
   };
 }
 
+function normalizeScorecard(rawScorecard) {
+  const teams = new Map(
+    (rawScorecard?.teams || []).map((team) => [String(team?.teamId || ""), team]),
+  );
+  const normalized = (rawScorecard?.inningsScorecards || []).map((innings) => {
+    const score = innings?.progressiveScores || {};
+    const battingTeam = teams.get(String(innings?.battingTeamId || "")) || {};
+    return {
+      inningsId: String(innings?.inningsId || ""),
+      inningsNumber: numeric(innings?.matchInningsNumber),
+      battingTeamId: String(innings?.battingTeamId || ""),
+      bowlingTeamId: String(innings?.bowlingTeamId || ""),
+      battingTeamName: String(battingTeam?.name || ""),
+      runs: numeric(score?.runs),
+      wickets: numeric(score?.wickets),
+      overs: numeric(score?.oversBowled),
+      runRate: numeric(score?.runRate),
+      extras: {
+        total: numeric(score?.extras),
+        byes: numeric(score?.byes),
+        legByes: numeric(score?.legByes),
+        noBalls: numeric(score?.noBalls),
+        wides: numeric(score?.wides),
+      },
+      batting: (innings?.battingPerformances || []).map((player) => ({
+        name: displayPlayerName(player?.cardNameF || player?.cardNameS),
+        dismissal: String(
+          player?.notOut
+            ? "not out"
+            : player?.dismissal?.type || player?.text || "",
+        ),
+        runs: numeric(player?.runs),
+        balls: numeric(player?.balls),
+        fours: numeric(player?.fours),
+        sixes: numeric(player?.sixes),
+        strikeRate: numeric(player?.strikeRate),
+        notOut: Boolean(player?.notOut),
+      })),
+      bowling: (innings?.bowlingPerformances || []).map((player) => ({
+        name: displayPlayerName(player?.cardNameF || player?.cardNameS),
+        overs: numeric(player?.overs),
+        maidens: numeric(player?.maidens),
+        runs: numeric(player?.runs),
+        wickets: numeric(player?.wickets),
+        economy: numeric(player?.economy),
+        wides: numeric(player?.wides),
+        noBalls: numeric(player?.noBalls),
+      })),
+      fallOfWickets: (innings?.fallOfWickets || []).map((entry) => ({
+        name: displayPlayerName(
+          entry?.batter?.cardNameF || entry?.batter?.cardNameS,
+        ),
+        wicket: numeric(entry?.dismissal?.wicketNumber),
+        runs: numeric(entry?.dismissal?.fowRuns),
+        over: String(entry?.dismissal?.fowOver || ""),
+      })),
+    };
+  });
+  return normalized.map((innings) => {
+    const names = new Map();
+    innings.batting.forEach((player) => names.set(player.name, player));
+    normalized
+      .filter((item) => item.bowlingTeamId === innings.battingTeamId)
+      .flatMap((item) => item.bowling)
+      .forEach((player) => names.set(player.name, player));
+    return {
+      ...innings,
+      confirmedPlayers: [...names.values()].map((player) => ({ name: player.name })),
+    };
+  });
+}
+
 function displayPlayerName(value) {
   const name = String(value || "").trim();
   if (!name.includes(",")) return name;
@@ -298,13 +370,14 @@ async function fetchSummary(match, includeCommentary = false) {
       const innings = Array.isArray(rawSummary?.inningsScores)
         ? rawSummary.inningsScores.filter((item) => item?.inningsId)
         : [];
-      const ballResponses = await Promise.all(
-        innings.map((item) =>
+      const [ballResponses, rawScorecard] = await Promise.all([
+        Promise.all(innings.map((item) =>
           fetchOfficial(
             `/match/${matchId}/balls?inningsId=${encodeURIComponent(item.inningsId)}`,
           ).catch(() => null),
-        ),
-      );
+        )),
+        fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null),
+      ]);
       summary.commentary = ballResponses
         .flatMap((payload) =>
           Array.isArray(payload?.inningsBalls) ? payload.inningsBalls : [],
@@ -315,6 +388,7 @@ async function fetchSummary(match, includeCommentary = false) {
           ),
         )
         .reverse();
+      summary.scorecard = normalizeScorecard(rawScorecard);
     }
     return summary;
   } catch {

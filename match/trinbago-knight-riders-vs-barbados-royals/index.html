@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260731breadcrumbs">
-  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260805espn1">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260808tabs1">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/#webpage","url":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/","name":"TKR vs Tridents: CPL 2026 Match 19 Live Score & Result","description":"Follow Trinbago Knight Riders vs Barbados Tridents live score, toss, playing XIs, match updates and result for CPL 2026 Match 19 at Queen's Park Oval.","dateModified":"2026-07-27","mainEntity":{"@id":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/#match"},"breadcrumb":{"@id":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/#breadcrumb"}},{"@type":"SportsEvent","@id":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/#match","name":"Trinbago Knight Riders vs Barbados Tridents, CPL 2026 Match 19","sport":"Cricket","startDate":"2026-08-28T20:00:00-04:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","homeTeam":{"@type":"SportsTeam","name":"Trinbago Knight Riders","url":"https://cplseason.com/team/trinbago-knight-riders/"},"awayTeam":{"@type":"SportsTeam","name":"Barbados Tridents","url":"https://cplseason.com/team/barbados-royals/"},"location":{"@type":"StadiumOrArena","name":"Queen's Park Oval","url":"https://cplseason.com/venue/queens-park-oval/","address":{"@type":"PostalAddress","addressLocality":"Port of Spain","addressCountry":"Trinidad and Tobago"}}},{"@type":"BreadcrumbList","@id":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cplseason.com/"},{"@type":"ListItem","position":2,"name":"Schedule","item":"https://cplseason.com/schedule/"},{"@type":"ListItem","position":3,"name":"Match 19","item":"https://cplseason.com/match/trinbago-knight-riders-vs-barbados-royals/"}]}]}</script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0093554134829472" crossorigin="anonymous"></script>
 </head>
@@ -74,12 +74,12 @@
     </section>
 
     <nav class="match-page-index" aria-label="Match page sections">
-      <a href="#live-score" aria-current="page">Live</a><a href="#match-commentary">Commentary</a><a href="#probable-xi">Playing XI</a><a href="#match-stats">Live stats</a><a href="#match-preview">Preview</a><a href="#match-head-to-head">Head to head</a><a href="#match-venue">Venue</a>
+      <a href="#live-score" data-match-switch="live" aria-current="page">Live</a><a href="#match-scorecard" data-match-switch="scorecard">Scorecard</a><a href="#match-full-commentary" data-match-switch="commentary">Full Commentary</a><a href="#probable-xi">Playing XI</a><a href="#match-stats">Live stats</a><a href="#match-preview">Preview</a><a href="#match-head-to-head">Head to head</a><a href="#match-venue">Venue</a>
     </nav>
 
     <div class="match-page-primary">
       <div class="match-page-primary-main">
-      <section id="live-score" class="match-live-centre" aria-labelledby="match-live-centre-title">
+      <section id="live-score" class="match-live-centre" aria-labelledby="match-live-centre-title" data-match-panel="live">
       <header class="match-live-section-head">
         <div>
           <p>01 / Match centre</p>
@@ -131,8 +131,13 @@
       <p class="match-live-data-note">Playing XIs, toss details and scores will appear as they become available on match day.</p>
       </section>
 
-      <section id="match-commentary" class="match-commentary-panel" aria-labelledby="match-commentary-title" data-match-commentary-panel>
-      <header class="match-live-section-head"><div><p>02 / Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage goes live.</span></div><span class="match-commentary-state"><i aria-hidden="true"></i> Match feed</span></header>
+      <section id="match-scorecard" class="match-scorecard-panel" aria-labelledby="match-scorecard-title" data-match-panel="scorecard" hidden>
+      <header class="match-live-section-head"><div><p>02 / Scorecard</p><h2 id="match-scorecard-title">Full match scorecard</h2><span>Official batting and bowling figures for every innings.</span></div><span class="match-commentary-state"><i aria-hidden="true"></i> Official feed</span></header>
+      <div class="match-scorecard-body" data-full-scorecard><div class="match-data-pending"><strong>Scorecard not available yet</strong><p>Batting and bowling figures will appear when play begins.</p></div></div>
+      </section>
+
+      <section id="match-full-commentary" class="match-commentary-panel" aria-labelledby="match-commentary-title" data-match-commentary-panel data-match-panel="commentary" hidden>
+      <header class="match-live-section-head"><div><p>03 / Full Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage goes live.</span></div><span class="match-commentary-state"><i aria-hidden="true"></i> Match feed</span></header>
       <div class="match-commentary-body">
         <article class="match-commentary-latest"><small>Latest update</small><strong data-commentary-summary>Scheduled · Friday, 28 August 2026</strong><p data-commentary-copy>Pre-match updates, the toss and key moments will appear here as the match develops.</p></article>
         <div class="match-commentary-balls" data-commentary-balls aria-live="polite"><span>Coverage not started</span></div>
@@ -204,7 +209,8 @@
     </section>
 
     <section id="match-stats" class="match-research-section match-stats" aria-labelledby="match-stats-title">
-      <header class="match-live-section-head"><div><p>07 / Match stats</p><h2 id="match-stats-title">Fixture numbers and key context</h2><span>Pre-match facts update as confirmed match data becomes available.</span></div></header>
+      <header class="match-live-section-head"><div><p>07 / Match stats</p><h2 id="match-stats-title">Current match stats</h2><span>Only official data for this match is displayed.</span></div></header>
+      <dl data-current-match-stats><div><dt>Status</dt><dd data-current-stat="status">Scheduled</dd></div><div><dt>Current score</dt><dd data-current-stat="score">Yet to start</dd></div><div><dt>Run rate</dt><dd data-current-stat="run-rate">—</dd></div><div><dt>Target / result</dt><dd data-current-stat="target-result">—</dd></div></dl>
       <dl><div><dt>Match</dt><dd>19 of 39</dd></div><div><dt>Format</dt><dd>T20 · 20 overs</dd></div><div><dt>Venue capacity</dt><dd>20,000</dd></div><div><dt>Stage</dt><dd>League stage</dd></div><div data-live-stat="run-rate" hidden><dt>Run rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="required-rate" hidden><dt>Required rate</dt><dd data-live-stat-value>—</dd></div><div data-live-stat="target" hidden><dt>Target</dt><dd data-live-stat-value>—</dd></div></dl>
     </section>
 
