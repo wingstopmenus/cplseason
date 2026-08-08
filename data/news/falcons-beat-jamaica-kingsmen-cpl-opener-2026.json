@@ -1,0 +1,60 @@
+{
+  "slug": "falcons-beat-jamaica-kingsmen-cpl-opener-2026",
+  "category": "Match Report",
+  "title": "Falcons Beat Jamaica Kingsmen in Final-Ball CPL 2026 Opener",
+  "short_title": "Falcons win CPL opener on final ball",
+  "description": "Antigua and Barbuda Falcons chased 168 on the final ball to beat Jamaica Kingsmen in the opening match of CPL 2026 at Arnos Vale.",
+  "dek": "Tajinder Singh's 62 set up the chase before Shamar Springer completed two runs from the last delivery after a late Kingsmen fightback.",
+  "date_published": "2026-08-08",
+  "published_at": "2026-08-08T03:35:55",
+  "date_modified": "2026-08-08",
+  "source_name": "Caribbean Premier League",
+  "source_date": "2026-08-08",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/falcons-beat-jamaica-kingsmen-cpl-opener-2026-featured.webp",
+  "image_alt": "Tajinder Singh bats for Antigua and Barbuda Falcons against Jamaica Kingsmen at Arnos Vale",
+  "summary_heading": "Falcons survive late wickets to complete the chase",
+  "key_points": [
+    "Antigua and Barbuda Falcons reached their 168-run target from the final delivery.",
+    "Tajinder Singh led the chase with 62 from 37 balls.",
+    "Jamaica Kingsmen made 167 for 7, with Reeza Hendricks scoring 42 and Rovman Powell 47."
+  ],
+  "player_slugs": ["tajinder-singh", "andre-russell", "rovman-powell"],
+  "players_heading": "Key players from the CPL 2026 opener",
+  "sections": [
+    {
+      "heading": "Springer seals a final-ball victory",
+      "paragraphs": [
+        "Antigua and Barbuda Falcons opened the 2026 Republic Bank Caribbean Premier League with a final-ball victory over Jamaica Kingsmen at Arnos Vale. Chasing 168, the Falcons needed six from the last over before two wickets in two balls gave the Kingsmen one final chance.",
+        "Hunain Shah had Jahmar Hamilton and Usama Mir caught on the boundary, but Shamar Springer returned for a second run from the final delivery after a misfield at long-on. The result and fixture details are available in the <a href=\"/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/\">Jamaica Kingsmen vs Falcons match centre</a>."
+      ]
+    },
+    {
+      "heading": "Tajinder Singh anchors the pursuit",
+      "paragraphs": [
+        "Tajinder Singh made 62 from 37 balls and shared a 64-run third-wicket partnership with Tim Robinson. Rahkeem Cornwall had earlier provided an assertive start before the Falcons' middle order lost wickets often enough to keep Jamaica in the contest.",
+        "Andre Russell dismissed Robinson for his 100th CPL wicket and later removed Singh for number 101. Keemo Paul finished with 3 for 29, while Russell's one-over spells helped the Kingsmen take the chase into the final over. The winning side's tournament information is on the <a href=\"/team/antigua-barbuda-falcons/\">Falcons team page</a>."
+      ]
+    },
+    {
+      "heading": "Kingsmen post 167 for 7",
+      "paragraphs": [
+        "Jamaica reached 167 for 7 after a measured 47 from captain Rovman Powell and a rapid 42 from 25 balls by Reeza Hendricks on his CPL debut. Hendricks accelerated during a 28-run sixth over, while the innings added 54 in its final four overs.",
+        "Alzarri Joseph led the Falcons attack with 3 for 34. Jayden Seales returned 1 for 19 and Usama Mir took 1 for 17, including a three-run 16th over that delayed Jamaica's late acceleration. Squad details can be found on the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team page</a>."
+      ]
+    },
+    {
+      "heading": "Falcons take the first points of 2026",
+      "paragraphs": [
+        "The victory gives Antigua and Barbuda the opening win of the seven-team season, while Jamaica begin their return to the competition with a narrow defeat. Both sides remain in St Vincent for further matches during the opening leg.",
+        "The early standings and net run-rate positions will be tracked on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/jamaica-kingsmen-vs-antigua-barbuda-falcons/", "label": "Opening match centre"},
+    {"href": "/points-table/", "label": "CPL 2026 points table"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"}
+  ],
+  "last_updated": "2026-08-08"
+}
