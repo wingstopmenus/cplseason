@@ -1,104 +1,75 @@
 (() => {
-  const root = document.querySelector("[data-live-standings]");
-  if (!root) return;
+  const roots = [...document.querySelectorAll("[data-live-standings]")];
+  if (!roots.length) return;
 
-  const endpoint = root.dataset.standingsEndpoint;
-  const clientKey = root.dataset.standingsClientKey;
-  const tableBody = root.querySelector("[data-standings-body]");
-  const rows = [...root.querySelectorAll("[data-standings-team]")];
-  if (!endpoint || !clientKey || !tableBody || rows.length !== 7) return;
-
-  const rowById = new Map(
-    rows.map((row) => [row.dataset.officialTeamId, row])
-  );
   const normalizeName = (value = "") =>
-    value
+    String(value)
       .toLowerCase()
       .replace(/&/g, "and")
       .replace(/\bsaint\b/g, "st")
       .replace(/[^a-z0-9]/g, "");
-  const rowByName = new Map(
-    rows.map((row) => [normalizeName(row.dataset.teamName), row])
-  );
 
-  const phase = root.querySelector("[data-standings-phase]");
-  const checked = root.querySelector("[data-standings-checked]");
-  const completed = root.querySelector("[data-standings-completed]");
-  const heroCopy = root.querySelector("[data-standings-hero-copy]");
-  const boardCopy = root.querySelector("[data-standings-board-copy]");
-  const status = root.querySelector("[data-standings-status]");
-  const statusDetail = root.querySelector("[data-standings-status-detail]");
-  const tableNote = root.querySelector("[data-standings-table-note]");
-  const updateTitle = root.querySelector("[data-standings-update-title]");
-  const updateDetail = root.querySelector("[data-standings-update-detail]");
-
-  const toNumber = (value) => {
+  const number = (value) => {
     const parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : 0;
   };
+
   const formatNrr = (value) => {
-    if (value === null || value === undefined || value === "") return "—";
-    const numeric = Number(value);
-    if (!Number.isFinite(numeric)) return String(value);
-    const formatted = numeric.toFixed(3);
-    return numeric > 0 ? `+${formatted}` : formatted;
+    const parsed = Number(value);
+    if (!Number.isFinite(parsed)) return "—";
+    const formatted = parsed.toFixed(3);
+    return parsed > 0 ? `+${formatted}` : formatted;
   };
-  const checkedTime = () =>
+
+  const checkedTime = (iso) =>
     new Intl.DateTimeFormat("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       timeZoneName: "short",
-    }).format(new Date());
+    }).format(iso ? new Date(iso) : new Date());
 
-  const setPreseasonStatus = () => {
-    if (checked) checked.textContent = `Standings checked ${checkedTime()}`;
-    if (statusDetail) {
-      statusDetail.textContent = "First update follows the opening result";
-    }
-    if (updateDetail) {
-      updateDetail.textContent =
-        "First update follows Jamaica Kingsmen vs Antigua & Barbuda Falcons";
-    }
+  const setText = (root, selector, value) => {
+    const element = root.querySelector(selector);
+    if (element) element.textContent = value;
   };
 
-  const applyStandings = (ladderTeams) => {
-    const mapped = ladderTeams.map((team, sourceIndex) => {
-      const row =
-        rowById.get(team.teamId) ||
-        rowByName.get(normalizeName(team.name || team.team || team.shortName));
-      return { team, row, sourceIndex };
-    });
+  const applyToRoot = (root, payload) => {
+    const tableBody = root.querySelector("[data-standings-body]");
+    const rows = [...root.querySelectorAll("[data-standings-team]")];
+    if (!tableBody || rows.length !== 7 || !Array.isArray(payload.standings)) return;
+
+    const rowById = new Map(
+      rows.map((row) => [String(row.dataset.officialTeamId || ""), row]),
+    );
+    const rowByName = new Map(
+      rows.map((row) => [normalizeName(row.dataset.teamName), row]),
+    );
+    const mapped = payload.standings.map((team, sourceIndex) => ({
+      team,
+      sourceIndex,
+      row:
+        rowById.get(String(team.teamId || "")) ||
+        rowByName.get(normalizeName(team.name)),
+    }));
     if (
       mapped.length !== rows.length ||
       mapped.some(({ row }) => !row) ||
       new Set(mapped.map(({ row }) => row)).size !== rows.length
     ) {
-      throw new Error("Official standings team mapping is incomplete");
+      throw new Error("Verified standings team mapping is incomplete");
     }
 
-    mapped.sort((a, b) => {
-      const aRank = toNumber(a.team.rank ?? a.team.position);
-      const bRank = toNumber(b.team.rank ?? b.team.position);
-      if (aRank && bRank && aRank !== bRank) return aRank - bRank;
-      return a.sourceIndex - b.sourceIndex;
-    });
-
-    let totalTeamMatches = 0;
+    mapped.sort(
+      (a, b) => number(a.team.rank) - number(b.team.rank) || a.sourceIndex - b.sourceIndex,
+    );
     mapped.forEach(({ team, row }, index) => {
-      const matches = toNumber(team.matches);
-      const wins = toNumber(team.wins);
-      const losses = toNumber(team.losses);
-      const noResults = Math.max(
-        0,
-        toNumber(team.noResults ?? team.noResult ?? matches - wins - losses)
-      );
       const values = {
-        matches,
-        wins,
-        losses,
-        noResults,
+        matches: number(team.matches),
+        wins: number(team.wins),
+        losses: number(team.losses),
+        noResults: number(team.noResults),
         netRunRate: formatNrr(team.netRunRate),
-        points: toNumber(team.points),
+        points: number(team.points),
       };
       Object.entries(values).forEach(([field, value]) => {
         const cell = row.querySelector(`[data-standing-field="${field}"]`);
@@ -106,75 +77,111 @@
       });
       const position = row.querySelector("[data-standing-position]");
       if (position) {
-        position.textContent = String(index + 1).padStart(2, "0");
+        const label = String(index + 1).padStart(root.dataset.standingsSurface === "full" ? 2 : 1, "0");
+        position.textContent = label;
         position.setAttribute("aria-label", `Position ${index + 1}`);
       }
       tableBody.append(row);
-      totalTeamMatches += matches;
     });
 
-    const completedMatches = Math.floor(totalTeamMatches / 2);
-    if (phase) phase.innerHTML = "<i></i> League underway";
-    if (checked) checked.textContent = `Live table · ${checkedTime()}`;
-    if (completed) completed.textContent = String(completedMatches).padStart(2, "0");
-    if (heroCopy) {
-      heroCopy.textContent =
-        "The CPL 2026 points table records positions, wins, losses, points and net run rate after each result.";
-    }
-    if (boardCopy) {
-      boardCopy.textContent =
-        `${completedMatches} league ${completedMatches === 1 ? "match has" : "matches have"} been completed.`;
-    }
-    if (status) status.innerHTML = "<i></i> Live official standings";
-    if (statusDetail) {
-      statusDetail.textContent = `Updated ${checkedTime()} · refreshes every 30 seconds`;
-    }
-    if (tableNote) {
-      tableNote.textContent =
-        "The table reflects the latest CPL positions, points and net run rate.";
-    }
-    if (updateTitle) updateTitle.textContent = "CPL 2026 standings";
-    if (updateDetail) {
-      updateDetail.textContent = `Updated ${checkedTime()} · checks for new results every 30 seconds`;
-    }
+    const completed = number(payload.completedMatches);
+    const matchWord = completed === 1 ? "match" : "matches";
+    const updateTime = checkedTime(payload.fetchedAt);
+    const isOfficialLadder = payload.source === "official-cpl-ladder";
+    const isEspnFallback = payload.source === "espncricinfo-verified-fallback";
+    setText(root, "[data-standings-checked]", `Updated ${updateTime}`);
+    setText(root, "[data-standings-completed]", String(completed).padStart(2, "0"));
+    setText(
+      root,
+      "[data-standings-hero-copy]",
+      "CPL 2026 positions, wins, losses, points and net run rate update automatically after verified results.",
+    );
+    setText(
+      root,
+      "[data-standings-board-copy]",
+      `${completed} league ${matchWord} ${completed === 1 ? "has" : "have"} been completed.`,
+    );
+    setText(
+      root,
+      "[data-standings-status-detail]",
+      `Updated ${updateTime} · refreshes every 30 seconds`,
+    );
+    setText(
+      root,
+      "[data-standings-table-note]",
+      `Current after ${completed} completed ${matchWord}. ${
+        isOfficialLadder
+          ? "Figures match the official CPL ladder."
+          : isEspnFallback
+            ? "Figures are verified against ESPNcricinfo while the CPL feed reconnects."
+            : "Figures use verified final scorecards while the official ladder catches up."
+      }`,
+    );
+    setText(root, "[data-standings-update-title]", "CPL 2026 standings are live");
+    setText(
+      root,
+      "[data-standings-update-detail]",
+      `Updated ${updateTime} · checks for confirmed results every 30 seconds`,
+    );
+    setText(root, "[data-standings-phase]", completed ? "League underway" : "Season table");
+    setText(root, "[data-standings-status]", "Live verified standings");
+    setText(root, "[data-home-standings-badge]", completed ? "Live standings" : "Season standings");
+    setText(
+      root,
+      "[data-home-standings-copy]",
+      completed
+        ? `Updated automatically after ${completed} completed ${matchWord}.`
+        : "The table updates automatically after each verified result.",
+    );
   };
 
   let requestInProgress = false;
-  const refreshStandings = async () => {
+  let lastPayload = null;
+  const refresh = async () => {
     if (requestInProgress) return;
     requestInProgress = true;
-    root.setAttribute("aria-busy", "true");
+    roots.forEach((root) => root.setAttribute("aria-busy", "true"));
     try {
-      const response = await fetch(endpoint, {
-        headers: { "sr-client-key": clientKey },
-        cache: "no-store",
-      });
+      const endpoint = roots[0].dataset.standingsEndpoint || "/api/cpl-standings";
+      const response = await fetch(endpoint, { cache: "no-store" });
       if (!response.ok) throw new Error(`Standings request failed: ${response.status}`);
       const payload = await response.json();
-      const ladder = Array.isArray(payload.ladders) ? payload.ladders[0] : null;
-      const ladderTeams = Array.isArray(ladder?.teams) ? ladder.teams : [];
-      if (ladderTeams.length === 0) {
-        setPreseasonStatus();
-        return;
+      if (!Array.isArray(payload.standings) || payload.standings.length !== 7) {
+        throw new Error("Standings response is incomplete");
       }
-      applyStandings(ladderTeams);
+      roots.forEach((root) => applyToRoot(root, payload));
+      lastPayload = payload;
     } catch (error) {
-      if (statusDetail) {
-        statusDetail.textContent =
-          "Showing the latest standings · checking again soon";
-      }
+      roots.forEach((root) => {
+        setText(
+          root,
+          "[data-standings-status-detail]",
+          lastPayload
+            ? "Showing the latest verified table · checking again soon"
+            : "Live update unavailable · showing the saved table",
+        );
+        setText(
+          root,
+          "[data-home-standings-copy]",
+          lastPayload
+            ? "Showing the latest verified standings while the feed reconnects."
+            : "Live update is reconnecting; saved standings remain visible.",
+        );
+      });
       console.warn("CPL standings refresh unavailable", error);
     } finally {
       requestInProgress = false;
-      root.removeAttribute("aria-busy");
+      roots.forEach((root) => root.removeAttribute("aria-busy"));
     }
   };
 
-  refreshStandings();
+  refresh();
   window.setInterval(() => {
-    if (document.visibilityState === "visible") refreshStandings();
+    if (document.visibilityState === "visible") refresh();
   }, 30000);
   document.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "visible") refreshStandings();
+    if (document.visibilityState === "visible") refresh();
   });
+  window.addEventListener("focus", refresh);
+  window.addEventListener("online", refresh);
 })();

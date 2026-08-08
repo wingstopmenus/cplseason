@@ -46,8 +46,8 @@
     id="main"
     class="standings-control"
     data-live-standings
-    data-standings-endpoint="https://api.mcpro.cricket/v1/competition/sr:tournament:16628/ladders"
-    data-standings-client-key="c7b9bd69-0eee-4676-beee-fbbee46fccee"
+    data-standings-endpoint="/api/cpl-standings"
+    data-standings-surface="full"
   >
     <nav class="standings-breadcrumbs" aria-label="Breadcrumb">
       <ol>
@@ -60,7 +60,7 @@
       <div class="standings-hero-copy">
         <p class="standings-kicker"><span>Live race control</span> Republic Bank CPL 2026</p>
         <h1 id="standings-title">CPL 2026 <em>Points Table</em></h1>
-        <p data-standings-hero-copy>CPL 2026 begins on 7 August, so every team starts with zero matches and zero points. Positions and net run rate will appear after the opening result.</p>
+        <p data-standings-hero-copy>CPL 2026 positions, wins, losses, points and net run rate update automatically after verified results.</p>
         <div class="standings-actions">
           <a class="button primary" href="#standings-table">Open standings</a>
           <a class="button secondary" href="/schedule/">View first fixtures</a>
@@ -68,13 +68,13 @@
       </div>
       <div class="standings-hero-board" aria-label="CPL 2026 standings status">
         <div class="standings-board-top">
-          <span data-standings-phase><i></i> Pre-season</span>
+          <span data-standings-phase><i></i> Season table</span>
           <small data-standings-checked>Checked {{ page.checked_label }}</small>
         </div>
         <div class="standings-board-number" data-standings-completed>00</div>
         <strong>Completed matches</strong>
-        <p data-standings-board-copy>Standings activate after the Jamaica Kingsmen vs Antigua &amp; Barbuda Falcons opener.</p>
-        <a href="/schedule/">Fri 7 Aug · Arnos Vale <span>→</span></a>
+        <p data-standings-board-copy>The saved table remains visible while the live feed loads.</p>
+        <a href="/schedule/">View complete schedule <span>→</span></a>
       </div>
     </section>
 
@@ -92,8 +92,8 @@
           <h2 id="standings-table-title">CPL 2026 standings</h2>
         </div>
         <div class="standings-status" aria-live="polite">
-          <span data-standings-status><i></i> Awaiting opening result</span>
-          <small data-standings-status-detail>All seven teams start level</small>
+          <span data-standings-status><i></i> Loading verified standings</span>
+          <small data-standings-status-detail>Checking the latest CPL results</small>
         </div>
       </header>
 
@@ -139,7 +139,7 @@
         </div>
         <div class="standings-table-note">
           <span>Table status</span>
-          <p data-standings-table-note>All seven teams start on zero points. The table will show positions and net run rate after the opening result.</p>
+          <p data-standings-table-note>The table refreshes automatically from verified CPL results.</p>
           <a href="#update-policy">Update policy <b>↓</b></a>
         </div>
       </div>
@@ -188,9 +188,9 @@
         <h2 id="standings-update-title">When the CPL 2026 points table updates</h2>
         <p>The table changes after each completed league match. It records matches played, wins, losses, no results, points and net run rate from the final scorecard.</p>
         <div class="standings-update-time">
-          <span>Before the opening match</span>
-          <strong data-standings-update-title>Seven teams, zero matches played</strong>
-          <small data-standings-update-detail>First update follows Jamaica Kingsmen vs Antigua &amp; Barbuda Falcons</small>
+          <span>Automatic updates</span>
+          <strong data-standings-update-title>Loading the latest CPL 2026 table</strong>
+          <small data-standings-update-detail>Checks for confirmed results every 30 seconds</small>
         </div>
       </div>
       <ol class="standings-update-steps" aria-label="Points table update process">
@@ -243,7 +243,7 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/standings.js?v=20260727a" defer></script>
+  <script src="/static/js/standings.js?v=20260808a" defer></script>
   <script src="/static/js/site.js?v=20260729ms" defer></script>
 </body>
 </html>

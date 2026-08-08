@@ -747,7 +747,6 @@ if (contactForm) {
 const liveMatchCountdown = document.querySelector("[data-match-countdown]");
 
 if (liveMatchCountdown) {
-  const targetTime = Date.parse(liveMatchCountdown.dataset.countdownTarget);
   const label = liveMatchCountdown.querySelector("[data-match-countdown-label]");
   const fields = {
     days: liveMatchCountdown.querySelector("[data-countdown-days]"),
@@ -757,11 +756,13 @@ if (liveMatchCountdown) {
   };
 
   const updateLiveMatchCountdown = () => {
+    const targetTime = Date.parse(liveMatchCountdown.dataset.countdownTarget);
+    if (!Number.isFinite(targetTime)) return true;
     const remaining = targetTime - Date.now();
     if (remaining <= 0) {
       liveMatchCountdown.classList.add("is-live");
       if (label) label.textContent = "Match window open · live data appears above";
-      return false;
+      return true;
     }
     const totalSeconds = Math.floor(remaining / 1000);
     const values = {
@@ -776,11 +777,8 @@ if (liveMatchCountdown) {
     return true;
   };
 
-  if (Number.isFinite(targetTime) && updateLiveMatchCountdown()) {
-    const timer = window.setInterval(() => {
-      if (!updateLiveMatchCountdown()) window.clearInterval(timer);
-    }, 1000);
-  }
+  updateLiveMatchCountdown();
+  window.setInterval(updateLiveMatchCountdown, 1000);
 }
 
 const liveMatchData = document.querySelector("[data-match-live-data]");
