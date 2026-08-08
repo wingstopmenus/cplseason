@@ -75,6 +75,7 @@
     root.querySelector("[data-live-countdown]")?.dataset.start || "",
   );
   let currentStatus = "Upcoming";
+  let lastSuccessfulRefresh = 0;
   let commentaryMatchNumber = null;
   const commentaryHistory = new Map();
 
@@ -599,7 +600,85 @@
     if (!innings || !Number.isFinite(innings.runs)) return "—";
     return `${innings.runs}${
       Number.isFinite(innings.wickets) ? `/${innings.wickets}` : ""
-    }`;
+    }${Number.isFinite(innings.overs) ? ` (${numberText(innings.overs)} ov)` : ""}`;
+  };
+
+  const resultDate = (match) => {
+    const value = Date.parse(match?.startDate || "");
+    if (!Number.isFinite(value)) return "Date unavailable";
+    return new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+      timeZone: "Asia/Karachi",
+    }).format(value);
+  };
+
+  const createResultTeam = (match, team) => {
+    const local = localMatch(match.matchNumber);
+    const localTeam = [local?.home, local?.away].find(
+      (item) => item?.name === team?.name || item?.shortName === team?.shortName,
+    );
+    const row = document.createElement("div");
+    row.className = "live-result-team live-result-team-complete";
+    const identity = document.createElement("span");
+    const logo = document.createElement("img");
+    logo.src = localTeam?.logo || team?.logo || "/static/img/brand/cplseason-favicon.webp";
+    logo.alt = `${team?.name || "CPL team"} logo`;
+    logo.loading = "lazy";
+    const name = document.createElement("strong");
+    name.textContent = team?.name || team?.shortName || "Team";
+    identity.append(logo, name);
+    const score = document.createElement("b");
+    score.textContent = resultScore(match, team);
+    row.append(identity, score);
+    return row;
+  };
+
+  const renderFeaturedResult = (match) => {
+    const card = document.createElement("article");
+    card.className = "live-result-card live-result-card-featured";
+    const header = document.createElement("header");
+    const eyebrow = document.createElement("span");
+    eyebrow.textContent = `Match ${match.matchNumber} · ${match.status}`;
+    const meta = document.createElement("small");
+    meta.textContent = [resultDate(match), match.venue?.name].filter(Boolean).join(" · ");
+    header.append(eyebrow, meta);
+    const heading = document.createElement("h3");
+    heading.textContent = match.stateOfPlay || match.description || "Official result";
+    card.append(header, heading);
+    (match.teams || []).slice(0, 2).forEach((team) => {
+      card.append(createResultTeam(match, team));
+    });
+    const details = document.createElement("div");
+    details.className = "live-result-details";
+    const facts = [
+      ["Toss", match.toss || "Official toss details unavailable"],
+      [
+        "Top scorer",
+        match.topPerformers?.mostRuns?.name
+          ? `${match.topPerformers.mostRuns.name} · ${numberText(match.topPerformers.mostRuns.value, 0)} runs`
+          : "Official figures unavailable",
+      ],
+      [
+        "Top bowler",
+        match.topPerformers?.mostWickets?.name
+          ? `${match.topPerformers.mostWickets.name} · ${numberText(match.topPerformers.mostWickets.value, 0)} wickets`
+          : "Official figures unavailable",
+      ],
+    ];
+    facts.forEach(([label, value]) => {
+      const item = document.createElement("p");
+      const strong = document.createElement("strong");
+      strong.textContent = label;
+      item.append(strong, document.createTextNode(value));
+      details.append(item);
+    });
+    const link = document.createElement("a");
+    link.href = matchUrl(match.matchNumber);
+    link.textContent = "Open complete match page →";
+    card.append(details, link);
+    return card;
   };
 
   const renderResults = (matches) => {
@@ -610,7 +689,11 @@
     }
     resultsContainer.replaceChildren();
     text(resultsStatus, `${matches.length} latest completed matches`);
-    matches.forEach((match) => {
+    matches.forEach((match, index) => {
+      if (index === 0) {
+        resultsContainer.append(renderFeaturedResult(match));
+        return;
+      }
       const card = document.createElement("article");
       card.className = "live-result-card";
       const label = document.createElement("span");
@@ -643,7 +726,14 @@
     if (refreshButton) refreshButton.disabled = true;
     setFeedSignal("Checking feed", "checking");
     try {
-      const response = await fetch(endpoint, { cache: "no-store" });
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 10000);
+      const separator = endpoint.includes("?") ? "&" : "?";
+      const response = await fetch(`${endpoint}${separator}t=${Date.now()}`, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      window.clearTimeout(timeout);
       if (!response.ok) throw new Error(`Live score request failed: ${response.status}`);
       const payload = await response.json();
       if (
@@ -656,7 +746,9 @@
       renderFocus(payload.focus, payload.fetchedAt);
       renderUpcoming(payload.schedule, payload.focus.matchNumber);
       renderResults(payload.recent || []);
-      setFeedSignal("CPL score feed connected", "connected");
+      lastSuccessfulRefresh = Date.parse(payload.fetchedAt) || Date.now();
+      const stale = Date.now() - lastSuccessfulRefresh > 120000;
+      setFeedSignal(stale ? "CPL score feed delayed" : "CPL score feed connected", stale ? "error" : "connected");
     } catch (error) {
       console.warn("CPL live score refresh unavailable", error);
       setFeedSignal("Score feed temporarily unavailable", "error");
@@ -710,6 +802,8 @@
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "visible") refreshScore();
   });
+  window.addEventListener("focus", refreshScore);
+  window.addEventListener("online", refreshScore);
   window.setInterval(() => {
     if (document.visibilityState === "visible") refreshScore();
   }, intervalSeconds * 1000);

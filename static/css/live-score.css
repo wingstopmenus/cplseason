@@ -967,6 +967,17 @@
 .live-result-team strong { color: var(--ls-ink); font-size: 13px; }
 .live-result-team b { color: #126a88; font-size: 17px; }
 .live-result-card a { margin-top: auto; color: #126a88; font-size: 12px; font-weight: 900; }
+.live-result-card-featured { grid-column: 1 / -1; min-height: 0; }
+.live-result-card-featured > header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.live-result-card-featured > header span { color: #126a88; font-size: 10px; font-weight: 950; text-transform: uppercase; }
+.live-result-card-featured > header small { color: var(--ls-muted); text-align: right; }
+.live-result-team-complete { align-items: center; padding: 13px 0; }
+.live-result-team-complete > span { display: flex; align-items: center; gap: 12px; }
+.live-result-team-complete img { width: 42px; height: 42px; object-fit: contain; }
+.live-result-team-complete b { font-size: clamp(18px, 2.4vw, 26px); }
+.live-result-details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 14px 0; }
+.live-result-details p { display: grid; gap: 5px; margin: 0; padding: 12px; border: 1px solid var(--ls-line); border-radius: 8px; color: var(--ls-muted); font-size: 12px; }
+.live-result-details strong { color: var(--ls-ink); font-size: 10px; text-transform: uppercase; }
 
 .live-score-information {
   display: grid;
@@ -1112,6 +1123,7 @@
   .live-score-result-grid,
   .live-score-information ol,
   .live-score-faq > div { grid-template-columns: 1fr; }
+  .live-result-details { grid-template-columns: 1fr; }
   .live-score-fixture-grid { grid-template-columns: 1fr 1fr; }
   .live-score-commentary-layout { grid-template-columns: 1fr; }
   .live-score-commentary-lead {

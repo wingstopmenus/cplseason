@@ -55,6 +55,8 @@ function normalizeInnings(innings) {
     runs: numeric(score?.runs),
     wickets: numeric(score?.wickets),
     overs: numeric(score?.oversBowled ?? score?.overs),
+    runRate: numeric(score?.runRate),
+    extras: numeric(score?.extras),
     status: String(innings?.status || ""),
     closeReason: String(innings?.reasonForClose || ""),
     target: numeric(innings?.target),
@@ -113,6 +115,7 @@ function normalizeToss(toss) {
     toss?.winner?.name ||
       toss?.team?.name ||
       toss?.wonBy?.name ||
+      toss?.wonByName ||
       toss?.winnerName ||
       "",
   );
@@ -123,6 +126,28 @@ function normalizeToss(toss) {
   return `${winner} won the toss${
     decision ? ` and chose to ${decision.toLowerCase()}` : ""
   }`;
+}
+
+function normalizeTopPerformer(performance, kind) {
+  if (!performance) return null;
+  const player = performance?.player || performance?.person || {};
+  const team = performance?.team || {};
+  return {
+    name: String(
+      player?.cardNameF ||
+        player?.cardNameS ||
+        performance?.cardNameF ||
+        performance?.name ||
+        "",
+    ),
+    teamName: String(team?.name || performance?.teamName || ""),
+    teamShortName: String(team?.shortName || performance?.teamShortName || ""),
+    value: numeric(
+      kind === "runs"
+        ? performance?.runsTotal ?? performance?.runs
+        : performance?.wicketsTotal ?? performance?.wickets,
+    ),
+  };
 }
 
 function normalizeMatch(match) {
@@ -136,6 +161,7 @@ function normalizeMatch(match) {
     title: String(match?.title || ""),
     status: String(match?.status || ""),
     startDate: String(match?.startDate || ""),
+    endDate: String(match?.endDate || ""),
     format: String(match?.format || "T20"),
     stage: String(competition?.stageName || competition?.name || "CPL 2026"),
     description: String(match?.description || match?.stateOfPlay || ""),
@@ -156,6 +182,13 @@ function normalizeMatch(match) {
     innings: Array.isArray(match?.inningsScores)
       ? match.inningsScores.map(normalizeInnings)
       : [],
+    topPerformers: {
+      mostRuns: normalizeTopPerformer(match?.topPerformers?.mostRuns, "runs"),
+      mostWickets: normalizeTopPerformer(
+        match?.topPerformers?.mostWickets,
+        "wickets",
+      ),
+    },
     live: {
       batters: Array.isArray(liveSummary?.currentBatters)
         ? liveSummary.currentBatters.map(normalizePlayerPerformance).slice(0, 2)
@@ -280,8 +313,8 @@ module.exports = async function cplLiveScore(request, response) {
     const completedMatches = officialMatches.filter(isCompleted);
     const focusSource =
       liveMatch ||
-      nextMatch ||
       completedMatches[completedMatches.length - 1] ||
+      nextMatch ||
       officialMatches[0];
 
     const recentSources = completedMatches.slice(-3).reverse();
@@ -307,7 +340,7 @@ module.exports = async function cplLiveScore(request, response) {
     }
     response.setHeader(
       "Cache-Control",
-      "public, s-maxage=12, stale-while-revalidate=45",
+      "public, s-maxage=8, stale-while-revalidate=30",
     );
     response.setHeader("X-CPL-Live-Score-Source", "official-cpl-mcpro");
     return response.status(200).json({
