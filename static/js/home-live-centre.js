@@ -146,7 +146,7 @@
     } else {
       if (leftLabel) leftLabel.innerHTML = '<i aria-hidden="true"></i> No live match';
       if (leftTitle) leftTitle.textContent = `Next coverage: Match ${matchNumber(nextMatch)}`;
-      if (leftCopy) leftCopy.textContent = "Scores, toss and innings updates will appear here from the official feed.";
+      if (leftCopy) leftCopy.textContent = "Scores, toss and innings updates will appear here as they become available.";
       if (rightLabel) rightLabel.textContent = "Next coverage";
     }
     if (rightTitle && teams.length === 2) {

@@ -517,10 +517,10 @@
     const state = isUpcoming(match.status)
       ? "Live score starts on match day"
       : isComplete(match.status)
-        ? match.stateOfPlay || match.description || "The official match state has been closed."
+        ? match.stateOfPlay || match.description || "The match is complete."
         : match.stateOfPlay ||
           match.description ||
-          "The live innings is updating from the CPL match feed.";
+          "The live innings is updating automatically.";
     text(stateHeading, state);
     text(
       stateCopy,
@@ -528,7 +528,7 @@
         ? "The score, overs and match status refresh automatically while this page is open."
         : isComplete(match.status)
           ? "View the full scorecard for complete innings details."
-          : "The toss, playing XIs and innings scores will appear as soon as the CPL match feed publishes them.",
+          : "The toss, playing XIs and innings scores will appear as soon as they are confirmed.",
     );
     text(liveToss, match.toss || "Awaiting confirmation");
     text(liveCrr, numberText(match.live?.currentRunRate));
@@ -547,7 +547,7 @@
     text(
       feedMessage,
       Number.isNaN(checked.getTime())
-        ? "CPL match feed connected"
+        ? "Scores updating automatically"
         : `Last checked ${checked.toLocaleTimeString("en-GB", {
             hour: "2-digit",
             minute: "2-digit",
@@ -782,7 +782,7 @@
     requestInProgress = true;
     refreshButton?.classList.add("is-loading");
     if (refreshButton) refreshButton.disabled = true;
-    setFeedSignal("Checking feed", "checking");
+    setFeedSignal("Checking match update", "checking");
     try {
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 10000);
@@ -806,13 +806,13 @@
       renderResults(payload.recent || []);
       lastSuccessfulRefresh = Date.parse(payload.fetchedAt) || Date.now();
       const stale = Date.now() - lastSuccessfulRefresh > 120000;
-      setFeedSignal(stale ? "CPL score feed delayed" : "CPL score feed connected", stale ? "error" : "connected");
+      setFeedSignal(stale ? "Score update delayed" : "Scores updating automatically", stale ? "error" : "connected");
     } catch (error) {
       console.warn("CPL live score refresh unavailable", error);
-      setFeedSignal("Score feed temporarily unavailable", "error");
+      setFeedSignal("Score update delayed", "error");
       text(
         feedMessage,
-        "The score feed is unavailable. The last confirmed match update remains on screen.",
+        "New scores are temporarily delayed. The latest match update remains on screen.",
       );
     } finally {
       requestInProgress = false;

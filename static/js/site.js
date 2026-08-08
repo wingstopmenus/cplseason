@@ -917,7 +917,7 @@ if (liveMatchData) {
     if (probableXi) probableXi.hidden = true;
     if (xiKicker) xiKicker.textContent = "05 / Confirmed XI";
     if (xiTitle) xiTitle.textContent = "Confirmed playing XIs";
-    if (xiStatus) xiStatus.textContent = "Official lineups after the toss.";
+    if (xiStatus) xiStatus.textContent = "Confirmed lineups after the toss.";
   };
 
   const buildScoreTable = (headers, rows, label) => {
@@ -957,7 +957,7 @@ if (liveMatchData) {
       const title = document.createElement("strong");
       title.textContent = "Scorecard not available yet";
       const copy = document.createElement("p");
-      copy.textContent = "Official batting and bowling figures will appear when play begins.";
+      copy.textContent = "Batting and bowling figures will appear when play begins.";
       pending.append(title, copy);
       fullScorecard.append(pending);
       return;
@@ -1073,17 +1073,12 @@ if (liveMatchData) {
     const isUpcoming = upcomingPattern.test(status);
     const isLive = !isComplete && !isUpcoming;
     liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
-    feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
-    feedStatus.textContent = isComplete
-      ? "The official feed has confirmed the match result."
-      : isLive
-        ? "Scores refresh automatically every 15 seconds."
-        : "Live scores will appear when official match coverage begins.";
+    if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
     const summaryText = match.stateOfPlay || match.description || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
     summary.textContent = summaryText;
-    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Updating with the live score feed" : "Commentary begins when match coverage goes live.";
+    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Updating automatically during play" : "Commentary begins when match coverage goes live.";
     if (commentarySummary) commentarySummary.textContent = summaryText;
-    if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The confirmed result and every available delivery are shown here." : isLive ? "The latest state of play is synchronized with the official match centre." : "Pre-match updates, the toss and full commentary will appear as the match develops.");
+    if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "The latest state of play updates automatically." : "Pre-match updates, the toss and full commentary will appear as the match develops.");
     renderFullScorecard(match);
     renderConfirmedXi(match);
     renderFullCommentary(match, isComplete, isLive);
@@ -1202,7 +1197,7 @@ if (liveMatchData) {
   const loadMatch = async () => {
     if (!Number.isFinite(matchNumber)) return;
     if (liveMatchRefresh) liveMatchRefresh.disabled = true;
-    feedStatus.textContent = "Checking the latest match update…";
+    if (feedStatus) feedStatus.textContent = "Checking the latest match update…";
     try {
       const matchQuery = new URLSearchParams({
         match: String(matchNumber),
@@ -1220,8 +1215,8 @@ if (liveMatchData) {
         pollTimer = window.setTimeout(loadMatch, upcomingPattern.test(status) ? 60000 : 15000);
       }
     } catch {
-      feedState.textContent = "Feed unavailable";
-      feedStatus.textContent = "Live scores are temporarily unavailable. The confirmed fixture details below remain available.";
+      if (feedState) feedState.textContent = "Update delayed";
+      if (feedStatus) feedStatus.textContent = "Live scores are temporarily delayed. Match details remain available.";
       if (liveMatchRefresh) liveMatchRefresh.disabled = false;
       window.clearTimeout(pollTimer);
       pollTimer = window.setTimeout(loadMatch, 30000);

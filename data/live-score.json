@@ -9,13 +9,13 @@
   "lede": "Follow the <strong>CPL 2026 live score</strong>, ball-by-ball updates, fixtures and results from every match.",
   "endpoint": "/api/cpl-live-score",
   "polling_seconds": 15,
-  "source_name": "Official CPL MCPRO match feed",
+  "source_name": "CPL live scores",
   "source_url": "https://match-center.cplt20.com/",
-  "source_note": "The page displays scores supplied by the CPL match feed. If the connection drops, the last confirmed score stays on screen with a clear update notice.",
+  "source_note": "Scores update automatically during play. If an update is delayed, the latest match score stays on screen.",
   "faq": [
     {
       "question": "How often does the CPL live score update?",
-      "answer": "The page checks the CPL match feed every 15 seconds while it is open. New runs, wickets and overs appear automatically when the feed publishes them."
+      "answer": "The page updates automatically during play. New runs, wickets and overs appear as match updates become available."
     },
     {
       "question": "Where can I find today's CPL match score?",
@@ -23,7 +23,7 @@
     },
     {
       "question": "Does the page show the toss and playing XI?",
-      "answer": "Yes. The toss result and confirmed playing XIs appear when they are published by the match feed. Before the toss, those fields remain clearly marked as pending."
+      "answer": "Yes. The toss result and confirmed playing XIs appear when they become available. Before the toss, those fields remain clearly marked as pending."
     },
     {
       "question": "Where can I view the full CPL scorecard?",
