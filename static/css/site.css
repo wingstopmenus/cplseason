@@ -601,7 +601,7 @@
   display: grid;
   justify-items: center;
   gap: 8px;
-  width: min(1180px, 1320px);
+  width: min(100%, 1320px);
   margin: 26px auto;
   padding: 12px 18px 18px;
   overflow: hidden;
