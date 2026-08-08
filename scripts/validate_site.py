@@ -598,6 +598,8 @@ def main() -> int:
         errors.append("Generated points table does not contain seven team rows")
     if "data-live-standings" not in points_page:
         errors.append("Generated points table is missing live standings configuration")
+    if 'data-standings-endpoint="/api/cpl-standings"' not in points_page:
+        errors.append("Generated points table must use the local standings proxy")
     if 'src="/static/js/standings.js?' not in points_page:
         errors.append("Generated points table is missing the automatic standings script")
     if (
@@ -619,6 +621,30 @@ def main() -> int:
         errors.append("Points table schema must not invent live numeric standings")
     if '"@type":"FAQPage"' not in points_page:
         errors.append("Generated points table is missing FAQ schema")
+
+    standings_api_path = ROOT / "api" / "cpl-standings.js"
+    if not standings_api_path.is_file():
+        errors.append("Missing server-side CPL standings proxy")
+    else:
+        standings_api = standings_api_path.read_text(encoding="utf-8")
+        if "api.mcpro.cricket/v1" not in standings_api:
+            errors.append("Standings proxy is not connected to the official feed")
+        if "official-cpl-results-fallback" not in standings_api:
+            errors.append("Standings proxy is missing its verified results fallback")
+        if "espncricinfo-verified-fallback" not in standings_api:
+            errors.append("Standings proxy is missing its ESPNcricinfo fallback")
+        if "status(503)" not in standings_api:
+            errors.append("Standings proxy must fail closed when feeds are unavailable")
+
+    homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+    if homepage.count("data-live-standings") != 1:
+        errors.append("Homepage must contain one automatic standings table")
+    if homepage.count("data-standings-team") != 7:
+        errors.append("Homepage standings table must map all seven teams")
+    if 'src="/static/js/home-live-centre.js?' not in homepage:
+        errors.append("Homepage is missing the automatic match-centre script")
+    if "data-home-live-centre" not in homepage:
+        errors.append("Homepage match centre is missing live-feed configuration")
 
     schedule_page = (ROOT / "schedule" / "index.html").read_text(
         encoding="utf-8"
