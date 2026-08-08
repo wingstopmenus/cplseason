@@ -2404,10 +2404,39 @@ main {
   letter-spacing: .08em;
 }
 
+.schedule-next-match[data-hydration-state="pending"] > * { visibility: hidden; }
+.schedule-next-match[data-hydration-state="pending"]::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 8% 12%, rgba(116, 52, 191, .46), transparent 33%),
+    linear-gradient(135deg, #0d0929 0%, #070c1e 48%, #081627 100%);
+  color: #b9c3d7;
+  content: "Loading current match…";
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
 .schedule-match-centre-cta {
   grid-template-rows: 24px 14px minmax(34px, auto) 20px;
   min-width: 142px;
 }
+
+.schedule-match-centre-cta:not([data-status-label]) {
+  color: transparent;
+}
+.schedule-match-centre-cta:not([data-status-label])::before {
+  color: #b8c1d4;
+  content: "CHECKING";
+}
+.schedule-match-centre-cta:not([data-status-label]) span,
+.schedule-match-centre-cta:not([data-status-label]) b { color: transparent; }
 
 .schedule-match-card[data-match-state="complete"] .schedule-match-centre-cta::before {
   background: rgba(83, 214, 255, .15);

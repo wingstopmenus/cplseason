@@ -1,10 +1,5 @@
 (() => {
   const cards = [...document.querySelectorAll("[data-schedule-match]")];
-  cards.forEach((card) => {
-    card.dataset.matchState = "upcoming";
-    const cta = card.querySelector(".schedule-match-centre-cta");
-    if (cta) cta.dataset.statusLabel = "UPCOMING";
-  });
   const venueFilter = document.querySelector("#schedule-venue-filter");
   const teamFilter = document.querySelector("#schedule-team-filter");
   const monthFilter = document.querySelector("#schedule-month-filter");
@@ -272,6 +267,7 @@
       return !Number.isFinite(start) || Date.now() < start + 6 * 60 * 60 * 1000;
     });
     renderLiveSpotlight(next || matchSchedule[matchSchedule.length - 1], !next);
+    liveSpotlight.dataset.hydrationState = "ready";
   };
 
   const renderConvertedTimes = () => {
@@ -326,9 +322,10 @@
     .then((schedule) => {
       matchSchedule = Array.isArray(schedule) ? schedule : [];
       renderConvertedTimes();
-      refreshLiveSpotlight();
+      return refreshLiveSpotlight();
     })
     .catch(() => {
+      if (liveSpotlight) liveSpotlight.dataset.hydrationState = "ready";
       if (timezoneSelect) timezoneSelect.disabled = true;
       if (timezoneNote) {
         timezoneNote.textContent =
