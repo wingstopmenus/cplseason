@@ -25,6 +25,7 @@
   const matchDate = root.querySelector("[data-match-date]");
   const matchVenue = root.querySelector("[data-match-venue]");
   const currentMatchLink = root.querySelector("[data-current-match-link]");
+  const scorecardTab = root.querySelector("[data-scorecard-tab]");
   const centreStatus = root.querySelector("[data-centre-status]");
   const countdownValue = root.querySelector("[data-countdown-value]");
   const countdownLabel = root.querySelector("[data-countdown-label]");
@@ -43,6 +44,7 @@
   const commentaryMatchLink = root.querySelector("[data-commentary-match-link]");
   const commentaryFeed = root.querySelector("[data-commentary-feed]");
   const upcomingContainer = root.querySelector("[data-upcoming-matches]");
+  const otherMatchesContainer = root.querySelector("[data-other-matches]");
   const resultsContainer = root.querySelector("[data-live-results]");
   const resultsStatus = root.querySelector("[data-results-status]");
   const lineupsStatus = root.querySelector("[data-lineups-status]");
@@ -459,6 +461,7 @@
     text(matchVenue, local?.venue || match.venue?.name);
     text(heroMatchVenue, local?.venue || match.venue?.name);
     if (currentMatchLink) currentMatchLink.href = matchUrl(match.matchNumber);
+    if (scorecardTab) scorecardTab.href = matchUrl(match.matchNumber);
     if (heroMatchLink) heroMatchLink.href = matchUrl(match.matchNumber);
 
     updateTeam(
@@ -539,6 +542,36 @@
           Number(match.matchNumber) !== Number(focusNumber),
       )
       .slice(0, cards.length);
+
+    if (otherMatchesContainer) {
+      otherMatchesContainer.replaceChildren();
+      upcoming.slice(0, 3).forEach((match) => {
+        const local = localMatch(match.matchNumber);
+        const link = document.createElement("a");
+        link.href = matchUrl(match.matchNumber);
+        const date = document.createElement("span");
+        date.textContent = local?.dateLabel || resultDate(match);
+        const teams = document.createElement("strong");
+        const home =
+          local?.home?.shortName ||
+          match.teams?.[0]?.shortName ||
+          match.teams?.[0]?.name ||
+          "TBC";
+        const away =
+          local?.away?.shortName ||
+          match.teams?.[1]?.shortName ||
+          match.teams?.[1]?.name ||
+          "TBC";
+        teams.append(document.createTextNode(`${home} `));
+        const versus = document.createElement("i");
+        versus.textContent = "vs";
+        teams.append(versus, document.createTextNode(` ${away}`));
+        const venue = document.createElement("small");
+        venue.textContent = local?.venue || match.venue?.name || "Venue TBC";
+        link.append(date, teams, venue);
+        otherMatchesContainer.append(link);
+      });
+    }
 
     cards.forEach((card, index) => {
       const match = upcoming[index];
@@ -653,7 +686,7 @@
     const details = document.createElement("div");
     details.className = "live-result-details";
     const facts = [
-      ["Toss", match.toss || "Official toss details unavailable"],
+      ["Match result", match.description || match.stateOfPlay || "Official result"],
       [
         "Top scorer",
         match.topPerformers?.mostRuns?.name
@@ -676,7 +709,7 @@
     });
     const link = document.createElement("a");
     link.href = matchUrl(match.matchNumber);
-    link.textContent = "Open complete match page →";
+    link.textContent = "Full Scorecard →";
     card.append(details, link);
     return card;
   };
@@ -688,7 +721,7 @@
       return;
     }
     resultsContainer.replaceChildren();
-    text(resultsStatus, `${matches.length} latest completed matches`);
+    if (resultsStatus) resultsStatus.hidden = true;
     matches.forEach((match, index) => {
       if (index === 0) {
         resultsContainer.append(renderFeaturedResult(match));

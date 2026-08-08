@@ -31,7 +31,7 @@ function normalizeTeam(team) {
     primaryColour: String(team?.primaryColour || ""),
     players: Array.isArray(team?.players)
       ? team.players.map((player) => ({
-          name: String(
+          name: displayPlayerName(
             player?.cardNameF ||
               player?.cardNameS ||
               [player?.firstName, player?.lastName].filter(Boolean).join(" ") ||
@@ -67,7 +67,7 @@ function normalizePlayerPerformance(performance) {
   const player =
     performance?.player || performance?.person || performance?.batter || {};
   return {
-    name: String(
+    name: displayPlayerName(
       player?.cardNameF ||
         player?.cardNameS ||
         performance?.cardNameF ||
@@ -128,12 +128,19 @@ function normalizeToss(toss) {
   }`;
 }
 
+function displayPlayerName(value) {
+  const name = String(value || "").trim();
+  if (!name.includes(",")) return name;
+  const [lastName, ...firstNames] = name.split(",").map((part) => part.trim());
+  return [...firstNames, lastName].filter(Boolean).join(" ");
+}
+
 function normalizeTopPerformer(performance, kind) {
   if (!performance) return null;
   const player = performance?.player || performance?.person || {};
   const team = performance?.team || {};
   return {
-    name: String(
+    name: displayPlayerName(
       player?.cardNameF ||
         player?.cardNameS ||
         performance?.cardNameF ||
