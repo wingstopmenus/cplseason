@@ -2304,7 +2304,7 @@ main {
   align-items: center;
   grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
   gap: 18px;
-  padding: 18px 28px;
+  padding: 26px 28px;
   background: linear-gradient(90deg, #ffffff, #fbf9fe 50%, #ffffff);
 }
 

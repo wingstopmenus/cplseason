@@ -168,7 +168,7 @@
     }
     if (resultsTitle) {
       const titles = {
-        all: "CPL 2026 fixtures, live status and results",
+        all: "CPL 2026 match schedule, live scores and results",
         august: "August 2026 fixtures",
         september: "September 2026 fixtures",
         playoffs: "CPL 2026 playoffs and final",
