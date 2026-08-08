@@ -79,6 +79,7 @@
   let currentStatus = "Upcoming";
   let lastSuccessfulRefresh = 0;
   let commentaryMatchNumber = null;
+  let commentaryVisibleCount = 20;
   const commentaryHistory = new Map();
 
   const text = (element, value) => {
@@ -255,7 +256,7 @@
       Number.isFinite(ball?.over) && Number.isFinite(ball?.ball)
         ? `${ball.over}.${ball.ball}`
         : `recent-${index}`;
-    return `${delivery}:${ball?.label || ""}:${ball?.commentary || ""}`;
+    return `${ball?.inningsNumber || 0}:${delivery}:${ball?.label || ""}:${ball?.commentary || ""}`;
   };
 
   const commentaryEmpty = (eyebrow, heading, copy) => {
@@ -278,6 +279,7 @@
     if (commentaryMatchNumber !== matchNumber) {
       commentaryHistory.clear();
       commentaryMatchNumber = matchNumber;
+      commentaryVisibleCount = 20;
     }
 
     const teams = match.teams || [];
@@ -322,7 +324,12 @@
       commentaryHistory.delete(commentaryHistory.keys().next().value);
     }
 
-    const balls = [...commentaryHistory.values()].reverse();
+    const fullCommentary = Array.isArray(match.commentary)
+      ? match.commentary
+      : [];
+    const balls = fullCommentary.length
+      ? fullCommentary
+      : [...commentaryHistory.values()].reverse();
     if (!balls.length) {
       if (live) {
         commentaryEmpty(
@@ -347,7 +354,7 @@
     }
 
     const fragment = document.createDocumentFragment();
-    balls.forEach((ball, index) => {
+    balls.slice(0, commentaryVisibleCount).forEach((ball, index) => {
       const item = document.createElement("article");
       item.className = "live-score-commentary-item";
       if (index === 0) item.classList.add("is-latest");
@@ -363,7 +370,10 @@
       delivery.append(over, outcome);
       const detail = document.createElement("div");
       const label = document.createElement("small");
-      label.textContent = index === 0 ? "Latest delivery" : "Ball-by-ball update";
+      const inningsLabel = Number.isFinite(ball.inningsNumber)
+        ? `Innings ${ball.inningsNumber} · `
+        : "";
+      label.textContent = `${inningsLabel}${index === 0 ? "Latest delivery" : "Ball-by-ball update"}`;
       const copy = document.createElement("p");
       copy.textContent = ball.commentary || ball.label || "Delivery completed.";
       detail.append(label, copy);
@@ -371,6 +381,21 @@
       fragment.append(item);
     });
     commentaryFeed.replaceChildren(fragment);
+    if (balls.length > commentaryVisibleCount) {
+      const controls = document.createElement("div");
+      controls.className = "live-score-commentary-more";
+      const status = document.createElement("span");
+      status.textContent = `Showing ${commentaryVisibleCount} of ${balls.length} deliveries`;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = "Load more commentary";
+      button.addEventListener("click", () => {
+        commentaryVisibleCount = Math.min(commentaryVisibleCount + 20, balls.length);
+        renderCommentary(match, local);
+      });
+      controls.append(status, button);
+      commentaryFeed.append(controls);
+    }
   };
 
   const renderLineup = (panel, team, enabled) => {

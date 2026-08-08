@@ -152,6 +152,8 @@
 .live-score-workspace .live-score-commentary-item:hover { background: #fafbfc; }
 .live-score-workspace .live-score-commentary-item strong,
 .live-score-workspace .live-score-commentary-item p { color: #172033; }
+.live-score-workspace .live-score-commentary-more { border-top: 1px solid #e7e9ec; background: #fff; }
+.live-score-workspace .live-score-commentary-more span { color: #697485; }
 
 .live-score-workspace .live-score-match-details {
   padding: 0;

@@ -67,6 +67,7 @@ function normalizePlayerPerformance(performance) {
   const player =
     performance?.player || performance?.person || performance?.batter || {};
   return {
+    inningsId: String(innings?.inningsId || ""),
     name: displayPlayerName(
       player?.cardNameF ||
         player?.cardNameS ||
@@ -126,6 +127,20 @@ function normalizeToss(toss) {
   return `${winner} won the toss${
     decision ? ` and chose to ${decision.toLowerCase()}` : ""
   }`;
+}
+
+function normalizeCommentaryBall(ball, inningsNumber) {
+  return {
+    inningsNumber: numeric(inningsNumber),
+    label: String(ball?.shortDescription || ball?.displayValue || "•"),
+    over: numeric(ball?.overNumber),
+    ball: numeric(ball?.ballDisplayNumber ?? ball?.ballNumber),
+    commentary: String(ball?.description || ball?.commentary || ""),
+    score: {
+      runs: numeric(ball?.inningsProgressiveScore?.runs),
+      wickets: numeric(ball?.inningsProgressiveScore?.wickets),
+    },
+  };
 }
 
 function displayPlayerName(value) {
@@ -270,13 +285,36 @@ async function fetchOfficial(path) {
   return response.json();
 }
 
-async function fetchSummary(match) {
+async function fetchSummary(match, includeCommentary = false) {
   const matchId = String(match?.matchId || "");
   if (!matchId) return normalizeMatch(match);
   try {
-    const summary = normalizeMatch(await fetchOfficial(`/match/${matchId}`));
+    const rawSummary = await fetchOfficial(`/match/${matchId}`);
+    const summary = normalizeMatch(rawSummary);
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
+    }
+    if (includeCommentary) {
+      const innings = Array.isArray(rawSummary?.inningsScores)
+        ? rawSummary.inningsScores.filter((item) => item?.inningsId)
+        : [];
+      const ballResponses = await Promise.all(
+        innings.map((item) =>
+          fetchOfficial(
+            `/match/${matchId}/balls?inningsId=${encodeURIComponent(item.inningsId)}`,
+          ).catch(() => null),
+        ),
+      );
+      summary.commentary = ballResponses
+        .flatMap((payload) =>
+          Array.isArray(payload?.inningsBalls) ? payload.inningsBalls : [],
+        )
+        .flatMap((inningsData) =>
+          (inningsData?.balls || []).map((ball) =>
+            normalizeCommentaryBall(ball, inningsData?.matchInningsNumber),
+          ),
+        )
+        .reverse();
     }
     return summary;
   } catch {
@@ -328,12 +366,12 @@ module.exports = async function cplLiveScore(request, response) {
     const [focus, recent, requestedMatch] = await Promise.all([
       isUpcoming(focusSource)
         ? Promise.resolve(normalizeMatch(focusSource))
-        : fetchSummary(focusSource),
+        : fetchSummary(focusSource, true),
       Promise.all(recentSources.map(fetchSummary)),
       requestedSource
         ? (isUpcoming(requestedSource)
             ? Promise.resolve(normalizeMatch(requestedSource))
-            : fetchSummary(requestedSource))
+            : fetchSummary(requestedSource, true))
         : Promise.resolve(null),
     ]);
 
