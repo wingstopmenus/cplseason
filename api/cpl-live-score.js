@@ -1,6 +1,8 @@
 const API_ROOT = "https://api.mcpro.cricket/v1";
 const COMPETITION_ID = "sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
+const CPL_RESULTS_INDEX = "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/matches";
+let resultIndexCache = { expires: 0, matches: new Map() };
 const verifiedMatchAwards = {
   "1": {
     name: "Alzarri Joseph",
@@ -359,18 +361,49 @@ function applyDerivedMatchPhase(match) {
     match.status = description;
     match.stateOfPlay = description;
   }
-  const verifiedResults = {
-    2: {
-      winnerName: "Trinbago Knight Riders",
-      result: "Trinbago Knight Riders won by 19 runs (DLS method)",
-    },
-  };
-  const verified = verifiedResults[Number(match?.matchNumber)];
+  return match;
+}
+
+function cleanHtmlText(value) {
+  return String(value || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+async function loadResultIndex() {
+  if (resultIndexCache.expires > Date.now() && resultIndexCache.matches.size) return resultIndexCache.matches;
+  const response = await fetch(CPL_RESULTS_INDEX, { signal: AbortSignal.timeout(8000) });
+  if (!response.ok) throw new Error(`Result index returned ${response.status}`);
+  const html = await response.text();
+  const matches = new Map();
+  const linkPattern = /href="(\/live-cricket-scores\/\d+\/[^"?]*?-(\d+)(?:st|nd|rd|th)-match-[^"]*)"/gi;
+  for (const link of html.matchAll(linkPattern)) matches.set(Number(link[2]), `https://www.cricbuzz.com${link[1]}`);
+  resultIndexCache = { expires: Date.now() + 5 * 60 * 1000, matches };
+  return matches;
+}
+
+async function hydrateCompletedResult(match) {
   const genericResult = /^(complete|completed|match complete|match completed|result)$/i;
-  if (verified && completedPattern.test(String(match?.status || "")) && genericResult.test(String(match?.description || ""))) {
-    match.winnerName = verified.winnerName;
-    match.description = verified.result;
-    match.stateOfPlay = verified.result;
+  if (!completedPattern.test(String(match?.status || "")) || !genericResult.test(String(match?.description || ""))) return match;
+  try {
+    const resultUrl = (await loadResultIndex()).get(Number(match.matchNumber));
+    if (!resultUrl) return match;
+    const response = await fetch(resultUrl, { signal: AbortSignal.timeout(8000) });
+    if (!response.ok) return match;
+    const html = await response.text();
+    const resultMatch = html.match(/<div class="text-cbTextLink">([^<]*(?:won by|won|tied|no result|abandoned)[^<]*)<\/div>/i);
+    const result = cleanHtmlText(resultMatch?.[1]);
+    if (!result || genericResult.test(result)) return match;
+    match.description = result;
+    match.stateOfPlay = result;
+    const winner = result.match(/^(.+?)\s+won\b/i)?.[1]?.trim();
+    if (winner) match.winnerName = winner;
+  } catch {
+    // Keep the official payload when the secondary result page is temporarily unavailable.
   }
   return match;
 }
@@ -563,7 +596,7 @@ async function fetchSummary(match, includeCommentary = false) {
         summary.description = "Play is currently interrupted";
       }
     }
-    return applyDerivedMatchPhase(summary);
+    return hydrateCompletedResult(applyDerivedMatchPhase(summary));
   } catch {
     return applyDerivedMatchPhase(normalizeMatch(match));
   }
