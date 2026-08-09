@@ -43,6 +43,11 @@
   const commentaryCopy = root.querySelector("[data-commentary-copy]");
   const commentaryMatchLink = root.querySelector("[data-commentary-match-link]");
   const commentaryFeed = root.querySelector("[data-commentary-feed]");
+  const infoMatch = root.querySelector("[data-info-match]");
+  const infoDate = root.querySelector("[data-info-date]");
+  const infoStart = root.querySelector("[data-info-start]");
+  const infoVenue = root.querySelector("[data-info-venue]");
+  const infoStage = root.querySelector("[data-info-stage]");
   const upcomingContainer = root.querySelector("[data-upcoming-matches]");
   const otherMatchesContainer = root.querySelector("[data-other-matches]");
   const resultsContainer = root.querySelector("[data-live-results]");
@@ -450,13 +455,15 @@
     const home = officialTeams.find((team) => team.isHome) || officialTeams[0];
     const away = officialTeams.find((team) => !team.isHome) || officialTeams[1];
     currentFocusStart = Date.parse(match.startDate || local?.startIso || "");
-    currentPhase = match.stateOfPlay || match.description || match.status || "Upcoming";
+    const futureMatch = Number.isFinite(currentFocusStart) && currentFocusStart > Date.now() + 5 * 60 * 1000;
+    const effectiveStatus = futureMatch ? "Scheduled" : (match.status || "Upcoming");
+    currentPhase = isUpcoming(effectiveStatus) ? effectiveStatus : (match.stateOfPlay || match.description || effectiveStatus);
     updateStatus(currentPhase);
     text(
       heroContext,
-      isLive(match.status)
+      isLive(effectiveStatus)
         ? "CPL match in progress"
-        : isComplete(match.status)
+        : isComplete(effectiveStatus)
           ? "Latest CPL result"
           : "Next CPL match",
     );
@@ -483,6 +490,11 @@
     }
     text(matchVenue, local?.venue || match.venue?.name);
     text(heroMatchVenue, local?.venue || match.venue?.name);
+    text(infoMatch, `${home?.name || local?.home?.name || "TBC"} vs ${away?.name || local?.away?.name || "TBC"}`);
+    text(infoDate, local?.dateLabelLong || "Fixture date");
+    text(infoStart, `${local?.timeLabel || "TBC"} local`);
+    text(infoVenue, local?.venue || match.venue?.name || "Venue to be confirmed");
+    text(infoStage, local?.stage || match.stage || "CPL 2026");
     if (currentMatchLink) currentMatchLink.href = matchUrl(match.matchNumber);
     if (scorecardTab) scorecardTab.href = matchUrl(match.matchNumber);
     if (heroMatchLink) heroMatchLink.href = matchUrl(match.matchNumber);
@@ -501,7 +513,7 @@
     );
     updateHeroTeam(heroTeamPanels.home, home, local?.home);
     updateHeroTeam(heroTeamPanels.away, away, local?.away);
-    const lineupsEnabled = !isUpcoming(match.status);
+    const lineupsEnabled = !isUpcoming(effectiveStatus);
     renderLineup(lineupPanels.home, home, lineupsEnabled);
     renderLineup(lineupPanels.away, away, lineupsEnabled);
     text(
@@ -512,9 +524,9 @@
         : "Team sheets not yet published",
     );
 
-    const state = isUpcoming(match.status)
+    const state = isUpcoming(effectiveStatus)
       ? "Live score starts on match day"
-      : isComplete(match.status)
+      : isComplete(effectiveStatus)
         ? match.stateOfPlay || match.description || "The match is complete."
         : match.chaseEquation || match.stateOfPlay ||
           match.description ||
@@ -522,9 +534,9 @@
     text(stateHeading, state);
     text(
       stateCopy,
-      isLive(match.status)
+      isLive(effectiveStatus)
         ? "The current score, overs and match status are shown here."
-        : isComplete(match.status)
+        : isComplete(effectiveStatus)
           ? "View the full scorecard for complete innings details."
           : "The toss, playing XIs and innings scores will appear as soon as they are confirmed.",
     );
@@ -759,7 +771,7 @@
       const label = document.createElement("span");
       label.textContent = `Match ${match.matchNumber} · ${match.status}`;
       const heading = document.createElement("h3");
-      heading.textContent = match.stateOfPlay || match.description || "Official result";
+      heading.textContent = match.description || match.stateOfPlay || "Match result";
       card.append(label, heading);
       (match.teams || []).slice(0, 2).forEach((team) => {
         const row = document.createElement("div");

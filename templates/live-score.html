@@ -240,11 +240,11 @@
             <section class="live-score-side-panel live-score-match-info" aria-labelledby="match-info-title">
               <header><span>Details</span><h2 id="match-info-title">Match information</h2></header>
               <dl>
-                <div><dt>Match</dt><dd>{{ focus.home_label }} vs {{ focus.away_label }}</dd></div>
-                <div><dt>Date</dt><dd>{{ focus.date_label_long }}</dd></div>
-                <div><dt>Start</dt><dd>{{ focus.time_label }} local</dd></div>
-                <div><dt>Venue</dt><dd><a href="/venue/{{ focus.venue.slug }}/">{{ focus.venue.name }}</a></dd></div>
-                <div><dt>Stage</dt><dd>{{ focus.stage }}</dd></div>
+                <div><dt>Match</dt><dd data-info-match>{{ focus.home_label }} vs {{ focus.away_label }}</dd></div>
+                <div><dt>Date</dt><dd data-info-date>{{ focus.date_label_long }}</dd></div>
+                <div><dt>Start</dt><dd data-info-start>{{ focus.time_label }} local</dd></div>
+                <div><dt>Venue</dt><dd data-info-venue>{{ focus.venue.name }}</dd></div>
+                <div><dt>Stage</dt><dd data-info-stage>{{ focus.stage }}</dd></div>
               </dl>
             </section>
 
@@ -337,6 +337,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260809result6" defer></script>
+  <script src="/static/js/live-score.js?v=20260809state7" defer></script>
 </body>
 </html>
