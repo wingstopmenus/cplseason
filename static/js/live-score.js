@@ -77,6 +77,7 @@
     root.querySelector("[data-live-countdown]")?.dataset.start || "",
   );
   let currentStatus = "Upcoming";
+  let currentPhase = "Upcoming";
   let lastSuccessfulRefresh = 0;
   let commentaryMatchNumber = null;
   let commentaryVisibleCount = 20;
@@ -297,7 +298,7 @@
     if (commentaryStatus) {
       const dot = document.createElement("i");
       dot.setAttribute("aria-hidden", "true");
-      const statusLabel = live ? "Live" : complete ? "Match complete" : "Upcoming";
+      const statusLabel = live ? currentPhase : complete ? "Match complete" : "Upcoming";
       commentaryStatus.replaceChildren(dot, document.createTextNode(statusLabel));
     }
     text(
@@ -449,7 +450,8 @@
     const home = officialTeams.find((team) => team.isHome) || officialTeams[0];
     const away = officialTeams.find((team) => !team.isHome) || officialTeams[1];
     currentFocusStart = Date.parse(match.startDate || local?.startIso || "");
-    updateStatus(match.status);
+    currentPhase = match.stateOfPlay || match.description || match.status || "Upcoming";
+    updateStatus(currentPhase);
     text(
       heroContext,
       isLive(match.status)
@@ -832,10 +834,10 @@
     if (!countdownValue || !Number.isFinite(currentFocusStart)) return;
     const remaining = currentFocusStart - Date.now();
     if (remaining <= 0) {
-      text(countdownValue, isComplete(currentStatus) ? "Complete" : "Live now");
-      text(countdownLabel, isComplete(currentStatus) ? "Official result" : "Live feed active");
-      text(heroCountdownValue, isComplete(currentStatus) ? "Complete" : "Live now");
-      text(heroCountdownLabel, isComplete(currentStatus) ? "Official result" : "Match in progress");
+      text(countdownValue, isComplete(currentStatus) ? "Complete" : currentPhase);
+      text(countdownLabel, isComplete(currentStatus) ? "Final result" : "Match status");
+      text(heroCountdownValue, isComplete(currentStatus) ? "Complete" : currentPhase);
+      text(heroCountdownLabel, isComplete(currentStatus) ? "Final result" : "Match status");
       return;
     }
     const totalSeconds = Math.floor(remaining / 1000);

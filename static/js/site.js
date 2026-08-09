@@ -828,6 +828,7 @@ if (liveMatchData) {
   const commentaryHistory = new Map();
   const completePattern = /complete|completed|result|abandon|cancel|no result/i;
   const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
+  const matchPhase = (match) => match?.stateOfPlay || match?.description || match?.status || "Match in progress";
   let pollTimer;
   let commentaryVisibleCount = 20;
 
@@ -1193,7 +1194,7 @@ if (liveMatchData) {
     liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
     const heroCountdownLabel = liveMatchCountdown?.querySelector("[data-match-countdown-label]");
     if (heroStatus) {
-      heroStatus.lastChild.textContent = ` ${isComplete ? "Completed" : isLive ? "Live" : "Scheduled"}`;
+      heroStatus.lastChild.textContent = ` ${isComplete ? "Completed" : isLive ? matchPhase(match) : "Scheduled"}`;
       heroStatus.dataset.matchState = isComplete ? "complete" : isLive ? "live" : "upcoming";
     }
     if (liveMatchCountdown) {
@@ -1216,11 +1217,11 @@ if (liveMatchData) {
           ? match.stateOfPlay || match.description || "Match in progress"
           : "Match Starts in";
     }
-    if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? "Live now" : "Scheduled";
+    if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? matchPhase(match) : "Scheduled";
     const summaryText = (isComplete ? match.description || match.stateOfPlay : match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
     summary.textContent = isComplete ? "Match result" : summaryText;
     if (matchDataNote) matchDataNote.hidden = !isUpcoming;
-    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Live commentary" : "Commentary begins when match coverage goes live.";
+    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? matchPhase(match) : "Commentary begins when match coverage starts.";
     if (commentarySummary) commentarySummary.textContent = summaryText;
     if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "Follow the latest state of play." : "The toss and full commentary will appear as the match develops.");
     renderFullScorecard(match);

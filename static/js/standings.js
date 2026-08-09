@@ -113,7 +113,7 @@
         isOfficialLadder
           ? "Figures match the official CPL ladder."
           : isEspnFallback
-            ? "Figures are verified against ESPNcricinfo while the CPL feed reconnects."
+            ? "Figures are verified against ESPNcricinfo."
             : "Figures use verified final scorecards while the official ladder catches up."
       }`,
     );
@@ -164,7 +164,7 @@
           root,
           "[data-home-standings-copy]",
           lastPayload
-            ? "Showing the latest verified standings while the feed reconnects."
+            ? "Showing the latest verified standings."
             : "Live update is reconnecting; saved standings remain visible.",
         );
       });

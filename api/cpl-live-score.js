@@ -325,6 +325,26 @@ function normalizeTopPerformer(performance, kind) {
   };
 }
 
+function applyDerivedMatchPhase(match) {
+  const genericLive = /^(live|in progress|match in progress)$/i;
+  const status = String(match?.status || "");
+  const state = String(match?.stateOfPlay || "");
+  const description = String(match?.description || "");
+  const innings = Array.isArray(match?.innings) ? match.innings : [];
+  const firstInningsClosed = innings.length === 1 && /complete|closed|finished/i.test(String(innings[0]?.status || ""));
+  if (!completedPattern.test(status) && !upcomingPattern.test(status) && firstInningsClosed && !match?.winnerName) {
+    match.status = "Innings break";
+    match.stateOfPlay = "Innings break";
+    match.description = "Innings break";
+  } else if (!genericLive.test(state) && state) {
+    match.status = state;
+  } else if (!genericLive.test(description) && description) {
+    match.status = description;
+    match.stateOfPlay = description;
+  }
+  return match;
+}
+
 function normalizeMatch(match) {
   const competition = match?.competition || {};
   const liveSummary = match?.liveSummary || {};
@@ -448,7 +468,7 @@ async function fetchSummary(match, includeCommentary = false) {
   if (!matchId) return normalizeMatch(match);
   try {
     const rawSummary = await fetchOfficial(`/match/${matchId}`);
-    const summary = normalizeMatch(rawSummary);
+    const summary = applyDerivedMatchPhase(normalizeMatch(rawSummary));
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
     }
@@ -513,9 +533,9 @@ async function fetchSummary(match, includeCommentary = false) {
         summary.description = "Play is currently interrupted";
       }
     }
-    return summary;
+    return applyDerivedMatchPhase(summary);
   } catch {
-    return normalizeMatch(match);
+    return applyDerivedMatchPhase(normalizeMatch(match));
   }
 }
 
@@ -580,7 +600,7 @@ module.exports = async function cplLiveScore(request, response) {
         .map((match) => [Number(match.matchNumber), match]),
     );
     const schedule = officialMatches.map((match) => {
-      const normalized = normalizeMatch(match);
+      const normalized = applyDerivedMatchPhase(normalizeMatch(match));
       return liveDetails.get(Number(normalized.matchNumber)) || normalized;
     });
     if (requestedMatch) {

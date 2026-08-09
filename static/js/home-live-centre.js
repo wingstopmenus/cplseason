@@ -25,6 +25,7 @@
   const isUpcoming = (match) => upcomingPattern.test(String(match?.status || ""));
   const isLive = (match) => Boolean(match?.status) && !isSettled(match) && !isUpcoming(match);
   const matchNumber = (match) => Number(match?.matchNumber) || 0;
+  const matchPhase = (match) => match?.stateOfPlay || match?.description || match?.status || "Match in progress";
 
   const nextCard = root.querySelector(".home-match-centre-next");
   const countdown = nextCard?.querySelector("[data-match-countdown]");
@@ -93,7 +94,7 @@
       const label = countdown.querySelector("[data-match-countdown-label]");
       const time = countdown.querySelector("time");
       if (isLive(match)) countdown.classList.add("is-live");
-      if (label) label.textContent = isLive(match) ? "Live score" : "Starts in";
+      if (label) label.textContent = isLive(match) ? matchPhase(match) : "Starts in";
       if (time) {
         time.dateTime = fixture.startIso || match.startDate || "";
         time.textContent = isLive(match) ? scoreLine(match) : fixtureTime(fixture);
@@ -141,8 +142,8 @@
     const rightVenue = columns[1]?.querySelector("small");
 
     if (liveMatch) {
-      if (leftLabel) leftLabel.innerHTML = '<i aria-hidden="true"></i> Live now';
-      if (leftTitle) leftTitle.textContent = liveMatch.description || "CPL match in progress";
+      if (leftLabel) leftLabel.innerHTML = `<i aria-hidden="true"></i> ${matchPhase(liveMatch)}`;
+      if (leftTitle) leftTitle.textContent = matchPhase(liveMatch);
       if (leftCopy) leftCopy.textContent = scoreLine(liveMatch);
       if (rightLabel) rightLabel.textContent = `Match ${matchNumber(liveMatch)}`;
     } else {
