@@ -800,6 +800,7 @@ if (liveMatchData) {
   const current = liveMatchData.querySelector("[data-match-current]");
   const batters = liveMatchData.querySelector("[data-match-batters]");
   const bowler = liveMatchData.querySelector("[data-match-bowler]");
+  const keyStats = liveMatchData.querySelector("[data-match-key-stats]");
   const recentBalls = liveMatchData.querySelector("[data-match-recent-balls]");
   const matchDataNote = document.querySelector("[data-match-data-note]");
   const heroStatus = document.querySelector("[data-match-hero-status]");
@@ -1081,7 +1082,7 @@ if (liveMatchData) {
     if (!liveStream) return;
     liveStream.replaceChildren();
     const commentary = Array.isArray(match.commentary) ? match.commentary : [];
-    const recent = commentary.length ? commentary.slice(0, 30) : (match.live?.recentBalls || []).slice().reverse();
+    const recent = commentary.length ? commentary.slice(0, 60) : (match.live?.recentBalls || []).slice().reverse();
     const performers = [
       match.topPerformers?.mostRuns ? `Top scorer: ${match.topPerformers.mostRuns.name} · ${match.topPerformers.mostRuns.value ?? "—"} runs` : "",
       match.topPerformers?.mostWickets ? `Top bowler: ${match.topPerformers.mostWickets.name} · ${match.topPerformers.mostWickets.value ?? "—"} wickets` : "",
@@ -1150,7 +1151,7 @@ if (liveMatchData) {
       if (!groups.has(over)) groups.set(over, []);
       groups.get(over).push(ball);
     });
-    [...groups.entries()].slice(0, 4).forEach(([over, balls]) => {
+    [...groups.entries()].slice(0, 8).forEach(([over, balls]) => {
       const section = document.createElement("section");
       section.className = "match-live-over";
       const header = document.createElement("header");
@@ -1300,12 +1301,81 @@ if (liveMatchData) {
     }
 
     batters.replaceChildren();
-    (match.live?.batters || []).forEach((player) => {
-      batters.append(textLine(player.name || "Batter", ` ${player.runs ?? 0} (${player.balls ?? 0})`));
-    });
+    const batterRows = (match.live?.batters || []).map((player) => [
+      `${player.name || "Batter"}${player.notOut ? " *" : ""}`,
+      player.runs ?? 0,
+      player.balls ?? 0,
+      player.fours ?? 0,
+      player.sixes ?? 0,
+      player.strikeRate ?? "—",
+    ]);
+    const makeLiveTable = (headers, rows) => {
+      const table = document.createElement("table");
+      table.className = "match-live-data-table";
+      const head = document.createElement("thead");
+      const headRow = document.createElement("tr");
+      headers.forEach((value) => {
+        const cell = document.createElement("th");
+        cell.textContent = value;
+        headRow.append(cell);
+      });
+      head.append(headRow);
+      const body = document.createElement("tbody");
+      rows.forEach((values) => {
+        const row = document.createElement("tr");
+        values.forEach((value) => {
+          const cell = document.createElement("td");
+          cell.textContent = value;
+          row.append(cell);
+        });
+        body.append(row);
+      });
+      table.append(head, body);
+      return table;
+    };
+    if (batterRows.length) batters.append(makeLiveTable(["Batter", "R", "B", "4s", "6s", "SR"], batterRows));
     bowler.replaceChildren();
     if (match.live?.bowler?.name) {
-      bowler.append(textLine(match.live.bowler.name, ` ${match.live.bowler.wickets ?? 0}/${match.live.bowler.runsConceded ?? 0}`));
+      const player = match.live.bowler;
+      bowler.append(makeLiveTable(["Bowler", "O", "M", "R", "W", "ECO"], [[
+        player.name,
+        player.overs ?? "—",
+        player.maidens ?? 0,
+        player.runs ?? player.runsConceded ?? 0,
+        player.wickets ?? 0,
+        player.economy ?? "—",
+      ]]));
+    }
+    if (keyStats) {
+      keyStats.replaceChildren();
+      const commentary = Array.isArray(match.commentary) ? match.commentary : [];
+      const currentInnings = (match.innings || []).slice(-1)[0];
+      const lastWicketIndex = commentary.findIndex((ball) => /^w$/i.test(String(ball.label || "")));
+      const lastWicket = lastWicketIndex >= 0 ? commentary[lastWicketIndex] : null;
+      const currentRuns = Number(currentInnings?.runs);
+      const wicketRuns = Number(lastWicket?.score?.runs);
+      const partnershipRuns = Number.isFinite(currentRuns) && Number.isFinite(wicketRuns) ? Math.max(0, currentRuns - wicketRuns) : null;
+      const partnershipBalls = lastWicketIndex > 0
+        ? commentary.slice(0, lastWicketIndex).filter((ball) => !/w|nb/i.test(String(ball.label || ""))).length
+        : 0;
+      const stats = [
+        ["Partnership", partnershipRuns === null ? "—" : `${partnershipRuns} (${partnershipBalls})`],
+        ["Last wicket", lastWicket ? `${lastWicket.batterName || "Wicket"} · ${lastWicket.score?.runs ?? "—"}/${lastWicket.score?.wickets ?? "—"} in ${lastWicket.over}.${lastWicket.ball} ov` : "—"],
+        ["Current run rate", match.live?.currentRunRate ?? currentInnings?.runRate ?? "—"],
+        ["Toss", match.toss || "Awaiting confirmation"],
+      ];
+      const list = document.createElement("dl");
+      list.className = "match-live-key-list";
+      stats.forEach(([label, value]) => {
+        const row = document.createElement("div");
+        const term = document.createElement("dt");
+        const detail = document.createElement("dd");
+        term.textContent = label;
+        detail.textContent = value;
+        row.append(term, detail);
+        list.append(row);
+      });
+      keyStats.append(list);
     }
     recentBalls.replaceChildren();
     (match.live?.recentBalls || []).forEach((ball) => {
