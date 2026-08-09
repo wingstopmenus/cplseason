@@ -1219,9 +1219,9 @@ if (liveMatchData) {
     const summaryText = (isComplete ? match.description || match.stateOfPlay : match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
     summary.textContent = isComplete ? "Match result" : summaryText;
     if (matchDataNote) matchDataNote.hidden = !isUpcoming;
-    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Updating automatically during play" : "Commentary begins when match coverage goes live.";
+    if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? "Live commentary" : "Commentary begins when match coverage goes live.";
     if (commentarySummary) commentarySummary.textContent = summaryText;
-    if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "The latest state of play updates automatically." : "Pre-match updates, the toss and full commentary will appear as the match develops.");
+    if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "Follow the latest state of play." : "The toss and full commentary will appear as the match develops.");
     renderFullScorecard(match);
     renderConfirmedXi(match);
     renderFullCommentary(match, isComplete, isLive);

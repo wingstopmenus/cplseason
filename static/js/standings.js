@@ -94,7 +94,7 @@
     setText(
       root,
       "[data-standings-hero-copy]",
-      "CPL 2026 positions, wins, losses, points and net run rate update automatically after verified results.",
+      "CPL 2026 positions, wins, losses, points and net run rate.",
     );
     setText(
       root,
@@ -104,7 +104,7 @@
     setText(
       root,
       "[data-standings-status-detail]",
-      `Updated ${updateTime} · refreshes every 30 seconds`,
+      `Updated ${updateTime}`,
     );
     setText(
       root,
@@ -121,7 +121,7 @@
     setText(
       root,
       "[data-standings-update-detail]",
-      `Updated ${updateTime} · checks for confirmed results every 30 seconds`,
+      `Updated ${updateTime}`,
     );
     setText(root, "[data-standings-phase]", completed ? "League underway" : "Season table");
     setText(root, "[data-standings-status]", "Live verified standings");
@@ -130,8 +130,8 @@
       root,
       "[data-home-standings-copy]",
       completed
-        ? `Updated automatically after ${completed} completed ${matchWord}.`
-        : "The table updates automatically after each verified result.",
+        ? `Current after ${completed} completed ${matchWord}.`
+        : "CPL 2026 season standings.",
     );
   };
 

@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260729news3">
-  <link rel="stylesheet" href="/static/css/live-score.css?v=20260808mobile2">
+  <link rel="stylesheet" href="/static/css/live-score.css?v=20260809order3">
   <link rel="stylesheet" href="/static/css/live-score-match-centre.css?v=20260805espn1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
@@ -144,9 +144,9 @@
         <div class="live-score-workspace">
           <div class="live-score-workspace-main">
             <nav class="live-score-tabs" aria-label="Live match sections">
-              <a href="#commentary-title" aria-current="page"><strong>Commentary</strong></a>
+              <a href="#live-stats" aria-current="page"><strong>Live stats</strong></a>
+              <a href="#commentary-title"><strong>Commentary</strong></a>
               <a data-scorecard-tab href="{{ focus.url }}"><strong>Scorecard</strong></a>
-              <a href="#live-stats"><strong>Live stats</strong></a>
               <a href="#live-lineups-title"><strong>Playing XI</strong></a>
               <a href="#match-info-title"><strong>Match info</strong></a>
             </nav>
@@ -157,10 +157,7 @@
                   <p>Ball-by-ball</p>
                   <h2 id="commentary-title">CPL live commentary</h2>
                 </div>
-                <span class="live-score-commentary-status" data-commentary-status>
-                  <i aria-hidden="true"></i>
-                  Updates on match day
-                </span>
+                <span class="live-score-commentary-status" data-commentary-status></span>
               </header>
 
               <div class="live-score-commentary-layout">
@@ -184,7 +181,6 @@
             <section id="live-stats" class="live-score-match-details" aria-label="Live match statistics">
               <header class="live-score-telemetry-heading">
                 <div><span>Live match data</span><strong>Match stats</strong></div>
-                <small>Updates during play</small>
               </header>
               <div class="live-score-metrics" aria-label="Current match details">
                 <article><span>Toss</span><strong data-live-toss>Awaiting confirmation</strong></article>
@@ -341,6 +337,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
-  <script src="/static/js/live-score.js?v=20260808status1" defer></script>
+  <script src="/static/js/live-score.js?v=20260809order3" defer></script>
 </body>
 </html>

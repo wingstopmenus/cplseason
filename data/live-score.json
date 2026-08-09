@@ -11,12 +11,8 @@
   "polling_seconds": 15,
   "source_name": "CPL live scores",
   "source_url": "https://match-center.cplt20.com/",
-  "source_note": "Scores update automatically during play. If an update is delayed, the latest match score stays on screen.",
+  "source_note": "The latest available match score remains on screen.",
   "faq": [
-    {
-      "question": "How often does the CPL live score update?",
-      "answer": "The page updates automatically during play. New runs, wickets and overs appear as match updates become available."
-    },
     {
       "question": "Where can I find today's CPL match score?",
       "answer": "The current-match panel at the top of this page shows today's CPL fixture, live score, overs and match status. Before play begins, it shows the start time, venue and countdown."

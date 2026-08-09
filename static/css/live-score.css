@@ -1239,6 +1239,9 @@
   content: "";
 }
 .live-score-workspace-main { display: grid; min-width: 0; gap: 10px; }
+.live-score-workspace-main .live-score-tabs { order: 1; }
+.live-score-workspace-main .live-score-match-details { order: 2; }
+.live-score-workspace-main .live-score-commentary { order: 3; }
 .live-score-tabs {
   display: flex;
   align-items: center;

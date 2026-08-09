@@ -297,11 +297,7 @@
     if (commentaryStatus) {
       const dot = document.createElement("i");
       dot.setAttribute("aria-hidden", "true");
-      const statusLabel = live
-        ? `Live · refreshes every ${intervalSeconds} sec`
-        : complete
-          ? "Match complete"
-          : "Updates on match day";
+      const statusLabel = live ? "Live" : complete ? "Match complete" : "Upcoming";
       commentaryStatus.replaceChildren(dot, document.createTextNode(statusLabel));
     }
     text(
@@ -520,12 +516,12 @@
         ? match.stateOfPlay || match.description || "The match is complete."
         : match.stateOfPlay ||
           match.description ||
-          "The live innings is updating automatically.";
+          "Follow the live innings here.";
     text(stateHeading, state);
     text(
       stateCopy,
       isLive(match.status)
-        ? "The score, overs and match status refresh automatically while this page is open."
+        ? "The current score, overs and match status are shown here."
         : isComplete(match.status)
           ? "View the full scorecard for complete innings details."
           : "The toss, playing XIs and innings scores will appear as soon as they are confirmed.",
@@ -547,7 +543,7 @@
     text(
       feedMessage,
       Number.isNaN(checked.getTime())
-        ? "Scores updating automatically"
+        ? "Live scores"
         : `Last checked ${checked.toLocaleTimeString("en-GB", {
             hour: "2-digit",
             minute: "2-digit",
@@ -806,7 +802,7 @@
       renderResults(payload.recent || []);
       lastSuccessfulRefresh = Date.parse(payload.fetchedAt) || Date.now();
       const stale = Date.now() - lastSuccessfulRefresh > 120000;
-      setFeedSignal(stale ? "Score update delayed" : "Scores updating automatically", stale ? "error" : "connected");
+      setFeedSignal(stale ? "Score update delayed" : "Live scores", stale ? "error" : "connected");
     } catch (error) {
       console.warn("CPL live score refresh unavailable", error);
       setFeedSignal("Score update delayed", "error");
