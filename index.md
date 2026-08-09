@@ -6,3 +6,4 @@ CPL 2026 opens on Friday 7 August with Jamaica Kingsmen against Antigua & Barbud
 - Teams: https://cplseason.com/teams/
 - Venues: https://cplseason.com/venues/
 - News: https://cplseason.com/news/
+- Previews: https://cplseason.com/match-preview/
