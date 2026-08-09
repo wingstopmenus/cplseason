@@ -692,16 +692,20 @@
   };
 
   const renderFeaturedResult = (match) => {
+    const completedResult = [match.description, match.stateOfPlay]
+      .map((value) => String(value || "").trim())
+      .find((value) => value && !/^(complete|completed|match complete|match completed|result)$/i.test(value))
+      || (match.winnerName ? `${match.winnerName} won` : "Match completed");
     const card = document.createElement("article");
     card.className = "live-result-card live-result-card-featured";
     const header = document.createElement("header");
     const eyebrow = document.createElement("span");
-    eyebrow.textContent = `Match ${match.matchNumber} · ${match.status}`;
+    eyebrow.textContent = `Match ${match.matchNumber} · Completed`;
     const meta = document.createElement("small");
     meta.textContent = [resultDate(match), match.venue?.name].filter(Boolean).join(" · ");
     header.append(eyebrow, meta);
     const heading = document.createElement("h3");
-    heading.textContent = match.stateOfPlay || match.description || "Official result";
+    heading.textContent = completedResult;
     card.append(header, heading);
     (match.teams || []).slice(0, 2).forEach((team) => {
       card.append(createResultTeam(match, team));
@@ -709,7 +713,7 @@
     const details = document.createElement("div");
     details.className = "live-result-details";
     const facts = [
-      ["Match result", match.description || match.stateOfPlay || "Official result"],
+      ["Match result", completedResult],
       [
         "Top scorer",
         match.topPerformers?.mostRuns?.name

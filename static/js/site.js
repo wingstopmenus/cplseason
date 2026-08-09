@@ -833,6 +833,12 @@ if (liveMatchData) {
   const completePattern = /complete|completed|result|abandon|cancel|no result/i;
   const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
   const matchPhase = (match) => match?.stateOfPlay || match?.description || match?.status || "Match in progress";
+  const completedResult = (match) => {
+    const candidates = [match?.description, match?.stateOfPlay].map((value) => String(value || "").trim());
+    const result = candidates.find((value) => value && !/^(complete|completed|match complete|match completed|result)$/i.test(value));
+    if (result) return result;
+    return match?.winnerName ? `${match.winnerName} won` : "Match completed";
+  };
   let pollTimer;
   let commentaryVisibleCount = 20;
   let commentaryFilter = null;
@@ -1242,13 +1248,13 @@ if (liveMatchData) {
     }
     if (heroCountdownLabel) {
       heroCountdownLabel.textContent = isComplete
-        ? match.description || match.stateOfPlay || "Match completed"
+        ? completedResult(match)
         : isLive
           ? match.chaseEquation || (/^live$/i.test(String(matchPhase(match))) ? "Match in progress" : matchPhase(match))
           : "Match Starts in";
     }
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? matchPhase(match) : "Scheduled";
-    const summaryText = (isComplete ? match.description || match.stateOfPlay : match.chaseEquation || match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
+    const summaryText = isComplete ? completedResult(match) : (match.chaseEquation || match.stateOfPlay || match.description || (isLive ? "Match in progress" : "Match scheduled"));
     summary.textContent = isComplete ? "Match result" : summaryText;
     if (matchDataNote) matchDataNote.hidden = !isUpcoming;
     if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? matchPhase(match) : "Commentary begins when match coverage starts.";
@@ -1311,7 +1317,7 @@ if (liveMatchData) {
     });
 
     if (isComplete) {
-      toss.textContent = match.description || match.stateOfPlay || "Match completed";
+      toss.textContent = completedResult(match);
       toss.hidden = false;
     } else if (match.chaseEquation) {
       toss.hidden = true;
