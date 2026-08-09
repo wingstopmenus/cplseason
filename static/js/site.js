@@ -1214,7 +1214,7 @@ if (liveMatchData) {
       heroCountdownLabel.textContent = isComplete
         ? match.description || match.stateOfPlay || "Match completed"
         : isLive
-          ? match.stateOfPlay || match.description || "Match in progress"
+          ? match.chaseEquation || (/^live$/i.test(String(matchPhase(match))) ? "Match in progress" : matchPhase(match))
           : "Match Starts in";
     }
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? matchPhase(match) : "Scheduled";
