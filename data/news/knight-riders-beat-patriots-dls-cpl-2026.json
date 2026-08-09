@@ -19,6 +19,14 @@
     "Sunil Narine claimed 3 for 7 as St Kitts and Nevis Patriots were held to 109 for 9.",
     "Matthew Breetzke was unbeaten on 35 when rain ended the chase."
   ],
+  "scorecard": {
+    "result": "Trinbago Knight Riders won by 19 runs (DLS method)",
+    "teams": [
+      {"name": "St Kitts and Nevis Patriots", "score": "109/9", "overs": "20 overs"},
+      {"name": "Trinbago Knight Riders", "score": "94/2", "overs": "15 overs"}
+    ],
+    "highlights": ["Kevin Wickham 38", "Matthew Breetzke 35*", "Sunil Narine 3/7"]
+  },
   "player_slugs": ["sunil-narine", "matthew-breetzke", "kevin-wickham"],
   "players_heading": "Key players from the rain-affected contest",
   "sections": [

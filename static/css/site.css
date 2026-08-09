@@ -6769,6 +6769,22 @@
   padding-left: 20px;
   color: #dce5f6;
 }
+.news-match-scorecard {
+  overflow: hidden;
+  padding: 0 !important;
+  border: 1px solid #d7deea !important;
+  border-radius: 12px;
+  background: #fff;
+}
+.news-match-scorecard > header,
+.news-match-scorecard > p { padding-inline: 24px; }
+.news-match-scorecard > header { padding-top: 22px; }
+.news-match-scorecard > header h2 { margin-bottom: 0; font-size: 28px; }
+.news-match-result { margin: 14px 0 0; padding-block: 13px; background: #fff7d2; color: #172033 !important; font-weight: 900; }
+.news-match-innings div { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 24px; border-top: 1px solid #e2e7ef; color: #172033; }
+.news-match-innings span { white-space: nowrap; color: #566176; }
+.news-match-innings b { color: #08728b; font-size: 22px; }
+.news-match-highlights { margin: 0 !important; padding-block: 14px; border-top: 1px solid #e2e7ef; color: #566176 !important; font-weight: 750; }
 
 .news-challenge-join {
   overflow: hidden;
