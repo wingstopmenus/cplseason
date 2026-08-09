@@ -1548,23 +1548,6 @@
     transition-duration: .01ms !important;
   }
 }
-.live-score-control[data-hydration-state="pending"] .live-score-current,
-.live-score-control[data-hydration-state="pending"] .live-score-results { position: relative; min-height: 360px; }
-.live-score-control[data-hydration-state="pending"] .live-score-current > *,
-.live-score-control[data-hydration-state="pending"] .live-score-results > * { visibility: hidden; }
-.live-score-control[data-hydration-state="pending"] .live-score-current::after,
-.live-score-control[data-hydration-state="pending"] .live-score-results::after {
-  content: "Loading current match data…";
-  position: absolute;
-  inset: 20px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #e2e6ec;
-  border-radius: 12px;
-  background: #f6f7f9;
-  color: #667085;
-  font-size: 13px;
-}
 @media (max-width: 700px) {
   .live-score-page .site-ad-banner { width: calc(100% - 24px); border-radius: 10px; }
 }
