@@ -174,9 +174,10 @@
 .match-page-index a:hover,
 .match-page-index a:focus-visible,
 .match-page-index a[aria-current="page"] {
-  background: transparent;
+  background: #fff9df;
   color: var(--mp-ink);
 }
+.match-page-index a:active { background: #fff2b7; }
 .match-page-index a:hover::after,
 .match-page-index a[aria-current="page"]::after { background: var(--mp-gold); }
 

@@ -37,7 +37,11 @@
   height: 3px;
   background: transparent;
 }
-.live-score-tabs a:hover { color: #172033; background: #f8f9fa; }
+.live-score-tabs a:hover,
+.live-score-tabs a:focus-visible { color: #172033; background: #fff9df; }
+.live-score-tabs a:hover::after,
+.live-score-tabs a:focus-visible::after { background: #ffcc12; }
+.live-score-tabs a:active { background: #fff2b7; }
 .live-score-tabs a[aria-current="page"] { color: #172033; }
 .live-score-tabs a[aria-current="page"]::after { background: #ffcc12; }
 
