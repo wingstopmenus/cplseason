@@ -810,6 +810,10 @@ if (liveMatchData) {
   const commentarySummary = commentaryPanel?.querySelector("[data-commentary-summary]");
   const commentaryCopy = commentaryPanel?.querySelector("[data-commentary-copy]");
   const commentaryBalls = commentaryPanel?.querySelector("[data-commentary-balls]");
+  const commentaryPreview = commentaryPanel?.querySelector("[data-commentary-preview]");
+  const commentaryPreviewTeams = commentaryPanel?.querySelector("[data-commentary-preview-teams]");
+  const commentaryToss = commentaryPanel?.querySelector("[data-commentary-toss]");
+  const commentaryFilters = [...(commentaryPanel?.querySelectorAll("[data-commentary-filter]") || [])];
   const fullScorecard = document.querySelector("[data-full-scorecard]");
   const matchSwitches = [...document.querySelectorAll("[data-match-switch]")];
   const matchPanels = [...document.querySelectorAll("[data-match-panel]")];
@@ -831,6 +835,8 @@ if (liveMatchData) {
   const matchPhase = (match) => match?.stateOfPlay || match?.description || match?.status || "Match in progress";
   let pollTimer;
   let commentaryVisibleCount = 20;
+  let commentaryFilter = null;
+  let latestCommentaryMatch = null;
 
   const showMatchPanel = (name, updateHash = true) => {
     matchPanels.forEach((panel) => {
@@ -1041,43 +1047,67 @@ if (liveMatchData) {
     const balls = Array.isArray(match.commentary) && match.commentary.length
       ? match.commentary
       : [...commentaryHistory.values()].reverse();
+    latestCommentaryMatch = { match, isComplete, isLive };
+    const inningsNumbers = [...new Set(balls.map((ball) => Number(ball.inningsNumber)).filter(Number.isFinite))].sort((a, b) => a - b);
+    if (!commentaryFilter) commentaryFilter = "preview";
+    commentaryFilters.forEach((button) => {
+      const filter = button.dataset.commentaryFilter;
+      button.classList.toggle("is-active", filter === commentaryFilter);
+      button.setAttribute("aria-pressed", String(filter === commentaryFilter));
+      if (filter !== "preview") button.hidden = !inningsNumbers.includes(Number(filter));
+      const innings = match.innings?.find((item) => Number(item.inningsNumber) === Number(filter));
+      const team = match.teams?.find((item) => String(item.id) === String(innings?.battingTeamId));
+      if (team && filter !== "preview") button.textContent = `${team.shortName || team.name} Innings`;
+    });
+    const showPreview = commentaryFilter === "preview";
+    if (commentaryPreview) commentaryPreview.hidden = !showPreview;
+    commentaryBalls.hidden = showPreview;
+    if (showPreview) return;
+    const filteredBalls = balls.filter((ball) => Number(ball.inningsNumber) === Number(commentaryFilter));
     commentaryBalls.replaceChildren();
-    if (!balls.length) {
+    if (!filteredBalls.length) {
       const node = document.createElement("span");
       node.textContent = isComplete ? "Commentary unavailable" : isLive ? "Waiting for next delivery" : "Coverage not started";
       commentaryBalls.append(node);
       return;
     }
-    balls.slice(0, commentaryVisibleCount).forEach((ball) => {
+    filteredBalls.slice(0, commentaryVisibleCount).forEach((ball) => {
       const node = document.createElement("article");
       const delivery = document.createElement("strong");
       delivery.textContent = ball.over !== null && ball.ball !== null
         ? `${ball.over}.${ball.ball}`
         : "Ball";
       const text = document.createElement("p");
-      const innings = Number.isFinite(ball.inningsNumber) ? `Innings ${ball.inningsNumber} · ` : "";
-      text.textContent = `${innings}${ball.commentary || ball.label || "Delivery update"}`;
+      text.textContent = ball.commentary || ball.label || "Delivery update";
       const outcome = document.createElement("span");
       outcome.textContent = ball.label || "•";
       node.append(delivery, text, outcome);
       commentaryBalls.append(node);
     });
-    if (balls.length > commentaryVisibleCount) {
+    if (filteredBalls.length > commentaryVisibleCount) {
       const controls = document.createElement("div");
       controls.className = "match-commentary-load-more";
       const count = document.createElement("span");
-      count.textContent = `Showing ${commentaryVisibleCount} of ${balls.length} deliveries`;
+      count.textContent = `Showing ${commentaryVisibleCount} of ${filteredBalls.length} deliveries`;
       const button = document.createElement("button");
       button.type = "button";
       button.textContent = "Load more commentary";
       button.addEventListener("click", () => {
-        commentaryVisibleCount = Math.min(commentaryVisibleCount + 20, balls.length);
+        commentaryVisibleCount = Math.min(commentaryVisibleCount + 20, filteredBalls.length);
         renderFullCommentary(match, isComplete, isLive);
       });
       controls.append(count, button);
       commentaryBalls.append(controls);
     }
   };
+
+  commentaryFilters.forEach((button) => {
+    button.addEventListener("click", () => {
+      commentaryFilter = button.dataset.commentaryFilter;
+      commentaryVisibleCount = 20;
+      if (latestCommentaryMatch) renderFullCommentary(latestCommentaryMatch.match, latestCommentaryMatch.isComplete, latestCommentaryMatch.isLive);
+    });
+  });
 
   const renderLiveStream = (match, isComplete, isLive) => {
     if (!liveStream) return;
@@ -1224,6 +1254,17 @@ if (liveMatchData) {
     if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? matchPhase(match) : "Commentary begins when match coverage starts.";
     if (commentarySummary) commentarySummary.textContent = summaryText;
     if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "Follow the latest state of play." : "The toss and full commentary will appear as the match develops.");
+    if (commentaryToss) commentaryToss.textContent = match.toss || "Awaiting confirmation";
+    if (commentaryPreviewTeams) {
+      commentaryPreviewTeams.replaceChildren();
+      (match.confirmedPlayingXi || []).forEach((lineup) => {
+        const row = document.createElement("p");
+        const name = document.createElement("strong");
+        name.textContent = `${lineup.teamName} (Playing XI): `;
+        row.append(name, document.createTextNode((lineup.players || []).map((player) => player.name).join(", ")));
+        commentaryPreviewTeams.append(row);
+      });
+    }
     renderFullScorecard(match);
     renderConfirmedXi(match);
     renderFullCommentary(match, isComplete, isLive);

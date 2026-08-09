@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
-  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260809headings11">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260809commentary13">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
@@ -146,10 +146,15 @@
       </section>
 
       <section id="match-full-commentary" class="match-commentary-panel" aria-labelledby="match-commentary-title" data-match-commentary-panel data-match-panel="commentary" hidden>
-      <header class="match-live-section-head"><div><p>03 / Full Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage goes live.</span></div></header>
+      <header class="match-live-section-head"><div><p>03 / Full Commentary</p><h2 id="match-commentary-title">Ball-by-ball match commentary</h2><span data-commentary-status>Commentary begins when match coverage starts.</span></div></header>
+      <nav class="match-commentary-innings-tabs" aria-label="Commentary innings" data-commentary-tabs>
+        <button type="button" data-commentary-filter="preview">Preview</button>
+        <button type="button" data-commentary-filter="1">{% if match.home_team %}{{ match.home_team.short_name }}{% else %}Home{% endif %} Innings</button>
+        <button type="button" data-commentary-filter="2">{% if match.away_team %}{{ match.away_team.short_name }}{% else %}Away{% endif %} Innings</button>
+      </nav>
       <div class="match-commentary-body">
-        <article class="match-commentary-latest"><small>Latest update</small><strong data-commentary-summary>{{ match.status }} · {{ match.date_label_long }}</strong><p data-commentary-copy>Pre-match updates, the toss and key moments will appear here as the match develops.</p></article>
-        <div class="match-commentary-balls" data-commentary-balls aria-live="polite"><span>Coverage not started</span></div>
+        <aside class="match-commentary-info" aria-label="Match information"><h3>Match Info</h3><dl><div><dt>Match</dt><dd>{{ match.home_label }} vs {{ match.away_label }}</dd></div><div><dt>Toss</dt><dd data-commentary-toss>Awaiting confirmation</dd></div><div><dt>Date</dt><dd>{{ match.date_label_long }}</dd></div><div><dt>Time</dt><dd>{{ match.local_time_label }} local</dd></div><div><dt>Venue</dt><dd>{{ match.venue.name }}</dd></div></dl></aside>
+        <div class="match-commentary-main"><article class="match-commentary-preview" data-commentary-preview><small>Match preview</small><strong data-commentary-summary>{{ match.status }} · {{ match.date_label_long }}</strong><p data-commentary-copy>Match information, toss and team news will appear here.</p><div data-commentary-preview-teams></div></article><div class="match-commentary-balls" data-commentary-balls aria-live="polite"><span>Coverage not started</span></div></div>
       </div>
       </section>
       </div>
@@ -275,6 +280,6 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260809hero12" defer></script>
+  <script src="/static/js/site.js?v=20260809commentary13" defer></script>
 </body>
 </html>

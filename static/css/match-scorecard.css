@@ -403,8 +403,20 @@
 
 .match-commentary-state { color: var(--mp-purple); font-size: 9px; }
 .match-commentary-state i { background: var(--mp-gold); box-shadow: 0 0 0 5px rgba(255, 204, 18, .13); }
-.match-commentary-body { grid-template-columns: 1fr; gap: 0; }
+.match-commentary-innings-tabs { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px; border-bottom: 1px solid var(--mp-line); background: #fff; }
+.match-commentary-innings-tabs button { min-height: 34px; padding: 7px 14px; border: 0; border-radius: 18px; background: #e7eeec; color: var(--mp-ink); font: 800 11px/1 inherit; cursor: pointer; }
+.match-commentary-innings-tabs button.is-active { background: #087d68; color: #fff; }
+.match-commentary-body { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 24px; padding: 18px; }
+.match-commentary-info { align-self: start; border: 1px solid var(--mp-line); background: #fff; }
+.match-commentary-info h3 { padding: 11px 13px; background: #e5f1ed; color: #58646b; font-size: 14px; text-transform: uppercase; }
+.match-commentary-info dl { margin: 0; }
+.match-commentary-info dl div { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--mp-line); }
+.match-commentary-info dl div:last-child { border-bottom: 0; }
+.match-commentary-info dt { color: var(--mp-ink); font-size: 10px; font-weight: 850; }
+.match-commentary-info dd { margin: 0; color: #4f5969; font-size: 11px; line-height: 1.45; }
+.match-commentary-main { min-width: 0; }
 .match-commentary-latest,
+.match-commentary-preview,
 .match-commentary-balls {
   padding: 18px;
   border: 0;
@@ -412,11 +424,14 @@
   border-radius: 0;
   background: #fff;
 }
-.match-commentary-latest { background: #f8f9fa; }
-.match-commentary-latest small { color: var(--mp-purple); }
-.match-commentary-latest strong { margin: 6px 0; color: var(--mp-ink); font-size: 17px; }
-.match-commentary-latest p { color: var(--mp-muted); }
-.match-commentary-balls { gap: 0; max-height: 520px; padding: 0; }
+.match-commentary-preview { background: #fff; }
+.match-commentary-preview small { color: var(--mp-purple); }
+.match-commentary-preview > strong { display: block; margin: 6px 0; color: var(--mp-ink); font-size: 17px; }
+.match-commentary-preview > p,
+.match-commentary-preview [data-commentary-preview-teams] p { color: #4f5969; font-size: 12px; line-height: 1.65; }
+.match-commentary-preview [data-commentary-preview-teams] { display: grid; gap: 12px; margin-top: 18px; }
+.match-commentary-preview [data-commentary-preview-teams] strong { color: var(--mp-ink); }
+.match-commentary-balls { gap: 0; max-height: none; padding: 0; }
 .match-commentary-balls > span {
   min-width: 0;
   min-height: 110px;
@@ -868,6 +883,8 @@
   .match-live-current > div:last-child { border-bottom: 0; }
   .match-commentary-balls article { grid-template-columns: 44px minmax(0, 1fr); }
   .match-commentary-balls article span { grid-column: 1; grid-row: 2; }
+  .match-commentary-body { grid-template-columns: 1fr; gap: 14px; padding: 12px; }
+  .match-commentary-info { position: static; }
   .match-live-preview,
   .match-research-section,
   .match-live-squads { padding: 18px 15px; }
