@@ -1218,7 +1218,7 @@ if (liveMatchData) {
           : "Match Starts in";
     }
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? matchPhase(match) : "Scheduled";
-    const summaryText = (isComplete ? match.description || match.stateOfPlay : match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
+    const summaryText = (isComplete ? match.description || match.stateOfPlay : match.chaseEquation || match.stateOfPlay || match.description) || (isComplete ? "Match complete" : isLive ? "Match in progress" : "Match scheduled");
     summary.textContent = isComplete ? "Match result" : summaryText;
     if (matchDataNote) matchDataNote.hidden = !isUpcoming;
     if (commentaryStatus) commentaryStatus.textContent = isComplete ? "Complete ball-by-ball commentary" : isLive ? matchPhase(match) : "Commentary begins when match coverage starts.";
@@ -1272,6 +1272,8 @@ if (liveMatchData) {
     if (isComplete) {
       toss.textContent = match.description || match.stateOfPlay || "Match completed";
       toss.hidden = false;
+    } else if (match.chaseEquation) {
+      toss.hidden = true;
     } else if (match.toss) {
       toss.textContent = match.toss;
       toss.hidden = false;
@@ -1338,14 +1340,17 @@ if (liveMatchData) {
     bowler.replaceChildren();
     if (match.live?.bowler?.name) {
       const player = match.live.bowler;
-      bowler.append(makeLiveTable(["Bowler", "O", "M", "R", "W", "ECO"], [[
-        player.name,
-        player.overs ?? "—",
-        player.maidens ?? 0,
-        player.runs ?? player.runsConceded ?? 0,
-        player.wickets ?? 0,
-        player.economy ?? "—",
-      ]]));
+      const currentCard = (match.scorecard || []).slice(-1)[0];
+      const otherBowler = (currentCard?.bowling || []).filter((item) => item.name !== player.name && Number(item.overs) > 0).slice(-1)[0];
+      const bowlingRows = [player, otherBowler].filter(Boolean).map((item) => [
+        item.name,
+        item.overs ?? "—",
+        item.maidens ?? 0,
+        item.runs ?? item.runsConceded ?? 0,
+        item.wickets ?? 0,
+        item.economy ?? "—",
+      ]);
+      bowler.append(makeLiveTable(["Bowler", "O", "M", "R", "W", "ECO"], bowlingRows));
     }
     if (keyStats) {
       keyStats.replaceChildren();
@@ -1363,6 +1368,7 @@ if (liveMatchData) {
         ["Partnership", partnershipRuns === null ? "—" : `${partnershipRuns} (${partnershipBalls})`],
         ["Last wicket", lastWicket ? `${lastWicket.batterName || "Wicket"} · ${lastWicket.score?.runs ?? "—"}/${lastWicket.score?.wickets ?? "—"} in ${lastWicket.over}.${lastWicket.ball} ov` : "—"],
         ["Current run rate", match.live?.currentRunRate ?? currentInnings?.runRate ?? "—"],
+        ["Required run rate", match.live?.requiredRunRate ?? "—"],
         ["Toss", match.toss || "Awaiting confirmation"],
       ];
       const list = document.createElement("dl");

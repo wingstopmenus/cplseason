@@ -348,18 +348,23 @@
 .match-live-current > div:last-child { border-right: 0; }
 .match-live-current span { background: #fff; color: var(--mp-muted); }
 .match-live-current span strong { color: var(--mp-ink); }
+[data-match-batters] { grid-column: 1; grid-row: 1; }
+[data-match-bowler] { grid-column: 1; grid-row: 2; }
+[data-match-key-stats] { grid-column: 2; grid-row: 1 / span 2; background: #fff !important; }
+[data-match-recent-balls] { grid-column: 1 / -1; grid-row: 3; display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
 .match-live-data-table { width: 100%; border-collapse: collapse; font-size: 11px; }
 .match-live-data-table th,
 .match-live-data-table td { padding: 5px 6px; text-align: right; }
 .match-live-data-table th:first-child,
 .match-live-data-table td:first-child { text-align: left; }
-.match-live-data-table th { background: #ececec; color: #687282; font-weight: 700; }
+.match-live-data-table th { background: #ececec; color: #687282; font-size: 9px; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
 .match-live-data-table td { color: var(--mp-ink); }
 .match-live-data-table td:first-child { color: var(--mp-purple); }
-.match-live-key-list { display: grid; gap: 7px; margin: 0; }
+.match-live-key-list { display: grid; gap: 10px; margin: 0; }
 .match-live-key-list div { display: grid; grid-template-columns: 105px minmax(0, 1fr); gap: 8px; }
 .match-live-key-list dt { color: var(--mp-ink); font-size: 10px; font-weight: 850; }
 .match-live-key-list dd { margin: 0; color: var(--mp-muted); font-size: 10px; line-height: 1.4; }
+[data-match-recent-balls] span { min-width: 34px; padding: 7px 9px; border: 1px solid #edf0f4; border-radius: 7px; text-align: center; }
 .match-live-stream { display: grid; gap: 14px; margin-top: 16px; }
 .match-live-award,
 .match-live-recap { border: 1px solid var(--mp-line); border-radius: 7px; background: #fff; }
@@ -843,6 +848,10 @@
   .match-live-prestart dl { grid-template-columns: 1fr; }
   .match-live-scoreboard { padding: 15px; }
   .match-live-current { grid-template-columns: 1fr; }
+  [data-match-batters],
+  [data-match-bowler],
+  [data-match-key-stats],
+  [data-match-recent-balls] { grid-column: 1; grid-row: auto; }
   .match-live-current > div { border-right: 0; border-bottom: 1px solid var(--mp-line); }
   .match-live-current > div:last-child { border-bottom: 0; }
   .match-commentary-balls article { grid-template-columns: 44px minmax(0, 1fr); }

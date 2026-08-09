@@ -331,6 +331,23 @@ function applyDerivedMatchPhase(match) {
   const state = String(match?.stateOfPlay || "");
   const description = String(match?.description || "");
   const innings = Array.isArray(match?.innings) ? match.innings : [];
+  if (innings.length >= 2) {
+    const first = innings[0];
+    const chase = innings[innings.length - 1];
+    const target = Number(first?.runs) + 1;
+    const chaseRuns = Number(chase?.runs) || 0;
+    const runsNeeded = Number.isFinite(target) ? Math.max(0, target - chaseRuns) : null;
+    const battingTeam = (match.teams || []).find((team) => team.id === chase?.battingTeamId);
+    if (Number.isFinite(target)) match.live.target = target;
+    if (Number.isFinite(runsNeeded) && runsNeeded > 0) {
+      match.chaseEquation = `${battingTeam?.name || "Batting team"} need ${runsNeeded} runs`;
+    }
+    const overParts = String(chase?.overs ?? "0").split(".").map(Number);
+    const ballsUsed = (overParts[0] || 0) * 6 + (overParts[1] || 0);
+    const ballsRemaining = Math.max(0, 120 - ballsUsed);
+    if (runsNeeded > 0 && ballsRemaining > 0) match.live.requiredRunRate = Number((runsNeeded * 6 / ballsRemaining).toFixed(2));
+    if (Number.isFinite(Number(chase?.runRate))) match.live.currentRunRate = Number(chase.runRate);
+  }
   const firstInningsClosed = innings.length === 1 && /complete|closed|finished/i.test(String(innings[0]?.status || ""));
   if (!completedPattern.test(status) && !upcomingPattern.test(status) && firstInningsClosed && !match?.winnerName) {
     match.status = "Innings break";

@@ -516,7 +516,7 @@
       ? "Live score starts on match day"
       : isComplete(match.status)
         ? match.stateOfPlay || match.description || "The match is complete."
-        : match.stateOfPlay ||
+        : match.chaseEquation || match.stateOfPlay ||
           match.description ||
           "Follow the live innings here.";
     text(stateHeading, state);
