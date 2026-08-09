@@ -8,6 +8,18 @@ const verifiedMatchAwards = {
     detail: "3 wickets",
   },
 };
+const verifiedPlayingXis = {
+  "2": [
+    {
+      teamName: "St. Kitts and Nevis Patriots",
+      players: ["Johnson Charles", "Andre Fletcher", "Kyle Mayers", "Alick Athanaze", "Jason Holder", "Kevin Wickham", "Navin Bidaisee", "Ashmead Nedd", "Obed McCoy", "Saurabh Netravalkar", "Waqar Salamkheil"],
+    },
+    {
+      teamName: "Trinbago Knight Riders",
+      players: ["Alex Hales", "Colin Munro", "Matthew Tromp", "Joshua Da Silva", "Matthew Breetzke", "Terrance Hinds", "Akeal Hosein", "Sunil Narine", "Dominic Drakes", "Jyd Goolie", "Dexter Sween"],
+    },
+  ],
+};
 
 const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
 const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
@@ -442,6 +454,12 @@ async function fetchSummary(match, includeCommentary = false) {
     }
     if (!summary.playerOfMatch) {
       summary.playerOfMatch = verifiedMatchAwards[String(summary.matchNumber)] || null;
+    }
+    if (summary.toss && verifiedPlayingXis[String(summary.matchNumber)]) {
+      summary.confirmedPlayingXi = verifiedPlayingXis[String(summary.matchNumber)].map((lineup) => ({
+        teamName: lineup.teamName,
+        players: lineup.players.map((name) => ({ name })),
+      }));
     }
     if (includeCommentary) {
       const rawScorecard = await fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null);

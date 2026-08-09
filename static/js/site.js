@@ -872,12 +872,24 @@ if (liveMatchData) {
   const renderConfirmedXi = (match) => {
     if (!confirmedXi) return;
     const teams = match?.teams || [];
-    const lineups = (match?.scorecard || []).map((innings) => ({
-      team: teams.find((team) => team.id === innings.battingTeamId) || {
-        name: innings.battingTeamName,
-      },
-      players: innings.confirmedPlayers || [],
-    }));
+    const verifiedLineups = Array.isArray(match?.confirmedPlayingXi)
+      ? match.confirmedPlayingXi.map((lineup) => ({
+          team: teams.find((team) => {
+            const current = String(team.name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+            const expected = String(lineup.teamName || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+            return current === expected || current.includes(expected) || expected.includes(current);
+          }) || { name: lineup.teamName },
+          players: lineup.players || [],
+        }))
+      : [];
+    const lineups = verifiedLineups.length === 2
+      ? verifiedLineups
+      : (match?.scorecard || []).map((innings) => ({
+          team: teams.find((team) => team.id === innings.battingTeamId) || {
+            name: innings.battingTeamName,
+          },
+          players: innings.confirmedPlayers || [],
+        }));
     if (lineups.length !== 2 || lineups.some((entry) => entry.players.length < 11)) {
       confirmedXi.replaceChildren();
       confirmedXi.hidden = true;
