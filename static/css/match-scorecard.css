@@ -375,6 +375,7 @@
   letter-spacing: .04em;
   text-transform: uppercase;
 }
+[data-match-key-stats] .match-live-block-title { flex: 0 0 calc(100% + 20px); }
 [data-match-recent-balls] .match-live-block-title { flex: 0 0 calc(100% + 20px); }
 .match-live-stream { display: grid; gap: 14px; margin-top: 16px; }
 .match-live-award,
