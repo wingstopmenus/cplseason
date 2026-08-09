@@ -329,6 +329,13 @@ function normalizeTopPerformer(performance, kind) {
 
 function applyDerivedMatchPhase(match) {
   const genericLive = /^(live|in progress|match in progress)$/i;
+  const scheduledStart = Date.parse(String(match?.startDate || ""));
+  if (Number.isFinite(scheduledStart) && scheduledStart > Date.now() + 5 * 60 * 1000 && completedPattern.test(String(match?.status || ""))) {
+    match.status = "Scheduled";
+    match.description = "Scheduled";
+    match.stateOfPlay = "Scheduled";
+    match.winnerName = "";
+  }
   const status = String(match?.status || "");
   const state = String(match?.stateOfPlay || "");
   const description = String(match?.description || "");

@@ -33,6 +33,7 @@
   const rail = root.querySelector("#home-match-slider");
   let requestInProgress = false;
   let initialRailPositioned = false;
+  root.dataset.hydrationState = "ready";
 
   const fixtureTime = (fixture) => `${fixture?.label || "Fixture date"} · ${fixture?.time || "local time"} local`;
   const fullDate = (iso) => {

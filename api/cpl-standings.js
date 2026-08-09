@@ -6,6 +6,7 @@ const T20_BALLS = 120;
 const ESPN_SERIES_ID = "8623";
 const ESPN_SCOREPANEL =
   "https://site.web.api.espn.com/apis/site/v2/sports/cricket/scorepanel";
+const VERIFIED_TABLE_URL = "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/points-table";
 const FIXTURES = require("../static/match-spotlight.json");
 const FALLBACK_TEAMS = [
   { teamId: "a0bb030f-9bcb-48ed-b031-621a6138c454", name: "Antigua & Barbuda Falcons" },
@@ -331,6 +332,19 @@ async function computedStandings(officialTeams, completedMatches) {
   return { standings: finalizeComputedTable(table), applied };
 }
 
+async function verifiedStandings() {
+  const response = await fetch(VERIFIED_TABLE_URL, { signal: AbortSignal.timeout(8000) });
+  if (!response.ok) throw new Error("Verified points table unavailable");
+  const decoded = (await response.text()).replace(/\\"/g, '"');
+  const rowPattern = /\{"teamFullName":"([^"]+)","teamName":"[^"]+","teamId":\d+,"matchesPlayed":(\d+),"matchesWon":(\d+),"matchesLost":(\d+),"matchesTied":\d+,"noRes":(\d+),"matchesDrawn":\d+,"nrr":"([^"]+)","points":(\d+)/g;
+  const rows = [...decoded.matchAll(rowPattern)].slice(0, TEAM_COUNT).map((row, index) => {
+    const local = FALLBACK_TEAMS.find((team) => comparableName(team.name) === comparableName(row[1]));
+    return { teamId: local?.teamId || String(index), name: local?.name || row[1], matches: number(row[2]), wins: number(row[3]), losses: number(row[4]), noResults: number(row[5]), netRunRate: number(row[6]).toFixed(3), points: number(row[7]), rank: index + 1 };
+  });
+  if (rows.length !== TEAM_COUNT) throw new Error("Verified points table is incomplete");
+  return { standings: rows, completedMatches: Math.floor(rows.reduce((sum, team) => sum + team.matches, 0) / 2) };
+}
+
 module.exports = async function cplStandings(request, response) {
   if (request.method !== "GET") {
     response.setHeader("Allow", "GET");
@@ -365,6 +379,12 @@ module.exports = async function cplStandings(request, response) {
         standings = computed.standings;
         completedCount = computed.applied;
       }
+    }
+    const verified = await verifiedStandings().catch(() => null);
+    if (verified && verified.completedMatches >= completedCount) {
+      source = "verified-live-table";
+      standings = verified.standings;
+      completedCount = verified.completedMatches;
     }
 
     response.setHeader("Cache-Control", "public, s-maxage=15, stale-while-revalidate=45");
