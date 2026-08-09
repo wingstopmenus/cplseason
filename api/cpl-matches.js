@@ -1,6 +1,7 @@
 const MATCHES_ENDPOINT =
   "https://api.mcpro.cricket/v1/matches?competitionId=sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
+const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
 
 module.exports = async function cplMatches(request, response) {
   if (request.method !== "GET") {
@@ -22,10 +23,40 @@ module.exports = async function cplMatches(request, response) {
       throw new Error("Official match feed returned an invalid response");
     }
 
+    const now = Date.now();
+    const activeCandidates = matches.filter((match) => {
+      if (!match?.matchId || completedPattern.test(String(match?.status || ""))) return false;
+      const start = Date.parse(match?.startDate || "");
+      return Number.isFinite(start) && start <= now && now - start < 12 * 60 * 60 * 1000;
+    });
+    const activeDetails = await Promise.all(activeCandidates.map(async (match) => {
+      try {
+        const detailResponse = await fetch(`https://api.mcpro.cricket/v1/match/${match.matchId}`, {
+          headers: { "sr-client-key": CPL_CLIENT_KEY },
+          signal: AbortSignal.timeout(8000),
+        });
+        return detailResponse.ok ? detailResponse.json() : null;
+      } catch {
+        return null;
+      }
+    }));
+    const detailStatus = new Map(
+      activeDetails
+        .filter(Boolean)
+        .map((match) => {
+          const status = String(match.status || "");
+          const stateOfPlay = String(match.stateOfPlay || "");
+          const effectiveStatus = /upcoming|scheduled|fixture|pre-match/i.test(status) && stateOfPlay
+            ? stateOfPlay
+            : status || stateOfPlay;
+          return [String(match.matchId || ""), effectiveStatus];
+        }),
+    );
+
     const statusFeed = matches
       .map((match) => ({
         matchNumber: Number(match?.competition?.matchNumber),
-        status: String(match?.status || ""),
+        status: detailStatus.get(String(match?.matchId || "")) || String(match?.status || ""),
       }))
       .filter(
         (match) =>

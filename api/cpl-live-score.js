@@ -317,7 +317,11 @@ function normalizeMatch(match) {
     matchId: String(match?.matchId || ""),
     matchNumber: numeric(competition?.matchNumber ?? match?.matchNumber),
     title: String(match?.title || ""),
-    status: String(match?.status || ""),
+    status: String(
+      upcomingPattern.test(String(match?.status || "")) && match?.stateOfPlay
+        ? match.stateOfPlay
+        : match?.status || match?.stateOfPlay || "",
+    ),
     startDate: String(match?.startDate || ""),
     endDate: String(match?.endDate || ""),
     format: String(match?.format || "T20"),
@@ -483,6 +487,11 @@ module.exports = async function cplLiveScore(request, response) {
       return response.status(404).json({ error: "CPL match not found" });
     }
     const liveMatch = officialMatches.find(isLive);
+    const activeWindowMatch = [...officialMatches].reverse().find((match) => {
+      if (isCompleted(match) || !match?.startDate) return false;
+      const start = Date.parse(match.startDate);
+      return Number.isFinite(start) && start <= now && now - start < 12 * 60 * 60 * 1000;
+    });
     const nextMatch = officialMatches.find(
       (match) =>
         !isCompleted(match) &&
@@ -491,24 +500,29 @@ module.exports = async function cplLiveScore(request, response) {
     const completedMatches = officialMatches.filter(isCompleted);
     const focusSource =
       liveMatch ||
+      activeWindowMatch ||
       nextMatch ||
       completedMatches[completedMatches.length - 1] ||
       officialMatches[0];
 
     const recentSources = completedMatches.slice(-3).reverse();
     const [focus, recent, requestedMatch] = await Promise.all([
-      isUpcoming(focusSource)
-        ? Promise.resolve(normalizeMatch(focusSource))
-        : fetchSummary(focusSource, true),
+      fetchSummary(focusSource, true),
       Promise.all(recentSources.map(fetchSummary)),
       requestedSource
-        ? (isUpcoming(requestedSource)
-            ? Promise.resolve(normalizeMatch(requestedSource))
-            : fetchSummary(requestedSource, true))
+        ? fetchSummary(requestedSource, true)
         : Promise.resolve(null),
     ]);
 
-    const schedule = officialMatches.map(normalizeMatch);
+    const liveDetails = new Map(
+      [focus, requestedMatch]
+        .filter(Boolean)
+        .map((match) => [Number(match.matchNumber), match]),
+    );
+    const schedule = officialMatches.map((match) => {
+      const normalized = normalizeMatch(match);
+      return liveDetails.get(Number(normalized.matchNumber)) || normalized;
+    });
     if (requestedMatch) {
       requestedMatch.seasonHeadToHead = seasonHeadToHead(
         officialMatches,
