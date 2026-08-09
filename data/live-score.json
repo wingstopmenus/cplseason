@@ -24,6 +24,10 @@
     {
       "question": "Where can I view the full CPL scorecard?",
       "answer": "Select View full scorecard in the current-match panel. The match page includes innings details and the ball-by-ball match-centre view."
+    },
+    {
+      "question": "How often does the CPL live score update?",
+      "answer": "The live panel checks the verified score feed every 15 seconds while a match is in progress. A refresh can take slightly longer when the official feed is delayed."
     }
   ],
   "last_updated": "2026-07-31"
