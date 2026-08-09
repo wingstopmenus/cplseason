@@ -714,7 +714,7 @@
   border: 1px solid rgba(83, 214, 255, .35);
   border-radius: 50%;
   background: rgba(83, 214, 255, .08);
-  color: white;
+  color: black;
   font-size: 12px;
 }
 .live-score-commentary-item.is-latest .live-score-commentary-delivery b {
