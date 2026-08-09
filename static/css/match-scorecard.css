@@ -365,6 +365,17 @@
 .match-live-key-list dt { color: var(--mp-ink); font-size: 10px; font-weight: 850; }
 .match-live-key-list dd { margin: 0; color: var(--mp-muted); font-size: 10px; line-height: 1.4; }
 [data-match-recent-balls] span { min-width: 34px; padding: 7px 9px; border: 1px solid #edf0f4; border-radius: 7px; text-align: center; }
+.match-live-block-title {
+  margin: -10px -10px 10px;
+  padding: 7px 8px;
+  background: #ececec;
+  color: #687282;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+[data-match-recent-balls] .match-live-block-title { flex: 0 0 calc(100% + 20px); }
 .match-live-stream { display: grid; gap: 14px; margin-top: 16px; }
 .match-live-award,
 .match-live-recap { border: 1px solid var(--mp-line); border-radius: 7px; background: #fff; }

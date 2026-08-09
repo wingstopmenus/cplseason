@@ -1354,6 +1354,9 @@ if (liveMatchData) {
     }
     if (keyStats) {
       keyStats.replaceChildren();
+      const keyStatsTitle = document.createElement("h3");
+      keyStatsTitle.className = "match-live-block-title";
+      keyStatsTitle.textContent = "Key Stats";
       const commentary = Array.isArray(match.commentary) ? match.commentary : [];
       const currentInnings = (match.innings || []).slice(-1)[0];
       const lastWicketIndex = commentary.findIndex((ball) => /^w$/i.test(String(ball.label || "")));
@@ -1382,9 +1385,13 @@ if (liveMatchData) {
         row.append(term, detail);
         list.append(row);
       });
-      keyStats.append(list);
+      keyStats.append(keyStatsTitle, list);
     }
     recentBalls.replaceChildren();
+    const recentBallsTitle = document.createElement("h3");
+    recentBallsTitle.className = "match-live-block-title";
+    recentBallsTitle.textContent = "Recent Balls";
+    recentBalls.append(recentBallsTitle);
     (match.live?.recentBalls || []).forEach((ball) => {
       const node = document.createElement("span");
       node.textContent = ball.label || "•";
