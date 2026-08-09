@@ -179,12 +179,17 @@ function normalizePlayerOfMatch(match) {
 }
 
 function normalizeCommentaryBall(ball, inningsNumber) {
+  const upstreamOver = numeric(ball?.overNumber ?? ball?.over);
   return {
     inningsNumber: numeric(ball?.matchInningsNumber ?? ball?.inningsNumber ?? inningsNumber),
     label: String(ball?.shortDescription || ball?.displayValue || ball?.outcome || ball?.runs || "•"),
-    over: numeric(ball?.overNumber ?? ball?.over),
+    over: Number.isFinite(upstreamOver) && ball?.overNumber !== undefined
+      ? Math.max(0, upstreamOver - 1)
+      : upstreamOver,
     ball: numeric(ball?.ballDisplayNumber ?? ball?.ballNumber ?? ball?.ball),
     commentary: String(ball?.description || ball?.commentary || ball?.longDescription || ball?.text || ""),
+    batterName: displayPlayerName(ball?.batter?.cardNameF || ball?.batter?.cardNameS || ball?.batter?.name || ""),
+    bowlerName: displayPlayerName(ball?.bowler?.cardNameF || ball?.bowler?.cardNameS || ball?.bowler?.name || ""),
     score: {
       runs: numeric(ball?.inningsProgressiveScore?.runs),
       wickets: numeric(ball?.inningsProgressiveScore?.wickets),
@@ -452,6 +457,43 @@ async function fetchSummary(match, includeCommentary = false) {
         .filter((ball) => ball.commentary || ball.label !== "•")
         .reverse();
       summary.scorecard = normalizeScorecard(rawScorecard);
+      const currentCard = summary.scorecard[summary.scorecard.length - 1];
+      const latestBall = summary.commentary[0];
+      if (currentCard) {
+        const activeBatters = currentCard.batting.filter((player) => player.notOut).slice(-2);
+        if (activeBatters.length) summary.live.batters = activeBatters;
+        const currentBowler = currentCard.bowling.find((player) =>
+          latestBall?.bowlerName && player.name === latestBall.bowlerName,
+        );
+        if (currentBowler) summary.live.bowler = currentBowler;
+        const innings = summary.innings.find((entry) => entry.inningsNumber === currentCard.inningsNumber);
+        if (innings) {
+          innings.runs = latestBall?.score?.runs ?? currentCard.runs ?? innings.runs;
+          innings.wickets = latestBall?.score?.wickets ?? currentCard.wickets ?? innings.wickets;
+          innings.overs = Number.isFinite(latestBall?.over) && Number.isFinite(latestBall?.ball)
+            ? Number(`${latestBall.over}.${latestBall.ball}`)
+            : currentCard.overs ?? innings.overs;
+          innings.runRate = currentCard.runRate ?? innings.runRate;
+        }
+      }
+      if (!summary.live.recentBalls.length && summary.commentary.length) {
+        summary.live.recentBalls = summary.commentary.slice(0, 12).map((ball) => ({
+          label: ball.label,
+          over: ball.over,
+          ball: ball.ball,
+          commentary: ball.commentary,
+        })).reverse();
+      }
+      const rawStatus = String(rawSummary?.status || "");
+      const hasPartialInnings = summary.innings.some((innings) =>
+        Number.isFinite(innings.overs) && innings.overs > 0 && innings.overs < 20,
+      );
+      const hasResultText = Boolean(summary.winnerName) || (summary.description && !/^completed$/i.test(summary.description));
+      if (upcomingPattern.test(rawStatus) && hasPartialInnings && !hasResultText) {
+        summary.status = "Play interrupted";
+        summary.stateOfPlay = "Play interrupted";
+        summary.description = "Play is currently interrupted";
+      }
     }
     return summary;
   } catch {
