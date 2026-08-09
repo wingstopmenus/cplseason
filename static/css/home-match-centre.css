@@ -227,6 +227,11 @@
 }
 .home-match-centre-countdown.is-live > div { display: none; }
 .home-match-centre-countdown.is-live > span { color: var(--hmc-yellow); }
+.home-match-centre-countdown.is-live time {
+  color: white;
+  font-size: 22px;
+  line-height: 1.3;
+}
 .home-match-centre-next > footer {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;

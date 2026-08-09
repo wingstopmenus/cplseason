@@ -88,13 +88,15 @@
 
     if (countdown) {
       countdown.dataset.countdownTarget = fixture.startIso || match.startDate || "";
+      countdown.dataset.matchResolved = String(isLive(match));
       countdown.classList.remove("is-live", "is-complete");
       const label = countdown.querySelector("[data-match-countdown-label]");
       const time = countdown.querySelector("time");
-      if (label) label.textContent = isLive(match) ? "Match is live" : "Starts in";
+      if (isLive(match)) countdown.classList.add("is-live");
+      if (label) label.textContent = isLive(match) ? "Live score" : "Starts in";
       if (time) {
         time.dateTime = fixture.startIso || match.startDate || "";
-        time.textContent = fixtureTime(fixture);
+        time.textContent = isLive(match) ? scoreLine(match) : fixtureTime(fixture);
       }
     }
 
