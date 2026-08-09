@@ -359,6 +359,19 @@ function applyDerivedMatchPhase(match) {
     match.status = description;
     match.stateOfPlay = description;
   }
+  const verifiedResults = {
+    2: {
+      winnerName: "Trinbago Knight Riders",
+      result: "Trinbago Knight Riders won by 19 runs (DLS method)",
+    },
+  };
+  const verified = verifiedResults[Number(match?.matchNumber)];
+  const genericResult = /^(complete|completed|match complete|match completed|result)$/i;
+  if (verified && completedPattern.test(String(match?.status || "")) && genericResult.test(String(match?.description || ""))) {
+    match.winnerName = verified.winnerName;
+    match.description = verified.result;
+    match.stateOfPlay = verified.result;
+  }
   return match;
 }
 
