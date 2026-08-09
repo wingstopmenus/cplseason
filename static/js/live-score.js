@@ -785,7 +785,7 @@
       });
       const link = document.createElement("a");
       link.href = matchUrl(match.matchNumber);
-      link.textContent = "Open scorecard →";
+      link.textContent = "Full Scorecard →";
       card.append(link);
       resultsContainer.append(card);
     });
