@@ -391,8 +391,9 @@
 .match-live-recap > strong { color: var(--mp-ink); font-size: 14px; }
 .match-live-recap p { margin-top: 5px; color: var(--mp-muted); font-size: 11px; }
 .match-live-over { overflow: hidden; border: 1px solid var(--mp-line); border-radius: 8px; background: #fff; }
-.match-live-over > header { display: flex; justify-content: space-between; gap: 12px; padding: 12px 14px; background: #f8f9fa; }
+.match-live-over > header { display: flex; justify-content: space-between; gap: 12px; padding: 12px 14px; border-top: 1px solid var(--mp-line); background: #f8f9fa; }
 .match-live-over > header strong { color: var(--mp-ink); font-size: 13px; }
+.match-live-over > header b { color: var(--mp-ink); font-size: 12px; }
 .match-live-over > header span { color: var(--mp-muted); font-size: 11px; }
 .match-live-over article { display: grid; grid-template-columns: 48px minmax(0, 1fr) 36px; gap: 10px; align-items: start; padding: 12px 14px; border-top: 1px solid var(--mp-line); }
 .match-live-over article > strong { color: var(--mp-purple); font-size: 11px; }

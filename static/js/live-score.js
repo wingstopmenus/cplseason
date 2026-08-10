@@ -356,7 +356,43 @@
     }
 
     const fragment = document.createDocumentFragment();
-    balls.slice(0, commentaryVisibleCount).forEach((ball, index) => {
+    const visibleBalls = balls.slice(0, commentaryVisibleCount);
+    const appendOverSummary = (overBalls) => {
+      const chronological = [...overBalls].reverse();
+      const latest = overBalls.find((ball) => Number.isFinite(ball?.score?.runs)) || overBalls[0];
+      const summary = document.createElement("section");
+      summary.className = "live-score-over-summary";
+      const heading = document.createElement("div");
+      const title = document.createElement("strong");
+      title.textContent = `Over ${Number(overBalls[0].over) + 1}`;
+      const score = document.createElement("b");
+      score.textContent = Number.isFinite(latest?.score?.runs) ? `${latest.score.runs}-${latest.score.wickets ?? 0}` : "Over complete";
+      const outcomes = document.createElement("span");
+      outcomes.textContent = chronological.map((ball) => ball.label || "•").join(" ");
+      heading.append(title, score, outcomes);
+      const details = document.createElement("p");
+      const batters = [...new Set(overBalls.map((ball) => ball.batterName).filter(Boolean))].slice(0, 2);
+      const bowler = overBalls.find((ball) => ball.bowlerName)?.bowlerName;
+      details.textContent = [batters.join(" · "), bowler].filter(Boolean).join("  |  ");
+      summary.append(heading, details);
+      fragment.append(summary);
+    };
+    visibleBalls.forEach((ball, index) => {
+      const previous = visibleBalls[index - 1];
+      const next = visibleBalls[index + 1];
+      const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
+      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
+      const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
+      const overComplete = overBalls.some((item) => Number(item.ball) === 6) || index > overBalls.length - 1;
+      if (startsOver) {
+        const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
+        if (bowler) {
+          const note = document.createElement("p");
+          note.className = "live-score-commentary-note";
+          note.textContent = `${bowler} comes into the attack`;
+          fragment.append(note);
+        }
+      }
       const item = document.createElement("article");
       item.className = "live-score-commentary-item";
       if (index === 0) item.classList.add("is-latest");
@@ -381,6 +417,7 @@
       detail.append(label, copy);
       item.append(delivery, detail);
       fragment.append(item);
+      if (endsOver && overComplete) appendOverSummary(overBalls);
     });
     commentaryFeed.replaceChildren(fragment);
     if (balls.length > commentaryVisibleCount) {

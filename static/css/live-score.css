@@ -735,6 +735,12 @@
   font-size: 13px;
   line-height: 1.55;
 }
+.live-score-over-summary { margin: 14px 16px; overflow: hidden; border: 1px solid #dce2ea; border-radius: 10px; background: #fafbfd; color: #172033; }
+.live-score-over-summary > div { display: grid; grid-template-columns: auto auto minmax(0,1fr); gap: 12px; align-items: center; padding: 12px 14px; border-bottom: 1px dashed #d6dde7; }
+.live-score-over-summary > div strong { padding-right: 12px; border-right: 1px solid #d6dde7; }
+.live-score-over-summary > div span { color: #596477; text-align: right; }
+.live-score-over-summary > p { margin: 0; padding: 11px 14px; color: #596477; font-size: 12px; }
+.live-score-commentary-note { margin: 0; padding: 12px 18px; border-bottom: 1px solid #e7e9ec; color: #172033; font-weight: 850; }
 .live-score-page .site-ad-banner {
   width: min(var(--ls-width), calc(100% - 40px));
 }
