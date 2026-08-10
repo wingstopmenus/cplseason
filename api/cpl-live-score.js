@@ -358,7 +358,17 @@ function applyDerivedMatchPhase(match) {
     if (Number.isFinite(Number(chase?.runRate))) match.live.currentRunRate = Number(chase.runRate);
   }
   const firstInningsClosed = innings.length === 1 && /complete|closed|finished/i.test(String(innings[0]?.status || ""));
-  if (!completedPattern.test(status) && !upcomingPattern.test(status) && firstInningsClosed && !match?.winnerName) {
+  const interruptionText = [state, description, status].find((value) =>
+    /rain|weather|interrupted|suspended|stopp?ed|delay/i.test(String(value || "")),
+  );
+  if (interruptionText) {
+    const interruptionStatus = /rain|weather/i.test(String(interruptionText))
+      ? "Rain Stops Play"
+      : String(interruptionText);
+    match.status = interruptionStatus;
+    match.stateOfPlay = interruptionStatus;
+    match.description = interruptionStatus;
+  } else if (!completedPattern.test(status) && !upcomingPattern.test(status) && firstInningsClosed && !match?.winnerName) {
     match.status = "Innings break";
     match.stateOfPlay = "Innings break";
     match.description = "Innings break";
