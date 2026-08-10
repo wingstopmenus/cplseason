@@ -1,0 +1,74 @@
+{
+  "slug": "saint-lucia-kings-beat-falcons-four-runs-cpl-2026",
+  "category": "Match Report",
+  "title": "Saint Lucia Kings Hold Off Falcons by Four Runs in CPL Thriller",
+  "short_title": "Kings hold off Falcons by four runs",
+  "description": "Saint Lucia Kings defended 187 to beat Antigua and Barbuda Falcons by four runs in the third match of CPL 2026 at Arnos Vale.",
+  "dek": "Andries Gous made 82 before the Kings' spinners and Matthew Forde closed out a tense final-over victory at Arnos Vale.",
+  "date_published": "2026-08-10",
+  "published_at": "2026-08-10T04:55:53",
+  "date_modified": "2026-08-10",
+  "source_name": "ESPNcricinfo",
+  "source_date": "2026-08-10",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/saint-lucia-kings-beat-falcons-four-runs-cpl-2026-featured.webp",
+  "image_alt": "Roston Chase celebrates with Saint Lucia Kings teammates during a match against Antigua and Barbuda Falcons",
+  "summary_heading": "Gous builds the total before the Kings survive a late Falcons charge",
+  "key_points": [
+    "Saint Lucia Kings won by four runs after defending 187 for 8 at Arnos Vale.",
+    "Player of the Match Andries Gous anchored the Kings innings with 82 from 51 balls.",
+    "Matthew Forde conceded only eight runs when the Falcons needed 13 from the final over."
+  ],
+  "scorecard": {
+    "result": "Saint Lucia Kings won by 4 runs",
+    "teams": [
+      {"name": "Saint Lucia Kings", "score": "187/8", "overs": "20 overs"},
+      {"name": "Antigua and Barbuda Falcons", "score": "183/7", "overs": "20 overs"}
+    ],
+    "highlights": [
+      "Andries Gous 82 (51)",
+      "Alzarri Joseph 3/32",
+      "Evin Lewis 48",
+      "Maheesh Theekshana 2/18",
+      "Roston Chase 2/18"
+    ]
+  },
+  "player_slugs": ["alzarri-joseph", "evin-lewis", "maheesh-theekshana", "roston-chase"],
+  "players_heading": "Key players from the four-run contest",
+  "sections": [
+    {
+      "heading": "Gous carries the Kings to 187",
+      "paragraphs": [
+        "Saint Lucia Kings asked Andries Gous to hold their innings together after choosing to bat at Arnos Vale, and the opener answered with 82 from 51 balls. He stayed from the first delivery until the 18th over while wickets kept interrupting the Kings' progress at the other end.",
+        "Ackeem Auguste's 18 was the next-highest individual score, but the lower order found enough late runs to take the total to 187 for 8. The fixture and result are available in the <a href=\"/match/antigua-barbuda-falcons-vs-saint-lucia-kings/\">Falcons vs Kings match centre</a>."
+      ]
+    },
+    {
+      "heading": "Joseph keeps the Falcons in the contest",
+      "paragraphs": [
+        "Alzarri Joseph led the Falcons attack with 3 for 32, following his three-wicket return in the season opener. Shamar Springer added two wickets as the Kings were prevented from turning Gous' long innings into a total beyond 200.",
+        "The Falcons began the chase positively, reaching 65 in the PowerPlay and 109 by the halfway stage. Evin Lewis drove that start before the Kings' spin attack pulled the scoring rate back. Follow the chasing side through the <a href=\"/team/antigua-barbuda-falcons/\">Antigua and Barbuda Falcons team guide</a>."
+      ]
+    },
+    {
+      "heading": "Theekshana and Chase change the chase",
+      "paragraphs": [
+        "Maheesh Theekshana took two early wickets, while Roston Chase removed Karima Gore and Tajinder Singh during the middle overs. The Falcons slipped to 145 for 5 after 16 overs and were left needing 43 from the final four.",
+        "Fabian Allen revived the chase with an unbeaten 28 from 17 balls, including a six and a four in the 19th over. Saint Lucia still carried a 13-run cushion into the last six deliveries. Squad and season details are on the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team page</a>."
+      ]
+    },
+    {
+      "heading": "Forde closes the final over",
+      "paragraphs": [
+        "Matthew Forde kept Allen away from most of the strike and gave up only eight runs in the final over. The Falcons finished on 183 for 7, four short of their target, handing the Kings a winning start to their CPL 2026 campaign.",
+        "The result leaves both teams with one win from their opening matches. Their early positions and net run rates can be followed on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/antigua-barbuda-falcons-vs-saint-lucia-kings/", "label": "Falcons vs Kings match centre"},
+    {"href": "/points-table/", "label": "CPL 2026 points table"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"}
+  ],
+  "last_updated": "2026-08-10"
+}

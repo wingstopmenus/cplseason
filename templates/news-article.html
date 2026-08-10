@@ -68,7 +68,7 @@
             <ul>{% for point in article.key_points %}<li>{{ point }}</li>{% endfor %}</ul>
           </section>
 
-          {%- if article.get("scorecard") %}
+          {%- if false and article.get("scorecard") %}
           <section class="news-match-scorecard" aria-labelledby="news-scorecard-title">
             <header><p class="news-desk-kicker">Brief score</p><h2 id="news-scorecard-title">Match scorecard</h2></header>
             <p class="news-match-result">{{ article.scorecard.result }}</p>
@@ -183,6 +183,17 @@
             {% endif %}
           </section>
           {% endfor %}
+
+          {%- if article.get("scorecard") %}
+          <section class="news-match-scorecard" aria-labelledby="news-scorecard-title">
+            <header><p class="news-desk-kicker">Brief score</p><h2 id="news-scorecard-title">Match scorecard</h2></header>
+            <p class="news-match-result">{{ article.scorecard.result }}</p>
+            <div class="news-match-innings">
+              {% for team in article.scorecard.teams %}<div><strong>{{ team.name }}</strong><span><b>{{ team.score }}</b> ({{ team.overs }})</span></div>{% endfor %}
+            </div>
+            <p class="news-match-highlights">{{ article.scorecard.highlights | join(" &middot; ") | safe }}</p>
+          </section>
+          {%- endif %}
 
           {% if article.players %}
           <section class="news-story-players">
