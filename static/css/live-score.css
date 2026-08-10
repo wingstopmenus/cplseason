@@ -723,7 +723,7 @@
   color: #171100;
 }
 .live-score-commentary-item small {
-  color: var(--ls-cyan);
+  color: var(--ls-night);
   font-size: 8px;
   font-weight: 950;
   letter-spacing: .09em;
