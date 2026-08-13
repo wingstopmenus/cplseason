@@ -1,0 +1,68 @@
+{
+  "slug": "barbados-tridents-beat-jamaica-kingsmen-five-runs-cpl-2026",
+  "category": "Match Report",
+  "title": "Barbados Tridents Survive Russell Assault to Win Sabina Park Thriller",
+  "short_title": "Tridents survive Russell assault at Sabina Park",
+  "description": "Barbados Tridents beat Jamaica Kingsmen by five runs after Andre Russell threatened a spectacular chase of 207 at Sabina Park.",
+  "dek": "Brandon King made 73 and Daniel Sams took 4 for 20 before Ramon Simmonds defended 15 from the final over.",
+  "date_published": "2026-08-12",
+  "published_at": "2026-08-12T04:20:57",
+  "date_modified": "2026-08-12",
+  "source_name": "Caribbean Premier League",
+  "source_date": "2026-08-12",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/barbados-tridents-beat-jamaica-kingsmen-five-runs-cpl-2026-featured.webp",
+  "image_alt": "Brandon King hits a six for Barbados Tridents against Jamaica Kingsmen at Sabina Park",
+  "summary_heading": "Tridents build 206 before holding their nerve against Russell",
+  "key_points": [
+    "Barbados Tridents won by five runs after posting 206 for 3 at Sabina Park.",
+    "Brandon King scored 73 and Sherfane Rutherford finished unbeaten on 50.",
+    "Andre Russell struck 68 with eight sixes, but fell in the final over."
+  ],
+  "scorecard": {
+    "result": "Barbados Tridents won by 5 runs",
+    "teams": [
+      {"name": "Barbados Tridents", "score": "206/3", "overs": "20 overs"},
+      {"name": "Jamaica Kingsmen", "score": "201/9", "overs": "20 overs"}
+    ],
+    "highlights": ["Brandon King 73", "Sherfane Rutherford 50*", "Andre Russell 68", "Daniel Sams 4/20", "Chris Green 2/27"]
+  },
+  "player_slugs": ["brandon-king", "sherfane-rutherford", "andre-russell", "daniel-sams"],
+  "players_heading": "Key players from the Sabina Park thriller",
+  "sections": [
+    {
+      "heading": "King and Rutherford power the Tridents past 200",
+      "paragraphs": [
+        "Barbados Tridents began their CPL 2026 campaign with a commanding batting display after Jamaica Kingsmen chose to field at Sabina Park. Brandon King controlled the innings with 73 from 51 balls as the visitors reached 206 for 3.",
+        "Zachary Carter made 27 on his CPL debut, Quinton de Kock added 42 from 25 balls and Sherfane Rutherford finished unbeaten on 50 from 28. The full fixture context is available in the <a href=\"/match/jamaica-kingsmen-vs-barbados-tridents/\">Kingsmen vs Tridents match centre</a>."
+      ]
+    },
+    {
+      "heading": "Sams leaves the Kingsmen in deep trouble",
+      "paragraphs": [
+        "Daniel Sams and Chris Green took two wickets each during the early collapse, while Gudakesh Motie removed Rovman Powell. Jamaica were reduced to 60 for 5 in the ninth over and appeared well out of the contest.",
+        "Sams later returned to dismiss Keacy Carty for 45 and Keemo Paul with consecutive deliveries, completing figures of 4 for 20. Follow the visitors through the <a href=\"/team/barbados-royals/\">Barbados Tridents team guide</a>."
+      ]
+    },
+    {
+      "heading": "Russell turns a lost chase into a final-over contest",
+      "paragraphs": [
+        "Andre Russell rebuilt first with Carty and then attacked alongside Vitel Lawes, who made 32 from 20 balls. Russell's 68 included eight sixes and carried him past 800 sixes in T20 cricket.",
+        "Jamaica needed 15 from the final over with Russell still at the crease. Ramon Simmonds conceded a six but dismissed Russell when another attempted boundary produced a catch inside the ring. The Kingsmen finished five runs short. More team information is on the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen page</a>."
+      ]
+    },
+    {
+      "heading": "Tridents open with two points",
+      "paragraphs": [
+        "The five-run victory gave the Tridents a winning start, while Jamaica slipped to a second defeat from two matches despite their late recovery.",
+        "The result and early net run-rate impact are reflected in the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/jamaica-kingsmen-vs-barbados-tridents/", "label": "Kingsmen vs Tridents match centre"},
+    {"href": "/points-table/", "label": "CPL 2026 points table"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"}
+  ],
+  "last_updated": "2026-08-12"
+}

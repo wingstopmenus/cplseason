@@ -1,0 +1,68 @@
+{
+  "slug": "patriots-beat-saint-lucia-kings-five-wickets-cpl-2026",
+  "category": "Match Report",
+  "title": "Fletcher and Bowlers Guide Patriots to Five-Wicket Win over Kings",
+  "short_title": "Patriots cruise past Kings by five wickets",
+  "description": "St Kitts and Nevis Patriots beat Saint Lucia Kings by five wickets after chasing 156 with 14 balls remaining in Gros Islet.",
+  "dek": "Andre Fletcher carried his bat for 48 after Jason Holder and Saurabh Netravalkar took three wickets each.",
+  "date_published": "2026-08-13",
+  "published_at": "2026-08-13T03:17:08",
+  "date_modified": "2026-08-13",
+  "source_name": "Caribbean Premier League",
+  "source_date": "2026-08-13",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/patriots-beat-saint-lucia-kings-five-wickets-cpl-2026-featured.webp",
+  "image_alt": "Andre Fletcher bats for St Kitts and Nevis Patriots against Saint Lucia Kings in Gros Islet",
+  "summary_heading": "Holder and Netravalkar restrict the Kings before Fletcher anchors the chase",
+  "key_points": [
+    "St Kitts and Nevis Patriots chased 156 in 17.4 overs to win by five wickets.",
+    "Jason Holder took 3 for 20 and Saurabh Netravalkar claimed 3 for 32.",
+    "Player of the Match Andre Fletcher finished unbeaten on 48 from 41 balls."
+  ],
+  "scorecard": {
+    "result": "St Kitts and Nevis Patriots won by 5 wickets with 14 balls remaining",
+    "teams": [
+      {"name": "Saint Lucia Kings", "score": "155/8", "overs": "20 overs"},
+      {"name": "St Kitts and Nevis Patriots", "score": "156/5", "overs": "17.4 overs"}
+    ],
+    "highlights": ["Jewel Andrew 58", "Kamil Pooran 54", "Jason Holder 3/20", "Saurabh Netravalkar 3/32", "Andre Fletcher 48*"]
+  },
+  "player_slugs": ["andre-fletcher", "jason-holder", "jewel-andrew", "kyle-mayers"],
+  "players_heading": "Key players from the Patriots' first win",
+  "sections": [
+    {
+      "heading": "Holder and Netravalkar shut down the finish",
+      "paragraphs": [
+        "Saint Lucia Kings chose to bat at home in Gros Islet and recovered from two early wickets through an 82-run partnership between Kamil Pooran and Jewel Andrew. Pooran made 54 from 30 balls, while Andrew top-scored with 58 from 42.",
+        "The Kings were positioned for a stronger total before Jason Holder and Saurabh Netravalkar took control. Holder dismissed Charith Asalanka and Andrew in the 16th over, and only 22 runs came from the final five overs. Match details are available in the <a href=\"/match/saint-lucia-kings-vs-st-kitts-nevis-patriots/\">Kings vs Patriots match centre</a>."
+      ]
+    },
+    {
+      "heading": "Six wickets keep the target manageable",
+      "paragraphs": [
+        "Holder finished with 3 for 20 and Netravalkar returned 3 for 32 as Saint Lucia closed on 155 for 8. Their combined spell prevented the home side from converting a productive PowerPlay into a demanding target.",
+        "The bowling performance gave the Patriots a straightforward chase after their opening defeat. Their squad and season information is available on the <a href=\"/team/st-kitts-nevis-patriots/\">Patriots team page</a>."
+      ]
+    },
+    {
+      "heading": "Fletcher bats through the chase",
+      "paragraphs": [
+        "Johnson Charles provided the early acceleration with 16 from five balls, while Kyle Mayers made 32 from 16. Although both fell during the PowerPlay, the Patriots had already reached 59 for 2 and moved ahead of the required rate.",
+        "Andre Fletcher stayed from the first ball to the winning moment, making an unbeaten 48 from 41 deliveries. Kevin Wickham, Holder and Dasun Shanaka supplied support before Wanindu Hasaranga completed the chase with a six. Follow the hosts through the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team guide</a>."
+      ]
+    },
+    {
+      "heading": "Both teams move to one win and one loss",
+      "paragraphs": [
+        "The Patriots reached 156 for 5 in 17.4 overs, securing their first win of CPL 2026 with 14 balls remaining. Saint Lucia also stand at one victory and one defeat after two matches.",
+        "The updated records can be followed on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/saint-lucia-kings-vs-st-kitts-nevis-patriots/", "label": "Kings vs Patriots match centre"},
+    {"href": "/points-table/", "label": "CPL 2026 points table"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"}
+  ],
+  "last_updated": "2026-08-13"
+}
