@@ -660,7 +660,7 @@ module.exports = async function cplLiveScore(request, response) {
       completedMatches[completedMatches.length - 1] ||
       officialMatches[0];
 
-    const recentSources = completedMatches.slice(-3).reverse();
+    const recentSources = [...completedMatches].reverse();
     const [focus, recent, requestedMatch] = await Promise.all([
       fetchSummary(focusSource, true),
       Promise.all(recentSources.map(fetchSummary)),
