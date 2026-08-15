@@ -1,0 +1,74 @@
+{
+  "slug": "saint-lucia-kings-survive-falcons-rain-reduced-thriller-cpl-2026",
+  "category": "Match Report",
+  "title": "Forde's All-Round Display Carries Kings Through Rain-Reduced Thriller",
+  "short_title": "Forde leads Kings past Falcons in rain thriller",
+  "description": "Matthew Forde took four wickets and sparked a tense chase as Saint Lucia Kings beat Antigua and Barbuda Falcons by three wickets under the DLS method.",
+  "dek": "The Kings recovered from 21 for 6 and reached a revised target of 52 with two balls remaining after rain repeatedly shortened the contest in Gros Islet.",
+  "date_published": "2026-08-15",
+  "published_at": "2026-08-15T05:07:07",
+  "date_modified": "2026-08-15",
+  "source_name": "ESPNcricinfo",
+  "source_date": "2026-08-15",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/saint-lucia-kings-survive-falcons-rain-reduced-thriller-cpl-2026-featured.webp",
+  "image_alt": "Saint Lucia Kings players celebrate together during a Caribbean Premier League match",
+  "summary_heading": "Forde dominates with the ball before Kings escape a dramatic chase",
+  "key_points": [
+    "Saint Lucia Kings beat Antigua and Barbuda Falcons by three wickets under the DLS method.",
+    "Matthew Forde took 4 for 29 as the Falcons were restricted to 98 for 9 in 19 overs.",
+    "Kings recovered from 21 for 6 to reach 54 for 7 with two balls left in an eight-over chase."
+  ],
+  "scorecard": {
+    "result": "Saint Lucia Kings won by 3 wickets under the DLS method",
+    "teams": [
+      {"name": "Antigua and Barbuda Falcons", "score": "98/9", "overs": "19 overs"},
+      {"name": "Saint Lucia Kings", "score": "54/7", "overs": "7.4 overs (target 52)"}
+    ],
+    "highlights": [
+      "Rahkeem Cornwall 26",
+      "Matthew Forde 4/29",
+      "Roston Chase 2/7",
+      "Joshua Bishop 2/16",
+      "Shamar Springer 3/13"
+    ]
+  },
+  "player_slugs": ["matthew-forde", "roston-chase", "joshua-bishop", "shamar-springer"],
+  "players_heading": "Key players from the rain-shortened contest",
+  "sections": [
+    {
+      "heading": "Forde strikes twice in the second over",
+      "paragraphs": [
+        "Saint Lucia Kings chose to field at the Daren Sammy National Cricket Stadium and Matthew Forde immediately put the Falcons under pressure. He removed Evin Lewis and Tim Robinson from successive deliveries in the second over before returning later to dismiss Rahkeem Cornwall.",
+        "Cornwall's 26 and Amir Jangoo's 23 were the only scores above 20 in an innings that never settled. Full fixture details are available in the <a href=\"/match/saint-lucia-kings-vs-antigua-barbuda-falcons/\">Kings vs Falcons match centre</a>."
+      ]
+    },
+    {
+      "heading": "Kings squeeze the Falcons before rain arrives",
+      "paragraphs": [
+        "Roston Chase delivered four economical overs for 2 for 7, while Joshua Bishop collected 2 for 16. Forde completed figures of 4 for 29 as Antigua and Barbuda Falcons reached 98 for 9 from 19 overs before rain ended their innings.",
+        "The interruptions initially left Saint Lucia with a target of 84 from 15 overs, but another shower after eight balls reduced the chase to 52 from eight overs. Follow the home side through the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team guide</a>."
+      ]
+    },
+    {
+      "heading": "Falcons tear through the top order",
+      "paragraphs": [
+        "The shortened target looked straightforward until Shamar Springer and Joshua James ripped through the Kings. Both struck twice as the hosts collapsed to 21 for 6 after five overs, turning the final three overs into a scramble for survival.",
+        "Forde changed the momentum with a four and a six in a 14-run sixth over, although Springer dismissed him from the next legal delivery. More squad and campaign information is available on the <a href=\"/team/antigua-barbuda-falcons/\">Antigua and Barbuda Falcons page</a>."
+      ]
+    },
+    {
+      "heading": "Bishop and van Schalkwyk finish the chase",
+      "paragraphs": [
+        "Joshua Bishop and Shadley van Schalkwyk held their nerve after the Kings slipped to 33 for 7. Bishop finished unbeaten on 12 and van Schalkwyk made eight not out, taking the score to 54 for 7 with two deliveries remaining.",
+        "The three-wicket DLS victory moved Saint Lucia Kings to the top of the early standings. The result and its net run-rate effect are reflected in the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/saint-lucia-kings-vs-antigua-barbuda-falcons/", "label": "Kings vs Falcons match centre"},
+    {"href": "/points-table/", "label": "CPL 2026 points table"},
+    {"href": "/schedule/", "label": "CPL 2026 schedule"}
+  ],
+  "last_updated": "2026-08-15"
+}
