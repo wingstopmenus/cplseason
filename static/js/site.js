@@ -168,7 +168,7 @@ if (matchSpotlights.length) {
     try {
       const [scheduleResponse, statusResponse] = await Promise.all([
         fetch("/static/match-spotlight.json", { cache: "force-cache" }),
-        fetch("/api/cpl-matches", { cache: "no-store" }),
+        fetch("/api/cpl-matches", { cache: "default", priority: "high" }),
       ]);
       if (!scheduleResponse.ok || !statusResponse.ok) throw new Error("Match spotlight feed unavailable");
       const [schedule, statuses] = await Promise.all([
@@ -692,7 +692,7 @@ if (homeMatchWindow) {
     if (!endpoint || !grid || sourceCards.length !== 39 || requestInProgress) return;
     requestInProgress = true;
     try {
-      const response = await fetch(endpoint, { cache: "no-store" });
+      const response = await fetch(endpoint, { cache: "default", priority: "high" });
       if (!response.ok) throw new Error(`Match status request failed: ${response.status}`);
       const statusFeed = await response.json();
       if (!Array.isArray(statusFeed)) throw new Error("Match status response is invalid");
@@ -1593,7 +1593,7 @@ if (liveMatchData) {
         home: matchHome,
         away: matchAway,
       });
-      const response = await fetch(`/api/cpl-live-score?${matchQuery}`, { cache: "no-store" });
+      const response = await fetch(`/api/cpl-live-score?${matchQuery}`, { cache: "default", priority: "high" });
       if (!response.ok) throw new Error("Score unavailable");
       const payload = await response.json();
       if (!payload.match || payload.source !== "official-cpl-mcpro") throw new Error("Unverified response");
