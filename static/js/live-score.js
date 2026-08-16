@@ -837,9 +837,9 @@
     try {
       const controller = new AbortController();
       const timeout = window.setTimeout(() => controller.abort(), 10000);
-      const separator = endpoint.includes("?") ? "&" : "?";
-      const response = await fetch(`${endpoint}${separator}t=${Date.now()}`, {
-        cache: "no-store",
+      const response = await fetch(endpoint, {
+        cache: "default",
+        priority: "high",
         signal: controller.signal,
       });
       window.clearTimeout(timeout);
