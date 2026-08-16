@@ -711,19 +711,35 @@ module.exports = async function cplLiveScore(request, response) {
       officialMatches[0];
 
     const recentSources = [...completedMatches].reverse();
-    const [focus, recent, requestedMatch] = await Promise.all([
-      fetchSummary(focusSource, true),
-      Promise.all(recentSources.map(fetchSummary)),
-      requestedSource
-        ? fetchSummary(requestedSource, true)
-        : Promise.resolve(null),
+    const focusNumber = matchNumber(focusSource);
+    const requestedMatchNumber = requestedSource ? matchNumber(requestedSource) : null;
+    const focusPromise = requestedSource && focusNumber !== requestedMatchNumber
+      ? Promise.resolve(applyDerivedMatchPhase(normalizeMatch(focusSource)))
+      : fetchSummary(focusSource, true);
+    const requestedPromise = !requestedSource
+      ? Promise.resolve(null)
+      : focusNumber === requestedMatchNumber
+        ? focusPromise
+        : fetchSummary(requestedSource, true);
+    const latestRecentSource = requestedSource ? null : recentSources[0] || null;
+    const latestRecentPromise = latestRecentSource && matchNumber(latestRecentSource) !== focusNumber
+      ? fetchSummary(latestRecentSource)
+      : Promise.resolve(null);
+    const [focus, latestRecent, requestedMatch] = await Promise.all([
+      focusPromise,
+      latestRecentPromise,
+      requestedPromise,
     ]);
 
     const liveDetails = new Map(
-      [focus, requestedMatch]
+      [focus, latestRecent, requestedMatch]
         .filter(Boolean)
         .map((match) => [Number(match.matchNumber), match]),
     );
+    const recent = recentSources.map((match) => {
+      const normalized = applyDerivedMatchPhase(normalizeMatch(match));
+      return liveDetails.get(Number(normalized.matchNumber)) || normalized;
+    });
     const schedule = officialMatches.map((match) => {
       const normalized = applyDerivedMatchPhase(normalizeMatch(match));
       return liveDetails.get(Number(normalized.matchNumber)) || normalized;
@@ -737,7 +753,7 @@ module.exports = async function cplLiveScore(request, response) {
     }
     response.setHeader(
       "Cache-Control",
-      "public, s-maxage=8, stale-while-revalidate=30",
+      "public, s-maxage=5, stale-while-revalidate=60",
     );
     response.setHeader("X-CPL-Live-Score-Source", "official-cpl-mcpro");
     return response.status(200).json({
@@ -751,7 +767,7 @@ module.exports = async function cplLiveScore(request, response) {
   } catch (error) {
     response.setHeader(
       "Cache-Control",
-      "public, s-maxage=10, stale-while-revalidate=30",
+      "public, s-maxage=5, stale-while-revalidate=60",
     );
     response.setHeader("X-CPL-Live-Score-Source", "unavailable");
     return response.status(503).json({
