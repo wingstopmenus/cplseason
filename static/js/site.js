@@ -1082,7 +1082,7 @@ if (liveMatchData) {
       const value = String(label || "").trim();
       if (/^w$/i.test(value)) return 0;
       const runs = value.match(/^\d+/);
-      return runs ? Number(runs[0]) : /wide|no.?ball/i.test(value) ? 1 : 0;
+      return runs ? Number(runs[0]) : /(?:wide|wd|no.?ball|nb)/i.test(value) ? 1 : 0;
     };
     const appendOverSummary = (overBalls) => {
       const latest = overBalls.find((ball) => Number.isFinite(ball?.score?.runs)) || overBalls[0];
@@ -1091,7 +1091,7 @@ if (liveMatchData) {
       card.className = "match-commentary-over-summary";
       const header = document.createElement("header");
       const title = document.createElement("strong");
-      title.textContent = `Over ${Number(overBalls[0].over) + 1}`;
+      title.textContent = `Over ${Number(overBalls[0].over)}`;
       const score = document.createElement("b");
       score.textContent = Number.isFinite(latest?.score?.runs)
         ? `${latest.score.runs}-${latest.score.wickets ?? 0}`
@@ -1117,7 +1117,10 @@ if (liveMatchData) {
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
       const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
-      const overComplete = overBalls.some((item) => Number(item.ball) === 6) || index > overBalls.length - 1;
+      const allOverBalls = filteredBalls.filter((item) => Number(item.over) === Number(ball.over));
+      const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
+      const laterOverExists = filteredBalls.some((item) => Number(item.over) > Number(ball.over));
+      const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
