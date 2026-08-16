@@ -428,6 +428,10 @@ async function loadResultIndex() {
   const matches = new Map();
   const linkPattern = /href="(\/live-cricket-scores\/\d+\/[^"?]*?-(\d+)(?:st|nd|rd|th)-match-[^"]*)"/gi;
   for (const link of html.matchAll(linkPattern)) matches.set(Number(link[2]), `https://www.cricbuzz.com${link[1]}`);
+  const structuredPattern = /\\?"matchId\\?":(\d+)[\s\S]{0,500}?\\?"matchDesc\\?":\\?"(\d+)(?:st|nd|rd|th) Match\\?"/gi;
+  for (const entry of html.matchAll(structuredPattern)) {
+    matches.set(Number(entry[2]), `https://www.cricbuzz.com/live-cricket-scores/${entry[1]}`);
+  }
   resultIndexCache = { expires: Date.now() + 5 * 60 * 1000, matches };
   return matches;
 }
