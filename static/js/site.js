@@ -1091,7 +1091,7 @@ if (liveMatchData) {
       card.className = "match-commentary-over-summary";
       const header = document.createElement("header");
       const title = document.createElement("strong");
-      title.textContent = `Over ${Number(overBalls[0].over)}`;
+      title.textContent = `Over ${Number(overBalls[0].over) + 1}`;
       const score = document.createElement("b");
       score.textContent = Number.isFinite(latest?.score?.runs)
         ? `${latest.score.runs}-${latest.score.wickets ?? 0}`
@@ -1101,27 +1101,70 @@ if (liveMatchData) {
       outcomes.textContent = `${chronological.map((ball) => ball.label || "•").join(" ")} (${overRuns} runs)`;
       header.append(title, score, outcomes);
       const details = document.createElement("div");
-      const batters = [...new Set(overBalls.map((ball) => ball.batterName).filter(Boolean))].slice(0, 2);
+      details.className = "match-commentary-over-details";
+      const batterRuns = new Map();
+      chronological.forEach((ball) => {
+        if (!ball.batterName) return;
+        const batterValue = /^\d+$/.test(String(ball.label || "").trim()) ? Number(ball.label) : 0;
+        batterRuns.set(ball.batterName, (batterRuns.get(ball.batterName) || 0) + batterValue);
+      });
+      const batters = [...batterRuns.keys()].slice(0, 2);
       const bowler = overBalls.find((ball) => ball.bowlerName)?.bowlerName || "";
-      const batterText = document.createElement("span");
-      batterText.textContent = batters.join(" · ") || "Batting update";
+      const batterText = document.createElement("div");
+      batterText.className = "match-commentary-over-batters";
+      if (batters.length) {
+        batters.forEach((name) => {
+          const row = document.createElement("span");
+          const player = document.createElement("strong");
+          const figure = document.createElement("small");
+          const runs = batterRuns.get(name) || 0;
+          player.textContent = name;
+          figure.textContent = `${runs} ${runs === 1 ? "run" : "runs"} this over`;
+          row.append(player, figure);
+          batterText.append(row);
+        });
+      } else {
+        batterText.textContent = "Batting update";
+      }
       const bowlerText = document.createElement("span");
-      bowlerText.textContent = bowler || "Bowling update";
+      const bowlerName = document.createElement("strong");
+      const bowlerFigure = document.createElement("small");
+      const overWickets = chronological.filter((ball) => /^w$/i.test(String(ball.label || "").trim())).length;
+      bowlerName.textContent = bowler || "Bowling update";
+      bowlerFigure.textContent = `${overRuns} ${overRuns === 1 ? "run" : "runs"} · ${overWickets} ${overWickets === 1 ? "wicket" : "wickets"}`;
+      bowlerText.append(bowlerName, bowlerFigure);
       details.append(batterText, bowlerText);
-      card.append(header, details);
+      const actions = document.createElement("nav");
+      actions.setAttribute("aria-label", `Over ${Number(overBalls[0].over) + 1} commentary controls`);
+      const toggle = document.createElement("button");
+      toggle.type = "button";
+      toggle.textContent = "Over Summary ›";
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.addEventListener("click", () => {
+        details.hidden = !details.hidden;
+        toggle.setAttribute("aria-expanded", String(!details.hidden));
+      });
+      const viewAll = document.createElement("button");
+      viewAll.type = "button";
+      viewAll.textContent = "View all overs ›";
+      viewAll.addEventListener("click", () => {
+        commentaryVisibleCount = filteredBalls.length;
+        renderFullCommentary(match, isComplete, isLive);
+      });
+      actions.append(toggle, viewAll);
+      card.append(header, details, actions);
       commentaryBalls.append(card);
     };
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
-      const next = visibleBalls[index + 1];
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
-      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
       const allOverBalls = filteredBalls.filter((item) => Number(item.over) === Number(ball.over));
       const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
       const laterOverExists = filteredBalls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
+        if (overComplete) appendOverSummary(overBalls);
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
           const note = document.createElement("p");
@@ -1148,7 +1191,6 @@ if (liveMatchData) {
       outcome.textContent = ball.label || "•";
       node.append(delivery, text, outcome);
       commentaryBalls.append(node);
-      if (endsOver && overComplete) appendOverSummary(overBalls);
     });
     if (filteredBalls.length > commentaryVisibleCount) {
       const controls = document.createElement("div");
