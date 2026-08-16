@@ -840,6 +840,8 @@ if (liveMatchData) {
     return match?.winnerName ? `${match.winnerName} won` : "Match completed";
   };
   let pollTimer;
+  let completedAwardChecks = 0;
+  const maxCompletedAwardChecks = 60;
   let commentaryVisibleCount = 20;
   let commentaryFilter = null;
   let latestCommentaryMatch = null;
@@ -1227,11 +1229,7 @@ if (liveMatchData) {
       match.topPerformers?.mostWickets ? `Top bowler: ${match.topPerformers.mostWickets.name} · ${match.topPerformers.mostWickets.value ?? "—"} wickets` : "",
     ].filter(Boolean);
 
-    const verifiedPlayerOfMatch = match.playerOfMatch || (matchNumber === 1 ? {
-      name: "Alzarri Joseph",
-      image: "/static/img/official/players/alzarri-joseph.webp",
-      detail: "3 wickets",
-    } : null);
+    const verifiedPlayerOfMatch = match?.playerOfMatch?.name ? match.playerOfMatch : null;
 
     if (verifiedPlayerOfMatch?.name) {
       const award = document.createElement("article");
@@ -1602,9 +1600,15 @@ if (liveMatchData) {
       renderMatch(payload.match, payload.fetchedAt);
       window.clearTimeout(pollTimer);
       const status = String(payload.match.status || "");
-      if (!completePattern.test(status)) {
-        pollTimer = window.setTimeout(loadMatch, upcomingPattern.test(status) ? 60000 : 15000);
-      }
+        const isComplete = completePattern.test(status);
+        const awardMissing = isComplete && !payload.match?.playerOfMatch?.name;
+        if (!isComplete) {
+          completedAwardChecks = 0;
+          pollTimer = window.setTimeout(loadMatch, upcomingPattern.test(status) ? 60000 : 15000);
+        } else if (awardMissing && completedAwardChecks < maxCompletedAwardChecks) {
+          completedAwardChecks += 1;
+          pollTimer = window.setTimeout(loadMatch, 30000);
+        }
     } catch {
       if (feedState) feedState.textContent = "Update delayed";
       if (feedStatus) feedStatus.textContent = "Live scores are temporarily delayed. Match details remain available.";
