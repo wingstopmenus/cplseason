@@ -143,7 +143,7 @@
     roots.forEach((root) => root.setAttribute("aria-busy", "true"));
     try {
       const endpoint = roots[0].dataset.standingsEndpoint || "/api/cpl-standings";
-      const response = await fetch(endpoint, { cache: "no-store" });
+      const response = await fetch(endpoint, { cache: "default", priority: "high" });
       if (!response.ok) throw new Error(`Standings request failed: ${response.status}`);
       const payload = await response.json();
       if (!Array.isArray(payload.standings) || payload.standings.length !== 7) {
