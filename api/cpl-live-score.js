@@ -441,7 +441,6 @@ async function hydrateCompletedResult(match) {
     });
     if (!response.ok) return match;
     const html = await response.text();
-    console.log("CPL_POTM_DEBUG", JSON.stringify({ matchNumber: match.matchNumber, length: html.length, structured: html.includes("playersOfTheMatch"), label: /PLAYER\s+OF\s+THE\s+MATCH/i.test(html) }));
     const playerOfMatch = parseCricbuzzPlayerOfMatch(html);
     if (playerOfMatch) match.playerOfMatch = playerOfMatch;
     const resultMatch = html.match(/<div class="text-cbTextLink">([^<]*(?:won by|won|tied|no result|abandoned)[^<]*)<\/div>/i);
@@ -645,7 +644,7 @@ async function fetchSummary(match, includeCommentary = false) {
     }
     return hydrateCompletedResult(applyDerivedMatchPhase(summary));
   } catch {
-    return applyDerivedMatchPhase(normalizeMatch(match));
+    return hydrateCompletedResult(applyDerivedMatchPhase(normalizeMatch(match)));
   }
 }
 
