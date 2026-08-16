@@ -442,6 +442,7 @@ async function hydrateCompletedResult(match) {
     if (!response.ok) return match;
     const html = await response.text();
     const playerOfMatch = parseCricbuzzPlayerOfMatch(html);
+    console.log("CPL_POTM_DEBUG", JSON.stringify({ matchNumber: match.matchNumber, length: html.length, structured: html.includes("playersOfTheMatch"), label: /PLAYER\s+OF\s+THE\s+MATCH/i.test(html), parsed: playerOfMatch?.name || null }));
     if (playerOfMatch) match.playerOfMatch = playerOfMatch;
     const resultMatch = html.match(/<div class="text-cbTextLink">([^<]*(?:won by|won|tied|no result|abandoned)[^<]*)<\/div>/i);
     const result = cleanHtmlText(resultMatch?.[1]);
