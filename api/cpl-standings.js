@@ -352,9 +352,10 @@ module.exports = async function cplStandings(request, response) {
   }
 
   try {
-    const [ladderPayload, matchPayload] = await Promise.all([
+    const [ladderPayload, matchPayload, verified] = await Promise.all([
       fetchOfficial(`/competition/${COMPETITION_ID}/ladders`),
       fetchOfficial(`/matches?competitionId=${encodeURIComponent(COMPETITION_ID)}`),
+      verifiedStandings().catch(() => null),
     ]);
     const rawOfficialTeams = ladderTeams(ladderPayload);
     if (rawOfficialTeams.length !== TEAM_COUNT || !Array.isArray(matchPayload)) {
@@ -372,7 +373,12 @@ module.exports = async function cplStandings(request, response) {
     let source = "official-cpl-ladder";
     let standings = official;
     let completedCount = officialCompleted;
-    if (completedMatches.length > officialCompleted) {
+    const newestCompletedCount = Math.max(officialCompleted, completedMatches.length);
+    if (verified && verified.completedMatches >= newestCompletedCount) {
+      source = "verified-live-table";
+      standings = verified.standings;
+      completedCount = verified.completedMatches;
+    } else if (completedMatches.length > officialCompleted) {
       const computed = await computedStandings(rawOfficialTeams, completedMatches);
       if (computed.applied > officialCompleted) {
         source = "official-cpl-results-fallback";
@@ -380,14 +386,8 @@ module.exports = async function cplStandings(request, response) {
         completedCount = computed.applied;
       }
     }
-    const verified = await verifiedStandings().catch(() => null);
-    if (verified && verified.completedMatches >= completedCount) {
-      source = "verified-live-table";
-      standings = verified.standings;
-      completedCount = verified.completedMatches;
-    }
 
-    response.setHeader("Cache-Control", "public, s-maxage=15, stale-while-revalidate=45");
+    response.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=120");
     response.setHeader("X-CPL-Standings-Source", source);
     return response.status(200).json({
       source,
@@ -407,7 +407,7 @@ module.exports = async function cplStandings(request, response) {
         0,
       );
       const source = "espncricinfo-verified-fallback";
-      response.setHeader("Cache-Control", "public, s-maxage=15, stale-while-revalidate=45");
+      response.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=120");
       response.setHeader("X-CPL-Standings-Source", source);
       return response.status(200).json({
         source,
@@ -416,7 +416,7 @@ module.exports = async function cplStandings(request, response) {
         standings: finalizeComputedTable(table),
       });
     } catch {
-      response.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=30");
+      response.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=120");
       response.setHeader("X-CPL-Standings-Source", "unavailable");
       return response.status(503).json({
         error: "Verified CPL standings feeds are temporarily unavailable",
