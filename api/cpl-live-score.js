@@ -3,13 +3,6 @@ const COMPETITION_ID = "sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
 const CPL_RESULTS_INDEX = "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/matches";
 let resultIndexCache = { expires: 0, matches: new Map() };
-const verifiedMatchAwards = {
-  "1": {
-    name: "Alzarri Joseph",
-    image: "/static/img/official/players/alzarri-joseph.webp",
-    detail: "3 wickets",
-  },
-};
 const verifiedPlayingXis = {
   "2": [
     {
@@ -386,6 +379,19 @@ function cleanHtmlText(value) {
     .trim();
 }
 
+function parseCricbuzzPlayerOfMatch(html) {
+  const labelIndex = String(html || "").search(/PLAYER\s+OF\s+THE\s+MATCH/i);
+  if (labelIndex < 0) return null;
+  const awardBlock = String(html).slice(labelIndex, labelIndex + 5000);
+  const name = cleanHtmlText(awardBlock.match(/<span[^>]*>([^<]+)<\/span>/i)?.[1]);
+  if (!name) return null;
+  const detail = cleanHtmlText(awardBlock.match(/<p[^>]*>([^<]*)<\/p>/i)?.[1]);
+  const image = String(
+    awardBlock.match(/<img\b[^>]*\ssrc="([^"]+)"/i)?.[1] || "",
+  ).replace(/&amp;/g, "&");
+  return { name, image: image || null, detail };
+}
+
 async function loadResultIndex() {
   if (resultIndexCache.expires > Date.now() && resultIndexCache.matches.size) return resultIndexCache.matches;
   const response = await fetch(CPL_RESULTS_INDEX, { signal: AbortSignal.timeout(8000) });
@@ -400,20 +406,23 @@ async function loadResultIndex() {
 
 async function hydrateCompletedResult(match) {
   const genericResult = /^(complete|completed|match complete|match completed|result)$/i;
-  if (!completedPattern.test(String(match?.status || "")) || !genericResult.test(String(match?.description || ""))) return match;
+  if (!completedPattern.test(String(match?.status || ""))) return match;
   try {
     const resultUrl = (await loadResultIndex()).get(Number(match.matchNumber));
     if (!resultUrl) return match;
     const response = await fetch(resultUrl, { signal: AbortSignal.timeout(8000) });
     if (!response.ok) return match;
     const html = await response.text();
+    const playerOfMatch = parseCricbuzzPlayerOfMatch(html);
+    if (playerOfMatch) match.playerOfMatch = playerOfMatch;
     const resultMatch = html.match(/<div class="text-cbTextLink">([^<]*(?:won by|won|tied|no result|abandoned)[^<]*)<\/div>/i);
     const result = cleanHtmlText(resultMatch?.[1]);
-    if (!result || genericResult.test(result)) return match;
-    match.description = result;
-    match.stateOfPlay = result;
-    const winner = result.match(/^(.+?)\s+won\b/i)?.[1]?.trim();
-    if (winner) match.winnerName = winner;
+    if (result && !genericResult.test(result)) {
+      match.description = result;
+      match.stateOfPlay = result;
+      const winner = result.match(/^(.+?)\s+won\b/i)?.[1]?.trim();
+      if (winner) match.winnerName = winner;
+    }
   } catch {
     // Keep the official payload when the secondary result page is temporarily unavailable.
   }
@@ -546,9 +555,6 @@ async function fetchSummary(match, includeCommentary = false) {
     const summary = applyDerivedMatchPhase(normalizeMatch(rawSummary));
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
-    }
-    if (!summary.playerOfMatch) {
-      summary.playerOfMatch = verifiedMatchAwards[String(summary.matchNumber)] || null;
     }
     if (summary.toss && verifiedPlayingXis[String(summary.matchNumber)]) {
       summary.confirmedPlayingXi = verifiedPlayingXis[String(summary.matchNumber)].map((lineup) => ({
