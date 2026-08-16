@@ -380,9 +380,30 @@ function cleanHtmlText(value) {
 }
 
 function parseCricbuzzPlayerOfMatch(html) {
-  const labelIndex = String(html || "").search(/PLAYER\s+OF\s+THE\s+MATCH/i);
+  const source = String(html || "");
+  const structuredIndex = source.indexOf("playersOfTheMatch");
+  if (structuredIndex >= 0) {
+    const awardBlock = source
+      .slice(structuredIndex, structuredIndex + 3000)
+      .replace(/\\"/g, '"')
+      .replace(/\\\\/g, "\\");
+    const name = cleanHtmlText(awardBlock.match(/"name":"([^"]+)"/i)?.[1]);
+    if (name) {
+      const batting = cleanHtmlText(awardBlock.match(/"battingSummary":"([^"]*)"/i)?.[1]);
+      const bowling = cleanHtmlText(awardBlock.match(/"bowlingSummary":"([^"]*)"/i)?.[1]);
+      const imageId = awardBlock.match(/"faceImageId":(\d+)/i)?.[1];
+      return {
+        name,
+        image: imageId
+          ? `https://static.cricbuzz.com/a/img/v1/i1/c${imageId}/player.jpg?d=low&p=gthumb`
+          : null,
+        detail: [batting, bowling].filter(Boolean).join(" · "),
+      };
+    }
+  }
+  const labelIndex = source.search(/PLAYER\s+OF\s+THE\s+MATCH/i);
   if (labelIndex < 0) return null;
-  const awardBlock = String(html).slice(labelIndex, labelIndex + 5000);
+  const awardBlock = source.slice(labelIndex, labelIndex + 5000);
   const name = cleanHtmlText(awardBlock.match(/<span[^>]*>([^<]+)<\/span>/i)?.[1]);
   if (!name) return null;
   const detail = cleanHtmlText(awardBlock.match(/<p[^>]*>([^<]*)<\/p>/i)?.[1]);
