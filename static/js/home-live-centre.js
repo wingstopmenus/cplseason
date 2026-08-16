@@ -192,8 +192,8 @@
     root.setAttribute("aria-busy", "true");
     try {
       const [liveResponse, fixtureResponse] = await Promise.all([
-        fetch(root.dataset.liveScoreEndpoint || "/api/cpl-live-score", { cache: "no-store" }),
-        fetch(root.dataset.fixtureEndpoint || "/static/match-spotlight.json", { cache: "no-store" }),
+        fetch(root.dataset.liveScoreEndpoint || "/api/cpl-live-score", { cache: "default", priority: "high" }),
+        fetch(root.dataset.fixtureEndpoint || "/static/match-spotlight.json", { cache: "force-cache" }),
       ]);
       if (!liveResponse.ok || !fixtureResponse.ok) throw new Error("Homepage match feed unavailable");
       const [payload, fixtures] = await Promise.all([liveResponse.json(), fixtureResponse.json()]);
