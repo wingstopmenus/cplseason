@@ -5,7 +5,7 @@
   const teamMeta = new Map(
     [
       ["antiguaandbarbudafalcons", ["Antigua & Barbuda", "ABF", "antigua-barbuda-falcons"]],
-      ["barbadostridents", ["Barbados", "BT", "barbados-royals"]],
+      ["barbadostridents", ["Barbados", "BT", "barbados-tridents"]],
       ["guyanaamazonwarriors", ["Guyana", "GAW", "guyana-amazon-warriors"]],
       ["jamaicakingsmen", ["Jamaica", "JAK", "jamaica-kingsmen"]],
       ["stluciakings", ["Saint Lucia", "SLK", "saint-lucia-kings"]],
