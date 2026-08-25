@@ -1,0 +1,90 @@
+{
+  "slug": "jamaica-kingsmen-beat-knight-riders-five-wickets-cpl-2026",
+  "category": "Match Report",
+  "title": "McKenzie Blasts Kingsmen to First CPL 2026 Victory",
+  "short_title": "McKenzie fires Kingsmen past TKR",
+  "description": "Kirk McKenzie struck 69 from 25 balls as Jamaica Kingsmen chased 183 to beat Trinbago Knight Riders by five wickets.",
+  "dek": "The Kingsmen completed the highest successful CPL chase at Sabina Park with eight balls remaining.",
+  "date_published": "2026-08-16",
+  "published_at": "2026-08-16T05:31:00",
+  "date_modified": "2026-08-16",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-16",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/jamaica-kingsmen-beat-knight-riders-five-wickets-cpl-2026-featured.webp",
+  "image_alt": "Jamaica Kingsmen face Trinbago Knight Riders at Sabina Park",
+  "summary_heading": "McKenzie's PowerPlay assault transforms a record chase",
+  "key_points": [
+    "Jamaica Kingsmen chased 183 with eight balls remaining.",
+    "Kirk McKenzie made 69 from 25 deliveries.",
+    "Kieron Pollard and Nicholas Pooran each scored 44 for TKR."
+  ],
+  "scorecard": {
+    "result": "Jamaica Kingsmen won by 5 wickets with 8 balls remaining",
+    "teams": [
+      {
+        "name": "Trinbago Knight Riders",
+        "score": "182/6",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Jamaica Kingsmen",
+        "score": "183/5",
+        "overs": "18.4 overs"
+      }
+    ],
+    "highlights": [
+      "Kirk McKenzie 69 (25)",
+      "Reeza Hendricks 37",
+      "Kieron Pollard 44",
+      "Nicholas Pooran 44",
+      "Usman Tariq 3/21"
+    ]
+  },
+  "player_slugs": [
+    "kirk-mckenzie",
+    "andre-russell",
+    "rovman-powell",
+    "kieron-pollard"
+  ],
+  "players_heading": "Key players from the Sabina Park chase",
+  "sections": [
+    {
+      "heading": "TKR recover to post 182",
+      "paragraphs": [
+        "The Knight Riders recovered from a restrained first half through a 67-run stand between Nicholas Pooran and Kieron Pollard. Both made 44 before late contributions carried the visitors to 182 for 6.",
+        "Match details are available in the <a href=\"/match/jamaica-kingsmen-vs-trinbago-knight-riders/\">Kingsmen vs Knight Riders match centre</a>."
+      ]
+    },
+    {
+      "heading": "McKenzie attacks from the outset",
+      "paragraphs": [
+        "Kirk McKenzie drove an 82-run wicketless PowerPlay and reached 69 from only 25 balls. The innings left Jamaica ahead of the required rate even when Usman Tariq's three wickets slowed the middle overs.",
+        "Follow the home side through the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team guide</a> and the visitors on the <a href=\"/team/trinbago-knight-riders/\">Trinbago Knight Riders page</a>."
+      ]
+    },
+    {
+      "heading": "Russell and Powell close the chase",
+      "paragraphs": [
+        "Andre Russell and Rovman Powell counterattacked when 54 were needed from 30 balls. Their surge produced 45 runs across two overs and removed the pressure created by the Knight Riders' spinners.",
+        "Russell departed for 27 from 15 balls, but Powell stayed unbeaten on 29 and Jamaica reached 183 for 5 in 18.4 overs. The pursuit became the highest successful CPL chase at Sabina Park.",
+        "The first win of Jamaica's campaign is reflected in the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/jamaica-kingsmen-vs-trinbago-knight-riders/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-16"
+}

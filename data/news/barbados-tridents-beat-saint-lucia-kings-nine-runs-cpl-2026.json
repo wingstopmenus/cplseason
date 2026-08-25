@@ -1,0 +1,90 @@
+{
+  "slug": "barbados-tridents-beat-saint-lucia-kings-nine-runs-cpl-2026",
+  "category": "Match Report",
+  "title": "Rutherford and Spinners Keep Tridents Unbeaten",
+  "short_title": "Tridents edge Kings by nine runs",
+  "description": "Sherfane Rutherford made 61 before Barbados Tridents defended 177 in an 18-over match against Saint Lucia Kings.",
+  "dek": "Gudakesh Motie and Mujeeb Ur Rahman shared five wickets to secure a nine-run win in Gros Islet.",
+  "date_published": "2026-08-17",
+  "published_at": "2026-08-17T04:22:00",
+  "date_modified": "2026-08-17",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-17",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/barbados-tridents-beat-saint-lucia-kings-nine-runs-cpl-2026-featured.webp",
+  "image_alt": "Barbados Tridents players celebrate against Saint Lucia Kings",
+  "summary_heading": "Rutherford restores the tempo before spin closes the game",
+  "key_points": [
+    "Barbados Tridents won a rain-shortened 18-over match by nine runs.",
+    "Sherfane Rutherford struck 61 from 31 balls.",
+    "Gudakesh Motie took 3 for 22 and Mujeeb Ur Rahman claimed 2 for 27."
+  ],
+  "scorecard": {
+    "result": "Barbados Tridents won by 9 runs",
+    "teams": [
+      {
+        "name": "Barbados Tridents",
+        "score": "177/5",
+        "overs": "18 overs"
+      },
+      {
+        "name": "Saint Lucia Kings",
+        "score": "168/7",
+        "overs": "18 overs"
+      }
+    ],
+    "highlights": [
+      "Sherfane Rutherford 61",
+      "Quinton de Kock 38 (15)",
+      "Ackeem Auguste 63",
+      "Gudakesh Motie 3/22",
+      "Mujeeb Ur Rahman 2/27"
+    ]
+  },
+  "player_slugs": [
+    "sherfane-rutherford",
+    "quinton-de-kock",
+    "gudakesh-motie",
+    "mujeeb-ur-rahman"
+  ],
+  "players_heading": "Key players from the rain-shortened match",
+  "sections": [
+    {
+      "heading": "Tridents find 177 in 18 overs",
+      "paragraphs": [
+        "Quinton de Kock supplied a rapid start with 38 from 15 balls before Sherfane Rutherford struck 61 from 31. Rutherford and Rivaldo Clarke added 79 to lift Barbados to 177 for 5.",
+        "The fixture is covered in the <a href=\"/match/saint-lucia-kings-vs-barbados-tridents/\">Kings vs Tridents match centre</a>."
+      ]
+    },
+    {
+      "heading": "Auguste keeps the Kings in range",
+      "paragraphs": [
+        "Roston Chase made 34 before Ackeem Auguste produced 63 from 34 balls. The chase remained alive until the Tridents' spinners took control of the middle and closing overs.",
+        "See the squads and fixtures on the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings page</a> and <a href=\"/team/barbados-tridents/\">Barbados Tridents page</a>."
+      ]
+    },
+    {
+      "heading": "Motie and Mujeeb secure the points",
+      "paragraphs": [
+        "Gudakesh Motie and Mujeeb Ur Rahman combined for five wickets while conceding 49 runs. Motie removed Auguste immediately after his half-century had brought the target back into view.",
+        "Amari Goodridge and Matthew Forde found late boundaries, but the required rate was already beyond them. Saint Lucia finished on 168 for 7, nine runs short.",
+        "The standings impact is recorded on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/saint-lucia-kings-vs-barbados-tridents/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-17"
+}

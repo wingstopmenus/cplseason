@@ -1,0 +1,90 @@
+{
+  "slug": "amazon-warriors-beat-saint-lucia-kings-seven-wickets-cpl-2026",
+  "category": "Match Report",
+  "title": "Warriors Stay Perfect with Seven-Wicket Win in Saint Lucia",
+  "short_title": "Warriors remain unbeaten in Saint Lucia",
+  "description": "Guyana Amazon Warriors chased 152 to beat Saint Lucia Kings by seven wickets after Dwaine Pretorius took three wickets.",
+  "dek": "Mavendra Dindyal made 50 before Shimron Hetmyer and Quentin Sampson completed the chase with 11 balls remaining.",
+  "date_published": "2026-08-20",
+  "published_at": "2026-08-20T04:40:00",
+  "date_modified": "2026-08-20",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-20",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/amazon-warriors-beat-saint-lucia-kings-seven-wickets-cpl-2026-featured.webp",
+  "image_alt": "Guyana Amazon Warriors play Saint Lucia Kings in Gros Islet",
+  "summary_heading": "Warriors quicks restrict the Kings before a controlled chase",
+  "key_points": [
+    "Guyana Amazon Warriors won by seven wickets with 11 balls remaining.",
+    "Dwaine Pretorius took 3 for 29 and Shamar Joseph claimed 2 for 25.",
+    "Mavendra Dindyal scored 50 in his second CPL innings."
+  ],
+  "scorecard": {
+    "result": "Guyana Amazon Warriors won by 7 wickets with 11 balls remaining",
+    "teams": [
+      {
+        "name": "Saint Lucia Kings",
+        "score": "151/7",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Guyana Amazon Warriors",
+        "score": "157/3",
+        "overs": "18.1 overs"
+      }
+    ],
+    "highlights": [
+      "Mavendra Dindyal 50",
+      "Glenn Phillips 36",
+      "Charith Asalanka 35",
+      "Dwaine Pretorius 3/29",
+      "Shamar Joseph 2/25"
+    ]
+  },
+  "player_slugs": [
+    "dwaine-pretorius",
+    "shamar-joseph",
+    "shimron-hetmyer",
+    "glenn-phillips"
+  ],
+  "players_heading": "Key players from Guyana's second win",
+  "sections": [
+    {
+      "heading": "Warriors quicks hold the Kings to 151",
+      "paragraphs": [
+        "Dwaine Pretorius used changes of pace to take 3 for 29, while Shamar Joseph collected 2 for 25. Charith Asalanka's 35 was the strongest contribution in Saint Lucia's 151 for 7.",
+        "See the <a href=\"/match/saint-lucia-kings-vs-guyana-amazon-warriors/\">Kings vs Warriors match centre</a> for fixture context."
+      ]
+    },
+    {
+      "heading": "Dindyal and Phillips set the chase",
+      "paragraphs": [
+        "Glenn Phillips and Mavendra Dindyal added 77 for the opening wicket. Dindyal followed his debut duck with a patient 50 as the required rate stayed manageable.",
+        "Follow the teams through the <a href=\"/team/guyana-amazon-warriors/\">Warriors guide</a> and <a href=\"/team/saint-lucia-kings/\">Kings guide</a>."
+      ]
+    },
+    {
+      "heading": "Hetmyer and Sampson finish strongly",
+      "paragraphs": [
+        "Maheesh Theekshana removed Dindyal and Shai Hope to give the Kings a narrow opening. Tight overs briefly pushed the chase deeper than expected after Guyana's strong opening stand.",
+        "Quentin Sampson answered with two sixes before Shimron Hetmyer hit four consecutive boundaries. Guyana completed the chase in 18.1 overs with 11 balls still available.",
+        "The unbeaten start is recorded on the <a href=\"/points-table/\">CPL 2026 points table</a>. The result also gave Guyana a valuable net run-rate lift before the tournament moved to its next host territory."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/saint-lucia-kings-vs-guyana-amazon-warriors/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-20"
+}

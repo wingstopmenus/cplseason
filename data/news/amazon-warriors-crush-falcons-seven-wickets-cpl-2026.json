@@ -1,0 +1,91 @@
+{
+  "slug": "amazon-warriors-crush-falcons-seven-wickets-cpl-2026",
+  "category": "Match Report",
+  "title": "Hetmyer and Hope Power Unbeaten Warriors Past Falcons",
+  "short_title": "Warriors overwhelm Falcons in rapid chase",
+  "description": "Guyana Amazon Warriors dismissed Antigua and Barbuda Falcons for 116 before racing to a seven-wicket victory in 9.5 overs.",
+  "dek": "Shamar Joseph led the bowling display before Shimron Hetmyer and Shai Hope added 99 from 42 balls.",
+  "date_published": "2026-08-24",
+  "published_at": "2026-08-24T04:46:23",
+  "date_modified": "2026-08-24",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-24",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/amazon-warriors-crush-falcons-seven-wickets-cpl-2026-featured.webp",
+  "image_alt": "Guyana Amazon Warriors face Antigua and Barbuda Falcons at North Sound",
+  "summary_heading": "Warriors squeeze the Falcons before a 61-ball chase",
+  "key_points": [
+    "Warriors bowled the Falcons out for 116 in 17 overs.",
+    "Shamar Joseph took 3 for 22.",
+    "Shimron Hetmyer made 49 from 19 balls and Shai Hope finished unbeaten on 47."
+  ],
+  "scorecard": {
+    "result": "Guyana Amazon Warriors won by 7 wickets with 61 balls remaining",
+    "teams": [
+      {
+        "name": "Antigua and Barbuda Falcons",
+        "score": "116",
+        "overs": "17 overs"
+      },
+      {
+        "name": "Guyana Amazon Warriors",
+        "score": "121/3",
+        "overs": "9.5 overs"
+      }
+    ],
+    "highlights": [
+      "Amir Jangoo 37",
+      "Shamar Joseph 3/22",
+      "Imran Tahir 2/25",
+      "Khary Pierre 2/19",
+      "Shimron Hetmyer 49 (19)",
+      "Shai Hope 47*"
+    ]
+  },
+  "player_slugs": [
+    "shamar-joseph",
+    "khary-pierre",
+    "shimron-hetmyer",
+    "shai-hope"
+  ],
+  "players_heading": "Key players from the Warriors' third straight win",
+  "sections": [
+    {
+      "heading": "Warriors dismantle the Falcons innings",
+      "paragraphs": [
+        "Khary Pierre removed both openers before the Warriors squeezed the middle overs. Shamar Joseph then attacked the lower order to finish with 3 for 22 as Antigua were dismissed for 116.",
+        "See the <a href=\"/match/antigua-barbuda-falcons-vs-guyana-amazon-warriors/\">Falcons vs Warriors match centre</a>."
+      ]
+    },
+    {
+      "heading": "Hope and Hetmyer erase an early wobble",
+      "paragraphs": [
+        "The chase reached 16 for 2 before Shai Hope and Shimron Hetmyer added 99 from 42 balls. Hetmyer struck six sixes in a 19-ball 49 and Hope remained unbeaten on 47.",
+        "Follow the <a href=\"/team/guyana-amazon-warriors/\">Warriors team guide</a> and <a href=\"/team/antigua-barbuda-falcons/\">Falcons team guide</a>."
+      ]
+    },
+    {
+      "heading": "Warriors preserve their perfect start",
+      "paragraphs": [
+        "Hetmyer was caught with only two runs required, one short of a half-century. Quentin Sampson immediately ended the match by sending his first delivery over the straight boundary for six.",
+        "Guyana reached 121 for 3 in 9.5 overs, leaving 61 balls unused. The emphatic chase made it three victories from three matches for the Warriors.",
+        "The table impact is available on the <a href=\"/points-table/\">CPL 2026 points table</a>. Guyana left Antigua with maximum points from its opening three fixtures and a sharply improved net run rate."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/antigua-barbuda-falcons-vs-guyana-amazon-warriors/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-24"
+}

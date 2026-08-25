@@ -1,0 +1,89 @@
+{
+  "slug": "forde-pooran-lead-kings-past-kingsmen-cpl-2026",
+  "category": "Match Report",
+  "title": "Forde Five-For and Pooran 81 Lift Kings Past Kingsmen",
+  "short_title": "Forde and Pooran lead Kings to victory",
+  "description": "Matthew Forde took 5 for 23 and Kamil Pooran made an unbeaten 81 as Saint Lucia Kings beat Jamaica Kingsmen by six wickets.",
+  "dek": "The Kings chased 170 with ten balls remaining to close their Saint Lucia home leg with a win.",
+  "date_published": "2026-08-22",
+  "published_at": "2026-08-22T04:30:00",
+  "date_modified": "2026-08-22",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-22",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/forde-pooran-lead-kings-past-kingsmen-cpl-2026-featured.webp",
+  "image_alt": "Matthew Forde celebrates a wicket for Saint Lucia Kings",
+  "summary_heading": "Forde wrecks the top order before Pooran controls the chase",
+  "key_points": [
+    "Saint Lucia Kings won by six wickets with ten balls remaining.",
+    "Matthew Forde collected 5 for 23.",
+    "Kamil Pooran finished unbeaten on 81 from 49 balls."
+  ],
+  "scorecard": {
+    "result": "Saint Lucia Kings won by 6 wickets with 10 balls remaining",
+    "teams": [
+      {
+        "name": "Jamaica Kingsmen",
+        "score": "169/9",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Saint Lucia Kings",
+        "score": "171/4",
+        "overs": "18.2 overs"
+      }
+    ],
+    "highlights": [
+      "Kamil Pooran 81*",
+      "Obus Pienaar 34*",
+      "Keacy Carty 50",
+      "Matthew Forde 5/23"
+    ]
+  },
+  "player_slugs": [
+    "matthew-forde",
+    "kamil-pooran",
+    "keacy-carty",
+    "roston-chase"
+  ],
+  "players_heading": "Key players from the Kings' home-leg finale",
+  "sections": [
+    {
+      "heading": "Forde removes four in the PowerPlay",
+      "paragraphs": [
+        "Matthew Forde dismantled Jamaica's top order and took four wickets inside the PowerPlay. Keacy Carty's 50 and late hitting from Andre Russell and Odean Smith helped the Kingsmen reach 169 for 9.",
+        "Full details are in the <a href=\"/match/saint-lucia-kings-vs-jamaica-kingsmen/\">Kings vs Kingsmen match centre</a>."
+      ]
+    },
+    {
+      "heading": "Pooran anchors the reply",
+      "paragraphs": [
+        "Saint Lucia used a measured PowerPlay before Kamil Pooran increased the tempo. His unbeaten 81 from 49 balls kept the chase under control despite two wickets from Vitel Lawes.",
+        "Visit the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings page</a> and <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen page</a> for squad context."
+      ]
+    },
+    {
+      "heading": "Pienaar helps complete the chase",
+      "paragraphs": [
+        "Obus Pienaar joined Pooran after the Kings had lost two wickets in quick succession. His unbeaten 34 from 14 balls ensured the required rate never became a late obstacle.",
+        "Pooran struck a six in the penultimate over before five wides ended the contest. Saint Lucia reached 171 for 4 in 18.2 overs to close their home leg strongly.",
+        "The victory's effect appears on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/saint-lucia-kings-vs-jamaica-kingsmen/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-22"
+}

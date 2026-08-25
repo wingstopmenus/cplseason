@@ -1,0 +1,61 @@
+{
+  "slug": "guyana-warriors-september-6-start-times-changed",
+  "category": "Fixtures",
+  "title": "CPL Changes Start Times for Two Warriors Matches on 6 September",
+  "short_title": "Two Warriors fixture times changed",
+  "description": "The CPL and WCPL have changed the start times of two Guyana Amazon Warriors fixtures scheduled for Sunday, 6 September 2026.",
+  "dek": "The WCPL match at Kensington Oval moves to 10am, while the men's CPL match in Guyana moves to 3pm local time.",
+  "date_published": "2026-08-16",
+  "published_at": "2026-08-16T18:45:00",
+  "date_modified": "2026-08-16",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-16",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/guyana-warriors-september-6-start-times-changed-featured.webp",
+  "image_alt": "CPL fixture update for Guyana Amazon Warriors matches on 6 September",
+  "summary_heading": "Morning and afternoon slots revised for two Warriors fixtures",
+  "key_points": [
+    "Guyana Amazon Warriors vs Jamaica Empress now starts at 10am at Kensington Oval.",
+    "Guyana Amazon Warriors vs St Kitts and Nevis Patriots now starts at 3pm at Guyana National Stadium.",
+    "Barbados Tridents vs Saint Lucia Kings remains at 7pm."
+  ],
+  "sections": [
+    {
+      "heading": "WCPL fixture moves to 10am",
+      "paragraphs": [
+        "The Limacol WCPL match between Guyana Amazon Warriors and Jamaica Empress at Kensington Oval has moved from 2pm to 10am local time on Sunday, 6 September.",
+        "The wider women's tournament context is available in the <a href=\"/news/wcpl-fixtures-confirmed-as-jamaica-empress-joins-reimagined-womens-cricket-festival/\">WCPL 2026 fixtures announcement</a>."
+      ]
+    },
+    {
+      "heading": "Men's Warriors match moves to 3pm",
+      "paragraphs": [
+        "The men's CPL fixture between Guyana Amazon Warriors and St Kitts and Nevis Patriots at Guyana National Stadium has moved from 10am to 3pm local time.",
+        "Supporters should use the updated <a href=\"/schedule/\">CPL 2026 schedule</a> and <a href=\"/team/guyana-amazon-warriors/\">Warriors team page</a> when planning the day."
+      ]
+    },
+    {
+      "heading": "Evening match remains unchanged",
+      "paragraphs": [
+        "Barbados Tridents against Saint Lucia Kings at Kensington Oval remains scheduled for 7pm on the same date. No change was announced for that fixture.",
+        "The revised sequence places the WCPL game first in Barbados, the men's Warriors fixture in Guyana during the afternoon and the Tridents-Kings contest in the evening. All announced times are local to the venue.",
+        "Ground information is available in the <a href=\"/venues/\">CPL venue guide</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    },
+    {
+      "href": "/team/guyana-amazon-warriors/",
+      "label": "Warriors"
+    },
+    {
+      "href": "/venues/",
+      "label": "Venues"
+    }
+  ],
+  "last_updated": "2026-08-16"
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "shadab-leads-falcons-past-knight-riders-cpl-2026",
+  "category": "Match Report",
+  "title": "Shadab's 20-Ball Fifty Sends Falcons Past Knight Riders",
+  "short_title": "Shadab powers Falcons to stunning win",
+  "description": "Shadab Khan made an unbeaten 52 from 20 balls as Antigua and Barbuda Falcons chased 166 against Trinbago Knight Riders.",
+  "dek": "A 76-run unbroken stand with Kusal Perera carried the Falcons home with nine balls remaining.",
+  "date_published": "2026-08-23",
+  "published_at": "2026-08-23T03:31:00",
+  "date_modified": "2026-08-23",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-23",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/shadab-leads-falcons-past-knight-riders-cpl-2026-featured.webp",
+  "image_alt": "Shadab Khan bats for Antigua and Barbuda Falcons",
+  "summary_heading": "Shadab changes the game with bat and ball",
+  "key_points": [
+    "Falcons won by five wickets with nine balls remaining.",
+    "Shadab Khan made 52 not out from 20 balls and conceded eight runs in four overs.",
+    "Kusal Perera finished unbeaten on 34."
+  ],
+  "scorecard": {
+    "result": "Antigua and Barbuda Falcons won by 5 wickets with 9 balls remaining",
+    "teams": [
+      {
+        "name": "Trinbago Knight Riders",
+        "score": "165/6",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Antigua and Barbuda Falcons",
+        "score": "168/5",
+        "overs": "18.3 overs"
+      }
+    ],
+    "highlights": [
+      "Shadab Khan 52* (20) and 1/8",
+      "Kusal Perera 34*",
+      "Colin Munro 46",
+      "Nicholas Pooran 43",
+      "Joshua James 2/23"
+    ]
+  },
+  "player_slugs": [
+    "shadab-khan",
+    "kusal-perera",
+    "nicholas-pooran",
+    "colin-munro"
+  ],
+  "players_heading": "Key players from the Falcons' chase",
+  "sections": [
+    {
+      "heading": "Falcons slow TKR after a rapid start",
+      "paragraphs": [
+        "Colin Munro and Nicholas Pooran drove TKR to 73 for 1 in the PowerPlay, but the Falcons recovered through spin and regular wickets. The visitors closed on 165 for 6.",
+        "Match context is available in the <a href=\"/match/antigua-barbuda-falcons-vs-trinbago-knight-riders/\">Falcons vs Knight Riders match centre</a>."
+      ]
+    },
+    {
+      "heading": "Shadab and Perera rescue the chase",
+      "paragraphs": [
+        "Antigua slipped to 92 for 5 before Shadab Khan joined Kusal Perera. Their unbroken partnership added 76 from 33 balls and changed the pressure of the chase.",
+        "See the <a href=\"/team/antigua-barbuda-falcons/\">Falcons guide</a> and <a href=\"/team/trinbago-knight-riders/\">Knight Riders guide</a>."
+      ]
+    },
+    {
+      "heading": "Five sixes finish the contest",
+      "paragraphs": [
+        "The match swung in the 18th over when Shadab struck three sixes and the Knight Riders conceded 27 runs. That reduced the equation from 37 off 18 balls to 11 off the final two overs.",
+        "Shadab struck two more sixes to complete an unbeaten 52 from 20 balls. The Falcons won with nine deliveries unused after appearing out of the contest at 92 for 5.",
+        "The result is reflected on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/antigua-barbuda-falcons-vs-trinbago-knight-riders/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-23"
+}

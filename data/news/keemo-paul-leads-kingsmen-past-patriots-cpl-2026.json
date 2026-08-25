@@ -1,0 +1,89 @@
+{
+  "slug": "keemo-paul-leads-kingsmen-past-patriots-cpl-2026",
+  "category": "Match Report",
+  "title": "Keemo Paul Inspires Kingsmen to 51-Run Win",
+  "short_title": "Paul stars in Kingsmen's second straight win",
+  "description": "Keemo Paul made 65 and took three wickets as Jamaica Kingsmen defeated St Kitts and Nevis Patriots by 51 runs.",
+  "dek": "Jamaica recovered from 0 for 2 to score 181 for 6 before dismissing the Patriots for 130 at Sabina Park.",
+  "date_published": "2026-08-19",
+  "published_at": "2026-08-19T04:45:00",
+  "date_modified": "2026-08-19",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-19",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/keemo-paul-leads-kingsmen-past-patriots-cpl-2026-featured.webp",
+  "image_alt": "Keemo Paul represents Jamaica Kingsmen at Sabina Park",
+  "summary_heading": "Paul leads a recovery and then finishes the defence",
+  "key_points": [
+    "Jamaica Kingsmen won by 51 runs at Sabina Park.",
+    "Keemo Paul hit 65 from 36 balls and took 3 for 30.",
+    "The Patriots were bowled out for 130 in 18 overs."
+  ],
+  "scorecard": {
+    "result": "Jamaica Kingsmen won by 51 runs",
+    "teams": [
+      {
+        "name": "Jamaica Kingsmen",
+        "score": "181/6",
+        "overs": "20 overs"
+      },
+      {
+        "name": "St Kitts and Nevis Patriots",
+        "score": "130",
+        "overs": "18 overs"
+      }
+    ],
+    "highlights": [
+      "Keemo Paul 65 and 3/30",
+      "Rovman Powell 49",
+      "Kevin Wickham 37",
+      "Andre Russell 2/19"
+    ]
+  },
+  "player_slugs": [
+    "keemo-paul",
+    "rovman-powell",
+    "andre-russell",
+    "wanindu-hasaranga"
+  ],
+  "players_heading": "Key performers from Jamaica's home finale",
+  "sections": [
+    {
+      "heading": "Paul and Powell rebuild from 0 for 2",
+      "paragraphs": [
+        "Saurabh Netravalkar removed two batters in the opening over, but Keemo Paul and Rovman Powell responded with a 99-run fifth-wicket partnership. Paul accelerated to a career-best 65 from 36 balls.",
+        "The full game is available in the <a href=\"/match/jamaica-kingsmen-vs-st-kitts-nevis-patriots/\">Kingsmen vs Patriots match centre</a>."
+      ]
+    },
+    {
+      "heading": "Patriots lose wickets throughout the chase",
+      "paragraphs": [
+        "The visitors slipped to 31 for 3 and never established the partnership required to challenge 182. Kevin Wickham made 37, but the asking rate continued to climb.",
+        "Team information is available on the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen page</a> and <a href=\"/team/st-kitts-nevis-patriots/\">Patriots page</a>."
+      ]
+    },
+    {
+      "heading": "Paul completes the all-round display",
+      "paragraphs": [
+        "Andre Russell took 2 for 19 before Paul returned to the attack. Kevin Wickham's 37 offered the Patriots their clearest resistance, but wickets on either side left the chase without a finishing partnership.",
+        "Paul claimed the final two wickets to finish with 3 for 30. The Patriots were dismissed for 130 in 18 overs, completing a 51-run margin in Jamaica's final home match.",
+        "Jamaica's second consecutive win is reflected on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/jamaica-kingsmen-vs-st-kitts-nevis-patriots/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-19"
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "falcons-beat-patriots-three-wickets-cpl-2026",
+  "category": "Match Report",
+  "title": "Falcons Hold Their Nerve in Final-Over Patriots Chase",
+  "short_title": "Falcons edge Patriots in late thriller",
+  "description": "Antigua and Barbuda Falcons chased 188 to defeat St Kitts and Nevis Patriots by three wickets with three balls remaining.",
+  "dek": "Shadab Khan, Moeen Ali and Shamar Springer supplied the late acceleration after Dasun Shanaka's unbeaten 49.",
+  "date_published": "2026-08-21",
+  "published_at": "2026-08-21T04:30:00",
+  "date_modified": "2026-08-21",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-21",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/falcons-beat-patriots-three-wickets-cpl-2026-featured.webp",
+  "image_alt": "Antigua and Barbuda Falcons celebrate against St Kitts and Nevis Patriots",
+  "summary_heading": "Late hitting decides a close contest at North Sound",
+  "key_points": [
+    "Falcons reached 191 for 7 with three balls remaining.",
+    "Evin Lewis made 48 before Shadab Khan struck 30 from 12 balls.",
+    "Dasun Shanaka finished unbeaten on 49 from 17 balls for the Patriots."
+  ],
+  "scorecard": {
+    "result": "Antigua and Barbuda Falcons won by 3 wickets with 3 balls remaining",
+    "teams": [
+      {
+        "name": "St Kitts and Nevis Patriots",
+        "score": "187/6",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Antigua and Barbuda Falcons",
+        "score": "191/7",
+        "overs": "19.3 overs"
+      }
+    ],
+    "highlights": [
+      "Evin Lewis 48",
+      "Hasan Nawaz 33",
+      "Shadab Khan 30 (12)",
+      "Dasun Shanaka 49* (17)",
+      "Jason Holder 2/39"
+    ]
+  },
+  "player_slugs": [
+    "shadab-khan",
+    "moeen-ali",
+    "evin-lewis",
+    "jason-holder"
+  ],
+  "players_heading": "Key players from the final-over finish",
+  "sections": [
+    {
+      "heading": "Shanaka transforms the Patriots total",
+      "paragraphs": [
+        "The Patriots moved cautiously through the middle overs before Dasun Shanaka struck an unbeaten 49 from 17 balls. His late assault lifted the visitors to 187 for 6.",
+        "The fixture is detailed in the <a href=\"/match/antigua-barbuda-falcons-vs-st-kitts-nevis-patriots/\">Falcons vs Patriots match centre</a>."
+      ]
+    },
+    {
+      "heading": "Lewis and Nawaz keep the chase alive",
+      "paragraphs": [
+        "Evin Lewis made 48 and added 78 with Hasan Nawaz. Their partnership kept Antigua close enough for the lower order to attack the final six overs.",
+        "See the <a href=\"/team/antigua-barbuda-falcons/\">Falcons team guide</a> and <a href=\"/team/st-kitts-nevis-patriots/\">Patriots team guide</a>."
+      ]
+    },
+    {
+      "heading": "Ali delivers the final blow",
+      "paragraphs": [
+        "Shadab Khan hit 30 from 12 balls before Wanindu Hasaranga ended the burst with a running catch. Shamar Springer then added 15 from six deliveries to leave seven required from the final over.",
+        "Moeen Ali supplied the finish, steering a four over short third and then clearing the boundary. He ended unbeaten on 25 as the Falcons won with three balls remaining.",
+        "The result can be followed on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/antigua-barbuda-falcons-vs-st-kitts-nevis-patriots/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-21"
+}
