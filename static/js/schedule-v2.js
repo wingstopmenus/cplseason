@@ -193,7 +193,7 @@
   const teamSlugs = new Map([
     ["Jamaica Kingsmen", "jamaica-kingsmen"],
     ["Antigua & Barbuda Falcons", "antigua-barbuda-falcons"],
-    ["Barbados Tridents", "barbados-royals"],
+    ["Barbados Tridents", "barbados-tridents"],
     ["Guyana Amazon Warriors", "guyana-amazon-warriors"],
     ["Saint Lucia Kings", "saint-lucia-kings"],
     ["St Kitts & Nevis Patriots", "st-kitts-nevis-patriots"],

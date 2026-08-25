@@ -17,7 +17,7 @@ from generate_sitemap import BASE_URL, page_metadata, should_include
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_TEAM_COUNTS = {
     "antigua-barbuda-falcons": 18,
-    "barbados-royals": 17,
+    "barbados-tridents": 17,
     "guyana-amazon-warriors": 17,
     "jamaica-kingsmen": 20,
     "st-kitts-nevis-patriots": 17,

@@ -14,7 +14,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoes
 ROOT = Path(__file__).resolve().parent
 TEAM_ORDER = [
     "antigua-barbuda-falcons",
-    "barbados-royals",
+    "barbados-tridents",
     "guyana-amazon-warriors",
     "jamaica-kingsmen",
     "st-kitts-nevis-patriots",
@@ -28,7 +28,7 @@ CATEGORY_ORDER = [
 ]
 SHORT_NAMES = {
     "antigua-barbuda-falcons": "Falcons",
-    "barbados-royals": "Tridents",
+    "barbados-tridents": "Tridents",
     "guyana-amazon-warriors": "Warriors",
     "jamaica-kingsmen": "Kingsmen",
     "st-kitts-nevis-patriots": "Patriots",
