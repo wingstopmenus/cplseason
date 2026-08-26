@@ -3086,6 +3086,15 @@ def sync_shared_footer() -> None:
         '?client=ca-pub-0093554134829472" '
         'crossorigin="anonymous"></script>'
     )
+    google_tag = """  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-86VXN7CG6J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-86VXN7CG6J');
+  </script>"""
     synchronized = 0
 
     for html_path in sorted(ROOT.rglob("*.html")):
@@ -3133,6 +3142,14 @@ def sync_shared_footer() -> None:
         updated = adsense_script_pattern.sub("", updated)
         if "</head>" not in updated:
             raise ValueError(f"Expected </head> in {html_path.relative_to(ROOT)}")
+        if "G-86VXN7CG6J" not in updated:
+            updated = updated.replace("</head>", f"{google_tag}\n</head>", 1)
+        if updated.count(
+            "googletagmanager.com/gtag/js?id=G-86VXN7CG6J"
+        ) != 1 or updated.count("gtag('config', 'G-86VXN7CG6J')") != 1:
+            raise ValueError(
+                f"Expected one Google tag in {html_path.relative_to(ROOT)}"
+            )
         updated = updated.replace("</head>", f"{adsense_script}\n</head>", 1)
         if updated.count("ca-pub-0093554134829472") != 1:
             raise ValueError(
