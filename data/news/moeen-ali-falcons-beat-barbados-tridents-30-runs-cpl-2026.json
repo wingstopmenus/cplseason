@@ -1,0 +1,90 @@
+{
+  "slug": "moeen-ali-falcons-beat-barbados-tridents-30-runs-cpl-2026",
+  "category": "Match Report",
+  "title": "Moeen Ali and Falcons Bowlers Hand Tridents First CPL 2026 Defeat",
+  "short_title": "Moeen and Falcons bowlers topple Tridents",
+  "description": "Moeen Ali struck an unbeaten 56 before Antigua and Barbuda Falcons bowled Barbados Tridents out for 125 to seal a 30-run CPL 2026 win.",
+  "dek": "The Falcons captain transformed a difficult innings at North Sound before Joshua James led a collapse of seven wickets for 32 runs.",
+  "date_published": "2026-08-26",
+  "published_at": "2026-08-26T12:20:00",
+  "date_modified": "2026-08-26",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-26",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/moeen-ali-falcons-beat-barbados-tridents-30-runs-cpl-2026-featured.webp",
+  "image_alt": "Moeen Ali and Antigua and Barbuda Falcons players celebrate their victory over Barbados Tridents",
+  "summary_heading": "Moeen changes the innings before the Falcons attack closes the door",
+  "key_points": [
+    "Antigua and Barbuda Falcons made 155 for 5 after losing Rahkeem Cornwall to the first ball.",
+    "Moeen Ali finished unbeaten on 56 from 37 balls and hit four sixes.",
+    "Barbados Tridents lost their last seven wickets for 32 runs and were dismissed for 125."
+  ],
+  "scorecard": {
+    "result": "Antigua and Barbuda Falcons won by 30 runs",
+    "teams": [
+      {
+        "name": "Antigua and Barbuda Falcons",
+        "score": "155/5",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Barbados Tridents",
+        "score": "125",
+        "overs": "18 overs"
+      }
+    ],
+    "highlights": [
+      "Moeen Ali 56* (37)",
+      "Shamar Springer 19* (16)",
+      "Mujeeb Ur Rahman 2/32",
+      "Rivaldo Clarke 27",
+      "Joshua James 3/18",
+      "Alzarri Joseph 2/12"
+    ]
+  },
+  "player_slugs": [
+    "moeen-ali",
+    "joshua-james",
+    "shadab-khan",
+    "alzarri-joseph"
+  ],
+  "players_heading": "Key players from the Falcons' 30-run victory",
+  "sections": [
+    {
+      "heading": "Moeen rebuilds after a first-ball setback",
+      "paragraphs": [
+        "Barbados chose to bowl and Daniel Sams immediately justified the decision by yorking Rahkeem Cornwall with the first delivery. Amir Jangoo and Karima Gore made useful starts, but the Falcons were still searching for momentum when Moeen Ali took control of the closing overs.",
+        "Moeen finished unbeaten on 56 from 37 balls, while Shamar Springer supported him with 19 not out. Their late acceleration carried Antigua and Barbuda to 155 for 5. Follow both sides through the <a href=\"/match/antigua-barbuda-falcons-vs-barbados-tridents/\">Falcons vs Tridents match centre</a>."
+      ]
+    },
+    {
+      "heading": "Tridents collapse from a competitive position",
+      "paragraphs": [
+        "Barbados reached 93 for 3 in pursuit of 156 and still had a workable chase. The match turned sharply when four wickets fell across two overs, exposing the lower order and removing the platform the Tridents had built.",
+        "Joshua James finished with 3 for 18, while Alzarri Joseph, Shadab Khan and Sufyan Moqim shared six wickets. Barbados lost their final seven wickets for 32 runs and were dismissed for 125 in 18 overs. The result can be tracked on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Falcons rebound as Barbados lose their unbeaten record",
+      "paragraphs": [
+        "The 30-run victory restored the Falcons after their heavy defeat to Guyana and ended the Tridents' unbeaten start to the competition. It also underlined the balance in Antigua's attack, with pace and spin both contributing once the chase began to unravel.",
+        "Read the <a href=\"/team/antigua-barbuda-falcons/\">Antigua and Barbuda Falcons team guide</a> or check the <a href=\"/schedule/\">complete CPL 2026 schedule</a> for the next fixtures."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/antigua-barbuda-falcons-vs-barbados-tridents/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/schedule/",
+      "label": "Schedule"
+    }
+  ],
+  "last_updated": "2026-08-26"
+}

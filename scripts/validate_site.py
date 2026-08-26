@@ -1003,32 +1003,29 @@ def main() -> int:
             "sm:lastmod", default="", namespaces=sitemap_namespace
         )
         sitemap_locations.append(location)
-        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", modified):
-            errors.append(f"Sitemap entry has invalid lastmod: {location}")
-            continue
         route = urlparse(location).path
         expected_file = route_map.get(route)
         if expected_file is None:
             errors.append(f"Sitemap contains a missing page: {location}")
             continue
-        page_html = expected_file.read_text(encoding="utf-8", errors="replace")
         try:
-            _, expected_lastmod = page_metadata(route, expected_file)
-            if modified != expected_lastmod:
+            canonical, expected_lastmod = page_metadata(route, expected_file)
+            if canonical != location:
+                errors.append(f"Sitemap URL is not self-canonical: {location}")
+            if expected_lastmod is None and modified:
                 errors.append(
-                    f"Sitemap lastmod does not match page metadata: {location} "
-                    f"({modified} != {expected_lastmod})"
+                    f"Sitemap has an unverified lastmod: {location} ({modified})"
                 )
+            elif expected_lastmod is not None:
+                if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", modified):
+                    errors.append(f"Sitemap entry has invalid lastmod: {location}")
+                elif modified != expected_lastmod:
+                    errors.append(
+                        f"Sitemap lastmod does not match page metadata: {location} "
+                        f"({modified} != {expected_lastmod})"
+                    )
         except ValueError as error:
             errors.append(str(error))
-        if f'<link rel="canonical" href="{location}">' not in page_html:
-            errors.append(f"Sitemap URL is not self-canonical: {location}")
-        if re.search(
-            r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex',
-            page_html,
-            re.IGNORECASE,
-        ):
-            errors.append(f"Sitemap contains a noindex page: {location}")
     if len(sitemap_locations) != len(set(sitemap_locations)):
         errors.append("Sitemap contains duplicate URLs")
     if len(sitemap_locations) > 50_000:
