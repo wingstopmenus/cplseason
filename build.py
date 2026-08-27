@@ -3150,7 +3150,11 @@ def sync_shared_footer() -> None:
             raise ValueError(
                 f"Expected one Google tag in {html_path.relative_to(ROOT)}"
             )
-        updated = updated.replace("</head>", f"{adsense_script}\n</head>", 1)
+        updated = updated.replace(
+            "  <!-- Google tag (gtag.js) -->",
+            f"{adsense_script}\n  <!-- Google tag (gtag.js) -->",
+            1,
+        )
         if updated.count("ca-pub-0093554134829472") != 1:
             raise ValueError(
                 f"Expected one AdSense script in {html_path.relative_to(ROOT)}"

@@ -1,0 +1,68 @@
+{
+  "slug": "tim-seifert-century-kings-beat-knight-riders-cpl-2026",
+  "category": "Match Report",
+  "title": "Tim Seifert Century Sends Saint Lucia Kings Past Knight Riders",
+  "short_title": "Seifert hundred puts Kings on top",
+  "description": "Tim Seifert hit an unbeaten 105 as Saint Lucia Kings posted 211 for 4 and defeated Trinbago Knight Riders by 36 runs in CPL 2026.",
+  "dek": "Roston Chase's three wickets in four balls broke the chase before Matthew Forde removed Kieron Pollard.",
+  "date_published": "2026-08-27",
+  "published_at": "2026-08-27T08:15:00",
+  "date_modified": "2026-08-27",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-27",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/tim-seifert-century-kings-beat-knight-riders-cpl-2026-featured.webp",
+  "image_alt": "Tim Seifert celebrates his CPL 2026 century for Saint Lucia Kings",
+  "summary_heading": "Seifert owns the night before Chase breaks the chase",
+  "key_points": [
+    "Tim Seifert made 105 not out from 61 balls, the first century of CPL 2026.",
+    "Saint Lucia Kings set a tournament-high 211 for 4.",
+    "Roston Chase took 3 for 24 as Trinbago Knight Riders finished on 175 for 6."
+  ],
+  "scorecard": {
+    "result": "Saint Lucia Kings won by 36 runs",
+    "teams": [
+      {"name": "Saint Lucia Kings", "score": "211/4", "overs": "20 overs"},
+      {"name": "Trinbago Knight Riders", "score": "175/6", "overs": "20 overs"}
+    ],
+    "highlights": [
+      "Tim Seifert 105* (61)",
+      "Charith Asalanka 33 (21)",
+      "Kieron Pollard 1/24",
+      "Kieron Pollard 65",
+      "Colin Munro 48",
+      "Roston Chase 3/24"
+    ]
+  },
+  "player_slugs": ["tim-seifert", "roston-chase", "kieron-pollard", "colin-munro"],
+  "players_heading": "Key players from the Kings' 36-run win",
+  "sections": [
+    {
+      "heading": "Seifert carries the Kings beyond 200",
+      "paragraphs": [
+        "Saint Lucia were asked to bat and immediately imposed themselves through Tim Seifert and Kamil Pooran. They reached 64 for 1 in the powerplay, building the platform without relying on sixes during the first six overs.",
+        "Seifert batted through the innings for 105 not out from 61 balls. Partnerships with John Campbell and Charith Asalanka kept the run rate moving, and the Kings closed on 211 for 4. Follow the contest through the <a href=\"/match/trinbago-knight-riders-vs-saint-lucia-kings/\">Knight Riders vs Kings match centre</a>."
+      ]
+    },
+    {
+      "heading": "Chase turns the reply in four deliveries",
+      "paragraphs": [
+        "Colin Munro and Sunil Narine gave Trinbago a 56-run powerplay, but Roston Chase changed the match in the eighth over. Narine, Matthew Breetzke and Nicholas Pooran all fell in a four-ball sequence.",
+        "Munro made 48 before Joshua Bishop removed him. Kieron Pollard then kept the chase alive with 65, only for Matthew Forde to take the decisive return catch as the target moved out of reach. The result is reflected in the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Back-to-back wins lift Saint Lucia",
+      "paragraphs": [
+        "The Knight Riders finished on 175 for 6, leaving the Kings with a 36-run victory and consecutive wins. Seifert's hundred was the first of the 2026 tournament and his second CPL century for Saint Lucia.",
+        "See the <a href=\"/team/saint-lucia-kings/\">Saint Lucia Kings team guide</a> and the <a href=\"/schedule/\">full CPL schedule</a> for their remaining league fixtures."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/trinbago-knight-riders-vs-saint-lucia-kings/", "label": "Match centre"},
+    {"href": "/points-table/", "label": "Points table"},
+    {"href": "/schedule/", "label": "Schedule"}
+  ],
+  "last_updated": "2026-08-27"
+}
