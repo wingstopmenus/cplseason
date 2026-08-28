@@ -1,0 +1,68 @@
+{
+  "slug": "saim-ayub-century-kingsmen-beat-patriots-cpl-2026",
+  "category": "Match Report",
+  "title": "Saim Ayub Century Carries Jamaica Kingsmen Past Patriots",
+  "short_title": "Ayub stars as Kingsmen beat Patriots",
+  "description": "Saim Ayub hit 102 from 58 balls as Jamaica Kingsmen defended 182 for 7 to beat St Kitts and Nevis Patriots by 11 runs in CPL 2026.",
+  "dek": "Ayub rebuilt after two early wickets, then contributed with the ball as the Patriots finished on 171 for 6 at Warner Park.",
+  "date_published": "2026-08-28",
+  "published_at": "2026-08-28T07:20:00",
+  "date_modified": "2026-08-28",
+  "source_name": "CPL Newsroom",
+  "source_date": "2026-08-28",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/saim-ayub-century-kingsmen-beat-patriots-cpl-2026-featured.webp",
+  "image_alt": "Saim Ayub celebrates his century for Jamaica Kingsmen against St Kitts and Nevis Patriots",
+  "summary_heading": "Ayub rescues the Kingsmen before their attack holds firm",
+  "key_points": [
+    "Saim Ayub scored 102 from 58 balls, his maiden T20 century.",
+    "Jamaica recovered from 12 for 2 to post 182 for 7.",
+    "Andre Fletcher made 55, but the Patriots finished 11 runs short on 171 for 6."
+  ],
+  "scorecard": {
+    "result": "Jamaica Kingsmen won by 11 runs",
+    "teams": [
+      {"name": "Jamaica Kingsmen", "score": "182/7", "overs": "20 overs"},
+      {"name": "St Kitts and Nevis Patriots", "score": "171/6", "overs": "20 overs"}
+    ],
+    "highlights": [
+      "Saim Ayub 102 (58)",
+      "Wanindu Hasaranga 2/18",
+      "Andre Fletcher 55",
+      "Dasun Shanaka 35*",
+      "Hunain Shah 2/23",
+      "Jediah Blades 2 wickets"
+    ]
+  },
+  "player_slugs": ["saim-ayub", "hunain-shah", "andre-fletcher", "dasun-shanaka"],
+  "players_heading": "Key players from the Kingsmen's 11-run victory",
+  "sections": [
+    {
+      "heading": "Ayub rebuilds after Naseem's opening burst",
+      "paragraphs": [
+        "Naseem Shah struck twice in his first two overs and left Jamaica at 12 for 2. Saim Ayub entered at number three and rebuilt the innings while Wanindu Hasaranga kept applying pressure through the middle overs.",
+        "Ayub accelerated decisively after the Kingsmen had reached 91 after 13 overs. His 102 from 58 balls included six fours and eight sixes, lifting Jamaica to 182 for 7. Follow the contest through the <a href=\"/match/st-kitts-nevis-patriots-vs-jamaica-kingsmen/\">Patriots vs Kingsmen match centre</a>."
+      ]
+    },
+    {
+      "heading": "Fletcher leads the Patriots response",
+      "paragraphs": [
+        "The Patriots lost Kyle Mayers in the first over and slipped to 64 for 4 before Andre Fletcher and Jason Holder rebuilt the chase. Fletcher made 55 and kept the required rate within reach until Ayub removed him with a return catch.",
+        "Dasun Shanaka finished unbeaten on 35, but Hunain Shah and Jediah Blades took two wickets apiece as Jamaica protected the boundary late in the innings. The standings impact is available on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Kingsmen complete a season double",
+      "paragraphs": [
+        "St Kitts and Nevis closed on 171 for 6, giving Jamaica an 11-run victory and their third win of the tournament. It was the Kingsmen's second success against the Patriots after their 51-run win at Sabina Park.",
+        "See the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team guide</a> and the <a href=\"/schedule/\">complete CPL schedule</a> for their next fixtures."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/match/st-kitts-nevis-patriots-vs-jamaica-kingsmen/", "label": "Match centre"},
+    {"href": "/points-table/", "label": "Points table"},
+    {"href": "/schedule/", "label": "Schedule"}
+  ],
+  "last_updated": "2026-08-28"
+}
