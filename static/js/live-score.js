@@ -379,12 +379,14 @@
     };
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
-      const next = visibleBalls[index + 1];
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
-      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
-      const overComplete = overBalls.some((item) => Number(item.ball) === 6) || index > overBalls.length - 1;
+      const allOverBalls = balls.filter((item) => Number(item.over) === Number(ball.over));
+      const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
+      const laterOverExists = balls.some((item) => Number(item.over) > Number(ball.over));
+      const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
+        if (overComplete) appendOverSummary(overBalls);
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
           const note = document.createElement("p");
@@ -417,7 +419,6 @@
       detail.append(label, copy);
       item.append(delivery, detail);
       fragment.append(item);
-      if (endsOver && overComplete) appendOverSummary(overBalls);
     });
     commentaryFeed.replaceChildren(fragment);
     if (balls.length > commentaryVisibleCount) {
