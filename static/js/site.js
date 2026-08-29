@@ -911,7 +911,11 @@ if (liveMatchData) {
     if (lineups.length !== 2 || lineups.some((entry) => entry.players.length < 11)) {
       confirmedXi.replaceChildren();
       confirmedXi.hidden = true;
-      if (probableXi) probableXi.hidden = false;
+      confirmedXi.style.display = "none";
+      if (probableXi) {
+        probableXi.hidden = false;
+        probableXi.style.display = "";
+      }
       if (xiKicker) xiKicker.textContent = "05 / Probable XI";
       if (xiTitle) xiTitle.textContent = "Projected playing XIs";
       if (xiStatus) xiStatus.textContent = "These are projections, not confirmed lineups.";
@@ -949,7 +953,11 @@ if (liveMatchData) {
     });
     confirmedXi.replaceChildren(fragment);
     confirmedXi.hidden = false;
-    if (probableXi) probableXi.hidden = true;
+    confirmedXi.style.display = "";
+    if (probableXi) {
+      probableXi.hidden = true;
+      probableXi.style.display = "none";
+    }
     if (xiKicker) xiKicker.textContent = "05 / Confirmed XI";
     if (xiTitle) xiTitle.textContent = "Confirmed playing XIs";
     if (xiStatus) xiStatus.textContent = "Confirmed lineups after the toss.";
