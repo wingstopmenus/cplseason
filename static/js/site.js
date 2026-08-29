@@ -1286,13 +1286,57 @@ if (liveMatchData) {
       return;
     }
 
+    const inningsSummaryCard = (inningsNumber) => {
+      const innings = (match.scorecard || []).find((item) => Number(item.inningsNumber) === Number(inningsNumber))
+        || (match.innings || []).find((item) => Number(item.inningsNumber) === Number(inningsNumber));
+      if (!innings) return null;
+      const card = document.createElement("section");
+      card.className = "match-live-innings-summary";
+      const heading = document.createElement("header");
+      const label = document.createElement("small");
+      label.textContent = `Innings ${inningsNumber} complete`;
+      const title = document.createElement("strong");
+      const total = `${innings.runs ?? 0}/${innings.wickets ?? 0}${innings.overs === null || innings.overs === undefined ? "" : ` (${innings.overs} ov)`}`;
+      title.textContent = `${innings.battingTeamName || `Innings ${inningsNumber}`} · ${total}`;
+      heading.append(label, title);
+      const facts = document.createElement("div");
+      const topBatter = [...(innings.batting || [])].filter((player) => Number.isFinite(player.runs)).sort((a, b) => b.runs - a.runs)[0];
+      const bestBowler = [...(innings.bowling || [])].filter((player) => Number.isFinite(player.wickets)).sort((a, b) => b.wickets - a.wickets || a.runs - b.runs)[0];
+      const nextInnings = (match.innings || []).find((item) => Number(item.inningsNumber) === Number(inningsNumber) + 1);
+      const lines = [
+        topBatter ? `Top scorer: ${topBatter.name} ${topBatter.runs}${Number.isFinite(topBatter.balls) ? ` (${topBatter.balls})` : ""}` : "",
+        bestBowler ? `Best bowling: ${bestBowler.name} ${bestBowler.wickets}/${bestBowler.runs}` : "",
+        nextInnings && Number.isFinite(innings.runs) ? `Target: ${innings.runs + 1}` : "",
+      ].filter(Boolean);
+      lines.forEach((line) => {
+        const item = document.createElement("span");
+        item.textContent = line;
+        facts.append(item);
+      });
+      card.append(heading, facts);
+      return card;
+    };
+
     const groups = new Map();
     recent.forEach((ball) => {
       const over = Number.isFinite(ball.over) ? String(ball.over) : "Current over";
-      if (!groups.has(over)) groups.set(over, []);
-      groups.get(over).push(ball);
+      const inningsNumber = Number.isFinite(Number(ball.inningsNumber)) ? Number(ball.inningsNumber) : 0;
+      const key = `${inningsNumber}:${over}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(ball);
     });
-    [...groups.entries()].slice(0, 8).forEach(([over, balls]) => {
+    const groupedOvers = [...groups.entries()].slice(0, 8);
+    const insertedInnings = new Set();
+    groupedOvers.forEach(([key, balls], groupIndex) => {
+      const [inningsValue, over] = key.split(":");
+      const inningsNumber = Number(inningsValue);
+      const previousGroup = groupedOvers[groupIndex - 1]?.[1] || [];
+      const previousInnings = Number(previousGroup[0]?.inningsNumber);
+      if (groupIndex > 0 && inningsNumber !== previousInnings && !insertedInnings.has(inningsNumber)) {
+        const inningsCard = inningsSummaryCard(inningsNumber);
+        if (inningsCard) liveStream.append(inningsCard);
+        insertedInnings.add(inningsNumber);
+      }
       const section = document.createElement("section");
       section.className = "match-live-over";
       const header = document.createElement("header");
@@ -1323,6 +1367,11 @@ if (liveMatchData) {
       section.append(list);
       liveStream.append(section);
     });
+    const latestInningsNumber = Number(recent[0]?.inningsNumber);
+    if (latestInningsNumber > 1 && !groupedOvers.some(([, balls]) => Number(balls[0]?.inningsNumber) < latestInningsNumber)) {
+      const previousInningsCard = inningsSummaryCard(latestInningsNumber - 1);
+      if (previousInningsCard) liveStream.append(previousInningsCard);
+    }
     liveStream.hidden = false;
   };
 
@@ -1357,13 +1406,43 @@ if (liveMatchData) {
         if (field?.parentElement) field.parentElement.hidden = !isUpcoming;
       });
     }
+    const currentInnings = (match.innings || []).slice(-1)[0];
+    const currentBattingTeam = (match.teams || []).find((team) => String(team.id) === String(currentInnings?.battingTeamId));
+    const currentScoreLine = currentInnings
+      ? `${currentBattingTeam?.name || currentInnings.battingTeamName || "Current innings"} ${formatScore(currentInnings)}${currentInnings.overs === null || currentInnings.overs === undefined ? "" : ` (${currentInnings.overs} ov)`}`
+      : "Match in progress";
     if (heroCountdownLabel) {
       heroCountdownLabel.textContent = isComplete
         ? completedResult(match)
         : isLive
-          ? match.chaseEquation || (/^live$/i.test(String(matchPhase(match))) ? "Match in progress" : matchPhase(match))
+          ? match.chaseEquation || (/^(live|in progress|match in progress)$/i.test(String(matchPhase(match))) ? currentScoreLine : matchPhase(match))
           : "Match Starts in";
     }
+    const heroTeamLinks = [...(liveMatchHero?.querySelectorAll(".match-live-versus > a") || [])].slice(0, 2);
+    heroTeamLinks.forEach((link, index) => {
+      const team = match.teams?.[index];
+      const teamInnings = (match.innings || []).filter((entry) => String(entry.battingTeamId) === String(team?.id));
+      const latestInnings = teamInnings[teamInnings.length - 1];
+      let score = link.querySelector(".match-live-hero-score");
+      let overs = link.querySelector(".match-live-hero-overs");
+      if (!score) {
+        score = document.createElement("b");
+        score.className = "match-live-hero-score";
+        link.querySelector("span")?.append(score);
+      }
+      if (!overs) {
+        overs = document.createElement("em");
+        overs.className = "match-live-hero-overs";
+        link.querySelector("span")?.append(overs);
+      }
+      score.hidden = isUpcoming || !latestInnings;
+      overs.hidden = isUpcoming || !latestInnings;
+      if (latestInnings) {
+        score.textContent = formatScore(latestInnings);
+        overs.textContent = latestInnings.overs === null || latestInnings.overs === undefined ? "" : `${latestInnings.overs} overs`;
+      }
+      link.classList.toggle("is-batting", isLive && String(team?.id) === String(currentInnings?.battingTeamId));
+    });
     if (feedState) feedState.textContent = isComplete ? "Result confirmed" : isLive ? matchPhase(match) : "Scheduled";
     const summaryText = isComplete ? completedResult(match) : (match.chaseEquation || match.stateOfPlay || match.description || (isLive ? "Match in progress" : "Match scheduled"));
     summary.textContent = isComplete ? "Match result" : summaryText;
@@ -1388,7 +1467,6 @@ if (liveMatchData) {
     renderLiveStream(match, isComplete, isLive);
 
     if (currentStats.status) currentStats.status.textContent = status;
-    const currentInnings = (match.innings || []).slice(-1)[0];
     if (currentStats.score) {
       currentStats.score.textContent = currentInnings
         ? `${currentInnings.runs ?? 0}/${currentInnings.wickets ?? 0} (${currentInnings.overs ?? 0} ov)`

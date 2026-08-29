@@ -92,6 +92,22 @@
 .match-live-tbd-team small { color: var(--mp-gold); }
 .match-live-versus a strong,
 .match-live-tbd-team strong { color: #fff; font-size: 17px; }
+.match-live-hero-score {
+  display: block;
+  margin-top: 5px;
+  color: var(--mp-gold);
+  font-size: 22px;
+  line-height: 1;
+}
+.match-live-hero-overs {
+  display: block;
+  margin-top: 4px;
+  color: #aeb8cc;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 800;
+}
+.match-live-versus > a.is-batting { border-color: rgba(255, 204, 18, .48); background: rgba(255, 204, 18, .07); }
 .match-live-vs-node > span,
 .match-live-versus > .match-live-vs-node > span {
   width: 44px;
@@ -399,6 +415,11 @@
 .match-live-over article > strong { color: var(--mp-purple); font-size: 11px; }
 .match-live-over article p { color: var(--mp-ink); font-size: 12px; line-height: 1.55; }
 .match-live-over article > span { display: grid; place-items: center; min-height: 28px; border-radius: 50%; background: #fff8d8; color: #51430a; font-size: 10px; font-weight: 900; }
+.match-live-innings-summary { overflow: hidden; border: 1px solid rgba(116, 52, 191, .24); border-left: 4px solid var(--mp-gold); border-radius: 8px; background: #fffdf3; }
+.match-live-innings-summary header { display: grid; gap: 3px; padding: 14px 16px; }
+.match-live-innings-summary header small { color: var(--mp-purple); font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.match-live-innings-summary header strong { color: var(--mp-ink); font-size: 16px; }
+.match-live-innings-summary > div { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 11px 16px; border-top: 1px solid var(--mp-line); color: var(--mp-muted); font-size: 11px; font-weight: 700; }
 .match-live-stream-empty { padding: 20px; border: 1px solid var(--mp-line); border-radius: 7px; color: var(--mp-muted); text-align: center; }
 .match-live-verified { color: #7a8493; }
 .match-live-data-note { margin: 12px 16px 16px; color: var(--mp-muted); }
