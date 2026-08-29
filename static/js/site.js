@@ -814,6 +814,7 @@ if (liveMatchData) {
   const commentaryPreviewTeams = commentaryPanel?.querySelector("[data-commentary-preview-teams]");
   const commentaryToss = commentaryPanel?.querySelector("[data-commentary-toss]");
   const pageMatchPreview = document.querySelector("#match-preview");
+  const previewGlanceRows = [...(pageMatchPreview?.querySelectorAll(":scope > aside dl > div") || [])];
   const commentaryFilters = [...(commentaryPanel?.querySelectorAll("[data-commentary-filter]") || [])];
   const fullScorecard = document.querySelector("[data-full-scorecard]");
   const matchSwitches = [...document.querySelectorAll("[data-match-switch]")];
@@ -1452,6 +1453,15 @@ if (liveMatchData) {
     if (commentarySummary) commentarySummary.textContent = summaryText;
     if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "Follow the latest state of play." : "The toss and full commentary will appear as the match develops.");
     if (commentaryToss) commentaryToss.textContent = match.toss || "Awaiting confirmation";
+    previewGlanceRows.forEach((row) => {
+      const label = row.querySelector("dt")?.textContent.trim().toLowerCase();
+      const value = row.querySelector("dd");
+      if (!value) return;
+      if (label === "format") value.textContent = match.format || "Twenty20";
+      if (label === "maximum overs") value.textContent = match.maximumOvers ? `${match.maximumOvers} per side` : "20 per side";
+      if (label === "competition phase") value.textContent = match.stage || "League stage";
+      if (label === "toss") value.textContent = match.toss || (isUpcoming ? "To be confirmed" : "Awaiting match update");
+    });
     if (commentaryPreview) {
       let narrative = commentaryPreview.querySelector("[data-commentary-preview-narrative]");
       if (!narrative) {
