@@ -451,8 +451,13 @@
 .match-commentary-preview small { color: var(--mp-purple); }
 .match-commentary-preview > strong { display: block; margin: 6px 0; color: var(--mp-ink); font-size: 17px; }
 .match-commentary-preview > p,
-.match-commentary-preview [data-commentary-preview-teams] p { color: #4f5969; font-size: 12px; line-height: 1.65; }
+.match-commentary-preview [data-commentary-preview-narrative] p,
+.match-commentary-preview [data-commentary-preview-teams] p { margin: 0 0 14px; color: #26313d; font-size: 13px; line-height: 1.7; }
+.match-commentary-preview [data-commentary-preview-narrative] { margin-top: 18px; }
+.match-commentary-preview [data-commentary-preview-narrative] strong { color: var(--mp-ink); }
+.match-commentary-preview-link { display: inline-flex; margin-top: 2px; color: #087d68; font-weight: 850; text-decoration: none; }
 .match-commentary-preview [data-commentary-preview-teams] { display: grid; gap: 12px; margin-top: 18px; }
+.match-commentary-preview [data-commentary-preview-teams] h3 { padding: 10px 12px; background: #e5f1ed; color: #58646b; font-size: 14px; text-transform: uppercase; }
 .match-commentary-preview [data-commentary-preview-teams] strong { color: var(--mp-ink); }
 .match-commentary-balls { gap: 0; max-height: none; padding: 0; }
 .match-commentary-balls > span {

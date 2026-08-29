@@ -813,6 +813,7 @@ if (liveMatchData) {
   const commentaryPreview = commentaryPanel?.querySelector("[data-commentary-preview]");
   const commentaryPreviewTeams = commentaryPanel?.querySelector("[data-commentary-preview-teams]");
   const commentaryToss = commentaryPanel?.querySelector("[data-commentary-toss]");
+  const pageMatchPreview = document.querySelector("#match-preview");
   const commentaryFilters = [...(commentaryPanel?.querySelectorAll("[data-commentary-filter]") || [])];
   const fullScorecard = document.querySelector("[data-full-scorecard]");
   const matchSwitches = [...document.querySelectorAll("[data-match-switch]")];
@@ -1451,9 +1452,43 @@ if (liveMatchData) {
     if (commentarySummary) commentarySummary.textContent = summaryText;
     if (commentaryCopy) commentaryCopy.textContent = match.description || (isComplete ? "The result and every available delivery are shown here." : isLive ? "Follow the latest state of play." : "The toss and full commentary will appear as the match develops.");
     if (commentaryToss) commentaryToss.textContent = match.toss || "Awaiting confirmation";
+    if (commentaryPreview) {
+      let narrative = commentaryPreview.querySelector("[data-commentary-preview-narrative]");
+      if (!narrative) {
+        narrative = document.createElement("div");
+        narrative.dataset.commentaryPreviewNarrative = "";
+        commentaryPreview.insertBefore(narrative, commentaryPreviewTeams || null);
+      }
+      narrative.replaceChildren();
+      const sourceParagraphs = [...(pageMatchPreview?.querySelectorAll(":scope > div > p") || [])];
+      sourceParagraphs.forEach((source) => {
+        const paragraph = document.createElement("p");
+        paragraph.textContent = source.textContent.trim();
+        if (paragraph.textContent) narrative.append(paragraph);
+      });
+      if (match.toss) {
+        const tossUpdate = document.createElement("p");
+        const label = document.createElement("strong");
+        label.textContent = "Toss: ";
+        tossUpdate.append(label, document.createTextNode(match.toss));
+        narrative.append(tossUpdate);
+      }
+      const previewLink = pageMatchPreview?.querySelector(".match-live-preview-link");
+      if (previewLink) {
+        const link = previewLink.cloneNode(true);
+        link.classList.add("match-commentary-preview-link");
+        narrative.append(link);
+      }
+    }
     if (commentaryPreviewTeams) {
       commentaryPreviewTeams.replaceChildren();
-      (match.confirmedPlayingXi || []).forEach((lineup) => {
+      const lineups = match.confirmedPlayingXi || [];
+      if (lineups.length) {
+        const heading = document.createElement("h3");
+        heading.textContent = "Teams";
+        commentaryPreviewTeams.append(heading);
+      }
+      lineups.forEach((lineup) => {
         const row = document.createElement("p");
         const name = document.createElement("strong");
         name.textContent = `${lineup.teamName} (Playing XI): `;
