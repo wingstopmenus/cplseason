@@ -693,11 +693,9 @@ module.exports = async function cplLiveScore(request, response) {
     const requestedNumber = numeric(request.query?.match);
     const requestedHome = String(request.query?.home || "");
     const requestedAway = String(request.query?.away || "");
-    const requestedSource =
-      officialMatches.find((match) => hasMatchup(match, requestedHome, requestedAway)) ||
-      (Number.isFinite(requestedNumber)
-        ? officialMatches.find((match) => matchNumber(match) === requestedNumber)
-        : null);
+    const requestedSource = Number.isFinite(requestedNumber)
+      ? officialMatches.find((match) => matchNumber(match) === requestedNumber)
+      : officialMatches.find((match) => hasMatchup(match, requestedHome, requestedAway));
     if (Number.isFinite(requestedNumber) && !requestedSource) {
       return response.status(404).json({ error: "CPL match not found" });
     }
