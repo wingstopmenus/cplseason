@@ -1072,6 +1072,7 @@ if (liveMatchData) {
     const showPreview = commentaryFilter === "preview";
     if (commentaryPreview) commentaryPreview.hidden = !showPreview;
     commentaryBalls.hidden = showPreview;
+    commentaryBalls.style.display = showPreview ? "none" : "";
     if (showPreview) return;
     const filteredBalls = balls.filter((ball) => Number(ball.inningsNumber) === Number(commentaryFilter));
     commentaryBalls.replaceChildren();
@@ -1482,12 +1483,6 @@ if (liveMatchData) {
         label.textContent = "Toss: ";
         tossUpdate.append(label, document.createTextNode(match.toss));
         narrative.append(tossUpdate);
-      }
-      const previewLink = pageMatchPreview?.querySelector(".match-live-preview-link");
-      if (previewLink) {
-        const link = previewLink.cloneNode(true);
-        link.classList.add("match-commentary-preview-link");
-        narrative.append(link);
       }
     }
     if (commentaryPreviewTeams) {

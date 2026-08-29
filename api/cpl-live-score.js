@@ -14,6 +14,16 @@ const verifiedPlayingXis = {
       players: ["Alex Hales", "Colin Munro", "Matthew Tromp", "Joshua Da Silva", "Matthew Breetzke", "Terrance Hinds", "Akeal Hosein", "Sunil Narine", "Dominic Drakes", "Jyd Goolie", "Dexter Sween"],
     },
   ],
+  "19": [
+    {
+      teamName: "Trinbago Knight Riders",
+      players: ["Colin Munro", "Alex Hales", "Sunil Narine", "Nicholas Pooran", "Matthew Tromp", "Kieron Pollard", "Jyd Goolie", "Dominic Drakes", "Akeal Hosein", "Abdul Raheem Toppin", "Usman Tariq"],
+    },
+    {
+      teamName: "Barbados Tridents",
+      players: ["Zachary Carter", "Shian Brathwaite", "Quinton de Kock", "Rivaldo Clarke", "Kevlon Anderson", "Sherfane Rutherford", "Chris Green", "Gudakesh Motie", "Daniel Sams", "Mujeeb Ur Rahman", "Ramon Simmonds"],
+    },
+  ],
 };
 
 const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
