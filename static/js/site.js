@@ -1159,20 +1159,15 @@ if (liveMatchData) {
     };
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
+      const next = visibleBalls[index + 1];
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
+      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
       const allOverBalls = filteredBalls.filter((item) => Number(item.over) === Number(ball.over));
       const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
       const laterOverExists = filteredBalls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
-        const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
-        if (bowler) {
-          const note = document.createElement("p");
-          note.className = "match-commentary-note";
-          note.textContent = `${bowler} comes into the attack`;
-          commentaryBalls.append(note);
-        }
         if (overComplete) appendOverSummary(overBalls);
       }
       if ((ball.ball === null || ball.ball === undefined || !Number.isFinite(Number(ball.ball))) && (ball.commentary || ball.label)) {
@@ -1193,6 +1188,15 @@ if (liveMatchData) {
       outcome.textContent = ball.label || "•";
       node.append(delivery, text, outcome);
       commentaryBalls.append(node);
+      if (endsOver) {
+        const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
+        if (bowler) {
+          const note = document.createElement("p");
+          note.className = "match-commentary-note";
+          note.textContent = `${bowler} comes into the attack`;
+          commentaryBalls.append(note);
+        }
+      }
     });
     if (filteredBalls.length > commentaryVisibleCount) {
       const controls = document.createElement("div");

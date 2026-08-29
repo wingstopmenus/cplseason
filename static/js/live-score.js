@@ -379,20 +379,15 @@
     };
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
+      const next = visibleBalls[index + 1];
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
+      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
       const allOverBalls = balls.filter((item) => Number(item.over) === Number(ball.over));
       const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
       const laterOverExists = balls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
-        const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
-        if (bowler) {
-          const note = document.createElement("p");
-          note.className = "live-score-commentary-note";
-          note.textContent = `${bowler} comes into the attack`;
-          fragment.append(note);
-        }
         if (overComplete) appendOverSummary(overBalls);
       }
       const item = document.createElement("article");
@@ -419,6 +414,15 @@
       detail.append(label, copy);
       item.append(delivery, detail);
       fragment.append(item);
+      if (endsOver) {
+        const bowler = overBalls.find((entry) => entry.bowlerName)?.bowlerName;
+        if (bowler) {
+          const note = document.createElement("p");
+          note.className = "live-score-commentary-note";
+          note.textContent = `${bowler} comes into the attack`;
+          fragment.append(note);
+        }
+      }
     });
     commentaryFeed.replaceChildren(fragment);
     if (balls.length > commentaryVisibleCount) {
