@@ -1166,7 +1166,6 @@ if (liveMatchData) {
       const laterOverExists = filteredBalls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
-        if (overComplete) appendOverSummary(overBalls);
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
           const note = document.createElement("p");
@@ -1174,6 +1173,7 @@ if (liveMatchData) {
           note.textContent = `${bowler} comes into the attack`;
           commentaryBalls.append(note);
         }
+        if (overComplete) appendOverSummary(overBalls);
       }
       if ((ball.ball === null || ball.ball === undefined || !Number.isFinite(Number(ball.ball))) && (ball.commentary || ball.label)) {
         const note = document.createElement("p");

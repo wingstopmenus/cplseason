@@ -386,7 +386,6 @@
       const laterOverExists = balls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
-        if (overComplete) appendOverSummary(overBalls);
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
           const note = document.createElement("p");
@@ -394,6 +393,7 @@
           note.textContent = `${bowler} comes into the attack`;
           fragment.append(note);
         }
+        if (overComplete) appendOverSummary(overBalls);
       }
       const item = document.createElement("article");
       item.className = "live-score-commentary-item";
