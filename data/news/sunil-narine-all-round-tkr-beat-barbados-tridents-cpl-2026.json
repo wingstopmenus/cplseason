@@ -1,0 +1,69 @@
+{
+  "slug": "sunil-narine-all-round-tkr-beat-barbados-tridents-cpl-2026",
+  "category": "Match Report",
+  "title": "Sunil Narine Stars as Knight Riders Sweep Aside Tridents",
+  "short_title": "Narine powers TKR past Tridents",
+  "description": "Sunil Narine took 2 for 14 and struck 55 as Trinbago Knight Riders chased 128 in 14.5 overs to beat Barbados Tridents by seven wickets.",
+  "dek": "A 96-run opening stand with Colin Munro turned a tricky Queen's Park Oval surface into a comfortable home victory.",
+  "date_published": "2026-08-29",
+  "published_at": "2026-08-29T08:00:00",
+  "date_modified": "2026-08-29",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.prezly.com/all-round-narine-steals-the-show",
+  "source_date": "2026-08-29",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/sunil-narine-all-round-tkr-beat-barbados-tridents-cpl-2026-featured.webp",
+  "image_alt": "Sunil Narine and Colin Munro batting for Trinbago Knight Riders",
+  "summary_heading": "Narine controls the match with ball and bat",
+  "key_points": [
+    "Sunil Narine took 2 for 14 as Barbados Tridents were restricted to 127 for 9.",
+    "Narine made 55 from 33 balls in a tournament-best 96-run opening partnership with Colin Munro.",
+    "Trinbago Knight Riders reached 128 for 3 in 14.5 overs to win by seven wickets."
+  ],
+  "scorecard": {
+    "result": "Trinbago Knight Riders won by 7 wickets with 31 balls remaining",
+    "teams": [
+      {"name": "Barbados Tridents", "score": "127/9", "overs": "20 overs"},
+      {"name": "Trinbago Knight Riders", "score": "128/3", "overs": "14.5 overs"}
+    ],
+    "highlights": [
+      "Zachary Carter 28 (27)",
+      "Chris Green 27 (17)",
+      "Sunil Narine 2/14",
+      "Sunil Narine 55 (33)",
+      "Colin Munro 37 (26)",
+      "Usman Tariq 1/11"
+    ]
+  },
+  "player_slugs": ["sunil-narine", "colin-munro", "kieron-pollard", "nicholas-pooran"],
+  "players_heading": "Key players from TKR's seven-wicket win",
+  "sections": [
+    {
+      "heading": "Spin squeezes Barbados from the start",
+      "paragraphs": [
+        "Nicholas Pooran chose to bowl and immediately turned to spin on a surface offering grip. Barbados reached 31 for 1 after six overs, but Trinbago kept attacking with close catchers and denied the batters any sustained momentum.",
+        "Usman Tariq conceded only 11 runs in four overs and removed Zachary Carter for 28. Narine then returned 2 for 14, while Kieron Pollard removed two middle-order batters as wickets continued to interrupt the innings. Follow the competition picture on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Narine and Munro break the chase open",
+      "paragraphs": [
+        "Rivaldo Clarke's late 15 from seven balls lifted Barbados to 127 for 9, but the target quickly shrank under a fearless Trinbago powerplay. Narine and Colin Munro raced to 60 without loss in six overs, refusing to let the Tridents' spinners settle.",
+        "Their opening stand reached 96, the highest of the tournament at that point. Munro made 37 from 26 balls before Chris Green broke the partnership, and Narine followed soon after for 55 from 33. The <a href=\"/team/trinbago-knight-riders/\">Trinbago Knight Riders team page</a> tracks the defending champions' campaign."
+      ]
+    },
+    {
+      "heading": "Pollard and Goolie finish with time to spare",
+      "paragraphs": [
+        "Barbados also dismissed Pooran, but the result was already beyond reach. Pollard and Jyd Goolie completed the chase at 128 for 3 in 14.5 overs, giving Trinbago victory with 31 balls unused.",
+        "Knight Riders return to Queen's Park Oval against Jamaica Kingsmen, while Barbados next face St Kitts & Nevis Patriots. The remaining dates are listed on the <a href=\"/schedule/\">CPL schedule</a>, with ground information in the <a href=\"/venue/queens-park-oval/\">Queen's Park Oval guide</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/points-table/", "label": "Points table"},
+    {"href": "/schedule/", "label": "CPL schedule"},
+    {"href": "/team/trinbago-knight-riders/", "label": "Knight Riders team guide"}
+  ],
+  "last_updated": "2026-08-29"
+}
