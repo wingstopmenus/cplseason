@@ -1159,14 +1159,15 @@ if (liveMatchData) {
     };
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
+      const next = visibleBalls[index + 1];
       const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
+      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
       const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
       const allOverBalls = filteredBalls.filter((item) => Number(item.over) === Number(ball.over));
       const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
       const laterOverExists = filteredBalls.some((item) => Number(item.over) > Number(ball.over));
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
-        if (overComplete) appendOverSummary(overBalls);
         const bowler = overBalls.find((item) => item.bowlerName)?.bowlerName;
         if (bowler) {
           const note = document.createElement("p");
@@ -1193,6 +1194,7 @@ if (liveMatchData) {
       outcome.textContent = ball.label || "•";
       node.append(delivery, text, outcome);
       commentaryBalls.append(node);
+      if (endsOver && overComplete) appendOverSummary(overBalls);
     });
     if (filteredBalls.length > commentaryVisibleCount) {
       const controls = document.createElement("div");
