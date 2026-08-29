@@ -3083,7 +3083,7 @@ def sync_shared_footer() -> None:
     adsense_script = (
         '  <script async '
         'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-        '?client=ca-pub-0093554134829472" '
+        '?client=ca-pub-6156452079518932" '
         'crossorigin="anonymous"></script>'
     )
     google_tag = """  <!-- Google tag (gtag.js) -->
@@ -3155,7 +3155,7 @@ def sync_shared_footer() -> None:
             f"{adsense_script}\n  <!-- Google tag (gtag.js) -->",
             1,
         )
-        if updated.count("ca-pub-0093554134829472") != 1:
+        if updated.count("ca-pub-6156452079518932") != 1:
             raise ValueError(
                 f"Expected one AdSense script in {html_path.relative_to(ROOT)}"
             )
