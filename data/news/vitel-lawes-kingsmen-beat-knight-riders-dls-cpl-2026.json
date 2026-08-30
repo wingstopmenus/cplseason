@@ -1,0 +1,69 @@
+{
+  "slug": "vitel-lawes-kingsmen-beat-knight-riders-dls-cpl-2026",
+  "category": "Match Report",
+  "title": "Vitel Lawes Triple-Wicket Maiden Sets Up Kingsmen DLS Win",
+  "short_title": "Lawes turns TKR clash for Kingsmen",
+  "description": "Vitel Lawes took three wickets in a maiden over before Jamaica Kingsmen beat Trinbago Knight Riders by seven runs under the DLS method.",
+  "dek": "Rain ended Jamaica's chase at 127 for 3, seven runs above par after Trinbago had posted 180 for 6.",
+  "date_published": "2026-08-30",
+  "published_at": "2026-08-30T08:00:00",
+  "date_modified": "2026-08-30",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.prezly.com/kingsmen-claim-back-to-back-wins",
+  "source_date": "2026-08-30",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/vitel-lawes-kingsmen-beat-knight-riders-dls-cpl-2026-featured.webp",
+  "image_alt": "Vitel Lawes celebrates a wicket for Jamaica Kingsmen against Trinbago Knight Riders",
+  "summary_heading": "One extraordinary over changes the game before rain returns",
+  "key_points": [
+    "Vitel Lawes removed Colin Munro, Kieron Pollard and Matthew Tromp in a triple-wicket maiden.",
+    "Nicholas Pooran's unbeaten 60 carried Trinbago Knight Riders to 180 for 6.",
+    "Jamaica Kingsmen were 127 for 3 after 14.4 overs when rain sealed a seven-run DLS victory."
+  ],
+  "scorecard": {
+    "result": "Jamaica Kingsmen won by 7 runs (DLS method)",
+    "teams": [
+      {"name": "Trinbago Knight Riders", "score": "180/6", "overs": "20 overs"},
+      {"name": "Jamaica Kingsmen", "score": "127/3", "overs": "14.4 overs"}
+    ],
+    "highlights": [
+      "Nicholas Pooran 60* (37)",
+      "Sunil Narine 53 (24)",
+      "Colin Munro 52",
+      "Vitel Lawes 3/29",
+      "Keacy Carty 42 (33)",
+      "Kirk McKenzie 30"
+    ]
+  },
+  "player_slugs": ["vitel-lawes", "nicholas-pooran", "sunil-narine", "colin-munro", "keacy-carty", "kirk-mckenzie"],
+  "players_heading": "Key players from Jamaica's rain-shortened win",
+  "sections": [
+    {
+      "heading": "Narine and Munro give Trinbago another rapid start",
+      "paragraphs": [
+        "Sent in at Queen's Park Oval, Trinbago Knight Riders picked up where they had left off against Barbados. Sunil Narine and Colin Munro added 101 for the opening wicket, their second century stand in as many nights.",
+        "Narine reached a second successive fifty and made 53 from 24 balls before Keemo Paul removed him. Munro went on to 52, leaving the home side well placed at 120 for 1. The result and its wider effect can be followed on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Lawes delivers the over of the night",
+      "paragraphs": [
+        "Vitel Lawes transformed the innings in the 14th over. Munro edged the first ball behind, Pollard was caught at cover from the second and Matthew Tromp skied the final delivery to Usman Khan. The triple-wicket maiden dragged Trinbago from 120 for 1 to 120 for 4.",
+        "Hunain Shah later struck twice in successive deliveries, but Pooran rebuilt the finish with an unbeaten 60 from 37 balls. Trinbago closed on 180 for 6, while Lawes finished with 3 for 29. See the <a href=\"/team/jamaica-kingsmen/\">Jamaica Kingsmen team guide</a> for their current squad and campaign record."
+      ]
+    },
+    {
+      "heading": "Kingsmen stay ahead of the weather",
+      "paragraphs": [
+        "Kirk McKenzie helped Jamaica reach 54 for 1 in the powerplay before Jyd Goolie removed him for 30. The first rain delay came three balls later, but play resumed without any overs being lost. Keacy Carty then made 42 as the Kingsmen kept the required rate within reach.",
+        "A second downpour ended the contest at 127 for 3 after 14.4 overs. Jamaica were seven runs above the DLS par score, securing their fourth win and a second victory in succession. Upcoming fixtures are listed on the <a href=\"/schedule/\">CPL schedule</a>, with ground details in the <a href=\"/venue/queens-park-oval/\">Queen's Park Oval guide</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/points-table/", "label": "Points table"},
+    {"href": "/schedule/", "label": "CPL schedule"},
+    {"href": "/team/jamaica-kingsmen/", "label": "Jamaica Kingsmen team guide"}
+  ],
+  "last_updated": "2026-08-30"
+}
