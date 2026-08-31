@@ -52,7 +52,7 @@ if (!adsterraIsExcluded) {
       activeAdSize = size;
       const unit = adUnits[size];
       const adIframe = document.createElement("iframe");
-      const adScriptUrl = `https://unsettledradiator.com/${unit.key}/invoke.js`;
+      const adScriptUrl = `https://toleranceteaminadequate.com/${unit.key}/invoke.js`;
       adIframe.title = `${unit.width} by ${unit.height} advertisement`;
       adIframe.width = String(unit.width);
       adIframe.height = String(unit.height);
