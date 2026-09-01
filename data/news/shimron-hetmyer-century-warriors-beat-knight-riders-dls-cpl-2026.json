@@ -1,0 +1,69 @@
+{
+  "slug": "shimron-hetmyer-century-warriors-beat-knight-riders-dls-cpl-2026",
+  "category": "Match Report",
+  "title": "Shimron Hetmyer Record-Equalling Century Keeps Warriors Perfect",
+  "short_title": "Hetmyer hundred sinks Knight Riders",
+  "description": "Shimron Hetmyer smashed an unbeaten 111 from 43 balls as Guyana Amazon Warriors beat Trinbago Knight Riders by nine runs under DLS.",
+  "dek": "Hetmyer reached three figures in 40 deliveries, equalling the fastest century in CPL history on his 100th tournament appearance.",
+  "date_published": "2026-09-01",
+  "published_at": "2026-09-01T08:00:00",
+  "date_modified": "2026-09-01",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.prezly.com/hetmyer-hundred-bests-knight-riders",
+  "source_date": "2026-09-01",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/shimron-hetmyer-century-warriors-beat-knight-riders-dls-cpl-2026-featured.webp",
+  "image_alt": "Shimron Hetmyer celebrates his century for Guyana Amazon Warriors against Trinbago Knight Riders",
+  "summary_heading": "Hetmyer turns a rain-shortened match into a record night",
+  "key_points": [
+    "Shimron Hetmyer made 111 not out from 43 balls, with eight fours and nine sixes.",
+    "His 40-ball century equalled the fastest hundred in CPL history.",
+    "Guyana Amazon Warriors defended a DLS-adjusted target of 182 to remain unbeaten."
+  ],
+  "scorecard": {
+    "result": "Guyana Amazon Warriors won by 9 runs (DLS method)",
+    "teams": [
+      {"name": "Guyana Amazon Warriors", "score": "185/5", "overs": "16 overs"},
+      {"name": "Trinbago Knight Riders", "score": "172/7", "overs": "16 overs"}
+    ],
+    "highlights": [
+      "Shimron Hetmyer 111* (43)",
+      "Romario Shepherd 27*",
+      "Akeal Hosein 1/11",
+      "Alex Hales 55 (24)",
+      "Nicholas Pooran 43",
+      "Mohammad Nabi 3/20"
+    ]
+  },
+  "player_slugs": ["shimron-hetmyer", "romario-shepherd", "mohammad-nabi", "alex-hales", "nicholas-pooran"],
+  "players_heading": "Key players from the Warriors' DLS victory",
+  "sections": [
+    {
+      "heading": "Knight Riders strike before the rain",
+      "paragraphs": [
+        "Trinbago chose to field and quickly reduced Guyana to 19 for 2. Akeal Hosein removed Glenn Phillips before debutant Lahiru Kumara dismissed Shai Hope, giving the home side control of the early exchanges.",
+        "Rain arrived with the Warriors on 22 for 2 and eventually reduced the contest to 16 overs per side. The interruption changed the rhythm of the innings, but it also gave Hetmyer a clear target for the remaining overs. The result strengthened Guyana's position on the <a href=\"/points-table/\">CPL 2026 points table</a>."
+      ]
+    },
+    {
+      "heading": "Hetmyer explodes in his 100th CPL match",
+      "paragraphs": [
+        "Hetmyer accelerated rapidly after the restart, reaching fifty before launching an extraordinary final assault. He took 30 runs from Kumara's 13th over and combined with Romario Shepherd as Guyana collected 85 from the last four overs.",
+        "The left-hander reached his century in 40 balls, matching the CPL record, and finished unbeaten on 111 from 43 deliveries with eight fours and nine sixes. On his 100th appearance in the competition, the innings carried the Warriors to 185 for 5. Follow the unbeaten side through the <a href=\"/team/guyana-amazon-warriors/\">Guyana Amazon Warriors team guide</a>."
+      ]
+    },
+    {
+      "heading": "Nabi and Joseph close out the defence",
+      "paragraphs": [
+        "Trinbago's adjusted target was 182. Glenn Phillips produced a one-handed boundary catch to remove Sunil Narine, and Mohammad Nabi dismissed Colin Munro before ending Nicholas Pooran's counterattack on 43.",
+        "Alex Hales kept the chase alive with 55 from 24 balls, including seven sixes, but Shamar Joseph bowled him before the final over. Romario Shepherd defended 24 from the last six deliveries as Trinbago finished on 172 for 7. Remaining fixtures are on the <a href=\"/schedule/\">CPL schedule</a>, with venue details in the <a href=\"/venue/queens-park-oval/\">Queen's Park Oval guide</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {"href": "/points-table/", "label": "Points table"},
+    {"href": "/team/guyana-amazon-warriors/", "label": "Warriors team guide"},
+    {"href": "/schedule/", "label": "CPL schedule"}
+  ],
+  "last_updated": "2026-09-01"
+}
