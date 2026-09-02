@@ -1391,6 +1391,17 @@ if (liveMatchData) {
     const isComplete = completePattern.test(status);
     const isUpcoming = upcomingPattern.test(status);
     const isLive = !isComplete && !isUpcoming;
+    if (window.CplMatchTitle) {
+      const dynamicTitle = window.CplMatchTitle.build(match, {
+        matchNumber,
+        homeName: matchHome,
+        awayName: matchAway,
+        startIso: liveMatchData.dataset.matchStart,
+        stage: liveMatchData.dataset.matchStage,
+      });
+      document.title = dynamicTitle;
+      document.querySelector('meta[property="og:title"]')?.setAttribute("content", dynamicTitle);
+    }
     liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
     const heroCountdownLabel = liveMatchCountdown?.querySelector("[data-match-countdown-label]");
     if (heroStatus) {

@@ -99,7 +99,7 @@
           <h2 id="match-live-centre-title">Live score and match result</h2>
         </div>
       </header>
-      <div class="match-live-frame-shell" data-match-live-data data-hydration-state="pending" data-match-number="{{ match.match_number }}" data-match-home="{{ match.home_label }}" data-match-away="{{ match.away_label }}" data-match-start="{{ match.start_iso }}">
+      <div class="match-live-frame-shell" data-match-live-data data-hydration-state="pending" data-match-number="{{ match.match_number }}" data-match-home="{{ match.home_label }}" data-match-away="{{ match.away_label }}" data-match-start="{{ match.start_iso }}" data-match-stage="{{ match.stage }}">
         <div class="match-live-frame-status"><strong data-match-feed-state>Match status</strong></div>
         <div class="match-live-prestart" data-match-prestart>
           <span><i aria-hidden="true"></i> Match {{ match.match_number }} · {{ match.date_label_long }}</span>
@@ -280,6 +280,7 @@
   </main>
 
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260902confirmedxi2" defer></script>
+  <script src="/static/js/match-title.js?v=20260902dynamic1" defer></script>
+  <script src="/static/js/site.js?v=20260902dynamic1" defer></script>
 </body>
 </html>

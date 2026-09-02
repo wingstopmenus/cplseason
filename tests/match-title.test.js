@@ -1,0 +1,78 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+
+const { build, ordinal } = require("../static/js/match-title.js");
+
+const teams = [
+  { id: "snp", name: "St. Kitts and Nevis Patriots", shortName: "SKN" },
+  { id: "bbt", name: "Barbados Tridents", shortName: "BTR" },
+];
+
+const context = {
+  matchNumber: 23,
+  homeName: "St Kitts and Nevis Patriots",
+  awayName: teams[1].name,
+  startIso: "2026-09-01T19:00:00-04:00",
+  stage: "League stage",
+};
+
+test("ordinal match labels work for every match number without a match list", () => {
+  assert.equal(ordinal(1), "1st");
+  assert.equal(ordinal(2), "2nd");
+  assert.equal(ordinal(3), "3rd");
+  assert.equal(ordinal(11), "11th");
+  assert.equal(ordinal(23), "23rd");
+  assert.equal(ordinal(39), "39th");
+});
+
+test("scheduled match title uses Today only on the displayed fixture date", () => {
+  const title = build({ matchNumber: 23, status: "Scheduled", startDate: context.startIso, teams }, {
+    ...context,
+    now: new Date(2026, 8, 1, 14, 0, 0),
+  });
+  assert.equal(
+    title,
+    "St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Today, Caribbean Premier League 2026",
+  );
+});
+
+test("live match title leads with current score, opposition score and active batters", () => {
+  const title = build({
+    matchNumber: 23,
+    status: "Live",
+    startDate: context.startIso,
+    teams,
+    innings: [
+      { battingTeamId: "bbt", runs: 217, wickets: 4, overs: 20 },
+      { battingTeamId: "snp", runs: 35, wickets: 0, overs: 3.5 },
+    ],
+    live: {
+      batters: [
+        { name: "Johnson Charles", runs: 26, balls: 15 },
+        { name: "Kyle Mayers", runs: 9, balls: 8 },
+      ],
+    },
+  }, context);
+  assert.equal(
+    title,
+    "SNP 35/0 (3.5) vs BBT 217/4 (20) (Johnson Charles 26(15) Kyle Mayers 9(8)) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
+  );
+});
+
+test("completed match title includes final scores and the verified result", () => {
+  const title = build({
+    matchNumber: 23,
+    status: "Completed",
+    description: "Barbados Tridents won by 12 runs",
+    startDate: context.startIso,
+    teams,
+    innings: [
+      { battingTeamId: "bbt", runs: 217, wickets: 4, overs: 20 },
+      { battingTeamId: "snp", runs: 205, wickets: 8, overs: 20 },
+    ],
+  }, context);
+  assert.equal(
+    title,
+    "SNP 205/8 (20) vs BBT 217/4 (20) (Barbados Tridents won by 12 runs) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
+  );
+});
