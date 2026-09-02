@@ -2,29 +2,12 @@ const API_ROOT = "https://api.mcpro.cricket/v1";
 const COMPETITION_ID = "sr:tournament:16628";
 const CPL_CLIENT_KEY = "c7b9bd69-0eee-4676-beee-fbbee46fccee";
 const CPL_RESULTS_INDEX = "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/matches";
+const {
+  loadConfirmedPlayingXi,
+  parseVerifiedMatchIndex,
+} = require("./lib/confirmed-playing-xi");
 let resultIndexCache = { expires: 0, matches: new Map() };
-const verifiedPlayingXis = {
-  "2": [
-    {
-      teamName: "St. Kitts and Nevis Patriots",
-      players: ["Johnson Charles", "Andre Fletcher", "Kyle Mayers", "Alick Athanaze", "Jason Holder", "Kevin Wickham", "Navin Bidaisee", "Ashmead Nedd", "Obed McCoy", "Saurabh Netravalkar", "Waqar Salamkheil"],
-    },
-    {
-      teamName: "Trinbago Knight Riders",
-      players: ["Alex Hales", "Colin Munro", "Matthew Tromp", "Joshua Da Silva", "Matthew Breetzke", "Terrance Hinds", "Akeal Hosein", "Sunil Narine", "Dominic Drakes", "Jyd Goolie", "Dexter Sween"],
-    },
-  ],
-  "19": [
-    {
-      teamName: "Trinbago Knight Riders",
-      players: ["Colin Munro", "Alex Hales", "Sunil Narine", "Nicholas Pooran", "Matthew Tromp", "Kieron Pollard", "Jyd Goolie", "Dominic Drakes", "Akeal Hosein", "Abdul Raheem Toppin", "Usman Tariq"],
-    },
-    {
-      teamName: "Barbados Tridents",
-      players: ["Zachary Carter", "Shian Brathwaite", "Quinton de Kock", "Rivaldo Clarke", "Kevlon Anderson", "Sherfane Rutherford", "Chris Green", "Gudakesh Motie", "Daniel Sams", "Mujeeb Ur Rahman", "Ramon Simmonds"],
-    },
-  ],
-};
+const confirmedPlayingXiCache = new Map();
 
 const completedPattern = /complete|completed|result|abandon|cancel|no result/i;
 const upcomingPattern = /upcoming|scheduled|fixture|pre-match/i;
@@ -287,18 +270,7 @@ function normalizeScorecard(rawScorecard) {
       })),
     };
   });
-  return normalized.map((innings) => {
-    const names = new Map();
-    innings.batting.forEach((player) => names.set(player.name, player));
-    normalized
-      .filter((item) => item.bowlingTeamId === innings.battingTeamId)
-      .flatMap((item) => item.bowling)
-      .forEach((player) => names.set(player.name, player));
-    return {
-      ...innings,
-      confirmedPlayers: [...names.values()].map((player) => ({ name: player.name })),
-    };
-  });
+  return normalized;
 }
 
 function displayPlayerName(value) {
@@ -425,7 +397,15 @@ function parseCricbuzzPlayerOfMatch(html) {
 
 async function loadResultIndex() {
   if (resultIndexCache.expires > Date.now() && resultIndexCache.matches.size) return resultIndexCache.matches;
-  const response = await fetch(CPL_RESULTS_INDEX, {
+  const html = await fetchCricbuzzPage(CPL_RESULTS_INDEX);
+  const matches = parseVerifiedMatchIndex(html, 12123);
+  if (matches.size !== 39) throw new Error("Verified CPL match index is incomplete");
+  resultIndexCache = { expires: Date.now() + 5 * 60 * 1000, matches };
+  return matches;
+}
+
+async function fetchCricbuzzPage(url) {
+  const response = await fetch(url, {
     headers: {
       "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
       Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -433,17 +413,23 @@ async function loadResultIndex() {
     },
     signal: AbortSignal.timeout(8000),
   });
-  if (!response.ok) throw new Error(`Result index returned ${response.status}`);
-  const html = await response.text();
-  const matches = new Map();
-  const linkPattern = /href="(\/live-cricket-scores\/\d+\/[^"?]*?-(\d+)(?:st|nd|rd|th)-match-[^"]*)"/gi;
-  for (const link of html.matchAll(linkPattern)) matches.set(Number(link[2]), `https://www.cricbuzz.com${link[1]}`);
-  const structuredPattern = /\\?"matchId\\?":(\d+)[\s\S]{0,500}?\\?"matchDesc\\?":\\?"(\d+)(?:st|nd|rd|th) Match\\?"/gi;
-  for (const entry of html.matchAll(structuredPattern)) {
-    matches.set(Number(entry[2]), `https://www.cricbuzz.com/live-cricket-scores/${entry[1]}`);
+  if (!response.ok) throw new Error(`Verified lineup source returned ${response.status}`);
+  return response.text();
+}
+
+async function hydrateConfirmedPlayingXi(summary) {
+  if (!summary?.toss) return summary;
+  try {
+    const confirmedPlayingXi = await loadConfirmedPlayingXi(summary, {
+      cache: confirmedPlayingXiCache,
+      resolveMatchUrl: async (number) => (await loadResultIndex()).get(Number(number)),
+      fetchPage: fetchCricbuzzPage,
+    });
+    if (confirmedPlayingXi) summary.confirmedPlayingXi = confirmedPlayingXi;
+  } catch {
+    // Keep projections visible until both verified XIs can be fetched together.
   }
-  resultIndexCache = { expires: Date.now() + 5 * 60 * 1000, matches };
-  return matches;
+  return summary;
 }
 
 async function hydrateCompletedResult(match) {
@@ -610,12 +596,7 @@ async function fetchSummary(match, includeCommentary = false) {
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
     }
-    if (summary.toss && verifiedPlayingXis[String(summary.matchNumber)]) {
-      summary.confirmedPlayingXi = verifiedPlayingXis[String(summary.matchNumber)].map((lineup) => ({
-        teamName: lineup.teamName,
-        players: lineup.players.map((name) => ({ name })),
-      }));
-    }
+    await hydrateConfirmedPlayingXi(summary);
     if (includeCommentary) {
       const rawScorecard = await fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null);
       const innings = [...(rawSummary?.inningsScores || []), ...(rawScorecard?.inningsScorecards || [])]

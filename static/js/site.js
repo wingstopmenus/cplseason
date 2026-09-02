@@ -900,15 +900,8 @@ if (liveMatchData) {
           players: lineup.players || [],
         }))
       : [];
-    const lineups = verifiedLineups.length === 2
-      ? verifiedLineups
-      : (match?.scorecard || []).map((innings) => ({
-          team: teams.find((team) => team.id === innings.battingTeamId) || {
-            name: innings.battingTeamName,
-          },
-          players: innings.confirmedPlayers || [],
-        }));
-    if (lineups.length !== 2 || lineups.some((entry) => entry.players.length < 11)) {
+    const lineups = verifiedLineups;
+    if (lineups.length !== 2 || lineups.some((entry) => entry.players.length !== 11)) {
       confirmedXi.replaceChildren();
       confirmedXi.hidden = true;
       confirmedXi.style.display = "none";
@@ -937,7 +930,7 @@ if (liveMatchData) {
       heading.textContent = team.name;
       header.append(heading);
       const list = document.createElement("ol");
-      players.slice(0, 11).forEach((player, index) => {
+      players.forEach((player, index) => {
         const item = document.createElement("li");
         const number = document.createElement("span");
         number.textContent = String(index + 1).padStart(2, "0");
