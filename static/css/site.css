@@ -619,7 +619,6 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold), var(--cyan), transparent);
 }
-.site-ad-banner[data-ad-state="pending"],
 .site-ad-banner[data-ad-state="empty"] {
   height: 0;
   min-height: 0;

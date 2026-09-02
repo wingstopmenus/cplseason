@@ -3126,7 +3126,7 @@ def sync_shared_footer() -> None:
             ROOT / "players" / "index.html",
             ROOT / "squads" / "index.html",
         }:
-            site_css_url = "/static/css/site.css?v=20260902adfit1"
+            site_css_url = "/static/css/site.css?v=20260902adfit2"
         elif html_path.parent.name in {
             "cpl-history",
             "cpl-winners-list",

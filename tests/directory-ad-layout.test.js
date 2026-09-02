@@ -21,12 +21,13 @@ test("empty or blocked ad containers collapse without leaving a blank slot", () 
   assert.match(javascript, /data\.state === "rendered"/);
   assert.match(javascript, /onerror=/);
   assert.match(javascript, /hasCreative/);
+  assert.doesNotMatch(css, /site-ad-banner\[data-ad-state="pending"\]/);
 });
 
 test("all three generated directories load the cache-busted ad fix", () => {
   for (const directory of ["teams", "players", "squads"]) {
     const html = fs.readFileSync(path.join(ROOT, directory, "index.html"), "utf8");
-    assert.match(html, /site\.css\?v=20260902adfit1/);
+    assert.match(html, /site\.css\?v=20260902adfit2/);
     assert.match(html, /site\.js\?v=20260902adfit1/);
   }
   const squads = fs.readFileSync(path.join(ROOT, "squads", "index.html"), "utf8");
