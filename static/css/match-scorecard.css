@@ -64,6 +64,28 @@
   line-height: 1.12;
 }
 .match-live-title h1 em { color: #9faac0; font-size: .72em; }
+.match-live-hero-venue {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  width: fit-content;
+  margin-top: 10px;
+  color: #dce5f5;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.match-live-hero-venue span {
+  color: var(--mp-gold);
+  font-size: 9px;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.match-live-hero-venue strong { color: #fff; font-size: 12px; }
+.match-live-hero-venue small { color: #aeb8cc; font-size: 11px; }
+.match-live-hero-venue small::before { content: "· "; }
+.match-live-hero-venue:hover strong { color: var(--mp-gold); }
 
 .match-live-versus {
   grid-template-columns: minmax(0, 1fr) 92px minmax(0, 1fr);
@@ -916,6 +938,7 @@
   .match-live-topline { padding-inline: 14px; }
   .match-live-title { padding: 18px 14px 7px; }
   .match-live-title h1 { font-size: 25px; }
+  .match-live-hero-venue { margin-top: 8px; font-size: 11px; }
   .match-live-versus { grid-template-columns: 1fr 46px 1fr; gap: 7px; padding: 7px 12px 14px; }
   .match-live-versus > a,
   .match-live-versus > a:last-child,

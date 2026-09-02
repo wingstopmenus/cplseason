@@ -92,3 +92,17 @@ test("match pages expose the dynamic title through crawl and social metadata", (
   assert.match(client, /meta\[name="twitter:title"\]/);
   assert.match(client, /webPage\.name = dynamicTitle/);
 });
+
+test("every generated match hero displays its verified venue", () => {
+  const matchRoot = path.resolve(__dirname, "../match");
+  const pages = fs.readdirSync(matchRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => path.join(matchRoot, entry.name, "index.html"))
+    .filter((file) => fs.existsSync(file));
+  assert.equal(pages.length, 39);
+  pages.forEach((file) => {
+    const page = fs.readFileSync(file, "utf8");
+    assert.match(page, /class="match-live-hero-venue" href="\/venue\/[^/]+\/"/);
+    assert.match(page, /<span>Venue<\/span>\s*<strong>[^<]+<\/strong>\s*<small>[^<]+<\/small>/);
+  });
+});

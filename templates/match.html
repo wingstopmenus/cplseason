@@ -19,7 +19,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
-  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260829commentarypreview1">
+  <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260902herovenue1">
   <script type="application/ld+json" data-match-schema>{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
@@ -49,6 +49,11 @@
       <div class="match-live-title">
         <p>{{ match.competition }}</p>
         <h1 id="match-live-title">{{ match.home_label }} <em>vs</em> {{ match.away_label }}</h1>
+        <a class="match-live-hero-venue" href="/venue/{{ match.venue.slug }}/">
+          <span>Venue</span>
+          <strong>{{ match.venue.name }}</strong>
+          <small>{{ match.venue.city }}</small>
+        </a>
       </div>
       <div class="match-live-versus">
         {% if match.home_team %}
