@@ -3121,8 +3121,12 @@ def sync_shared_footer() -> None:
         updated = external_anchor_pattern.sub(unlink_external, updated)
         if html_path == ROOT / "news" / "cpl-step-challenge-2026-how-to-join" / "index.html":
             site_css_url = "/static/css/site.css?v=20260801challengecolors"
-        elif html_path == ROOT / "teams" / "index.html":
-            site_css_url = "/static/css/site.css?v=20260804teams16"
+        elif html_path in {
+            ROOT / "teams" / "index.html",
+            ROOT / "players" / "index.html",
+            ROOT / "squads" / "index.html",
+        }:
+            site_css_url = "/static/css/site.css?v=20260902adfit1"
         elif html_path.parent.name in {
             "cpl-history",
             "cpl-winners-list",
@@ -3132,8 +3136,12 @@ def sync_shared_footer() -> None:
         else:
             site_css_url = "/static/css/site.css?v=20260731breadcrumbs"
         updated = css_pattern.sub(site_css_url, updated)
-        if html_path == ROOT / "players" / "index.html":
-            site_js_url = "/static/js/site.js?v=20260805playersd"
+        if html_path in {
+            ROOT / "teams" / "index.html",
+            ROOT / "players" / "index.html",
+            ROOT / "squads" / "index.html",
+        }:
+            site_js_url = "/static/js/site.js?v=20260902adfit1"
         elif html_path.parent.parent == ROOT / "match":
             site_js_url = "/static/js/site.js?v=20260902dynamic2"
         else:

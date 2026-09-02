@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260804teams5">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260902adfit1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="teams-directory-page teams-command-page">
@@ -94,6 +94,6 @@
     <section class="teams-command-faq" aria-labelledby="faq-title"><header><p>Team guide</p><h2 id="faq-title">CPL 2026 team questions</h2></header><div data-teams-faq>{% for item in faq %}<details{% if loop.first %} open{% endif %}><summary><span>{{ "%02d" | format(loop.index) }}</span>{{ item.question }}<b aria-hidden="true"></b></summary><p>{{ item.answer }}</p></details>{% endfor %}</div></section>
   </main>
   {% include "partials/footer.html" %}
-  <script src="/static/js/site.js?v=20260804faq1" defer></script>
+  <script src="/static/js/site.js?v=20260902adfit1" defer></script>
 </body>
 </html>

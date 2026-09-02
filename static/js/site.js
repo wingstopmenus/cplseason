@@ -19,7 +19,9 @@ if (!adsterraIsExcluded) {
     const adBanner = document.createElement("aside");
     adBanner.className = "site-ad-banner";
     adBanner.dataset.adsterraBanner = "";
+    adBanner.dataset.adState = "pending";
     adBanner.setAttribute("aria-label", "Advertisement");
+    adBanner.setAttribute("aria-hidden", "true");
 
     const adLabel = document.createElement("span");
     adLabel.className = "site-ad-label";
@@ -45,12 +47,14 @@ if (!adsterraIsExcluded) {
       },
     };
     let activeAdSize = "";
+    let adMessageHandler = null;
 
     const renderAdsterraBanner = () => {
       const size = mobileAdQuery.matches ? "mobile" : "desktop";
       if (size === activeAdSize) return;
       activeAdSize = size;
       const unit = adUnits[size];
+      const adToken = `cpl-ad-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       const adIframe = document.createElement("iframe");
       const adScriptUrl = `https://toleranceteaminadequate.com/${unit.key}/invoke.js`;
       adIframe.title = `${unit.width} by ${unit.height} advertisement`;
@@ -60,7 +64,23 @@ if (!adsterraIsExcluded) {
       adIframe.scrolling = "no";
       adIframe.referrerPolicy = "strict-origin-when-cross-origin";
       adIframe.setAttribute("frameborder", "0");
-      adIframe.srcdoc = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;overflow:hidden"><script>atOptions={'key':'${unit.key}','format':'iframe','height':${unit.height},'width':${unit.width},'params':{}};<\/script><script src="${adScriptUrl}"><\/script></body></html>`;
+      adBanner.dataset.adState = "pending";
+      adBanner.setAttribute("aria-hidden", "true");
+      if (adMessageHandler) window.removeEventListener("message", adMessageHandler);
+      adMessageHandler = (event) => {
+        if (
+          event.source !== adIframe.contentWindow ||
+          event.data?.source !== "cpl-ad-frame" ||
+          event.data?.token !== adToken
+        ) return;
+        const rendered = event.data.state === "rendered";
+        adBanner.dataset.adState = rendered ? "rendered" : "empty";
+        adBanner.setAttribute("aria-hidden", String(!rendered));
+      };
+      window.addEventListener("message", adMessageHandler);
+      const frameMonitor = `<script>(function(){const token=${JSON.stringify(adToken)};const notify=(state)=>parent.postMessage({source:'cpl-ad-frame',token,state},'*');const hasCreative=()=>[...document.querySelectorAll('iframe,img,object,embed')].some((element)=>{const box=element.getBoundingClientRect();return box.width>=50&&box.height>=30;});const scan=()=>{if(hasCreative())notify('rendered');};new MutationObserver(scan).observe(document.documentElement,{childList:true,subtree:true,attributes:true});window.addEventListener('load',scan);window.setTimeout(()=>{if(!hasCreative())notify('empty');},8000);}());<\/script>`;
+      const blockedSignal = `parent.postMessage({source:'cpl-ad-frame',token:'${adToken}',state:'empty'},'*')`;
+      adIframe.srcdoc = `<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;overflow:hidden">${frameMonitor}<script>atOptions={'key':'${unit.key}','format':'iframe','height':${unit.height},'width':${unit.width},'params':{}};<\/script><script src="${adScriptUrl}" onerror="${blockedSignal}"><\/script></body></html>`;
       adFrame.replaceChildren(adIframe);
       adBanner.dataset.adSize = `${unit.width}x${unit.height}`;
     };
