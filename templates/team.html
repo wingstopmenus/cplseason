@@ -17,7 +17,7 @@
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
-  <link rel="stylesheet" href="/static/css/site.css?v=20260727p">
+  <link rel="stylesheet" href="/static/css/site.css?v=20260902teamresults1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="team-profile-page">
@@ -198,7 +198,7 @@
       </header>
       <ol class="team-profile-fixture-list">
         {% for fixture in team.fixtures %}
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="{{ fixture.match_number }}">
           <span>{{ "%02d" | format(loop.index) }}</span>
           <time>{{ fixture.label }}</time>
           <div>
@@ -215,18 +215,13 @@
       <a class="team-profile-schedule-link" href="/schedule/">Open the complete CPL 2026 schedule <span>→</span></a>
     </section>
 
-    <section id="team-results" class="team-profile-results" aria-labelledby="team-results-title">
+    <section id="team-results" class="team-profile-results" aria-labelledby="team-results-title" data-team-results data-team-aliases="{{ team.schedule_names | join('|') }}|{{ team.name }}">
       <header class="team-profile-section-header">
         <div><p class="team-profile-index">06 / Match results</p><h2 id="team-results-title">CPL 2026 results</h2></div>
-        <p>Completed matches will move into this record as the season progresses.</p>
+        <p>Official results update automatically after each CPL 2026 match.</p>
       </header>
-      {% if team.results %}
-      <ol class="team-profile-result-list">
-        {% for result in team.results %}<li><time>{{ result.label }}</time><strong>{{ result.match }}</strong><span>{{ result.result }}</span><a href="{{ result.match_url }}">Scorecard →</a></li>{% endfor %}
-      </ol>
-      {% else %}
-      <div class="team-profile-empty-state"><strong>No CPL 2026 result yet</strong><p>{{ team.name }} begin their campaign on {{ team.fixtures[0].label }} against {{ team.fixtures[0].match.split(' vs ')[1] if team.name in team.fixtures[0].match.split(' vs ')[0] else team.fixtures[0].match.split(' vs ')[0] }}.</p><a href="{{ team.fixtures[0].match_url }}">Open Match 1 centre →</a></div>
-      {% endif %}
+      <p class="team-profile-results-status" data-team-results-status role="status" aria-live="polite">Checking the official CPL results feed…</p>
+      <ol class="team-profile-result-list" data-team-results-list hidden></ol>
     </section>
 
     <section id="team-stats" class="team-profile-record" aria-labelledby="team-record-title">
@@ -311,5 +306,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/site.js?v=20260729ms" defer></script>
+  <script src="/static/js/team-results.js?v=20260902teamresults1" defer></script>
 </body>
 </html>

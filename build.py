@@ -1523,6 +1523,7 @@ def build_team_profiles() -> None:
             fixtures.append(
                 {
                     **fixture,
+                    "match_number": match_record["match_number"],
                     "match": display_match,
                     "is_home": fixture["venue"]["slug"] == team["venue_slug"],
                     "match_url": f"/match/{match_record['slug']}/",
@@ -1536,12 +1537,6 @@ def build_team_profiles() -> None:
                 f"expected {team['league_fixtures']}"
             )
         team["fixtures"] = fixtures
-        team["results"] = [
-            fixture
-            for fixture in fixtures
-            if fixture["status"].lower() in {"complete", "completed", "finished"}
-            or fixture.get("result")
-        ]
         team["overseas_players"] = [
             player for player in roster if player["category"] == "Overseas player"
         ]

@@ -409,7 +409,7 @@
         <p>Ten matches across the Caribbean, including 5 at Queen&#39;s Park Oval.</p>
       </header>
       <ol class="team-profile-fixture-list">
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="2">
           <span>01</span>
           <time>Sat 8 Aug</time>
           <div>
@@ -421,7 +421,7 @@
             <a href="/venue/arnos-vale-stadium/">Arnos Vale Stadium <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="8">
           <span>02</span>
           <time>Sat 15 Aug</time>
           <div>
@@ -433,7 +433,7 @@
             <a href="/venue/sabina-park/">Sabina Park <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="14">
           <span>03</span>
           <time>Sat 22 Aug</time>
           <div>
@@ -445,7 +445,7 @@
             <a href="/venue/sir-vivian-richards-stadium/">Sir Vivian Richards Stadium <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="17">
           <span>04</span>
           <time>Wed 26 Aug</time>
           <div>
@@ -457,7 +457,7 @@
             <a href="/venue/queens-park-oval/">Queen&#39;s Park Oval <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="19">
           <span>05</span>
           <time>Fri 28 Aug</time>
           <div>
@@ -469,7 +469,7 @@
             <a href="/venue/queens-park-oval/">Queen&#39;s Park Oval <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="20">
           <span>06</span>
           <time>Sat 29 Aug</time>
           <div>
@@ -481,7 +481,7 @@
             <a href="/venue/queens-park-oval/">Queen&#39;s Park Oval <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="22">
           <span>07</span>
           <time>Mon 31 Aug</time>
           <div>
@@ -493,7 +493,7 @@
             <a href="/venue/queens-park-oval/">Queen&#39;s Park Oval <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="24">
           <span>08</span>
           <time>Wed 2 Sep</time>
           <div>
@@ -505,7 +505,7 @@
             <a href="/venue/queens-park-oval/">Queen&#39;s Park Oval <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="33">
           <span>09</span>
           <time>Fri 11 Sep</time>
           <div>
@@ -517,7 +517,7 @@
             <a href="/venue/providence-stadium/">Providence Stadium <b>↗</b></a>
           </div>
         </li>
-        <li data-team-fixture>
+        <li data-team-fixture data-match-number="27">
           <span>10</span>
           <time>Sat 5 Sep</time>
           <div>
@@ -533,12 +533,13 @@
       <a class="team-profile-schedule-link" href="/schedule/">Open the complete CPL 2026 schedule <span>→</span></a>
     </section>
 
-    <section id="team-results" class="team-profile-results" aria-labelledby="team-results-title">
+    <section id="team-results" class="team-profile-results" aria-labelledby="team-results-title" data-team-results data-team-aliases="Trinbago Knight Riders|Trinbago Knight Riders">
       <header class="team-profile-section-header">
         <div><p class="team-profile-index">06 / Match results</p><h2 id="team-results-title">CPL 2026 results</h2></div>
-        <p>Completed matches will move into this record as the season progresses.</p>
+        <p>Official results update automatically after each CPL 2026 match.</p>
       </header>
-      <div class="team-profile-empty-state"><strong>No CPL 2026 result yet</strong><p>Trinbago Knight Riders begin their campaign on Sat 8 Aug against St Kitts &amp; Nevis Patriots.</p><a href="/match/st-kitts-nevis-patriots-vs-trinbago-knight-riders/">Open Match 1 centre →</a></div>
+      <p class="team-profile-results-status" data-team-results-status role="status" aria-live="polite">Checking the official CPL results feed…</p>
+      <ol class="team-profile-result-list" data-team-results-list hidden></ol>
     </section>
 
     <section id="team-stats" class="team-profile-record" aria-labelledby="team-record-title">
@@ -740,5 +741,6 @@
     <span aria-hidden="true">↑</span>
   </button>
 </footer>  <script src="/static/js/site.js?v=20260729ms" defer></script>
+  <script src="/static/js/team-results.js?v=20260902teamresults1" defer></script>
 </body>
 </html>

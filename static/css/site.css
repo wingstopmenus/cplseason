@@ -735,14 +735,33 @@
 .team-profile-empty-state p { color: #b9c4d8; }
 .team-profile-empty-state a,
 .team-profile-record > a { color: #ffcf00; font-weight: 900; text-decoration: none; }
+.team-profile-results-status {
+  margin: 0;
+  padding: 30px;
+  border: 1px solid rgba(255, 207, 0, .28);
+  background: linear-gradient(135deg, rgba(255, 207, 0, .08), rgba(10, 20, 43, .85));
+  color: #dbe4f4;
+  font-weight: 800;
+}
+.team-profile-results-status.is-error { border-color: rgba(255, 123, 123, .35); color: #ffc4c4; }
 .team-profile-result-list { margin: 0; padding: 0; list-style: none; }
 .team-profile-result-list li {
   display: grid;
   grid-template-columns: 150px 1.3fr 1fr auto;
   gap: 18px;
+  align-items: center;
   padding: 18px;
   border-bottom: 1px solid rgba(255, 255, 255, .12);
+  background: linear-gradient(90deg, rgba(10, 20, 43, .82), rgba(7, 12, 31, .9));
 }
+.team-profile-result-list li:first-child { border-top: 1px solid rgba(255, 207, 0, .28); }
+.team-profile-result-list time { color: #ffcf00; font-weight: 900; }
+.team-profile-result-list time small { display: block; margin-top: 4px; color: #7f91ad; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.team-profile-result-list li > div { display: grid; gap: 5px; }
+.team-profile-result-list li > div strong { color: #fff; font-size: 17px; line-height: 1.25; }
+.team-profile-result-score { color: #aebbd0; font-size: 12px; font-weight: 800; }
+.team-profile-result-outcome { color: #dbe4f4; font-size: 13px; font-weight: 800; line-height: 1.4; }
+.team-profile-result-list a { color: #ffcf00; font-size: 12px; font-weight: 900; white-space: nowrap; }
 .team-profile-record {
   padding: clamp(24px, 4vw, 48px);
   border: 1px solid rgba(255, 207, 0, .28);
