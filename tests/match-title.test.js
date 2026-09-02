@@ -1,5 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const { build, ordinal } = require("../static/js/match-title.js");
 
@@ -75,4 +77,18 @@ test("completed match title includes final scores and the verified result", () =
     title,
     "SNP 205/8 (16) vs BBT 217/4 (Barbados Tridents won by 12 runs) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
   );
+});
+
+test("match pages expose the dynamic title through crawl and social metadata", () => {
+  const root = path.resolve(__dirname, "..");
+  const page = fs.readFileSync(
+    path.join(root, "match/trinbago-knight-riders-vs-antigua-barbuda-falcons/index.html"),
+    "utf8",
+  );
+  const client = fs.readFileSync(path.join(root, "static/js/site.js"), "utf8");
+  assert.match(page, /<title>Trinbago Knight Riders vs Antigua &amp; Barbuda Falcons, 24th Match,/);
+  assert.match(page, /<meta name="twitter:title" content="Trinbago Knight Riders vs Antigua &amp; Barbuda Falcons, 24th Match,/);
+  assert.match(page, /type="application\/ld\+json" data-match-schema/);
+  assert.match(client, /meta\[name="twitter:title"\]/);
+  assert.match(client, /webPage\.name = dynamicTitle/);
 });

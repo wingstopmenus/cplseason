@@ -1401,6 +1401,21 @@ if (liveMatchData) {
       });
       document.title = dynamicTitle;
       document.querySelector('meta[property="og:title"]')?.setAttribute("content", dynamicTitle);
+      document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", dynamicTitle);
+      const schemaNode = document.querySelector("script[data-match-schema]");
+      if (schemaNode) {
+        try {
+          const schema = JSON.parse(schemaNode.textContent);
+          const graph = Array.isArray(schema?.["@graph"]) ? schema["@graph"] : [];
+          const webPage = graph.find((entry) => entry?.["@type"] === "WebPage");
+          if (webPage) {
+            webPage.name = dynamicTitle;
+            schemaNode.textContent = JSON.stringify(schema);
+          }
+        } catch {
+          // Keep the valid static schema if a browser extension alters the JSON-LD block.
+        }
+      }
     }
     liveMatchData.dataset.feedMode = isComplete ? "complete" : isLive ? "live" : "upcoming";
     const heroCountdownLabel = liveMatchCountdown?.querySelector("[data-match-countdown-label]");

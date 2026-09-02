@@ -35,10 +35,6 @@ SHORT_NAMES = {
     "saint-lucia-kings": "Kings",
     "trinbago-knight-riders": "Knight Riders",
 }
-SEO_SHORT_NAMES = {
-    **SHORT_NAMES,
-    "trinbago-knight-riders": "TKR",
-}
 VENUE_ORDER = [
     "arnos-vale-stadium",
     "sabina-park",
@@ -134,6 +130,15 @@ def build_terms_of_service() -> None:
 def human_date(value: str) -> str:
     year, month, day = (int(part) for part in value[:10].split("-"))
     return f"{day} {MONTH_NAMES[month]} {year}"
+
+
+def ordinal_number(value: int) -> str:
+    remainder = value % 100
+    if 11 <= remainder <= 13:
+        suffix = "th"
+    else:
+        suffix = {1: "st", 2: "nd", 3: "rd"}.get(value % 10, "th")
+    return f"{value}{suffix}"
 
 
 def load_authors() -> dict[str, dict]:
@@ -2532,18 +2537,6 @@ def build_matches() -> None:
         ]
 
         canonical = f"https://cplseason.com/match/{match['slug']}/"
-        playoff_title_labels = {
-            "Eliminator": "CPL Eliminator",
-            "Qualifier 1": "CPL Qualifier 1",
-            "Qualifier 2": "CPL Qualifier 2",
-            "Final": "Championship Final",
-        }
-        title_matchup = (
-            f"{SEO_SHORT_NAMES[home_team['slug']]} vs "
-            f"{SEO_SHORT_NAMES[away_team['slug']]}"
-            if home_team and away_team
-            else playoff_title_labels.get(fixture_label, fixture_label)
-        )
         meta_description = (
             f"Follow {matchup_label} live score, toss, playing XIs, "
             "match updates and result for "
@@ -2555,10 +2548,17 @@ def build_matches() -> None:
             meta_description = meta_description.replace(
                 "match updates and result", "ball-by-ball updates, squads and result"
             )
+        match_date = datetime.strptime(match["date"], "%Y-%m-%d")
+        seo_date_label = f"{match_date:%A, %B} {match_date.day}"
+        seo_match_label = (
+            f"{ordinal_number(match['match_number'])} Match"
+            if match["stage"] == "League stage"
+            else fixture_label
+        )
         page = {
             "title": (
-                f"{title_matchup}: CPL 2026 Match {match['match_number']} "
-                "Live Score & Result"
+                f"{matchup_label}, {seo_match_label}, Caribbean Premier League 2026, "
+                f"{seo_date_label}, Caribbean Premier League 2026"
             ),
             "description": meta_description,
             "canonical": canonical,
@@ -3135,7 +3135,7 @@ def sync_shared_footer() -> None:
         if html_path == ROOT / "players" / "index.html":
             site_js_url = "/static/js/site.js?v=20260805playersd"
         elif html_path.parent.parent == ROOT / "match":
-            site_js_url = "/static/js/site.js?v=20260902dynamic1"
+            site_js_url = "/static/js/site.js?v=20260902dynamic2"
         else:
             site_js_url = "/static/js/site.js?v=20260729ms"
         updated = js_pattern.sub(site_js_url, updated)

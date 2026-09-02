@@ -14,12 +14,13 @@
   <meta property="og:image" content="https://cplseason.com/static/img/official/news-banner-bg.webp">
   <meta property="og:image:alt" content="{{ match.home_label }} versus {{ match.away_label }} at {{ match.venue.name }}">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
   <meta name="theme-color" content="#050617">
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260804matchpages">
   <link rel="stylesheet" href="/static/css/match-scorecard.css?v=20260829commentarypreview1">
-  <script type="application/ld+json">{{ schema_json | safe }}</script>
+  <script type="application/ld+json" data-match-schema>{{ schema_json | safe }}</script>
 </head>
 <body class="match-live-page">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -281,6 +282,6 @@
 
   {% include "partials/footer.html" %}
   <script src="/static/js/match-title.js?v=20260902dynamic2" defer></script>
-  <script src="/static/js/site.js?v=20260902dynamic1" defer></script>
+  <script src="/static/js/site.js?v=20260902dynamic2" defer></script>
 </body>
 </html>
