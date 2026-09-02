@@ -442,15 +442,15 @@
     }
   };
 
-  const renderLineup = (panel, team, enabled) => {
+  const renderLineup = (panel, team, confirmedLineup) => {
     if (!panel) return;
     const heading = panel.querySelector("h3");
     text(heading, team?.name || "Team");
     [...panel.children].forEach((child) => {
       if (child !== heading) child.remove();
     });
-    const players = enabled
-      ? (team?.players || []).filter((player) => !player.substitute)
+    const players = confirmedLineup?.players?.length === 11
+      ? confirmedLineup.players
       : [];
     if (!players.length) {
       const empty = document.createElement("p");
@@ -462,7 +462,7 @@
     }
     const list = document.createElement("ol");
     list.className = "live-lineup-list";
-    players.slice(0, 11).forEach((player) => {
+    players.forEach((player) => {
       const item = document.createElement("li");
       const name = document.createElement("span");
       name.textContent = player.name || "Player";
@@ -555,15 +555,23 @@
     );
     updateHeroTeam(heroTeamPanels.home, home, local?.home);
     updateHeroTeam(heroTeamPanels.away, away, local?.away);
-    const lineupsEnabled = !isUpcoming(effectiveStatus);
-    renderLineup(lineupPanels.home, home, lineupsEnabled);
-    renderLineup(lineupPanels.away, away, lineupsEnabled);
+    const teamKey = (value) => String(value || "")
+      .toLowerCase()
+      .replace(/saint/g, "st")
+      .replace(/[^a-z0-9]/g, "");
+    const confirmedLineups = Array.isArray(match.confirmedPlayingXi)
+      ? match.confirmedPlayingXi
+      : [];
+    const lineupsConfirmed = confirmedLineups.length === 2 &&
+      confirmedLineups.every((lineup) => lineup.players?.length === 11);
+    const lineupFor = (team) => lineupsConfirmed
+      ? confirmedLineups.find((lineup) => teamKey(lineup.teamName) === teamKey(team?.name))
+      : null;
+    renderLineup(lineupPanels.home, home, lineupFor(home));
+    renderLineup(lineupPanels.away, away, lineupFor(away));
     text(
       lineupsStatus,
-      lineupsEnabled &&
-        (home?.players?.length || away?.players?.length)
-        ? "Official playing XIs"
-        : "Team sheets not yet published",
+      lineupsConfirmed ? "Official playing XIs" : "Team sheets not yet published",
     );
 
     const state = isUpcoming(effectiveStatus)

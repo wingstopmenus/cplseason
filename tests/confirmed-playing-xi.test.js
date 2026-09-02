@@ -1,6 +1,8 @@
 "use strict";
 
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const test = require("node:test");
 const {
   loadConfirmedPlayingXi,
@@ -183,4 +185,14 @@ test("a fetched confirmed XI is stored and reused if the source is temporarily u
   const second = await loadConfirmedPlayingXi(match, dependencies);
   assert.deepEqual(second, first);
   assert.equal(fetches, 1);
+});
+
+test("public match clients never promote squad or scorecard players", () => {
+  const root = path.resolve(__dirname, "..");
+  const matchClient = fs.readFileSync(path.join(root, "static/js/site.js"), "utf8");
+  const liveScoreClient = fs.readFileSync(path.join(root, "static/js/live-score.js"), "utf8");
+  assert.match(matchClient, /match\?\.confirmedPlayingXi/);
+  assert.doesNotMatch(matchClient, /confirmedPlayers/);
+  assert.match(liveScoreClient, /match\.confirmedPlayingXi/);
+  assert.doesNotMatch(liveScoreClient, /team\?\.players/);
 });
