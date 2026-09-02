@@ -55,7 +55,7 @@ test("live match title leads with current score, opposition score and active bat
   }, context);
   assert.equal(
     title,
-    "SNP 35/0 (3.5) vs BBT 217/4 (20) (Johnson Charles 26(15) Kyle Mayers 9(8)) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
+    "SNP 35/0 (3.5) vs BBT 217/4 (Johnson Charles 26(15) Kyle Mayers 9(8)) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
   );
 });
 
@@ -68,11 +68,11 @@ test("completed match title includes final scores and the verified result", () =
     teams,
     innings: [
       { battingTeamId: "bbt", runs: 217, wickets: 4, overs: 20 },
-      { battingTeamId: "snp", runs: 205, wickets: 8, overs: 20 },
+      { battingTeamId: "snp", runs: 205, wickets: 8, overs: 15.6 },
     ],
   }, context);
   assert.equal(
     title,
-    "SNP 205/8 (20) vs BBT 217/4 (20) (Barbados Tridents won by 12 runs) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
+    "SNP 205/8 (16) vs BBT 217/4 (Barbados Tridents won by 12 runs) | St Kitts and Nevis Patriots vs Barbados Tridents, 23rd Match, Caribbean Premier League 2026, Tuesday, September 1, Caribbean Premier League 2026",
   );
 });

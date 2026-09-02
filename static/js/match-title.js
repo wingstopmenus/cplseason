@@ -64,11 +64,21 @@
       || clean(team?.shortName || team?.short || team?.name || "TBC");
   };
 
-  const inningsScore = (innings, teams) => {
+  const displayOvers = (value) => {
+    const overs = Number(value);
+    if (!Number.isFinite(overs)) return "";
+    const wholeOvers = Math.floor(overs);
+    const balls = Math.round((overs - wholeOvers) * 10);
+    return String(balls >= 6 ? wholeOvers + Math.floor(balls / 6) : overs);
+  };
+
+  const inningsScore = (innings, teams, includeOvers = false) => {
     if (!innings || !Number.isFinite(Number(innings.runs))) return "";
     const team = teams.find((entry) => String(entry?.id) === String(innings.battingTeamId));
     const wickets = Number.isFinite(Number(innings.wickets)) ? `/${Number(innings.wickets)}` : "";
-    const overs = Number.isFinite(Number(innings.overs)) ? ` (${Number(innings.overs)})` : "";
+    const overs = includeOvers && Number.isFinite(Number(innings.overs))
+      ? ` (${displayOvers(innings.overs)})`
+      : "";
     return `${teamShortName(team)} ${Number(innings.runs)}${wickets}${overs}`;
   };
 
@@ -82,7 +92,7 @@
     const other = innings.slice(0, -1).reverse().find(
       (entry) => String(entry.battingTeamId) !== String(current.battingTeamId),
     );
-    return [inningsScore(current, teams), inningsScore(other, teams)].filter(Boolean).join(" vs ");
+    return [inningsScore(current, teams, true), inningsScore(other, teams)].filter(Boolean).join(" vs ");
   };
 
   const batterSummary = (match) => {
