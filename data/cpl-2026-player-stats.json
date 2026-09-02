@@ -1,0 +1,3601 @@
+{
+  "competition": "Caribbean Premier League 2026",
+  "throughMatch": 23,
+  "completedMatches": 23,
+  "scorecardMatches": 22,
+  "updatedAt": "2026-09-02",
+  "source": {
+    "primary": "Official CPL MCPro match feed",
+    "primaryUrl": "https://www.cplseason.com/api/cpl-live-score",
+    "secondary": "Cricbuzz scorecards for documented official-feed gaps",
+    "secondaryUrl": "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/matches",
+    "validationUrl": "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/stats"
+  },
+  "fallbackMatches": [],
+  "noResultMatches": [
+    21
+  ],
+  "unmatchedSourcePlayers": [
+    "Andries Gous",
+    "Hasan Nawaz",
+    "John Campbell",
+    "Kevlon Anderson",
+    "Khari Campbell",
+    "Lahiru Kumara",
+    "Matthew Tromp",
+    "Obus Pienaar",
+    "Saurabh Netravalkar",
+    "Shian Brathwaite",
+    "Tim Robinson",
+    "Usama Mir"
+  ],
+  "players": {
+    "abdul-raheem-toppin": {
+      "slug": "abdul-raheem-toppin",
+      "name": "Abdul-Raheem Toppin",
+      "matches": 3,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 36,
+        "overs": "6.0",
+        "maidens": 0,
+        "runs": 77,
+        "wickets": 1,
+        "average": "77.00",
+        "economy": "12.83",
+        "best": "1/24"
+      }
+    },
+    "ackeem-auguste": {
+      "slug": "ackeem-auguste",
+      "name": "Ackeem Auguste",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 100,
+        "balls": 71,
+        "highScore": "63",
+        "average": "20.00",
+        "strikeRate": "140.85",
+        "fours": 6,
+        "sixes": 7,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "akeal-hosein": {
+      "slug": "akeal-hosein",
+      "name": "Akeal Hosein",
+      "matches": 7,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 18,
+        "balls": 11,
+        "highScore": "18",
+        "average": "18.00",
+        "strikeRate": "163.64",
+        "fours": 3,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 138,
+        "overs": "23.0",
+        "maidens": 0,
+        "runs": 180,
+        "wickets": 2,
+        "average": "90.00",
+        "economy": "7.83",
+        "best": "1/11"
+      }
+    },
+    "alex-hales": {
+      "slug": "alex-hales",
+      "name": "Alex Hales",
+      "matches": 6,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 100,
+        "balls": 69,
+        "highScore": "55",
+        "average": "20.00",
+        "strikeRate": "144.93",
+        "fours": 3,
+        "sixes": 9,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "alick-athanaze": {
+      "slug": "alick-athanaze",
+      "name": "Alick Athanaze",
+      "matches": 2,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 3,
+        "highScore": "0",
+        "average": "0.00",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "alzarri-joseph": {
+      "slug": "alzarri-joseph",
+      "name": "Alzarri Joseph",
+      "matches": 7,
+      "batting": {
+        "innings": 4,
+        "notOuts": 3,
+        "runs": 18,
+        "balls": 23,
+        "highScore": "16*",
+        "average": "18.00",
+        "strikeRate": "78.26",
+        "fours": 2,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 132,
+        "overs": "22.0",
+        "maidens": 0,
+        "runs": 199,
+        "wickets": 10,
+        "average": "19.90",
+        "economy": "9.05",
+        "best": "3/32"
+      }
+    },
+    "amari-goodridge": {
+      "slug": "amari-goodridge",
+      "name": "Amari Goodridge",
+      "matches": 4,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 14,
+        "balls": 8,
+        "highScore": "13",
+        "average": "14.00",
+        "strikeRate": "175.00",
+        "fours": 0,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 23,
+        "wickets": 0,
+        "average": "—",
+        "economy": "11.50",
+        "best": "0/23"
+      }
+    },
+    "amir-jangoo": {
+      "slug": "amir-jangoo",
+      "name": "Amir Jangoo",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 119,
+        "balls": 115,
+        "highScore": "37",
+        "average": "23.80",
+        "strikeRate": "103.48",
+        "fours": 5,
+        "sixes": 5,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "amshi-de-silva": {
+      "slug": "amshi-de-silva",
+      "name": "Amshi de Silva",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "anderson-mahase": {
+      "slug": "anderson-mahase",
+      "name": "Anderson Mahase",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "anderson-phillip": {
+      "slug": "anderson-phillip",
+      "name": "Anderson Phillip",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "andre-fletcher": {
+      "slug": "andre-fletcher",
+      "name": "Andre Fletcher",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 2,
+        "runs": 158,
+        "balls": 124,
+        "highScore": "55",
+        "average": "39.50",
+        "strikeRate": "127.42",
+        "fours": 8,
+        "sixes": 10,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "andre-russell": {
+      "slug": "andre-russell",
+      "name": "Andre Russell",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 1,
+        "runs": 143,
+        "balls": 89,
+        "highScore": "68",
+        "average": "28.60",
+        "strikeRate": "160.67",
+        "fours": 5,
+        "sixes": 16,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 6,
+        "balls": 126,
+        "overs": "21.0",
+        "maidens": 0,
+        "runs": 168,
+        "wickets": 9,
+        "average": "18.67",
+        "economy": "8.00",
+        "best": "2/12"
+      }
+    },
+    "ashmead-nedd": {
+      "slug": "ashmead-nedd",
+      "name": "Ashmead Nedd",
+      "matches": 1,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 18,
+        "balls": 19,
+        "highScore": "18",
+        "average": "18.00",
+        "strikeRate": "94.74",
+        "fours": 0,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 18,
+        "overs": "3.0",
+        "maidens": 0,
+        "runs": 19,
+        "wickets": 0,
+        "average": "—",
+        "economy": "6.33",
+        "best": "0/19"
+      }
+    },
+    "brandon-king": {
+      "slug": "brandon-king",
+      "name": "Brandon King",
+      "matches": 3,
+      "batting": {
+        "innings": 3,
+        "notOuts": 0,
+        "runs": 114,
+        "balls": 83,
+        "highScore": "73",
+        "average": "38.00",
+        "strikeRate": "137.35",
+        "fours": 10,
+        "sixes": 5,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "charith-asalanka": {
+      "slug": "charith-asalanka",
+      "name": "Charith Asalanka",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 92,
+        "balls": 73,
+        "highScore": "35",
+        "average": "18.40",
+        "strikeRate": "126.03",
+        "fours": 4,
+        "sixes": 6,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 19,
+        "wickets": 0,
+        "average": "—",
+        "economy": "9.50",
+        "best": "0/19"
+      }
+    },
+    "chris-green": {
+      "slug": "chris-green",
+      "name": "Chris Green",
+      "matches": 5,
+      "batting": {
+        "innings": 4,
+        "notOuts": 3,
+        "runs": 61,
+        "balls": 35,
+        "highScore": "27",
+        "average": "61.00",
+        "strikeRate": "174.29",
+        "fours": 2,
+        "sixes": 5,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 114,
+        "overs": "19.0",
+        "maidens": 0,
+        "runs": 134,
+        "wickets": 3,
+        "average": "44.67",
+        "economy": "7.05",
+        "best": "2/27"
+      }
+    },
+    "colin-munro": {
+      "slug": "colin-munro",
+      "name": "Colin Munro",
+      "matches": 7,
+      "batting": {
+        "innings": 7,
+        "notOuts": 0,
+        "runs": 238,
+        "balls": 197,
+        "highScore": "52",
+        "average": "34.00",
+        "strikeRate": "120.81",
+        "fours": 22,
+        "sixes": 12,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "damion-joachim": {
+      "slug": "damion-joachim",
+      "name": "Damion Joachim",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "daniel-sams": {
+      "slug": "daniel-sams",
+      "name": "Daniel Sams",
+      "matches": 5,
+      "batting": {
+        "innings": 3,
+        "notOuts": 1,
+        "runs": 10,
+        "balls": 14,
+        "highScore": "9",
+        "average": "5.00",
+        "strikeRate": "71.43",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 102,
+        "overs": "17.0",
+        "maidens": 0,
+        "runs": 145,
+        "wickets": 8,
+        "average": "18.13",
+        "economy": "8.53",
+        "best": "4/20"
+      }
+    },
+    "darron-nedd": {
+      "slug": "darron-nedd",
+      "name": "Darron Nedd",
+      "matches": 3,
+      "batting": {
+        "innings": 3,
+        "notOuts": 0,
+        "runs": 30,
+        "balls": 34,
+        "highScore": "17",
+        "average": "10.00",
+        "strikeRate": "88.24",
+        "fours": 1,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "dasun-shanaka": {
+      "slug": "dasun-shanaka",
+      "name": "Dasun Shanaka",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 2,
+        "runs": 134,
+        "balls": 68,
+        "highScore": "49*",
+        "average": "44.67",
+        "strikeRate": "197.06",
+        "fours": 9,
+        "sixes": 11,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 15,
+        "overs": "2.3",
+        "maidens": 0,
+        "runs": 31,
+        "wickets": 0,
+        "average": "—",
+        "economy": "12.40",
+        "best": "0/31"
+      }
+    },
+    "dexter-sween": {
+      "slug": "dexter-sween",
+      "name": "Dexter Sween",
+      "matches": 1,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "dominic-drakes": {
+      "slug": "dominic-drakes",
+      "name": "Dominic Drakes",
+      "matches": 5,
+      "batting": {
+        "innings": 3,
+        "notOuts": 3,
+        "runs": 18,
+        "balls": 18,
+        "highScore": "14*",
+        "average": "—",
+        "strikeRate": "100.00",
+        "fours": 1,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 60,
+        "overs": "10.0",
+        "maidens": 0,
+        "runs": 121,
+        "wickets": 2,
+        "average": "60.50",
+        "economy": "12.10",
+        "best": "2/20"
+      }
+    },
+    "dwaine-pretorius": {
+      "slug": "dwaine-pretorius",
+      "name": "Dwaine Pretorius",
+      "matches": 4,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 66,
+        "overs": "11.0",
+        "maidens": 0,
+        "runs": 84,
+        "wickets": 4,
+        "average": "21.00",
+        "economy": "7.64",
+        "best": "3/29"
+      }
+    },
+    "evin-lewis": {
+      "slug": "evin-lewis",
+      "name": "Evin Lewis",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 113,
+        "balls": 88,
+        "highScore": "48",
+        "average": "22.60",
+        "strikeRate": "128.41",
+        "fours": 2,
+        "sixes": 12,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "fabian-allen": {
+      "slug": "fabian-allen",
+      "name": "Fabian Allen",
+      "matches": 4,
+      "batting": {
+        "innings": 3,
+        "notOuts": 1,
+        "runs": 31,
+        "balls": 25,
+        "highScore": "28*",
+        "average": "15.50",
+        "strikeRate": "124.00",
+        "fours": 2,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 35,
+        "overs": "5.5",
+        "maidens": 0,
+        "runs": 39,
+        "wickets": 1,
+        "average": "39.00",
+        "economy": "6.69",
+        "best": "1/25"
+      }
+    },
+    "george-linde": {
+      "slug": "george-linde",
+      "name": "George Linde",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "glenn-phillips": {
+      "slug": "glenn-phillips",
+      "name": "Glenn Phillips",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 0,
+        "runs": 75,
+        "balls": 55,
+        "highScore": "36",
+        "average": "18.75",
+        "strikeRate": "136.36",
+        "fours": 8,
+        "sixes": 3,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 2,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 17,
+        "wickets": 2,
+        "average": "8.50",
+        "economy": "8.50",
+        "best": "1/5"
+      }
+    },
+    "gudakesh-motie": {
+      "slug": "gudakesh-motie",
+      "name": "Gudakesh Motie",
+      "matches": 5,
+      "batting": {
+        "innings": 3,
+        "notOuts": 1,
+        "runs": 9,
+        "balls": 8,
+        "highScore": "7",
+        "average": "4.50",
+        "strikeRate": "112.50",
+        "fours": 1,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 97,
+        "overs": "16.1",
+        "maidens": 0,
+        "runs": 156,
+        "wickets": 5,
+        "average": "31.20",
+        "economy": "9.65",
+        "best": "3/22"
+      }
+    },
+    "hassan-khan": {
+      "slug": "hassan-khan",
+      "name": "Hassan Khan",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 3,
+        "runs": 33,
+        "balls": 30,
+        "highScore": "12",
+        "average": "11.00",
+        "strikeRate": "110.00",
+        "fours": 1,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 91,
+        "overs": "15.1",
+        "maidens": 0,
+        "runs": 100,
+        "wickets": 3,
+        "average": "33.33",
+        "economy": "6.59",
+        "best": "1/19"
+      }
+    },
+    "hunain-shah": {
+      "slug": "hunain-shah",
+      "name": "Hunain Shah",
+      "matches": 8,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 5,
+        "balls": 8,
+        "highScore": "5",
+        "average": "5.00",
+        "strikeRate": "62.50",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 8,
+        "balls": 170,
+        "overs": "28.2",
+        "maidens": 0,
+        "runs": 217,
+        "wickets": 11,
+        "average": "19.73",
+        "economy": "7.66",
+        "best": "2/23"
+      }
+    },
+    "imran-tahir": {
+      "slug": "imran-tahir",
+      "name": "Imran Tahir",
+      "matches": 4,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 84,
+        "overs": "14.0",
+        "maidens": 0,
+        "runs": 101,
+        "wickets": 6,
+        "average": "16.83",
+        "economy": "7.21",
+        "best": "2/15"
+      }
+    },
+    "isai-thorne": {
+      "slug": "isai-thorne",
+      "name": "Isai Thorne",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "jahmar-hamilton": {
+      "slug": "jahmar-hamilton",
+      "name": "Jahmar Hamilton",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 13,
+        "balls": 24,
+        "highScore": "10",
+        "average": "6.50",
+        "strikeRate": "54.17",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "jakeem-pollard": {
+      "slug": "jakeem-pollard",
+      "name": "Jakeem Pollard",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "jason-holder": {
+      "slug": "jason-holder",
+      "name": "Jason Holder",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 0,
+        "runs": 93,
+        "balls": 76,
+        "highScore": "34",
+        "average": "15.50",
+        "strikeRate": "122.37",
+        "fours": 4,
+        "sixes": 7,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 6,
+        "balls": 138,
+        "overs": "23.0",
+        "maidens": 0,
+        "runs": 183,
+        "wickets": 8,
+        "average": "22.88",
+        "economy": "7.96",
+        "best": "3/20"
+      }
+    },
+    "jayden-seales": {
+      "slug": "jayden-seales",
+      "name": "Jayden Seales",
+      "matches": 7,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 3,
+        "balls": 8,
+        "highScore": "3*",
+        "average": "3.00",
+        "strikeRate": "37.50",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 126,
+        "overs": "21.0",
+        "maidens": 0,
+        "runs": 177,
+        "wickets": 4,
+        "average": "44.25",
+        "economy": "8.43",
+        "best": "1/10"
+      }
+    },
+    "jeavor-royal": {
+      "slug": "jeavor-royal",
+      "name": "Jeavor Royal",
+      "matches": 1,
+      "batting": {
+        "innings": 1,
+        "notOuts": 1,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "0*",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 19,
+        "wickets": 0,
+        "average": "—",
+        "economy": "9.50",
+        "best": "0/19"
+      }
+    },
+    "jediah-blades": {
+      "slug": "jediah-blades",
+      "name": "Jediah Blades",
+      "matches": 4,
+      "batting": {
+        "innings": 2,
+        "notOuts": 2,
+        "runs": 1,
+        "balls": 5,
+        "highScore": "1*",
+        "average": "—",
+        "strikeRate": "20.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 66,
+        "overs": "11.0",
+        "maidens": 0,
+        "runs": 108,
+        "wickets": 4,
+        "average": "27.00",
+        "economy": "9.82",
+        "best": "2/50"
+      }
+    },
+    "jeremiah-louis": {
+      "slug": "jeremiah-louis",
+      "name": "Jeremiah Louis",
+      "matches": 1,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 24,
+        "overs": "4.0",
+        "maidens": 0,
+        "runs": 55,
+        "wickets": 0,
+        "average": "—",
+        "economy": "13.75",
+        "best": "0/55"
+      }
+    },
+    "jewel-andrew": {
+      "slug": "jewel-andrew",
+      "name": "Jewel Andrew",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 1,
+        "runs": 66,
+        "balls": 57,
+        "highScore": "58",
+        "average": "22.00",
+        "strikeRate": "115.79",
+        "fours": 2,
+        "sixes": 4,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "johann-jeremiah": {
+      "slug": "johann-jeremiah",
+      "name": "Johann Jeremiah",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 12,
+        "balls": 14,
+        "highScore": "11",
+        "average": "6.00",
+        "strikeRate": "85.71",
+        "fours": 2,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "johann-layne": {
+      "slug": "johann-layne",
+      "name": "Johann Layne",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "johnson-charles": {
+      "slug": "johnson-charles",
+      "name": "Johnson Charles",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 0,
+        "runs": 157,
+        "balls": 119,
+        "highScore": "78",
+        "average": "26.17",
+        "strikeRate": "131.93",
+        "fours": 13,
+        "sixes": 11,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "jonathan-van-lange": {
+      "slug": "jonathan-van-lange",
+      "name": "Jonathan van Lange",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "joshua-bishop": {
+      "slug": "joshua-bishop",
+      "name": "Joshua Bishop",
+      "matches": 7,
+      "batting": {
+        "innings": 4,
+        "notOuts": 2,
+        "runs": 22,
+        "balls": 22,
+        "highScore": "12*",
+        "average": "11.00",
+        "strikeRate": "100.00",
+        "fours": 1,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 138,
+        "overs": "23.0",
+        "maidens": 0,
+        "runs": 166,
+        "wickets": 7,
+        "average": "23.71",
+        "economy": "7.22",
+        "best": "2/16"
+      }
+    },
+    "joshua-da-silva": {
+      "slug": "joshua-da-silva",
+      "name": "Joshua Da Silva",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 2,
+        "runs": 31,
+        "balls": 27,
+        "highScore": "18*",
+        "average": "—",
+        "strikeRate": "114.81",
+        "fours": 3,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "joshua-james": {
+      "slug": "joshua-james",
+      "name": "Joshua James",
+      "matches": 4,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 13,
+        "balls": 16,
+        "highScore": "10",
+        "average": "6.50",
+        "strikeRate": "81.25",
+        "fours": 1,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 58,
+        "overs": "9.4",
+        "maidens": 0,
+        "runs": 65,
+        "wickets": 7,
+        "average": "9.29",
+        "economy": "6.72",
+        "best": "3/18"
+      }
+    },
+    "justin-greaves": {
+      "slug": "justin-greaves",
+      "name": "Justin Greaves",
+      "matches": 1,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 1,
+        "balls": 4,
+        "highScore": "1",
+        "average": "1.00",
+        "strikeRate": "25.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 6,
+        "overs": "1.0",
+        "maidens": 0,
+        "runs": 18,
+        "wickets": 0,
+        "average": "—",
+        "economy": "18.00",
+        "best": "0/18"
+      }
+    },
+    "jyd-goolie": {
+      "slug": "jyd-goolie",
+      "name": "Jyd Goolie",
+      "matches": 7,
+      "batting": {
+        "innings": 7,
+        "notOuts": 4,
+        "runs": 50,
+        "balls": 58,
+        "highScore": "16*",
+        "average": "16.67",
+        "strikeRate": "86.21",
+        "fours": 4,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 78,
+        "overs": "13.0",
+        "maidens": 0,
+        "runs": 101,
+        "wickets": 4,
+        "average": "25.25",
+        "economy": "7.77",
+        "best": "2/30"
+      }
+    },
+    "kadeem-alleyne": {
+      "slug": "kadeem-alleyne",
+      "name": "Kadeem Alleyne",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "kamil-pooran": {
+      "slug": "kamil-pooran",
+      "name": "Kamil Pooran",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 1,
+        "runs": 193,
+        "balls": 111,
+        "highScore": "81*",
+        "average": "48.25",
+        "strikeRate": "173.87",
+        "fours": 22,
+        "sixes": 10,
+        "fifties": 2,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "karima-gore": {
+      "slug": "karima-gore",
+      "name": "Karima Gore",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 71,
+        "balls": 55,
+        "highScore": "27",
+        "average": "14.20",
+        "strikeRate": "129.09",
+        "fours": 7,
+        "sixes": 3,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 2,
+        "balls": 7,
+        "overs": "1.1",
+        "maidens": 0,
+        "runs": 29,
+        "wickets": 0,
+        "average": "—",
+        "economy": "24.86",
+        "best": "0/1"
+      }
+    },
+    "keacy-carty": {
+      "slug": "keacy-carty",
+      "name": "Keacy Carty",
+      "matches": 8,
+      "batting": {
+        "innings": 8,
+        "notOuts": 0,
+        "runs": 161,
+        "balls": 150,
+        "highScore": "50",
+        "average": "20.13",
+        "strikeRate": "107.33",
+        "fours": 10,
+        "sixes": 5,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "keemo-paul": {
+      "slug": "keemo-paul",
+      "name": "Keemo Paul",
+      "matches": 8,
+      "batting": {
+        "innings": 6,
+        "notOuts": 1,
+        "runs": 121,
+        "balls": 77,
+        "highScore": "65",
+        "average": "24.20",
+        "strikeRate": "157.14",
+        "fours": 11,
+        "sixes": 6,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 8,
+        "balls": 162,
+        "overs": "27.0",
+        "maidens": 0,
+        "runs": 245,
+        "wickets": 9,
+        "average": "27.22",
+        "economy": "9.07",
+        "best": "3/29"
+      }
+    },
+    "kelvin-pitman": {
+      "slug": "kelvin-pitman",
+      "name": "Kelvin Pitman",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "keon-gaston": {
+      "slug": "keon-gaston",
+      "name": "Keon Gaston",
+      "matches": 1,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 18,
+        "overs": "3.0",
+        "maidens": 0,
+        "runs": 26,
+        "wickets": 1,
+        "average": "26.00",
+        "economy": "8.67",
+        "best": "1/26"
+      }
+    },
+    "kevin-wickham": {
+      "slug": "kevin-wickham",
+      "name": "Kevin Wickham",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 97,
+        "balls": 105,
+        "highScore": "38",
+        "average": "19.40",
+        "strikeRate": "92.38",
+        "fours": 4,
+        "sixes": 4,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "khary-pierre": {
+      "slug": "khary-pierre",
+      "name": "Khary Pierre",
+      "matches": 4,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 72,
+        "overs": "12.0",
+        "maidens": 0,
+        "runs": 83,
+        "wickets": 4,
+        "average": "20.75",
+        "economy": "6.92",
+        "best": "2/19"
+      }
+    },
+    "kieron-pollard": {
+      "slug": "kieron-pollard",
+      "name": "Kieron Pollard",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 1,
+        "runs": 132,
+        "balls": 76,
+        "highScore": "65",
+        "average": "33.00",
+        "strikeRate": "173.68",
+        "fours": 10,
+        "sixes": 9,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 49,
+        "overs": "8.1",
+        "maidens": 0,
+        "runs": 56,
+        "wickets": 5,
+        "average": "11.20",
+        "economy": "6.86",
+        "best": "2/19"
+      }
+    },
+    "kirk-mckenzie": {
+      "slug": "kirk-mckenzie",
+      "name": "Kirk McKenzie",
+      "matches": 7,
+      "batting": {
+        "innings": 7,
+        "notOuts": 0,
+        "runs": 126,
+        "balls": 83,
+        "highScore": "69",
+        "average": "18.00",
+        "strikeRate": "151.81",
+        "fours": 11,
+        "sixes": 9,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "kofi-james": {
+      "slug": "kofi-james",
+      "name": "Kofi James",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "kusal-perera": {
+      "slug": "kusal-perera",
+      "name": "Kusal Perera",
+      "matches": 3,
+      "batting": {
+        "innings": 3,
+        "notOuts": 1,
+        "runs": 51,
+        "balls": 46,
+        "highScore": "34*",
+        "average": "25.50",
+        "strikeRate": "110.87",
+        "fours": 4,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "kyle-mayers": {
+      "slug": "kyle-mayers",
+      "name": "Kyle Mayers",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 0,
+        "runs": 111,
+        "balls": 76,
+        "highScore": "34",
+        "average": "18.50",
+        "strikeRate": "146.05",
+        "fours": 11,
+        "sixes": 7,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 54,
+        "overs": "9.0",
+        "maidens": 0,
+        "runs": 92,
+        "wickets": 2,
+        "average": "46.00",
+        "economy": "10.22",
+        "best": "2/41"
+      }
+    },
+    "maaz-sadaqat": {
+      "slug": "maaz-sadaqat",
+      "name": "Maaz Sadaqat",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 14,
+        "balls": 16,
+        "highScore": "12",
+        "average": "7.00",
+        "strikeRate": "87.50",
+        "fours": 3,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 6,
+        "overs": "1.0",
+        "maidens": 0,
+        "runs": 3,
+        "wickets": 0,
+        "average": "—",
+        "economy": "3.00",
+        "best": "0/3"
+      }
+    },
+    "maheesh-theekshana": {
+      "slug": "maheesh-theekshana",
+      "name": "Maheesh Theekshana",
+      "matches": 7,
+      "batting": {
+        "innings": 1,
+        "notOuts": 1,
+        "runs": 4,
+        "balls": 1,
+        "highScore": "4*",
+        "average": "—",
+        "strikeRate": "400.00",
+        "fours": 1,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 163,
+        "overs": "27.1",
+        "maidens": 0,
+        "runs": 207,
+        "wickets": 7,
+        "average": "29.57",
+        "economy": "7.62",
+        "best": "2/18"
+      }
+    },
+    "matthew-breetzke": {
+      "slug": "matthew-breetzke",
+      "name": "Matthew Breetzke",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 1,
+        "runs": 38,
+        "balls": 45,
+        "highScore": "35*",
+        "average": "12.67",
+        "strikeRate": "84.44",
+        "fours": 1,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "matthew-forde": {
+      "slug": "matthew-forde",
+      "name": "Matthew Forde",
+      "matches": 7,
+      "batting": {
+        "innings": 6,
+        "notOuts": 2,
+        "runs": 66,
+        "balls": 44,
+        "highScore": "24*",
+        "average": "16.50",
+        "strikeRate": "150.00",
+        "fours": 4,
+        "sixes": 6,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 148,
+        "overs": "24.4",
+        "maidens": 0,
+        "runs": 235,
+        "wickets": 13,
+        "average": "18.08",
+        "economy": "9.53",
+        "best": "5/23"
+      }
+    },
+    "matthew-nandu": {
+      "slug": "matthew-nandu",
+      "name": "Matthew Nandu",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 14,
+        "balls": 26,
+        "highScore": "13",
+        "average": "7.00",
+        "strikeRate": "53.85",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "mavendra-dindyal": {
+      "slug": "mavendra-dindyal",
+      "name": "Mavendra Dindiyal",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 50,
+        "balls": 52,
+        "highScore": "50",
+        "average": "25.00",
+        "strikeRate": "96.15",
+        "fours": 5,
+        "sixes": 2,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "mckenny-clarke": {
+      "slug": "mckenny-clarke",
+      "name": "McKenny Clarke",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 16,
+        "balls": 8,
+        "highScore": "15*",
+        "average": "16.00",
+        "strikeRate": "200.00",
+        "fours": 0,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 32,
+        "wickets": 0,
+        "average": "—",
+        "economy": "16.00",
+        "best": "0/32"
+      }
+    },
+    "micah-mckenzie": {
+      "slug": "micah-mckenzie",
+      "name": "Micah McKenzie",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "mikyle-louis": {
+      "slug": "mikyle-louis",
+      "name": "Mikyle Louis",
+      "matches": 2,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 9,
+        "balls": 14,
+        "highScore": "9",
+        "average": "9.00",
+        "strikeRate": "64.29",
+        "fours": 1,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "milind-kumar": {
+      "slug": "milind-kumar",
+      "name": "Milind Kumar",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "moeen-ali": {
+      "slug": "moeen-ali",
+      "name": "Moeen Ali",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 2,
+        "runs": 98,
+        "balls": 68,
+        "highScore": "56*",
+        "average": "32.67",
+        "strikeRate": "144.12",
+        "fours": 7,
+        "sixes": 6,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 30,
+        "overs": "5.0",
+        "maidens": 0,
+        "runs": 69,
+        "wickets": 1,
+        "average": "69.00",
+        "economy": "13.80",
+        "best": "1/35"
+      }
+    },
+    "mohammad-nabi": {
+      "slug": "mohammad-nabi",
+      "name": "Mohammad Nabi",
+      "matches": 4,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 25,
+        "balls": 22,
+        "highScore": "19",
+        "average": "12.50",
+        "strikeRate": "113.64",
+        "fours": 2,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 78,
+        "overs": "13.0",
+        "maidens": 0,
+        "runs": 80,
+        "wickets": 7,
+        "average": "11.43",
+        "economy": "6.15",
+        "best": "4/22"
+      }
+    },
+    "mujeeb-ur-rahman": {
+      "slug": "mujeeb-ur-rahman",
+      "name": "Mujeeb ur Rahman",
+      "matches": 5,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 8,
+        "balls": 6,
+        "highScore": "5",
+        "average": "4.00",
+        "strikeRate": "133.33",
+        "fours": 1,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 120,
+        "overs": "20.0",
+        "maidens": 0,
+        "runs": 189,
+        "wickets": 6,
+        "average": "31.50",
+        "economy": "9.45",
+        "best": "2/27"
+      }
+    },
+    "naseem-shah": {
+      "slug": "naseem-shah",
+      "name": "Naseem Shah",
+      "matches": 2,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 2,
+        "balls": 48,
+        "overs": "8.0",
+        "maidens": 0,
+        "runs": 78,
+        "wickets": 4,
+        "average": "19.50",
+        "economy": "9.75",
+        "best": "2/35"
+      }
+    },
+    "nathan-edward": {
+      "slug": "nathan-edward",
+      "name": "Nathan Edward",
+      "matches": 2,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 2,
+        "balls": 33,
+        "overs": "5.3",
+        "maidens": 0,
+        "runs": 85,
+        "wickets": 0,
+        "average": "—",
+        "economy": "15.45",
+        "best": "0/37"
+      }
+    },
+    "navin-bidaisee": {
+      "slug": "navin-bidaisee",
+      "name": "Navin Bidaisee",
+      "matches": 4,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 19,
+        "balls": 17,
+        "highScore": "19",
+        "average": "9.50",
+        "strikeRate": "111.76",
+        "fours": 1,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 24,
+        "overs": "4.0",
+        "maidens": 0,
+        "runs": 27,
+        "wickets": 0,
+        "average": "—",
+        "economy": "6.75",
+        "best": "0/7"
+      }
+    },
+    "nicholas-pooran": {
+      "slug": "nicholas-pooran",
+      "name": "Nicholas Pooran",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 1,
+        "runs": 202,
+        "balls": 114,
+        "highScore": "60*",
+        "average": "40.40",
+        "strikeRate": "177.19",
+        "fours": 16,
+        "sixes": 14,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "nikhil-chaudhary": {
+      "slug": "nikhil-chaudhary",
+      "name": "Nikhil Chaudhary",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 0,
+        "runs": 33,
+        "balls": 28,
+        "highScore": "18",
+        "average": "16.50",
+        "strikeRate": "117.86",
+        "fours": 3,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 12,
+        "overs": "2.0",
+        "maidens": 0,
+        "runs": 15,
+        "wickets": 0,
+        "average": "—",
+        "economy": "7.50",
+        "best": "0/15"
+      }
+    },
+    "noor-ahmad": {
+      "slug": "noor-ahmad",
+      "name": "Noor Ahmad",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "obed-mccoy": {
+      "slug": "obed-mccoy",
+      "name": "Obed McCoy",
+      "matches": 5,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 18,
+        "balls": 15,
+        "highScore": "13*",
+        "average": "18.00",
+        "strikeRate": "120.00",
+        "fours": 2,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 108,
+        "overs": "18.0",
+        "maidens": 0,
+        "runs": 159,
+        "wickets": 5,
+        "average": "31.80",
+        "economy": "8.83",
+        "best": "2/43"
+      }
+    },
+    "odean-smith": {
+      "slug": "odean-smith",
+      "name": "Odean Smith",
+      "matches": 5,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 34,
+        "balls": 20,
+        "highScore": "27*",
+        "average": "34.00",
+        "strikeRate": "170.00",
+        "fours": 0,
+        "sixes": 4,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 54,
+        "overs": "9.0",
+        "maidens": 0,
+        "runs": 115,
+        "wickets": 0,
+        "average": "—",
+        "economy": "12.78",
+        "best": "0/19"
+      }
+    },
+    "quentin-sampson": {
+      "slug": "quentin-sampson",
+      "name": "Quentin Sampson",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 3,
+        "runs": 39,
+        "balls": 18,
+        "highScore": "13*",
+        "average": "39.00",
+        "strikeRate": "216.67",
+        "fours": 1,
+        "sixes": 5,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "quinton-de-kock": {
+      "slug": "quinton-de-kock",
+      "name": "Quinton de Kock",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 213,
+        "balls": 127,
+        "highScore": "106",
+        "average": "42.60",
+        "strikeRate": "167.72",
+        "fours": 18,
+        "sixes": 14,
+        "fifties": 0,
+        "hundreds": 1
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "rahkeem-cornwall": {
+      "slug": "rahkeem-cornwall",
+      "name": "Rahkeem Cornwall",
+      "matches": 6,
+      "batting": {
+        "innings": 6,
+        "notOuts": 1,
+        "runs": 100,
+        "balls": 64,
+        "highScore": "27",
+        "average": "20.00",
+        "strikeRate": "156.25",
+        "fours": 9,
+        "sixes": 8,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 48,
+        "overs": "8.0",
+        "maidens": 0,
+        "runs": 69,
+        "wickets": 4,
+        "average": "17.25",
+        "economy": "8.63",
+        "best": "2/17"
+      }
+    },
+    "rahmanullah-gurbaz": {
+      "slug": "rahmanullah-gurbaz",
+      "name": "Rahmanullah Gurbaz",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "ramon-simmonds": {
+      "slug": "ramon-simmonds",
+      "name": "Ramon Simmonds",
+      "matches": 5,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 1,
+        "highScore": "0",
+        "average": "0.00",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 107,
+        "overs": "17.5",
+        "maidens": 0,
+        "runs": 204,
+        "wickets": 4,
+        "average": "51.00",
+        "economy": "11.44",
+        "best": "1/20"
+      }
+    },
+    "reeza-hendricks": {
+      "slug": "reeza-hendricks",
+      "name": "Reeza Hendricks",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 140,
+        "balls": 103,
+        "highScore": "42",
+        "average": "28.00",
+        "strikeRate": "135.92",
+        "fours": 10,
+        "sixes": 8,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "rivaldo-clarke": {
+      "slug": "rivaldo-clarke",
+      "name": "Rivaldo Clarke",
+      "matches": 5,
+      "batting": {
+        "innings": 4,
+        "notOuts": 2,
+        "runs": 65,
+        "balls": 60,
+        "highScore": "27",
+        "average": "32.50",
+        "strikeRate": "108.33",
+        "fours": 8,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 6,
+        "overs": "1.0",
+        "maidens": 0,
+        "runs": 16,
+        "wickets": 0,
+        "average": "—",
+        "economy": "16.00",
+        "best": "0/16"
+      }
+    },
+    "romaine-morris": {
+      "slug": "romaine-morris",
+      "name": "Romaine Morris",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "romario-shepherd": {
+      "slug": "romario-shepherd",
+      "name": "Romario Shepherd",
+      "matches": 4,
+      "batting": {
+        "innings": 1,
+        "notOuts": 1,
+        "runs": 27,
+        "balls": 7,
+        "highScore": "27*",
+        "average": "—",
+        "strikeRate": "385.71",
+        "fours": 2,
+        "sixes": 3,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 48,
+        "overs": "8.0",
+        "maidens": 0,
+        "runs": 78,
+        "wickets": 2,
+        "average": "39.00",
+        "economy": "9.75",
+        "best": "1/16"
+      }
+    },
+    "ronaldo-alimohamed": {
+      "slug": "ronaldo-alimohamed",
+      "name": "Ronaldo Alimohamed",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "roston-chase": {
+      "slug": "roston-chase",
+      "name": "Roston Chase",
+      "matches": 7,
+      "batting": {
+        "innings": 6,
+        "notOuts": 1,
+        "runs": 77,
+        "balls": 65,
+        "highScore": "34",
+        "average": "15.40",
+        "strikeRate": "118.46",
+        "fours": 10,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 162,
+        "overs": "27.0",
+        "maidens": 0,
+        "runs": 160,
+        "wickets": 10,
+        "average": "16.00",
+        "economy": "5.93",
+        "best": "3/24"
+      }
+    },
+    "rovman-powell": {
+      "slug": "rovman-powell",
+      "name": "Rovman Powell",
+      "matches": 8,
+      "batting": {
+        "innings": 8,
+        "notOuts": 2,
+        "runs": 213,
+        "balls": 159,
+        "highScore": "49",
+        "average": "35.50",
+        "strikeRate": "133.96",
+        "fours": 10,
+        "sixes": 14,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "saim-ayub": {
+      "slug": "saim-ayub",
+      "name": "Saim Ayub",
+      "matches": 3,
+      "batting": {
+        "innings": 3,
+        "notOuts": 1,
+        "runs": 127,
+        "balls": 79,
+        "highScore": "102",
+        "average": "63.50",
+        "strikeRate": "160.76",
+        "fours": 6,
+        "sixes": 9,
+        "fifties": 0,
+        "hundreds": 1
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 72,
+        "overs": "12.0",
+        "maidens": 0,
+        "runs": 97,
+        "wickets": 1,
+        "average": "97.00",
+        "economy": "8.08",
+        "best": "1/20"
+      }
+    },
+    "shadab-khan": {
+      "slug": "shadab-khan",
+      "name": "Shadab Khan",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 2,
+        "runs": 95,
+        "balls": 46,
+        "highScore": "52*",
+        "average": "47.50",
+        "strikeRate": "206.52",
+        "fours": 4,
+        "sixes": 8,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 72,
+        "overs": "12.0",
+        "maidens": 1,
+        "runs": 53,
+        "wickets": 4,
+        "average": "13.25",
+        "economy": "4.42",
+        "best": "2/23"
+      }
+    },
+    "shadley-van-schalkwyk": {
+      "slug": "shadley-van-schalkwyk",
+      "name": "Shadley van Schalkwyk",
+      "matches": 6,
+      "batting": {
+        "innings": 5,
+        "notOuts": 3,
+        "runs": 35,
+        "balls": 24,
+        "highScore": "13*",
+        "average": "17.50",
+        "strikeRate": "145.83",
+        "fours": 2,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 6,
+        "balls": 108,
+        "overs": "18.0",
+        "maidens": 0,
+        "runs": 178,
+        "wickets": 3,
+        "average": "59.33",
+        "economy": "9.89",
+        "best": "2/25"
+      }
+    },
+    "shadrack-descarte": {
+      "slug": "shadrack-descarte",
+      "name": "Shadrack Descarte",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "shai-hope": {
+      "slug": "shai-hope",
+      "name": "Shai Hope",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 2,
+        "runs": 136,
+        "balls": 95,
+        "highScore": "56*",
+        "average": "68.00",
+        "strikeRate": "143.16",
+        "fours": 5,
+        "sixes": 10,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "shamar-joseph": {
+      "slug": "shamar-joseph",
+      "name": "Shamar Joseph",
+      "matches": 4,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 4,
+        "balls": 76,
+        "overs": "12.4",
+        "maidens": 0,
+        "runs": 105,
+        "wickets": 8,
+        "average": "13.13",
+        "economy": "8.29",
+        "best": "3/22"
+      }
+    },
+    "shamar-springer": {
+      "slug": "shamar-springer",
+      "name": "Shamar Springer",
+      "matches": 7,
+      "batting": {
+        "innings": 6,
+        "notOuts": 2,
+        "runs": 50,
+        "balls": 41,
+        "highScore": "19*",
+        "average": "12.50",
+        "strikeRate": "121.95",
+        "fours": 5,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 6,
+        "balls": 113,
+        "overs": "18.5",
+        "maidens": 0,
+        "runs": 187,
+        "wickets": 9,
+        "average": "20.78",
+        "economy": "9.93",
+        "best": "3/13"
+      }
+    },
+    "shaqkere-parris": {
+      "slug": "shaqkere-parris",
+      "name": "Shaqkere Parris",
+      "matches": 1,
+      "batting": {
+        "innings": 1,
+        "notOuts": 0,
+        "runs": 1,
+        "balls": 5,
+        "highScore": "1",
+        "average": "1.00",
+        "strikeRate": "20.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "shayan-jahangir": {
+      "slug": "shayan-jahangir",
+      "name": "Shayan Jahangir",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 0,
+        "runs": 16,
+        "balls": 27,
+        "highScore": "13",
+        "average": "4.00",
+        "strikeRate": "59.26",
+        "fours": 0,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "sherfane-rutherford": {
+      "slug": "sherfane-rutherford",
+      "name": "Sherfane Rutherford",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 1,
+        "runs": 149,
+        "balls": 94,
+        "highScore": "61",
+        "average": "37.25",
+        "strikeRate": "158.51",
+        "fours": 11,
+        "sixes": 9,
+        "fifties": 2,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 6,
+        "overs": "1.0",
+        "maidens": 0,
+        "runs": 7,
+        "wickets": 0,
+        "average": "—",
+        "economy": "7.00",
+        "best": "0/7"
+      }
+    },
+    "shimron-hetmyer": {
+      "slug": "shimron-hetmyer",
+      "name": "Shimron Hetmyer",
+      "matches": 4,
+      "batting": {
+        "innings": 4,
+        "notOuts": 2,
+        "runs": 186,
+        "balls": 75,
+        "highScore": "111*",
+        "average": "93.00",
+        "strikeRate": "248.00",
+        "fours": 13,
+        "sixes": 16,
+        "fifties": 0,
+        "hundreds": 1
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "sufiyan-muqeem": {
+      "slug": "sufiyan-muqeem",
+      "name": "Sufyan Moqim",
+      "matches": 1,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 1,
+        "balls": 24,
+        "overs": "4.0",
+        "maidens": 0,
+        "runs": 36,
+        "wickets": 2,
+        "average": "18.00",
+        "economy": "9.00",
+        "best": "2/36"
+      }
+    },
+    "sunil-narine": {
+      "slug": "sunil-narine",
+      "name": "Sunil Narine",
+      "matches": 7,
+      "batting": {
+        "innings": 6,
+        "notOuts": 2,
+        "runs": 172,
+        "balls": 96,
+        "highScore": "55",
+        "average": "43.00",
+        "strikeRate": "179.17",
+        "fours": 11,
+        "sixes": 14,
+        "fifties": 2,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 7,
+        "balls": 160,
+        "overs": "26.4",
+        "maidens": 1,
+        "runs": 141,
+        "wickets": 7,
+        "average": "20.14",
+        "economy": "5.29",
+        "best": "3/7"
+      }
+    },
+    "tajinder-singh": {
+      "slug": "tajinder-singh",
+      "name": "Tajinder Singh",
+      "matches": 3,
+      "batting": {
+        "innings": 3,
+        "notOuts": 0,
+        "runs": 99,
+        "balls": 73,
+        "highScore": "62",
+        "average": "33.00",
+        "strikeRate": "135.62",
+        "fours": 10,
+        "sixes": 2,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "tayyab-arif": {
+      "slug": "tayyab-arif",
+      "name": "Tayyab Arif",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "terrance-hinds": {
+      "slug": "terrance-hinds",
+      "name": "Terrance Hinds",
+      "matches": 3,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 15,
+        "balls": 12,
+        "highScore": "14*",
+        "average": "15.00",
+        "strikeRate": "125.00",
+        "fours": 1,
+        "sixes": 1,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 3,
+        "balls": 57,
+        "overs": "9.3",
+        "maidens": 0,
+        "runs": 117,
+        "wickets": 6,
+        "average": "19.50",
+        "economy": "12.32",
+        "best": "3/33"
+      }
+    },
+    "tim-seifert": {
+      "slug": "tim-seifert",
+      "name": "Tim Seifert",
+      "matches": 2,
+      "batting": {
+        "innings": 2,
+        "notOuts": 1,
+        "runs": 117,
+        "balls": 74,
+        "highScore": "105*",
+        "average": "117.00",
+        "strikeRate": "158.11",
+        "fours": 11,
+        "sixes": 5,
+        "fifties": 0,
+        "hundreds": 1
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "usman-khan": {
+      "slug": "usman-khan",
+      "name": "Usman Khan",
+      "matches": 4,
+      "batting": {
+        "innings": 3,
+        "notOuts": 0,
+        "runs": 51,
+        "balls": 37,
+        "highScore": "28",
+        "average": "17.00",
+        "strikeRate": "137.84",
+        "fours": 5,
+        "sixes": 3,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "usman-tariq": {
+      "slug": "usman-tariq",
+      "name": "Usman Tariq",
+      "matches": 6,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 6,
+        "balls": 132,
+        "overs": "22.0",
+        "maidens": 0,
+        "runs": 144,
+        "wickets": 8,
+        "average": "18.00",
+        "economy": "6.55",
+        "best": "3/21"
+      }
+    },
+    "veerasammy-permaul": {
+      "slug": "veerasammy-permaul",
+      "name": "Veerasammy Permaul",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "vitel-lawes": {
+      "slug": "vitel-lawes",
+      "name": "Vitel Lawes",
+      "matches": 8,
+      "batting": {
+        "innings": 4,
+        "notOuts": 1,
+        "runs": 48,
+        "balls": 34,
+        "highScore": "32",
+        "average": "16.00",
+        "strikeRate": "141.18",
+        "fours": 1,
+        "sixes": 5,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 8,
+        "balls": 144,
+        "overs": "24.0",
+        "maidens": 1,
+        "runs": 241,
+        "wickets": 8,
+        "average": "30.13",
+        "economy": "10.04",
+        "best": "3/29"
+      }
+    },
+    "wanindu-hasaranga": {
+      "slug": "wanindu-hasaranga",
+      "name": "Wanindu Hasaranga",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 4,
+        "runs": 46,
+        "balls": 24,
+        "highScore": "18*",
+        "average": "46.00",
+        "strikeRate": "191.67",
+        "fours": 5,
+        "sixes": 2,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 102,
+        "overs": "17.0",
+        "maidens": 0,
+        "runs": 122,
+        "wickets": 5,
+        "average": "24.40",
+        "economy": "7.18",
+        "best": "2/18"
+      }
+    },
+    "waqar-salamkheil": {
+      "slug": "waqar-salamkheil",
+      "name": "Waqar Salamkheil",
+      "matches": 5,
+      "batting": {
+        "innings": 1,
+        "notOuts": 1,
+        "runs": 1,
+        "balls": 1,
+        "highScore": "1*",
+        "average": "—",
+        "strikeRate": "100.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 5,
+        "balls": 84,
+        "overs": "14.0",
+        "maidens": 0,
+        "runs": 131,
+        "wickets": 2,
+        "average": "65.50",
+        "economy": "9.36",
+        "best": "1/18"
+      }
+    },
+    "zachary-carter": {
+      "slug": "zachary-carter",
+      "name": "Zachary Carter",
+      "matches": 5,
+      "batting": {
+        "innings": 5,
+        "notOuts": 0,
+        "runs": 131,
+        "balls": 92,
+        "highScore": "57",
+        "average": "26.20",
+        "strikeRate": "142.39",
+        "fours": 6,
+        "sixes": 13,
+        "fifties": 1,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    },
+    "zishan-motara": {
+      "slug": "zishan-motara",
+      "name": "Zishan Motara",
+      "matches": 0,
+      "batting": {
+        "innings": 0,
+        "notOuts": 0,
+        "runs": 0,
+        "balls": 0,
+        "highScore": "—",
+        "average": "—",
+        "strikeRate": "0.00",
+        "fours": 0,
+        "sixes": 0,
+        "fifties": 0,
+        "hundreds": 0
+      },
+      "bowling": {
+        "innings": 0,
+        "balls": 0,
+        "overs": "0.0",
+        "maidens": 0,
+        "runs": 0,
+        "wickets": 0,
+        "average": "—",
+        "economy": "—",
+        "best": "—"
+      }
+    }
+  }
+}

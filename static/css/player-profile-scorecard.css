@@ -273,6 +273,14 @@
 .ppx-cpl-card dt { color: var(--ppx-muted); }
 .ppx-cpl-card dd { margin: 0; color: white; font-weight: 900; }
 .ppx-cpl-card > a { display: flex; justify-content: space-between; margin-top: 18px; padding: 12px 14px; border-radius: 4px; background: linear-gradient(180deg, #ffe365, var(--ppx-gold)); color: #171100; font-weight: 950; }
+.ppx-season-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: hidden; border: 1px solid var(--ppx-line); border-radius: 6px; background: rgba(7, 8, 23, .62); }
+.ppx-season-stats div { display: grid; align-content: center; min-height: 70px; padding: 11px 9px; border-right: 1px solid var(--ppx-line); border-bottom: 1px solid var(--ppx-line); }
+.ppx-season-stats div:nth-child(4n) { border-right: 0; }
+.ppx-season-stats div:nth-last-child(-n + 4) { border-bottom: 0; }
+.ppx-season-stats small { color: var(--ppx-muted); font-size: 8px; font-weight: 950; letter-spacing: .07em; text-transform: uppercase; }
+.ppx-season-stats strong { margin-top: 5px; color: white; font-size: 23px; line-height: 1; }
+.ppx-cpl-card .ppx-season-source { margin: 12px 0 14px; color: var(--ppx-muted); font-size: 11px; line-height: 1.5; }
+.ppx-cpl-card .ppx-season-context { border-top: 1px solid var(--ppx-line); }
 
 /* Career records */
 .ppx-career-record { padding: 28px 30px 30px; scroll-margin-top: 150px; }
@@ -359,6 +367,10 @@
   .ppx-cpl-card { align-self: auto; }
   .ppx-quick-facts div,
   .ppx-cpl-card dl div { grid-template-columns: 1fr; gap: 3px; }
+  .ppx-season-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ppx-season-stats div:nth-child(2n) { border-right: 0; }
+  .ppx-season-stats div:nth-last-child(-n + 4) { border-bottom: 1px solid var(--ppx-line); }
+  .ppx-season-stats div:nth-last-child(-n + 2) { border-bottom: 0; }
   .ppx-section-heading { align-items: flex-start; flex-direction: column; }
   .ppx-section-heading > p { text-align: left; }
   .ppx-career-path { padding: 22px 0 34px; }

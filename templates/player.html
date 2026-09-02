@@ -18,7 +18,7 @@
   <link rel="icon" href="/static/img/brand/cplseason-favicon.webp" type="image/png" sizes="512x512">
   <link rel="apple-touch-icon" href="/static/img/brand/cplseason-favicon.webp" sizes="512x512">
   <link rel="stylesheet" href="/static/css/site.css?v=20260727cq">
-  <link rel="stylesheet" href="/static/css/player-profile-scorecard.css?v=20260805b">
+  <link rel="stylesheet" href="/static/css/player-profile-scorecard.css?v=20260902stats1">
   <script type="application/ld+json">{{ schema_json | safe }}</script>
 </head>
 <body class="profile-2026 ppx-body">
@@ -93,15 +93,24 @@
       </article>
 
       <aside id="cpl-2026" class="ppx-cpl-card">
-        <p class="ppx-kicker">Current squad</p>
-        <h2>{{ player.name }} at CPL 2026</h2>
-        <p>{{ player.selection_note }}. The player is listed in the {{ player.category }} group for {{ team.name }}.</p>
-        <dl>
-          <div><dt>Role</dt><dd>{{ profile.role or player.category }}</dd></div>
+        <p class="ppx-kicker">CPL 2026 season stats</p>
+        <h2>{{ player.name }} in CPL 2026</h2>
+        {% set season = player.season_stats %}
+        {% if season.matches %}<p>Verified tournament totals through Match {{ season_stats_meta.throughMatch }}.</p>{% else %}<p>No recorded CPL 2026 appearance through Match {{ season_stats_meta.throughMatch }}.</p>{% endif %}
+        <div class="ppx-season-stats" aria-label="{{ player.name }} CPL 2026 statistics">
+          <div><small>Matches</small><strong>{{ season.matches }}</strong></div>
+          <div><small>Runs</small><strong>{{ season.batting.runs }}</strong></div>
+          <div><small>Bat average</small><strong>{{ season.batting.average }}</strong></div>
+          <div><small>Strike rate</small><strong>{{ season.batting.strikeRate }}</strong></div>
+          <div><small>Highest</small><strong>{{ season.batting.highScore }}</strong></div>
+          <div><small>Wickets</small><strong>{{ season.bowling.wickets }}</strong></div>
+          <div><small>Best bowling</small><strong>{{ season.bowling.best }}</strong></div>
+          <div><small>Economy</small><strong>{{ season.bowling.economy }}</strong></div>
+        </div>
+        <p class="ppx-season-source">Updated {{ page.season_stats_updated_label }} · Official CPL match feed{% if season_stats_meta.fallbackMatches %}; Cricbuzz scorecards filled Match {{ season_stats_meta.fallbackMatches | join(', ') }} feed gaps{% endif %}.</p>
+        <dl class="ppx-season-context">
           <div><dt>Franchise</dt><dd>{{ team.name }}</dd></div>
-          <div><dt>Squad category</dt><dd>{{ player.category }}</dd></div>
-          <div><dt>Status</dt><dd>Confirmed squad</dd></div>
-          <div><dt>Record checked</dt><dd>{{ page.updated_label }}</dd></div>
+          <div><dt>Squad role</dt><dd>{{ profile.role or player.category }}</dd></div>
         </dl>
         <a href="/squads/#{{ team.slug }}">View full squad <span>→</span></a>
       </aside>

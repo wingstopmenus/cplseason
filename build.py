@@ -1081,6 +1081,8 @@ def build_player_profiles() -> None:
         path.stem: load_json(path)
         for path in sorted((ROOT / "data" / "teams").glob("*.json"))
     }
+    season_stats_data = load_json(ROOT / "data" / "cpl-2026-player-stats.json")
+    season_stats_by_slug = season_stats_data["players"]
     env = template_environment()
     template = env.get_template("player.html")
 
@@ -1089,6 +1091,7 @@ def build_player_profiles() -> None:
         team = dict(teams_by_slug[player["team_slug"]])
         team["short_name"] = SHORT_NAMES[team["slug"]]
         player["about"] = player_about_copy(player, team)
+        player["season_stats"] = season_stats_by_slug[player_slug]
         player["captain"] = (
             team["slug"] == "jamaica-kingsmen"
             and player["slug"] == "rovman-powell"
@@ -1102,23 +1105,23 @@ def build_player_profiles() -> None:
 
         canonical = f"https://cplseason.com/player/{player_slug}/"
         title_candidates = (
-            f"{player['name']} Profile: Career, Records and CPL 2026 Team",
-            f"{player['name']} Profile: Records and CPL 2026 Team",
-            f"{player['name']} Profile: Stats and CPL 2026 Team",
+            f"{player['name']} CPL 2026 Stats: Runs, Wickets and Profile",
+            f"{player['name']} CPL 2026 Stats and Player Profile",
+            f"{player['name']} Stats, Profile and CPL 2026 Team",
         )
         seo_title = next(
             (candidate for candidate in title_candidates if 50 <= len(candidate) <= 60),
             min(title_candidates, key=lambda candidate: abs(len(candidate) - 55)),
         )
         seo_description = (
-            f"Read {player['name']}'s profile, biography, playing role, career "
-            "record and CPL 2026 team, with verified squad information and "
-            "clearly sourced cricket statistics."
+            f"See {player['name']}'s CPL 2026 stats through Match "
+            f"{season_stats_data['throughMatch']}: matches, runs, batting average, "
+            "strike rate, wickets and bowling figures, plus profile and career records."
         )
         if len(seo_description) > 160:
-            seo_description = seo_description.replace("clearly ", "")
+            seo_description = seo_description.replace("batting ", "")
         if len(seo_description) > 160:
-            seo_description = seo_description.replace("playing ", "")
+            seo_description = seo_description.replace(", plus profile and career records", "")
         page = {
             "title": seo_title,
             "description": seo_description,
@@ -1129,6 +1132,7 @@ def build_player_profiles() -> None:
                 else f"https://cplseason.com{team['logo']}"
             ),
             "updated_label": human_date(player["last_updated"]),
+            "season_stats_updated_label": human_date(season_stats_data["updatedAt"]),
         }
         person_schema = {
             "@type": "Person",
@@ -1165,7 +1169,7 @@ def build_player_profiles() -> None:
                     "url": canonical,
                     "name": page["title"],
                     "description": page["description"],
-                    "dateModified": player["last_updated"],
+                    "dateModified": max(player["last_updated"], season_stats_data["updatedAt"]),
                     "mainEntity": {"@id": f"{canonical}#player"},
                     "breadcrumb": {"@id": f"{canonical}#breadcrumb"},
                 },
@@ -1202,6 +1206,7 @@ def build_player_profiles() -> None:
             team=team,
             roster_number=f"{roster_position:02d}",
             related_players=related_players,
+            season_stats_meta=season_stats_data,
             schema_json=json.dumps(
                 schema, ensure_ascii=False, separators=(",", ":")
             ),
