@@ -211,13 +211,21 @@
       const primary = document.createElement("span");
       const secondary = document.createElement("small");
       if (mode === "bowler") {
+        const runsConceded = Number.isFinite(player.runsConceded)
+          ? player.runsConceded
+          : player.runs;
         primary.textContent =
-          Number.isFinite(player.wickets) && Number.isFinite(player.runsConceded)
-            ? `${player.wickets}/${player.runsConceded}`
+          Number.isFinite(player.wickets) && Number.isFinite(runsConceded)
+            ? `${player.wickets}/${runsConceded}`
             : "Bowling";
-        secondary.textContent = Number.isFinite(player.overs)
-          ? `${numberText(player.overs)} ov`
-          : "Live";
+        const bowlingDetails = [];
+        if (Number.isFinite(player.overs)) {
+          bowlingDetails.push(`${numberText(player.overs)} ov`);
+        }
+        if (Number.isFinite(player.economy)) {
+          bowlingDetails.push(`Econ ${numberText(player.economy, 2)}`);
+        }
+        secondary.textContent = bowlingDetails.join(" · ") || "Live";
       } else {
         primary.textContent = Number.isFinite(player.runs)
           ? String(player.runs)
@@ -380,12 +388,18 @@
     visibleBalls.forEach((ball, index) => {
       const previous = visibleBalls[index - 1];
       const next = visibleBalls[index + 1];
-      const startsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(previous?.over);
-      const endsOver = ball.over !== null && ball.over !== undefined && Number(ball.over) !== Number(next?.over);
-      const overBalls = visibleBalls.filter((item) => Number(item.over) === Number(ball.over));
-      const allOverBalls = balls.filter((item) => Number(item.over) === Number(ball.over));
+      const sameOver = (item) =>
+        Number(item?.inningsNumber) === Number(ball.inningsNumber) &&
+        Number(item?.over) === Number(ball.over);
+      const startsOver = ball.over !== null && ball.over !== undefined && !sameOver(previous);
+      const endsOver = ball.over !== null && ball.over !== undefined && !sameOver(next);
+      const overBalls = visibleBalls.filter(sameOver);
+      const allOverBalls = balls.filter(sameOver);
       const highestBall = Math.max(...allOverBalls.map((item) => Number(item.ball)).filter(Number.isFinite), 0);
-      const laterOverExists = balls.some((item) => Number(item.over) > Number(ball.over));
+      const laterOverExists = balls.some((item) =>
+        Number(item.inningsNumber) === Number(ball.inningsNumber) &&
+        Number(item.over) > Number(ball.over),
+      );
       const overComplete = overBalls.length === allOverBalls.length && (highestBall >= 6 || laterOverExists);
       if (startsOver) {
         if (overComplete) appendOverSummary(overBalls);

@@ -196,3 +196,15 @@ test("public match clients never promote squad or scorecard players", () => {
   assert.match(liveScoreClient, /match\.confirmedPlayingXi/);
   assert.doesNotMatch(liveScoreClient, /team\?\.players/);
 });
+
+test("live score rendering uses bowler figures and innings-aware over summaries", () => {
+  const liveScoreClient = fs.readFileSync(
+    path.resolve(__dirname, "../static/js/live-score.js"),
+    "utf8",
+  );
+  assert.match(liveScoreClient, /const runsConceded = Number\.isFinite\(player\.runsConceded\)/);
+  assert.match(liveScoreClient, /bowlingDetails\.push\(`Econ /);
+  assert.match(liveScoreClient, /Number\(item\?\.inningsNumber\) === Number\(ball\.inningsNumber\)/);
+  assert.match(liveScoreClient, /const overBalls = visibleBalls\.filter\(sameOver\)/);
+  assert.match(liveScoreClient, /const allOverBalls = balls\.filter\(sameOver\)/);
+});
