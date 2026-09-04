@@ -1011,9 +1011,23 @@ if (liveMatchData) {
       const pending = document.createElement("div");
       pending.className = "match-data-pending";
       const title = document.createElement("strong");
-      title.textContent = "Scorecard not available yet";
+      const inningsSummaries = Array.isArray(match?.innings) ? match.innings : [];
+      const verifiedTotals = inningsSummaries.map((innings) => {
+        const team = (match?.teams || []).find(
+          (entry) => String(entry?.id) === String(innings?.battingTeamId),
+        );
+        if (!Number.isFinite(innings?.runs)) return "";
+        const wickets = Number.isFinite(innings?.wickets) ? `/${innings.wickets}` : "";
+        const overs = Number.isFinite(innings?.overs) ? ` (${innings.overs} ov)` : "";
+        return `${team?.shortName || team?.name || `Innings ${innings?.inningsNumber || ""}`} ${innings.runs}${wickets}${overs}`;
+      }).filter(Boolean);
+      title.textContent = verifiedTotals.length
+        ? "Verified innings totals"
+        : "Scorecard not available yet";
       const copy = document.createElement("p");
-      copy.textContent = "Batting and bowling figures will appear when play begins.";
+      copy.textContent = verifiedTotals.length
+        ? `${verifiedTotals.join(" · ")}. Full batting and bowling figures are temporarily unavailable from the official feed.`
+        : "Batting and bowling figures will appear when play begins.";
       pending.append(title, copy);
       fullScorecard.append(pending);
       return;

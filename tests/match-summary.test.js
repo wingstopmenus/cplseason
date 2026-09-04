@@ -1,6 +1,8 @@
 "use strict";
 
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 const test = require("node:test");
 const {
   mergeOfficialMatchDetail,
@@ -49,4 +51,14 @@ test("invalid six-ball decimal notation rolls into the next over", () => {
   assert.equal(normalizeCricketOvers(14.6), 15);
   assert.equal(normalizeCricketOvers("12.5"), 12.5);
   assert.equal(normalizeCricketOvers(""), null);
+});
+
+test("completed matches show verified totals when the full scorecard feed is empty", () => {
+  const client = fs.readFileSync(
+    path.resolve(__dirname, "../static/js/site.js"),
+    "utf8",
+  );
+  assert.match(client, /const inningsSummaries = Array\.isArray\(match\?\.innings\)/);
+  assert.match(client, /title\.textContent = verifiedTotals\.length/);
+  assert.match(client, /Full batting and bowling figures are temporarily unavailable from the official feed/);
 });

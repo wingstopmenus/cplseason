@@ -3143,7 +3143,7 @@ def sync_shared_footer() -> None:
         }:
             site_js_url = "/static/js/site.js?v=20260902adfit1"
         elif html_path.parent.parent == ROOT / "match":
-            site_js_url = "/static/js/site.js?v=20260902dynamic2"
+            site_js_url = "/static/js/site.js?v=20260904matchscores1"
         else:
             site_js_url = "/static/js/site.js?v=20260729ms"
         updated = js_pattern.sub(site_js_url, updated)
