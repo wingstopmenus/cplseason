@@ -6,6 +6,10 @@ const {
   loadConfirmedPlayingXi,
   parseVerifiedMatchIndex,
 } = require("./lib/confirmed-playing-xi");
+const {
+  mergeOfficialMatchDetail,
+  normalizeCricketOvers,
+} = require("./lib/match-summary");
 let resultIndexCache = { expires: 0, matches: new Map() };
 const confirmedPlayingXiCache = new Map();
 
@@ -61,7 +65,7 @@ function normalizeInnings(innings) {
     ),
     runs: numeric(score?.runs),
     wickets: numeric(score?.wickets),
-    overs: numeric(score?.oversBowled ?? score?.overs),
+    overs: normalizeCricketOvers(score?.oversBowled ?? score?.overs),
     runRate: numeric(score?.runRate),
     extras: numeric(score?.extras),
     status: String(innings?.status || ""),
@@ -592,14 +596,15 @@ async function fetchSummary(match, includeCommentary = false) {
   if (!matchId) return normalizeMatch(match);
   try {
     const rawSummary = await fetchOfficial(`/match/${matchId}`);
-    const summary = applyDerivedMatchPhase(normalizeMatch(rawSummary));
+    const mergedSummary = mergeOfficialMatchDetail(match, rawSummary);
+    const summary = applyDerivedMatchPhase(normalizeMatch(mergedSummary));
     if (!Number.isFinite(summary.matchNumber)) {
       summary.matchNumber = matchNumber(match);
     }
     await hydrateConfirmedPlayingXi(summary);
     if (includeCommentary) {
       const rawScorecard = await fetchOfficial(`/match/${matchId}/scorecard`).catch(() => null);
-      const innings = [...(rawSummary?.inningsScores || []), ...(rawScorecard?.inningsScorecards || [])]
+      const innings = [...(mergedSummary?.inningsScores || []), ...(rawScorecard?.inningsScorecards || [])]
         .filter((item, index, items) => item?.inningsId && items.findIndex((candidate) => String(candidate?.inningsId) === String(item.inningsId)) === index);
       const ballResponses = await Promise.all(innings.map((item) =>
           fetchOfficial(
