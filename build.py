@@ -3080,6 +3080,15 @@ def sync_shared_footer() -> None:
         r'\?client=ca-pub-\d+["\'][^>]*>\s*</script>',
         re.IGNORECASE,
     )
+    adsense_account_meta_pattern = re.compile(
+        r'\s*<meta\s+name=["\']google-adsense-account["\']\s+'
+        r'content=["\']ca-pub-\d+["\']\s*/?>',
+        re.IGNORECASE,
+    )
+    adsense_account_meta = (
+        '  <meta name="google-adsense-account" '
+        'content="ca-pub-6156452079518932">'
+    )
     adsense_script = (
         '  <script async '
         'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
@@ -3148,6 +3157,7 @@ def sync_shared_footer() -> None:
             site_js_url = "/static/js/site.js?v=20260729ms"
         updated = js_pattern.sub(site_js_url, updated)
         updated = adsense_script_pattern.sub("", updated)
+        updated = adsense_account_meta_pattern.sub("", updated)
         if "</head>" not in updated:
             raise ValueError(f"Expected </head> in {html_path.relative_to(ROOT)}")
         if "G-86VXN7CG6J" not in updated:
@@ -3160,12 +3170,20 @@ def sync_shared_footer() -> None:
             )
         updated = updated.replace(
             "  <!-- Google tag (gtag.js) -->",
-            f"{adsense_script}\n  <!-- Google tag (gtag.js) -->",
+            f"{adsense_account_meta}\n{adsense_script}\n  <!-- Google tag (gtag.js) -->",
             1,
         )
-        if updated.count("ca-pub-6156452079518932") != 1:
+        if updated.count(
+            "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6156452079518932"
+        ) != 1:
             raise ValueError(
                 f"Expected one AdSense script in {html_path.relative_to(ROOT)}"
+            )
+        if updated.count(
+            '<meta name="google-adsense-account" content="ca-pub-6156452079518932">'
+        ) != 1:
+            raise ValueError(
+                f"Expected one AdSense account meta tag in {html_path.relative_to(ROOT)}"
             )
         if len(re.findall(r'class="back-to-top"', updated)) != 1:
             raise ValueError(
