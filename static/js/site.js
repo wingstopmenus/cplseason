@@ -56,7 +56,7 @@ if (!adsterraIsExcluded) {
       const unit = adUnits[size];
       const adToken = `cpl-ad-${Date.now()}-${Math.random().toString(36).slice(2)}`;
       const adIframe = document.createElement("iframe");
-      const adScriptUrl = `https://toleranceteaminadequate.com/${unit.key}/invoke.js`;
+      const adScriptUrl = `https://archbishopaluminiumcountenance.com/${unit.key}/invoke.js`;
       adIframe.title = `${unit.width} by ${unit.height} advertisement`;
       adIframe.width = String(unit.width);
       adIframe.height = String(unit.height);
