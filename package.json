@@ -1,0 +1,17 @@
+{
+  "name": "cplseason",
+  "version": "1.0.0",
+  "description": "CPL Season - Caribbean Premier League 2026 coverage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:speed-insights": "node scripts/build-speed-insights.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
