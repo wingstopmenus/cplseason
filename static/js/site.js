@@ -1884,3 +1884,21 @@ document.querySelectorAll("[data-teams-faq]").forEach((accordion) => {
   link.innerHTML = 'Full match preview <span aria-hidden="true">→</span>';
   previewCopy.append(link);
 })();
+
+// CPL Season Online Visitor
+window._wau = window._wau || [];
+
+window._wau.push([
+  "dynamic",
+  "cplseason",
+  "inm",
+  "c4302bffffff",
+  "small"
+]);
+
+(function () {
+  var s = document.createElement("script");
+  s.src = "https://waust.at/d.js";
+  s.async = true;
+  document.head.appendChild(s);
+})();
