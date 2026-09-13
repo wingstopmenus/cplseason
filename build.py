@@ -3087,12 +3087,12 @@ def sync_shared_footer() -> None:
     )
     adsense_account_meta = (
         '  <meta name="google-adsense-account" '
-        'content="ca-pub-6156452079518932">'
+        'content="ca-pub-6650468267259370">'
     )
     adsense_script = (
         '  <script async '
         'src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
-        '?client=ca-pub-6156452079518932" '
+        '?client=ca-pub-6650468267259370" '
         'crossorigin="anonymous"></script>'
     )
     google_tag = """  <!-- Google tag (gtag.js) -->
@@ -3174,13 +3174,13 @@ def sync_shared_footer() -> None:
             1,
         )
         if updated.count(
-            "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6156452079518932"
+            "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650468267259370"
         ) != 1:
             raise ValueError(
                 f"Expected one AdSense script in {html_path.relative_to(ROOT)}"
             )
         if updated.count(
-            '<meta name="google-adsense-account" content="ca-pub-6156452079518932">'
+            '<meta name="google-adsense-account" content="ca-pub-6650468267259370">'
         ) != 1:
             raise ValueError(
                 f"Expected one AdSense account meta tag in {html_path.relative_to(ROOT)}"

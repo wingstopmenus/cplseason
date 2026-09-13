@@ -6,8 +6,8 @@ const path = require("node:path");
 const test = require("node:test");
 
 const ROOT = path.resolve(__dirname, "..");
-const ACCOUNT_META = '<meta name="google-adsense-account" content="ca-pub-6156452079518932">';
-const ADSENSE_SCRIPT = "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6156452079518932";
+const ACCOUNT_META = '<meta name="google-adsense-account" content="ca-pub-6650468267259370">';
+const ADSENSE_SCRIPT = "pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6650468267259370";
 
 function generatedHtmlFiles(directory = ROOT) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
