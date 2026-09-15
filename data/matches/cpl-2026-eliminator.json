@@ -3,10 +3,10 @@
   "match_number": 36,
   "competition": "Republic Bank Caribbean Premier League 2026",
   "stage": "Eliminator",
-  "home_team_slug": null,
-  "away_team_slug": null,
-  "home_team_label": "Third-place team",
-  "away_team_label": "Fourth-place team",
+  "home_team_slug": "barbados-tridents",
+  "away_team_slug": "jamaica-kingsmen",
+  "home_team_label": "Barbados Tridents",
+  "away_team_label": "Jamaica Kingsmen",
   "venue_slug": "kensington-oval",
   "date": "2026-09-16",
   "start_time_local": "19:00",
@@ -14,8 +14,8 @@
   "start_iso": "2026-09-16T19:00:00-04:00",
   "status": "Scheduled",
   "official_match_center_url": null,
-  "preview_heading": "Third and fourth meet with the season on the line",
-  "preview": "The teams finishing third and fourth in the league table meet in the CPL 2026 Eliminator at Kensington Oval. The winner advances to Qualifier 2; the losing team is eliminated.",
-  "preview_detail": "Team names, confirmed squads and playing XIs will update after qualification is settled. No participant is listed before the relevant result is official.",
-  "last_updated": "2026-07-27"
+  "preview_heading": "Barbados Tridents vs Jamaica Kingsmen: a place in Qualifier 2 at stake",
+  "preview": "Barbados Tridents face Jamaica Kingsmen in the CPL 2026 Eliminator at Kensington Oval on September 16. Play starts at 7:00pm Barbados time. The winner advances to Qualifier 2, while the losing team is eliminated from the tournament.",
+  "preview_detail": "Barbados Tridents and Jamaica Kingsmen are confirmed as the Eliminator participants. The toss result and confirmed playing XIs will be added when announced on match day.",
+  "last_updated": "2026-09-15"
 }

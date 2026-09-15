@@ -3,10 +3,10 @@
   "match_number": 37,
   "competition": "Republic Bank Caribbean Premier League 2026",
   "stage": "Qualifier 1",
-  "home_team_slug": null,
-  "away_team_slug": null,
-  "home_team_label": "First-place team",
-  "away_team_label": "Second-place team",
+  "home_team_slug": "antigua-barbuda-falcons",
+  "away_team_slug": "guyana-amazon-warriors",
+  "home_team_label": "Antigua & Barbuda Falcons",
+  "away_team_label": "Guyana Amazon Warriors",
   "venue_slug": "kensington-oval",
   "date": "2026-09-17",
   "start_time_local": "20:00",
@@ -14,8 +14,8 @@
   "start_iso": "2026-09-17T20:00:00-04:00",
   "status": "Scheduled",
   "official_match_center_url": null,
-  "preview_heading": "The top two play for the first place in the final",
-  "preview": "The top two teams from the CPL 2026 league stage meet in Qualifier 1 at Kensington Oval. The winner reaches the final, while the loser receives a second opportunity in Qualifier 2.",
-  "preview_detail": "Team names, confirmed squads and playing XIs will update after qualification is settled. No participant is listed before the relevant result is official.",
-  "last_updated": "2026-07-27"
+  "preview_heading": "Antigua & Barbuda Falcons vs Guyana Amazon Warriors: a direct route to the final",
+  "preview": "Antigua & Barbuda Falcons face Guyana Amazon Warriors in CPL 2026 Qualifier 1 at Kensington Oval on September 17. Play starts at 8:00pm Barbados time. The winner advances directly to the final, while the losing team gets another chance in Qualifier 2 against the Eliminator winner.",
+  "preview_detail": "Antigua & Barbuda Falcons and Guyana Amazon Warriors are confirmed as the Qualifier 1 participants. The toss result and confirmed playing XIs will be added when announced on match day.",
+  "last_updated": "2026-09-15"
 }
