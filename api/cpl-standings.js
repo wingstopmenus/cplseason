@@ -351,6 +351,17 @@ module.exports = async function cplStandings(request, response) {
     return response.status(405).json({ error: "Method not allowed" });
   }
 
+  // Cricbuzz's published league table takes precedence over a stale upstream ladder.
+  const latestVerified = await verifiedStandings().catch(() => null);
+  if (latestVerified && latestVerified.completedMatches >= 35) {
+    response.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=180");
+    response.setHeader("X-CPL-Standings-Source", "verified-live-table");
+    return response.status(200).json({
+      source: "verified-live-table",
+      fetchedAt: new Date().toISOString(),
+      ...latestVerified,
+    });
+  }
   try {
     const [ladderPayload, matchPayload, verified] = await Promise.all([
       fetchOfficial(`/competition/${COMPETITION_ID}/ladders`),
