@@ -873,7 +873,9 @@
       if (!response.ok) throw new Error(`Live score request failed: ${response.status}`);
       const payload = await response.json();
       if (
-        payload?.source !== "official-cpl-mcpro" ||
+        !payload ||
+        typeof payload.source !== "string" ||
+        !payload.source ||
         !payload.focus ||
         !Array.isArray(payload.schedule)
       ) {
@@ -887,10 +889,12 @@
       setFeedSignal(stale ? "Score update delayed" : "Live scores", stale ? "error" : "connected");
     } catch (error) {
       console.warn("CPL live score refresh unavailable", error);
-      setFeedSignal("Score update delayed", "error");
+      setFeedSignal("Live score unavailable", "error");
       text(
         feedMessage,
-        "New scores are temporarily delayed. The latest match update remains on screen.",
+        lastSuccessfulRefresh
+          ? "Live score feed unavailable. The last verified update may be outdated; check the match centre for the latest status."
+          : "Live score feed unavailable. Scores and match status shown here have not been verified.",
       );
     } finally {
       requestInProgress = false;
