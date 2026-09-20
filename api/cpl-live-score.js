@@ -660,6 +660,110 @@ async function fetchSummary(match, includeCommentary = false) {
   }
 }
 
+
+const CRICBUZZ_MATCH_INDEX = "https://www.cricbuzz.com/cricket-series/12123/caribbean-premier-league-2026/matches";
+function extractCricbuzzObject(source, start) {
+  let depth = 0, quoted = false, escape = false;
+  for (let i = start; i < source.length; i++) {
+    const c = source[i];
+    if (quoted) {
+      if (escape) escape = false;
+      else if (c === "\\\\") escape = true;
+      else if (c === '"') quoted = false;
+    } else if (c === '"') quoted = true;
+    else if (c === "{") depth++;
+    else if (c === "}" && --depth === 0) return source.slice(start, i + 1);
+  }
+  return "";
+}
+function cricbuzzEmbeddedObjects(html, key) {
+  const source = String(html).replace(/\\\\\"/g, '"');
+  const found = [];
+  const pattern = new RegExp('"' + key + '":\\\\{', 'g');
+  for (const match of source.matchAll(pattern)) {
+    const raw = extractCricbuzzObject(source, source.indexOf("{", match.index));
+    if (!raw) continue;
+    try { found.push(JSON.parse(raw)); } catch {}
+  }
+  return found;
+}
+function cricbuzzInnings(raw, teamId, inningsNumber) {
+  const score = raw?.inngs1 || raw?.inngs2 || raw;
+  if (!score || !Number.isFinite(Number(score.runs))) return null;
+  return {
+    battingTeamId: String(teamId), inningsNumber,
+    runs: Number(score.runs), wickets: Number(score.wickets ?? 0),
+    overs: Number(score.overs ?? 0),
+  };
+}
+async function fetchCricbuzzSchedule() {
+  const upstream = await fetch(CRICBUZZ_MATCH_INDEX, {
+    headers: { "User-Agent": "Mozilla/5.0 (compatible; CPLSeason/1.0)", Accept: "text/html" },
+    signal: AbortSignal.timeout(9000),
+  });
+  if (!upstream.ok) throw new Error("Cricbuzz match index HTTP " + upstream.status);
+  const html = await upstream.text();
+  const infos = cricbuzzEmbeddedObjects(html, "matchInfo");
+  const scores = cricbuzzEmbeddedObjects(html, "matchScore");
+  const byId = new Map();
+  for (const info of infos) {
+    if (Number(info.seriesId ?? info.series?.id) !== 12123) continue;
+    const id = Number(info.matchId), start = Number(info.startDate ?? info.matchStartTimestamp);
+    if (!Number.isFinite(id) || !Number.isFinite(start)) continue;
+    byId.set(id, { info, start });
+  }
+  const entries = [...byId.values()].sort((a,b) => a.start - b.start);
+  // Never map an incomplete match list to numbered fixtures.
+  if (entries.length !== 39) throw new Error("Cricbuzz match index incomplete: " + entries.length);
+  return entries.map(({info, start}, index) => {
+    const score = scores.find(item => Number(item.matchId) === Number(info.matchId));
+    const teams = [info.team1, info.team2].map((team, n) => ({
+      id: String(team?.teamId ?? n + 1), name: String(team?.teamName || team?.name || ""),
+      shortName: String(team?.teamSName || team?.shortName || ""), players: [],
+    }));
+    const innings = [];
+    for (let i = 0; i < 2; i++) {
+      const entry = score?.["team" + (i + 1) + "Score"];
+      for (let n = 1; n <= 2; n++) {
+        const part = entry?.["inngs" + n];
+        const normalized = cricbuzzInnings(part, teams[i].id, n);
+        if (normalized) innings.push(normalized);
+      }
+    }
+    const state = String(info.status || "");
+    const stateCode = String(info.state || "");
+    const completed = /complete|result|abandon|cancel/i.test(stateCode)
+      || /won by|match tied|no result|abandoned/i.test(state);
+    return {
+      matchId: String(info.matchId), matchNumber: index + 1,
+      title: String(info.matchDesc || ""), stage: String(info.matchDesc || ""),
+      status: completed ? "completed" : /in progress|live|inprogress/i.test(stateCode) ? "live" : "scheduled",
+      startDate: new Date(start).toISOString(), format: "T20",
+      description: state, stateOfPlay: state, winnerName: "",
+      venue: { name: String(info.venueInfo?.ground || "") },
+      teams, innings, topPerformers: { mostRuns: null, mostWickets: null },
+      playerOfMatch: null,
+      live: { batters: [], bowler: null, recentBalls: [], currentRunRate: null, requiredRunRate: null, target: null },
+    };
+  });
+}
+async function serveCricbuzz(request, response) {
+  const schedule = await fetchCricbuzzSchedule();
+  const number = Number(request.query?.match);
+  const requested = Number.isInteger(number) && number >= 1 && number <= 39
+    ? schedule[number - 1] : null;
+  const now = Date.now();
+  const focus = requested || schedule.find(m => m.status === "live")
+    || schedule.find(m => m.status === "scheduled" && Date.parse(m.startDate) >= now)
+    || [...schedule].reverse().find(m => m.status === "completed") || schedule[0];
+  response.setHeader("Cache-Control", "public, s-maxage=15, stale-while-revalidate=60");
+  response.setHeader("X-CPL-Live-Score-Source", "cricbuzz-match-index");
+  return response.status(200).json({
+    source: "cricbuzz-match-index", fetchedAt: new Date().toISOString(),
+    focus, match: requested, schedule, recent: schedule.filter(m => m.status === "completed").reverse(),
+  });
+}
+
 module.exports = async function cplLiveScore(request, response) {
   if (request.method !== "GET") {
     response.setHeader("Allow", "GET");
@@ -759,6 +863,9 @@ module.exports = async function cplLiveScore(request, response) {
       recent,
     });
   } catch (error) {
+    try { return await serveCricbuzz(request, response); } catch (cricbuzzError) {
+      console.error("CPL Cricbuzz fallback unavailable:", cricbuzzError);
+    }
     // Verified playoff fallback: never invent live scores when the upstream feed fails.
     const requestedNumber = Number(request.query?.match);
     if (requestedNumber === 38 || requestedNumber === 39) {
