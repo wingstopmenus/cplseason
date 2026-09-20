@@ -668,7 +668,7 @@ function extractCricbuzzObject(source, start) {
     const c = source[i];
     if (quoted) {
       if (escape) escape = false;
-      else if (c === "\\\\") escape = true;
+      else if (c === "\\") escape = true;
       else if (c === '"') quoted = false;
     } else if (c === '"') quoted = true;
     else if (c === "{") depth++;
@@ -677,9 +677,9 @@ function extractCricbuzzObject(source, start) {
   return "";
 }
 function cricbuzzEmbeddedObjects(html, key) {
-  const source = String(html).replace(/\\\\\"/g, '"');
+  const source = String(html).replace(/\\"/g, '"');
   const found = [];
-  const pattern = new RegExp('"' + key + '":\\\\{', 'g');
+  const pattern = new RegExp('"' + key + '":\\{', 'g');
   for (const match of source.matchAll(pattern)) {
     const raw = extractCricbuzzObject(source, source.indexOf("{", match.index));
     if (!raw) continue;
