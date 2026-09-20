@@ -1779,8 +1779,19 @@ if (liveMatchData) {
       const response = await fetch(`/api/cpl-live-score?${matchQuery}`, { cache: "default", priority: "high" });
       if (!response.ok) throw new Error("Score unavailable");
       const payload = await response.json();
-      if (!payload.match || payload.source !== "official-cpl-mcpro") throw new Error("Unverified response");
+      if (!payload.match || !["official-cpl-mcpro", "verified-playoff-fallback"].includes(payload.source)) throw new Error("Unverified response");
       renderMatch(payload.match, payload.fetchedAt);
+      if (payload.source === "verified-playoff-fallback") {
+        if (feedStatus) feedStatus.textContent = matchNumber === 38
+          ? "Verified final result. Detailed scorecard and commentary are temporarily unavailable."
+          : "Live feed unavailable. Teams and fixture are confirmed; live score is not verified.";
+        if (matchNumber === 39 && Date.now() >= Date.parse(payload.match.startDate)) {
+          if (feedState) feedState.textContent = "Live score unavailable";
+          if (heroStatus) heroStatus.lastChild.textContent = " Status unavailable";
+          const label = liveMatchCountdown?.querySelector("[data-match-countdown-label]");
+          if (label) label.textContent = "Awaiting verified match update";
+        }
+      }
       window.clearTimeout(pollTimer);
       const status = String(payload.match.status || "");
         const isComplete = completePattern.test(status);
