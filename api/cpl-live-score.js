@@ -764,6 +764,8 @@ async function serveCricbuzz(request, response) {
   });
 }
 
+module.exports.fetchCricbuzzSchedule = fetchCricbuzzSchedule;
+
 module.exports = async function cplLiveScore(request, response) {
   if (request.method !== "GET") {
     response.setHeader("Allow", "GET");
