@@ -76,7 +76,8 @@ module.exports = async function cplMatches(request, response) {
       "Cache-Control",
       "public, s-maxage=15, stale-while-revalidate=60",
     );
-    response.setHeader("X-CPL-Match-Status-Source", "schedule-fallback");
-    return response.status(200).json([]);
+    response.setHeader("X-CPL-Match-Status-Source", "upstream-error");
+    console.error("CPL match status feed unavailable:", error);
+    return response.status(503).json({ error: "CPL match status feed unavailable" });
   }
 };
