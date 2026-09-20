@@ -1779,7 +1779,7 @@ if (liveMatchData) {
       const response = await fetch(`/api/cpl-live-score?${matchQuery}`, { cache: "default", priority: "high" });
       if (!response.ok) throw new Error("Score unavailable");
       const payload = await response.json();
-      if (!payload.match || !["official-cpl-mcpro", "verified-playoff-fallback"].includes(payload.source)) throw new Error("Unverified response");
+      if (!payload.match || !["official-cpl-mcpro", "verified-playoff-fallback", "cricbuzz-match-index"].includes(payload.source)) throw new Error("Unverified response");
       renderMatch(payload.match, payload.fetchedAt);
       if (payload.source === "verified-playoff-fallback") {
         if (feedStatus) feedStatus.textContent = matchNumber === 38
