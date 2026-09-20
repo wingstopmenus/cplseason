@@ -231,8 +231,12 @@
     let statuses = [];
     try {
       const response = await fetch("/api/cpl-matches", { cache: "no-store" });
-      if (response.ok) statuses = await response.json();
-    } catch (_) {}
+      if (!response.ok) throw new Error(`Match status feed returned ${response.status}`);
+      statuses = await response.json();
+      if (!Array.isArray(statuses)) throw new Error("Invalid match status response");
+    } catch (error) {
+      console.warn("CPL match statuses unavailable; results cannot be verified", error);
+    }
     const settled = new Set(["complete", "completed", "closed", "finished", "final", "abandoned", "cancelled", "canceled", "no result"]);
     const statusByMatch = new Map(
       (Array.isArray(statuses) ? statuses : []).map((item) => [
@@ -245,17 +249,16 @@
       const matchNumber = Number(matchLabel.match(/\d+/)?.[0]);
       const fixture = matchSchedule.find((item) => Number(item.matchNumber) === matchNumber);
       let status = statusByMatch.get(matchNumber) || "";
-      if (!status && fixture?.startIso) {
-        const start = Date.parse(fixture.startIso);
-        if (Number.isFinite(start) && Date.now() >= start + 6 * 60 * 60 * 1000) status = "complete";
-      }
+      // Never infer a completed result from elapsed time when the feed is unavailable.
       const isComplete = settled.has(status);
       const isLive = Boolean(status) && !isComplete && !/upcoming|scheduled|fixture|pre match/.test(status);
-      const state = isComplete ? "complete" : isLive ? "live" : "upcoming";
+      const start = Date.parse(fixture?.startIso || "");
+      const unverified = !status && Number.isFinite(start) && Date.now() >= start;
+      const state = isComplete ? "complete" : isLive ? "live" : unverified ? "unverified" : "upcoming";
       const cta = card.querySelector(".schedule-match-centre-cta");
       card.dataset.matchState = state;
       if (!cta) return;
-      cta.dataset.statusLabel = isComplete ? "COMPLETED" : isLive ? "LIVE" : "UPCOMING";
+      cta.dataset.statusLabel = isComplete ? "COMPLETED" : isLive ? "LIVE" : unverified ? "STATUS UNAVAILABLE" : "UPCOMING";
       const actionText = [...cta.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim());
       if (actionText) actionText.nodeValue = isComplete ? "View match result " : isLive ? "Follow match live " : "Open match centre ";
     });
@@ -266,7 +269,11 @@
       const start = Date.parse(match.startIso);
       return !Number.isFinite(start) || Date.now() < start + 6 * 60 * 60 * 1000;
     });
-    renderLiveSpotlight(next || matchSchedule[matchSchedule.length - 1], !next);
+    renderLiveSpotlight(next || matchSchedule[matchSchedule.length - 1], !next && statuses.length > 0 && matchSchedule.every((match) => settled.has(statusByMatch.get(Number(match.matchNumber)))));
+    if (!next && !statuses.length) {
+      const kicker = liveSpotlight.querySelector("[data-live-kicker]");
+      if (kicker) kicker.textContent = "Match status unavailable · Check match centre";
+    }
     liveSpotlight.dataset.hydrationState = "ready";
   };
 
