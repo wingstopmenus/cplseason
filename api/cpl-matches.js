@@ -72,6 +72,18 @@ module.exports = async function cplMatches(request, response) {
     );
     return response.status(200).json(statusFeed);
   } catch (error) {
+    try {
+      const { fetchCricbuzzSchedule } = require("./cpl-live-score");
+      const matches = await fetchCricbuzzSchedule();
+      response.setHeader("Cache-Control", "public, s-maxage=30, stale-while-revalidate=120");
+      response.setHeader("X-CPL-Match-Status-Source", "cricbuzz-match-index");
+      return response.status(200).json(matches.map((match) => ({
+        matchNumber: match.matchNumber,
+        status: match.status === "completed" ? "Completed" : match.status === "live" ? "Live" : "Scheduled",
+      })));
+    } catch (fallbackError) {
+      console.error("CPL Cricbuzz match status fallback unavailable:", fallbackError);
+    }
     response.setHeader(
       "Cache-Control",
       "public, s-maxage=15, stale-while-revalidate=60",
