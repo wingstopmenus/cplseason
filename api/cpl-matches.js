@@ -63,7 +63,7 @@ module.exports = async function cplMatches(request, response) {
           Number.isInteger(match.matchNumber) &&
           match.matchNumber >= 1 &&
           match.matchNumber <= 39,
-      )
+      ) 
       .sort((a, b) => a.matchNumber - b.matchNumber);
 
     response.setHeader(

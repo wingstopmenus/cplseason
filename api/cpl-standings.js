@@ -34,7 +34,7 @@ function comparableName(value) {
     .replace(/[^a-z0-9]/g, "");
 }
 
-function oversToBalls(value) {
+function oversToBalls(value) { 
   const text = String(value ?? "").trim();
   if (!text) return null;
   const [wholeText, ballText = "0"] = text.split(".");

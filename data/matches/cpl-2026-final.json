@@ -3,10 +3,10 @@
   "match_number": 39,
   "competition": "Republic Bank Caribbean Premier League 2026",
   "stage": "Final",
-  "home_team_slug": null,
-  "away_team_slug": null,
-  "home_team_label": "Qualifier 1 winner",
-  "away_team_label": "Qualifier 2 winner",
+  "home_team_slug": "antigua-barbuda-falcons",
+  "away_team_slug": "jamaica-kingsmen",
+  "home_team_label": "Antigua & Barbuda Falcons",
+  "away_team_label": "Jamaica Kingsmen",
   "venue_slug": "kensington-oval",
   "date": "2026-09-20",
   "start_time_local": "19:00",
@@ -14,8 +14,8 @@
   "start_iso": "2026-09-20T19:00:00-04:00",
   "status": "Scheduled",
   "official_match_center_url": null,
-  "preview_heading": "CPL 2026 final: Kensington Oval hosts the title decider",
-  "preview": "The winners of Qualifier 1 and Qualifier 2 meet in the CPL 2026 final at Kensington Oval on September 20. Play starts at 7:00pm Barbados time, with the tournament title at stake.",
-  "preview_detail": "The first finalist will be confirmed after Qualifier 1 between Antigua & Barbuda Falcons and Guyana Amazon Warriors on September 17. The second will be decided in Qualifier 2 on September 18. Team names will be updated after those results are confirmed, with the toss result and confirmed playing XIs added when announced on match day.",
-  "last_updated": "2026-09-15"
+  "preview_heading": "Antigua & Barbuda Falcons vs Jamaica Kingsmen – CPL 2026 Final",
+  "preview": "Antigua & Barbuda Falcons and Jamaica Kingsmen meet in the CPL 2026 final at Kensington Oval, Barbados, on September 20. The match is scheduled to start at 7:00pm Barbados time, with the tournament title at stake.",
+  "preview_detail": "Antigua & Barbuda Falcons secured their place in the final by defeating Guyana Amazon Warriors in Qualifier 1 on September 17. Jamaica Kingsmen advanced after beating Barbados Tridents in the Eliminator and Guyana Amazon Warriors in Qualifier 2. The two finalists meet at Kensington Oval to decide the CPL 2026 title.",
+  "last_updated": "2026-09-21"
 }

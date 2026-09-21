@@ -471,7 +471,7 @@ async function hydrateCompletedResult(match) {
     // Keep the official payload when the secondary result page is temporarily unavailable.
   }
   return match;
-}
+} 
 
 function normalizeMatch(match) {
   const competition = match?.competition || {};
