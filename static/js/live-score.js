@@ -863,7 +863,7 @@
     setFeedSignal("Checking match update", "checking");
     try {
       const controller = new AbortController();
-      const timeout = window.setTimeout(() => controller.abort(), 10000);
+      const timeout = window.setTimeout(() => controller.abort(), 25000);
       const response = await fetch(endpoint, {
         cache: "default",
         priority: "high",
@@ -883,7 +883,7 @@
       }
       renderFocus(payload.focus, payload.fetchedAt);
       renderUpcoming(payload.schedule, payload.focus.matchNumber);
-      renderResults(payload.recent || []);
+      renderResults((payload.recent?.length ? payload.recent : payload.schedule.filter((match) => isComplete(match.status))).slice(0, 39));
       lastSuccessfulRefresh = Date.parse(payload.fetchedAt) || Date.now();
       const stale = Date.now() - lastSuccessfulRefresh > 120000;
       setFeedSignal(stale ? "Score update delayed" : "Live scores", stale ? "error" : "connected");

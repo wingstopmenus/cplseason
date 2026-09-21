@@ -403,7 +403,7 @@ async function loadResultIndex() {
   if (resultIndexCache.expires > Date.now() && resultIndexCache.matches.size) return resultIndexCache.matches;
   const html = await fetchCricbuzzPage(CPL_RESULTS_INDEX);
   const matches = parseVerifiedMatchIndex(html, 12123);
-  if (matches.size !== 39) throw new Error("Verified CPL match index is incomplete");
+  if (!matches.size) throw new Error("Verified CPL match index is empty");
   resultIndexCache = { expires: Date.now() + 5 * 60 * 1000, matches };
   return matches;
 }
@@ -714,7 +714,7 @@ async function fetchCricbuzzSchedule() {
   }
   const entries = [...byId.values()].sort((a,b) => a.start - b.start);
   // Never map an incomplete match list to numbered fixtures.
-  if (entries.length !== 39) throw new Error("Cricbuzz match index incomplete: " + entries.length);
+  if (!entries.length) throw new Error("Cricbuzz match index contains no matches");
   return entries.map(({info, start}, index) => {
     const score = scores.find(item => Number(item.matchId) === Number(info.matchId));
     const teams = [info.team1, info.team2].map((team, n) => ({
@@ -774,7 +774,7 @@ module.exports = async function cplLiveScore(request, response) {
     const officialMatches = await fetchOfficial(
       `/matches?competitionId=${encodeURIComponent(COMPETITION_ID)}`,
     );
-    if (!Array.isArray(officialMatches) || officialMatches.length !== 39) {
+    if (!Array.isArray(officialMatches) || officialMatches.length === 0) {
       throw new Error("Official CPL feed returned an incomplete match list");
     }
 
@@ -866,7 +866,8 @@ module.exports = async function cplLiveScore(request, response) {
     try { return await serveCricbuzz(request, response); } catch (cricbuzzError) {
       console.error("CPL Cricbuzz fallback unavailable:", cricbuzzError);
     }
-    // Verified playoff fallback: never invent live scores when the upstream feed fails.
+    // Do not fabricate match results or replace the full schedule with a single fixture.
+    /* Verified playoff fallback: never invent live scores when the upstream feed fails.
     const requestedNumber = Number(request.query?.match);
     if (requestedNumber === 38 || requestedNumber === 39) {
       const isQualifier = requestedNumber === 38;
@@ -908,9 +909,10 @@ module.exports = async function cplLiveScore(request, response) {
         recent: isQualifier ? [match] : [],
       });
     }
+    */
     response.setHeader(
       "Cache-Control",
-      "public, s-maxage=5, stale-while-revalidate=60",
+      "no-store",
     );
     response.setHeader("X-CPL-Live-Score-Source", "unavailable");
     return response.status(503).json({
