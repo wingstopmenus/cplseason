@@ -741,9 +741,6 @@
 .live-score-over-summary > div span { color: #596477; text-align: right; }
 .live-score-over-summary > p { margin: 0; padding: 11px 14px; color: #596477; font-size: 12px; }
 .live-score-commentary-note { margin: 0; padding: 12px 18px; border-bottom: 1px solid #e7e9ec; color: #172033; font-weight: 850; }
-.live-score-page .site-ad-banner {
-  width: min(var(--ls-width), calc(100% - 40px));
-}
 .live-score-commentary-more {
   display: flex;
   align-items: center;
@@ -1555,5 +1552,4 @@
   }
 }
 @media (max-width: 700px) {
-  .live-score-page .site-ad-banner { width: calc(100% - 24px); border-radius: 10px; }
 }
