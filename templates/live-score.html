@@ -47,10 +47,24 @@
     id="main"
     class="live-score-control"
     data-live-score
+    data-season-ended="true"
     data-hydration-state="pending"
     data-live-score-endpoint="{{ config.endpoint }}"
     data-live-score-interval="{{ config.polling_seconds }}"
   >
+
+    <!-- Season ended: original live coverage is preserved below for reactivation. -->
+    <section class="season-ended-notice" aria-labelledby="season-ended-title">
+      <p class="season-ended-eyebrow">Caribbean Premier League</p>
+      <h1 id="season-ended-title">CPL 2026 has ended</h1>
+      <p>Live coverage has concluded. Explore the season’s results, standings and news.</p>
+      <nav aria-label="Explore CPL 2026">
+        <a href="/schedule/">Match results</a>
+        <a href="/points-table/">Points table</a>
+        <a href="/news/">Latest news</a>
+      </nav>
+    </section>
+    <div data-season-hidden hidden inert>
     <section class="live-score-hero" aria-labelledby="live-score-title">
       <div class="live-score-hero-shell">
         <nav class="breadcrumbs live-score-breadcrumbs" aria-label="Breadcrumb">
@@ -333,6 +347,7 @@
     </div>
 
     <script id="live-score-match-map" type="application/json">{{ match_map_json | safe }}</script>
+    </div>
   </main>
 
   {% include "partials/footer.html" %}

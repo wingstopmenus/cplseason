@@ -11038,3 +11038,24 @@ nav[aria-label="Breadcrumb"] li:last-child:not(:has(a)){
 }
 [data-home-live-centre][data-hydration-state="pending"]::after { content: ""; }
 @keyframes cpl-hydration-shimmer { to { background-position: -220% 0; } }
+
+/* CPL 2026 off-season visibility. Content and routes remain available for restoration.
+   Remove this link rule and the data-season-hidden/hidden/inert attributes to restore. */
+[data-season-hidden],
+a[href="/live-score/"],
+a[href="/live-score"],
+a[href^="/live-score/#"] {
+  display: none !important;
+}
+.season-ended-notice {
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 88px 0;
+  color: #13182a;
+}
+.season-ended-eyebrow { color: #566174; font-weight: 700; }
+.season-ended-notice h1 { margin: 16px 0; font-size: clamp(32px, 6vw, 56px); line-height: 1.1; }
+.season-ended-notice > p { max-width: 600px; line-height: 1.7; }
+.season-ended-notice nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.season-ended-notice a { display: inline-flex; align-items: center; min-height: 44px; padding: 12px 18px; border-radius: 8px; background: #13182a; color: #fff; font-weight: 700; }
+.season-ended-notice a:focus-visible { outline: 3px solid #167ea4; outline-offset: 4px; }

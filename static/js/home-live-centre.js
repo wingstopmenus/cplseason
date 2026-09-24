@@ -1,6 +1,6 @@
 (() => {
   const root = document.querySelector("[data-home-live-centre]");
-  if (!root) return;
+  if (!root || root.hasAttribute("data-season-hidden")) return;
 
   const teamMeta = new Map(
     [

@@ -2,7 +2,7 @@
   "use strict";
 
   const root = document.querySelector("[data-live-score]");
-  if (!root) return;
+  if (!root || root.dataset.seasonEnded === "true") return;
 
   const endpoint = root.dataset.liveScoreEndpoint;
   const intervalSeconds = Math.max(
