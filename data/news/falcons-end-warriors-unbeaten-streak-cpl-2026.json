@@ -1,0 +1,91 @@
+{
+  "slug": "falcons-end-warriors-unbeaten-streak-cpl-2026",
+  "category": "Match Report",
+  "title": "Alzarri Joseph and Shadab Khan End Warriors' Unbeaten CPL 2026 Run",
+  "short_title": "Falcons end Warriors' unbeaten run",
+  "description": "Antigua & Barbuda Falcons beat Guyana Amazon Warriors by 65 runs at Providence, Alzarri Joseph taking 4 for 41 as the hosts fell for 117 chasing 183.",
+  "dek": "The Falcons posted 182 for 5, then bowled the league leaders out inside 15 overs to close their group campaign in the top two.",
+  "date_published": "2026-09-09",
+  "published_at": "2026-09-09T03:12:30",
+  "date_modified": "2026-09-09",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.com/news/22115",
+  "source_date": "2026-09-09",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/falcons-end-warriors-unbeaten-streak-cpl-2026-featured.webp",
+  "image_alt": "Alzarri Joseph and Shadab Khan celebrate as Antigua & Barbuda Falcons beat Guyana Amazon Warriors at Providence Stadium",
+  "summary_heading": "Falcons hand Warriors their first defeat of CPL 2026",
+  "key_points": [
+    "Antigua & Barbuda Falcons made 182 for 5, scoring 72 runs from the final five overs.",
+    "Alzarri Joseph took 4 for 41 as Guyana Amazon Warriors were bowled out for 117 inside 15 overs.",
+    "Shadab Khan hit an unbeaten 30 from nine balls and was named Player of the Match."
+  ],
+  "scorecard": {
+    "result": "Antigua & Barbuda Falcons won by 65 runs",
+    "teams": [
+      {
+        "name": "Antigua & Barbuda Falcons",
+        "score": "182/5",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Guyana Amazon Warriors",
+        "score": "117",
+        "overs": "All out"
+      }
+    ],
+    "highlights": [
+      "Shadab Khan 30* (9)",
+      "Alzarri Joseph 4/41",
+      "Joshua James dismissed Hetmyer with his first ball",
+      "Warriors bowled out for 117"
+    ]
+  },
+  "player_slugs": [
+    "alzarri-joseph",
+    "shadab-khan",
+    "evin-lewis",
+    "joshua-james",
+    "imran-tahir",
+    "sufiyan-muqeem"
+  ],
+  "players_heading": "Key players from the Falcons' 65-run win at Providence",
+  "sections": [
+    {
+      "heading": "Falcons finish fast after Tahir and Nabi squeeze",
+      "paragraphs": [
+        "The Antigua & Barbuda Falcons became the first team to beat the Guyana Amazon Warriors in CPL 2026, winning by 65 runs at <a href=\"/venue/providence-stadium/\">Providence Stadium</a> on 9 September. Sent in to bat, the Falcons started briskly through Karima Gore and Evin Lewis, but Khary Pierre removed Gore before he could pass 30 and Imran Tahir trapped Lewis in front.",
+        "Tahir and Mohammad Nabi then slowed the innings down, tying up Amir Jangoo and Hasan Nawaz through the middle overs. The Falcons waited for the pace bowlers to return and cashed in when they did, taking 72 runs from the last five overs. Shadab Khan did most of the damage, blasting an unbeaten 30 from nine balls to lift his side to 182 for 5."
+      ]
+    },
+    {
+      "heading": "Joseph breaks the Warriors chase inside the Power Play",
+      "paragraphs": [
+        "Guyana attacked from the start, but Alzarri Joseph changed the game in the third over, removing Rahmanullah Gurbaz and Shai Hope in the same over. The Warriors kept swinging and still scored at more than 11 an over, yet Joseph struck again to dismiss Mavendra Dindyal and Joshua James then knocked over Shimron Hetmyer with his first ball. The home side reached the end of the Power Play on 71 for 4, with the chase already slipping away.",
+        "Shadab Khan and Sufyan Moqim kept the pressure on, sharing four wickets across the next four overs. Tahir and Nabi held out for a while against their opposite numbers, but Joseph came back to york Tahir and finished with 4 for 41. James needed two balls to take the last wicket, and the Warriors were all out for 117 inside the 15th over, losing more than five wickets in a match for the first time this season."
+      ]
+    },
+    {
+      "heading": "Falcons close their group campaign in the CPL 2026 top two",
+      "paragraphs": [
+        "The win was payback for the Falcons, who had lost the return fixture at home earlier in the season, and it closed their group campaign with a place in the top two secured. Shadab was named Player of the Match for his late hitting and his work with the ball. Follow both sides through the <a href=\"/team/antigua-barbuda-falcons/\">Antigua & Barbuda Falcons team guide</a> and the <a href=\"/team/guyana-amazon-warriors/\">Guyana Amazon Warriors team guide</a>.",
+        "Guyana had already booked their playoff place before this defeat, so the loss costs them momentum rather than qualification. Their next outing comes against Saint Lucia Kings, with the remaining fixtures on the <a href=\"/schedule/\">CPL 2026 schedule</a> and the standings on the <a href=\"/points-table/\">points table</a>."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/team/antigua-barbuda-falcons/",
+      "label": "Falcons team guide"
+    },
+    {
+      "href": "/schedule/",
+      "label": "CPL schedule"
+    }
+  ],
+  "last_updated": "2026-09-09"
+}

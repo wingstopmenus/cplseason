@@ -1,0 +1,92 @@
+{
+  "slug": "patriots-rally-beat-tridents-cpl-2026",
+  "category": "Match Report",
+  "title": "Patriots Chase 218 to Beat Tridents in Warner Park Thriller",
+  "short_title": "Patriots chase down 218 at Warner Park",
+  "description": "Johnson Charles made 78 and Andre Fletcher finished the job as St Kitts & Nevis Patriots chased 218 to beat Barbados Tridents by six wickets in CPL 2026.",
+  "dek": "Quinton de Kock's 106 took the Tridents to 217 for 4, but the Patriots completed the fourth-highest successful chase in CPL history.",
+  "date_published": "2026-09-02",
+  "published_at": "2026-09-02T03:39:14",
+  "date_modified": "2026-09-02",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.com/news/21979",
+  "source_date": "2026-09-02",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/patriots-rally-beat-tridents-cpl-2026-featured.webp",
+  "image_alt": "Johnson Charles batting for St Kitts & Nevis Patriots against Barbados Tridents at Warner Park",
+  "summary_heading": "A de Kock hundred, a no-ball reprieve and a record-book chase",
+  "key_points": [
+    "Quinton de Kock scored 106 from 54 balls as Barbados Tridents posted 217 for 4 at Warner Park.",
+    "Johnson Charles made 78 after being recalled by the third umpire when a full toss was ruled a no-ball.",
+    "St Kitts & Nevis Patriots reached 218 with five balls to spare, the fourth-highest successful chase in CPL history."
+  ],
+  "scorecard": {
+    "result": "St Kitts & Nevis Patriots won by 6 wickets",
+    "teams": [
+      {
+        "name": "Barbados Tridents",
+        "score": "217/4",
+        "overs": "20 overs"
+      },
+      {
+        "name": "St Kitts & Nevis Patriots",
+        "score": "218/4",
+        "overs": "19.1 overs"
+      }
+    ],
+    "highlights": [
+      "Quinton de Kock 106 (54)",
+      "Johnson Charles 78",
+      "Zachary Carter 57",
+      "Wanindu Hasaranga 1/22",
+      "Andre Fletcher hit the winning six"
+    ]
+  },
+  "player_slugs": [
+    "quinton-de-kock",
+    "johnson-charles",
+    "andre-fletcher",
+    "kyle-mayers",
+    "jason-holder",
+    "mujeeb-ur-rahman"
+  ],
+  "players_heading": "Key players from the Patriots' record chase",
+  "sections": [
+    {
+      "heading": "Carter and de Kock set the Patriots a huge target",
+      "paragraphs": [
+        "St Kitts & Nevis Patriots chased down 218 to beat Barbados Tridents by six wickets at <a href=\"/venue/warner-park/\">Warner Park</a> in CPL 2026, completing the fourth-highest successful run chase in CPL history with five balls to spare. The Tridents' 217 for 4, built on a Quinton de Kock hundred, looked like a winning score for most of the night.",
+        "Sent in to bat, the Tridents lost Brandon King after eight balls, but Zachary Carter and de Kock put on 116 for the second wicket. Carter cleared the ropes seven times on his way to 57, while de Kock scored at the same rate in a more classical way, finding the gaps ball after ball. The Patriots did not help themselves, putting down three routine catches during the stand."
+      ]
+    },
+    {
+      "heading": "De Kock hundred takes Tridents to 217",
+      "paragraphs": [
+        "De Kock went on to his century from 54 balls, the fourth hundred of this CPL season, and batted deep into the innings alongside Sherfane Rutherford. Navin Bidaisee, one of the fielders who had dropped a chance, finally ended the innings with a fine running catch.",
+        "Chris Green and Rivaldo Clarke saw the Tridents through to 217 for 4. In a seven-man Patriots attack, Wanindu Hasaranga's 1 for 22 was the only return worth keeping, and the home side walked off knowing the chase needed a fast start and no early collapse. The <a href=\"/match/st-kitts-nevis-patriots-vs-barbados-tridents/\">Patriots vs Tridents match centre</a> has the fixture record."
+      ]
+    },
+    {
+      "heading": "Charles and Fletcher finish the Patriots chase",
+      "paragraphs": [
+        "Johnson Charles gave the chase exactly that start, then lived through the strangest moment of the night. Caught at deep midwicket off a full toss, he was heading off when the third umpire judged the delivery a no-ball and called him back — and Charles hit the resulting free hit for six. Kyle Mayers was run out when Rutherford deflected a straight drive onto the stumps, and Charles finally fell to Mujeeb Ur Rahman for 78.",
+        "The Patriots still needed cool heads. Dasun Shanaka, Jason Holder and Wanindu Hasaranga all chipped in around Andre Fletcher, the finisher the home side trust in these situations, and Fletcher sealed it with a big six. The win lifts the Patriots off the bottom of the <a href=\"/points-table/\">CPL 2026 points table</a> and hands the Tridents a third straight defeat."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/st-kitts-nevis-patriots-vs-barbados-tridents/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/venue/warner-park/",
+      "label": "Warner Park guide"
+    },
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    }
+  ],
+  "last_updated": "2026-09-02"
+}

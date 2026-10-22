@@ -1,0 +1,90 @@
+{
+  "slug": "patriots-end-home-campaign-big-win-kings-cpl-2026",
+  "category": "Match Report",
+  "title": "Shanaka Record Century Leads Patriots Rout of Kings at Warner Park",
+  "short_title": "Shanaka record ton in Patriots rout",
+  "description": "Dasun Shanaka hit a record 39-ball CPL century and finished 121 not out as St Kitts & Nevis Patriots beat Saint Lucia Kings by 137 runs at Warner Park.",
+  "dek": "The Patriots piled up 235 for 4, the season's highest total, before bowling the Kings out for 98 in 13.5 overs.",
+  "date_published": "2026-09-04",
+  "published_at": "2026-09-04T02:55:32",
+  "date_modified": "2026-09-04",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.com/news/22002",
+  "source_date": "2026-09-04",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/patriots-end-home-campaign-big-win-kings-cpl-2026-featured.webp",
+  "image_alt": "Dasun Shanaka batting for St Kitts & Nevis Patriots against Saint Lucia Kings at Warner Park",
+  "summary_heading": "A record hundred and a five-for in one very one-sided night",
+  "key_points": [
+    "Dasun Shanaka reached his century from 39 balls, the fastest in CPL history, and finished unbeaten on 121 with 12 sixes.",
+    "St Kitts & Nevis Patriots posted 235 for 4, the highest team total of the CPL 2026 season so far.",
+    "Saint Lucia Kings were bowled out for 98 in 13.5 overs, with Jeremiah Louis taking 5 for 10."
+  ],
+  "scorecard": {
+    "result": "St Kitts & Nevis Patriots won by 137 runs",
+    "teams": [
+      {
+        "name": "St Kitts & Nevis Patriots",
+        "score": "235/4",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Saint Lucia Kings",
+        "score": "98",
+        "overs": "13.5 overs"
+      }
+    ],
+    "highlights": [
+      "Dasun Shanaka 121*",
+      "Andre Fletcher 64",
+      "Tim Seifert 50 (36)",
+      "Jeremiah Louis 5/10",
+      "Andre Fletcher fifty from 23 balls"
+    ]
+  },
+  "player_slugs": [
+    "dasun-shanaka",
+    "andre-fletcher",
+    "johnson-charles",
+    "kyle-mayers"
+  ],
+  "players_heading": "Key players from the Patriots' 137-run win",
+  "sections": [
+    {
+      "heading": "Fletcher sets the pace for the Patriots",
+      "paragraphs": [
+        "St Kitts & Nevis Patriots finished their CPL 2026 home leg with a 137-run win over Saint Lucia Kings at <a href=\"/venue/warner-park/\">Warner Park</a>, scoring 235 for 4 and then bowling the Kings out for 98. Sent in to bat, the Patriots lost Kyle Mayers early to Matthew Forde, but the innings took off as soon as Andre Fletcher joined Johnson Charles.",
+        "The pair took the Patriots to 59 for 1 by the end of the Powerplay. Fletcher reached his half-century from 23 balls, survived two dropped chances in the same over and made 64 before the Kings finally held a catch. On most nights that innings would have decided the game. This time it was only the warm-up."
+      ]
+    },
+    {
+      "heading": "Shanaka breaks the CPL fastest-century record",
+      "paragraphs": [
+        "Dasun Shanaka reached fifty from 24 balls and his hundred from 39, taking the CPL record from the 40-ball mark that Tim Seifert and Shimron Hetmyer had equalled the week before. Batting with Wanindu Hasaranga, he picked his lengths early and kept clearing the boundary as the Kings attack lost its plans.",
+        "The final four overs produced 79 runs, most of them Shanaka's, and he walked off unbeaten on 121 with 12 sixes, also moving to the top of the tournament's run-scoring list. The 235 for 4 was the highest team total of the season, and it left the Kings needing a near-perfect chase at <a href=\"/match/st-kitts-nevis-patriots-vs-saint-lucia-kings/\">Warner Park</a>."
+      ]
+    },
+    {
+      "heading": "Louis runs through the Kings reply",
+      "paragraphs": [
+        "The chase never got started. Wanindu Hasaranga, Naseem Shah and Ashmead Nedd took a wicket each as the Kings slid to 46 for 3 inside six overs, and from there the innings fell apart. Tim Seifert made 50 from 36 balls, but no other Kings batter reached double figures.",
+        "Jeremiah Louis finished it in a hurry, taking 5 for 10 from 2.5 overs and claiming the last wicket, Amari Goodridge, as the Kings were bowled out in 13.5 overs. Back-to-back wins send the <a href=\"/team/st-kitts-nevis-patriots/\">St Kitts & Nevis Patriots</a> to Guyana in form, while the Kings have to regroup quickly for the Barbados Tridents on Sunday."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/match/st-kitts-nevis-patriots-vs-saint-lucia-kings/",
+      "label": "Match centre"
+    },
+    {
+      "href": "/venue/warner-park/",
+      "label": "Warner Park guide"
+    },
+    {
+      "href": "/team/st-kitts-nevis-patriots/",
+      "label": "Patriots team guide"
+    }
+  ],
+  "last_updated": "2026-09-04"
+}

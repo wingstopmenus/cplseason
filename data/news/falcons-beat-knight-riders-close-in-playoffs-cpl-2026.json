@@ -1,0 +1,92 @@
+{
+  "slug": "falcons-beat-knight-riders-close-in-playoffs-cpl-2026",
+  "category": "Match Report",
+  "title": "Hasan Nawaz 76 Helps Falcons Edge Knight Riders by Eight Runs",
+  "short_title": "Falcons edge Knight Riders by 8 runs",
+  "description": "Hasan Nawaz made 76 as Antigua & Barbuda Falcons posted 183 for 4 and beat Trinbago Knight Riders by eight runs at Queen's Park Oval in CPL 2026.",
+  "dek": "Rahkeem Cornwall took 3 for 17 in the Powerplay and Joshua James defended the last over as the Falcons went back to the top.",
+  "date_published": "2026-09-03",
+  "published_at": "2026-09-03T03:27:17",
+  "date_modified": "2026-09-03",
+  "source_name": "CPL Newsroom",
+  "source_url": "https://cplt20.com/news/21996",
+  "source_date": "2026-09-03",
+  "author_slug": "asad-sial",
+  "image": "/static/img/official/news/falcons-beat-knight-riders-close-in-playoffs-cpl-2026-featured.webp",
+  "image_alt": "Antigua & Barbuda Falcons players celebrate a wicket against Trinbago Knight Riders at Queen's Park Oval",
+  "summary_heading": "Falcons hold their nerve as TKR lose a third straight game",
+  "key_points": [
+    "Hasan Nawaz top-scored with 76 as Antigua & Barbuda Falcons posted 183 for 4 at Queen's Park Oval.",
+    "Rahkeem Cornwall took 3 for 17 as Trinbago Knight Riders lost four wickets inside a 63-run Powerplay.",
+    "Joshua Da Silva finished 54 not out, but the Knight Riders ended eight runs short in the last match of their home leg."
+  ],
+  "scorecard": {
+    "result": "Antigua & Barbuda Falcons won by 8 runs",
+    "teams": [
+      {
+        "name": "Antigua & Barbuda Falcons",
+        "score": "183/4",
+        "overs": "20 overs"
+      },
+      {
+        "name": "Trinbago Knight Riders",
+        "score": "175",
+        "overs": "20 overs"
+      }
+    ],
+    "highlights": [
+      "Hasan Nawaz 76",
+      "Joshua Da Silva 54*",
+      "Rahkeem Cornwall 3/17",
+      "Kieron Pollard and Joshua Da Silva added 55",
+      "Usman Tariq took a wicket in his 17th straight CPL match"
+    ]
+  },
+  "player_slugs": [
+    "rahkeem-cornwall",
+    "moeen-ali",
+    "evin-lewis",
+    "joshua-james",
+    "nicholas-pooran",
+    "kieron-pollard"
+  ],
+  "players_heading": "Key players from the Falcons' eight-run win",
+  "sections": [
+    {
+      "heading": "Falcons survive the drops at Queen's Park Oval",
+      "paragraphs": [
+        "Antigua & Barbuda Falcons beat Trinbago Knight Riders by eight runs at <a href=\"/venue/queens-park-oval/\">Queen's Park Oval</a> in CPL 2026, posting 183 for 4 and holding the hosts short in the final game of the season at the ground. The defeat was a third in a row for the Knight Riders, who lost four of the five matches in their home leg.",
+        "Evin Lewis and Rahkeem Cornwall put on 40 for the first wicket before Cornwall chopped on to Usman Tariq, the spinner's 17th consecutive CPL match with a wicket. The Falcons reached 43 for 1 from the Powerplay, helped by the home side's catching: Lewis was dropped on 16 by Terrance Hinds and Moeen Ali on 1 by Akeal Hosein."
+      ]
+    },
+    {
+      "heading": "Nawaz builds the Falcons innings",
+      "paragraphs": [
+        "Hasan Nawaz took charge from there. He reached his half-century from 36 balls, went after the Knight Riders seamers and treated Sunil Narine and Tariq with more care, picking his match-ups well. He made 76 before Alex Hales held the catch off Lahiru Kumara.",
+        "Moeen, living on his second chance, stayed with the innings to the end and found the boundary off the last ball to close the Falcons on 183 for 4. It was a total the <a href=\"/team/antigua-barbuda-falcons/\">Antigua & Barbuda Falcons</a> attack could defend, but only just."
+      ]
+    },
+    {
+      "heading": "Cornwall and James defend 183 for the Falcons",
+      "paragraphs": [
+        "The Knight Riders came hard in the Powerplay, taking 63 runs, but they lost four wickets doing it. Colin Munro and Nicholas Pooran both got starts and both fell to Cornwall, who took 3 for 17 in a spell that changed the shape of the chase. Kieron Pollard, playing through an injury, then put on 55 with Joshua Da Silva to keep the home side in touch with five overs left.",
+        "Joshua James claimed the big wicket, Pollard caught smartly by Jayden Seales, and James then defended the final over with runs in hand. Da Silva hit the last ball for six to finish 54 not out, but it only narrowed the margin. The win takes the Falcons back to the top of the <a href=\"/points-table/\">CPL 2026 points table</a> and leaves TKR's play-off place in real danger."
+      ]
+    }
+  ],
+  "related_links": [
+    {
+      "href": "/points-table/",
+      "label": "Points table"
+    },
+    {
+      "href": "/venue/queens-park-oval/",
+      "label": "Queen's Park Oval guide"
+    },
+    {
+      "href": "/team/antigua-barbuda-falcons/",
+      "label": "Falcons team guide"
+    }
+  ],
+  "last_updated": "2026-09-03"
+}
